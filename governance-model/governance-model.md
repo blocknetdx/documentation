@@ -147,7 +147,14 @@ For a proposal to pass and receive funding:
 * If there are not enough funds remaining in the Superblock for a proposal to be paid out, it is skipped(not paid out), and the next proposal in the passing list is checked for qualification.
 * Multi-month proposals are voted on each month and are treated in the same manner as normal proposals in the ordered list.
 
-![Required Voting Matrix](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/required-votes-matrix.png "Required Voting Matrix")
+Voting Turnout | Yays Required | Max Nays Allowed
+---------------|---------------|-----------------
+100% | 55% | 45%
+80% | 56.25% | 43.75%
+40% | 62.5% | 37.5%
+20% | 75% | 25%
+10% | 100% | 0%
+<9% | cannot pass | cannot pass
 
 Notes for expansion in further updates:
 * Creating a formalized BIP processes that supports and nourishes ideas. 

@@ -148,7 +148,7 @@ For a proposal to pass and receive funding:
 * If there are not enough funds remaining in the Superblock for a proposal to be paid out, it is skipped(not paid out), and the next proposal in the passing list is checked for qualification.
 * Multi-month proposals are voted on each month and are treated in the same manner as normal proposals in the ordered list.
 
-![Required Voting Matrix](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/required-voting-matrix.png "Required Voting Matrix")
+![Required Voting Matrix](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/required-votes-matrix.png "Required Voting Matrix")
 
 Notes for expansion in further updates:
 * Creating a formalized BIP processes that supports and nourishes ideas. 

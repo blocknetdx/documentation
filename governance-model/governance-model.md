@@ -154,7 +154,7 @@ Voting Turnout | Yays Required | Max Nays Allowed
 40% | 62.5% | 37.5%
 20% | 75% | 25%
 10% | 100% | 0%
-<9% | cannot pass | cannot pass
+<10% | cannot pass | cannot pass
 
 Notes for expansion in further updates:
 * Creating a formalized BIP processes that supports and nourishes ideas. 

@@ -50,25 +50,25 @@ The governance structure of Blocknet should primarily ensure that the flow of mo
 
 Even a decentralized organization like Blocknet requires an operating model by describing the organizational structure, key processes and system, facilities, and locations. As previously stated, the objective of this paper is for Blocknet to scale while keeping it decentralized and not classified as a security. 
 
-#### Legal Compliance
+### Legal Compliance
 To be added in a later update.
 
 
-#### Contributor Tiers
+### Contributor Tiers
 Diagram based on Fattox's original proposal in Discord and will be detailed with descriptions in a later update.
 
 ![Simplified Role Tier](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-simplified-role-tier.png "Simplified Role Tier")
 
-##### Tapping Into the Hive-Mind of Our Community Channels
+#### Tapping Into the Hive-Mind of Our Community Channels
 Using Discord:
 
 ![Discord Role Tier](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-discord-role-tier.png "Discord Role Tier")
 
 
-#### The Use of Outside Contractors
+### The Use of Outside Contractors
 To be added in a later update.
 
-##### Segregation of Duty
+#### Segregation of Duty
 All members must be voted in:
 
 ![Role Block](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-role-block.png "Role Block")
@@ -76,19 +76,19 @@ All members must be voted in:
 A separate flow of role assignment is to be added in a later update along with a proposal to add a new type of Service Node vote block with a more ad-hoc nature. Additional information to be added in a later update.
 
 
-#### Partnership Engagement
+### Partnership Engagement
 To be added in a later update. Built on APQC and refined with practical insight from the partner group of Dungor’s day job. 
 
 
-#### Flow of Information
+### Flow of Information
 To be added in a later update.
 
 
-#### Flow of Money
+### Flow of Money
 To be added in a later update.
 
 
-#### Flow of Accountability
+### Flow of Accountability
 To be added in a later update.
 
 ![Governance Blocks](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-governance-blocks.png "Governance Blocks")
@@ -97,10 +97,10 @@ To be added in a later update.
 
 ## Proposals for Superblocks
 
-#### Proposal Submission Flow
+### Proposal Submission Flow
 ![Proposal Submission Flow](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/blocknet-proposal-submission-flow.png "Proposal Submission Flow")
 
-##### Submission of Proposal to Network
+#### Submission of Proposal to Network
 Instructions:
 * Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee. This fee should be added to the proposal amount(in a later step) so that you are reimbursed upon acceptance of the proposal.
 * Submit a pre-proposal to the relevant Superblock thread in the proposal forum with the following information:
@@ -136,7 +136,7 @@ Instructions:
 `mnbudget show`
 
 
-#### Proposal Vote Flow
+### Proposal Vote Flow
 ![Proposal Vote Flow](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/blocknet-proposal-vote-flow.png "Proposal Vote Flow")
 
 For a proposal to pass and receive funding:
@@ -155,19 +155,19 @@ Notes for expansion in further updates:
 * A proposal that submits the fee to be voted on should always be added for voting.
 
 
-#### Governance Document Change Flow
+### Governance Document Change Flow
 ![Governance Document Change Flow](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/blocknet-governance-document-change-flow.png "Governance Document Change Flow")
 
 **Note**: This process calls the [*Proposal Submission Flow*](#proposal-submission-flow) + [*Proposal Vote Flow*](#proposal-vote-flow) in [Flow of Proposal] as Blackbox.
 
 
-#### Classifying Investments Within Blocknet
+### Classifying Investments Within Blocknet
 ![Investment Expenses](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-superblock.png "Investment Expenses")
 
 To be detailed in a later update.
 
 
-#### Service Node Engagement
+### Service Node Engagement
 To be added in a later update.
 
 

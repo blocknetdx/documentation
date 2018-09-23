@@ -1,5 +1,4 @@
 # Blocknet Governance Model
----
 
 
 ## Background

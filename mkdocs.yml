@@ -43,7 +43,7 @@ extra:
   discord: 'https://discord.gg/2e6s7H8'
   blockdx_releases: 'https://github.com/BlocknetDX/blockdx-ui/releases'
   docs_repo: 'BlocknetDX/documentation'
-site_url: 'https://docs.blocknet.co'
+site_url: 'https://docs.blocknet.co/'
 repo_url: 'https://github.com/BlocknetDX/documentation'
 repo_name: 'BlocknetDX/documentation'
 edit_uri: '/BlocknetDX/documentation/edit/master/docs/'
@@ -108,7 +108,7 @@ nav:
 #     - 'Use Cases': 'protocol/xcloud/use-cases.md'
 #     - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/#xcloud-api'
   # - "Use Cases <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-business-use-cases.pdf'
-  - 'API Docs': 'https://api.blocknet.co/'
+  - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/'
 - 'Wallet':
 #   - 'Getting Started': 
 #     - 'Installation': 'wallet/installation.md'

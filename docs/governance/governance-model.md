@@ -1,5 +1,6 @@
 # Blocknet Governance Model
 
+---
 
 ## Background
 Blocknet is a project launched in 2014 by ITO. The original objective of Blocknet was to create a decentralized exchange. The ITO raised just short of 970 BTC in various assets worth $340,000 at the time. 
@@ -14,24 +15,24 @@ A simple ledger of the funds [can be found here](https://docs.google.com/spreads
 
 The current governance model by Service Nodes [can be found here](https://docs.google.com/document/d/1TLwtw4Ukc5riOmUvv2uE5y7VGIG63sivAXwvc1gFsMc/preview).
 
-In short, every 43200 blocks on the Blocknet blockchain, Service Nodes can choose to mint up to a maximum of 4320 new tokens. These can then be allocated to fund development in the form of proposals. 
+In short, every 43,200 blocks on the Blocknet blockchain, Service Nodes can choose to mint up to a maximum of 40,000 new tokens. These can then be allocated to fund development in the form of proposals. 
 
-
+---
 
 ## Defining the Blocknet Project as an Entity
 The business layer of Blocknet is to facilitate interaction between blockchains, either through exchange on the XBridge decentralized exchange protocol or through cross-chain communication with the XRouter blockchain packet routing protocol. XBridge trades generate fees charged in BLOCK for exchanges completed with the protocol, and XRouter calls generate fees charged in BLOCK for routing packets with the protocol. The entirety of these fees are transferred to the Service Nodes responsible for providing these services.
 
 The idea is that the need for BLOCK required to settle the trade fees and submit cross-chain calls will create buy pressure on BLOCK, driving the price up. Furthermore, the redistribution of BLOCK from the market to service providers will function comparable to a dividend program incentivizing further service to the network by stakers and Service Nodes. Therefore, it can be argued that Blocknet has an earnings stream for the network service providers.
 
-Development of Bocknet is, as described in [Background](#background), funded by Service Nodes choosing to add additional circulation by minting BLOCK. As the price of BLOCK increases due to added value from development, so will the relative purchasing power of the, up to, 4320 BLOCK minted every month.
+Development of Bocknet is, as described in [Background](#background), funded by Service Nodes choosing to add additional circulation by minting BLOCK. As the price of BLOCK increases due to added value from development, so will the relative purchasing power of the, up to, 40,000 BLOCK minted every month.
 
 In 2014 Vitalik Buterin, co-founder of Ethereum, posted what he called [“DAOs, DACs, DAs and More: An Incomplete Terminology Guide”](https://blog.ethereum.org/2014/05/06/daos-dacs-das-and-more-an-incomplete-terminology-guide/) to the Ethereum blog. According to Vitalik, the difference between a DAO and a DAC is whether the project pays rewards. By this definition Blocknet would classify as a DAC, a Decentralized Autonomous Corporation. 
 
 It’s important to understand that Blocknet doesn’t have a direct link between what could be considered a revenue stream and expenditures to freelance contractors, such as developers and supporting activities. It is the Service Nodes and stakers of Blocknet that earn revenue in the form of BLOCK rewards redistributed for participation in providing a service to the network.
 
-The above model is speculated to sustain organic growth of Blocknet. However, what Blocknet lacks is a means to grow inorganically. The Superblock has a hard-coded maximum output of 4320 BLOCK per month. 
+The above model is speculated to sustain organic growth of Blocknet. However, what Blocknet lacks is a means to grow inorganically. The Superblock has a hard-coded maximum output of 40,000 BLOCK per month. 
 
-Looking at it from a different perspective: The nature of Blocknet’s cost has so far mostly been investing. Operational costs has been related to the edge of the network where node holders have had expenses for keeping the systems online. However, as the project has grown, proposals for the 4320 BLOCK have taken on a nature more akin to monthly contracts rather than one time fees. Hiring contractors for a month's work allows for greater flexibility within that month to add value to the project where it might be required. Instead of proactively having to scope what has to be done, the contractors can instead reactively prioritize urgent matters.
+Looking at it from a different perspective: The nature of Blocknet’s cost has so far mostly been investing. Operational costs has been related to the edge of the network where node holders have had expenses for keeping the systems online. However, as the project has grown, proposals for the 40,000 BLOCK have taken on a nature more akin to monthly contracts rather than one time fees. Hiring contractors for a month's work allows for greater flexibility within that month to add value to the project where it might be required. Instead of proactively having to scope what has to be done, the contractors can instead reactively prioritize urgent matters.
 
 Quite early on the community speculated a future need for operational staff: A support function that could help to network users with whatever issues they might face. Not having this would put Blocknet behind in the end-user experience that centralized competitors offer.
 
@@ -40,10 +41,11 @@ However, Blocknet was envisioned to function by contracts being proposed and fil
 Process thinking is being applied to combat this, firstly in the supporting functions of marketing and media. These are expected to submit KPIs comparing Blocknet to market trends. Also formulating plans and visions so that the Service Nodes can monitor the performance of the team and govern accordingly. Eventually the team lead of each function should be more concerned with scaling their team (up and down), defining methods to work by rather than being hands-on themselves.
 
 Example of the great methods being developed in marketing:
+
 * [KPIs and arketing Plan](https://docs.google.com/document/d/1XBUQJ_Mzr9TVhxTkDU_NWmTfJf2JPHTBqzLroE866tE/preview)
 * [Marketing recruiting working instructions](https://www.youtube.com/watch?v=oMPHvvMCBkM)
 
-
+---
 
 ## Governance Structure
 The governance structure of Blocknet should primarily ensure that the flow of money and flow of information run as decentralized, transparent and trustless as possible.
@@ -53,16 +55,15 @@ Even a decentralized organization like Blocknet requires an operating model by d
 ### Legal Compliance
 To be added in a later update.
 
-
 ### Contributor Tiers
 Diagram based on Fattox's original proposal in Discord and will be detailed with descriptions in a later update.
 
-![Simplified Role Tier](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-simplified-role-tier.png "Simplified Role Tier")
+![Simplified Role Tier](/img/governance/accountability-flow-simplified-role-tier.png "Simplified Role Tier")
 
 #### Tapping Into the Hive-Mind of Our Community Channels
 Using Discord:
 
-![Discord Role Tier](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-discord-role-tier.png "Discord Role Tier")
+![Discord Role Tier](/img/governance/accountability-flow-discord-role-tier.png "Discord Role Tier")
 
 
 ### The Use of Outside Contractors
@@ -71,7 +72,7 @@ To be added in a later update.
 #### Segregation of Duty
 All members must be voted in:
 
-![Role Block](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-role-block.png "Role Block")
+![Role Block](/img/governance/accountability-flow-role-block.png "Role Block")
 
 A separate flow of role assignment is to be added in a later update along with a proposal to add a new type of Service Node vote block with a more ad-hoc nature. Additional information to be added in a later update.
 
@@ -91,17 +92,19 @@ To be added in a later update.
 ### Flow of Accountability
 To be added in a later update.
 
-![Governance Blocks](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-governance-blocks.png "Governance Blocks")
+![Governance Blocks](/img/governance/accountability-flow-governance-blocks.png "Governance Blocks")
 
-
+---
 
 ## Proposals for Superblocks
 
 ### Proposal Submission Flow
-![Proposal Submission Flow](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/blocknet-proposal-submission-flow.png "Proposal Submission Flow")
+
+![Proposal Submission Flow](/img/governance/blocknet-proposal-submission-flow.png "Proposal Submission Flow")
 
 #### Submission of Proposal to Network
 Instructions:
+
 * Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee. This fee should be added to the proposal amount(in a later step) so that you are reimbursed upon acceptance of the proposal.
 * Submit a pre-proposal to the relevant Superblock thread in the proposal forum with the following information:
   * Proposal name as will be submitted to the network(18 character limit)
@@ -137,10 +140,12 @@ Instructions:
 
 
 ### Proposal Vote Flow
-![Proposal Vote Flow](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/blocknet-proposal-vote-flow.png "Proposal Vote Flow")
+
+![Proposal Vote Flow](/img/governance/blocknet-proposal-vote-flow.png "Proposal Vote Flow")
 
 For a proposal to pass and receive funding:
-* The amount requested must be 4320 BLOCK or less.
+
+* The amount requested must be 40,000 BLOCK or less.
 * Votes in favor must be greater than votes against by at least 10% of the total number of Service Nodes.
 * The proposals that pass are sorted in a descending order list by the sum of yes votes minus no votes.
 * If multiple proposals have an equal sum of yes votes minus no votes, those are sorted randomly.
@@ -157,19 +162,22 @@ Voting Turnout | Yays Required | Max Nays Allowed
 <10% | cannot pass | cannot pass
 
 Notes for expansion in further updates:
+
 * Creating a formalized BIP processes that supports and nourishes ideas. 
 * Peer-reviewing ideas and suggesting improvements before they are submitted, but never censorship. 
 * A proposal that submits the fee to be voted on should always be added for voting.
 
 
 ### Governance Document Change Flow
-![Governance Document Change Flow](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/blocknet-governance-document-change-flow.png "Governance Document Change Flow")
+
+![Governance Document Change Flow](/img/governance/blocknet-governance-document-change-flow.png "Governance Document Change Flow")
 
 **Note**: This process calls the [*Proposal Submission Flow*](#proposal-submission-flow) + [*Proposal Vote Flow*](#proposal-vote-flow) in [Flow of Proposal] as Blackbox.
 
 
 ### Classifying Investments Within Blocknet
-![Investment Expenses](https://github.com/BlocknetDX/documentation/blob/master/governance-model/images/accountability-flow-superblock.png "Investment Expenses")
+
+![Investment Expenses](/img/governance/accountability-flow-superblock.png "Investment Expenses")
 
 To be detailed in a later update.
 
@@ -177,7 +185,7 @@ To be detailed in a later update.
 ### Service Node Engagement
 To be added in a later update.
 
-
+---
 
 ## Conclusion: A proposed future Governance Model for Blocknet
 Around 90% of blockchain projects die, either due to being blatant scams or never achieving a functioning organizational form. Blocknet is ad hoc yet reaching a more mature organizational form, but to enter the next stage, Blocknet will have to become more structured. By maintaining decentralization throughout the organization and by using process documentation, it's possible to have an aligned organization without bottlenecking key resources. Contributing to Blocknet then becomes more tangible as it allows contributors to approach the non-technical parts of Blocknet as open-source.

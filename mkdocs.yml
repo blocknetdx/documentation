@@ -1,0 +1,186 @@
+site_name: 'Blocknet Documentation'
+site_description: 'Blocknet is a 2nd layer blockchain interoperability protocol that enables communication, interaction, and exchange between different blockchains.'
+site_author: 'Blocknet'
+use_directory_urls: true # do not change this, it will break all links
+google_analytics:
+  - 'UA-109213957-4'
+  - 'auto'
+theme: 
+  name: 'material'
+  custom_dir: 'theme/'
+  favicon: 'img/favicon.png'
+  logo: 'img/blocknet-logo-128.svg'
+  font: false
+extra:
+  social:
+    - type: 'envelope'
+      link: 'mailto:contact@blocknet.co'
+    - type: 'github'
+      link: 'https://github.com/BlocknetDX/'
+    - type: 'comment'
+      link: 'https://discord.gg/2e6s7H8'
+    - type: 'telegram'
+      link: 'https://t.me/Blocknet'
+    - type: 'medium'
+      link: 'https://medium.com/@theblocknetchannel'
+    - type: 'facebook'
+      link: 'https://en-gb.facebook.com/theblocknet/'
+    - type: 'twitter'
+      link: 'https://twitter.com/The_Blocknet'
+    - type: 'reddit'
+      link: 'https://www.reddit.com/r/theblocknet/'
+    - type: 'youtube'
+      link: 'https://www.youtube.com/channel/UCCDBoR9fHb21bLH7FGvFrQg/playlists'
+    - type: 'instagram'
+      link: 'https://www.instagram.com/the_blocknet/'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/blocknet/'
+  snode_collateral: '5000'
+  proposal_link: 'http://blocknetdx.forumotion.com/f3-self-funding-proposals'
+  newsletter_general: 'http://eepurl.com/c5OJMj'
+  newsletter_snodes: 'http://eepurl.com/dq-ElD'
+  newsletter_developers: 'http://eepurl.com/dDjhYH'
+  discord: 'https://discord.gg/2e6s7H8'
+  blockdx_releases: 'https://github.com/BlocknetDX/blockdx-ui/releases'
+  docs_repo: 'BlocknetDX/documentation'
+site_url: 'https://docs.blocknet.co'
+repo_url: 'https://github.com/BlocknetDX/documentation'
+repo_name: 'BlocknetDX/documentation'
+edit_uri: '/BlocknetDX/documentation/edit/master/docs/'
+markdown_extensions:
+  - codehilite
+  - markdown.extensions.footnotes
+  - markdown.extensions.admonition
+  - markdown.extensions.toc:
+      permalink: True
+  - markdown.extensions.tables
+  - pymdownx.details
+  - pymdownx.snippets:
+      base_path: 'snippets/'
+      encoding: 'utf-8'
+      check_paths: false
+  - fontawesome_markdown
+extra_javascript:
+  - js/main.js
+extra_css:
+  - css/fonts.css
+  - css/style.css
+nav:
+- 'Home': 'index.md'
+- 'Project':
+  - 'Introduction': 'project/introduction.md'
+  - 'Exchanges': 'project/exchanges.md'
+  - "Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-whitepaper.pdf'
+  - 'Roadmap': 'project/roadmap.md'
+  - 'Governance': 'governance/introduction.md'
+  - 'Contributors': 'project/contributors.md'
+  - 'Social': 'project/social.md'
+  # - 'Financials': 'project/financials.md'
+  # - 'FAQ': 'project/faq.md'
+- 'Blockchain':
+  - 'Introduction': 'blockchain/introduction.md'
+#   - 'Tokenomics': 'blockchain/tokenomics.md'
+  - 'Exchanges': 'project/exchanges.md'
+  - 'Explorers': 'blockchain/explorers.md'
+- 'Protocol':
+  - 'XBridge':
+#     - 'Introduction': 'protocol/xbridge/introduction.md'
+    - 'Fees': 'protocol/xbridge/fees.md'
+#     - 'Design': 'protocol/xbridge/design.md'
+#     - 'Compatibility': 'protocol/xbridge/compatibility.md'
+#     - 'Standards': 'protocol/xbridge/standards.md'
+#     - 'Use Cases': 'protocol/xbridge/use-cases.md'
+    - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/#xbridge-api'
+  - 'XRouter':
+#     - 'Introduction': 'protocol/xrouter/introduction.md'
+#     - 'Fees': 'protocol/xrouter/fees.md'
+#     - 'Design': 'protocol/xrouter/design.md'
+#     - 'Compatibility': 'protocol/xrouter/compatibility.md'
+#     - 'Standards': 'protocol/xrouter/standards.md'
+#     - 'Use Cases': 'protocol/xrouter/use-cases.md'
+    - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/#xrouter-api'
+  # - 'XCloud':
+#     - 'Introduction': 'protocol/xcloud/introduction.md'
+#     - 'Fees': 'protocol/xcloud/fees.md'
+#     - 'Design': 'protocol/xcloud/design.md'
+#     - 'Compatibility': 'protocol/xcloud/compatibility.md'
+#     - 'Use Cases': 'protocol/xcloud/use-cases.md'
+#     - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/#xcloud-api'
+  # - "Use Cases <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-business-use-cases.pdf'
+  - 'API Docs': 'https://api.blocknet.co/'
+- 'Wallet':
+#   - 'Getting Started': 
+#     - 'Installation': 'wallet/installation.md'
+#     - 'Updating': 'wallet/updating.md'
+#     - 'Setup': 'wallet/setup.md'
+#     - 'Syncing': 'wallet/syncing.md'
+#     - 'Encrypt Wallet': 'wallet/encrypting.md'
+#   - 'Staking': 'wallet/staking.md'
+#   - 'Peers': 'wallet/peers.md'
+#   - 'Lock/Unlock': 'wallet/lock-unlock.md'
+#   - 'Balances': 'wallet/balances.md'
+#   - 'Addresses': 'wallet/addresses.md'
+#   - 'Send Funds': 'wallet/send-funds.md'
+#   - 'Receive Funds': 'wallet/addresses/#receiving-addresses'
+#   - 'Coin Control': 'wallet/coin-control.md'
+#   - 'Transactions': 'wallet/transaction-details.md'
+#   - 'Debug Console': 'wallet/debug-console.md'
+#   - 'Backup/Restore': 'wallet/backup-restore.md'
+#   - 'Troubleshooting': 'wallet/troubleshooting.md'
+#   - 'Security': 'wallet/security.md'
+  - 'Integration': 'wallet/integration.md'
+- 'Block DX':
+  # - 'Getting Started':
+    # - 'Installation': 'blockdx/installation.md'
+#     - 'Updating': 'blockdx/updating.md'
+#     - 'Setup': 'blockdx/setup.md'
+#     - 'Additional Setup':
+#       - 'Create Legacy Address': 'blockdx/setup/create-legacy-address.md'
+#       - 'Check Address Balance': 'wallet/address-balances.md'
+#       - 'View Inputs': 'blockdx/setup/view-inputs.md'
+#       - 'Create Inputs': 'wallet/create-inputs.md'
+#   - 'Trading':
+#     - 'Select Market': 'blockdx/select-market.md'
+#     - 'Create Order': 'blockdx/create-order.md'
+#     - 'Take Order': 'blockdx/take-order.md'
+#     - 'Order Status': 'blockdx/order-status.md'
+#   - 'Listings': 'blockdx/listings.md'
+  - 'Fees': 'blockdx/fees.md'
+#   - 'Settings': 'blockdx/settings.md'
+  - 'FAQ': 'blockdx/faq.md'
+#   - 'Troubleshooting': 'blockdx/troubleshooting.md'
+# - 'Service Nodes':
+#   - 'Overview': 'service-nodes/overview.md'
+#   - 'Setup': 'service-nodes/setup.md'
+#   - 'Config Manager': 'service-nodes/config-manager.md'
+- 'Governance':
+  - 'Introduction': 'governance/introduction.md'
+  - 'Governance Model': 'governance/governance-model.md'
+#   - 'Blocknet Improvement Process (BIP)': 'governance/blocknet-improvement-process-bip.md'
+  - 'View Proposals': 'governance/view-proposals.md'
+#   - 'Create Proposal': 'governance/create-proposal.md'
+  - 'Proposal Voting': 'governance/proposal-voting.md'
+- 'Resources':
+  - 'Interviews': 'resources/interviews.md'
+#   - 'Tools': 'resources/tools.md'
+  - "Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://blocknet.co/brand-resources/'
+    # - "Graphics Library <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://drive.google.com/drive/folders/13Mke43Y0Lrc2SBTbSTOV71U4Jgjj9V75'
+  - "Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/social-media-guidelines.pdf'
+  # - 'Definitions': 'resources/definitions.md'
+- 'Developers':
+  - "API <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co'
+#   - 'Blockchain Integration': 'developers/blockchain-integration.md'
+#   - 'Service Integration': 'developers/service-integration.md'
+#   - 'Project Ideas': 'developers/project-ideas.md'
+#   - 'Repositories': 'developers/repositories.md'
+#   - 'Tools': 'developers/tools.md'
+#   - 'Contributing': 'contributing/developers.md'
+# - 'Support': 'support.md'
+# - 'Contributing':
+#   - 'Developers': 'contributing/developers.md'
+#   - 'Community': 'contributing/community.md'
+# - 'Directory': 'directory.md'
+- 'About':
+  - 'License': 'about/license.md'
+copyright: If you wish to improve this site, please <a href="https://github.com/BlocknetDX/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/BlocknetDX/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
+# copyright: If you wish to improve this site, please <a href="https://github.com/BlocknetDX/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/BlocknetDX/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>For collaboration, <a href="mailto:contact@blocknet.co">send us an email</a>.<br>Blocknet Protocol 2014.

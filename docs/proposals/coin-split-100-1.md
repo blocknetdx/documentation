@@ -1,5 +1,5 @@
-meta_title: 
-meta_description:
+title: 
+description:
 
 
 # Coin Split 1:100 

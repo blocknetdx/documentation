@@ -1,5 +1,5 @@
-meta_title: 
-meta_description:
+title: 
+description:
 
 # Introduction
 --8<-- "what-is-blocknet.md"

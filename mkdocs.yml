@@ -8,7 +8,7 @@ google_analytics:
 theme: 
   name: 'material'
   custom_dir: 'theme/'
-  favicon: 'img/favicon.png'
+  favicon: 'img/favicon.ico'
   logo: 'img/blocknet-logo-128.svg'
   font: false
 extra:
@@ -60,6 +60,7 @@ markdown_extensions:
       encoding: 'utf-8'
       check_paths: false
   - fontawesome_markdown
+  - meta
 extra_javascript:
   - js/main.js
 extra_css:

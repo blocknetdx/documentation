@@ -1,5 +1,5 @@
-meta_title: 
-meta_description:
+title: 
+description:
 
 # Introduction
 Blocknet is a self-funded and community-governed project. Decentralization defines the template for group decision-making and is self-managed through a 2-part governing system consisting of Service Nodes and Superblocks. There is also additional funding aside from the Superblock, which is explained under [Community Funds](#community-funds).

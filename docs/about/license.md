@@ -1,4 +1,5 @@
-meta_description: BlocknetDX/documentation is licensed under the [copyfree](http://copyfree.org) ISC License.
+title:
+description: BlocknetDX/documentation is licensed under the [copyfree](http://copyfree.org) ISC License.
 
 # License 
 

@@ -1,5 +1,5 @@
-meta_title: 
-meta_description:
+title: 
+description:
 
 # View Proposals
 The ability to view proposals is important for the governance model to work properly, enabling informed discussions and [voting](/governance/proposal-voting).

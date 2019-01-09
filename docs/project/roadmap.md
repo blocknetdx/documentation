@@ -23,14 +23,14 @@ Looking forward Blocknet will have a very successful future as these product tra
 
 ## Upcoming Changes via Proposals
 
-???+ success "Coin Split 100:1"
-    **Status**: Passed. Awaiting a future hard fork for implementation and activation.
+???+ success "Project Funding"
+    **Status**: Passed. Burn Funds have been moved to the Community Fund addresses. Awaiting a future soft fork for the activation of the Superblock increase.
 
-    **Proposal**: [View Proposal](/proposals/coin-split-100-1)
+    **Proposal**: [View Proposal](/proposals/project-funding)
 
-    **Superblock**: 561600
+    **Superblock**: 734400
 
-    **Results**: 435 Service Nodes, 182 Yes, 35 No
+    **Results**: 493 Service Nodes, 218 Yes, 1 No
 
 
 ???+ success "Single Tier Block Reward"
@@ -41,6 +41,16 @@ Looking forward Blocknet will have a very successful future as these product tra
     **Superblock**: 604800
 
     **Results**: 442 Service Nodes, 122 Yes, 39 No
+
+
+???+ success "Coin Split 100:1"
+    **Status**: Passed. Awaiting a future hard fork for implementation and activation.
+
+    **Proposal**: [View Proposal](/proposals/coin-split-100-1)
+
+    **Superblock**: 561600
+
+    **Results**: 435 Service Nodes, 182 Yes, 35 No
 
 
 

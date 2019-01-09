@@ -170,12 +170,13 @@ Blocknet is an open-source project and consists of contributors around the world
 </div>
 
 <div class="contributor">
-	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">@lautrer</div>
+	<div class="img-round"><img src="/img/contributors/torben-berger.jpg"></div>
+	<div class="name">Torben Berger&nbsp;&nbsp;
+		<a href="https://www.linkedin.com/in/torben-berger-8a01a0156/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
+	</div>
 	<div class="title"><a href="http://theblocknet.de/" target="_blank">theblocknet.de</a></div>
 	<div class="platform">Discord <span class="handle">@lautrer</span></div>
 </div>
-
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@mushoz</div>

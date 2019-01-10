@@ -75,8 +75,8 @@ The standard RPC command list is the same as [Bitcoin 0.8](https://en.bitcoin.it
 ## Other
 If using an address validator, the Blocknet addresses are standard Base58 with:
 
-* `PUBKEY_ADDRESS` = 26;
-* `SCRIPT_ADDRESS` = 28;
+* `PUBKEY_ADDRESS` = 26
+* `SCRIPT_ADDRESS` = 28
 
 
 

@@ -130,12 +130,6 @@ details .md-typeset__table code{
     font-size: 0.95em;
     color: #333;
 }
-.md-typeset table:not([class]) td:not([align]) {
-    text-align: center;
-}
-.md-typeset table:not([class]) td:not([align]):first-child {
-    text-align: left;
-}
 
 
 .md-nav__item .fa-external-link {
@@ -215,12 +209,12 @@ details .md-typeset__table code{
     color: #333;
 }
 
-#contributor-group {
+#bn-contributor-group {
     text-align: center;
     padding: 5px;
     margin-top: 45px;
 }
-.contributor {
+#bn-contributor-group .contributor {
     display: inline-block;
     padding-bottom: 45px;
     text-align: center;
@@ -228,7 +222,7 @@ details .md-typeset__table code{
     /*height: 250px;*/
     vertical-align: top;
 }
-.contributor .img-round {
+#bn-contributor-group .contributor .img-round {
     display: inline-block;
     /*margin-bottom: -9px;*/
     border-radius: 50%;
@@ -236,53 +230,53 @@ details .md-typeset__table code{
     width: 110px;
     height: 110px;
 }
-.contributor img {
+#bn-contributor-group .contributor img {
     height: 100%;
     width: auto;
 }
-.contributor .fa-user {
+#bn-contributor-group .contributor .fa-user {
     font-size: 8em !important;
     color: #051937;
 }
-.contributor .fa-user-circle {
+#bn-contributor-group .contributor .fa-user-circle {
     font-size: 6.9em !important;
     color: #051937;
     margin-bottom: 7px;
 }
-.contributor .name {
+#bn-contributor-group .contributor .name {
     font-weight: bold;
 }
-.contributor .title {
+#bn-contributor-group .contributor .title {
     font-style: italic;
     margin-top: -3px;
     line-height: 1.5rem;
     height: 28px;
 }
-.contributor .platform {
+#bn-contributor-group .contributor .platform {
     /*margin-top: 5px;*/
     font-size: 1.5rem;
 }
-.contributor .handle {
+#bn-contributor-group .contributor .handle {
     font-style: italic;
 }
-.contributor .fa-square {
+#bn-contributor-group .contributor .fa-square {
     color: transparent;
 }
 
 
-#social-group {
+#bn-social-group {
     text-align: center;
     padding: 5px;
     margin-top: 45px;
 }
-.social {
+#bn-social-group .social {
     display: inline-block;
     padding-bottom: 45px;
     text-align: center;
     width: 105px;
     vertical-align: top;
 }
-.social .name {
+#bn-social-group .social .name {
     font-weight: bold;
 }
 

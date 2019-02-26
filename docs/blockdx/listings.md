@@ -2,14 +2,21 @@ title:
 description:
 
 
+# Block DX Listings
+[Block DX](/blockdx/setup) has over 100 [digital assets](/resources/glossary/#digital-asset) trading ([see below](/blockdx/listings/#listed-digital-assets)), with the number continuously growing as more are made compatible. There is complete trading pair freedom, totaling to over 5000 tradable pairs.
 
+---
 
+## Listing Process
+A Block DX listing holds many benefits beyond just being traded on the exchange. Being listed means the asset has been integrated with the [Blocknet Protocol](/project/introduction), which powers Block DX, and allows other services to be built utilizing the asset. This extends the demand, utility, and accessibility of the asset to the rest of the ecosystem.
 
+Getting listed on Block DX is 100% free. If you would like to have a digital asset listed, please ask a member of that project to fill out the [integration form](https://bit.ly/blocknet-compatibility).
 
+---
 
+## Listed Digital Assets
 
-
-
+--8<-- "compatible.md"
 
 
 

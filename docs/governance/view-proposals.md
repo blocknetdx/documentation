@@ -1,10 +1,11 @@
 title: 
 description:
 
+
 # View Proposals
 The ability to view proposals is important for the governance model to work properly, enabling informed discussions and [voting](/governance/proposal-voting).
 
-??? info "Note: An active Service Node is required in order to vote"
+??? info "Note: An active Service Node is required in order to vote."
 	**An active Service Node (required 5000 [BLOCK](/blockchain/introduction)) is required in order to vote.** The process of voting can take place from within the Service Node wallet or the collateral wallet. After voting, the Service Node must remain active until the Superblock passes. If the Service Node goes offline then you will need to recast your votes when it's active again. Voting closes 2880 blocks prior to the Superblock.
 
 	Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives.
@@ -12,28 +13,16 @@ The ability to view proposals is important for the governance model to work prop
 ---
 
 ## Viewing from the Qt Wallet
-There are two Qt wallets, with the Redesign being geared towards being more user friendly. Below is a comparison between the Classic and Redesign Qt wallets.
-
-| Qt Version 			| Redesign (GUI)	| Redesign (console)| Classic (console)
-------------------------|-------------------|-------------------|------------------|
-Doesn't require console |<i class="fa fa-check"></i>|<i class="fa fa-times"></i>|<i class="fa fa-times"></i>
-Lists proposals 		|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Shows descriptions		|(has link)|(has link)|(has link)
-Shows vote counts		|<i class="fa fa-times"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Shows pass/fail status	|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>|<i class="fa fa-times"></i>
-Shows amounts requested |<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Shows deposit addresses |<i class="fa fa-times"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Shows past proposals 	|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Easy to navigate 		|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>|<i class="fa fa-times"></i>
+--8<-- "wallet-comparison.md"
 
 
 ??? example "View using the redesigned wallet"
 	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
 
-	1. Open the wallet and in the side menu, go to *Tools* > *Proposals*. The wallet does not need to be unlocked.
+	1. Open the [wallet](/wallet/setup) and in the side menu, go to *Tools* > *Proposals*. The wallet does not need to be unlocked.
 	1. The Proposals screen shows all the proposals submitted to the network. Above the list of proposals there is an option to filter by *Upcoming*, which displays the proposals that can currently be voted on. Select this filter to view all proposals currently open for voting.
 
-		![Filter Proposals](/img/wallet-redesign/filter-proposals.png)
+		![Filter Proposals](/img/wallet-redesign/proposals-filter.png)
 
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-qt-wallet).
 
@@ -115,7 +104,7 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 	1. Start the wallet. If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `C:\Users\[YourUsername]\Downloads\blocknet\bin\`)
 
-			??? tip "Tip: This requires the *blocknetdx-[version]-win64.zip* download version"
+			??? tip "Tip: This requires the *blocknetdx-[version]-win64.zip* download version."
 				To interact with the wallet via the command line, the `blocknetdx-[version]-win64.zip` wallet version is needed.
 
 		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknetdx.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\BlocknetDX` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Roaming\BlocknetDX\` into the file explorer path field.

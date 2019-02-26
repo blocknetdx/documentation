@@ -12,8 +12,8 @@ description:
 	Yes, at this point in time the setup process needs to be repeated to add additional wallets. However, the blockchains previously selected will be remembered at the initial selection screen when repeating the setup process. The option to go through the setup process again can be found in the sidebar menu under the ‘Settings’ section.
 
 
-??? question "When I try to make an order, it says “There is a problem with your order.” What does that mean?""
-	This error can be caused by a number of items. The most common reasons are that you are trying to take your own order, your wallets are locked, there are insufficient funds in the addresses you’re trading with, or those addresses have too little inputs. Insufficient funds can be caused by funds being immature due to staking at the same time or too many inputs being locked up in other orders. Error messaging will be improved in future versions to provide clearer messaging.
+<!-- ??? question "When I try to make an order, it says “There is a problem with your order.” What does that mean?""
+	This error can be caused by a number of items. The most common reasons are that you are trying to take your own order, your wallets are locked, there are insufficient funds in the addresses you’re trading with, or those addresses have too little inputs. Insufficient funds can be caused by funds being immature due to staking at the same time or too many inputs being locked up in other orders. Error messaging will be improved in future versions to provide clearer messaging. -->
 
 
 ??? question "I am trading with BLOCK/LTC. If I make an order with BUY, does that mean I want to buy BLOCK (and sell LTC)? If I select “SELL,” that means I am selling BLOCK and will receive LTC?""

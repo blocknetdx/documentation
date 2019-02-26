@@ -51,16 +51,16 @@ markdown_extensions:
   - codehilite
   - markdown.extensions.footnotes
   - markdown.extensions.admonition
+  - pymdownx.details
+  - pymdownx.extra
+  - fontawesome_markdown
+  - meta
   - markdown.extensions.toc:
       permalink: True
-  - markdown.extensions.tables
-  - pymdownx.details
   - pymdownx.snippets:
       base_path: 'snippets/'
       encoding: 'utf-8'
       check_paths: false
-  - fontawesome_markdown
-  - meta
 extra_javascript:
   - js/main.js
 extra_css:
@@ -88,7 +88,7 @@ nav:
 #     - 'Introduction': 'protocol/xbridge/introduction.md'
     - 'Fees': 'protocol/xbridge/fees.md'
 #     - 'Design': 'protocol/xbridge/design.md'
-#     - 'Compatibility': 'protocol/xbridge/compatibility.md'
+    - 'Compatibility': 'protocol/xbridge/compatibility.md'
 #     - 'Standards': 'protocol/xbridge/standards.md'
 #     - 'Use Cases': 'protocol/xbridge/use-cases.md'
     - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/#xbridge-api'
@@ -110,46 +110,42 @@ nav:
   # - "Use Cases <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-business-use-cases.pdf'
   - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/'
 - 'Wallet':
-#   - 'Getting Started': 
-#     - 'Installation': 'wallet/installation.md'
-#     - 'Updating': 'wallet/updating.md'
-#     - 'Setup': 'wallet/setup.md'
-#     - 'Syncing': 'wallet/syncing.md'
-#     - 'Encrypt Wallet': 'wallet/encrypting.md'
-#   - 'Staking': 'wallet/staking.md'
-#   - 'Peers': 'wallet/peers.md'
-#   - 'Lock/Unlock': 'wallet/lock-unlock.md'
-#   - 'Balances': 'wallet/balances.md'
-#   - 'Addresses': 'wallet/addresses.md'
-#   - 'Send Funds': 'wallet/send-funds.md'
-#   - 'Receive Funds': 'wallet/addresses/#receiving-addresses'
-#   - 'Coin Control': 'wallet/coin-control.md'
-#   - 'Transactions': 'wallet/transaction-details.md'
-#   - 'Debug Console': 'wallet/debug-console.md'
-#   - 'Backup/Restore': 'wallet/backup-restore.md'
-#   - 'Troubleshooting': 'wallet/troubleshooting.md'
-#   - 'Security': 'wallet/security.md'
+  - 'Getting Started': 'wallet/setup.md'
+  - 'Installation': 'wallet/installation.md'
+  # - 'Updating': 'wallet/updating.md'
+  - 'Syncing': 'wallet/syncing.md'
+  - 'Encrypt Wallet': 'wallet/encrypting.md'
+  - 'Staking': 'wallet/staking.md'
+  # - 'Peers': 'wallet/peers.md'
+  - 'Lock/Unlock': 'wallet/lock-unlock.md'
+  # - 'Balances': 'wallet/balances.md'
+  # - 'Addresses': 'wallet/addresses.md'
+  # - 'Send Funds': 'wallet/send-funds.md'
+  # - 'Receive Funds': 'wallet/addresses/#receiving-addresses'
+  # - 'Coin Control': 'wallet/coin-control.md'
+  # - 'Transactions': 'wallet/transaction-details.md'
+  # - 'Debug Console': 'wallet/debug-console.md'
+  # - 'Backup/Restore': 'wallet/backup-restore.md'
+  # - 'Troubleshooting': 'wallet/troubleshooting.md'
+  # - 'Security': 'wallet/security.md'
   - 'Integration': 'wallet/integration.md'
 - 'Block DX':
-  # - 'Getting Started':
-    # - 'Installation': 'blockdx/installation.md'
-#     - 'Updating': 'blockdx/updating.md'
-#     - 'Setup': 'blockdx/setup.md'
-#     - 'Additional Setup':
-#       - 'Create Legacy Address': 'blockdx/setup/create-legacy-address.md'
-#       - 'Check Address Balance': 'wallet/address-balances.md'
-#       - 'View Inputs': 'blockdx/setup/view-inputs.md'
-#       - 'Create Inputs': 'wallet/create-inputs.md'
-#   - 'Trading':
-#     - 'Select Market': 'blockdx/select-market.md'
-#     - 'Create Order': 'blockdx/create-order.md'
-#     - 'Take Order': 'blockdx/take-order.md'
-#     - 'Order Status': 'blockdx/order-status.md'
-#   - 'Listings': 'blockdx/listings.md'
+  - 'Introduction': 'blockdx/introduction.md'
+  - 'Getting Started': 'blockdx/setup.md'
+  - 'Installation': 'blockdx/installation.md'
+  - 'Configuration': 'blockdx/configuration.md'
+  # - 'Updating': 'blockdx/updating.md'
+  # - 'Additional Setup':
+  #   - 'Create Legacy Address': 'blockdx/setup/create-legacy-address.md'
+  #   - 'Check Address Balance': 'wallet/address-balances.md'
+  #   - 'View Inputs': 'blockdx/setup/view-inputs.md'
+  #   - 'Create Inputs': 'wallet/create-inputs.md'
+  - 'Trading': 'blockdx/trading.md'
+  - 'Listings': 'blockdx/listings.md'
   - 'Fees': 'blockdx/fees.md'
-#   - 'Settings': 'blockdx/settings.md'
+  # - 'Settings': 'blockdx/settings.md'
   - 'FAQ': 'blockdx/faq.md'
-#   - 'Troubleshooting': 'blockdx/troubleshooting.md'
+  # - 'Troubleshooting': 'blockdx/troubleshooting.md'
 # - 'Service Nodes':
 #   - 'Overview': 'service-nodes/overview.md'
 #   - 'Setup': 'service-nodes/setup.md'
@@ -163,25 +159,25 @@ nav:
   - 'Proposal Voting': 'governance/proposal-voting.md'
 - 'Resources':
   - 'Interviews': 'resources/interviews.md'
-#   - 'Tools': 'resources/tools.md'
   - "Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://blocknet.co/brand-resources/'
     # - "Graphics Library <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://drive.google.com/drive/folders/13Mke43Y0Lrc2SBTbSTOV71U4Jgjj9V75'
   - "Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/social-media-guidelines.pdf'
   # - 'Definitions': 'resources/definitions.md'
+# - 'Tools': 'tools.md'
 - 'Developers':
   - "API <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co'
 #   - 'Blockchain Integration': 'developers/blockchain-integration.md'
 #   - 'Service Integration': 'developers/service-integration.md'
 #   - 'Project Ideas': 'developers/project-ideas.md'
 #   - 'Repositories': 'developers/repositories.md'
-#   - 'Tools': 'developers/tools.md'
+#   - 'Tools': 'tools.md'
 #   - 'Contributing': 'contributing/developers.md'
 # - 'Support': 'support.md'
 # - 'Contributing':
 #   - 'Developers': 'contributing/developers.md'
 #   - 'Community': 'contributing/community.md'
-# - 'Directory': 'directory.md'
 - 'About':
   - 'License': 'about/license.md'
+- 'Glossary': 'resources/glossary.md'
 copyright: If you wish to improve this site, please <a href="https://github.com/BlocknetDX/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/BlocknetDX/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
 # copyright: If you wish to improve this site, please <a href="https://github.com/BlocknetDX/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/BlocknetDX/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>For collaboration, <a href="mailto:contact@blocknet.co">send us an email</a>.<br>Blocknet Protocol 2014.

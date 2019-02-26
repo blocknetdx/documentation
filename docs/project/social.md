@@ -6,7 +6,7 @@ description:
 ---
 
 
-<div id="social-group">
+<div id="bn-social-group">
 
 <div class="social">
 	<a href="http://eepurl.com/c5OJMj" target="_blank"><i class="fa fa-user-plus block-green fa-5x" aria-hidden="true"></i></a>

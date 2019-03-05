@@ -9,7 +9,7 @@ Blocknet is an open-source project and consists of contributors around the world
 
 
 
-<div id="contributor-group">
+<div id="bn-contributor-group">
 
 <!-- contributor template -->
 <!--

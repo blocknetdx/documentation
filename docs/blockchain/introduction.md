@@ -98,8 +98,6 @@ Circulation Lockup 		| Average lockup is ~45% due to Service Node collateral <br
 	});
 </script>
 
-
-
 ---
 
 ## Scaling

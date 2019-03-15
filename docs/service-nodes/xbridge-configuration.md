@@ -3,7 +3,12 @@ description:
 
 
 
-
+- link to setup + rewards
+- startup sequence
+- restarting
+- checking status
+- updating
+- 
 
 
 

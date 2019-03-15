@@ -10,47 +10,46 @@ description:
 ## Centralized Exchanges
 Centralized exchanges are one of the most popular ways to trade cryptocurrency. Some serve different markets, some are in direct competition, some have cheaper fees, and some are subject to more or less strict regulatory requirements. They are operated by a single company, which may be obliged by the laws of the jurisdiction in which it operates to collect data on its customers.The following options are available:
 
-* __Bittrex__
-	* [(BTC/BLOCK)](https://bittrex.com/Market/Index?MarketName=BTC-BLOCK)
-* __UPbit__
-	* [(BTC/BLOCK)](https://upbit.com/exchange?code=CRIX.UPBIT.BTC-BLOCK)
-* __Cryptopia__
-	* [(BTC/BLOCK)](https://www.cryptopia.co.nz/Exchange/?market=BLOCK_BTC)
-	* [(DOGE/BLOCK)](https://www.cryptopia.co.nz/Exchange/?market=BLOCK_DOGE)
-* __Nova Exchange__
-	* [(BTC/BLOCK)](https://novaexchange.com/market/BTC_BLOCK/)
-* __BlockBid__
-	* (BTC/BLOCK) - Coming
+Exchange 		| Market 		| Link
+----------------|---------------|------
+Bittrex	 		| (BTC/BLOCK) 	| [Buy Now](https://bittrex.com/Market/Index?MarketName=BTC-BLOCK)
+UPbit	 		| (BTC/BLOCK) 	| [Buy Now](https://upbit.com/exchange?code=CRIX.UPBIT.BTC-BLOCK)
+Cryptofacil	 	| (BTC/BLOCK) 	| [Buy Now](https://cryptofacil.com/trading-view/61/BTC-BLOCK)
+FEX Pro	 		| (BTC/BLOCK) 	| [Buy Now](https://fexpro.net/#/exchange?type=)
+Cryptopia	 	| (BTC/BLOCK) 	| [Buy Now](https://www.cryptopia.co.nz/Exchange/?market=BLOCK_BTC)
+Cryptopia	 	| (DOGE/BLOCK) 	| [Buy Now](https://www.cryptopia.co.nz/Exchange/?market=BLOCK_DOGE)
+Nova Exchange 	| (BTC/BLOCK) 	| [Buy Now](https://novaexchange.com/market/BTC_BLOCK/)
+BlockBid	 	| (BTC/BLOCK)	| Coming
 
 ---
 
 ## Hybrid Exchanges
-Hybrid exchanges are decentralized, but also still have some varying centralized components to them. The following options are available:
+Hybrid exchanges are decentralized, but also still have some varying degree of centralized components to them. The following options are available:
 
-* __CryptoBridge__
-	* [(BTC/BLOCK)](https://wallet.crypto-bridge.org/market/BRIDGE.BLOCK_BRIDGE.BTC)
+Exchange 		| Market 		| Link
+----------------|---------------|------
+CryptoBridge	| (BTC/BLOCK) 	| [Buy Now](https://wallet.crypto-bridge.org/market/BRIDGE.BLOCK_BRIDGE.BTC)
 
 ---
 
 ## Decentralized Exchanges
-Decentralized exchanges are purely peer-to-peer instead of requiring a trusted entity to manage the transaction. The following options are available:
+Decentralized exchanges are purely peer-to-peer instead of requiring a trusted entity to manage the transaction. This is the most secure form of trading. The following options are available:
 
-* [__Block DX__](/blockdx/installation)
-	* [View Open Orders](https://blockdx.co/index)
+* [__Block DX__](/blockdx/setup)
+	* [View Open Orders](https://blockdx.co/orders)
 	* [View Trade History](https://blockdx.co/trade-history)
 	* [View Exchange Volume](https://blockdx.co/charts)
-* __BarterDEX__
+* __BarterDEX__ (decentralized option not currently functional)
 
 ---
 
 ## Instant Exchanges
 Instant exchanges perform a similar function to normal exchanges, but without the requirement to log in. They effectively convert one currency to another, with some limits on the amount to be exchanged and usually at a less advantageous rate. Others may even offer to sell cryptocurrency as a credit card purchase. The following options are available:
 
-* [CoinSwitch](https://coinswitch.co/)
-* [xChange](https://xchange.me/)
-
-
-
+Exchange 		| Market 		| Link
+----------------|---------------|------
+CoinSwitch	 	| (BTC/BLOCK) 	| [Buy Now](https://coinswitch.co/)
+xChange	 		| (BTC/BLOCK) 	| [Buy Now](https://xchange.me/)
 
 
 

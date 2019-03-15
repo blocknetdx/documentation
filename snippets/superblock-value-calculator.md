@@ -1,14 +1,14 @@
 <form>
-	BLOCK dollar value: $<input id="sb_input" type="number" onkeyup="sb_calculate()" placeholder="Enter value"/>
+	BLOCK dollar value: $<input id="bn_sb_input" type="number" onkeyup="sb_calculate()" placeholder="Enter value"/>
 	<br><br>
-	Superblock value: <strong>$<span id="sb_output">0</span></strong>
+	Superblock value: <strong>$<span id="bn_sb_output">0</span></strong>
 </form>
 <script type="text/javascript">
 	function sb_calculate() {
-		var price = document.getElementById("sb_input").value;
+		var price = document.getElementById("bn_sb_input").value;
 		var amount = 40000;
 		var value = Number(price)*amount;
-		document.getElementById("sb_output").innerHTML = sb_numberPretty(value);
+		document.getElementById("bn_sb_output").innerHTML = sb_numberPretty(value);
 	}
 	function sb_numberPretty(num) {
 		var number = num.toString().split('.');
@@ -29,7 +29,7 @@
 		sb_ajax(url, true).then(function(data) {
 			if (data["tickers"][0]["converted_last"]["usd"]) {
 				var price = data["tickers"][0]["converted_last"]["usd"];
-				document.getElementById("sb_input").value = Math.round(price*100)/100;
+				document.getElementById("bn_sb_input").value = Math.round(price*100)/100;
 				sb_calculate();
 			}
 		});

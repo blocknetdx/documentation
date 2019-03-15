@@ -3,7 +3,7 @@ description:
 
 # Introduction
 
-BLOCK is the utility token that powers the Blocknet. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to Service Nodes for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK, but those fees are burned. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
+BLOCK is the utility token that powers the Blocknet Protocol. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to Service Nodes for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK, but those fees are burned. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
 
 ---
 

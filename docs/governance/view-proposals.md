@@ -6,7 +6,7 @@ description:
 The ability to view proposals is important for the governance model to work properly, enabling informed discussions and [voting](/governance/proposal-voting).
 
 ??? info "Note: An active Service Node is required in order to vote."
-	**An active Service Node (required 5000 [BLOCK](/blockchain/introduction)) is required in order to vote.** The process of voting can take place from within the Service Node wallet or the collateral wallet. After voting, the Service Node must remain active until the Superblock passes. If the Service Node goes offline then you will need to recast your votes when it's active again. Voting closes 2880 blocks prior to the Superblock.
+	**An active [Service Node](/service-nodes/introduction) (required 5000 [BLOCK](/blockchain/introduction)) is required in order to vote.** The process of voting can take place from within the Service Node wallet or the collateral wallet. After voting, the Service Node must remain active until the [Superblock](/governance/introduction/#superblock) passes. If the Service Node goes offline then you will need to recast your votes when it's active again. Voting closes 2880 blocks prior to the Superblock.
 
 	Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives.
 

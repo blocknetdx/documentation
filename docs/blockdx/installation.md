@@ -8,6 +8,8 @@ Installing the Block DX is a simple process. Below are step-by-step instructions
 
 ## Install Block DX
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ??? example "Windows"
 	1. Download the [latest Block DX release](https://github.com/BlocknetDX/block-dx/releases/). There are 3 options:
 		1. `BLOCK-DX-x.x.x-win.exe` (recommended)

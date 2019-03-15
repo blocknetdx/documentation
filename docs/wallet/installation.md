@@ -4,7 +4,7 @@ description:
 # Wallet Installation
 Installing the [Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases) is a simple process. Below are step-by-step instructions for how to install the wallet on each operating system (OS). If you already have the Blocknet wallet installed and are updating, see the updating guide. 
 
-* For a complete guide on setting up the wallet, see the [setup guide](/wallet/installation).
+* For a complete guide on setting up the wallet, see the [setup guide](/wallet/setup).
 
 !!! bug "Bug: MacOS"
 	The `.dmg` download is unavailable for the 3.12.1 release due to issues with that build. Use the `osx-unsigned.tar.gz` download instead (see guide below).
@@ -41,7 +41,7 @@ Installing the [Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases
 
 				Select *More info*, then *Run anyway* to dismiss this message:
 
-				![SmartScreen Dismiss](/img/wallet/win-protect-dismiss.jpg)
+				![SmartScreen Dismiss](/img/wallet/win-protected-dismiss.jpg)
 
 		1. The installation guide will appear, select *Next*.
 

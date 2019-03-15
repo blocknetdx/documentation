@@ -3,7 +3,7 @@
 .md-footer-nav,
 .md-footer-meta {
     background-color: #051937
-}
+}s
 
 /* Highlight current page in nav menu */
 .md-nav__link--active {
@@ -119,7 +119,39 @@ details .md-typeset__table code{
     background-color: #EDEFF1;
 }
 
-#sb_input {
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+}
+small {
+    font-weight: normal;
+    font-size: 93%;
+}
+.diagram-group {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+.diagram-group strong {
+    display: block;
+}
+.diagram-group img {
+  width: 80%;
+  margin-left: 10%;
+  display: block;
+}
+.diagram-group a {
+  font-size: 0.9em;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+#bn_sb_input {
     outline: 0;
     border: 0;
     border-bottom: 1px solid #ccc;

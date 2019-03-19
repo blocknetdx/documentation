@@ -30,7 +30,7 @@ To setup your Service Node, complete the following guides in order:
 
 		![Debug Console](/img/service-nodes/redesign-debug-console.png)
 
-	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress <ADDRESS_ALIAS>` into the debug console with `<ADDRESS_ALIAS>` replaced with the alias you be using for this address. Example:
+	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress <ALIAS>` into the debug console with `<ALIAS>` replaced with the alias you will be using for this address. Example:
 		```
 		getnewaddress snode01
 		```
@@ -53,9 +53,9 @@ To setup your Service Node, complete the following guides in order:
 		![Key](/img/service-nodes/redesign-genkey-response.png)
 
 	1. Copy the responses from the 2 commands for use in a later step.
-	1. Retrieve your private key for the nely created address. Type `dumpprivkey <ADDRESS>` using the new address and press the *Enter* or *Return* key. Example:
+	1. Retrieve your private key for the newly created address. Type `dumpprivkey <ADDRESS>` using the new address and press the *Enter* or *Return* key. Example:
 		```
-		dumpprikey BWrNeqmsFCkYkvFHd4Hv8UvuynmtcAiW4g
+		dumpprivkey BWrNeqmsFCkYkvFHd4Hv8UvuynmtcAiW4g
 		```
 
 		--8<-- "privkey-warning.md"
@@ -82,7 +82,7 @@ To setup your Service Node, complete the following guides in order:
 	1. Review the transaction details and confirm the payment.
 		1. Ensure the amount is 5000 BLOCK and it lists your Service Node address.
 		1. The total at the bottom should be the 5000 BLOCK + Transaction Fee. 
-	1. Select *Transaction History* from the left menu. You should see the 5000 BLOCK transaction that was sent. Hover your mouse over the checkmark to view the number of confirmations. **DO NOT** proceed to the next step until you see at least 15 confirmations.
+	1. Select *Transaction History* from the left menu. You should see the 5000 BLOCK transaction that was sent. Hover your mouse over the row and proceed to the next step when you see 1 confirmation.
 
 		![Confirmations](/img/service-nodes/redesign-confirmations.png)
 
@@ -116,9 +116,9 @@ To setup your Service Node, complete the following guides in order:
 
 		![Snode Config](/img/service-nodes/redesign-menu-snode-conf-1.png)
 
-	1. A file will opened with your default text editor. Enter the following with the placeholders replaced with the information from the earlier steps:
+	1. A file will be opened with your default text editor. Enter the following with the placeholders replaced with the information from the earlier steps:
 		```
-		<ADDRESS_ALIAS> <PUBLIC_IP>:41412 <SERVICE_NODE_KEY> <TXHASH> <OUTPUTIDX>
+		<ALIAS> <PUBLIC_IP>:41412 <SERVICE_NODE_KEY> <TXHASH> <OUTPUTIDX>
 		```
 
 		!!! info "Note"
@@ -148,7 +148,7 @@ To setup your Service Node, complete the following guides in order:
 
 		![Debug Console](/img/service-nodes/classic-debug-console.png)
 
-	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress <ADDRESS_ALIAS>` into the debug console with `<ADDRESS_ALIAS>` replaced with the alias you be using for this address. Example:
+	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress <ALIAS>` into the debug console with `<ALIAS>` replaced with the alias you will be using for this address. Example:
 		```
 		getnewaddress snode01
 		```
@@ -171,9 +171,9 @@ To setup your Service Node, complete the following guides in order:
 		![Key](/img/service-nodes/classic-genkey-response.png)
 
 	1. Copy the responses from the 2 commands for use in a later step.
-	1. Retrieve your private key for the nely created address. Type `dumpprivkey <ADDRESS>` using the new address and press the *Enter* or *Return* key. Example:
+	1. Retrieve your private key for the newly created address. Type `dumpprivkey <ADDRESS>` using the new address and press the *Enter* or *Return* key. Example:
 		```
-		dumpprikey Bgcfsgh2FSHPVLB4VgmLYZdsyDR5pb8jKB
+		dumpprivkey Bgcfsgh2FSHPVLB4VgmLYZdsyDR5pb8jKB
 		```
 
 		--8<-- "privkey-warning.md"
@@ -197,7 +197,7 @@ To setup your Service Node, complete the following guides in order:
 
 		![Send Button](/img/service-nodes/classic-send-button.png)
 
-	1. Select the *Transactions* tab. You should see the 5000 BLOCK transaction that was sent. Hover your mouse over the checkmark to view the number of confirmations. **DO NOT** proceed to the next step until you see at least 15 confirmations.
+	1. Select the *Transactions* tab. You should see the 5000 BLOCK transaction that was sent. Hover your mouse over the row and proceed to the next step when you see 1 confirmation.
 
 		![Confirmations](/img/service-nodes/classic-confirmations.png)
 
@@ -216,7 +216,7 @@ To setup your Service Node, complete the following guides in order:
 	    }
 		```
 
-		![Outputs](/img/service-nodes/redesign-outputs-response.jpg)
+		![Outputs](/img/service-nodes/classic-outputs-response.jpg)
 
 	1. **On the SNode Server computer**, [Google *"what's my ip"*](https://www.google.com/search?q=whats+my+ip).
 		1. If you’re using a VPS for the SNode Server computer, retrieve that public IP address.
@@ -231,9 +231,9 @@ To setup your Service Node, complete the following guides in order:
 
 		![Snode Config](/img/service-nodes/classic-menu-snode-conf-1.png)
 
-	1. A file will opened with your default text editor. Enter the following with the placeholders replaced with the information from the earlier steps:
+	1. A file will be opened with your default text editor. Enter the following with the placeholders replaced with the information from the earlier steps:
 		```
-		<ADDRESS_ALIAS> <PUBLIC_IP>:41412 <SERVICE_NODE_KEY> <TXHASH> <OUTPUTIDX>
+		<ALIAS> <PUBLIC_IP>:41412 <SERVICE_NODE_KEY> <TXHASH> <OUTPUTIDX>
 		```
 
 		!!! info "Note"
@@ -258,8 +258,7 @@ To setup your Service Node, complete the following guides in order:
 	![Redesign Wallet](/img/service-nodes/redesign-wallet.png)
 
 	1. [Install the Blocknet wallet](/wallet/installation).
-	1. [Fully sync the wallet](/wallet/syncing).
-	1. [Encrypt the wallet](/wallet/encrypting).
+	1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
 	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknetdx.conf` file.
 
 		??? info "Note: The *blocknetdx.conf* file can be found in the Blocknet data directory."
@@ -267,7 +266,7 @@ To setup your Service Node, complete the following guides in order:
 
 		![Wallet Config](/img/service-nodes/redesign-menu-wallet-conf-1.png)
 
-	1. A file will opened with your default text editor. Enter the following information with the placeholders replaced:
+	1. A file will be opened with your default text editor. Enter the following information with the placeholders replaced:
 		```
 		enableexchange=1
 		servicenode=1
@@ -277,10 +276,11 @@ To setup your Service Node, complete the following guides in order:
 		```
 	1. After the information is replaced it should look similar to the following:
 		```
-		enableexchange=0
+		enableexchange=1
 		servicenode=1
 		servicenodeaddr=138.28.1.27:41412
 		servicenodeprivkey=6B1XGPVzE7MRszNXjXqcYtr5ApcCBkST5Bds43gSHcJd22kuHZe
+		rpcthreads=8
 		```
 	1. Save and close the `blocknetdx.conf` file.
 	1. Shut down the Blocknet wallet.
@@ -289,8 +289,7 @@ To setup your Service Node, complete the following guides in order:
 	![Classic Wallet](/img/service-nodes/classic-wallet.png)
 
 	1. [Install the Blocknet wallet](/wallet/installation).
-	1. [Fully sync the wallet](/wallet/syncing).
-	1. [Encrypt the wallet](/wallet/encrypting).
+	1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
 	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknetdx.conf` file.
 
 		??? info "Note: The *blocknetdx.conf* file can be found in the Blocknet data directory."
@@ -298,7 +297,7 @@ To setup your Service Node, complete the following guides in order:
 
 		![Wallet Config](/img/service-nodes/classic-menu-wallet-conf-1.png)
 
-	1. A file will opened with your default text editor. Enter the following information with the placeholders replaced:
+	1. A file will be opened with your default text editor. Enter the following information with the placeholders replaced:
 		```
 		enableexchange=1
 		servicenode=1
@@ -320,7 +319,7 @@ To setup your Service Node, complete the following guides in order:
 ---
 
 ## Additional Configuration
-With the current configurations the Service Node will only be elligible to earn block rewards. However, you can also setup a Service Node to support on [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, where 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes.
+With the current configurations the Service Node will only be eligible to earn block rewards. However, you can also setup a Service Node to support on [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, where 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes.
 
 Details on this configuration can be [found here](https://github.com/BlocknetDX/blocknet-docs/blob/master/blocknetDXservice-node.md#setup--conf-files-for-the-wallets-on-your-service-node) with an updated version on the way, which can be found here when complete.
 
@@ -331,7 +330,7 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 
 ??? example "Setup using the redesign wallet"
 
-	> **Preperation**
+	> **Preparation**
 
 	1. On the SNode Server computer:
 		1. Start or restart the Blocknet wallet.
@@ -355,12 +354,12 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 		![Service Nodes](/img/service-nodes/redesign-service-nodes-missing.jpg)
 
 	1. Fully unlock the wallet.
-	1. Open the debug console and enter `servicenode start-alias <ADDRESS_ALIAS>`. Example:
+	1. Open the debug console and enter `servicenode start-alias <ALIAS>`. Example:
 		```
 		servicenode start-alias snode01
 		```
 	1. You should receive a `successful` response.
-	1. If starting multiple Service Nodes, repeat these steps.
+	1. If starting multiple Service Nodes, repeat these steps for each Alias.
 	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take a moment to populate.
 
 		![Service Nodes](/img/service-nodes/redesign-service-nodes-enabled.jpg)
@@ -369,13 +368,13 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 
 	> **Check Service Node Active Status**
 
-	1. On the SNoder Server computer, open the debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response.
+	1. On the SNode Server computer, open the debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response.
 
 		![Snode Status](/img/service-nodes/redesign-status-response.png)
 
 ??? example "Setup using the classic wallet"
 
-	> **Preperation**
+	> **Preparation**
 
 	1. On the SNode Server computer:
 		1. Start or restart the Blocknet wallet.
@@ -399,12 +398,12 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 		![Service Nodes](/img/service-nodes/classic-service-nodes-missing.jpg)
 
 	1. Fully unlock the wallet.
-	1. Open the debug console and enter `servicenode start-alias <ADDRESS_ALIAS>`. Example:
+	1. Open the debug console and enter `servicenode start-alias <ALIAS>`. Example:
 		```
 		servicenode start-alias snode01
 		```
 	1. You should receive a `successful` response.
-	1. If starting multiple Service Nodes, repeat these steps.
+	1. If starting multiple Service Nodes, repeat these steps for each Alias.
 	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take a moment to populate.
 
 		![Service Nodes](/img/service-nodes/classic-service-nodes-enabled.jpg)
@@ -413,7 +412,7 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 
 	> **Check Service Node Active Status**
 
-	1. On the SNoder Server computer, open the Debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response.
+	1. On the SNode Server computer, open the Debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response.
 
 		![Snode Status](/img/service-nodes/classic-status-response-1.png)
 
@@ -423,7 +422,7 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 
 ## Troubleshooting
 * Ensure you have the latest wallet and that it's fully synced and unlocked.
-* Ensure the 5000 BLOCK is *__exactly__* 5000 BLOCK, no more or no less, and ensure the transaction has at least 15 confirmations.
+* Ensure the 5000 BLOCK is *__exactly__* 5000 BLOCK, no more or no less, and ensure the transaction has at least 1 confirmation.
 * Ensure you don't have `<` or `>` in any of the configuration files. Examples:
 	* Correct: `servicenodeaddr=138.28.1.27:41412`
 	* Incorrect: `servicenodeaddr=<138.28.1.27:41412>`

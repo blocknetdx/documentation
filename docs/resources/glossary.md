@@ -1,4 +1,4 @@
-title: 
+title: Blocknet Documentation Glossary
 description:
 
 # Glossary
@@ -42,6 +42,10 @@ multi wallet
 address
 input uxto
 non-custodial
+xwallets
+snode
+naked node
+confirmations
 
 -->
 

@@ -1,9 +1,13 @@
+title: Blocknet Governance Model
+description: Blocknet is an interoperability project self-governed by its network with the ability to make decisions together via a Superblock mechanism. 
+
+
 # Blocknet Governance Model
 
 ---
 
 ## Background
-Blocknet is a project launched in 2014 by ITO. The original objective of Blocknet was to create a decentralized exchange. The ITO raised just short of 970 BTC in various assets worth $340,000 at the time. 
+Blocknet is a blockchain interoperability project launched in 2014 by ITO. The ITO raised just short of 970 BTC in various assets worth $340,000 at the time. 
 
 The project burned through the ITO funds mainly because the assets held lost value and BTC being in a bear market. Blocknet was then privately funded by a few generous community members and the main developer.
 
@@ -20,7 +24,7 @@ In short, every 43,200 blocks on the Blocknet blockchain, Service Nodes can choo
 ---
 
 ## Defining the Blocknet Project as an Entity
-The business layer of Blocknet is to facilitate interaction between blockchains, either through exchange on the XBridge decentralized exchange protocol or through cross-chain communication with the XRouter blockchain packet routing protocol. XBridge trades generate fees charged in BLOCK for exchanges completed with the protocol, and XRouter calls generate fees charged in BLOCK for routing packets with the protocol. The entirety of these fees are transferred to the Service Nodes responsible for providing these services.
+The business layer of Blocknet is an interoperability protocol to facilitate interaction between blockchains, either through exchange on the XBridge decentralized exchange component or through cross-chain communication with the XRouter blockchain packet routing component. XBridge trades generate fees charged in BLOCK for exchanges completed with the protocol, and XRouter calls generate fees charged in BLOCK for routing packets with the protocol. The entirety of these fees are transferred to the Service Nodes responsible for providing these services.
 
 The idea is that the need for BLOCK required to settle the trade fees and submit cross-chain calls will create buy pressure on BLOCK, driving the price up. Furthermore, the redistribution of BLOCK from the market to service providers will function comparable to a dividend program incentivizing further service to the network by stakers and Service Nodes. Therefore, it can be argued that Blocknet has an earnings stream for the network service providers.
 

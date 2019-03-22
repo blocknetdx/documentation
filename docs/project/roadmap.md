@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Roadmap
+description: Blocknet's roadmap conveys the project's vast vision and objectives by separating the project into different product tracks with various milestones.
+
 
 # Roadmap
 

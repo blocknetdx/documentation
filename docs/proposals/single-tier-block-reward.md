@@ -1,5 +1,5 @@
-title: 
-description:
+title: Blocknet Proposal - Single Tier Block Reward
+description: This proposal is to have a single tier block reward system where both Service Nodes and stakers would be combined into the same pool for block rewards.
 
 
 # Single Tier Block Reward

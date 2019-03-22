@@ -13,11 +13,11 @@ description:
 ## Technical Overview
 Blocknet is a Proof-of-Stake (PoS) blockchain with a utility token called [BLOCK](/blockchain/introduction). Unlike other currency-focused blockchains, Blocknet is a service-based blockchain comprised of 3 main components:
 
-* __XRouter__ - Provides the Blocknet Protocol with a communication layer consisting of an inter-blockchain SPV client backend that enables the verification of blockchain records without requiring users to download the full blockchain. XRouter allows applications to interface with blockchains on the TCP/IP networking layer, enabling a true Internet of Blockchains.
-* __XBridge__ - Provides the ability to perform trustless atomic swap exchanges between any [digital assets](/resources/glossary/#digital-asset) that is supported by the Blocknet Protocol via APIs. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services.
+* __XRouter__ - Provides the Blocknet Protocol with a communication layer consisting of an inter-blockchain SPV client backend that enables the verification of blockchain records without requiring users to download the full blockchain. XRouter allows applications to interface with blockchains on the TCP/IP networking layer, enabling a true Internet of Blockchains. By default, XRouter is compatible with all blockchains.
+* [__XBridge__](/protocol/xbridge/introduction) - Provides the ability to perform trustless exchange between any [digital assets](/resources/glossary/#digital-asset) that is supported by the Blocknet Protocol via APIs. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services. See the [list of compatible assets](/protocol/xbridge/compatibility).
 * __XCloud__ - Provides a decentralized microservice cloud network powered by XRouter. Developers will be able to put both blockchain and non-blockchain microservices on Blocknet’s “public cloud” decentralized network. XCloud allows applications to run entirely decentralized, opening the door to the possibility of monetizable, fully decentralized applications.
 
-The Blocknet Protocol is designed to maximize interoperability between different blockchains through the use of these components. Just as the internet enabled computers to communicate, the Blocknet Protocol is critical for blockchains to realize full potential.
+The Blocknet Protocol is designed to maximize interoperability between different blockchains through the use of these components. **Just as the internet connected computers, the Blocknet Protocol is critical for blockchains to communicate and realize full potential**.
  
 
 ---
@@ -25,22 +25,22 @@ The Blocknet Protocol is designed to maximize interoperability between different
 ## Nodes
 The network is powered by 2 types of nodes: 
 
-* __Staking Nodes__ - Secures the network by staking BLOCK to verify the blockchain. This service earns 30% of block rewards.
-* __Service Nodes__ - Hosts the full nodes of compatible blockchains, hosts microservices, audits interactions, and performs anti-spam and anti-DOS measures for the network. This service earns 70% of block rewards and 100% of fees generated from use of the network's services.
+* [__Staking Nodes__](/wallet/staking) - Secures the network by staking BLOCK to verify the blockchain. This service earns 30% of block rewards.
+* [__Service Nodes__](/service-nodes/introduction) - Hosts the full nodes of compatible blockchains, hosts microservices, audits interactions, and performs anti-spam and anti-DOS measures for the network. This service earns 70% of block rewards and 100% of fees generated from use of the network's services ([XBridge](/protocol/xbridge/introduction), XRouter, XCloud).
 
 The following are the requirements to operate each type of node: 
 
-* __Staking Nodes__ - A Staking Node can be operated with any amount of BLOCK, but staking more BLOCK yields more frequent rewards.
-* __Service Nodes__ - A Service Node requires 5000 BLOCK.
+* [__Staking Nodes__](/wallet/staking) - A Staking Node can be operated with any amount of BLOCK, but staking more BLOCK yields more frequent rewards.
+* [__Service Nodes__](/service-nodes/introduction) - A Service Node requires 5000 BLOCK.
 
 ---
 
 ## Tokenomics
-[BLOCK](/blockchain/introduction) is the utility token that powers the Blocknet. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to Service Nodes for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK, but those fees are burned. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
+[BLOCK](/blockchain/introduction) is the utility token that powers the Blocknet. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to [Service Nodes](/service-nodes/introduction) for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK, but those fees are burned. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
 
 Blocknet involves multiple economic models with respect to the use of the BLOCK token.
 
-* __Block Rewards__ - Blocknet is Proof-of-Stake(PoS) with 1 BLOCK created every minute, of which 30% is awarded to Staking Nodes and 70% to Service Nodes.
+* __Block Rewards__ - Blocknet is Proof-of-Stake(PoS) with 1 BLOCK created every minute, of which 30% is awarded to Staking Nodes and 70% to Service Nodes. Read more about [staking rewards](/wallet/staking/#staking-rewards).
 * __Service Fees__ - Service Nodes receive 100% of BLOCK fees generated from the use of services on the network, including trades performed via XBridge, interfacing with blockchains via XRouter, and use of microservices via XCloud.
 * __Collateral__ - BLOCK is required for collateral to operate a Service Node, as well as to use certain services on the network.
 * __[Governance](/governance/introduction)__ - Submitting proposals to the network requires a fee to be paid in BLOCK and proposals can only be voted on by Service Nodes.

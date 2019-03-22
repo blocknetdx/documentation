@@ -1,9 +1,11 @@
-title: 
-description:
+title: Block DX Configuration Guide
+description: This guide explains how to configure wallets for trading on Block DX for decentralized peer-to-peer exchange directly from your own wallet.
+
 
 # Block DX Configuration
-Since trading with Block DX is performed directly from the wallet of the assets being traded, these wallets must be properly configured. This guide will walk you through the configuration process, all performed through a few simple screens within Block DX. For a full guide
+[Block DX](/blockdx/introduction) is a truly decentralized exchange that enables peer-to-peer trading. Since trading with Block DX is performed directly from the wallet of the assets being traded, these wallets must be properly configured. This guide will walk you through the configuration process, all performed through a few simple screens within Block DX. For the full setup process, see the [Block DX Setup Guide](/blockdx/setup).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=92" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. [Install the Blocknet wallet](/wallet/setup). The Blocknet wallet is **required** to facilitate peer-to-peer trading on Block DX.
 1. Install the wallets of the [digital assets](/resources/glossary/#digital-asset) you will be trading. These wallets are **required** to store your funds since Block DX is non-custodial. [View the list compatible digital assets and wallet versions](/blockdx/listings).
@@ -14,7 +16,7 @@ Since trading with Block DX is performed directly from the wallet of the assets 
 1. [Install Block DX](/blockdx/installation). This is a desktop dApp and not supported in-browser.
 	
 	???+ warning "Warning"
-		You *__must__* have the Blocknet wallet and wallets of the assets being traded before continuing.
+		You *__must__* have the Blocknet wallet and the wallets of the assets you will be trading installed  *before* continuing.
 
 1. Scroll through the list and select the wallets of the assets you will be trading. It's recommended to select all wallets you have installed even if you won't be trading those assets right now. Any time you want to trade additional assets, you will need to go through the configuration process again so including those wallets now will save time.
 
@@ -58,7 +60,9 @@ Since trading with Block DX is performed directly from the wallet of the assets 
 	![Restart](/img/blockdx/config-restart.png)
 
 1. Block DX will now restart automatically.
-1. If you see the following error when Block DX restarts, it is most likely because the Blocknet wallet was not restarted and unlocked before restarting Block DX.
+1. If you see the following error when Block DX restarts, it is most likely because on of the following:
+	1. The Blocknet wallet was not restarted and unlocked before restarting Block DX.
+	1. The Blocknet wallet is not open and unlocked before restarting Block DX.
 
 	![Connection Error](/img/blockdx/connection-error.png)
 

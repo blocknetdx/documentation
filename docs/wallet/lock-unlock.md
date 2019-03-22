@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Wallet Lock/Unlock Guide
+description: This guide explains how to lock, partially unlock, or fully unlock the Blocknet wallet, which is important to know for keeping your funds secure.
+
 
 # Lock/Unlock Wallet
 Controlling when the wallet is locked, fully unlocked, or unlocked just for staking is important for increasing the security of your funds. You must first encrypt the wallet to be able to lock it.

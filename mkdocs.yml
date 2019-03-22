@@ -68,6 +68,7 @@ extra_css:
   - css/style.css
 nav:
 - 'Home': 'index.md'
+# - 'Dashboard': 'dashboard.md'
 - 'Project':
   - 'Introduction': 'project/introduction.md'
   - 'Exchanges': 'project/exchanges.md'
@@ -85,7 +86,7 @@ nav:
   - 'Explorers': 'blockchain/explorers.md'
 - 'Protocol':
   - 'XBridge':
-#     - 'Introduction': 'protocol/xbridge/introduction.md'
+    - 'Introduction': 'protocol/xbridge/introduction.md'
     - 'Fees': 'protocol/xbridge/fees.md'
 #     - 'Design': 'protocol/xbridge/design.md'
     - 'Compatibility': 'protocol/xbridge/compatibility.md'
@@ -146,10 +147,12 @@ nav:
   # - 'Settings': 'blockdx/settings.md'
   - 'FAQ': 'blockdx/faq.md'
   # - 'Troubleshooting': 'blockdx/troubleshooting.md'
-# - 'Service Nodes':
-#   - 'Overview': 'service-nodes/overview.md'
-#   - 'Setup': 'service-nodes/setup.md'
-#   - 'Config Manager': 'service-nodes/config-manager.md'
+- 'Service Nodes':
+  - 'Introduction': 'service-nodes/introduction.md'
+  - 'Setup': 'service-nodes/setup.md'
+  # - 'XBridge Configuration': 'service-nodes/xbridge-configuration.md'
+  # - 'XRouter Configuration': 'service-nodes/xrouter-configuration.md'
+  # - 'Config Manager': 'service-nodes/config-manager.md'
 - 'Governance':
   - 'Introduction': 'governance/introduction.md'
   - 'Governance Model': 'governance/governance-model.md'

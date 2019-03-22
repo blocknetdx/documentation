@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Wallet Staking Guide
+description: This guide explains how to setup your Blocknet wallet for staking to validate transactions on the network and earn block rewards.
+
 
 # Staking BLOCK
 
@@ -124,58 +125,10 @@ Building off the probabilistic ratio above, the following equation can be derive
 
 	With BLOCK valued at $50, that would equate to $8,760 per year.
 
-
-
 ---
 
-<!-- 
-
 ## Reward Calculator
--->
-
-
-<script>
-
-var stakingURL = "https://chainz.cryptoid.info/explorer/index.stakes.dws?coin=block";
-
-getStakers().then(calcStaking);
-function getStakers() {
-	var stakersPromise = new Promise(function(resolve, reject){
-		ajax(stakingURL, true).then(function(stakers) {
-			stakersJSON = stakers;
-			localStorage.setItem('stakers', JSON.stringify(stakers));
-			resolve(stakersJSON);
-		}, false);
-	});
-	return stakersPromise;
-}
-function ajax(url, json) {
-	var ajaxPromise = new Promise(function(resolve, reject){
-		var xhr = new XMLHttpRequest();
-		var status = true;
-		xhr.open('GET', url);
-		xhr.send();
-		xhr.onreadystatechange = function(){
-			if (xhr.readyState === 4 && xhr.status === 200){
-				var response = json ? JSON.parse(this.responseText) : this.responseText
-				resolve(response);
-			}
-		}
-	});
-	return ajaxPromise;
-}
-// calcStaking(data);
-function calcStaking(staking) {
-	console.log("working");
-	var stakes = staking["stakes"];
-	var totalStaked = 0;
-	for (var stake in stakes) {
-		// console.log(stakes[stake]["amount"]);
-		totalStaked += stakes[stake]["amount"];
-	}
-	console.log(totalStaked);
-}
-</script>
+--8<-- "staking-calculator.md"
 
 
 

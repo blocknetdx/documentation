@@ -1,13 +1,13 @@
-title: 
-description:
+title: BLOCK Specs - Blocknet's Utility Token
+description: BLOCK is the utility token that powers the Blocknet blockchain. BLOCK is used to pay fees for usage of the Blocknet Protocol.
 
 # Introduction
 
-BLOCK is the utility token that powers the Blocknet. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to Service Nodes for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK, but those fees are burned. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
+BLOCK is the utility token that powers the Blocknet Protocol. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to Service Nodes for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK, but those fees are burned. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
 
 ---
 
-## Specifications
+## BLOCK Specifications
 
 |BLOCK Details 			| 					|
 ------------------------|--------------------
@@ -116,9 +116,9 @@ The Blocknet Protocol is fast and the capacity of the protocol increases with it
 
 ---
 
-## Inflation
+## BLOCK Inflation
 
-While there is no maximum limit due to the blockchain being Proof of Stake, there is a limit to the amount that can be minted per period (limited inflation). This means that over time the inflation rate decreases as the circulation increases and the amount of BLOCK minted remains constant. Below are 2 sets of data that demonstrate this.
+While there is no maximum limit due to the Blocknet blockchain being Proof of Stake, there is a limit to the amount that can be minted per period (limited inflation). This means that over time the inflation rate decreases as the circulation increases and the amount of BLOCK minted remains constant. Below are 2 sets of data that demonstrate this.
 
 **Lower Bound of Inflation**
 

@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Superblock Governance
+description: Blocknet is a self-funded and community-governed project through a 2-part governing system consisting of Service Nodes and Superblocks.
+
 
 # Introduction
 [Blocknet](/project/introduction) is a self-funded and community-governed project. Decentralization defines the template for group decision-making and is self-managed through a 2-part governing system consisting of Service Nodes and Superblocks. There is also additional funding aside from the Superblock, which is explained under [Community Funds](#community-funds).
@@ -23,14 +24,14 @@ For a proposal to pass and receive funding:
 * If there are not enough funds remaining in the Superblock for a proposal to be paid out, it is skipped (not paid out), and the next proposal in the passing list is checked for qualification.
 * Multi-month proposals are voted on each month and are treated in the same manner as normal proposals in the ordered list.
 
-Voting Turnout | Yays Required | Max Nays Allowed
----------------|---------------|-----------------
-100% | 55% | 45%
-80% | 56.25% | 43.75%
-40% | 62.5% | 37.5%
-20% | 75% | 25%
-10% | 100% | 0%
-<10% | cannot pass | cannot pass
+Voting Turnout	| Yays Required | Max Nays Allowed
+----------------|---------------|-----------------
+100% 			| 55% 			| 45%
+80% 			| 56.25% 		| 43.75%
+40% 			| 62.5% 		| 37.5%
+20% 			| 75% 			| 25%
+10% 			| 100% 			| 0%
+<10% 			| cannot pass 	| cannot pass
 
 ---
 

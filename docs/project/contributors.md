@@ -1,11 +1,12 @@
-title: 
-description:
+title: Blocknet Contributors
+description: Blocknet is an open-source project with a team consisting of contributors from around the world working together at both official and unofficial capacities.
+
 
 # Contributors
 
 ---
 
-Blocknet is an open-source project and consists of contributors around the world working together at both official and unofficial capacities.
+Blocknet is an open-source project with a team consisting of contributors from around the world working together at both official and unofficial capacities.
 
 
 

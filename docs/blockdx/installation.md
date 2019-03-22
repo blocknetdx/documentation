@@ -1,12 +1,14 @@
-title: 
-description:
+title: Block DX Installation Guide
+description: This guide explains the process for installing Block DX, a decentralized exchange dApp powered by the Blocknet Protocol.
 
 # Block DX Installation
-Installing the Block DX is a simple process. Below are step-by-step instructions for how to install on each operating system (OS). If you already have Block DX installed and are updating, see the updating guide. For a complete guide on setting up Block DX, see the [Block DX setup guide](/blockdx/setup).
+[Block DX](/blockdx/introduction) is a decentralized exchange dApp powered by the Blocknet Protocol. Installing the Block DX is a simple process. Below are step-by-step instructions for how to install on each operating system (OS). If you already have Block DX installed and are updating, see the updating guide. For a complete guide on setting up Block DX, see the [Block DX setup guide](/blockdx/setup).
 
 ---
 
 ## Install Block DX
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ??? example "Windows"
 	1. Download the [latest Block DX release](https://github.com/BlocknetDX/block-dx/releases/). There are 3 options:

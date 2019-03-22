@@ -1,9 +1,9 @@
-title: 
-description:
+title: Block DX Exchange Listings
+description: Block DX is a decentralized exchange powered with over 100 assets trading. The exchange has free listings and more continuously being added.
 
 
 # Block DX Listings
-[Block DX](/blockdx/setup) has over 100 [digital assets](/resources/glossary/#digital-asset) trading ([see below](/blockdx/listings/#listed-digital-assets)), with the number continuously growing as more are made compatible. There is complete trading pair freedom, totaling to over 5000 tradable pairs.
+[Block DX](/blockdx/introduction) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). The exchange has over 100 [digital assets](/resources/glossary/#digital-asset) trading ([see below](/blockdx/listings/#listed-digital-assets)), with the number continuously growing as more are made compatible. There is complete trading pair freedom, meaning any two assets can be traded, totaling to over 5000 tradable pairs.
 
 ---
 

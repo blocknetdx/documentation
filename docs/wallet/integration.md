@@ -1,6 +1,5 @@
-title: 
-description:
-
+title: Blocknet Wallet Integration
+description: This document is an overview on the basics for how to integrate and configure the Blocknet wallet for use with different services, such as an exchanges.
 
 
 # Wallet Integration Guide

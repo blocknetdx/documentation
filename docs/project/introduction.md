@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Introduction
+description: Started in 2014, Blocknet is a decentralized, community-governed, self-funded, open-sourced project that serves as a connector between different blockchains.
+
 
 # Introduction
 --8<-- "what-is-blocknet.md"

@@ -1,5 +1,5 @@
-title: 
-description:
+title: Blocknet Proposal - Project Funding
+description: This proposal is for use of the Burn Fund BpzPFJaaKQVSvfiH7zXSUdPBrBnfx9v26V and to increase the Superblock to 40,000 BLOCK.
 
 
 # Project Funding

@@ -1,4 +1,4 @@
-title: 
+title: Blocknet Documentation Glossary
 description:
 
 # Glossary

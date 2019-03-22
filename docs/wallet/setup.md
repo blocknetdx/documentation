@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Wallet Setup Guide
+description: This guide explains how to setup your Blocknet wallet to securely store your BLOCK including installation, syncing, encryption, and staking.
+
 
 # Getting Started
 The Blocknet wallet allows you to securely manage your [BLOCK](/blockchain/introduction). It's important to manage your funds through a wallet you own. In your wallet there is something called private keys. Think of private keys like a bank account. When you have funds in your wallet, they are in an "account" that you own and control.

@@ -1,9 +1,9 @@
-title: 
-description:
+title: Blocknet (BLOCK) Exchanges
+description: Blocknet's utility token, BLOCK, can be traded on various exchanges and different types of  exchanges, each with different advantages and disadvantages.
 
 
 # Exchanges
-[BLOCK](/blockchain/introduction) can be purchased and sold in several ways, each with different advantages and disadvantages. This list is provided for informational purposes only. Services listed here have not been evaluated or endorsed by Blocknet. Please exercise discretion when using third-party services.
+Blocknet's utility token, [BLOCK](/blockchain/introduction), can be purchased and sold in several ways, each with different advantages and disadvantages. This list is provided for informational purposes only. Services listed here have not been evaluated or endorsed by Blocknet. Please exercise discretion when using third-party services.
 
 ---
 
@@ -18,6 +18,7 @@ Cryptofacil	 	| (BTC/BLOCK) 	| [Buy Now](https://cryptofacil.com/trading-view/61
 FEX Pro	 		| (BTC/BLOCK) 	| [Buy Now](https://fexpro.net/#/exchange?type=)
 Cryptopia	 	| (BTC/BLOCK) 	| [Buy Now](https://www.cryptopia.co.nz/Exchange/?market=BLOCK_BTC)
 Cryptopia	 	| (DOGE/BLOCK) 	| [Buy Now](https://www.cryptopia.co.nz/Exchange/?market=BLOCK_DOGE)
+Amsterdex		| (BTC/BLOCK) 	| [Buy Now](https://amsterdex.com/exchange?market=block)
 Nova Exchange 	| (BTC/BLOCK) 	| [Buy Now](https://novaexchange.com/market/BTC_BLOCK/)
 BlockBid	 	| (BTC/BLOCK)	| Coming
 

@@ -1,5 +1,5 @@
-title: 
-description:
+title: Blocknet Wallet Syncing Guide
+description: This guide explains how to sync your Blocknet wallet with and without bootstrap chain files containing the Blocknet blockchain.
 
 
 # Syncing the Wallet

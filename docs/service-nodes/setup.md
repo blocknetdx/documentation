@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Service Node Setup Guide
+description: This guide explains step-by-step how to setup a Service Node, which earns block rewards and 100% of fees from Blocknet's services (XBridge, XRouter, XCloud).
+
 
 # Service Node Setup
 This guide explains step-by-step how to setup a [Service Node](/service-nodes/introduction). Operating a Service Node requires 5000 BLOCK collateral. This BLOCK will need to be locked for the Service Node to be valid and active. This means that the 5000 BLOCK will still be in your wallet and in your control, but it can't be moved or spent.

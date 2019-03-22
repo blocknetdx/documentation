@@ -1,9 +1,11 @@
-title: 
-description:
+title: Blocknet Superblock Proposal Voting Guide
+description: This guide explains how to vote on Blocknet's Superblock proposals for funding initiatives and governance management with a Service Node.
 
 
 # Proposal Voting
-**An active Service Node (required 5000 [BLOCK](/blockchain/introduction)) is required in order to vote.** The process of voting can take place from within the [Service Node](/service-nodes/introduction) wallet or the collateral wallet. After voting, the Service Node must remain active until the [Superblock](/governance/introduction/#superblock) passes. If the Service Node goes offline then you will need to recast your votes when it's active again. Voting closes 2880 blocks prior to the Superblock.
+This guide explains how to vote on Blocknet's [Superblock](/governance/introduction/#superblock) proposals for funding initiatives and governance management. Voting on proposals is important for the [governance model](/governance/governance-model) to work properly.
+
+**An active Service Node (required 5000 [BLOCK](/blockchain/introduction)) is required in order to vote.** The process of voting can take place from within the [Service Node](/service-nodes/introduction) wallet or the collateral wallet. After voting, the Service Node must remain active until the Superblock passes. If the Service Node goes offline then you will need to recast your votes when it's active again. Voting closes 2880 blocks prior to the Superblock.
 
 Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives.
 

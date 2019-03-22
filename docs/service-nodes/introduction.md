@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Service Node Overview
+description: Service Nodes are a network of full nodes used as a DHT network overlay to support Blocknet's services (XBridge, XRouter, and XCloud).
+
 
 # Service Node Overview
 

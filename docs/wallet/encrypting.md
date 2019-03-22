@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Wallet Encryption Guide
+description: This guide explains how to encrypt your Blocknet wallet so you have the ability to controll the access to your wallet and keep your funds secure.
+
 
 # Wallet Encryption
 All users should encrypt their wallets upon installation. Your wallet contains sensitive information, a `wallet.dat` file, that allows you to access your funds. This information is not encrypted by default, which means your funds are not protected and can be spent if somebody gains access to your computer.

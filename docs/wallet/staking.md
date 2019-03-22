@@ -1,5 +1,6 @@
-title: 
-description:
+title: Blocknet Wallet Staking Guide
+description: This guide explains how to setup your Blocknet wallet for staking to validate transactions on the network and earn block rewards.
+
 
 # Staking BLOCK
 

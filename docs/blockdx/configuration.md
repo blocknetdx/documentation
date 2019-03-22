@@ -1,8 +1,9 @@
-title: 
-description:
+title: Block DX Configuration Guide
+description: This guide explains how to configure wallets for trading on Block DX for decentralized peer-to-peer exchange directly from your own wallet.
+
 
 # Block DX Configuration
-Since trading with Block DX is performed directly from the wallet of the assets being traded, these wallets must be properly configured. This guide will walk you through the configuration process, all performed through a few simple screens within Block DX. For a full guide
+[Block DX](/blockdx/introduction) is a truly decentralized exchange that enables peer-to-peer trading. Since trading with Block DX is performed directly from the wallet of the assets being traded, these wallets must be properly configured. This guide will walk you through the configuration process, all performed through a few simple screens within Block DX. For the full setup process, see the [Block DX Setup Guide](/blockdx/setup).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=92" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

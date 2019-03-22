@@ -1,5 +1,5 @@
-title: 
-description:
+title: Blocknet Proposal - Coin Split 1:100
+description: This is a proposal to increase BLOCK circulation by 100x. All existing holdings, fees, rewards, and collaterals will be increased proportionally.
 
 
 # Coin Split 1:100 

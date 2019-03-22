@@ -1,8 +1,9 @@
-title: 
-description:
+title: Block DX Trading Guide
+description: These Block DX trading guides explain how to check your balances, select your market, make orders, take orders, check order status, and view order history.
+
 
 # Block DX Trading
-Follow the guides below to become acquainted with trading on [Block DX](/blockdx/introduction). If Block DX has not been setup yet, pease follow the [setup guide](/blockdx/setup).
+[Block DX](/blockdx/introduction) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). Follow the guides below to learn how to check your balances, select your market, make orders, take orders, check order status, and view order history. If Block DX has not been setup yet, please follow the [setup guide](/blockdx/setup).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

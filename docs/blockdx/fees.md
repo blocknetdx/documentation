@@ -1,7 +1,9 @@
-title: 
-description:
+title: Block DX Fee Structure
+description: Block DX is a decentralized exchange dApp powered by the Blocknet Protocol that has lower fees and no deposit, withdrawal, or maker fees.
+
 
 # Block DX Fee Structure
+[Block DX](/blockdx/introduction) is a decentralized exchange dApp powered by the Blocknet Protocol. Unlike centralized exchanges, Block DX has no deposit, withdrawal, or maker fees other than network fees of the asset being traded.
 
 ---
 

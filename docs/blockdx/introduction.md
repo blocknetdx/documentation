@@ -1,5 +1,5 @@
-title: 
-description:
+title: Block DX Decentralized Exchange
+description: Block DX is a decentralized exchange dApp powered by the Blocknet Protocol. It's the fastest, most secure, most reliable, and most decentralized exchange (DEX).
 
 <!-- Content needs to be improved -->
 
@@ -14,7 +14,7 @@ description:
 ---
 
 ## What is Block DX
-Block DX is a fully decentralized and trustless exchange built on the [Blocknet Protocol](/project/introduction). Block DX mimics a centralized exchange experience, but enables traders to conduct exchanges directly from their respective wallets instead of through an intermediary. Here are some benefits to using Block DX:
+Block DX is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). Block DX mimics a centralized exchange experience, but enables traders to conduct exchanges directly from their respective wallets instead of through an intermediary. Here are some benefits to using Block DX:
 
 - **Safe Trading** - There’s no middlemen or intermediaries. Funds remain in each party’s wallets and are not entrusted to a third party at any stage (non-custodial). Your funds are always in your control.
 - **No Accounts** - Since it’s decentralized, there are no accounts, signups, or KYC/AML requirements.

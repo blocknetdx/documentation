@@ -1,7 +1,9 @@
-title: 
-description:
+title: Blocknet Protocol - XBridge Fees
+description: XBridge is a cross-chain decentralized exchange protocol that provides the ability to exchange between any two supported blockchains.
+
 
 # XBridge Fee Structure
+[XBridge](/protocol/xbridge/introduction) is a decentralized exchange protocol that provides the ability to perform peer-to-peer exchanges between any blockchains that are supported by the Blocknet Protocol.
 
 ---
 

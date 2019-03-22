@@ -1,9 +1,9 @@
-title: 
-description:
+title: Blocknet Superblock Proposal Viewing Guide
+description: This guide explains how to view Blocknet's Superblock proposals for funding initiatives and governance management.
 
 
 # View Proposals
-The ability to view proposals is important for the governance model to work properly, enabling informed discussions and [voting](/governance/proposal-voting).
+This guide explains how to view Blocknet's [Superblock](/governance/introduction/#superblock) proposals for funding initiatives and governance management. The ability to view proposals is important for the governance model to work properly, enabling informed discussions and [voting](/governance/proposal-voting).
 
 ??? info "Note: An active Service Node is required in order to vote."
 	**An active [Service Node](/service-nodes/introduction) (required 5000 [BLOCK](/blockchain/introduction)) is required in order to vote.** The process of voting can take place from within the Service Node wallet or the collateral wallet. After voting, the Service Node must remain active until the [Superblock](/governance/introduction/#superblock) passes. If the Service Node goes offline then you will need to recast your votes when it's active again. Voting closes 2880 blocks prior to the Superblock.

@@ -1,5 +1,5 @@
-title: 
-description:
+title: Blocknet Protocol - XBridge Introduction
+description: XBridge is a cross-chain decentralized exchange protocol that provides the ability to exchange between any two supported blockchains.
 
 
 # XBridge

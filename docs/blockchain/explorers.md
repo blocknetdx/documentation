@@ -1,12 +1,13 @@
-title: 
+title: Blocknet Blockchain Explorers
 description:
+Blocknet blockchain explorers, sometimes referred to as block explorers, are used to search and navigate the entire Blocknet blockchain. 
 
 # Explorers
 
 ---
 
 ## Introduction
-A blockchain explorer, sometimes referred to as a block explorer, is used to search and navigate the entire blockchain. All public information on the blockchain will be accessible through the explorer including: 
+A Blocknet blockchain explorer, sometimes referred to as a block explorer, is used to search and navigate the entire Blocknet blockchain. All public information on the blockchain will be accessible through the explorer including: 
 
 * All blocks
 * All transactions within blocks

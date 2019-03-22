@@ -1,8 +1,9 @@
-title: 
-description:
+title: Block DX FAQ
+description: A compiled list of frequently asked questions about Block DX, including technical questions about setup and trading.
+
 
 # Block DX FAQs (Frequently Asked Questions)
-
+Below are a list of Block DX frequently asked questions. For any questions not answered below, please join the Blocknet community on Discord for further discussion: [Discord Invite](https://discord.gg/2e6s7H8)
 
 ???+ question "My version of [blockchain] wallet isn’t one of the options to select in the set up process. Can I use this version? Will it still work?""
 	Only use wallet versions that are listed. If a version is not listed, it has either not been tested yet or is not compatible. Using a wallet version not listed may result in failed trades or loss of funds.

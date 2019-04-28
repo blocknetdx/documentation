@@ -76,6 +76,7 @@ Use the following guide to enable staking and start earning rewards.
 ---
 
 ## Staking Rewards
+
 ### Probability
 The selection of the staker that confirms each block is probability-based. This means that everyone’s chance of being selected to confirm the next block is equal to the amount of BLOCK staking divided by the total amount of BLOCK being staked on the network. The amount of staked BLOCK on the network [can be seen here](https://chainz.cryptoid.info/explorer/index.stakes.dws?coin=block). The value will have to be calculated by totaling each `amount`.
 
@@ -128,7 +129,8 @@ Building off the probabilistic ratio above, the following equation can be derive
 ---
 
 ## Reward Calculator
---8<-- "staking-calculator.md"
+
+There is a simple staking calculator at [block-node.info](https://block-node.info/blocknet_revenue1.php) built by Discord user @ishkb1 (thanks for all your work!)
 
 
 
@@ -162,27 +164,13 @@ what are the cli commands to do the following on windows:
 
 
 
-<!-- 
-======= Start: Related Links Section =======
-- This is the related links section at the bottom of each page.
-- It lists the links in the relatedLinks array variable below.
-	Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
-- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
-related-links.html
-- The template and logic for the related links section can be found in docs/snippets/related-links.html
-- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
-- The template and logic is linked with markdown_extensions: pymdownx.snippets
--->
+
 <script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
 var relatedLinks = [];
 </script>
 
---8<--
-related-links.html
---8<-- 
-<!-- 
-======= End: Related Links Section ======= 
--->
+--8<-- "extras.md"
 
 
 

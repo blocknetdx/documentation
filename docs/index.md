@@ -13,9 +13,9 @@ description:
 ## Technical Overview
 Blocknet is a Proof-of-Stake (PoS) blockchain with a utility token called [BLOCK](/blockchain/introduction). Unlike other currency-focused blockchains, Blocknet is a service-based blockchain comprised of 3 main components:
 
-* __XRouter__ - Provides the Blocknet Protocol with a communication layer consisting of an inter-blockchain SPV client backend that enables the verification of blockchain records without requiring users to download the full blockchain. XRouter allows applications to interface with blockchains on the TCP/IP networking layer, enabling a true Internet of Blockchains. By default, XRouter is compatible with all blockchains.
+* [__XRouter__](/protocol/xrouter/introduction) - Provides blockchain interoperability for the Blocknet Protocol with a communication layer consisting of a decentralized inter-blockchain SPV client backend that enables the verification of blockchain records without requiring users to download the full blockchain. XRouter allows applications to interface with blockchains on the TCP/IP networking layer, enabling a true Internet of Blockchains. By default, XRouter is compatible with all blockchains.
 * [__XBridge__](/protocol/xbridge/introduction) - Provides the ability to perform trustless exchange between any [digital assets](/resources/glossary/#digital-asset) that is supported by the Blocknet Protocol via APIs. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services. See the [list of compatible assets](/protocol/xbridge/compatibility).
-* __XCloud__ - Provides a decentralized microservice cloud network powered by XRouter. Developers will be able to put both blockchain and non-blockchain microservices on Blocknet’s “public cloud” decentralized network. XCloud allows applications to run entirely decentralized, opening the door to the possibility of monetizable, fully decentralized applications.
+* [__XCloud__](/protocol/xcloud/introduction) - Provides a decentralized microservice cloud network powered by XRouter. Developers will be able to put both blockchain and non-blockchain microservices on Blocknet’s “public cloud” decentralized network. XCloud allows applications to run entirely decentralized, opening the door to the possibility of monetizable, fully decentralized applications.
 
 The Blocknet Protocol is designed to maximize interoperability between different blockchains through the use of these components. **Just as the internet connected computers, the Blocknet Protocol is critical for blockchains to communicate and realize full potential**.
  
@@ -54,27 +54,12 @@ The utility of the BLOCK token increases the buy pressure on the market, while t
 
 
 
-<!-- 
-======= Start: Related Links Section =======
-- This is the related links section at the bottom of each page.
-- It lists the links in the relatedLinks array variable below.
-	Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
-- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
-related-links.html
-- The template and logic for the related links section can be found in docs/snippets/related-links.html
-- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
-- The template and logic is linked with markdown_extensions: pymdownx.snippets
--->
 <script type="text/javascript">
-// var relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
+// read instructions for related links in ../snippets/extras.md
 var relatedLinks = [];
 </script>
 
---8<-- "related-links.html"
-<!-- 
-======= End: Related Links Section ======= 
--->
-
+--8<-- "extras.md"
 
 
 

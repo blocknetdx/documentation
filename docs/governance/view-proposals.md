@@ -47,7 +47,7 @@ This guide explains how to view Blocknet's [Superblock](/governance/introduction
 There are various options for viewing the proposals in the browser. Below is a comparison list with the features of each website.
 
 
-|Website | [Proposal Forum](http://blocknetdx.forumotion.com/f3-self-funding-proposals) |	[blockdx.co](https://blockdx.co/funding-proposals)	|	[block-node.info](https://block-node.info/node_info2.php)
+|Website | [Proposal Forum](https://forum.blocknet.co/c/final-proposals) |	[blockdx.co](https://blockdx.co/funding-proposals)	|	[block-node.info](https://block-node.info/node_info2.php)
 ------------------------|--------------------|--------------------|--------------------|
 Mobile friendly 		|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>
 Lists proposals 		|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
@@ -57,7 +57,7 @@ Shows pass/fail status	|<i class="fa fa-times"></i>|<i class="fa fa-check"></i>|
 Shows amounts requested |<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
 Shows deposit addresses |<i class="fa fa-times"></i>|<i class="fa fa-times"></i>|<i class="fa fa-check"></i>
 Shows past proposals 	|<i class="fa fa-check"></i>|(in progress)|<i class="fa fa-check"></i>
-Allows for discussion 	|(unorganized)|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>
+Allows for discussion 	|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>
 Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
 
 
@@ -166,25 +166,13 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 
 
 
-<!-- 
-======= Start: Related Links Section =======
-- This is the related links section at the bottom of each page.
-- It lists the links in the relatedLinks array variable below.
-	Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
-- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
-related-links.html
-- The template and logic for the related links section can be found in docs/snippets/related-links.html
-- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
-- The template and logic is linked with markdown_extensions: pymdownx.snippets
--->
+
 <script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
 var relatedLinks = [];
 </script>
 
---8<-- "related-links.html"
-<!-- 
-======= End: Related Links Section ======= 
--->
+--8<-- "extras.md"
 
 
 

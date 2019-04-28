@@ -1,24 +1,5 @@
-title: 
-description:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- 
-======= Start: Related Links Section =======
+======= Related Links Section =======
 - This is the related links section at the bottom of each page.
 - It lists the links in the relatedLinks array variable below.
 	Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
@@ -28,18 +9,9 @@ related-links.html
 - The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
 - The template and logic is linked with markdown_extensions: pymdownx.snippets
 -->
-<script type="text/javascript">
-var relatedLinks = [];
-</script>
 
---8<--
-related-links.html
---8<-- 
-<!-- 
-======= End: Related Links Section ======= 
--->
+--8<-- "related-links.md"
 
-
-
+--8<-- "notifications.md"
 
 

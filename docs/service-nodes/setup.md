@@ -131,6 +131,7 @@ To setup your Service Node, complete the following guides in order:
 		```
 
 		!!! info "Note: The entire entry must be on a single line."
+	1. If setting up multiple Service Nodes, repeat these steps for each 5000 BLOCK input.
 	1. Save and close the `servicenode.conf` file.
 	1. Restart the Blocknet wallet.
 	1. Continue on to [SNode Server Computer Setup](/service-nodes/setup/#snode-server-computer-setup).
@@ -246,7 +247,7 @@ To setup your Service Node, complete the following guides in order:
 		```
 
 		!!! info "Note: The entire entry must be on a single line."
-
+	1. If setting up multiple Service Nodes, repeat these steps for each 5000 BLOCK input.
 	1. Save and close the `servicenode.conf` file.
 	1. Restart the Blocknet wallet.
 	1. Continue on to [SNode Server Computer Setup](/service-nodes/setup/#snode-server-computer-setup).
@@ -283,6 +284,7 @@ To setup your Service Node, complete the following guides in order:
 		servicenodeprivkey=6B1XGPVzE7MRszNXjXqcYtr5ApcCBkST5Bds43gSHcJd22kuHZe
 		rpcthreads=8
 		```
+	1. For best performance, a `maxconnections=` setting should **not** be specified.
 	1. Save and close the `blocknetdx.conf` file.
 	1. Shut down the Blocknet wallet.
 
@@ -314,16 +316,23 @@ To setup your Service Node, complete the following guides in order:
 		servicenodeprivkey=6C4h8c87UGizAk67E97fTKSSgVn2ezsgbKzehcySniEhYyMNuQF
 		rpcthreads=8
 		```
+	1. For best performance, a `maxconnections=` setting should **not** be specified.
 	1. Save and close the `blocknetdx.conf` file.
 	1. Shut down the Blocknet wallet.
 
 ---
 
 ## Additional Configuration
-With the current configurations the Service Node will only be eligible to earn block rewards. However, you can also setup a Service Node to support on [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, where 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes.
+With the current configurations the Service Node will only be eligible to earn block rewards. However, you can also setup a Service Node to support services on the network where 100% of fees are distributed to Service Nodes:
 
-Details on this configuration can be [found here](https://github.com/BlocknetDX/blocknet-docs/blob/master/blocknetDXservice-node.md#setup--conf-files-for-the-wallets-on-your-service-node) with an updated version on the way, which can be found here when complete.
 
+
+* With [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes for hosting full blockchain nodes and providing verification checks for trustless exchange between digital assets. Setup for this configuration can be [found here](https://github.com/BlocknetDX/blocknet-docs/blob/master/blocknetDXservice-node.md#setup--conf-files-for-the-wallets-on-your-service-node) with an updated version on the way, which can be found here when complete.
+* With [XRouter](/protocol/xrouter/introduction)\*, the decentralized inter-chain communication component of the Blocknet Protocol, 100% of fees are distributed to Service Nodes for hosting full blockchain nodes for SPV calls. For setup, see the [XRouter Configuration Guide](/service-nodes/xrouter-configuration).
+* With [XCloud](/protocol/xcloud/introduction)\*, a decentralized microservice cloud network build on XRouter, allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, in many cases without having to write any code. For setup, see the [XCloud Configuration Guide](/service-nodes/xcloud-configuration).
+
+
+\* For XRouter and XCloud services, your Service Node Computer IP address must remain unchanged. If using a VPN with an IP that changes, it will impact your ability to provide XRouter services.
 
 ---
 
@@ -361,7 +370,7 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 		```
 	1. You should receive a `successful` response.
 	1. If starting multiple Service Nodes, repeat these steps for each Alias.
-	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take a moment to populate.
+	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take up to 10 minutes to update.
 
 		![Service Nodes](/img/service-nodes/redesign-service-nodes-enabled.jpg)
 
@@ -405,7 +414,7 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 		```
 	1. You should receive a `successful` response.
 	1. If starting multiple Service Nodes, repeat these steps for each Alias.
-	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take a moment to populate.
+	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take up to 10 minutes to update.
 
 		![Service Nodes](/img/service-nodes/classic-service-nodes-enabled.jpg)
 
@@ -413,7 +422,7 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 
 	> **Check Service Node Active Status**
 
-	1. On the SNode Server computer, open the Debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response.
+	1. On the SNode Server computer, open the Debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response. 
 
 		![Snode Status](/img/service-nodes/classic-status-response-1.png)
 
@@ -440,27 +449,13 @@ Details on this configuration can be [found here](https://github.com/BlocknetDX/
 
 
 
-<!-- 
-======= Start: Related Links Section =======
-- This is the related links section at the bottom of each page.
-- It lists the links in the relatedLinks array variable below.
-	Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
-- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
-related-links.html
-- The template and logic for the related links section can be found in docs/snippets/related-links.html
-- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
-- The template and logic is linked with markdown_extensions: pymdownx.snippets
--->
+
 <script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
 var relatedLinks = [];
 </script>
 
---8<--
-related-links.html
---8<-- 
-<!-- 
-======= End: Related Links Section ======= 
--->
+--8<-- "extras.md"
 
 
 

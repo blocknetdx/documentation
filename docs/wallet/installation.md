@@ -3,7 +3,7 @@ description: This guide explains how to install your Blocknet wallet on each ope
 
 
 # Wallet Installation
-Installing the [Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases) is a simple process. Below are step-by-step instructions for how to install the wallet on each operating system (OS). If you already have the Blocknet wallet installed and are updating, see the updating guide. 
+Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases) is a simple process. Below are step-by-step instructions for how to install the wallet on each operating system (OS). If you already have the Blocknet wallet installed and are updating, see the updating guide. 
 
 * For a complete guide on setting up the wallet, see the [setup guide](/wallet/setup).
 
@@ -11,7 +11,7 @@ Installing the [Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases
 	The `.dmg` download is unavailable for the 3.12.1 release due to issues with that build. Use the `osx-unsigned.tar.gz` download instead (see guide below).
 
 ??? tip "Tip: There are two wallet variations."
-	Each wallet version has a redesigned and classic release. For example with version 3.12.1, [v3.12.1](https://github.com/BlocknetDX/blocknet/releases/tag/v3.12.1) is the release for the redesigned wallet, and [v3.12.1-classic](https://github.com/BlocknetDX/blocknet/releases/tag/v3.12.1-classic) is the release for the classic wallet.
+	Each wallet version has a redesigned and classic release. For example with version 3.12.1, [v3.12.1](https://github.com/blocknetdx/blocknet/releases/tag/v3.12.1) is the release for the redesigned wallet, and [v3.12.1-classic](https://github.com/blocknetdx/blocknet/releases/tag/v3.12.1-classic) is the release for the classic wallet.
 
 	**Redesigned Wallet**
 	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
@@ -23,7 +23,7 @@ Installing the [Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases
 ## Install GUI Wallet
 
 ??? example "Windows"
-	1. Download the [latest Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases/). There are 4 options:
+	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 4 options:
 		1. `blocknetdx-x.xx.x-win64-setup-unsigned.exe` (recommended for 64-bit)
 		1. `blocknetdx-x.xx.x-win32-setup-unsigned.exe` (recommended for 32-bit)
 		1. `blocknetdx-x.xx.x-win64.zip`
@@ -123,7 +123,7 @@ Installing the [Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases
 
 
 ??? example "MacOS"
-	1. Download the [latest Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases/). There are 3 options:
+	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 3 options:
 		1. `blocknetdx-x.xx.x-osx-unsigned.dmg` (recommended)
 		1. `blocknetdx-x.xx.x-osx-unsigned.tar.gz`
 		1. `blocknetdx-x.xx.x-osx64.tar.gz`
@@ -200,7 +200,7 @@ Installing the [Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases
 
 
 ??? example "Linux"
-	1. Download the [latest Blocknet wallet](https://github.com/BlocknetDX/blocknet/releases/). There are 3 options:
+	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 3 options:
 		1. `blocknetdx-x.xx.x-x86_64-linux-gnu.tar.gz` (recommended for 64-bit)
 		1. `blocknetdx-x.xx.x-i686-pc-linux-gnu.tar.gz` (recommended for 32-bit)
 		1. `blocknetdx-x.xx.x-arm-linux-gnueabihf.tar.gz` (recommended for Raspberry Pi)

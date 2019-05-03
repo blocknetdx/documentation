@@ -54,7 +54,7 @@ description:
 </div>
 
 <div class="social">
-	<a href="https://github.com/BlocknetDX" target="_blank"><i class="fa fa-github-square fa-5x" aria-hidden="true"></i></a>
+	<a href="https://github.com/blocknetdx" target="_blank"><i class="fa fa-github-square fa-5x" aria-hidden="true"></i></a>
 	<div class="name">Github</div>
 </div>
 

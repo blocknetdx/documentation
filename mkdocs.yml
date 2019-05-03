@@ -16,7 +16,7 @@ extra:
     - type: 'envelope'
       link: 'mailto:contact@blocknet.co'
     - type: 'github'
-      link: 'https://github.com/BlocknetDX/'
+      link: 'https://github.com/blocknetdx/'
     - type: 'comment'
       link: 'https://discord.gg/2e6s7H8'
     - type: 'telegram'
@@ -41,12 +41,12 @@ extra:
   newsletter_snodes: 'http://eepurl.com/dq-ElD'
   newsletter_developers: 'http://eepurl.com/dDjhYH'
   discord: 'https://discord.gg/2e6s7H8'
-  blockdx_releases: 'https://github.com/BlocknetDX/blockdx-ui/releases'
-  docs_repo: 'BlocknetDX/documentation'
+  blockdx_releases: 'https://github.com/blocknetdx/blockdx-ui/releases'
+  docs_repo: 'blocknetdx/documentation'
 site_url: 'https://docs.blocknet.co/'
-repo_url: 'https://github.com/BlocknetDX/documentation'
-repo_name: 'BlocknetDX/documentation'
-edit_uri: '/BlocknetDX/documentation/edit/master/docs/'
+repo_url: 'https://github.com/blocknetdx/documentation'
+repo_name: 'blocknetdx/documentation'
+edit_uri: '/blocknetdx/documentation/edit/master/docs/'
 markdown_extensions:
   - codehilite
   - markdown.extensions.footnotes
@@ -183,5 +183,5 @@ nav:
 - 'About':
   - 'License': 'about/license.md'
 - 'Glossary': 'resources/glossary.md'
-copyright: If you wish to improve this site, please <a href="https://github.com/BlocknetDX/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/BlocknetDX/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
-# copyright: If you wish to improve this site, please <a href="https://github.com/BlocknetDX/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/BlocknetDX/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>For collaboration, <a href="mailto:contact@blocknet.co">send us an email</a>.<br>Blocknet Protocol 2014.
+copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
+# copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>For collaboration, <a href="mailto:contact@blocknet.co">send us an email</a>.<br>Blocknet Protocol 2014.

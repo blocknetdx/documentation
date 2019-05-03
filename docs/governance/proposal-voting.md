@@ -220,7 +220,7 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 
 <script type="text/javascript">
 // read instructions for related links in ../snippets/extras.md
-var relatedLinks = [];
+var relatedLinkks = [];
 </script>
 
 --8<-- "extras.md"

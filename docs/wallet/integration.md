@@ -16,9 +16,9 @@ Developers and enterprises are integrating with the Blocknet Protocol as a secon
 ## Installation
 There are a few options for wallet installation:
 
-* Install directly via [various compiled formats](https://github.com/BlocknetDX/BlockDX/releases/)
+* Install directly via [various compiled formats](https://github.com/blocknetdx/BlockDX/releases/)
 * Use Blocknet’s [official Docker container](https://hub.docker.com/r/blocknetdx/servicenode)
-* Build from source ([sample Dockerfile](https://github.com/BlocknetDX/dockerimages/blob/master/servicenode/Dockerfile)) 
+* Build from source ([sample Dockerfile](https://github.com/blocknetdx/dockerimages/blob/master/servicenode/Dockerfile)) 
 
 **For Docker:**
 Here's a sample docker run command for Blocknet’s official Docker container:

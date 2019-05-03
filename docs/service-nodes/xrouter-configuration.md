@@ -54,7 +54,7 @@ When starting the wallet, an `xrouter.conf` file is automatically created in the
 !!! info "Note: SPV support also require *xbridge.conf* configuration."
 	To support SPV calls, you must also have your `xbridge.conf` file setup for the chains you wish to support.
 
-Seimilar to `xbridge.conf`, the general XRouter settings are specified under a `[Main]` heading.
+Similar to `xbridge.conf`, the general XRouter settings are specified under a `[Main]` heading.
 
 Settings            | Description
 --------------------|-------------
@@ -63,7 +63,7 @@ plugins             | The XCloud services you are supporting, see [XCloud Config
 fee                 | The fee (in BLOCK) you require for calls. A value of `0` means there is no fee and that the calls are free (*default*). Fees can be specified for individual calls in each subsection.
 clientrequestlimit  | The minimum time allowed between calls in milliseconds. A value of `-1` means there is no limit (*default*). If client requests exceed this value they will be penalized and eventually banned by your node.
 disabled\*          | Used to disable a call. A value of `1` means the call is disabled and `0` means the call is enabled (*default*). This setting is only for subsections and not supported under `[Main]`.
-fetchlimit          | The maximum number of blocks processed. The default value is `50`. A value of `-1` means there is no limit.
+fetchlimit          | The maximum number of records returned. This pertains to calls such as `xrGetBlocks` and `xrGetTransactions` where multiple records are returned. The default value is `50`. A value of `-1` means there is no limit.
 
 \* Only for subsection settings, not supported under `[Main]`.
 

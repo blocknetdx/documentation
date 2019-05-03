@@ -7,6 +7,7 @@
 	```
 	~/Library/Application Support/BlocknetDX/
 	```
+	Open Finder and in the program menu select *Go* > *To Folder* and enter the above path.
 1. **Linux**
 	```
 	~/.blocknetdx/

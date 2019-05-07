@@ -68,9 +68,12 @@ The founding team then set out to conduct research on how to best conduct [atomi
 * __Dec 2016__ - XBridge alpha was released on the mainnet allowing users to conduct peer-to-peer trading directly from the wallets of the coins being traded
 * __May 2017__ - Service Node design (QoS provider concept)
 * __Sept 2017__ - Service Nodes launch on mainnet
-* __Mar 2018__ - XBridge beta
-* __Mar 2018__ - Block DX(decentralized exchange) dApp beta built on the Blocknet Protocol
-* __June 2018__ - Blocknet XRouter beta
+* __Mar 2018__ - XBridge alpha release, the world's first *true* decentralized exchange protocol
+* __Mar 2018__ - Block DX (decentralized exchange) dApp alpha release built on the Blocknet Protocol
+* __June 2018__ - XRouter alpha release, the world's first blockchain router protocol
+* __Feb 2019__ - XBridge beta release
+* __Feb 2019__ - Block DX dApp beta release
+* __Apr 2019__ - XRouter beta release
 
 ---
 

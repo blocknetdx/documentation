@@ -108,6 +108,15 @@ private::               | Used to keep entries private. These will not be shared
 
     The setting hierarchy from highiest priority to lowest priority is as follows: *Service Settings > [Main] > default*. The higher priority settings override the lower priority settings.
 
+!!! tip "Tip: Add comments for service parameters and description."
+	So a user knows *what* the service is, use public comments to provide a description! 
+	Example: `#Description: Retrieve stock price data any stock listed on Nasdaq.`
+
+	So a user knows *how* to use the service, add information on the parameters.
+	Example: `#Parameters: getStockPrice [ticker]`
+
+	There will be dedicated description and help settings added as official support.
+
 
 ### Docker
 After creating the file, you will need to add the settings and configurations. Here is an example service config file:
@@ -149,6 +158,15 @@ private::               | Used to keep entries private. These will not be shared
     Values set under `[Main]` override the default values and become the new default settings for all services that don't have the respective setting specified. Service settings override `[Main]` and default settings.
 
     The setting hierarchy from highiest priority to lowest priority is as follows: *Service Settings > [Main] > default*. The higher priority settings override the lower priority settings.
+
+!!! tip "Tip: Add comments for service parameters and description."
+	So a user knows *what* the service is, use public comments to provide a description! 
+	Example: `#Description: Retrieve stock price data any stock listed on Nasdaq.`
+
+	So a user knows *how* to use the service, add information on the parameters.
+	Example: `#Parameters: getStockPrice [ticker]`
+
+	There will be dedicated description and help settings added as official support.
 
 ---
 

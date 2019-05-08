@@ -109,11 +109,11 @@ private::               | Used to keep entries private. These will not be shared
     The setting hierarchy from highiest priority to lowest priority is as follows: *Service Settings > [Main] > default*. The higher priority settings override the lower priority settings.
 
 !!! tip "Tip: Add comments for service parameters and description."
-	So a user knows *what* the service is, use public comments to provide a description! 
-	Example: `#Description: Retrieve stock price data any stock listed on Nasdaq.`
+	So a user knows *what* the service is, use public comments to provide a description!<br>
+	**Example:** `#Description: Retrieve stock price data any stock listed on Nasdaq.`
 
-	So a user knows *how* to use the service, add information on the parameters.
-	Example: `#Parameters: getStockPrice [ticker]`
+	So a user knows *how* to use the service, add information on the parameters.<br>
+	**Example:** `#Parameters: getStockPrice [ticker]`
 
 	There will be dedicated description and help settings added as official support.
 
@@ -160,11 +160,11 @@ private::               | Used to keep entries private. These will not be shared
     The setting hierarchy from highiest priority to lowest priority is as follows: *Service Settings > [Main] > default*. The higher priority settings override the lower priority settings.
 
 !!! tip "Tip: Add comments for service parameters and description."
-	So a user knows *what* the service is, use public comments to provide a description! 
-	Example: `#Description: Retrieve stock price data any stock listed on Nasdaq.`
+	So a user knows *what* the service is, use public comments to provide a description!<br>
+	**Example:** `#Description: Retrieve stock price data any stock listed on Nasdaq.`
 
-	So a user knows *how* to use the service, add information on the parameters.
-	Example: `#Parameters: getStockPrice [ticker]`
+	So a user knows *how* to use the service, add information on the parameters.<br>
+	**Example:** `#Parameters: getStockPrice [ticker]`
 
 	There will be dedicated description and help settings added as official support.
 

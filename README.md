@@ -129,6 +129,7 @@ See full wiki: [MkDocs]](https://www.mkdocs.org/) | [MkDocs Material](https://sq
 ## Publishing
 
 1. Build the docs with the `mkdocs build` command.
+1. In the `site/` directory, remove any folders and subfolders that begin with `-`. This prefix is used to flag pages that have not been completed yet.
 1. Deploy `site/` contents to staging site for testing.
 1. Deploy `site/` contents to [https://docs.blocknet.co/](https://docs.blocknet.co/).
 

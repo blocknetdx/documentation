@@ -14,7 +14,7 @@ To setup your Service Node, complete the following guides in order:
 
 1. [Collateral Computer Setup](/service-nodes/setup/#collateral-computer-setup)
 1. [SNode Server Computer Setup](/service-nodes/setup/#snode-server-computer-setup)
-1. [Additional Setup](/service-nodes/setup/#additional-setup)
+1. [Additional Setup](/service-nodes/setup/#additional-configuration)
 1. [Service Node Deployment](/service-nodes/setup/#service-node-deployment)
 
 ---
@@ -327,7 +327,7 @@ With the current configurations the Service Node will only be eligible to earn b
 
 
 
-* With [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes for hosting full blockchain nodes and providing verification checks for trustless exchange between digital assets. Setup for this configuration can be [found here](https://github.com/blocknetdx/blocknet-docs/blob/master/blocknetDXservice-node.md#setup--conf-files-for-the-wallets-on-your-service-node) with an updated version on the way, which can be found here when complete.
+* With [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes for hosting full blockchain nodes and providing verification checks for trustless exchange between digital assets. For setup, see the [XBridge Configuration Guide](/service-nodes/xbridge-configuration).
 * With [XRouter](/protocol/xrouter/introduction)\*, the decentralized inter-chain communication component of the Blocknet Protocol, 100% of fees are distributed to Service Nodes for hosting full blockchain nodes for SPV calls. For setup, see the [XRouter Configuration Guide](/service-nodes/xrouter-configuration).
 * With [XCloud](/protocol/xcloud/introduction)\*, a decentralized microservice cloud network build on XRouter, allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, in many cases without having to write any code. For setup, see the [XCloud Configuration Guide](/service-nodes/xcloud-configuration).
 

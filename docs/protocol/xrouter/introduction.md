@@ -9,11 +9,24 @@ description: XRouter is the world's first interoperability protocol with a block
 ## Introduction
 XRouter provides blockchain interoperability for the Blocknet Protocol with a communication layer consisting of an inter-blockchain SPV client backend, enabling the verification of blockchain records without requiring users to download the full blockchain. This empowers development of lightweight microservice architectures that harness contracts, protocols, and services from other blockchains, laying a foundation for a decentralized API ecosystem.
 
-Since XRouter functions on the TCP/IP level, it is compatible with any network. This includes public and private DLT's from Bitcoin, to IOTA, to Hyperledger.
+Since XRouter functions on the TCP/IP level, it is compatible with any network. This includes public and private DLT's, such as Bitcoin, Ethereum, IOTA, and Hyperledger.
 
-[Service Node](/service-nodes/introduction) earn 100% of fees from [XBridge](/protocol/xbridge/introduction), XRouter, and [XCloud](/protocol/xcloud/introduction) services. If you'd like to operate your own Service Node, see the [Service Node Setup Guide](/service-nodes/setup).
+Here is a list of current SPV calls:
+
+Call                    | Description
+------------------------|-------------
+xrGetBlockCount         | Returns a blockchain's block height
+xrGetBlockHash          | Returns a block number's hash
+xrGetBlock              | Returns a block hash's block number
+xrGetBlocks             | Returns block hashes for multiple block numbers
+xrDecodeRawTransaction  | Returns decoded transaction HEX
+xrGetTransaction        | Returns transaction data for transaction ID
+xrGetTransactions       | Returns transaction data for multiple transaction IDs
+xrSendTransaction       | Submit a signed transaction to the network
 
 To use XRouter, see the [XRouter API](https://api.blocknet.co/#xrouter) and [Setup Guide](https://api.blocknet.co/#xrouter-setup).
+
+[Service Nodes](/service-nodes/introduction) earn 100% of fees from [XBridge](/protocol/xbridge/introduction), XRouter, and [XCloud](/protocol/xcloud/introduction) services. If you'd like to operate your own Service Node, see the [Service Node Setup Guide](/service-nodes/setup).
 
 
 ## Design

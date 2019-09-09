@@ -17,10 +17,31 @@ Integration of assets is a free and open process, without permission required. A
 
 If you would like to have a digital asset supported, please ask a member of that project to fill out the [integration form](https://bit.ly/blocknet-compatibility) or create a pull request.
 
+#### Blockchain Requirements
+In order for for a blockchain to be compatible it must support JSON RPC and the following calls:
+
+* createrawtransaction
+* decoderawtransaction
+* getblock
+* getblockchaininfo (fallback getnetworkinfo, getinfo)
+* getblockhash
+* getnewaddress
+* getrawmempool
+* getrawtransaction
+* gettransaction
+* gettxout
+* listunspent
+* sendrawtransaction
+* signmessage
+* signrawtransaction (or signrawtransactionwithwallet)
+* verifymessage
+
 ---
 
 ## Supported Digital Assets
---8<-- "compatible.md"
+**Note**: XBridge is not yet compatible with hardware wallets such as Ledger, web wallets such as MyEtherWallet (MEW), or lite wallets such as Jaxx. Desktop Qt/cli wallets must be used. Below is a list of compatible assets and respective wallet versions. 
+
+--8<-- "xbridge-compatibility.md"
 
 
 

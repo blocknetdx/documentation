@@ -4,6 +4,10 @@ This repository contains the source code for [Blocknet's documentation portal](h
 > Powered by [MkDocs](https://github.com/mkdocs/mkdocs/) and [MkDocs Material](https://github.com/squidfunk/mkdocs-material).
 
 
+## Contributing
+Follow the Getting Started instructions below to get your local environment setup, create a branch off `doc-portal` with your updates following the guidelines below, and create a PR to `doc-portal`. 
+
+If you're not familiar enough with for how to do this, feel free to create a [Github issue](https://github.com/blocknetdx/documentation/issues/new) with corrections, edits, or additions. If you have a lot of content to add, the best method would be to enter the content into a Google Doc (with settings set to public comments allowed) and link that in your Github issue.
 
 
 ## Getting Started
@@ -33,7 +37,7 @@ Run dev server:
 
 ```
 # use from within /documentation/
-mkdocs server
+mkdocs serve
 ```
 
 This will compile the docs and output the localhost address where the changes can be previewed:
@@ -129,7 +133,7 @@ See full wiki: [MkDocs]](https://www.mkdocs.org/) | [MkDocs Material](https://sq
 ## Publishing
 
 1. Build the docs with the `mkdocs build` command.
-1. In the `site/` directory, remove any folders and subfolders that begin with `-`. This prefix is used to flag pages that have not been completed yet.
+1. In the `site/` directory, remove any folders and subfolders that begin with `-`. This prefix is manually used to flag pages that have not been completed yet.
 1. Deploy `site/` contents to staging site for testing.
 1. Deploy `site/` contents to [https://docs.blocknet.co/](https://docs.blocknet.co/).
 

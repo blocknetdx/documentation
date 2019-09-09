@@ -16,9 +16,10 @@ description: These Block DX trading guides explain how to check your balances, s
 
 	* The wallet is locked.
 	* You have already made a trade that has locked up funds. You will want to create smaller inputs so that a single trade won't lock up more funds than needed.
-	* The wallet uses legacy addresses. The funds will need to be moved to a newly generated address. The created address will automatically generate a legacy address due to the configurations already set. 
-	* The wallet may not have been [configured](/blockdx/configuration).
+	* Funds aren't in a legacy address. Right now only legacy addresses are compatible. If you are using a Segwit address, please create a new address to send the funds to. If the wallet has been configured via Block DX, then a legacy address will automatically be created when generating a new address.
+	* The wallet was not [configured](/blockdx/configuration).
 	* The wallet was not restarted after the configuration.
+	* If inputs have been locked via Coin Control.
 
 
 ??? example "Select Market"

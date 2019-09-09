@@ -60,20 +60,21 @@ Blocknet was created on October 20th, 2014. A week later, from October 29th, 201
 The founding team then set out to conduct research on how to best conduct [atomic swaps](https://en.bitcoin.it/wiki/Atomic_swap) and develop an interoperability protocol that is not only decentralized, but also trustless. 
 
 * __Dec 2014__ - First messages sent across blockchains (data transport proof-of-concept)
-* __Oct 2015__ - The Blocknet Protocol v.1 (proof-of-concept)
+* __Oct 2015__ - XBridge v0.1 (proof-of-concept)
 * __Sept 2015__ - [The first trade took place](https://twitter.com/The_Blocknet/status/643427142328549376) on the fully decentralized exchange between BitSwift and XCurrency using the Blocknet Protocol
-* __Dec 2015__ - Blockchain XRouter (proof-of-concept)
-* __Mar 2016__ - The Blocknet Protocol v.2 (TierNolan's algo, no CLTV)
-* __Aug 2016__ - The Blocknet Protocol v.3 (CLTV: nonmalleable design)
-* __Dec 2016__ - XBridge alpha was released on the mainnet allowing users to conduct peer-to-peer trading directly from the wallets of the coins being traded
+* __Dec 2015__ - XRouter (proof-of-concept)
+* __Mar 2016__ - XBridge v0.2 (TierNolan's algo, no CLTV)
+* __Aug 2016__ - XBridge v0.3 (CLTV: nonmalleable design)
+* __Dec 2016__ - XBridge alpha mainnet released, the world's first *true* decentralized exchange protocol allowing users to conduct peer-to-peer trading directly from the wallets of the assets being traded
 * __May 2017__ - Service Node design (QoS provider concept)
 * __Sept 2017__ - Service Nodes launch on mainnet
-* __Mar 2018__ - XBridge alpha release, the world's first *true* decentralized exchange protocol
 * __Mar 2018__ - Block DX (decentralized exchange) dApp alpha release built on the Blocknet Protocol
 * __June 2018__ - XRouter alpha release, the world's first blockchain router protocol
 * __Feb 2019__ - XBridge beta release
-* __Feb 2019__ - Block DX dApp beta release
+* __Feb 2019__ - Block DX dApp 1.0.0 release
 * __Apr 2019__ - XRouter beta release
+* __May 2019__ - Block DX dApp 1.1.0 release
+* __July 2019__ - Block DX dApp 1.2.0 release
 
 ---
 

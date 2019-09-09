@@ -11,7 +11,7 @@ description: This guide explains the process for installing Block DX, a decentra
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ??? example "Windows"
-	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 3 options:
+	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 3 Windows options:
 		1. `BLOCK-DX-x.x.x-win.exe` (recommended)
 		1. `BLOCK-DX-x.x.x-win-x64.zip`
 		1. `BLOCK-DX-x.x.x-win-ia32.zip`
@@ -46,7 +46,7 @@ description: This guide explains the process for installing Block DX, a decentra
 
 
 ??? example "MacOS"
-	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 options:
+	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 MacOS options:
 		1. `BLOCK-DX-x.x.x-mac.dmg` (recommended)
 		1. `BLOCK-DX-x.x.x-mac.zip`
 
@@ -104,7 +104,7 @@ description: This guide explains the process for installing Block DX, a decentra
 
 
 ??? example "Linux"
-	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 options:
+	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 Linux options:
 		1. `BLOCK-DX-x.x.x-linux.deb` (recommended)
 		1. `BLOCK-DX-x.x.x-linux.tar.gz`
 	??? example "Using the `.deb` download (option a)"

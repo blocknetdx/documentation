@@ -1,5 +1,5 @@
 title: Block DX Exchange Listings
-description: Block DX is a decentralized exchange powered with over 100 assets trading. The exchange has free listings with more continuously being added.
+description: Block DX is a decentralized exchange with over 100 assets trading. The exchange has free listings with more continuously being added.
 
 
 # Block DX Listings
@@ -12,11 +12,31 @@ A Block DX listing holds many benefits beyond just being traded on the exchange.
 
 Getting listed on Block DX is 100% free. If you would like to have a digital asset listed, please ask a member of that project to fill out the [integration form](https://bit.ly/blocknet-compatibility).
 
+#### Requirements
+In order for for a blockchain to be compatible it must support JSON RPC and the following calls:
+
+* createrawtransaction
+* decoderawtransaction
+* getblock
+* getblockchaininfo (fallback getnetworkinfo, getinfo)
+* getblockhash
+* getnewaddress
+* getrawmempool
+* getrawtransaction
+* gettransaction
+* gettxout
+* listunspent
+* sendrawtransaction
+* signmessage
+* signrawtransaction (or signrawtransactionwithwallet)
+* verifymessage
+
 ---
 
 ## Listed Digital Assets
+**Note**: Block DX is not yet compatible with hardware wallets such as Ledger, web wallets such as MyEtherWallet (MEW), or lite wallets such as Jaxx. Desktop Qt wallets must be used. Below is a list of compatible assets and respective wallet versions. 
 
---8<-- "compatible.md"
+--8<-- "xbridge-compatibility.md"
 
 
 

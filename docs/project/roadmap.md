@@ -24,16 +24,6 @@ Looking forward Blocknet will have a very successful future as these product tra
 
 ## Upcoming Changes via Proposals
 
-???+ success "Project Funding"
-    **Status**: Passed. Burn Funds have been moved to the Community Fund addresses. Awaiting a future soft fork for the activation of the Superblock increase.
-
-    **Proposal**: [View Proposal](/proposals/project-funding)
-
-    **Superblock**: 734400
-
-    **Results**: 493 Service Nodes, 218 Yes, 1 No
-
-
 ???+ success "Single Tier Block Reward"
     **Status**: Passed. Awaiting a future hard fork for implementation and activation.
 

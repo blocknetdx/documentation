@@ -17,7 +17,7 @@ Implementing masternodes was not without problems. An exploit in the forked code
 
 A simple ledger of the funds [can be found here](https://docs.google.com/spreadsheets/d/1xFm5LJsRNN62-9XZFqfDckUt2x8ps3pUOBISUxNQYpc/).
 
-The current governance model by Service Nodes [can be found here](https://docs.google.com/document/d/1TLwtw4Ukc5riOmUvv2uE5y7VGIG63sivAXwvc1gFsMc/preview).
+The current governance model by Service Nodes [can be found here](/governance/introduction/).
 
 In short, every 43,200 blocks on the Blocknet blockchain, Service Nodes can choose to mint up to a maximum of 40,000 new tokens. These can then be allocated to fund development in the form of proposals. 
 
@@ -46,7 +46,7 @@ Process thinking is being applied to combat this, firstly in the supporting func
 
 Example of the great methods being developed in marketing:
 
-* [KPIs and arketing Plan](https://docs.google.com/document/d/1XBUQJ_Mzr9TVhxTkDU_NWmTfJf2JPHTBqzLroE866tE/preview)
+* [KPIs and Marketing Plan](https://docs.google.com/document/d/1XBUQJ_Mzr9TVhxTkDU_NWmTfJf2JPHTBqzLroE866tE/preview)
 * [Marketing recruiting working instructions](https://www.youtube.com/watch?v=oMPHvvMCBkM)
 
 ---
@@ -109,37 +109,37 @@ To be added in a later update.
 #### Submission of Proposal to Network
 Instructions:
 
-* Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee. This fee should be added to the proposal amount(in a later step) so that you are reimbursed upon acceptance of the proposal.
-* Submit a pre-proposal to the relevant Superblock thread in the proposal forum with the following information:
-  * Proposal name as will be submitted to the network(18 character limit)
-    * *Example*: Qt-Exchange-Widget
-  * What is being proposed
-  * Rationale and further explanation of proposal & background info
-  * Technical explanation/agenda of feature/proposal (if applicable)
-  * Estimated time for components in the proposal (if applicable)
-  * Teams/person undertaking the work
-  * Cost assessment
+1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount(in a later step) so that you are reimbursed upon acceptance of the proposal.
+1. Submit a pre-proposal to the relevant Superblock thread in the proposal forum with the following information:
+    * Proposal name as will be submitted to the network (18 character limit)
+        * *Example*: Qt-Exchange-Widget
+    * What is being proposed
+    * Rationale and further explanation of proposal & background info
+    * Technical explanation/agenda of feature/proposal (if applicable)
+    * Estimated time for components in the proposal (if applicable)
+    * Teams/person undertaking the work
+    * Cost assessment
     * Are these expenses coming from the Superblock or community funds? Which community fund is it coming from?
-  * Fund custodians
-* By sticking to a similar format your proposal should accurately convey the relevant information, notably: what is being proposed, why it is being proposed, how much it will cost, and where the funds will go once created.
-* After allowing some time for the proposal to be reviewed in the pre-proposal thread, the final proposal with any edits should be submitted to the relevant final proposal Superblock thread in the proposal forum.
-* Once a final proposal is submitted to the forum, copy the post URL and create a shortened URL using Google's URL shortener: [https://goo.gl/](https://goo.gl/)
-* Open the wallet
-* In the program menu, go to ‘*Tools*’ > ‘*Debug Console*’. The debug console will open in a new window.
-* The voting command uses the following command structure(all one line): 
-* **Format**: `mnbudget prepare [PROPOSAL NAME] [URL] [PAYMENT COUNT] [SUPERBLOCK BLOCK] [ADDRESS] [AMOUNT]`
-  * PROPOSAL NAME = The name of the proposal without spaces(18 character limit) 
-  * URL = The shortened URL for the proposal link created
-  * PAYMENT COUNT = Amount of recurring payments to occur for the quantity in [AMOUNT]
-  * SUPERBLOCK BLOCK = The Superblock block count payments will start at
-  * ADDRESS = The BLOCK address to receive payments to
-  * AMOUNT = The amount to be compensated upon proposal approval
-* *Example*: `mnbudget prepare privacy-mixer https://goo.gl/xxxxxxx 1 129600 Bxxxxxxxxxxxxxxxxxxxxxxxxx 100`
-* Submit the command and leave the debug console open. A transaction hash(tx hash) will be returned from the ‘*prepare*’ command above.
-* *Example*: `1007f6f8055da51255285789554e2407eec5ec5521a5549df35543c5545ef050147`
-* Now that you have the transaction hash, after 6 confirmations the proposal must be submitted using the following command. It's the previous command with '*prepare*' replaces with '*submit*' and with the transaction hash appended to the end.
-* *Example*: `mnbudget submit privacy-mixer https://goo.gl/xxxxxxx 1 129600 Bxxxxxxxxxxxxxxxxxxxxxxxxx 100 1007f6f8055da51255285789554e2407eec5ec5521a5549df35543c5545ef050147`
-* Verify that the proposal has been properly submitted by typing the following command and looking for the proposal:
+    * Fund custodians
+1. By sticking to a similar format your proposal should accurately convey the relevant information, notably: what is being proposed, why it is being proposed, how much it will cost, and where the funds will go once created.
+1. After allowing some time for the proposal to be reviewed in the pre-proposal thread, the final proposal with any edits should be submitted to the relevant final proposal Superblock thread in the proposal forum.
+1. Once a final proposal is submitted to the forum, copy the post URL and create a shortened URL using Google's URL shortener: [https://goo.gl/](https://goo.gl/)
+1. Open the wallet
+1. In the program menu, go to *Tools* > *Debug Console*. The debug console will open in a new window.
+1. The voting command uses the following command structure (all one line): 
+1. **Format**: `mnbudget prepare [PROPOSAL NAME] [URL] [PAYMENT COUNT] [SUPERBLOCK BLOCK] [ADDRESS] [AMOUNT]`
+    * PROPOSAL NAME = The name of the proposal without spaces (18 character limit) 
+    * URL = The shortened URL for the proposal link created
+    * PAYMENT COUNT = Amount of recurring payments to occur for the quantity in [AMOUNT]
+    * SUPERBLOCK BLOCK = The Superblock block count payments will start at
+    * ADDRESS = The BLOCK address to receive payments to
+    * AMOUNT = The amount to be compensated upon proposal approval
+    * *Example*: `mnbudget prepare privacy-mixer https://goo.gl/xxxxxxx 1 129600 Bxxxxxxxxxxxxxxxxxxxxxxxxx 100`
+1. Submit the command and leave the debug console open. A transaction hash (tx hash) will be returned from the ‘*prepare*’ command above.
+    * *Example*: `1007f6f8055da51255285789554e2407eec5ec5521a5549df35543c5545ef050147`
+1. Now that you have the transaction hash, after 6 confirmations the proposal must be submitted using the following command. It's the previous command with `prepare` replaced with `submit` and with the transaction hash appended to the end.
+    * *Example*: `mnbudget submit privacy-mixer https://goo.gl/xxxxxxx 1 129600 Bxxxxxxxxxxxxxxxxxxxxxxxxx 100 1007f6f8055da51255285789554e2407eec5ec5521a5549df35543c5545ef050147`
+1. Verify that the proposal has been properly submitted by typing the following command and looking for the proposal:
 `mnbudget show`
 
 
@@ -158,12 +158,12 @@ For a proposal to pass and receive funding:
 
 Voting Turnout | Yays Required | Max Nays Allowed
 ---------------|---------------|-----------------
-100% | 55% | 45%
-80% | 56.25% | 43.75%
-40% | 62.5% | 37.5%
-20% | 75% | 25%
-10% | 100% | 0%
-<10% | cannot pass | cannot pass
+100%           | 55%           | 45%
+80%            | 56.25%        | 43.75%
+40%            | 62.5%         | 37.5%
+20%            | 75%           | 25%
+10%            | 100%          | 0%
+<10%           | cannot pass   | cannot pass
 
 Notes for expansion in further updates:
 

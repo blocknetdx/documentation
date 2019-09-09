@@ -17,8 +17,8 @@ To setup XRouter, follow these steps:
 
 1. [Enable XRouter](#enable-xrouter)
 1. [Configure XRouter](#configure-xrouter)
-1. [Deploy SPV wallets](#deploy-spv-wallets)
-1. [Additional information](#additional-information)
+1. [Deploy SPV Wallets](#deploy-spv-wallets)
+1. [Additional Information](#additional-information)
 1. [Setup XCloud](/service-nodes/xcloud-configuration) (option): XCloud is a decentralized microservice cloud network that allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, many cases without having to write any code.
 
 ---
@@ -44,7 +44,12 @@ servicenodeprivkey=922m1YhfTRK6oLnSXGptbqjbSSSqXrktzAiybQBWJeQimHiHoU2
 rpcthreads=8	# equal to number of supported wallets, set to no less than 8
 ```
 
-For best performance, a `maxconnections=` setting should **not** be specified. After making these changes you will need to restart your Service Node Blocknet wallet.
+!!! tip "Tip: For best performance..."
+
+	- `maxconnections=` setting should **not** be specified. 
+	- `rpcthreads=` should be set to the number of blockchains you are supporting (if running 24 blockchains, set `rpcthreads=24`). If you are running less than 8 blockchains then it should remain `rpcthreads=8` as the minimum.
+
+After making these changes you will need to restart your Service Node Blocknet wallet.
 
 ---
 
@@ -107,7 +112,7 @@ disabled=1
 fetchlimit=50
 ```
 
-Here are a list of current SPV calls:
+Here is a list of current SPV calls:
 
 Call                    | Description
 ------------------------|-------------
@@ -125,11 +130,14 @@ xrSendTransaction       | Submit a signed transaction to the network
 ## Deploy SPV Wallets
 1. Add the chains you want to support SPV calls for in the `wallets=` entry in `xrouter.conf`, denoted by the chain's asset's ticker. Separate each wallet name with a comma.
     * Example: `wallets=SYS,BLOCK,BTC,ETH,MNP`
+1. If you added or removed blockchain support, make sure to also update the `rpcthreads=` value in the `blocknetdx.conf` file.
 1. Use `xrReloadConfigs` to load your newly configured settings to `xrouter.conf` without needing to restart your Service Node.
 1. Use `sendserviceping` to propogate these new settings to the network immediately or wait up to 10 minutes for this to happen automatically.
 1. You can view your configs using `xrStatus`.
 
 ---
+
+## Additional Information
 
 #### Fees
 While Service Nodes can set their own fees, users can also set the max fee they will pay. Any Service Node's with a fee that is higher than a user's max fee will not be used. It is recommended to offer free calls for any call that are not computationally intesive. Lower fees will help encourage an ecosystem to build around the network. A healthy ecosystem will lead to much more usage of the network and receiving a lot of small fees will be more beneficial than receiving a few high fees. Granted, some calls may actually take computational time and will therefore require a higher fee.

@@ -18,7 +18,7 @@ This is a proposal to increase BLOCK circulation by 100x. All existing holdings,
 
 ### Issue
 
-If the price were to increase to a certain value, Blocknet would find itself facing a problem that would require an emergency hard fork to fix, potentially diverting the team and community. Why? As you know, microservices provided by the XRouter and plug-in services charge fees. At a high enough BLOCK value, these fees become reach dust values and would be unable to subit to the network.
+If the price were to increase to a certain value, Blocknet would find itself facing a problem that would require an emergency hard fork to fix, potentially diverting the team and community. Why? As you know, microservices provided by the XRouter and plug-in services charge fees. At a high enough BLOCK value, these fees reach dust values and would be unable to submit to the network.
 
 ???+ quote "Comments from 86B on Discord regarding dust amounts"
 	Lets say we moved the relay fee out to match BTCs at 0.00001. Using the 2000bytes example, sending a $0.005 (half cent) microfee would be charged $0.02 by the network for a 366% charge.

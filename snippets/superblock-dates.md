@@ -1,21 +1,17 @@
 |Superblock 			| Estimated Date	|
 ------------------------|--------------------
-777600 					| February 4, 2019
-820800 					| March 6, 2019
-864000 					| April 5, 2019
-907200 					| May 5, 2019
 950400 					| June 4, 2019
 993600 					| July 4, 2019
+1036800 				| August 3, 2019
+1080000 				| September 2, 2019
+1123200 				| October 2, 2019
+1166400 				| November 1, 2019
+1209600 				| December 1, 2019
+1252800 				| Decemer 31, 2019
 
-??? summary "View more Superblock dates (Aug 2019 - Dec 2021)"
+??? summary "View more Superblock dates (Jan 2020 - Dec 2021)"
 	|Superblock 			| Estimated Date	|
 	------------------------|--------------------
-	1036800 				| August 3, 2019
-	1080000 				| September 2, 2019
-	1123200 				| October 2, 2019
-	1166400 				| November 1, 2019
-	1209600 				| December 1, 2019
-	1252800 				| Decemer 31, 2019
 	1296000 				| January 30, 2020
 	1339200 				| February 29, 2020
 	1382400 				| March 30, 2020

@@ -80,6 +80,10 @@ To view the syncing status, use the following instructions:
 
 A bootstrap is a set of files containing blockchain data up to a certain point in time. Using these files helps shorten the amount of time it takes to sync the wallet since you don't need to sync the blockchain from scratch.
 
+???+ info "Video Tutorials"
+	* [Windows](https://www.youtube.com/watch?v=66o0fQ0sHxQ)
+	* [MacOS](https://www.youtube.com/watch?v=kTJ-YBdHrtM)
+
 1. [Install the wallet](/wallet/installation) or update to the [latest release](https://github.com/blocknetdx/blocknet/releases/latest).
 1. Download the [latest bootstrap files](https://github.com/blocknetdx/blocknet-blockchain-bootstrap/releases/download/v1.0/BlocknetDX.zip).
 1. Find the downloaded `BlocknetDX.zip` file. The default location is in *Downloads*.
@@ -87,7 +91,7 @@ A bootstrap is a set of files containing blockchain data up to a certain point i
 1. Close and quit the Blocknet wallet if it is running.
 --8<-- "data-directories-2.md"
 
-1. Remove all files and folders **EXCEPT** for `wallet.dat`, `blocknetdx.conf`, `xbridge.conf` (may not be present), `servicenode.conf`, and the `backups/` folder. Again, **DO NOT** delete the `wallet.dat` file as it contains the private keys for your funds. Deleting this file will result in loss of funds.
+1. Remove all files and folders **EXCEPT** for `wallet.dat`, `blocknetdx.conf`, `xbridge.conf` (may not be present), `xrouter.conf`, `servicenode.conf`, and the `backups/` and `plugins/` folders. Again, **DO NOT** delete the `wallet.dat` file as it contains the private keys for your funds. Deleting this file will result in loss of funds.
 1. Inside the unzipped `BlocknetDX` folder there are `blocks/` and `chainstate/` folders. Move these 2 folders into the Blocknet wallet's data directory that you just removed files from.
 1. Start the wallet and syncing should begin at the bootstrap's last block.
 1. Read more about syncing [above](/wallet/syncing/#synchronization).

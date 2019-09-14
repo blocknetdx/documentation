@@ -18,8 +18,9 @@ DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.vip/en-ww/trad
 DigiFinex       | (USDT/BLOCK)  | [Buy Now](https://www.digifinex.vip/en-ww/trade/USDT/BLOCK)
 Nova Exchange   | (BTC/BLOCK)   | [Buy Now](https://novaexchange.com/market/BTC_BLOCK/)
 Cryptofacil     | (BTC/BLOCK)   | [Buy Now](https://cryptofacil.com/trading-view/61/BTC-BLOCK)
+StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/exchange/BTC-BLOCK)
+Altilly         | (BTC/BLOCK)   | [Buy Now](https://www.altilly.com/market/BLOCK_BTC)
 FEX Pro         | (BTC/BLOCK)   | [Buy Now](https://fexpro.net/#/exchange?type=)
-StakeCube       | (BTC/BLOCK)   | [But Now](https://stakecube.net/exchange/BTC-BLOCK)
 Beaxy           | (BTC/BLOCK)   | Coming
 BlockBid        | (BTC/BLOCK)   | Coming
 

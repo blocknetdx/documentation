@@ -1,6 +1,5 @@
 title: Blocknet Blockchain Explorers
-description:
-Blocknet blockchain explorers, sometimes referred to as block explorers, are used to search and navigate the entire Blocknet blockchain. 
+description: Blocknet blockchain explorers, sometimes referred to as block explorers, are used to search and navigate the entire Blocknet blockchain. 
 
 # Explorers
 
@@ -21,6 +20,7 @@ It's important to note that a block explorer can only be used to explore blockch
 
 * [CryptoID Blocknet Explorer](https://chainz.cryptoid.info/block/)
 * [CryptoCore Blocknet Explorer](https://block.ccore.online/)
+* [TokenView Blocknet Explorer](https://block.tokenview.com/en/coininfo)
 
 ---
 

@@ -119,6 +119,7 @@ nav:
   - 'Syncing': 'wallet/syncing.md'
   - 'Encrypt Wallet': 'wallet/encrypting.md'
   - 'Staking': 'wallet/staking.md'
+  - 'Fork Management': 'wallet/forking.md'
   # - 'Peers': 'wallet/peers.md'
   - 'Lock/Unlock': 'wallet/lock-unlock.md'
   # - 'Balances': 'wallet/balances.md'

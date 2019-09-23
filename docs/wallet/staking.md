@@ -3,10 +3,6 @@ description: This guide explains how to setup your Blocknet wallet for staking t
 
 
 # Staking BLOCK
-
----
-
-## What is Staking
 Staking is the Proof-of-Stake equivelant of mining in Proof-of-Work blockchains. Stakers validate transactions on the network and are compensated with block rewards. These transactions are grouped in blocks. With [Blocknet](/project/introduction), there is 1 block every minute with a 1 [BLOCK](/blockchain/introduction) reward. From this 1 BLOCK reward, 0.3 BLOCK is awarded to a staker as compensation for helping secure and validate the network and 0.7 BLOCK is sent to a Service Node operator as compensation for supporting the network's services.
 
 ---

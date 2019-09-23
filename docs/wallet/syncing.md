@@ -86,7 +86,7 @@ A bootstrap is a set of files containing blockchain data up to a certain point i
 
 1. [Install the wallet](/wallet/installation) or update to the [latest release](https://github.com/blocknetdx/blocknet/releases/latest).
 1. Download the [latest bootstrap files](https://github.com/blocknetdx/blocknet-blockchain-bootstrap/releases/download/v1.0/BlocknetDX.zip).
-1. Find the downloaded `BlocknetDX.zip` file. The default location is in *Downloads*.
+1. Find the downloaded `BlocknetDX.zip` file. The default location is in your *Downloads* folder.
 1. Double-click the file to unzip and reveal a folder named `BlocknetDX`.
 1. Close and quit the Blocknet wallet if it is running.
 --8<-- "data-directories-2.md"

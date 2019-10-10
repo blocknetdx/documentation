@@ -18,7 +18,7 @@ Integration of assets is a free and open process, without permission required. A
 If you would like to have a digital asset supported, please ask a member of that project to fill out the [integration form](https://bit.ly/blocknet-compatibility) or create a pull request.
 
 #### Blockchain Requirements
-In order for for a blockchain to be compatible it must support JSON RPC and the following calls:
+In order for for a blockchain to be compatible it must support JSON RPC, HTLC atomic swaps, and the following calls:
 
 * createrawtransaction
 * decoderawtransaction

@@ -13,7 +13,7 @@ A Block DX listing holds many benefits beyond just being traded on the exchange.
 Getting listed on Block DX is 100% free. If you would like to have a digital asset listed, please ask a member of that project to fill out the [integration form](https://bit.ly/blocknet-compatibility).
 
 #### Requirements
-In order for for a blockchain to be compatible it must support JSON RPC and the following calls:
+In order for for a blockchain to be compatible it must support JSON RPC, HTLC atomic swaps, and the following calls:
 
 * createrawtransaction
 * decoderawtransaction

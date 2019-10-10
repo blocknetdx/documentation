@@ -87,7 +87,7 @@ Matching consensus                      | correct_nodes * 2
 Sending bad XRouter config              | -10
 Sending bad XCloud config               | -2
 
-This mechanism and values are subject to change in future releases. Join the [Developer mailing list](http://eepurl.com/dDjhYH) to stay updated.
+This mechanism and values are subject to change in future releases. Join the [Developer mailing list](https://eepurl.com/c5OJMj) to stay updated.
 
 
 ## Fees

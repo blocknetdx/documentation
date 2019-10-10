@@ -10,15 +10,15 @@ description:
 <div id="bn-social-group">
 
 <div class="social">
-	<a href="http://eepurl.com/c5OJMj" target="_blank"><i class="fa fa-user-plus block-green fa-5x" aria-hidden="true"></i></a>
+	<a href="https://eepurl.com/c5OJMj" target="_blank"><i class="fa fa-user-plus block-green fa-5x" aria-hidden="true"></i></a>
 	<div class="name">General Newsletter</div>
 </div>
 <div class="social">
-	<a href="http://eepurl.com/dq-ElD" target="_blank"><i class="fa fa-user-plus block-red fa-5x" aria-hidden="true"></i></a>
+	<a href="https://eepurl.com/c5OJMj" target="_blank"><i class="fa fa-user-plus block-red fa-5x" aria-hidden="true"></i></a>
 	<div class="name">Service Node Newsletter</div>
 </div>
 <div class="social">
-	<a href="http://eepurl.com/dDjhYH" target="_blank"><i class="fa fa-user-plus block-lblue fa-5x" aria-hidden="true"></i></a>
+	<a href="https://eepurl.com/c5OJMj" target="_blank"><i class="fa fa-user-plus block-lblue fa-5x" aria-hidden="true"></i></a>
 	<div class="name">Developer Newsletter</div>
 </div>
 

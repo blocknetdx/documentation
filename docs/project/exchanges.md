@@ -23,6 +23,8 @@ FEX Pro         | (BTC/BLOCK)   | [Buy Now](https://fexpro.net/#/exchange?type=)
 Beaxy           | (BTC/BLOCK)   | Coming
 BlockBid        | (BTC/BLOCK)   | Coming
 
+<!-- Coinvex         | (BTC/BLOCK)   | [Buy Now](https://coinvex.org/market/BTC-BLOCK) -->
+
 ---
 
 ## Hybrid Exchanges

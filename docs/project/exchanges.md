@@ -12,7 +12,7 @@ Centralized exchanges are one of the most popular ways to trade cryptocurrency. 
 
 Exchange        | Market        | Link
 ----------------|---------------|------
-Bittrex Int.    | (BTC/BLOCK)   | [Buy Now](https://bittrex.com/Market/Index?MarketName=BTC-BLOCK)
+Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)
 UPbit           | (BTC/BLOCK)   | [Buy Now](https://upbit.com/exchange?code=CRIX.UPBIT.BTC-BLOCK)
 DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.vip/en-ww/trade/BTC/BLOCK)
 DigiFinex       | (USDT/BLOCK)  | [Buy Now](https://www.digifinex.vip/en-ww/trade/USDT/BLOCK)

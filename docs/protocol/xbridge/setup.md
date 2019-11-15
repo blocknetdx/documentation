@@ -4,7 +4,7 @@ description: This guide explains how to setup and configure your client for use 
 # XBridge Setup Guide
 This guide explains how to setup and configure your client to use XBridge. If you have not yet setup the Blocknet wallet, start with the [Wallet Setup Guide](/wallet/setup).
 
-XBridge is a decentralized exchange protocol with the ability to perform non-custodial, trustless, and decentralized exchange between any digital assets that is supported by the Blocknet Protocol. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services
+XBridge is a decentralized exchange protocol with the ability to perform non-custodial, trustless, and decentralized exchange between any digital assets that is supported by the Blocknet Protocol. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services.
 
 For each market you would like to trade on, you must run the full nodes of those blockchains in addition to the Blocknet wallet. For example, if you are trading on the BTC-LTC market, you must have the Blocknet, Litecoin, and Bitcoin wallets fully synced and running locally.
 

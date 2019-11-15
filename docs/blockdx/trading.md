@@ -87,10 +87,6 @@ description: These Block DX trading guides explain how to check your balances, s
 	1. For *Price* (the second input), enter the price (rate) you would like to trade the first asset for.
 	1. *Total* shows the total amount of the 2nd asset that will be traded for the first asset.
 	1. In the address inputs, enter the addresses the funds will be coming from and going to. Make sure these are legacy addresses and not Segwit addresses.
-
-		??? bug "Bug: Right-click paste does not work properly."
-			When pasting, use the Ctrl+v shortcut. Using right-click and paste will not be recorded in the input even though it's showing.
-
 	1. Ignore *Order ID*, that should be blank when creating an order.
 	1. Review your order.
 	1. Select the place order button.
@@ -116,10 +112,6 @@ description: These Block DX trading guides explain how to check your balances, s
 
 	1. Make sure *Balances* shows enough funds in the *Available* column to cover the order.
 	1. In the address inputs, enter the addresses the funds will be coming from and going to. Make sure these are legacy addresses and not Segwit addresses.
-
-		??? bug "Bug: Right-click paste does not work properly."
-			When pasting, use the Ctrl+v shortcut. Using right-click and paste will not be recorded in the input even though it's showing.
-
 	1. Review your order.
 	1. Select the place order button.
 	1. The trade will now be visible under *Active Orders*.

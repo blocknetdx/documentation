@@ -12,18 +12,18 @@ Centralized exchanges are one of the most popular ways to trade cryptocurrency. 
 
 Exchange        | Market        | Link
 ----------------|---------------|------
-Bittrex         | (BTC/BLOCK)   | [Buy Now](https://bittrex.com/Market/Index?MarketName=BTC-BLOCK)
+Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)
 UPbit           | (BTC/BLOCK)   | [Buy Now](https://upbit.com/exchange?code=CRIX.UPBIT.BTC-BLOCK)
 DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.vip/en-ww/trade/BTC/BLOCK)
 DigiFinex       | (USDT/BLOCK)  | [Buy Now](https://www.digifinex.vip/en-ww/trade/USDT/BLOCK)
-Nova Exchange   | (BTC/BLOCK)   | [Buy Now](https://novaexchange.com/market/BTC_BLOCK/)
 Cryptofacil     | (BTC/BLOCK)   | [Buy Now](https://cryptofacil.com/trading-view/61/BTC-BLOCK)
+StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/exchange/BTC-BLOCK)
+Altilly         | (BTC/BLOCK)   | [Buy Now](https://www.altilly.com/market/BLOCK_BTC)
 FEX Pro         | (BTC/BLOCK)   | [Buy Now](https://fexpro.net/#/exchange?type=)
-StakeCube       | (BTC/BLOCK)   | [But Now](https://stakecube.net/exchange/BTC-BLOCK)
 Beaxy           | (BTC/BLOCK)   | Coming
 BlockBid        | (BTC/BLOCK)   | Coming
 
-<!-- Amsterdex       | (BTC/BLOCK)   | [Buy Now](https://amsterdex.com/exchange?market=block) -->
+<!-- Coinvex         | (BTC/BLOCK)   | [Buy Now](https://coinvex.org/market/BTC-BLOCK) -->
 
 ---
 

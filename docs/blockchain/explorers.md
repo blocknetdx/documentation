@@ -1,13 +1,18 @@
 title: Blocknet Blockchain Explorers
-description:
-Blocknet blockchain explorers, sometimes referred to as block explorers, are used to search and navigate the entire Blocknet blockchain. 
+description: Blocknet blockchain explorers, usually referred to as block explorers, are used to search and navigate the entire Blocknet blockchain. 
 
 # Explorers
 
 ---
 
 ## Introduction
-A Blocknet blockchain explorer, sometimes referred to as a block explorer, is used to search and navigate the entire Blocknet blockchain. All public information on the blockchain will be accessible through the explorer including: 
+The following is a list of Blocknet explorers:
+
+* [CryptoID](https://chainz.cryptoid.info/block/) (recommended)
+* [CryptoCore](https://block.ccore.online/)
+* [TokenView](https://block.tokenview.com/en/coininfo)
+
+A Blocknet blockchain explorer, usually referred to as a block explorer, is used to search and navigate the entire Blocknet blockchain. All public information on the blockchain is be accessible through the explorer including: 
 
 * All blocks
 * All transactions within blocks
@@ -17,10 +22,8 @@ A Blocknet blockchain explorer, sometimes referred to as a block explorer, is us
 * Sending, receiving, and change addresses of a transaction
 * Superblock and block reward payouts
 
-It's important to note that a block explorer can only be used to explore blockchains it supports. The following are a list of Blocknet explorers:
-
-* [CryptoID Blocknet Explorer](https://chainz.cryptoid.info/block/)
-* [CryptoCore Blocknet Explorer](https://block.ccore.online/)
+!!! info "Note: A block explorer can only be used to explore blockchains it supports."
+  Most block explorers only support a single blockchain. This means that if you are using a Bitcoin explorer you will be unable to look up Blocknet transactions (or any other data pertaining to Blocknet).
 
 ---
 

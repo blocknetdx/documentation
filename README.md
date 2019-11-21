@@ -1,5 +1,5 @@
 # Blocknet Documentation
-This repository contains the source code for [Blocknet's documentation portal](https://docs.blocknet.co). These documents are currently under progressive and iterative development.
+This repository contains the source code for Blocknet's [documentation portal website](https://docs.blocknet.co). These documents are currently under progressive and iterative development.
 
 > Powered by [MkDocs](https://github.com/mkdocs/mkdocs/) and [MkDocs Material](https://github.com/squidfunk/mkdocs-material).
 

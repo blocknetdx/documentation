@@ -16,6 +16,7 @@ Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/In
 UPbit           | (BTC/BLOCK)   | [Buy Now](https://upbit.com/exchange?code=CRIX.UPBIT.BTC-BLOCK)
 DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.vip/en-ww/trade/BTC/BLOCK)
 DigiFinex       | (USDT/BLOCK)  | [Buy Now](https://www.digifinex.vip/en-ww/trade/USDT/BLOCK)
+VCC Exchange    | (BTC/BLOCK)   | [Buy Now](https://vcc.exchange/exchange/basic?currency=btc&coin=block)
 Cryptofacil     | (BTC/BLOCK)   | [Buy Now](https://cryptofacil.com/trading-view/61/BTC-BLOCK)
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/exchange/BTC-BLOCK)
 Altilly         | (BTC/BLOCK)   | [Buy Now](https://www.altilly.com/market/BLOCK_BTC)

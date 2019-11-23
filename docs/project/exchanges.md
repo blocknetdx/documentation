@@ -53,9 +53,9 @@ Instant exchanges perform a similar function to normal exchanges, but without th
 
 Exchange        | Market        | Link
 ----------------|---------------|------
-CoinSwitch      | (BTC/BLOCK)   | [Buy Now](https://coinswitch.co/)
-xChange         | (BTC/BLOCK)   | [Buy Now](https://xchange.me/)
+xChange         | (BTC/BLOCK)   | [Buy Now](https://xchange.me/exchanger/exchange/BTC/BLOCK/0.1)
 
+<!-- CoinSwitch      | (BTC/BLOCK)   | [Buy Now](https://coinswitch.co/) -->
 
 
 

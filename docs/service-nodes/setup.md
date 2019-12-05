@@ -123,7 +123,7 @@ To setup your Service Node, complete the following guides in order:
 		```
 
 		!!! info "Note"
-			The `<SERVICE_NODE_KEY>` is the value returned from the `servicenode genkey` command. It is *NOT* the value from the `dumpwallet <ADDRESS>` command.
+			The `<SERVICE_NODE_KEY>` is the value returned from the `servicenode genkey` command. It is *NOT* the value from the `dumpprivkey <ADDRESS>` command.
 
 	1. After the information is replaced it should look similar to the following:
 		```
@@ -239,7 +239,7 @@ To setup your Service Node, complete the following guides in order:
 		```
 
 		!!! info "Note"
-			The `<SERVICE_NODE_KEY>` is the value returned from the `servicenode genkey` command. It is *NOT* the value from the `dumpwallet <ADDRESS>` command.
+			The `<SERVICE_NODE_KEY>` is the value returned from the `servicenode genkey` command. It is *NOT* the value from the `dumpprivkey <ADDRESS>` command.
 
 	1. After the information is replaced it should look similar to the following:
 		```

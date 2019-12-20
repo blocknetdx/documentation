@@ -77,25 +77,25 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 ??? example "Linux"
 	1. Start the wallet. If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/blocknet/bin/`)
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknetdx.conf` file located in your `~/.blocknetdx/` directory.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in your `~/.blocknet/` directory.
 
-				./blocknetdxd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
+				./blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
 
 			*Example:*
 
-				./blocknetdxd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
+				./blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
 
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			./blocknetdx-cli mnbudget show
+			./blocknet-cli mnbudget show
 
 	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
 
-			./blocknetdx-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
 
 		*Example:*
 
-			./blocknetdx-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
 
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
 
@@ -104,29 +104,29 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 	1. Start the wallet. If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `C:\Users\[YourUsername]\Downloads\blocknet\bin\`)
 
-			??? tip "Tip: This requires the *blocknetdx-[version]-win64.zip* download version."
-				To interact with the wallet via the command line, the `blocknetdx-[version]-win64.zip` wallet version is needed.
+			??? tip "Tip: This requires the *blocknet-[version]-win64.zip* download version."
+				To interact with the wallet via the command line, the `blocknet-[version]-win64.zip` wallet version is needed.
 
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknetdx.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\BlocknetDX` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Roaming\BlocknetDX\` into the file explorer path field.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\Blocknet` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Roaming\Blocknet\` into the file explorer path field.
 
-				blocknetdxd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD]
+				blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD]
 
 			*Example:*
 
-				blocknetdxd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword
+				blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword
 
 	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			blocknetdx-cli mnbudget show
+			blocknet-cli mnbudget show
 
 	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
 
-			blocknetdx-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
 
 		*Example:*
 
-			blocknetdx-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
 
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
 
@@ -135,28 +135,28 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 	1. Start the wallet. If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/Downloads/blocknet/bin/`)
 
-			??? tip "Tip: This requires the *blocknetdx-[version]-osx64.tar.gz* download version"
-				To interact with the wallet via the command line, the `blocknetdx-[version]-osx64.tar.gz` wallet version is needed.
+			??? tip "Tip: This requires the *blocknet-[version]-osx64.tar.gz* download version"
+				To interact with the wallet via the command line, the `blocknet-[version]-osx64.tar.gz` wallet version is needed.
 
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknetdx.conf` file located in your `~/Library/Application Support/BlocknetDX/` directory. This directory can be found by opening the Finder, in the program menu selecting *Go* > *Go to Folder*, entering `~/Library/Application Support/BlocknetDX/` in the path, and pressing *Enter*.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in your `~/Library/Application Support/Blocknet/` directory. This directory can be found by opening the Finder, in the program menu selecting *Go* > *Go to Folder*, entering `~/Library/Application Support/Blocknet/` in the path, and pressing *Enter*.
 
-				./blocknetdxd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
+				./blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
 
 			*Example:*
 
-				./blocknetdxd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
+				./blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
 
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			./blocknetdx-cli mnbudget show
+			./blocknet-cli mnbudget show
 
 	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
 
-			./blocknetdx-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
 
 		*Example:*
 
-			./blocknetdx-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
 
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
 

@@ -77,40 +77,40 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 ??? example "Linux"
 	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/blocknet/bin/`)
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknetdx.conf` file located in your `~/.blocknetdx/` directory.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in your `~/.blocknet/` directory.
 
-				./blocknetdxd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
+				./blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
 
 			*Example:*
 
-				./blocknetdxd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
+				./blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
 
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			./blocknetdx-cli mnbudget show
+			./blocknet-cli mnbudget show
 
 	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
 
-			./blocknetdx-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
 
 		*Example:*
 
-			./blocknetdx-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
 
 	1. **Review the proposals and the amount requested.** It's a good idea to consider the total Superblock budget, the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with some background information and objectives.
 	1. Vote for the proposal using the following command, replacing the variable with the respective values:
 
-			./blocknetdx-cli mnbudget vote [PROPOSAL-HASH] [VOTE]
+			./blocknet-cli mnbudget vote [PROPOSAL-HASH] [VOTE]
 
 		* `PROPOSAL-HASH`:  The hash listed for the proposal you are voting for
 		* `VOTE`:  Your vote (‘yes’ or ‘no’). `yes` means you'd like to vote to fund the proposal and `no` means you'd like to vote against the proposal so it isn't funded.
 
 		*Example:*
 
-			./blocknetdx-cli mnbudget vote 06a50c125aa305fbe38fa0fe9a1b39db1b1318838aadaec55f95c7a52101d83f yes
+			./blocknet-cli mnbudget vote 06a50c125aa305fbe38fa0fe9a1b39db1b1318838aadaec55f95c7a52101d83f yes
 
 		??? tip "Tip: Voting for Multiple Service Nodes."
-			To vote for multiple Services Nodes at the same time, use the following format instead: `./blocknetdx-cli mnbudget vote-many [PROPOSAL-HASH] [VOTE]`. Notice the second term is now `vote-many` instead of `vote`. This needs to be performed from the Blocknet wallet that contains the 5000 BLOCK collateral.
+			To vote for multiple Services Nodes at the same time, use the following format instead: `./blocknet-cli mnbudget vote-many [PROPOSAL-HASH] [VOTE]`. Notice the second term is now `vote-many` instead of `vote`. This needs to be performed from the Blocknet wallet that contains the 5000 BLOCK collateral.
 
 	1. Press the *Enter* key to submit the command and register your vote to the network.
 	--8<-- "complete-proposal-voting.md"
@@ -120,44 +120,44 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `C:\Users\[YourUsername]\Downloads\blocknet\bin\`)
 
-			??? tip "Tip: This requires the *blocknetdx-[version]-win64.zip* download version"
-				To interact with the wallet via the command line, the `blocknetdx-[version]-win64.zip` wallet version is needed.
+			??? tip "Tip: This requires the *blocknet-[version]-win64.zip* download version"
+				To interact with the wallet via the command line, the `blocknet-[version]-win64.zip` wallet version is needed.
 
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknetdx.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\BlocknetDX` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Roaming\BlocknetDX\` into the file explorer path field.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\Blocknet` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Roaming\Blocknet\` into the file explorer path field.
 
-				blocknetdxd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD]
+				blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD]
 
 			*Example:*
 
-				blocknetdxd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword
+				blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword
 
 	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			blocknetdx-cli mnbudget show
+			blocknet-cli mnbudget show
 
 	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
 
-			blocknetdx-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
 
 		*Example:*
 
-			blocknetdx-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
 
 	1. **Review the proposals and the amount requested.** It's a good idea to consider the total Superblock budget, the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with some background information and objectives.
 	1. Vote for the proposal using the following command, replacing the variable with the respective values:
 
-			blocknetdx-cli mnbudget vote [PROPOSAL-HASH] [VOTE]
+			blocknet-cli mnbudget vote [PROPOSAL-HASH] [VOTE]
 
 		* `PROPOSAL-HASH`:  The hash listed for the proposal you are voting for
 		* `VOTE`:  Your vote (‘yes’ or ‘no’). `yes` means you'd like to vote to fund the proposal and `no` means you'd like to vote against the proposal so it isn't funded.
 
 		*Example:*
 
-			blocknetdx-cli mnbudget vote 06a50c125aa305fbe38fa0fe9a1b39db1b1318838aadaec55f95c7a52101d83f yes
+			blocknet-cli mnbudget vote 06a50c125aa305fbe38fa0fe9a1b39db1b1318838aadaec55f95c7a52101d83f yes
 
 		??? tip "Tip: Voting for Multiple Service Nodes."
-			To vote for multiple Services Nodes at the same time, use the following format instead: `blocknetdx-cli mnbudget vote-many [PROPOSAL-HASH] [VOTE]`. Notice the second term is now `vote-many` instead of `vote`. This needs to be performed from the Blocknet wallet that contains the 5000 BLOCK collateral.
+			To vote for multiple Services Nodes at the same time, use the following format instead: `blocknet-cli mnbudget vote-many [PROPOSAL-HASH] [VOTE]`. Notice the second term is now `vote-many` instead of `vote`. This needs to be performed from the Blocknet wallet that contains the 5000 BLOCK collateral.
 
 	1. Press the *Enter* key to submit the command and register your vote to the network.
 	--8<-- "complete-proposal-voting.md"
@@ -167,43 +167,43 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/Downloads/blocknet/bin/`)
 
-			??? tip "Tip: This requires the *blocknetdx-[version]-osx64.tar.gz* download version."
-				To interact with the wallet via the command line, the `blocknetdx-[version]-osx64.tar.gz` wallet version is needed.
+			??? tip "Tip: This requires the *blocknet-[version]-osx64.tar.gz* download version."
+				To interact with the wallet via the command line, the `blocknet-[version]-osx64.tar.gz` wallet version is needed.
 
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknetdx.conf` file located in your `~/Library/Application Support/BlocknetDX/` directory. This directory can be found by opening the Finder, in the program menu selecting *Go* > *Go to Folder*, entering `~/Library/Application Support/BlocknetDX/` in the path, and pressing *Enter*.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in your `~/Library/Application Support/Blocknet/` directory. This directory can be found by opening the Finder, in the program menu selecting *Go* > *Go to Folder*, entering `~/Library/Application Support/Blocknet/` in the path, and pressing *Enter*.
 
-				./blocknetdxd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
+				./blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
 
 			*Example:*
 
-				./blocknetdxd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
+				./blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
 
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			./blocknetdx-cli mnbudget show
+			./blocknet-cli mnbudget show
 
 	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
 
-			./blocknetdx-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
 
 		*Example:*
 
-			./blocknetdx-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			./blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
 
 	1. **Review the proposals and the amount requested.** It's a good idea to consider the total Superblock budget, the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with some background information and objectives.
 	1. Vote for the proposal using the following command, replacing the variable with the respective values:
 
-			./blocknetdx-cli mnbudget vote [PROPOSAL-HASH] [VOTE]
+			./blocknet-cli mnbudget vote [PROPOSAL-HASH] [VOTE]
 
 		* `PROPOSAL-HASH`:  The hash listed for the proposal you are voting for
 		* `VOTE`:  Your vote (‘yes’ or ‘no’). `yes` means you'd like to vote to fund the proposal and `no` means you'd like to vote against the proposal so it isn't funded.
 
 		*Example:*
 
-			./blocknetdx-cli mnbudget vote 06a50c125aa305fbe38fa0fe9a1b39db1b1318838aadaec55f95c7a52101d83f yes
+			./blocknet-cli mnbudget vote 06a50c125aa305fbe38fa0fe9a1b39db1b1318838aadaec55f95c7a52101d83f yes
 
 		??? tip "Tip: Voting for Multiple Service Nodes."
-			To vote for multiple Services Nodes at the same time, use the following format instead: `./blocknetdx-cli mnbudget vote-many [PROPOSAL-HASH] [VOTE]`. Notice the second term is now `vote-many` instead of `vote`. This needs to be performed from the Blocknet wallet that contains the 5000 BLOCK collateral.
+			To vote for multiple Services Nodes at the same time, use the following format instead: `./blocknet-cli mnbudget vote-many [PROPOSAL-HASH] [VOTE]`. Notice the second term is now `vote-many` instead of `vote`. This needs to be performed from the Blocknet wallet that contains the 5000 BLOCK collateral.
 
 	1. Press the *Enter* key to submit the command and register your vote to the network.
 	--8<-- "complete-proposal-voting.md"

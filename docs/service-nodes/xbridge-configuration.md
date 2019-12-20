@@ -20,10 +20,10 @@ To setup XBridge, follow these steps:
 ---
 
 ## Enable XBridge
-XBridge is turned off by default. To turn it on, add `enableexchange=1` to `blocknetdx.conf`. Changing this to `enableexchange=0` will turn off XBridge.
+XBridge is turned off by default. To turn it on, add `enableexchange=1` to `blocknet.conf`. Changing this to `enableexchange=0` will turn off XBridge.
 
 
-Example `blocknetdx.conf`:
+Example `blocknet.conf`:
 ```
 listen=1
 server=1

@@ -261,9 +261,9 @@ To setup your Service Node, complete the following guides in order:
 
 	1. [Install the Blocknet wallet](/wallet/installation).
 	1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
-	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknetdx.conf` file.
+	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknet.conf` file.
 
-		??? info "Note: The *blocknetdx.conf* file can be found in the Blocknet data directory."
+		??? info "Note: The *blocknet.conf* file can be found in the Blocknet data directory."
 			--8<-- "data-directories.md"
 
 		![Wallet Config](/img/service-nodes/redesign-menu-wallet-conf-1.png)
@@ -285,7 +285,7 @@ To setup your Service Node, complete the following guides in order:
 		rpcthreads=8
 		```
 	1. For best performance, a `maxconnections=` setting should **not** be specified.
-	1. Save and close the `blocknetdx.conf` file.
+	1. Save and close the `blocknet.conf` file.
 	1. Shut down the Blocknet wallet.
 
 ??? example "Setup using the classic wallet"
@@ -293,9 +293,9 @@ To setup your Service Node, complete the following guides in order:
 
 	1. [Install the Blocknet wallet](/wallet/installation).
 	1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
-	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknetdx.conf` file.
+	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknet.conf` file.
 
-		??? info "Note: The *blocknetdx.conf* file can be found in the Blocknet data directory."
+		??? info "Note: The *blocknet.conf* file can be found in the Blocknet data directory."
 			--8<-- "data-directories.md"
 
 		![Wallet Config](/img/service-nodes/classic-menu-wallet-conf-1.png)
@@ -317,7 +317,7 @@ To setup your Service Node, complete the following guides in order:
 		rpcthreads=8
 		```
 	1. For best performance, a `maxconnections=` setting should **not** be specified.
-	1. Save and close the `blocknetdx.conf` file.
+	1. Save and close the `blocknet.conf` file.
 	1. Shut down the Blocknet wallet.
 
 ---
@@ -344,7 +344,7 @@ With the current configurations the Service Node will only be eligible to earn b
 
 	1. On the SNode Server computer:
 		1. Start or restart the Blocknet wallet.
-			* Make sure this contains the previously configured `blocknetdx.conf` file with the Service Node credentials.
+			* Make sure this contains the previously configured `blocknet.conf` file with the Service Node credentials.
 		1. Fully sync the wallet and additional network data.
 		1. This wallet must stay running.
 	1. On the Collateral computer:
@@ -388,7 +388,7 @@ With the current configurations the Service Node will only be eligible to earn b
 
 	1. On the SNode Server computer:
 		1. Start or restart the Blocknet wallet.
-			* Make sure this contains the previously configured `blocknetdx.conf` file with the Service Node credentials.
+			* Make sure this contains the previously configured `blocknet.conf` file with the Service Node credentials.
 		1. Fully sync the wallet and additional network data.
 		1. This wallet must stay running.
 	1. On the Collateral computer:
@@ -441,8 +441,8 @@ With the current configurations the Service Node will only be eligible to earn b
 	* Incorrect: `servicenodeaddr=138.28.1.27:41414`
 	* Incorrect: `servicenodeaddr=138.28.1.27`
 * Ensure your `servicenode.conf` information is correct to your settings and the `<SERVICE_NODE_KEY>` is the value that was returned from the `servicenode genkey` command.
-* Ensure on the Collateral computer only has the `servicenode.conf` file. The `blocknetdx.conf` file is not needed on the Collateral computer.
-* Ensure on the SNode Server computer only has the `blocknetdx.conf` file. The `servicenode.conf` file is not needed on the SNode Server computer.
+* Ensure on the Collateral computer only has the `servicenode.conf` file. The `blocknet.conf` file is not needed on the Collateral computer.
+* Ensure on the SNode Server computer only has the `blocknet.conf` file. The `servicenode.conf` file is not needed on the SNode Server computer.
 * Ensure your configuration files are not `servicenode.conf.txt`.
 
 

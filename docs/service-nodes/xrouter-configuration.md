@@ -24,9 +24,9 @@ To setup XRouter, follow these steps:
 ---
 
 ## Enable XRouter
-XRouter is turned off by default. To turn it on, add `xrouter=1` to `blocknetdx.conf`. Changing this to `xrouter=0` will turn off XRouter. Upon enabling XRouter, SPV calls will also be enabled and free by default. See [Configure XRouter](#configure-xrouter) for further configuration.
+XRouter is turned off by default. To turn it on, add `xrouter=1` to `blocknet.conf`. Changing this to `xrouter=0` will turn off XRouter. Upon enabling XRouter, SPV calls will also be enabled and free by default. See [Configure XRouter](#configure-xrouter) for further configuration.
 
-Example `blocknetdx.conf`:
+Example `blocknet.conf`:
 ```
 listen=1
 server=1
@@ -130,7 +130,7 @@ xrSendTransaction       | Submit a signed transaction to the network
 ## Deploy SPV Wallets
 1. Add the chains you want to support SPV calls for in the `wallets=` entry in `xrouter.conf`, denoted by the chain's asset's ticker. Separate each wallet name with a comma.
     * Example: `wallets=SYS,BLOCK,BTC,ETH,MNP`
-1. If you added or removed blockchain support, make sure to also update the `rpcthreads=` value in the `blocknetdx.conf` file.
+1. If you added or removed blockchain support, make sure to also update the `rpcthreads=` value in the `blocknet.conf` file.
 1. Use `xrReloadConfigs` to load your newly configured settings to `xrouter.conf` without needing to restart your Service Node.
 1. Use `sendserviceping` to propogate these new settings to the network immediately or wait up to 10 minutes for this to happen automatically.
 1. You can view your configs using `xrStatus`.

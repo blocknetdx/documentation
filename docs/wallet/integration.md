@@ -3,7 +3,7 @@ description: This document is an overview on the basics for how to integrate and
 
 
 # Wallet Integration Guide
-Developers and enterprises are integrating with the Blocknet Protocol as a second layer to interoperate with blockchains and power multi-chain microservice architectures. This page serves as technical documentation for integrating the Blocknet Protocol via the wallet to benefit from:
+Developers and enterprises are integrating with the Blocknet Protocol to interoperate with onchain blockchain data and offchain data, APIs, and services to power a new genertion of microservice architectures. This page serves as technical documentation for integrating the Blocknet Protocol via the wallet to benefit from:
 
 * Trustless cross-chain token exchanges
 * Blockchain interoperability

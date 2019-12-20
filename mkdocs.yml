@@ -159,7 +159,7 @@ nav:
   # - 'Config Manager': 'service-nodes/config-manager.md'
 - 'Governance':
   - 'Introduction': 'governance/introduction.md'
-  - 'Governance Model': 'governance/governance-model.md'
+  # - 'Governance Model': 'governance/governance-model.md'
   # - 'Blocknet Improvement Process (BIP)': 'governance/blocknet-improvement-process-bip.md'
   - 'View Proposals': 'governance/view-proposals.md'
   # - 'Create Proposal': 'governance/create-proposal.md'

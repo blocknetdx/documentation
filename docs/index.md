@@ -36,7 +36,7 @@ The following are the requirements to operate each type of node:
 ---
 
 ## Tokenomics
-[BLOCK](/blockchain/introduction) is the utility token that powers the Blocknet. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to [Service Nodes](/service-nodes/introduction) for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK, but those fees are burned. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
+[BLOCK](/blockchain/introduction) is the utility token that powers the Blocknet. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to [Service Nodes](/service-nodes/introduction) for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK and awarded to stakers. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
 
 Blocknet involves multiple economic models with respect to the use of the BLOCK token.
 
@@ -44,7 +44,7 @@ Blocknet involves multiple economic models with respect to the use of the BLOCK 
 * __Service Fees__ - Service Nodes receive 100% of BLOCK fees generated from the use of services on the network, including trades performed via XBridge, interfacing with blockchains via XRouter, and use of microservices via XCloud.
 * __Collateral__ - BLOCK is required for collateral to operate a Service Node, as well as to use certain services on the network.
 * __[Governance](/governance/introduction)__ - Submitting proposals to the network requires a fee to be paid in BLOCK and proposals can only be voted on by Service Nodes.
-* __Transaction Fees__ - Transferring funds on the network incurs a transaction fee paid in BLOCK.
+* __Transaction Fees__ - Transferring funds on the network incurs a transaction fee that's paid in BLOCK and awarded to stakers.
 
 The utility of the BLOCK token increases the buy pressure on the market, while the reward potential of operating a node reduces sell pressure on the market.
 

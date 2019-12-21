@@ -9,21 +9,21 @@ BLOCK is the utility token that powers the Blocknet Protocol. Fees are paid in B
 
 ## BLOCK Specifications
 
-|BLOCK Details 			| 					|
-------------------------|--------------------
-Creation Date   		| October 20th, 2014
-Release Method  		| ITO, No Premine
-Proof Type   			| Proof of Work (PoW): blocks 0-2000 (ended) <br>Proof of Stake (PoS): blocks 2001+ (current)
-Algo					| Quark
-Block Time 				| 60 seconds
-Block Reward 			| 1.0 BLOCK <br>0.3 awarded to stakers <br>0.7 awarded to Service Nodes
-Superblock 				| Up to 40,000 BLOCK
-Difficulty				| Adjusted per block<span id="spec_difficulty"></span>
-Staking Requirement		| No minimum
-Service Node Requirement| 5000 BLOCK
-Circulation 			| <span id="spec_circulation">[View here](https://chainz.cryptoid.info/block/)</span>
-Max Supply 				| No maximum supply (PoS), but there is a maximum to inflation
-Circulation Lockup 		| Average lockup is ~45% due to Service Node collateral <br>Average lockup is ~60% when also considering staked funds
+|BLOCK Details           |                   |
+-------------------------|--------------------
+Creation Date            | October 20th, 2014
+Release Method           | ITO, No Premine
+Proof Type               | Proof of Work (PoW): blocks 0-2000 (ended) <br>Proof of Stake (PoS): blocks 2001+ (current)
+Algo                     | Quark
+Block Time               | 60 seconds
+Block Reward             | 1.0 BLOCK <br>0.3 awarded to stakers <br>0.7 awarded to Service Nodes
+Superblock               | Up to 40,000 BLOCK
+Difficulty               | Adjusted per block<span id="spec_difficulty"></span>
+Staking Requirement      | No minimum
+Service Node Requirement | 5000 BLOCK
+Circulation              | <span id="spec_circulation">[View here](https://chainz.cryptoid.info/block/)</span>
+Max Supply               | No maximum supply (PoS), but there is a maximum to inflation
+Circulation Lockup       | Average lockup is ~45% due to Service Node collateral <br>Average lockup is ~60% when also considering staked funds
 
 <script type="text/javascript">
 	function spec_numberPretty(num) {
@@ -54,7 +54,7 @@ Circulation Lockup 		| Average lockup is ~45% due to Service Node collateral <br
 		spec_ajax(url, false).then(function(data) {
 			if (!isNaN(Number(data))) {
 				var circulation = spec_numberPretty(Math.round( Number(data) ));
-				document.getElementById("spec_circulation").innerHTML = "Currently " + circulation + " BLOCK";
+				document.getElementById("spec_circulation").innerHTML = '<a href="https://chainz.cryptoid.info/block/" target="_blank">Currently ' + circulation + ' BLOCK</a>';
 			}
 		});
 	}

@@ -2,16 +2,16 @@
 
 	??? abstract "Windows"
 		```
-		C:\Users\[YourUsername]\AppData\Roaming\BlocknetDX\
+		C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
 		```
-		Or paste `%appdata%\Roaming\BlocknetDX\` into the file explorer path field.
+		Or paste `%appdata%\Roaming\Blocknet\` into the file explorer path field.
 
 	??? abstract "MacOS"
 		```
-		~/Library/Application Support/BlocknetDX/
+		~/Library/Application Support/Blocknet/
 		```
 		Open Finder and in the program menu select *Go* > *To Folder* and enter the above path.
 	??? abstract "Linux"
 		```
-		~/.blocknetdx/
+		~/.blocknet/
 		```

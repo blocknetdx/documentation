@@ -47,22 +47,22 @@ tr:last-child td {
 
 <img class="dx-logo" src="/img/blockdx/logo2.svg">
 
-FEATURE												| BENEFIT
-----------------------------------------------------|----------------------------------------------------
-Atomic swap trading									| Your funds are always in your possession
-No KYC or accounts									| Privacy
-Non-custodial										| Your funds are always in your possession
-Attack resistance 									| Your funds are safe
-Decentralized governance 							| Community-driven development
-100% of trade fees distributed to Service Nodes		| Incentivises nodes to provide best service possible
-Trading pair freedom 								| A “one stop shop” for all trading pair combinations
-DOS protection and order book verification system	| Security
-No listing fee										| No barrier to listing (more trade options)
-Decentralized service provision						| Zero downtime (no shutdowns at peak times)
-Trading is performed out of your own wallets		| No withdrawal or deposit required limits
-P2P off-chain order book 							| Stops front running
-Powered by the Blocknet Protocol					| Shared liquidity pool across all service using the protocol
-Automated set up									| Start trading in under 5 minutes
+FEATURE                                           | BENEFIT
+--------------------------------------------------|--------------------------------------------------
+Atomic swap trading                               | Your funds are always in your possession
+No KYC or accounts                                | Privacy
+Non-custodial                                     | Your funds are always in your possession
+Attack resistance                                 | Your funds are safe
+Decentralized governance                          | Community-driven development
+100% of trade fees distributed to Service Nodes   | Incentivises nodes to provide best service possible
+Trading pair freedom                              | A “one stop shop” for all trading pair combinations
+DOS protection and order book verification system | Security
+No listing fee                                    | No barrier to listing (more trade options)
+Decentralized service provision                   | Zero downtime (no shutdowns at peak times)
+Trading is performed out of your own wallets      | No withdrawal or deposit required limits
+P2P off-chain order book                          | Stops front running
+Powered by the Blocknet Protocol                  | Shared liquidity pool across all service using the protocol
+Automated set up                                  | Start trading in under 5 minutes
 
 
 

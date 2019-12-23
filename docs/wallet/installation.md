@@ -8,9 +8,11 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 * For a complete guide on setting up the wallet, see the [setup guide](/wallet/setup).
 
 ??? tip "Tip: There are two wallet variations."
-	Each wallet version has a redesigned and classic release. For example with version 3.12.1, [v3.12.1](https://github.com/blocknetdx/blocknet/releases/tag/v3.12.1) is the release for the redesigned wallet, and [v3.12.1-classic](https://github.com/blocknetdx/blocknet/releases/tag/v3.12.1-classic) is the release for the classic wallet.
+	There are two wallet variations, a redesigned interface (default) and a classic interface. To use the classic wallet, you'll need to open your `blocknet.conf` file and add `classic=1` on a new line (you may not have a `blocknet.conf` file and will need to create one). You can find the `blocknet.conf` file in your Blocknet data directory:
 
-	**Redesigned Wallet**
+	--8<-- "data-directories.md"
+
+	**Redesigned Wallet (default)**
 	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
 	**Classic Wallet**
 	![Classic Wallet](/img/wallet-classic/wallet-classic.png)

@@ -91,8 +91,8 @@ A bootstrap is a set of files containing blockchain data up to a certain point i
 1. Close and quit the Blocknet wallet if it is running.
 --8<-- "data-directories-2.md"
 
-1. Remove all files and folders **EXCEPT** for `wallet.dat`, `blocknet.conf`, `xbridge.conf` (may not be present), `xrouter.conf`, `servicenode.conf`, and the `backups/` and `plugins/` folders. Again, **DO NOT** delete the `wallet.dat` file as it contains the private keys for your funds. Deleting this file will result in loss of funds.
-1. Inside the unzipped `Blocknet` folder there are `blocks/` and `chainstate/` folders. Move these 2 folders into the Blocknet wallet's data directory that you just removed files from.
+1. Remove all files and folders **EXCEPT** for `wallet.dat`, `blocknet.conf`, `xbridge.conf`, `xrouter.conf`, `servicenode.conf`, and the `wallets/` folder (you may not have all these files). Again, **DO NOT** delete the `wallet.dat` file or `wallets/` folder as it contains the private keys for your funds. Deleting these will result in loss of funds.
+1. Inside the downloaded `Blocknet` folder there are the `blocks/`, `chainstate/`, and `indexes/` folders. Move these 3 folders into the Blocknet wallet's data directory that you just removed files from.
 1. Start the wallet and syncing should begin at the bootstrap's last block.
 1. Read more about syncing [above](/wallet/syncing/#synchronization).
 

@@ -71,7 +71,6 @@ To view the syncing status, use the following instructions:
 	- If you have 0 peers, make sure your firewall isn't blocking outgoing connections. This also may be due to antivirus software.
 
 
-
 --8<-- "troubleshooting.md"
 
 ---
@@ -104,6 +103,7 @@ A bootstrap is a set of files containing blockchain data up to a certain point i
 
 trouble shooting
 	no peers - firewall
+		add peers guide https://www.youtube.com/watch?v=7dRyb6eGjCc
 	no connection - firewall
 -->
 

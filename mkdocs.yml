@@ -162,7 +162,7 @@ nav:
   # - 'Governance Model': 'governance/governance-model.md'
   # - 'Blocknet Improvement Process (BIP)': 'governance/blocknet-improvement-process-bip.md'
   - 'View Proposals': 'governance/view-proposals.md'
-  # - 'Create Proposal': 'governance/create-proposal.md'
+  - 'Create Proposal': 'governance/create-proposal.md'
   - 'Proposal Voting': 'governance/proposal-voting.md'
 - 'Resources':
   - 'Interviews': 'resources/interviews.md'

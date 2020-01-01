@@ -3,12 +3,24 @@ description: This guide explains how to view Blocknet's Superblock proposals for
 
 
 # View Proposals
-This guide explains how to view Blocknet's [Superblock](/governance/introduction/#superblock) proposals for funding initiatives and governance management. The ability to view proposals is important for the governance model to work properly, enabling informed discussions and [voting](/governance/proposal-voting).
+This guide explains how to view Blocknet's [Superblock](/governance/introduction/#superblock) proposals for funding initiatives and governance management. The ability to view proposals is important for the decentralized governance model to function properly, enabling informed discussions and [voting](/governance/proposal-voting).
 
-??? info "Note: An active Service Node is required in order to vote."
-	**An active [Service Node](/service-nodes/introduction) (required 5000 [BLOCK](/blockchain/introduction)) is required in order to vote.** The process of voting can take place from within the Service Node wallet or the collateral wallet. After voting, the Service Node must remain active until the [Superblock](/governance/introduction/#superblock) passes. If the Service Node goes offline then you will need to recast your votes when it's active again. Voting closes 2880 blocks prior to the Superblock.
+??? warning "Voting Requirements & Important Information"
+	**5000 [BLOCK](/blockchain/introduction) is required in order to vote.** The [process of voting](/governance/proposal-voting) can take place from a wallet containing at least 5000 BLOCK, or a Service Node collateral wallet. An active [Service Node](/service-nodes/introduction) is *not* required.
 
-	Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives.
+	Additional important information:
+
+	* The UTXO inputs used for the 5000 BLOCK (to vote) must be 100 BLOCK or larger.
+	* If you spend or stake any of your 5000 BLOCK inputs after you vote, the vote is marked invalid and you will need to cast your vote(s) again (an auto-revote mechanism will be created).
+	* Since the votes are recorded on-chain, casting a vote requires you to pay a network fee. It is best practice to have a small UTXO input for each vote to pay for the network fees.
+	* Your vote is not counted until the voting transaction fee has 1 confirmation (typically 1 minute), after which your votes will be accounted for when viewing the `listproposals` command.
+	* If you vote again you will have to pay another network fee to do so.
+	* The voting system will automatically calculate how many votes you have available according to your balance (1 vote per 5000 BLOCK) and cast your full vote weight when voting (5562 BLOCK balance = 1 vote, 49635 BLOCK balance = 9 votes.
+	* At least 60 minutes must pass before you can change your vote(s).
+	* The deadline for creating proposals is 2880 blocks prior to the Superblock.
+	* Voting for proposals ends 60 blocks prior the Superblock.
+
+Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives.
 
 ---
 
@@ -19,7 +31,7 @@ This guide explains how to view Blocknet's [Superblock](/governance/introduction
 ??? example "View using the redesigned wallet"
 	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
 
-	1. Open the [wallet](/wallet/setup) and in the side menu, go to *Tools* > *Proposals*. The wallet does not need to be unlocked.
+	1. Open the [wallet](/wallet/setup) and in the side menu, go to *Proposals*. The wallet does not need to be unlocked.
 	1. The Proposals screen shows all the proposals submitted to the network. Above the list of proposals there is an option to filter by *Upcoming*, which displays the proposals that can currently be voted on. Select this filter to view all proposals currently open for voting.
 
 		![Filter Proposals](/img/wallet-redesign/proposals-filter.png)
@@ -30,15 +42,9 @@ This guide explains how to view Blocknet's [Superblock](/governance/introduction
 ??? example "View using the classic wallet"
 	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
 
-	1. In the program menu, go to *Tools* > *Debug Console*
-	1. A new window will appear with an input field at the bottom, type in `mnbudget show`, then press the *Enter* key.
-
-		![Show Proposals Command](/img/wallet-classic/mnbudget-show-command.png)
-
-	1. A message showing each of the ongoing proposals will be returned. Here is an example of a proposal:
-
-		![Show Proposals](/img/wallet-classic/mnbudget-show-result.png)
-
+	1. In the program menu, go to *Window* > *Console*
+	1. A new window will appear with an input field at the bottom, type in `listproposals`, then press the *Enter* key. To view proposals since a specific block, use `listproposals [BLOCK_NUMBER]` instead. Example: `listproposals 1209600`
+	1. A message showing all proposals will be returned.
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-qt-wallet).
 
 ---
@@ -47,18 +53,18 @@ This guide explains how to view Blocknet's [Superblock](/governance/introduction
 There are various options for viewing the proposals in the browser. Below is a comparison list with the features of each website.
 
 
-|Website | [Proposal Forum](https://forum.blocknet.co/c/final-proposals) |	[blockdx.co](https://blockdx.co/funding-proposals)	|	[block-node.info](https://block-node.info/node_info2.php)
-------------------------|--------------------|--------------------|--------------------|
-Mobile friendly 		|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>
-Lists proposals 		|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Shows descriptions		|<i class="fa fa-check"></i>|(hyperlinked)|<i class="fa fa-check"></i>
-Shows vote counts		|<i class="fa fa-times"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Shows pass/fail status	|<i class="fa fa-times"></i>|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>
-Shows amounts requested |<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
-Shows deposit addresses |<i class="fa fa-times"></i>|<i class="fa fa-times"></i>|<i class="fa fa-check"></i>
-Shows past proposals 	|<i class="fa fa-check"></i>|(in progress)|<i class="fa fa-check"></i>
-Allows for discussion 	|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>|<i class="fa fa-times"></i>
-Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i class="fa fa-check"></i>
+| Website | [Proposal Forum](https://forum.blocknet.co/c/final-proposals) | [blockdx.co](https://blockdx.co/funding-proposals) | [block-node.info](https://block-node.info/node_info2.php)
+------------------------|-----------------------------|-----------------------------|--------------------|
+Mobile friendly         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-times"></i>
+Lists proposals         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Shows descriptions      | <i class="fa fa-check"></i> | (hyperlinked)               | <i class="fa fa-check"></i>
+Shows vote counts       | <i class="fa fa-times"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Shows pass/fail status  | <i class="fa fa-times"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Shows amounts requested | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Shows deposit addresses | <i class="fa fa-times"></i> | <i class="fa fa-times"></i> | <i class="fa fa-check"></i>
+Shows past proposals    | <i class="fa fa-check"></i> | (in progress)               | <i class="fa fa-check"></i>
+Allows for discussion   | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-times"></i>
+Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
 
 
 
@@ -85,17 +91,18 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 
 				./blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
 
+	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			./blocknet-cli mnbudget show
+			./blocknet-cli listproposals
 
-	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
+	1. To view proposals since a specific block:
 
-			./blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			./blocknet-cli listproposals [BLOCK_NUMBER]
 
 		*Example:*
 
-			./blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			./blocknet-cli listproposals 1209600
 
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
 
@@ -118,15 +125,15 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			blocknet-cli mnbudget show
+			./blocknet-cli listproposals
 
-	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
+	1. To view proposals since a specific block:
 
-			blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			./blocknet-cli listproposals [BLOCK_NUMBER]
 
 		*Example:*
 
-			blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			./blocknet-cli listproposals 1209600
 
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
 
@@ -146,17 +153,18 @@ Easy to navigate 		|<i class="fa fa-minus"></i>|<i class="fa fa-check"></i>|<i c
 
 				./blocknetd -rpcuser=JohnBlocknet -rpcpassword=supersecretpassword -daemon
 
+	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the proposals to sync, otherwise you may not see the full list of proposals. Use the following command to view the proposals:
 
-			./blocknet-cli mnbudget show
+			./blocknet-cli listproposals
 
-	1. From this list, all proposals where `"BlockStart"` is equal the upcoming Superblock number are open for voting. You can filter the proposals to only show the upcoming proposals using the following command with `[SB-NUMBER]` replaced with the upcoming Superblock number:
+	1. To view proposals since a specific block:
 
-			./blocknet-cli mnbudget show | grep ": [SB-NUMBER]" -B 5 -A 15
+			./blocknet-cli listproposals [BLOCK_NUMBER]
 
 		*Example:*
 
-			./blocknet-cli mnbudget show | grep ": 648000" -B 5 -A 15
+			./blocknet-cli listproposals 1209600
 
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
 

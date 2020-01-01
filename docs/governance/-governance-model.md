@@ -125,7 +125,7 @@ Instructions:
 1. After allowing some time for the proposal to be reviewed in the pre-proposal thread, the final proposal with any edits should be submitted to the relevant final proposal Superblock thread in the proposal forum.
 1. Once a final proposal is submitted to the forum, copy the post URL and create a shortened URL using Google's URL shortener: [https://goo.gl/](https://goo.gl/)
 1. Open the wallet
-1. In the program menu, go to *Tools* > *Debug Console*. The debug console will open in a new window.
+1. In the program menu, go to *Window* > *Console*. The debug console will open in a new window.
 1. The voting command uses the following command structure (all one line): 
 1. **Format**: `mnbudget prepare [PROPOSAL NAME] [URL] [PAYMENT COUNT] [SUPERBLOCK BLOCK] [ADDRESS] [AMOUNT]`
     * PROPOSAL NAME = The name of the proposal without spaces (18 character limit) 

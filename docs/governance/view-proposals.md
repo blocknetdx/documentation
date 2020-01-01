@@ -42,8 +42,8 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 ??? example "View using the classic wallet"
 	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
 
-	1. In the program menu, go to *Window* > *Console*
-	1. A new window will appear with an input field at the bottom, type in `listproposals`, then press the *Enter* key. To view proposals since a specific block, use `listproposals [BLOCK_NUMBER]` instead. Example: `listproposals 1209600`
+	1. In the program menu, go to *Window* > *Console*. The debug console will open in a new window.
+	1. In the input field at the bottom, type in `listproposals`, then press the *Enter* key. To view proposals since a specific block, use `listproposals [BLOCK_NUMBER]` instead. Example: `listproposals 1209600`
 	1. A message showing all proposals will be returned.
 	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-qt-wallet).
 

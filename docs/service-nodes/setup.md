@@ -142,14 +142,7 @@ To setup your Service Node, complete the following guides in order:
 	1. [Install the Blocknet wallet](/wallet/installation).
 	1. [Fully sync the wallet](/wallet/syncing).
 	1. [Encrypt the wallet](/wallet/encrypting).
-	1. In the program menu, select *Tools* then *Debug Console*.
-
-		![Menu](/img/service-nodes/classic-menu-debug-console-1.png)
-
-	1. The debug console will open. The black bar at the bottom is the input field where you will type commands.
-
-		![Debug Console](/img/service-nodes/classic-debug-console.png)
-
+	1. In the program menu, go to *Window* > *Console*. A new window will appear with an input field at the bottom where you will type commands.
 	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress <ALIAS>` into the debug console with `<ALIAS>` replaced with the alias you will be using for this address. Example:
 		```
 		getnewaddress snode01
@@ -350,7 +343,7 @@ With the current configurations the Service Node will only be eligible to earn b
 	1. On the Collateral computer:
 		1. Select *Transaction History* from the menu on the left.
 		1. Find the 5000 BLOCK transaction and hover over it to see the amount of *confirmations* it has. Take a note of this value for future reference.
-		1. From the side menu, select *Tools* > *Debug Console*.
+		1. Select *Tools* from the left menu, then the *Debug Console* tab.
 		1. Enter the following command to view the total number of Service Nodes on the network:
 			```
 			servicenode count
@@ -394,7 +387,7 @@ With the current configurations the Service Node will only be eligible to earn b
 	1. On the Collateral computer:
 		1. Select the *Transactions* tab.
 		1. Find the 5000 BLOCK transaction and hover over it to see the amount of *confirmations* it has. Take a note of this value for future reference.
-		1. From the program menu, select *Tools* > *Debug Console*.
+		1. In the program menu, go to *Window* > *Console*. A new window will appear with an input field at the bottom where you will type commands.
 		1. Enter the following command to view the total number of Service Nodes on the network:
 			```
 			servicenode count

@@ -47,8 +47,8 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
 
 	1. Open the [wallet](/wallet/setup). The wallet needs to be unlocked to cast votes.
-	1. In the program menu, go to *Window* > *Console*
-	1. A new window will appear with an input field at the bottom, type in `listproposals`, then press the *Enter* key. To view proposals since a specific block, use `listproposals [BLOCK_NUMBER]` instead. Example: `listproposals 1209600`
+	1. In the program menu, go to *Window* > *Console*. The debug console will open in a new window.
+	1. In the input field at the bottom, type in `listproposals`, then press the *Enter* key. To view proposals since a specific block, use `listproposals [BLOCK_NUMBER]` instead. Example: `listproposals 1209600`
 	1. A message showing all proposals will be returned.
 	1. **Review the proposals and the amount requested.** It's a good idea to consider the total Superblock budget, the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with some background information and objectives.
 	1. The proposal hash, which is a unique identifier for the proposal, can be found in each proposal’s details. The voting command uses the following command structure: `vote [PROPOSAL_HASH] [VOTE]`

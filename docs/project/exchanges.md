@@ -18,22 +18,13 @@ DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.vip/en-ww/trad
 DigiFinex       | (USDT/BLOCK)  | [Buy Now](https://www.digifinex.vip/en-ww/trade/USDT/BLOCK)
 VCC Exchange    | (BTC/BLOCK)   | [Buy Now](https://vcc.exchange/exchange/basic?currency=btc&coin=block)
 Cryptofacil     | (BTC/BLOCK)   | [Buy Now](https://cryptofacil.com/trading-view/61/BTC-BLOCK)
-StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/exchange/BTC-BLOCK)
+StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC)
 Altilly         | (BTC/BLOCK)   | [Buy Now](https://www.altilly.com/market/BLOCK_BTC)
 FEX Pro         | (BTC/BLOCK)   | [Buy Now](https://fexpro.net/#/exchange?type=)
 Beaxy           | (BTC/BLOCK)   | Coming
 BlockBid        | (BTC/BLOCK)   | Coming
 
 <!-- Coinvex         | (BTC/BLOCK)   | [Buy Now](https://coinvex.org/market/BTC-BLOCK) -->
-
----
-
-## Hybrid Exchanges
-Hybrid exchanges are decentralized, but also still have some varying degree of centralized components to them. The following options are available:
-
-Exchange        | Market        | Link
-----------------|---------------|------
-CryptoBridge    | (BTC/BLOCK)   | [Buy Now](https://wallet.crypto-bridge.org/market/BRIDGE.BLOCK_BRIDGE.BTC)
 
 ---
 
@@ -44,7 +35,6 @@ Decentralized exchanges are purely peer-to-peer instead of requiring a trusted e
     * [View Open Orders](https://blockdx.co/orders)
     * [View Trade History](https://blockdx.co/trade-history)
     * [View Exchange Volume](https://blockdx.co/charts)
-* __BarterDEX__ (decentralized option not currently functional)
 
 ---
 

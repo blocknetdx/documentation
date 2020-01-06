@@ -56,8 +56,10 @@ After making these changes you will need to restart your Service Node Blocknet w
 ## Configure XRouter
 When starting the wallet, an `xrouter.conf` file is automatically created in the Blocknet wallet data directory if not already present. The `xrouter.conf` file is used to specify all your general XRouter settings and SPV call settings.
 
-!!! info "Note: SPV support also require *xbridge.conf* configuration."
+!!! info "Note: SPV support also requires *xbridge.conf* configuration."
 	To support SPV calls, you must also have your `xbridge.conf` file setup for the chains you wish to support.
+
+  For ETH, you will also need `JSONVersion=2.0` and `ContentType=application/json` added to the `xbridge.conf` ETH entry. This applies to GETH and Parity clients.
 
 Similar to `xbridge.conf`, the general XRouter settings are specified under a `[Main]` heading.
 

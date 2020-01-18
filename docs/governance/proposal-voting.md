@@ -8,7 +8,7 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 ???+ warning "Voting Requirements & Important Information"
 	**5000 [BLOCK](/blockchain/introduction) is required in order to vote.** The process of voting can take place from a wallet containing at least 5000 BLOCK, or a Service Node collateral wallet. An active [Service Node](/service-nodes/introduction) is *not* required.
 
-	* **Voting for proposals ends 60 blocks prior the Superblock.**
+	* **Voting for proposals ends 60 blocks prior the Superblock.** It'd be safer to make sure you vote no later than 61 blocks before the Superblock to make sure your voting transaction gets at least 1 confirmation.
 	* The UTXO inputs used for the 5000 BLOCK (to vote) must be 100 BLOCK or larger.
 	* If you spend or stake any of your 5000 BLOCK inputs after you vote, the vote is marked invalid and you will need to cast your vote(s) again (an auto-revote mechanism will be created).
 	* Since the votes are recorded on-chain, casting a vote requires you to pay a network fee. It is best practice to have a small UTXO input for each vote to pay for the network fees.

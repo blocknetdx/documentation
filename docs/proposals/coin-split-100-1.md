@@ -14,7 +14,7 @@ description: This is a proposal to proportionally multiply all BLOCK values by 1
     **Status**: Awaiting a future hard fork for implementation and activation
 
 ## Proposal
-This is a proposal to proportionally multiply all BLOCK values by 100x. All existing holdings, fees, rewards, and collaterals will be increased proportionally. This change is needed to preemptively address an anticipated technical problem regarding microfees conflicting with dust amounts.
+This is a proposal to proportionally multiply all BLOCK values by 100x. All existing holdings, fees, rewards, and collaterals will be increased proportionally. This change is needed to preemptively address an anticipated technical problem regarding microfees and dust amounts.
 
 **Note: If you own BLOCK, your own balance will multiply by 100. This seems to be a common misconception. All values will be multiplied by 100. It's effectively similar to moving the decimal point 2 digits to the right.**
 

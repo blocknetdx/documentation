@@ -11,8 +11,7 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 	* **Voting for proposals ends 60 blocks prior the Superblock.** It'd be safer to make sure you vote no later than 61 blocks before the Superblock to make sure your voting transaction gets at least 1 confirmation.
 	* The inputs (UTXOs) used for the 5000 BLOCK (to vote) must be 100 BLOCK or larger.
 	* The inputs used for the 5000 BLOCK must be in the same address.
-	* Since the votes are recorded on-chain, casting a vote requires you to pay a network fee. This requires *each address* to have an input *separate* from the inputs used for the 5000 BLOCK to pay for the network fees. 
-	* You will not be able to vote if your funds are immature. Funds will remain immature for about 60 minutes (60 blocks) after they staked.
+	* Since the votes are recorded on-chain, casting a vote requires you to pay a network fee. This requires *each address* to have an input *separate* from the inputs used for the 5000 BLOCK to pay for the network fees. **This input used for the fee cannot be immature**. Funds will remain immature for about 60 minutes (60 blocks) after they staked.
 	* If you are staking, your vote will automatically re-cast.
 	* Your vote is not counted until the voting transaction fee has 1 confirmation (typically 1 minute), after which your votes will be accounted for when viewing the `listproposals` command.
 	* If you vote again you will have to pay another network fee to do so.
@@ -30,14 +29,14 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 		* Address A
 			* Inputs: 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 1 (tx fee input)
 			* Total: 5000 + 1 (tx fee input)
-	1. Counts as 1 single vote wth excess:
+	1. Counts as 1 single vote wth excess (inefficient):
 		* Address A
 			* Inputs: 3000, 2500, 2500, 1 (tx fee input)
 			* Total: 8000 + 1 (tx fee input)
 		* Address B
 			* Inputs: 3000 + 1 (tx fee input)
 			* Total: 3000 + 1 (tx fee input)
-	1. Counts as 1 vote
+	1. Counts as 1 vote (inefficient):
 		* Address A
 			* Inputs: 2000, 2000, 1000, 1 (tx fee input)
 			* Total: 5000 + 1 (tx fee input)
@@ -46,12 +45,12 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 			* Total: 5000 (no tx fee input)
 	1. Counts as 2 votes:
 		* Address A
-			* Inputs: 3000, 2000, 1000, 2000, 2000, 1 (tx fee input)
+			* Inputs: 3000, 3000, 3000, 1000, 1 (tx fee input)
 			* Total: 10000 + 1 (tx fee input)
-	1. Counts as 3 votes with excess:
+	1. Counts as 3 votes with excess (inefficient):
 		* Address A
 			* Inputs: 5000, 3000, 2000, 2000, 1 (tx fee input)
-			* Total: 7000 + 1 (tx fee input)
+			* Total: 12000 + 1 (tx fee input)
 		* Address B
 			* Inputs: 3000, 3000, 2000, 1000, 1 (tx fee input)
 			* Total: 9000 + 1 (tx fee input)
@@ -72,11 +71,11 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 			* Total: 5001
 	1. 5000 BLOCK not in a single address:
 		* Address A
+			* Inputs: 4000, 1 (tx fee input)
+			* Total: 4000 + 1 (tx fee input)
+		* Address B
 			* Inputs: 3000, 1 (tx fee input)
 			* Total: 3000 + 1 (tx fee input)
-		* Address A
-			* Inputs: 2000, 1 (tx fee input)
-			* Total: 2000 + 1 (tx fee input)
 
 Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives. See [how to view proposals](/governance/view-proposals).
 

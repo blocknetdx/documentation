@@ -1,5 +1,5 @@
 site_name: 'Blocknet Documentation'
-site_description: 'Blocknet is a 2nd layer blockchain interoperability protocol that enables communication, interaction, and exchange between different blockchains.'
+site_description: 'Blocknet is a blockchain interoperability protocol that enables communication, interaction, and exchange between different public and private blockchains.'
 site_author: 'Blocknet'
 use_directory_urls: true # do not change this, it will break all links
 google_analytics:

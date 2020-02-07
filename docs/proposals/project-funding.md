@@ -11,7 +11,7 @@ description: This proposal is for use of the Burn Fund BpzPFJaaKQVSvfiH7zXSUdPBr
 
     **Results**: 493 Service Nodes, 218 Yes, 1 No
 
-    **Status**: Burn Funds have been moved to the Community Fund addresses. Awaiting a future soft fork for the activation of the Superblock increase.
+    **Status**: Complete
 
 ## Proposal
 Blocknet is in immediate need of funding to continue operating. This proposal is for use of the Burn Fund ([BpzPFJaaKQVSvfiH7zXSUdPBrBnfx9v26V](https://chainz.cryptoid.info/block/address.dws?BpzPFJaaKQVSvfiH7zXSUdPBrBnfx9v26V.htm)) and to increase the Superblock from 4,320 BLOCK to 40,000 BLOCK. Please continue reading to understand the reasoning and the need for this.

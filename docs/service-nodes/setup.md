@@ -446,6 +446,12 @@ At this point you have completed the basic setup for a Service Node. The Service
 
 ## Operation
 
+
+??? example "Staking with Service Node Collateral"
+	To stake your Service Node collateral, you can enable staking as you normally would. The inputs used for your Service Node collateral are all tracked, so when you "hit" a stake and it generates a new input it will auto-register for you to keep the Service Node active. 
+
+	Note: If you register the Service Node from a collateral wallet then import the Service Node's BLOCK address to another machine for staking, the Service Node will go offline. Make sure you register the Service Node (`servicenoderegister`) from the machine that will be staking so that it will know to auto-register on stake.
+
 ??? example "Updated Your Blocknet Wallets"
 	If you have just updated your Collateral Computer wallet and SNode Computer wallet, follow these instructions:
 

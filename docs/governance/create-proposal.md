@@ -43,7 +43,7 @@ This guide explains how to create and submit Blocknet Superblock proposals for f
 		* *URL* = The shortened URL for the proposal link created.
 		* *Description* = A short description of the proposal.
 		* *Superblock #* = The Superblock block number the proposal is being submitted for.
-		* *Amount* = The amount of funding requested.
+		* *Amount* = The amount of funding requested (must be a whole number).
 		* *Payment address* = The BLOCK address the funding will be paid out to.
 		* A total of 107 characters can be used for the proposal name, URL, and description combined.
 

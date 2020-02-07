@@ -68,6 +68,8 @@ The type of service is determined by how it's interacted with and will need diff
 ## Configure Service
 The configuration file has information required to connect with your service, interact with it, and additional settings like fees and request limits. Follow the guide that pertains to your [service type](#determine-service-type).
 
+Note: The configuration file has a 2mb size limit.
+
 ### RPC
 !!! warning "Note: RPC Services also require *xbridge.conf* configuration."
     To support SPV calls, you must also have your `xbridge.conf` file setup for each of the chains you wish to support and those wallets must remain open and running ([view XBridge setup guide](/service-nodes/xbridge-configuration)). If you already have this setup for XRouter SPV calls then you don't need to do anything extra unless you want to support additional chains.
@@ -133,7 +135,9 @@ private::               | Used to keep entries private. These will not be shared
 
 
 ### Docker
-After creating the file, you will need to add the settings and configurations. Here is an example service config file:
+Here is an example service config file:
+
+`eth_getBalance.conf`
 
 ```
 parameters=string

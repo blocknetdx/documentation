@@ -29,7 +29,7 @@ To setup your Service Node, complete the following guides in order:
 	1. [Encrypt the wallet](/wallet/encrypting).
 
 		!!! info "Note"
-			If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (0.1 BLOCK) to have enough to cover transaction fees when continuing this step.
+			If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (1 BLOCK) to have enough to cover transaction fees when continuing this step.
 
 	1. Select *Tools* from the left menu, then the *Debug Console* tab. The input field at the bottom is where you will type commands.
 	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress [ALIAS]` into the debug console with `[ALIAS]` replaced with the alias you will be using for this address. Example:
@@ -58,9 +58,9 @@ To setup your Service Node, complete the following guides in order:
 		* `NODE_ADDRESS` = The address returned in the previous step.
 		* `NODE_COUNT` = The number of Service Nodes to create. 
 
-			* Requires a minimum of 5000 BLOCK per Service Node.
+			* Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee).
 			* If left blank, it defaults to `1`.
-			* Example: 20,000 BLOCK will be needed to create 4 Service Nodes
+			* Example: 20,001 BLOCK will be needed to create 4 Service Nodes
 
 		* `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
 
@@ -131,9 +131,9 @@ To setup your Service Node, complete the following guides in order:
 		* `NODE_ADDRESS` = The address returned in the previous step.
 		* `NODE_COUNT` = The number of Service Nodes to create. 
 
-			* Requires a minimum of 5000 BLOCK per Service Node.
+			* Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee)
 			* If left blank, it defaults to `1`.
-			* Example: 20,000 BLOCK will be needed to create 4 Service Nodes
+			* Example: 20,001 BLOCK will be needed to create 4 Service Nodes
 
 		* `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
 
@@ -449,6 +449,8 @@ At this point you have completed the basic setup for a Service Node. The Service
 
 ??? example "Staking With Service Node Collateral"
 	To stake your Service Node collateral, you can enable staking as you normally would. The inputs used for your Service Node collateral are all tracked, so when you "hit" a stake and it generates a new input it will auto-register for you to keep the Service Node active. 
+
+	After a stake, the Service Node is still active for all existing clients, but will be inactive for new clients until the 2 confirmations are complete.
 
 	Note: If you register the Service Node from a collateral wallet then import the Service Node's BLOCK address to another machine for staking, the Service Node will go offline. Make sure you register the Service Node (`servicenoderegister`) from the machine that will be staking so that it will know to auto-register on stake.
 

@@ -54,11 +54,11 @@ Operating as a ‘Hosting’ Service Node requires running and maintaining full 
 
 View compatible digital assets and wallet versions
 ‘Naked Service Node’ (Not supporting any digital assets on the Blocknet protocol)
-Ability to receive 0.7 BLOCK rewards
+Ability to receive block rewards
 Will not receive any trading fees rewards from trades incurred on Block DX
 
 ‘Hosting’ Service Node’ (Supporting at least one digital asset on the Blocknet protocol)
-Ability to receive 0.7 BLOCK rewards
+Ability to receive block BLOCK rewards
 Ability to receive 0.015 BLOCK trading fee rewards from trades incurred on Block DX
 Ability to receive XRouter fees (...coming soon)
 

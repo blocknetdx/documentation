@@ -4,12 +4,12 @@ description: This guide explains how to setup and configure your Service Node to
 # XCloud Configuration Guide
 This guide explains how to setup and configure your Service Node to support XCloud. If you have not yet setup your Service Node, start with the [Service Node Setup Guide](/service-nodes/setup). Since XCloud is built on XRouter, you must also complete [XRouter configuration](/service-nodes/xrouter-configuration).
 
-!!! info "Note: XCloud requires a static IP"
-	For XCloud services, your Service Node Computer **IP address must remain unchanged** (static IP). If using a VPN with an IP that changes, it will impact your ability to provide XCloud services.
+!!! warning "Note: XCloud requires a static IP"
+  	For XCloud services, your Service Node Computer **IP address must remain unchanged** (static IP). If using a VPN with an IP that changes, it will impact your ability to provide XCloud services.
 
     XCloud makes direct connections and you'll need a WAN IP as your Service Node IP address and if it's behind a router you'll need to port-forward to it.
 
-XCloud is a decentralized microservice cloud network that allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, in many cases without having to write any code. Some examples of these services are blockchain-based calls such as one that returns a list of Syscoin marketplace listings, third party data calls such as one that provides access to CMC's API, or a custom call for a service you create yourself. You have the option to offer these services for free or to charge a fee for each call. Fees can be specified individually for each call.
+XCloud is a decentralized microservice cloud network that allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, in many cases without having to write any code. Some examples of these services are blockchain-based calls such as those provided by Infura, one that returns a list of Syscoin marketplace listings, third party data calls such as one that provides access to CMC's API, or a custom call for a service you create yourself. You have the option to offer these services for free or to charge a fee for each call. Fees can be specified individually for each call.
 
 To host a service, follow these steps:
 
@@ -20,7 +20,7 @@ To host a service, follow these steps:
 1. [Deploy service](#deploy-service)
 1. [Additional information](#additional-information)
 
-For these examples we will use Syscoin's `offerinfo` call.
+For these examples we will use Ethereum's `eth_getBalance` call.
 
 ---
 
@@ -32,22 +32,27 @@ Create the service's configuration file within the `plugins` folder. Make sure t
 * The service name is also the call that is used when interacting with the service.
 * The service name and service filename must be the same.
 * Service filenames must have the `.conf` file extention.
-* A service name can only use the following characters: a-z, A-Z, 0-9, -, and :
-* If the service is a blockchain call not supported in the default SPV commands, such as `offerinfo` for Syscoin, the recommended convention for the service name is [asset ticker]\[command].
-    * E.g. `SYSofferinfo` (call) and `SYSofferinfo.conf` (config file)
+* A service name can only use the following characters: a-z, A-Z, 0-9, \_, -, and :
+* If the service is a blockchain call not supported in the default SPV commands, such as `eth_getBalance` for Ethereum, the recommended convention for the service name is [asset ticker]\_[native_command-name] with the ticker lowercase (if the ticker isn't already part of the name).
+    * E.g. `eth_getBalance` (call) and `eth_getBalance.conf` (config file)
 
 Here are examples of service names and filenames:
 
-Format                                      | Service Name  | Service Filename  | Reason 
---------------------------------------------|---------------|-------------------|--------
-<i class="fa fa-check"></i> Correct         | SYSofferinfo  | SYSofferinfo.conf | Follows correct convention and the names are equal.
-<i class="fa fa-times">&nbsp;</i> Incorrect | SYSofferinfo  | sysofferinfo.conf | The service name and service filename do not match.
-<i class="fa fa-times">&nbsp;</i> Incorrect | offerinfoSYS  | offerinfoSYS.conf | The asset ticker should be first followed by the command (recommended).
-<i class="fa fa-times">&nbsp;</i> Incorrect | sysofferinfo  | sysofferinfo.conf | The ticker is not capitalized (recommended).
-<i class="fa fa-check"></i> Correct         | weatherData   | weatherData.conf  | Names match and only uses allowed characters.
-<i class="fa fa-times">&nbsp;</i> Incorrect | weather_data  | weather_data.conf | Uses an illegal character (underscore).
-<i class="fa fa-times">&nbsp;</i> Incorrect | weatherData   | weatherdata.conf  | The service name and service filename do not match.
-<i class="fa fa-times">&nbsp;</i> Incorrect | weatherData   | weatherData.txt   | The filename extension is .txt instead of .conf.
+Format                                      | Service Name     | Service Filename     | Reason 
+--------------------------------------------|------------------|----------------------|--------
+<i class="fa fa-check"></i> Correct         | eth_getBalance   | eth_getBalance.conf  | Follows correct convention and the names are equal.
+<i class="fa fa-times">&nbsp;</i> Incorrect | eth_getBalance   | eth_getbalance.conf  | The service name and service filename do not match.
+<i class="fa fa-times">&nbsp;</i> Incorrect | eth_getBalance   | eth-getbalance.conf  | The service name and service filename do not match.
+<i class="fa fa-times">&nbsp;</i> Incorrect | eth_getBalance   | ETH_getbalance.conf  | The asset ticker should be all lowercase.
+<i class="fa fa-times">&nbsp;</i> Incorrect | getbalanceETH    | getbalanceETH.conf   | The asset ticker should be first followed by and underscore then the command.
+<i class="fa fa-check"></i> Correct         | weatherData      | weatherData.conf     | Names match and only uses allowed characters.
+<i class="fa fa-times">&nbsp;</i> Incorrect | weatherData      | weather-data.conf    | The service name and service filename do not match.
+<i class="fa fa-times">&nbsp;</i> Incorrect | weatherData      | weatherData.txt      | The filename extension is .txt instead of .conf.
+
+
+
+
+
 
 ---
 
@@ -64,12 +69,17 @@ The type of service is determined by how it's interacted with and will need diff
 The configuration file has information required to connect with your service, interact with it, and additional settings like fees and request limits. Follow the guide that pertains to your [service type](#determine-service-type).
 
 ### RPC
+!!! warning "Note: RPC Services also require *xbridge.conf* configuration."
+    To support SPV calls, you must also have your `xbridge.conf` file setup for each of the chains you wish to support and those wallets must remain open and running ([view XBridge setup guide](/service-nodes/xbridge-configuration)). If you already have this setup for XRouter SPV calls then you don't need to do anything extra unless you want to support additional chains.
+
+    For ETH, you will also need `JSONVersion=2.0` and `ContentType=application/json` added to the `[ETH]` entry in `xbridge.conf`. This applies to GETH and Parity clients.
+
 Here is an example service config file:
 
-`SYSofferinfo.conf`
+`eth_getBalance.conf`
 
 ```
-parameters=string
+parameters=string,string
 fee=0.01
 clientrequestlimit=100
 
@@ -78,9 +88,9 @@ private::rpcip=127.0.0.1
 private::rpcport=8370
 private::rpcuser=username
 private::rpcpassword=password
-private::rpccommand=offerinfo
+private::rpccommand=eth_getBalance
 
-#! Equivalent to: syscoin-cli offerinfo product_id
+#! Equivalent to: parity-cli eth_getBalance [address] [block_parameter]
 ```
 
 Settings                | Description
@@ -90,32 +100,36 @@ fee                     | The fee (in BLOCK) you require for this call. A value 
 clientrequestlimit      | The minimum time allowed between calls in milliseconds. A value of `-1` means there is no limit (*default* - see note below). If client requests exceed this value they will be penalized and eventually banned by your node.
 fetchlimit              | The maximum number of blocks processed. The default value is `50` (see note below). A value of `-1` means there is no limit.
 disabled                | Used to disable a call. A value of `1` means the call is disabled and `0` means the call is enabled (*default* - see note below).
-private::type=rpc*      | The type of connection. For other connection types, see [Service Types](#determine-service-type).
+private::type=rpc\*\*   | The type of connection. For other connection types, see [Service Types](#determine-service-type).
 private::rpcip          | The IP of the Service Node hosting this service. If left blank, localhost is assumed.
-private::rpcport*       | The service's RPC port. 
-private::rpcuser*       | The service's RPC username. 
-private::rpcpassword*   | The service's RPC password. 
-private::rpccommand*    | The service's RPC command.
+private::rpcport\*\*    | The service's RPC port. 
+private::rpcuser\*\*    | The service's RPC username. 
+private::rpcpassword\*\*| The service's RPC password. 
+private::rpccommand\*\* | The service's RPC command.
 private::response       | Used to hide private responses. For example, if this is a Twilio service and the user sends a text message, the service can send back a "sent" response instead of the Twilio response using `private::response=sent`.
 private::               | Used to keep entries private. These will not be shared with connecting clients.
-\#                      | Used at the beginning of a line for public comments. These *will be* shared with connecting clients.
-\#!                     | Used at the beginning of a line for private comments. These *will not be* shared with connecting clients.
+\#                      | Used at the beginning of a line for public comments. These **will be shared** with connecting clients.
+\#!                     | Used at the beginning of a line for private comments. These **will NOT be shared** with connecting clients.
 
-`*` Config entries `private::type=rpc`, `private::rpcport`, `private::rpcuser`, `private::rpcpassword`, and `private::rpccommand` are mandatory for RPC services.
+\*\* Config entries `private::type=rpc`, `private::rpcport`, `private::rpcuser`, `private::rpcpassword`, and `private::rpccommand` are mandatory for RPC services.
 
 !!! info "Note: Setting values use hierarchy priority."
     Values set under `[Main]` override the default values and become the new default settings for all services that don't have the respective setting specified. Service settings override `[Main]` and default settings.
 
     The setting hierarchy from highiest priority to lowest priority is as follows: *Service Settings > [Main] > default*. The higher priority settings override the lower priority settings.
 
-!!! tip "Tip: Add comments for service parameters and description."
-	So a user knows *what* the service is, use public comments to provide a description!<br>
-	**Example:** `#Description: Retrieve stock price data any stock listed on Nasdaq.`
+!!! tip "Tip: Add comments for service description and help messages."
+	
+    * Using a public comment, add a description so users know *what* the service is. Example:
+      ```
+      #description: Returns the balance for the provided Ethereum address.
+      ```
+    * Using a public comment, add a help message so users know *how* to use a service. Example:
+      ```
+      #help: eth_getBalance [address] [block_parameter]; [address] = (string) The address to check for balance; [block_parameter] = (string) Integer block number, or the string 'latest', 'earliest' or 'pending'.
+      ```
 
-	So a user knows *how* to use the service, add information on the parameters.<br>
-	**Example:** `#Parameters: getStockPrice [ticker]`
-
-	There will be dedicated description and help settings added as official support.
+    There are development plans to add dedicated, officially supported description and help settings.
 
 
 ### Docker
@@ -127,12 +141,12 @@ fee=0.01
 clientrequestlimit=100
 
 private::type=docker
-private::containername=sys3
-private::command=syscoin-cli offerinfo
+private::containername=eth
+private::command=parity-cli eth_getBalance
 private::args=$1
 private::quoteargs=1
 
-!# Equivalent to: docker exec sys3 syscoin-cli offerinfo product_id
+!# Equivalent to: docker exec eth parity-cli eth_getBalance [address] [block_parameter]
 ```
 
 Settings                | Description
@@ -159,22 +173,26 @@ private::               | Used to keep entries private. These will not be shared
 
     The setting hierarchy from highiest priority to lowest priority is as follows: *Service Settings > [Main] > default*. The higher priority settings override the lower priority settings.
 
-!!! tip "Tip: Add comments for service parameters and description."
-	So a user knows *what* the service is, use public comments to provide a description!<br>
-	**Example:** `#Description: Retrieve stock price data any stock listed on Nasdaq.`
+!!! tip "Tip: Add comments for service description and help messages."
+  
+    * Using a public comment, add a description so users know *what* the service is. Example:
+      ```
+      #description: Returns the balance for the provided Ethereum address.
+      ```
+    * Using a public comment, add a help message so users know *how* to use a service. Example:
+      ```
+      #help: eth_getBalance [address] [block_parameter]; [address] = (string) The address to check for balance; [block_parameter] = (string) Integer block number, or the string 'latest', 'earliest' or 'pending'.
+      ```
 
-	So a user knows *how* to use the service, add information on the parameters.<br>
-	**Example:** `#Parameters: getStockPrice [ticker]`
-
-	There will be dedicated description and help settings added as official support.
+    There are development plans to add dedicated, officially supported description and help settings.
 
 ---
 
 ## Deploy Service
 1. Add the service name to the `plugins=` entry in `xrouter.conf`. The service name listed must be the exact name of your config file without the file extension. Separate each service name with a comma.
-    * Example: If you had 3 services that you wanted to deply with config names `SYSlistoffers.conf`, `SYSofferinfo.conf`, and `weatherData.conf`, the `plugins=` setting would read as follows: `plugins=SYSlistoffers,SYSofferinfo,weatherData`
+    * Example: If you had 3 services that you wanted to deply with config names `eth_getBalance.conf`, `eth_blockNumber.conf`, and `weatherData.conf`, the `plugins=` setting would read as follows: `plugins=eth_getBalance,eth_blockNumber,weatherData`
 1. Use `xrReloadConfigs` to load your newly configured settings to `xrouter.conf` without needing to restart your Service Node.
-1. Use `sendserviceping` to propogate these new settings to the network immediately or wait up to 10 minutes for this to happen automatically.
+1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
 1. You can view your configs using `xrStatus` ([See example output](https://api.blocknet.co/#service-node)).
 1. Post your services to [the forum](https://forum.blocknet.co/c/xcloud-services) so others can discover, learn more, and find instructions on how to interact with your service.
 

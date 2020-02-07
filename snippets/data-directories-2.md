@@ -1,4 +1,4 @@
-1. Navigate to the data directory.
+1. Navigate to your data directory:
 
 	??? abstract "Windows"
 		```

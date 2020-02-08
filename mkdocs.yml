@@ -153,6 +153,7 @@ nav:
 - 'Service Nodes':
   - 'Introduction': 'service-nodes/introduction.md'
   - 'Setup': 'service-nodes/setup.md'
+  - 'Operation': 'service-nodes/operation.md'
   - 'XBridge Configuration': 'service-nodes/xbridge-configuration.md'
   - 'XRouter Configuration': 'service-nodes/xrouter-configuration.md'
   - 'XCloud Configuration': 'service-nodes/xcloud-configuration.md'

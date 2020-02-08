@@ -35,6 +35,7 @@ Similar to `xbridge.conf`, the general XRouter settings are specified under a `[
 
 Settings            | Description
 --------------------|-------------
+host                | The static public IP address of your SNode Computer.
 wallets             | The wallets you'd like to support XRouter calls on. All commands are on by default for all supported wallets listed in `wallets=`. If you want to turn one of them off, set `disabled=1` in the call's subsection.
 plugins             | The XCloud services you are supporting, see [XCloud Configuration](/service-nodes/xcloud-configuration).
 fee                 | The fee (in BLOCK) you require for calls. A value of `0` means there is no fee and that the calls are free (*default*). Fees can be specified for individual calls in each subsection.
@@ -49,9 +50,13 @@ fetchlimit          | The maximum number of records returned. This pertains to c
 
     The setting hierarchy from highiest priority to lowest priority is as follows: *[BTC::xrGetBlockCount] > [BTC] > [xrGetBlockCount] > [Main] > default*. The higher priority settings override the lower priority settings.
 
+!!! warning "Note: The host and wallets setting are required."
+    In your `xrouter.conf` you must have `host=` and `wallets=` included and specified or it will be invalid.
+
 Example `xrouter.conf`:
 ```
 [Main]
+host=208.67.222.222
 wallets=BLOCK,SYS,BTC
 plugins=
 fee=0

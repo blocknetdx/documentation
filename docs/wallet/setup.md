@@ -10,7 +10,7 @@ The Blocknet wallet allows you to securely manage your [BLOCK](/blockchain/intro
 
 	These exchanges are highly unregulated, which can lead to issues. They have the ability to freeze withdrawals of funds, and while the exchange owners can tell users that their funds are safe, there is no way to guarantee this given the lack of rules and a regulating body.
 
-	Due to the large number of funds being stored on exchanges, it becomes a target for hackers. There is a huge risk storing funds on an exchange with [$1.7 billion stollen from exchanges in 2018](https://blockonomi.com/bitcoin-theft-skyrocketed-2-billion/) alone.
+	Due to the large number of funds being stored on exchanges, it becomes a target for hackers. There is a huge risk storing funds on an exchange with [$1.7 billion stolen from exchanges in 2018](https://blockonomi.com/bitcoin-theft-skyrocketed-2-billion/) alone.
 
 ---
 

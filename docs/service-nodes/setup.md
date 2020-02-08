@@ -375,7 +375,7 @@ At this point you have completed the basic setup for a Service Node. The Service
 
 	> **Check Service Node Status**
 
-	1. On the SNode Server wallet, open the debug console and type `servicenodestatus`. You should still see a ‘running’ status and the services being hosted.
+	1. On the SNode Server wallet, open the debug console and type `servicenodestatus`. You should still see a `running` status and the services being hosted.
 
 		![Check Status](/img/service-nodes/redesign-servicenodestatus-response.png)
 
@@ -429,7 +429,7 @@ At this point you have completed the basic setup for a Service Node. The Service
 
 	> **Check Service Node Status**
 
-	1. On the SNode Server wallet, open the debug console and type `servicenodestatus`. You should still see a ‘running’ status and the services being hosted.
+	1. On the SNode Server wallet, open the debug console and type `servicenodestatus`. You should still see a `running` status and the services being hosted.
 
 		![Check Status](/img/service-nodes/classic-servicenodestatus-response.png)
 
@@ -465,9 +465,9 @@ At this point you have completed the basic setup for a Service Node. The Service
 ??? example "Restarted Your SNode Computer Wallet"
 	If you have just restarted your SNode Computer wallet, follow these instructions:
 
-	1. Open the SNode Computer wallet and let is sync.
+	1. Open the SNode Computer wallet and let it sync.
 	1. From the SNode Computer, check if your Service Nodes status still shows ‘running’ with the `servicenodestatus` command.
-	1. If they show ‘"status": "running"’ then you don't need to do anything. If they `offline` then continue.
+	1. If they show `"status": "running"` then you don't need to do anything. If they show `offline` then continue.
 	1. From the Collateral Computer wallet, re-register the node with the `servicenoderegister` command.
 	1. From the SNode Computer wallet, send the network ping with `servicenodesendping`.
 
@@ -480,7 +480,7 @@ At this point you have completed the basic setup for a Service Node. The Service
 	1. Restart the SNode Computer wallet and let it sync.
 	1. Open the Collateral Computer wallet and let it sync.
 	1. From the SNode Computer, check if your Service Nodes status still shows ‘running’ with the `servicenodestatus` command.
-	1. If they show ‘"status": "running"’ then you don't need to do anything. If they `offline` then continue.
+	1. If they show `"status": "running"` then you don't need to do anything. If they show `offline` then continue.
 	1. From the Collateral Computer wallet, re-register the node with the `servicenoderegister` command.
 	1. From the SNode Computer wallet, send the network ping with `servicenodesendping`.
 

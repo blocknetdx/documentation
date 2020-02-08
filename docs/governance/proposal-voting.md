@@ -16,10 +16,9 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 	* Your vote is not counted until the voting transaction fee has 1 confirmation (typically 1 minute), after which your votes will be accounted for when viewing the `listproposals` command.
 	* If you vote again you will have to pay another network fee to do so.
 	* The voting system will automatically calculate how many votes you have available according to your balance (1 vote per 5000 BLOCK) and cast your full vote weight when voting (5562 BLOCK balance = 1 vote, 49635 BLOCK balance = 9 votes.
-	* At least 60 minutes must pass before you can change your vote(s).
 	* The deadline for creating proposals is 2880 blocks prior to the Superblock.
 
-??? info "Examples Of Valid Setups"
+??? info "Examples Of Valid Input Setups"
 
 	1. Counts as 1 single vote:
 		* Address A
@@ -55,7 +54,7 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 			* Inputs: 3000, 3000, 2000, 1000, 1 (tx fee input)
 			* Total: 9000 + 1 (tx fee input)
 
-??? info "Examples Of Invalid Setups"
+??? info "Examples Of Invalid Input Setups"
 
 	1. Not at least 5000 BLOCK:
 		* Address A
@@ -96,7 +95,7 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 	1. **Review the proposals and the amount requested.** It's a good idea to consider the total Superblock budget, the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with some background information and objectives.
 	1. The voting system will automatically calculate how many votes you have available according to your balance (1 vote per 5000 BLOCK) and cast your full vote weight when voting (5562 BLOCK balance = 1 vote, 49635 BLOCK balance = 9 votes.
 	1. When ready to vote on a proposal, select the *Vote* button. A popup will appear that will be used to vote from. Select whether you'd like to approve the proposal (*Yes*) or vote against the proposal (*No*). After you have selected how you wish to vote, select the *Vote* button. This registers your vote to the network after the vote transaction has 1 confirmation (about 1 minute).
-	1. Once you have voted you can change your vote by selecting the *Change Vote* button and selecting you new vote. **At least 60 minutes must pass before you can change your vote.** You can view your current vote above the *Change Vote* button.
+	1. Once you have voted you can change your vote by selecting the *Change Vote* button and selecting you new vote. 
 
 		![Proposal Voted](/img/wallet-redesign/proposal-voted.png)
 

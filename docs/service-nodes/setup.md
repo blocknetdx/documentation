@@ -50,7 +50,7 @@ To setup your Service Node, complete the following guides in order:
 
 		--8<-- "privkey-warning.md"
 
-	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for a Service Node(s) you can skip this step):
+	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
 		```
 		servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
 		```
@@ -123,7 +123,7 @@ To setup your Service Node, complete the following guides in order:
 
 		--8<-- "privkey-warning.md"
 
-	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for a Service Node(s) you can skip this step):
+	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
 		```
 		servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
 		```
@@ -348,7 +348,7 @@ At this point you have completed the basic setup for a Service Node. The Service
 
 	1. On the SNode Server computer:
 		1. Start the Blocknet wallet (or restart if you haven't already or have made changes).
-			* Make sure this contains the previously configured `blocknet.conf` file with the Service Node credentials.
+			* Make sure this contains the previously configured `blocknet.conf` file and the `servicenode.conf` with the Service Node credentials.
 		1. Fully sync the wallet.
 		1. This wallet must stay running. If the SNode Server wallet is closed, you will need to re-register the Service Node from the Collateral Computer wallet if you have staked a block in that time period.
 	1. On the Collateral computer:
@@ -390,19 +390,13 @@ At this point you have completed the basic setup for a Service Node. The Service
 
 
 
-	> **Check Service Node Is Available on the Network**
-
-	1. On a client *other than* the SNode Server wallet (such as the Collateral Computer wallet), open the debug console and type `servicenodelist`. You should see your newly created Service Node in the returned list with the status as `"status": "running"`. Your Service Nodes are the ones with the `"snodekey"` that matches the ones returned when registering your node.
-
-		![Network Status](/img/service-nodes/redesign-servicenodelist-response.png)
-
 ??? example "Setup using the classic wallet"
 
 	> **Preparation**
 
 	1. On the SNode Server computer:
 		1. Start the Blocknet wallet (or restart if you haven't already or have made changes).
-			* Make sure this contains the previously configured `blocknet.conf` file with the Service Node credentials.
+			* Make sure this contains the previously configured `blocknet.conf` file and the `servicenode.conf` with the Service Node credentials.
 		1. Fully sync the wallet.
 		1. This wallet must stay running. If the SNode Server wallet is closed, you will need to re-register the Service Node from the Collateral Computer wallet if you have staked a block in that time period.
 	1. On the Collateral computer:

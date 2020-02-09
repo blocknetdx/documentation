@@ -16,7 +16,7 @@ Release Method           | ITO, No Premine
 Proof Type               | Proof of Work (PoW): blocks 0-2000 (ended) <br>Proof of Stake (PoS): blocks 2001+ (current)
 Algo                     | Quark
 Block Time               | 60 seconds
-Block Reward             | 1.0 BLOCK <br>0.3 awarded to stakers <br>0.7 awarded to Service Nodes
+Block Reward             | 1.0 BLOCK
 Superblock               | Up to 40,000 BLOCK
 Difficulty               | Adjusted per block<span id="spec_difficulty"></span>
 Staking Requirement      | No minimum

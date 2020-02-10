@@ -274,7 +274,7 @@ To setup your Service Node, complete the following guides in order:
 		rpcthreads=8
 		```
 	1. Enter a username and password for `rpcuser=` and `rpcpassword=`. These should be difficult and secure credentials.
-	1. Here the SNode Computer wallet is used to connect to the Blocknet blockchain with the `rpcallowip=127.0.0.1` setting (localhost). If you would like to setup a different computer to host the Blocknet blockchain, update the `rpcallowip=` setting to the IP of that computer.
+	1. Here the SNode Computer wallet is used to connect to the Blocknet blockchain with the `rpcallowip=127.0.0.1` setting (localhost). If you would like to setup a different computer to host the Blocknet blockchain, update the `rpcallowip=` setting to the IP of that computer. **Note**: Changing `rpcallowip=` to anything other than localhost will also require you to include the `rpcbind=` setting. 
 	1. For best performance, a `maxconnections=` setting should **NOT** be specified.
 	1. Save and close the `blocknet.conf` file.
 	1. Open the `xbridge.conf` configuration file (also in the Blocknet data directory).

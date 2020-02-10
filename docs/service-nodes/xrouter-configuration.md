@@ -50,7 +50,7 @@ fetchlimit          | The maximum number of records returned. This pertains to c
 
     The setting hierarchy from highiest priority to lowest priority is as follows: *[BTC::xrGetBlockCount] > [BTC] > [xrGetBlockCount] > [Main] > default*. The higher priority settings override the lower priority settings.
 
-!!! warning "Note: The host and wallets setting are required."
+!!! warning "Note: The host and wallets settings are required."
     In your `xrouter.conf` you must have `host=` and `wallets=` included and specified or it will be invalid.
 
 Example `xrouter.conf`:

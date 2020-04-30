@@ -8,6 +8,8 @@ description: This guide explains how to setup Block DX for secure trading. Block
 
 [Block DX](/blockdx/introduction) is the fastest, most secure, most reliable, and most decentralized exchange. With a user-friendly UI, peer-to-peer trading is made as simple as using a centralized exchange. The following guides will take you through each step, start to finish, so you can begin trading securely.
 
+> [**Watch Video Tutorial**](https://www.youtube.com/watch?v=aFSl60KcaCk)
+
 1. Install the Blocknet wallet. The Blocknet wallet is required to facilitate peer-to-peer trading on Block DX.
 	* [Blocknet wallet installation guide](/wallet/setup)
 	* [Read more about Blocknet](/blocknet/introduction)

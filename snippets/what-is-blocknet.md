@@ -1,6 +1,6 @@
-Blocknet is a blockchain interoperability protocol that enables communication, interaction, and exchange between different public and private blockchains. The protocol also offers access to full node chain data without needing to download the blockchain and access to off-chain data via oracles. This allows for the development of multi-chain applications and blockchain microservices, creating exponentially more capabilities and possibilities for the blockchain ecosystem. 
+Blocknet is a blockchain interoperability protocol that enables communication, interaction, and exchange between different public and private blockchains, as well as connect to external off-chain APIs and services via oracles. This exponentially increases the development capabilities and enables a new generation of mature blockchains and services. 
 
-Blocknet is open source, self- funded, and self-governed with contributors around the world building an open and collaborative ecosystem.
+Blocknet is an open sourced, self-funded, and self-governed project with contributors around the world building an open and collaborative ecosystem.
 
 Subscribe to the following email lists for the latest features, updates, and news!
 

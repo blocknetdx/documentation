@@ -60,14 +60,7 @@ Use the following guide to check if you're on a fork by comparing the current bl
 ??? example "Check using the classic wallet"
 	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
 
-	1. In the program menu, select *Tools* then *Debug Console*.
-
-		![Menu](/img/wallet-classic/menu-console.png)
-
-	1. The debug console will open. The input field at the bottom is where you will type commands.
-
-		![Debug Console](/img/wallet-classic/tools-console.png)
-
+	1. In the program menu, go to *Window* > *Console*. A new window will appear with an input field at the bottom where you will type commands.
 	1. Type `getblockcount` into the debug console and press the *Enter* or *Return* key.
 		```
 		getblockcount

@@ -77,7 +77,7 @@ XRouter SPV wallets utlize the `xrs::` namespace while [XCloud](/protocol/xcloud
 
 
 ## Node Scoring
-Clients keep a score of each Service Node. When a Service Node reaches a score of `-200`, the Service Node will be banned by the client for a 24hr period. After this 24hr period, the Service Node will start with a score of `-25`. The ban score threshold can be adjusted using the `xrouterbanscore` setting in `blocknetdx.conf` (see [setup](https://api.blocknet.co/#xrouter-setup)). This scoring used for both XRouter and [XCloud](/protocol/xcloud/introduction).
+Clients keep a score of each Service Node. When a Service Node reaches a score of `-200`, the Service Node will be banned by the client for a 24hr period. After this 24hr period, the Service Node will start with a score of `-25`. The ban score threshold can be adjusted using the `xrouterbanscore` setting in `blocknet.conf` (see [setup](https://api.blocknet.co/#xrouter-setup)). This scoring used for both XRouter and [XCloud](/protocol/xcloud/introduction).
 
 Action                                  | Change in Score
 ----------------------------------------|-----------------

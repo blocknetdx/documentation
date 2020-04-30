@@ -3,11 +3,11 @@ description: This guide explains step-by-step how to setup a Service Node, which
 
 
 # Service Node Setup
-This guide explains step-by-step how to setup a [Service Node](/service-nodes/introduction). Operating a Service Node requires 5000 BLOCK collateral. This BLOCK will need to be locked for the Service Node to be valid and active. This means that the 5000 BLOCK will still be in your wallet and in your control, but it can't be moved or spent.
+This guide explains step-by-step how to setup a [Service Node](/service-nodes/introduction). Operating a Service Node requires 5000 BLOCK collateral. This 5000 BLOCK collateral will still be in your wallet and in your control, but must not be moved or spent in order for the Service Node to remain valid and active. However, you may still use this collateral to participate in staking.
 
 Operating as a Service Node requires two computers:
 
-* __Collateral Computer__ - The computer will contain the 5000 BLOCK collateral and does *not* need to remain on.
+* __Collateral Computer__ - The computer will contain the 5000 BLOCK collateral and does *NOT* need to remain on with the wallet open unless the 5000 BLOCK is being staked or you are [voting on a proposal](/governane/proposal-voting).
 * __SNode Server Computer__ - This computer will act as the Service Node and must remain on with the wallet open.
 
 To setup your Service Node, complete the following guides in order:
@@ -27,11 +27,12 @@ To setup your Service Node, complete the following guides in order:
 	1. [Install the Blocknet wallet](/wallet/installation).
 	1. [Fully sync the wallet](/wallet/syncing).
 	1. [Encrypt the wallet](/wallet/encrypting).
+
+		!!! info "Note"
+			If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (1 BLOCK) to have enough to cover transaction fees when continuing this step.
+
 	1. Select *Tools* from the left menu, then the *Debug Console* tab. The input field at the bottom is where you will type commands.
-
-		![Debug Console](/img/service-nodes/redesign-debug-console.png)
-
-	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress <ALIAS>` into the debug console with `<ALIAS>` replaced with the alias you will be using for this address. Example:
+	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress [ALIAS]` into the debug console with `[ALIAS]` replaced with the alias you will be using for this address. Example:
 		```
 		getnewaddress snode01
 		```
@@ -42,97 +43,54 @@ To setup your Service Node, complete the following guides in order:
 
 		![Address](/img/service-nodes/redesign-getnewaddress-response.png)
 
-	1. Type `servicenode genkey` into the debug console and press the *Enter* or *Return* key.
+	1. Retrieve your private key for the newly created address for backup purposes. Type `dumpprivkey [ADDRESS]` using the new address and press the *Enter* or *Return* key. Example:
 		```
-		servicenode genkey
-		```
-
-		![Create Key](/img/service-nodes/redesign-genkey-command.png)
-
-	1. The command will appear in the console window followed by a response with the Service Node key.
-
-		![Key](/img/service-nodes/redesign-genkey-response.png)
-
-	1. Copy the responses from the 2 commands for use in a later step.
-	1. Retrieve your private key for the newly created address. Type `dumpprivkey <ADDRESS>` using the new address and press the *Enter* or *Return* key. Example:
-		```
-		dumpprivkey BWrNeqmsFCkYkvFHd4Hv8UvuynmtcAiW4g
+		dumpprivkey BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
 		```
 
 		--8<-- "privkey-warning.md"
 
-	1. Select *Send Funds* from the left menu. We will now be sending the 5000 BLOCK collateral as a single transaction to the address we created.
-
-		![Send](/img/service-nodes/redesign-send-1.png)
-
-		!!! info "Note"
-			If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (0.1 BLOCK) to have enough to cover transaction fees when continuing this step.
-
-	1. Enter the newly created address in this field and select *Continue*.
-		* You can also select *Open Address Book* and select the address by double-clicking it.
-
-		![Send Address](/img/service-nodes/redesign-send-2.png)
-
-	1. Fill out the form and select *Continue*.
-		1. Set amount to exactly 5000.00 BLOCK.
-		1. If you are not using *Coin Control* leave the ‘Default (Recommended)’ option selected.
-
-		![Send Amount](/img/service-nodes/redesign-send-3.png)
-
-	1. Make sure *Recommended fee* is selected and then select *Continue*.
-	1. Review the transaction details and confirm the payment.
-		1. Ensure the amount is 5000 BLOCK and it lists your Service Node address.
-		1. The total at the bottom should be the 5000 BLOCK + Transaction Fee. 
-	1. Select *Transaction History* from the left menu. You should see the 5000 BLOCK transaction that was sent. Hover your mouse over the row and proceed to the next step when you see 1 confirmation.
-
-		![Confirmations](/img/service-nodes/redesign-confirmations.png)
-
-	1. Go back to the debug console, type `servicenode outputs` into the debug console, and press the *Enter* or *Return* key. This command generates the Service Node transaction information.
+	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
 		```
-		servicenode outputs
+		servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
 		```
 
-		![Outputs](/img/service-nodes/redesign-outputs-command.png)
+		* `NODE_ADDRESS` = The address returned in the previous step.
+		* `NODE_COUNT` = The number of Service Nodes to create. 
 
-	1. The command will appear in the console window followed by a response with the Service Node transaction information. Copy this information for later use. Example response:
+			* Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee).
+			* If left blank, it defaults to `1`.
+			* Example: 20,001 BLOCK will be needed to create 4 Service Nodes
+
+		* `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
+
+			* Must be >= `500` and <= `5000`.
+			* If left blank, it defaults to `1250`.
+			* Example: `1000` will create 5 inputs of 1000 BLOCK each per Service Node
+
+	1. Type the above command replacing the variables with the respective values in place. See examples below:
+
+		* Single Service Node: `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`
+		* Single Service Node (2 inputs): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500`
+		* Multiple Service Nodes (10k BLOCK): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000`
+
+		![Create Inputs](/img/service-nodes/redesign-servicenodecreateinputs-response.png)
+
+	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node(s). Example:
 		```
-		{
-	        "txhash" : "e12d35c18c2498d7ad683ec53ebb5c6accf197b693ccfcbb048c83bd4ad3287e",
-	        "outputidx" : 0
-	    }
-		```
-
-		![Outputs](/img/service-nodes/redesign-outputs-response.jpg)
-
-	1. **On the SNode Server computer**, [Google *"what's my ip"*](https://www.google.com/search?q=whats+my+ip).
-		1. If you’re using a VPS for the SNode Server computer, retrieve that public IP address.
-
-		![Snode IP](/img/service-nodes/whats-my-ip.png)
-
-	1. Copy your public IP address for later use.
-	1. **Moving back to the Collateral wallet**, from the program menu select *Tools* then *Open Service Node Configuration File*.
-
-		??? info "Note: The *servicenode.conf* file can be found in the Blocknet data directory."
-			--8<-- "data-directories.md"
-
-		![Snode Config](/img/service-nodes/redesign-menu-snode-conf-1.png)
-
-	1. A file will be opened with your default text editor. Enter the following with the placeholders replaced with the information from the earlier steps:
-		```
-		<ALIAS> <PUBLIC_IP>:41412 <SERVICE_NODE_KEY> <TXHASH> <OUTPUTIDX>
+		servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
 		```
 
-		!!! info "Note"
-			The `<SERVICE_NODE_KEY>` is the value returned from the `servicenode genkey` command. It is *NOT* the value from the `dumpwallet <ADDRESS>` command.
+		![Config Setup](/img/service-nodes/redesign-servicenodesetup-response.png)
 
-	1. After the information is replaced it should look similar to the following:
+	1. Export the `servicenode.conf` configuration file. Type `servicenodeexport [ALIAS] [ENCRYPTION_PASSWORD]`. The password is used to encrypt the export data. Example:
 		```
-		snode01 138.28.1.27:41412 6B1XGPVzE7MRszNXjXqcYtr5ApcCBkST5Bds43gSHcJd22kuHZe e12d35c18c2498d7ad683ec53ebb5c6accf197b693ccfcbb048c83bd4ad3287e 0
+		servicenodeexport snode01 supersecretpassword
 		```
 
-		!!! info "Note: The entire entry must be on a single line."
-	1. If setting up multiple Service Nodes, repeat these steps for each 5000 BLOCK input.
-	1. Save and close the `servicenode.conf` file.
+		![Config Setup](/img/service-nodes/redesign-servicenodeexport-response.png)
+
+	1. Copy this output hash for later use.
 	1. Restart the Blocknet wallet.
 	1. Continue on to [SNode Server Computer Setup](/service-nodes/setup/#snode-server-computer-setup).
 
@@ -142,15 +100,12 @@ To setup your Service Node, complete the following guides in order:
 	1. [Install the Blocknet wallet](/wallet/installation).
 	1. [Fully sync the wallet](/wallet/syncing).
 	1. [Encrypt the wallet](/wallet/encrypting).
-	1. In the program menu, select *Tools* then *Debug Console*.
 
-		![Menu](/img/service-nodes/classic-menu-debug-console-1.png)
+		!!! info "Note"
+			If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (0.1 BLOCK) to have enough to cover transaction fees when continuing this step.
 
-	1. The debug console will open. The black bar at the bottom is the input field where you will type commands.
-
-		![Debug Console](/img/service-nodes/classic-debug-console.png)
-
-	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress <ALIAS>` into the debug console with `<ALIAS>` replaced with the alias you will be using for this address. Example:
+	1. In the program menu, go to *Window* > *Console*. A new window will appear with an input field at the bottom where you will type commands.
+	1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress [ALIAS]` into the debug console with `[ALIAS]` replaced with the alias you will be using for this address. Example:
 		```
 		getnewaddress snode01
 		```
@@ -161,94 +116,54 @@ To setup your Service Node, complete the following guides in order:
 
 		![Address](/img/service-nodes/classic-getnewaddress-response.png)
 
-	1. Type `servicenode genkey` into the debug console and press the *Enter* or *Return* key.
+	1. Retrieve your private key for the newly created address for backup purposes. Type `dumpprivkey [ADDRESS]` using the new address and press the *Enter* or *Return* key. Example:
 		```
-		servicenode genkey
-		```
-
-		![Create Key](/img/service-nodes/classic-genkey-command.png)
-
-	1. The command will appear in the console window followed by a response with the Service Node key.
-
-		![Key](/img/service-nodes/classic-genkey-response.png)
-
-	1. Copy the responses from the 2 commands for use in a later step.
-	1. Retrieve your private key for the newly created address. Type `dumpprivkey <ADDRESS>` using the new address and press the *Enter* or *Return* key. Example:
-		```
-		dumpprivkey Bgcfsgh2FSHPVLB4VgmLYZdsyDR5pb8jKB
+		dumpprivkey BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
 		```
 
 		--8<-- "privkey-warning.md"
 
-	1. Select the *Send* tab. We will now be sending the 5000 BLOCK collateral as a single transaction to the address we created.
-
-		![Send](/img/service-nodes/classic-send.png)
-
-	1. Fill out the form.
-		1. Enter the newly created address in the *Pay To* field.
-		1. Set *Amount* to exactly 5000.00000000 BLOCK.
-
-		!!! info "Note"
-			If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (0.1 BLOCK) to have enough to cover transaction fees when continuing this step.
-
-	1. Double check the form is filled out correctly.
-
-		![Send Collateral](/img/service-nodes/classic-send-filled.png)
-
-	1. Select *Send* to submit the transaction to your new address.
-
-		![Send Button](/img/service-nodes/classic-send-button.png)
-
-	1. Select the *Transactions* tab. You should see the 5000 BLOCK transaction that was sent. Hover your mouse over the row and proceed to the next step when you see 1 confirmation.
-
-		![Confirmations](/img/service-nodes/classic-confirmations.png)
-
-	1. Go back to the debug console, type `servicenode outputs` into the debug console, and press the *Enter* or *Return* key. This command generates the Service Node transaction information.
+	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
 		```
-		servicenode outputs
+		servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
 		```
 
-		![Outputs](/img/service-nodes/classic-outputs-command.png)
+		* `NODE_ADDRESS` = The address returned in the previous step.
+		* `NODE_COUNT` = The number of Service Nodes to create. 
 
-	1. The command will appear in the console window followed by a response with the Service Node transaction information. Copy this information for later use. Example response:
+			* Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee)
+			* If left blank, it defaults to `1`.
+			* Example: 20,001 BLOCK will be needed to create 4 Service Nodes
+
+		* `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
+
+			* Must be >= `500` and <= `5000`.
+			* If left blank, it defaults to `1250`.
+			* Example: `1000` will create 5 inputs of 1000 BLOCK each per Service Node
+
+	1. Type the above command replacing the variables with the respective values in place. See examples below:
+
+		* Single Service Node: `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`
+		* Single Service Node (2 inputs): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500`
+		* Multiple Service Nodes (10k BLOCK): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000`
+
+		![Create Inputs](/img/service-nodes/classic-servicenodecreateinputs-response.png)
+
+	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node(s). Example:
 		```
-		{
-	        "txhash" : "e12d35c18c2498d7ad683ec53ebb5c6accf197b693ccfcbb048c83bd4ad3287e",
-	        "outputidx" : 0
-	    }
-		```
-
-		![Outputs](/img/service-nodes/classic-outputs-response.jpg)
-
-	1. **On the SNode Server computer**, [Google *"what's my ip"*](https://www.google.com/search?q=whats+my+ip).
-		1. If you’re using a VPS for the SNode Server computer, retrieve that public IP address.
-
-		![Snode IP](/img/service-nodes/whats-my-ip.png)
-
-	1. Copy your public IP address for later use.
-	1. **Moving back to the Collateral wallet**, from the program menu select *Tools* then *Open Service Node Configuration File*.
-
-		??? info "Note: The *servicenode.conf* file can be found in the Blocknet data directory."
-			--8<-- "data-directories.md"
-
-		![Snode Config](/img/service-nodes/classic-menu-snode-conf-1.png)
-
-	1. A file will be opened with your default text editor. Enter the following with the placeholders replaced with the information from the earlier steps:
-		```
-		<ALIAS> <PUBLIC_IP>:41412 <SERVICE_NODE_KEY> <TXHASH> <OUTPUTIDX>
+		servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
 		```
 
-		!!! info "Note"
-			The `<SERVICE_NODE_KEY>` is the value returned from the `servicenode genkey` command. It is *NOT* the value from the `dumpwallet <ADDRESS>` command.
+		![Config Setup](/img/service-nodes/classic-servicenodesetup-response.png)
 
-	1. After the information is replaced it should look similar to the following:
+	1. Export the `servicenode.conf` configuration file. Type `servicenodeexport [ALIAS] [ENCRYPTION_PASSWORD]`. The password is used to encrypt the export data. Example:
 		```
-		snode01 138.28.1.27:41412 6C4h8c87UGizAk67E97fTKSSgVn2ezsgbKzehcySniEhYyMNuQF e12d35c18c2498d7ad683ec53ebb5c6accf197b693ccfcbb048c83bd4ad3287e 0
+		servicenodeexport snode01 supersecretpassword
 		```
 
-		!!! info "Note: The entire entry must be on a single line."
-	1. If setting up multiple Service Nodes, repeat these steps for each 5000 BLOCK input.
-	1. Save and close the `servicenode.conf` file.
+		![Config Setup](/img/service-nodes/classic-servicenodeexport-response.png)
+
+	1. Copy this output hash for later use.
 	1. Restart the Blocknet wallet.
 	1. Continue on to [SNode Server Computer Setup](/service-nodes/setup/#snode-server-computer-setup).
 
@@ -261,78 +176,167 @@ To setup your Service Node, complete the following guides in order:
 
 	1. [Install the Blocknet wallet](/wallet/installation).
 	1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
-	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknetdx.conf` file.
 
-		??? info "Note: The *blocknetdx.conf* file can be found in the Blocknet data directory."
-			--8<-- "data-directories.md"
+	--8<-- "data-directories-1.md"
 
-		![Wallet Config](/img/service-nodes/redesign-menu-wallet-conf-1.png)
-
-	1. A file will be opened with your default text editor. Enter the following information with the placeholders replaced:
+	1. Open the `blocknet.conf` configuration file.
+	1. A file will be opened with your default text editor. Add the following information on new lines:
 		```
+		server=1
+		listen=1
+		rpcuser=
+		rpcpassword=
+		rpcallowip=127.0.0.1
+		port=41412
+		rpcport=41414
+		txindex=1
+
 		enableexchange=1
 		servicenode=1
-		servicenodeaddr=<PUBLIC_IP>:41412
-		servicenodeprivkey=<SERVICE_NODE_KEY>
 		rpcthreads=8
 		```
-	1. After the information is replaced it should look similar to the following:
+	1. Enter a username and password for `rpcuser=` and `rpcpassword=`. These should be difficult and secure credentials.
+	1. Here the SNode Computer wallet is used to connect to the Blocknet blockchain with the `rpcallowip=127.0.0.1` setting (localhost). If you would like to setup a different computer to host the Blocknet blockchain, update the `rpcallowip=` setting to the IP of that computer.
+	1. For best performance, a `maxconnections=` setting should **NOT** be specified.
+	1. Save and close the `blocknet.conf` file.
+	1. Open the `xbridge.conf` configuration file (also in the Blocknet data directory).
+	1. A file will be opened with your default text editor. Add the following information on new lines:
 		```
-		enableexchange=1
-		servicenode=1
-		servicenodeaddr=138.28.1.27:41412
-		servicenodeprivkey=6B1XGPVzE7MRszNXjXqcYtr5ApcCBkST5Bds43gSHcJd22kuHZe
-		rpcthreads=8
+		[Main]
+		ExchangeWallets=BLOCK
+		FullLog=true
+		LogPath=
+		ExchangeTax=300
+
+		[BLOCK]
+		Title=Blocknet
+		Ip=127.0.0.1
+		Username=
+		Password=
+		Port=41414
+		AddressPrefix=26
+		ScriptPrefix=28
+		SecretPrefix=154
+		COIN=100000000
+		MinimumAmount=0
+		TxVersion=1
+		DustAmount=0
+		CreateTxMethod=BTC
+		GetNewKeySupported=true
+		ImportWithNoScanSupported=true
+		MinTxFee=10000
+		BlockTime=60
+		FeePerByte=20
+		Confirmations=0
+		Address=
+		TxWithTimeField=false
+		LockCoinsSupported=false
+		JSONVersion=
+		ContentType=
 		```
-	1. For best performance, a `maxconnections=` setting should **not** be specified.
-	1. Save and close the `blocknetdx.conf` file.
-	1. Shut down the Blocknet wallet.
+	1. Set `Username=` to the same value as `rpcuser=` from your `blocknet.conf`.
+	1. Set `Password=` to the same value as `rpcpassword=` from your `blocknet.conf`.
+	1. Set `Ip=` to the same value as `rpcallowip=` from your `blocknet.conf`.
+	1. Save and close the `xbridge.conf` file.
+	1. Select *Tools* from the left menu, then the *Debug Console* tab. The input field at the bottom is where you will type commands.
+	1. Import the `servicenode.conf` configuration file. Type `servicenodeimport [EXPORTED_HASH] [ENCRYPTION_PASSWORD]` with `[ENCRYPTION_PASSWORD]` replaced with the encryption password used to export your *servicenode.conf* on your collateral computer and `[EXPORTED_HASH]` replaced with the hash that was returned in that response. Example:
+		```
+		servicenodeimport 5f1e7eeb2f8d2033ae95789008fbf1c60c52a45a20bee1b56ef5052438577e3916f0ff5cc468151463caa34c13097ba4cbd35b398f2cb6e7a43af675d27042b1a105845a7c61d988e6cc6388cd563f900d821dc7956727ddf897841678fa7c8c5a5ca57253a2f4bd7d9a29babae1f163f2ffc25ac60eaa7102f23cbac6837abf1f232b4d6a5fcf65b9d8ea61231fc804ddb8aeff164d79e9b6503e8b4624a153 supersecretpassword
+		```
+
+		![Config Setup](/img/service-nodes/redesign-servicenodeimport-response.png)
+
+	1. You should receive a `true` response, which means a `servicenode.conf` file was automatically created and saved.
+	1. Restart the Blocknet wallet.
 
 ??? example "Setup using the classic wallet"
 	![Classic Wallet](/img/service-nodes/classic-wallet.png)
 
 	1. [Install the Blocknet wallet](/wallet/installation).
 	1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
-	1. In the program menu, select *Tools* then *Open Wallet Configuration File* to configure the `blocknetdx.conf` file.
 
-		??? info "Note: The *blocknetdx.conf* file can be found in the Blocknet data directory."
-			--8<-- "data-directories.md"
+	--8<-- "data-directories-1.md"
 
-		![Wallet Config](/img/service-nodes/classic-menu-wallet-conf-1.png)
-
-	1. A file will be opened with your default text editor. Enter the following information with the placeholders replaced:
+	1. Open the `blocknet.conf` configuration file.
+	1. A file will be opened with your default text editor. Add the following information on new lines:
 		```
+		server=1
+		listen=1
+		rpcuser=
+		rpcpassword=
+		rpcallowip=127.0.0.1
+		port=41412
+		rpcport=41414
+		txindex=1
+
 		enableexchange=1
 		servicenode=1
-		servicenodeaddr=<PUBLIC_IP>:41412
-		servicenodeprivkey=<SERVICE_NODE_KEY>
 		rpcthreads=8
 		```
-	1. After the information is replaced it should look similar to the following:
+	1. Enter a username and password for `rpcuser=` and `rpcpassword=`. These should be difficult and secure credentials.
+	1. Here the SNode Computer wallet is used to connect to the Blocknet blockchain with the `rpcallowip=127.0.0.1` setting (localhost). If you would like to setup a different computer to host the Blocknet blockchain, update the `rpcallowip=` setting to the IP of that computer. **Note**: Changing `rpcallowip=` to anything other than localhost will also require you to include the `rpcbind=` setting. 
+	1. For best performance, a `maxconnections=` setting should **NOT** be specified.
+	1. Save and close the `blocknet.conf` file.
+	1. Open the `xbridge.conf` configuration file (also in the Blocknet data directory).
+	1. A file will be opened with your default text editor. Add the following information on new lines:
 		```
-		enableexchange=1
-		servicenode=1
-		servicenodeaddr=138.28.1.27:41412
-		servicenodeprivkey=6C4h8c87UGizAk67E97fTKSSgVn2ezsgbKzehcySniEhYyMNuQF
-		rpcthreads=8
+		[Main]
+		ExchangeWallets=BLOCK
+		FullLog=true
+		LogPath=
+		ExchangeTax=300
+
+		[BLOCK]
+		Title=Blocknet
+		Ip=127.0.0.1
+		Username=
+		Password=
+		Port=41414
+		AddressPrefix=26
+		ScriptPrefix=28
+		SecretPrefix=154
+		COIN=100000000
+		MinimumAmount=0
+		TxVersion=1
+		DustAmount=0
+		CreateTxMethod=BTC
+		GetNewKeySupported=true
+		ImportWithNoScanSupported=true
+		MinTxFee=10000
+		BlockTime=60
+		FeePerByte=20
+		Confirmations=0
+		Address=
+		TxWithTimeField=false
+		LockCoinsSupported=false
+		JSONVersion=
+		ContentType=
 		```
-	1. For best performance, a `maxconnections=` setting should **not** be specified.
-	1. Save and close the `blocknetdx.conf` file.
-	1. Shut down the Blocknet wallet.
+	1. Set `Username=` to the same value as `rpcuser=` from your `blocknet.conf`.
+	1. Set `Password=` to the same value as `rpcpassword=` from your `blocknet.conf`.
+	1. Set `Ip=` to the same value as `rpcallowip=` from your `blocknet.conf`.
+	1. Save and close the `xbridge.conf` file.
+	1. In the program menu, go to *Window* > *Console*. A new window will appear with an input field at the bottom where you will type commands.
+	1. Import the `servicenode.conf` configuration file. Type `servicenodeimport [EXPORTED_HASH] [ENCRYPTION_PASSWORD]` with `[ENCRYPTION_PASSWORD]` replaced with the encryption password used to export your *servicenode.conf* on your collateral computer and `[EXPORTED_HASH]` replaced with the hash that was returned in that response. Example:
+		```
+		servicenodeimport 5f1e7eeb2f8d2033ae95789008fbf1c60c52a45a20bee1b56ef5052438577e3916f0ff5cc468151463caa34c13097ba4cbd35b398f2cb6e7a43af675d27042b1a105845a7c61d988e6cc6388cd563f900d821dc7956727ddf897841678fa7c8c5a5ca57253a2f4bd7d9a29babae1f163f2ffc25ac60eaa7102f23cbac6837abf1f232b4d6a5fcf65b9d8ea61231fc804ddb8aeff164d79e9b6503e8b4624a153 supersecretpassword
+		```
+
+		![Config Setup](/img/service-nodes/classic-servicenodeimport-response.png)
+
+	1. You should receive a `true` response, which means a `servicenode.conf` file was automatically created and saved.
+	1. Restart the Blocknet wallet.
 
 ---
 
 ## Additional Configuration
-With the current configurations the Service Node will only be eligible to earn block rewards. However, you can also setup a Service Node to support services on the network where 100% of fees are distributed to Service Nodes:
-
-
+At this point you have completed the basic setup for a Service Node. The Service Node can operate but will not be supporting any service. Now what you need to do is setup the Service Node to support services on the network where 100% of fees are distributed to Service Nodes:
 
 * With [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes for hosting full blockchain nodes and providing verification checks for trustless exchange between digital assets. For setup, see the [XBridge Configuration Guide](/service-nodes/xbridge-configuration).
-* With [XRouter](/protocol/xrouter/introduction)\*, the decentralized inter-chain communication component of the Blocknet Protocol, 100% of fees are distributed to Service Nodes for hosting full blockchain nodes for SPV calls. For setup, see the [XRouter Configuration Guide](/service-nodes/xrouter-configuration).
-* With [XCloud](/protocol/xcloud/introduction)\*, a decentralized microservice cloud network build on XRouter, allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, in many cases without having to write any code. For setup, see the [XCloud Configuration Guide](/service-nodes/xcloud-configuration).
+* With [XRouter](/protocol/xrouter/introduction)\*\*, the decentralized inter-chain communication component of the Blocknet Protocol, 100% of fees are paid to Service Nodes for hosting full blockchain nodes that support SPV calls. For setup, see the [XRouter Configuration Guide](/service-nodes/xrouter-configuration).
+* With [XCloud](/protocol/xcloud/introduction)\*\*, a decentralized microservice oracle network built on XRouter, allows you to monetize any microservice, blockchain call, API, or cloud tech on your own hardware, in many cases without having to write any code. For setup, see the [XCloud Configuration Guide](/service-nodes/xcloud-configuration).
 
-
-\* For XRouter and XCloud services, your Service Node Computer IP address must remain unchanged. If using a VPN with an IP that changes, it will impact your ability to provide XRouter services.
+\*\* **For XRouter and XCloud services**, your Service Node Computer IP address must remain unchanged (static). If using a VPN with an IP that changes, it will impact your ability to provide these services.
 
 ---
 
@@ -343,109 +347,116 @@ With the current configurations the Service Node will only be eligible to earn b
 	> **Preparation**
 
 	1. On the SNode Server computer:
-		1. Start or restart the Blocknet wallet.
-			* Make sure this contains the previously configured `blocknetdx.conf` file with the Service Node credentials.
-		1. Fully sync the wallet and additional network data.
-		1. This wallet must stay running.
+		1. Start the Blocknet wallet (or restart if you haven't already or have made changes).
+			* Make sure this contains the previously configured `blocknet.conf` file and the `servicenode.conf` with the Service Node credentials.
+		1. Fully sync the wallet.
+		1. This wallet must stay running. If the SNode Server wallet is closed, you will need to re-register the Service Node from the Collateral Computer wallet if you have staked a block in that time period.
 	1. On the Collateral computer:
-		1. Select *Transaction History* from the menu on the left.
-		1. Find the 5000 BLOCK transaction and hover over it to see the amount of *confirmations* it has. Take a note of this value for future reference.
-		1. From the side menu, select *Tools* > *Debug Console*.
-		1. Enter the following command to view the total number of Service Nodes on the network:
-			```
-			servicenode count
-			```
-		1. The confirmations on your 5000 BLOCK transaction has to be greater than or equal to the value returned for `servicenode count`. Once this has been achieved head to the next step.
+		1. Start the Blocknet wallet (or restart if you haven't already or have made changes).
+		1. Fully sync the wallet.
 
-	> **Starting the Service Node**
 
-	1. On the Collateral Blocknet wallet, select ‘Service Nodes’ from the menu on the left. If the setup was done correctly you should see your ‘Alias(s)’ listed.
+	> **Register the Service Node**
 
-		![Service Nodes](/img/service-nodes/redesign-service-nodes-missing.jpg)
+	1. Make sure all your inputs have at least 2 confirmations (about 2 minutes since `servicenodecreateinputs`).
+	1. On the Collateral Computer wallet, open the debug console and type `servicenoderegister [ALIAS]` with `[ALIAS]` replaced with the alias of the Service Node you want to register. If `[ALIAS]` isn't specified, all known Service Nodes will be registered. You will see a response similar to this:
 
-	1. Fully unlock the wallet.
-	1. Open the debug console and enter `servicenode start-alias <ALIAS>`. Example:
-		```
-		servicenode start-alias snode01
-		```
-	1. You should receive a `successful` response.
-	1. If starting multiple Service Nodes, repeat these steps for each Alias.
-	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take up to 10 minutes to update.
+		![Register](/img/service-nodes/redesign-servicenoderegister-response.png)
 
-		![Service Nodes](/img/service-nodes/redesign-service-nodes-enabled.jpg)
+	1. The `snodekey` will remain unchanged as long as the contents of your `servicenode.conf` remains unchanged and you haven't used the `servicenodesetup` command.
 
-	1. You can now close the Collateral Blocknet wallet. The collateral wallet can remain closed as it's not needed to operate the Service Node.
 
-	> **Check Service Node Active Status**
+	> **Send Service Node Ping to the Network**
 
-	1. On the SNode Server computer, open the debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response.
+	1. On the SNode Server wallet, open the debug console and type `servicenodesendping`. You should see that the Service Node status is now `"status": "running"` along with a list of the services being hosted.
 
-		![Snode Status](/img/service-nodes/redesign-status-response.png)
+		![Send Ping](/img/service-nodes/redesign-servicenodesendping-response.png)
+
+
+	> **Check Service Node Status**
+
+	1. On the SNode Server wallet, open the debug console and type `servicenodestatus`. You should still see a `running` status and the services being hosted.
+
+		![Check Status](/img/service-nodes/redesign-servicenodestatus-response.png)
+
+
+	> **Check Service Node Is Available on the Network**
+
+	1. On a client *other than* the SNode Server wallet (such as the Collateral Computer wallet), open the debug console and type `servicenodelist`. You should see your newly created Service Node in the returned list with the status as `"status": "running"`. Your Service Node is the one with the `"snodekey"` that matches the ones returned when registering your node.
+
+		![Network Status](/img/service-nodes/redesign-servicenodelist-response.png)
+
+	1. At this point the Collateral Computer wallet can be closed if you are not voting or staking.
+
+
 
 ??? example "Setup using the classic wallet"
 
 	> **Preparation**
 
 	1. On the SNode Server computer:
-		1. Start or restart the Blocknet wallet.
-			* Make sure this contains the previously configured `blocknetdx.conf` file with the Service Node credentials.
-		1. Fully sync the wallet and additional network data.
-		1. This wallet must stay running.
+		1. Start the Blocknet wallet (or restart if you haven't already or have made changes).
+			* Make sure this contains the previously configured `blocknet.conf` file and the `servicenode.conf` with the Service Node credentials.
+		1. Fully sync the wallet.
+		1. This wallet must stay running. If the SNode Server wallet is closed, you will need to re-register the Service Node from the Collateral Computer wallet if you have staked a block in that time period.
 	1. On the Collateral computer:
-		1. Select the *Transactions* tab.
-		1. Find the 5000 BLOCK transaction and hover over it to see the amount of *confirmations* it has. Take a note of this value for future reference.
-		1. From the program menu, select *Tools* > *Debug Console*.
-		1. Enter the following command to view the total number of Service Nodes on the network:
-			```
-			servicenode count
-			```
-		1. The confirmations on your 5000 BLOCK transaction has to be greater than or equal to the value returned for `servicenode count`. Once this has been achieved head to the next step.
-
-	> **Starting the Service Node**
-
-	1. On the Collateral Blocknet wallet, select the ‘Service Nodes’ tab. If the setup was done correctly you should see your ‘Alias(s)’ listed.
-
-		![Service Nodes](/img/service-nodes/classic-service-nodes-missing.jpg)
-
-	1. Fully unlock the wallet.
-	1. Open the debug console and enter `servicenode start-alias <ALIAS>`. Example:
-		```
-		servicenode start-alias snode01
-		```
-	1. You should receive a `successful` response.
-	1. If starting multiple Service Nodes, repeat these steps for each Alias.
-	1. The *Status* of your Service Node(s) should show *ENABLED* and an *Active* time. This may take up to 10 minutes to update.
-
-		![Service Nodes](/img/service-nodes/classic-service-nodes-enabled.jpg)
-
-	1. You can now close the Collateral Blocknet wallet. The collateral wallet can remain closed as it's not needed to operate the Service Node.
-
-	> **Check Service Node Active Status**
-
-	1. On the SNode Server computer, open the Debug console and enter `servicenode status`. If the Service Node is active, you will see a `Servicenode successfully started` response. 
-
-		![Snode Status](/img/service-nodes/classic-status-response-1.png)
+		1. Start the Blocknet wallet (or restart if you haven't already or have made changes).
+		1. Fully sync the wallet.
 
 
+	> **Register the Service Node**
+
+	1. Make sure all your inputs have at least 2 confirmations (about 2 minutes since `servicenodecreateinputs`). 
+	1. On the Collateral Computer wallet, open the debug console and type `servicenoderegister [ALIAS]` with `[ALIAS]` replaced with the alias of the Service Node you want to register. If `[ALIAS]` isn't specified, all known Service Nodes will be registered. You will see a response similar to this:
+
+		![Register](/img/service-nodes/classic-servicenoderegister-response.png)
+
+	1. The `snodekey` will remain unchanged as long as the contents of your `servicenode.conf` remains unchanged and you haven't used the `servicenodesetup` command.
+
+
+	> **Send Service Node Ping to the Network**
+
+	1. On the SNode Server wallet, open the debug console and type `servicenodesendping`. You should see that the Service Node status is now `"status": "running"` along with a list of the services being hosted.
+
+		![Send Ping](/img/service-nodes/classic-servicenodesendping-response.png)
+
+
+	> **Check Service Node Status**
+
+	1. On the SNode Server wallet, open the debug console and type `servicenodestatus`. You should still see a `running` status and the services being hosted.
+
+		![Check Status](/img/service-nodes/classic-servicenodestatus-response.png)
+
+
+	> **Check Service Node Is Available on the Network**
+
+	1. On a client *other than* the SNode Server wallet (such as the Collateral Computer wallet), open the debug console and type `servicenodelist`. You should see your newly created Service Node in the returned list with the status as `"status": "running"`. Your Service Nodes are the ones with the `"snodekey"` that matches the ones returned when registering your node.
+
+		![Network Status](/img/service-nodes/classic-servicenodelist-response.png)
+
+	1. At this point the Collateral Computer wallet can be closed if you are not voting or staking.
+
+---
+
+## Operation
+
+View the [Operations](/service-nodes/operation) for reference on how to go about common Service Node operations such as staking, voting, updating, restarting, and checking your Service Node configs.
 
 ---
 
 ## Troubleshooting
-* Ensure you have the latest wallet and that it's fully synced and unlocked.
-* Ensure the 5000 BLOCK is *__exactly__* 5000 BLOCK, no more or no less, and ensure the transaction has at least 1 confirmation.
-* Ensure you don't have `<` or `>` in any of the configuration files. Examples:
-	* Correct: `servicenodeaddr=138.28.1.27:41412`
-	* Incorrect: `servicenodeaddr=<138.28.1.27:41412>`
-* Ensure you are using the correct port number (`41412`). Examples:
-	* Correct: `servicenodeaddr=138.28.1.27:41412`
-	* Incorrect: `servicenodeaddr=138.28.1.27:41414`
-	* Incorrect: `servicenodeaddr=138.28.1.27`
-* Ensure your `servicenode.conf` information is correct to your settings and the `<SERVICE_NODE_KEY>` is the value that was returned from the `servicenode genkey` command.
-* Ensure on the Collateral computer only has the `servicenode.conf` file. The `blocknetdx.conf` file is not needed on the Collateral computer.
-* Ensure on the SNode Server computer only has the `blocknetdx.conf` file. The `servicenode.conf` file is not needed on the SNode Server computer.
-* Ensure your configuration files are not `servicenode.conf.txt`.
-
-
+* Ensure you have the latest wallet and that it's fully synced.
+* Ensure the SNode Computer wallet is open and synced before using the `servicenoderegister` from the Collateral Computer wallet.
+* Ensure that you have at least 5000 BLOCK per Service Node in your designated `[NODE_ADDRESS]`.
+* Ensure that your 5000 BLOCK accidentally didn’t send to a change address (if creating inputs manually).
+* Ensure all your inputs have at least 2 confirmations before registering.
+* Ensure you didn't include the `[` or `]` when typing commands and replacing the variables. Example:
+	* Correct: `getnewaddress snode1`
+	* Incorrect: `getnewaddress [snode1]`
+* If you manually setup your Service Node (this guide shows the automatic procedure):
+	* Ensure your `servicenode.conf` information is correct to your settings. 
+	* Ensure that the `servicenode.conf` matches on both the Collateral and SNode Server computers.
+	* Ensure your configuration file is `servicenode.conf` and **NOT** `servicenode.conf.txt`.
 
 
 

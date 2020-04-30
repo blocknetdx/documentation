@@ -1,5 +1,5 @@
 # Blocknet Documentation
-This repository contains the source code for [Blocknet's documentation portal](https://docs.blocknet.co). These documents are currently under progressive and iterative development.
+This repository contains the source code for Blocknet's [documentation portal website](https://docs.blocknet.co). These documents are currently under progressive and iterative development.
 
 > Powered by [MkDocs](https://github.com/mkdocs/mkdocs/) and [MkDocs Material](https://github.com/squidfunk/mkdocs-material).
 
@@ -80,7 +80,7 @@ You can now see the docs at `http://127.0.0.1:8000/`. This will reload automatic
 		* __*Bold+Italics*__ - Word emphasis (__*available*__ balances, __*fully*__ unlock)
 		* __Bold__ - Sub-subsection titles
 		* `__Bold Bullet Point__`
-		* `inline code` - Reference code, commands (`servicenode list`), calls (`dxGetOrders`), file contents (`ExchangeWallets=`), state (`finished`), parameters (`dryrun`) , files (`blocknetdx.conf`), directories (`BlocknetDX/`)
+		* `inline code` - Reference code, commands (`servicenode list`), calls (`dxGetOrders`), file contents (`ExchangeWallets=`), state (`finished`), parameters (`dryrun`) , files (`blocknet.conf`), directories (`Blocknet/`)
 		* ` ```code block``` ` - Multiline code or fule contents or anything that might need to be copied such as single line commands.
 	* __Images__ - `![optional alt text](imagelink "optional hover text")`
 	* __Spacing__:

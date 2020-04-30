@@ -3,12 +3,12 @@ description: This guide explains how to setup your Blocknet wallet for staking t
 
 
 # Staking BLOCK
-Staking is the Proof-of-Stake equivelant of mining in Proof-of-Work blockchains. Stakers validate transactions on the network and are compensated with block rewards. These transactions are grouped in blocks. With [Blocknet](/project/introduction), there is 1 block every minute with a 1 [BLOCK](/blockchain/introduction) reward. From this 1 BLOCK reward, 0.3 BLOCK is awarded to a staker as compensation for helping secure and validate the network and 0.7 BLOCK is sent to a Service Node operator as compensation for supporting the network's services.
+Staking is the Proof-of-Stake equivelant of mining in Proof-of-Work blockchains. Stakers validate transactions on the network. These transactions are grouped in blocks. With [Blocknet](/project/introduction), there is 1 block every minute with a 1 [BLOCK](/blockchain/introduction) reward. You can stake with any amount of BLOCK and are rewarded for supporting the network with block rewards and all the transaction fees included in that block.
 
 ---
 
 ## Staking Guide
-Staking can be performed with any amount of BLOCK, there is no minimum. However, since staking with Blocknet is probability-based, will receive rewards more frequently by owning and staking more BLOCK. BLOCK can be acquired through [various options available](/project/exchanges).
+Staking can be performed with any amount of BLOCK, there is no minimum. However, since staking with Blocknet is probability-based, you will receive rewards more frequently by owning and staking more BLOCK. BLOCK can be acquired through [various options available](/project/exchanges).
 
 Use the following guide to enable staking and start earning rewards.
 
@@ -37,8 +37,6 @@ Use the following guide to enable staking and start earning rewards.
 
 	1. When staking, you may see your wallet balance show as *Immature*. This is a normal part of staking. The funds in your wallet that "won" the staking reward will remain immature until they have 101 confirmations (101 minutes). When funds are immature, they are unspendable and do not count towards your probability for receiving another reward. After 101 confirmations, these funds can be spent again and the balance will show up as normal.
 
-		![Immature](/img/wallet-redesign/balance-immature.png)
-
 
 ??? example "Stake using the classic wallet"
 	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
@@ -47,15 +45,7 @@ Use the following guide to enable staking and start earning rewards.
 	1. Open and [sync the wallet](/wallet/syncing).
 	1. Make sure there's BLOCK in your wallet.
 	1. [Unlock the wallet for staking only](/wallet/lock-unlock/#unlock-for-staking).
-	1. It may take a minute for the staking to activate. 
-	1. You can verify the wallet is staking with the status icon in the bottom-right corner.
-
-		![Status Bar](/img/wallet-classic/status-bar-icons.png)
-
-		1. The up-arrow icon indicates the staking status. If it is grey, staking is inactive. If it is green, staking is active. You can also hover over the icon to read the staking status.
-
-			![Staking Inactive](/img/wallet-classic/status-staking-inactive.png)
-			![Staking Active](/img/wallet-classic/status-staking-active.png)
+	1. It may take a minute for the staking to activate.
 
 		??? info "Note: Staking will not activate if the wallet is not synced."
 			Since staking is the act of confirming the latest transactions, staking cannot be active until the wallet is synced to the more recent transaction on the network.
@@ -81,46 +71,46 @@ The selection of the staker that confirms each block is probability-based. This 
 ??? abstract "Example: Calculating staking reward probability."
 	Assume:
 
-	* You're staking 1000 BLOCK
-	* There's a total of 900,000 BLOCK staking on the network
+	* You're staking 5000 BLOCK
+	* There's a total of 3,325,000 BLOCK staking on the network
 
 	The probability you will earn the next reward is: 
 
-		1000 / 900000 = 0.00111111111 * 100 = 0.11%
+		5000 / 3325000 = 0.0015 * 100 = 0.15%
 
-	This mean that, on average, you will earn a reward every:
+	This means that, on average, you will earn a reward every:
 
-		1 / 0.00111111111 = 900 minutes = 15 hours
+		1 / 0.0015 = 665 minutes = 11.08 hours
 
 	And the average amount of BLOCK rewarded per day is:
 
-		1440 minutes a day / 900 minutes per reward * 0.3 BLOCK per reward = 0.48 BLOCK
+		1440 minutes a day / 665 minutes per reward * 1 BLOCK per reward = 2.16 BLOCK
 
-	With BLOCK valued at $50, that would equate to $24 per day.
+	With BLOCK valued at $50, that would equate to $108 per day and $39,420 per year.
 
 
 ### ROI
 Building off the probabilistic ratio above, the following equation can be derived to estimate the yearly return (in BLOCK) on the initial amount started with. This does not account for compounding, which would increase this value. The amount of staked BLOCK on the network [can be seen here](https://chainz.cryptoid.info/explorer/index.stakes.dws?coin=block). The value will have to be calculated by totaling each `amount`.
 
-![Staking ROI](/img/wallet/staking-roi.png)
+> Staking ROI = ( [525600] / [total BLOCK staked on the network] ) * 100
 
-* *157680 = 0.3 BLOCK reward per minute * 1440 minutes per day * 365 days per year*
+* *525600 = 1 BLOCK reward per minute * 1440 minutes per day * 365 days per year*
 
 ??? abstract "Example: Calculating staking reward ROI."
 	Assume:
 
-	* There's a total of 900,000 BLOCK staking on the network
+	* There's a total of 3,325,000 BLOCK staking on the network
 	* The amount you're staking is irrelevant because ROI is a per unit value
 
 	The yearly ROI under these conditions will be:
 
-		157680 / 900000 = 0.1752 * 100 = 17.52%
+		525600 / 3325000 = 0.158 * 100 = 15.8%
 
 	This means that in a year, if you staked 1000 BLOCK the rewards would be:
 
-		1000 * .1752 = 175.2 BLOCK
+		1000 * 0.158 = 158 BLOCK
 
-	With BLOCK valued at $50, that would equate to $8,760 per year.
+	With BLOCK valued at $50, that would equate to $7,900 per year.
 
 ---
 

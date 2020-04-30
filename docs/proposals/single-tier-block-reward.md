@@ -11,7 +11,7 @@ description: This proposal is to have a single tier block reward system where bo
 
     **Results**: 442 Service Nodes, 122 Yes, 39 No
 
-    **Status**: Awaiting a future hard fork for implementation and activation
+    **Status**: Complete
 
 ## Proposal
 This proposal is to have a single tier block reward system. This means that out of every block reward, instead of having 70% (0.7 BLOCK) going to Service Nodes and 30% (0.3 BLOCK) going stakers, both Service Nodes and stakers would be combined into the same pool for 100% of the block reward.
@@ -22,7 +22,7 @@ There's 3 technical reasons for this proposal:
 1. The current difference in staking and Service Node rewards incentivizes Service Node operators to switch to staking, which causes fluctuations in Service Node support.
 1. This change increases the amount of stakers on the network, therefore increasing the security of the blockchain.
 
-The ROI of stakers and Service Nodes should be barely affected over time as the constant rebalancing of BLOCK from Service Nodes to staking naturally brings the ROI of the Service Nodes and stakers to an equilibrium. The ROI of an equilibrium state in the double tier block reward system we have now is equal to the ROI of the single tier block reward system as can be seen below (next page).
+The ROI of stakers and Service Nodes should be barely affected over time as the constant rebalancing of BLOCK from Service Nodes to staking naturally brings the ROI of the Service Nodes and stakers to an equilibrium. The ROI of an equilibrium state in the double tier block reward system we have now is equal to the ROI of the single tier block reward system as can be seen below.
 
 In this single tier block reward system:
 

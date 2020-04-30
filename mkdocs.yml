@@ -1,5 +1,5 @@
 site_name: 'Blocknet Documentation'
-site_description: 'Blocknet is a 2nd layer blockchain interoperability protocol that enables communication, interaction, and exchange between different blockchains.'
+site_description: 'Blocknet is a blockchain interoperability protocol that enables communication, interaction, and exchange between different public and private blockchains.'
 site_author: 'Blocknet'
 use_directory_urls: true # do not change this, it will break all links
 google_analytics:
@@ -153,16 +153,17 @@ nav:
 - 'Service Nodes':
   - 'Introduction': 'service-nodes/introduction.md'
   - 'Setup': 'service-nodes/setup.md'
+  - 'Operation': 'service-nodes/operation.md'
   - 'XBridge Configuration': 'service-nodes/xbridge-configuration.md'
   - 'XRouter Configuration': 'service-nodes/xrouter-configuration.md'
   - 'XCloud Configuration': 'service-nodes/xcloud-configuration.md'
   # - 'Config Manager': 'service-nodes/config-manager.md'
 - 'Governance':
   - 'Introduction': 'governance/introduction.md'
-  - 'Governance Model': 'governance/governance-model.md'
+  # - 'Governance Model': 'governance/governance-model.md'
   # - 'Blocknet Improvement Process (BIP)': 'governance/blocknet-improvement-process-bip.md'
   - 'View Proposals': 'governance/view-proposals.md'
-  # - 'Create Proposal': 'governance/create-proposal.md'
+  - 'Create Proposal': 'governance/create-proposal.md'
   - 'Proposal Voting': 'governance/proposal-voting.md'
 - 'Resources':
   - 'Interviews': 'resources/interviews.md'

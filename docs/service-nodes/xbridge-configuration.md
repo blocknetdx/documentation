@@ -8,7 +8,7 @@ XBridge is a decentralized exchange protocol with the ability to perform non-cus
 
 For each market you would like to support and earn fees from, you must host the full nodes of those blockchains. For example, if you are hosting full nodes of Bitcoin, Litecoin, and Blocknet, you would be supporting the following markets: BTC-LTC, BTC-BLOCK, LTC-BTC, LTC-BLOCK, BLOCK-BTC, BLOCK-LTC.
 
-!!! info "Note: Full nodes are required."
+!!! warning "Note: Full nodes are required."
 	Lite wallets and Electrum wallets are not supported. You must host full blockchain nodes with `txindex=1`. In order to check if you are running a full node, use the `getblockchaininfo` command. You should see `"pruned": false,` if you are running a full node. If you see `"pruned": true,` then make sure `txindex=1` is in that wallet's configureation file and restart the wallet. See the [list of compatible blockchains](/protocol/xbridge/compatibility).
 
 To setup XBridge, follow these steps:
@@ -20,10 +20,10 @@ To setup XBridge, follow these steps:
 ---
 
 ## Enable XBridge
-XBridge is turned off by default. To turn it on, add `enableexchange=1` to `blocknetdx.conf`. Changing this to `enableexchange=0` will turn off XBridge.
+XBridge is turned off by default. To turn it on, add `enableexchange=1` to `blocknet.conf`. Changing this to `enableexchange=0` will turn off XBridge.
 
 
-Example `blocknetdx.conf`:
+Example `blocknet.conf`:
 ```
 listen=1
 server=1
@@ -33,11 +33,8 @@ rpcpassword=password
 port=41412
 rpcport=41414
 
-xrouter=1
 enableexchange=1
 servicenode=1
-servicenodeaddr=47.18.1.29:41412
-servicenodeprivkey=922m1YhfTRK6oLnSXGptbqjbSSSqXrktzAiybQBWJeQimHiHoU2
 rpcthreads=8	# equal to number of supported wallets, set to no less than 8
 ```
 
@@ -269,7 +266,7 @@ LockCoinsSupported=false
 1. Add the blockchains you want to add trading support for in the `ExchangeWallets=` entry in `xbridge.conf`, denoted by the chain's asset's ticker. Separate each wallet name with a comma (no space). You can keep the rest of the configuration body the same, only the `ExchangeWallets=` setting needs to be updated (unless adding new support).
     * Example: `ExchangeWallets=BLOCK,LTC,BTC,SYS,DGB`
 1. Restart the Blocknet wallet or use the [dxLoadXBridgeConf](https://api.blocknet.co/#dxloadxbridgeconf) command (from either the Debug Console or the command line) to load the updated settings.
-1. Use `sendserviceping` to propogate these new settings to the network immediately or wait up to 10 minutes for this to happen automatically.
+1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
 1. You can view the blockchains you are supporting with the `dxGetLocalTokens` command.
 
 

@@ -17,21 +17,14 @@ To request funding from a Superblock, a proposal must be submitted to the networ
 #### Passing Criteria
 For a proposal to pass and receive funding:
 
-* The amount requested must be 40,000 BLOCK or less.
-* Votes in favor must be greater than votes against by at least 10% of the total number of Service Nodes.
-* The proposals that pass are sorted in a descending order list by the sum of yes votes minus no votes.
-* If multiple proposals have an equal sum of yes votes minus no votes, those are sorted randomly.
-* If there are not enough funds remaining in the Superblock for a proposal to be paid out, it is skipped (not paid out), and the next proposal in the passing list is checked for qualification.
-* Multi-month proposals are voted on each month and are treated in the same manner as normal proposals in the ordered list.
-
-Voting Turnout	| Yays Required | Max Nays Allowed
-----------------|---------------|-----------------
-100% 			| 55% 			| 45%
-80% 			| 56.25% 		| 43.75%
-40% 			| 62.5% 		| 37.5%
-20% 			| 75% 			| 25%
-10% 			| 100% 			| 0%
-<10% 			| cannot pass 	| cannot pass
+* 25% of all voting Service Nodes in this Superblock must have voted on the proposal
+* 60% of votes must be "yes" (in favor)
+* At this point all valid proposals are prioritized according to these requirements:
+    1. Descending order by the sum of yes votes minus no votes
+    1. Descending order by amount of yes votes
+    1. Sequential order by block height the proposal is submitted (earlier blocks are first)
+* The Superblock is then filled by as many valid proposals as possible according to the priority defined by (a), (b), and (c)
+* If there are not enough funds remaining in the Superblock for a proposal to fit, it is skipped (not paid out), and the next proposal in the priority list is checked for qualification
 
 ---
 
@@ -45,12 +38,11 @@ Voting Turnout	| Yays Required | Max Nays Allowed
 
 --8<-- "superblock-dates.md"
 
-
 ---
+
 
 ## Community Funds
 In addition to Superblocks, there are also Community Funds. These funds were created after a [staking protocol exploit](https://steemit.com/blocknet/@theblocknet/stake-bug-resolved-announcing-the-blocknet-bug-bounty) was successfully stopped and [it was voted on](http://blocknetdx.forumotion.com/t10-community-fund-proposals-redeem-fund-allocations) by the community to create various funds. [An additional proposal](/proposals/project-funding) was voted on (and passed) to also add the retrieved exploited funds to the Community Funds instead of those funds being burns, as was originally planned. 
-
 
 The current balance and use of these funds can be tracked in the [Blocknet's Financial Tracker](https://docs.google.com/spreadsheets/d/1xFm5LJsRNN62-9XZFqfDckUt2x8ps3pUOBISUxNQYpc/). Usage of these funds go through a 3-of-5 approval process by the following fund approvers: 
 

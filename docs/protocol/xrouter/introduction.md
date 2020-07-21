@@ -73,7 +73,7 @@ The flow of the diagram is top-to-bottom:
 
 
 ## Namespace
-XRouter SPV wallets utlize the `xrs::` namespace while [XCloud](/protocol/xcloud/introduction) services utilize the `xrs::` namespace. A list of the SPV wallets and services can be viewed using [xrGetNetworkServices](https://api.blocknet.co/#xrgetnetworkservices) and you can pre-connect to the nodes with [xrConnect](https://api.blocknet.co/#xrconnect).
+XRouter SPV wallets utlize the `xr::` namespace while [XCloud](/protocol/xcloud/introduction) services utilize the `xrs::` namespace. A list of the SPV wallets and services can be viewed using [xrGetNetworkServices](https://api.blocknet.co/#xrgetnetworkservices) and you can pre-connect to the nodes with [xrConnect](https://api.blocknet.co/#xrconnect).
 
 
 ## Node Scoring

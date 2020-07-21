@@ -31,8 +31,6 @@ calculator
 social
 	- all social links
 popular resources
-	- blockdx.co
-	- block-node.info
 	- api docs
 	- newsletter
 	- exchanges

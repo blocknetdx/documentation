@@ -88,6 +88,7 @@ deprecatedrpc=signrawtransaction
 1. Save the configuration file.
 1. If the blockchain's wallet has been open, you will ned to restart it to load the updated configurations.
 1. Repeat this process for each blockchain you want to trade.
+1. There's an additional `dxnowallets=` setting unique to the `blocknet.conf`. If set to `1`, you will aggregate orders for all markets, not just for your connected assets. This is useful for view-only and browsing purposes. You will still need the wallets connected for any market you want to trade on. If a `dxnowallets=` setting is specified, it will override the `ShowAllOrders=` setting in your `xbridge.conf` header. 
 
 
 #### XBridge Conf
@@ -143,6 +144,7 @@ Confirmations=1
 1. At the beginning of the file, enter the following main settings:
 ```
 [Main]
+ShowAllOrders=
 ExchangeWallets=
 FullLog=true
 ```
@@ -150,6 +152,7 @@ FullLog=true
 1. Repeat this process and paste in the XBridge configurations for other blockchains.
 1. Update each blockchain's `Username=`, `Password=`, and `Ip=` setting with the `rpcuser=`, `rpcpassword=`, and `rpcallowip=` values from the respective wallet conf file. The `Address=` setting can be left blank.
 1. Update `Confirmations=` to how many confirmations you would for the asset the counterparty is trading. There are many security protections and precautions already in place, but this is recommended to be set to at least `1` for congested networks and networks with highly fluctuating fees to make sure transactions aren't kicked out of the mempool. This is already set to `Confirmations=1` by default for any networks that are deemed to meet this criteria.
+1. The `ShowAllOrders=` is optional. If set to `true`, you will aggregate orders for all markets, not just for your connected assets. This is useful for view-only and browsing purposes. You will still need the wallets connected for any market you want to trade on. If a `dxnowallets=` setting is specified in your `blocknet.conf` file it will override this `ShowAllOrders=` setting. 
 1. In the `ExchangeWallets=` entry in `xbridge.conf` add the all blockchains you want to trade, denoted by the chain's asset's ticker. Separate each ticker with a comma (no space).
     * Example: `ExchangeWallets=BLOCK,LTC,BTC,SYS`
 1. Save the `xbridge.conf` file.
@@ -159,6 +162,7 @@ FullLog=true
 Example `xbridge.conf`:
 ```
 [Main]
+ShowAllOrders=true
 ExchangeWallets=BLOCK,LTC,SYS
 FullLog=true
 

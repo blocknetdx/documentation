@@ -114,10 +114,11 @@ Building off the probabilistic ratio above, the following equation can be derive
 
 ---
 
+<!-- 
 ## Reward Calculator
 
 There is a simple staking calculator at [block-node.info](https://block-node.info/blocknet_revenue1.php) built by Discord user @ishkb1 (thanks for all your work!)
-
+ -->
 
 
 

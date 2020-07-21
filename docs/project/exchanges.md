@@ -17,15 +17,13 @@ UPbit           | (BTC/BLOCK)   | [Buy Now](https://upbit.com/exchange?code=CRIX
 DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.vip/en-ww/trade/BTC/BLOCK)
 DigiFinex       | (USDT/BLOCK)  | [Buy Now](https://www.digifinex.vip/en-ww/trade/USDT/BLOCK)
 VCC Exchange    | (BTC/BLOCK)   | [Buy Now](https://vcc.exchange/exchange/basic?currency=btc&coin=block)
-Cryptofacil     | (BTC/BLOCK)   | [Buy Now](https://cryptofacil.com/trading-view/61/BTC-BLOCK)
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC)
 StakeCube       | (LTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_LTC)
 StakeCube       | (SCC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_SCC)
 StakeCube       | (DASH/BLOCK)  | [Buy Now](https://stakecube.net/app/exchange/BLOCK_DASH)
 Altilly         | (BTC/BLOCK)   | [Buy Now](https://www.altilly.com/market/BLOCK_BTC)
+FinexBox        | (BTC/BLOCK)   | [Buy Now](https://www.finexbox.com/market/pair/BLOCK-BTC.html)
 FEX Pro         | (BTC/BLOCK)   | [Buy Now](https://fexpro.net/#/exchange?type=)
-Beaxy           | (BTC/BLOCK)   | Coming
-BlockBid        | (BTC/BLOCK)   | Coming
 
 <!-- Coinvex         | (BTC/BLOCK)   | [Buy Now](https://coinvex.org/market/BTC-BLOCK) -->
 
@@ -35,9 +33,9 @@ BlockBid        | (BTC/BLOCK)   | Coming
 Decentralized exchanges are purely peer-to-peer instead of requiring a trusted entity to manage the transaction. This is the most secure form of trading. The following options are available:
 
 * [__Block DX__](/blockdx/setup)
-    * [View Open Orders](https://blockdx.co/orders)
-    * [View Trade History](https://blockdx.co/trade-history)
-    * [View Exchange Volume](https://blockdx.co/charts)
+    * [View Open Orders](https://blockdx.com/orders)
+    * [View Trade History](https://blockdx.com/trade-history)
+    * [View Exchange Volume](https://twitter.com/DxStats)
 
 ---
 
@@ -46,7 +44,7 @@ Instant exchanges perform a similar function to normal exchanges, but without th
 
 Exchange        | Market        | Link
 ----------------|---------------|------
-xChange         | (BTC/BLOCK)   | [Buy Now](https://xchange.me/exchanger/exchange/BTC/BLOCK/0.1)
+xChange         | (BTC/BLOCK)   | [Buy Now](https://xchange.me/)
 
 <!-- CoinSwitch      | (BTC/BLOCK)   | [Buy Now](https://coinswitch.co/) -->
 

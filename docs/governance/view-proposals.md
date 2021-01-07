@@ -53,28 +53,18 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 There are various options for viewing the proposals in the browser. Below is a comparison list with the features of each website.
 
 
-| Website | [Proposal Forum](https://forum.blocknet.co/c/final-proposals) | [blockdx.co](https://blockdx.co/funding-proposals) | [block-node.info](https://block-node.info/node_info2.php)
-------------------------|-----------------------------|-----------------------------|--------------------|
-Mobile friendly         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-times"></i>
-Lists proposals         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
-Shows descriptions      | <i class="fa fa-check"></i> | (hyperlinked)               | <i class="fa fa-check"></i>
-Shows vote counts       | <i class="fa fa-times"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
-Shows pass/fail status  | <i class="fa fa-times"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
-Shows amounts requested | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
-Shows deposit addresses | <i class="fa fa-times"></i> | <i class="fa fa-times"></i> | <i class="fa fa-check"></i>
-Shows past proposals    | <i class="fa fa-check"></i> | (in progress)               | <i class="fa fa-check"></i>
-Allows for discussion   | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-times"></i>
-Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
-
-
-
-<!-- 
-??? example "View using the proposal forum"
-
-??? example "View using blockdx.co"
-
-??? example "View using block-node.info" 
--->
+| Website | [Proposal Forum](https://forum.blocknet.co/c/final-proposals) | [blockdx.co](https://blockdx.co/funding-proposals)
+------------------------|-----------------------------|----------------------------|
+Mobile friendly         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Lists proposals         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Shows descriptions      | <i class="fa fa-check"></i> | (hyperlinked)              
+Shows vote counts       | <i class="fa fa-times"></i> | <i class="fa fa-check"></i>
+Shows pass/fail status  | <i class="fa fa-times"></i> | <i class="fa fa-check"></i>
+Shows amounts requested | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Shows deposit addresses | <i class="fa fa-times"></i> | <i class="fa fa-times"></i>
+Shows past proposals    | <i class="fa fa-check"></i> | (in progress)              
+Allows for discussion   | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
 
 ---
 

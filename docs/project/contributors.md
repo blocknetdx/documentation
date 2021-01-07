@@ -162,14 +162,14 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="platform">Discord <span class="handle">@cryptoved#1961</span></div>
 </div> -->
 
-<div class="contributor">
+<!-- <div class="contributor">
 	<div class="img-round"><img src="/img/contributors/kerst-bottema.jpg"></div>
 	<div class="name">Kerst Bottema&nbsp;&nbsp;
 		<a href="https://www.linkedin.com/in/kerst-bottema-436b4a26/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
 	</div>
 	<div class="title"><a href="https://block-node.info/" target="_blank">block-node.info</a></div>
 	<div class="platform">Discord <span class="handle">@ishkb1#0780</span></div>
-</div>
+</div> -->
 
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
@@ -190,7 +190,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@lucien</div>
-	<div class="title"><a href="https://github.com/lucienmartijn/xrouter-service-explorer" target="_blank">Service Explorer</a></div>
+	<div class="title"><a href="https://service-explorer.core.cloudchainsinc.com/#/" target="_blank">Service Explorer</a></div>
 	<div class="platform">Discord <span class="handle">@lucien#1728</span></div>
 </div>
 
@@ -204,7 +204,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@fazer</div>
-	<div class="title">Quality Assurance</div>
+	<div class="title"><a href="https://github.com/nnmfnwl7/dxmakerbot/tree/fazer_dxmakerbot_latest_beta" target="_blank">dxmakerbot v2</a></div>
 	<div class="platform">Discord <span class="handle">@fazer#0903</span></div>
 </div>
 
@@ -217,14 +217,14 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="platform">Discord <span class="handle">@Scott Wehman</span></div>
 </div> -->
 
-<div class="contributor">
+<!-- <div class="contributor">
 	<div class="img-round"><img src="/img/contributors/torben-berger.jpg"></div>
 	<div class="name">Torben Berger&nbsp;&nbsp;
 		<a href="https://www.linkedin.com/in/torben-berger-8a01a0156/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
 	</div>
 	<div class="title"><a href="http://theblocknet.de/" target="_blank">theblocknet.de</a></div>
 	<div class="platform">Discord <span class="handle">@lautrer#7464</span></div>
-</div>
+</div> -->
 
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>

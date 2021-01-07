@@ -17,7 +17,7 @@ To request funding from a Superblock, a proposal must be submitted to the networ
 #### Passing Criteria
 For a proposal to pass and receive funding:
 
-* 25% of all voting Service Nodes in this Superblock must have voted on the proposal
+* 25% of all Service Nodes voting in this Superblock must have voted on the proposal
 * 60% of votes must be "yes" (in favor)
 * At this point all valid proposals are prioritized according to these requirements:
     1. Descending order by the sum of yes votes minus no votes

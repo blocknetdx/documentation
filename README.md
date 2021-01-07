@@ -11,27 +11,27 @@ If you're not familiar enough with for how to do this, feel free to create a [Gi
 
 
 ## Getting Started
-MkDocs supports Python versions 2.7, 3.4, 3.5, 3.6, 3.7 and pypy.
+MkDocs supports Python versions 2.7, 3.4, 3.5, 3.6, 3.7, 3.8 and pypy.
 
-Using Linux or MacOS:
+Using Linux, MacOS and Windows 10:
 
 ```shell
 # clone this repo
 git clone https://github.com/blocknetdx/documentation.git
 
-# update pip
-pip install --upgrade pip
+# create a virtual environment
+python -m venv venv
 
-# install mkdocs and mkdocs-material
-pip install mkdocs
-pip install mkdocs-material
+# activate virtual environment
+# for Linux and MacOS
+source ./venv/activate
 
-# install required extensions
-pip install markdown
-pip install fontawesome-markdown
-pip install pygments
-pip install pymdown-extensions
-```
+# for Windows 10
+.\venv\Scripts\activate.bat # cmd.exe
+.\venv\Scripts\Activate.ps1 # PowerShell
+
+# install dependencies in virtual environment
+python -m pip install -r requirements.txt
 
 Run dev server:
 

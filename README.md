@@ -30,7 +30,7 @@ python -m venv venv
 
 # activate virtual environment
 # for Linux and MacOS
-source ./venv/activate
+source ./venv/bin/activate
 
 # for Windows 10
 .\venv\Scripts\activate.bat # cmd.exe

@@ -5,7 +5,7 @@ This repository contains the source code for Blocknet's [documentation portal we
 
 
 ## Contributing
-Follow the Getting Started instructions below to get your local environment setup, create a branch off `doc-portal` with your updates following the guidelines below, and create a PR to `doc-portal`. 
+In order to contribute to this project, fork the repository and in your own forked repository create a new branch off `draft`. In this new branch you can commit and push your updates by following the [Editing](#Editing) guidelines stated below in this README. Subsequently, create a pull request to merge from your forked repository `draft` branch into the original repository `draft` branch.
 
 If you're not familiar enough with for how to do this, feel free to create a [Github issue](https://github.com/blocknetdx/documentation/issues/new) with corrections, edits, or additions. If you have a lot of content to add, the best method would be to enter the content into a Google Doc (with settings set to public comments allowed) and link that in your Github issue.
 
@@ -60,7 +60,10 @@ INFO    -  Cleaning site directory
 
 You can now see the docs at `http://127.0.0.1:8000/`. This will reload automatically when changes are saved. Note that the address is not always the same so it's best to check the output for the correct address.
 
-
+Exit the virtual environment:
+```
+deactivate
+```
 
 
 ## Editing

@@ -16,8 +16,14 @@ MkDocs supports Python versions 2.7, 3.4, 3.5, 3.6, 3.7, 3.8 and pypy.
 Using Linux, MacOS and Windows 10:
 
 ```shell
+# go to directory where you want to clone the repository. (e.g., cd ./src/repos)
+
 # clone this repo
 git clone https://github.com/blocknetdx/documentation.git
+
+# change directory to documentation
+
+cd documentation
 
 # create a virtual environment
 python -m venv venv

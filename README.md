@@ -32,6 +32,7 @@ source ./venv/activate
 
 # install dependencies in virtual environment
 python -m pip install -r requirements.txt
+```
 
 Run dev server:
 

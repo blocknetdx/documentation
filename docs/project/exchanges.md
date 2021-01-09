@@ -13,19 +13,13 @@ Centralized exchanges are one of the most popular ways to trade cryptocurrency. 
 Exchange        | Market        | Link
 ----------------|---------------|------
 Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)
-UPbit           | (BTC/BLOCK)   | [Buy Now](https://upbit.com/exchange?code=CRIX.UPBIT.BTC-BLOCK)
-DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.vip/en-ww/trade/BTC/BLOCK)
-DigiFinex       | (USDT/BLOCK)  | [Buy Now](https://www.digifinex.vip/en-ww/trade/USDT/BLOCK)
+DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.io/en-ww/trade/BTC/BLOCK)
 VCC Exchange    | (BTC/BLOCK)   | [Buy Now](https://vcc.exchange/exchange/basic?currency=btc&coin=block)
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC)
 StakeCube       | (LTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_LTC)
 StakeCube       | (SCC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_SCC)
 StakeCube       | (DASH/BLOCK)  | [Buy Now](https://stakecube.net/app/exchange/BLOCK_DASH)
-Altilly         | (BTC/BLOCK)   | [Buy Now](https://www.altilly.com/market/BLOCK_BTC)
 FinexBox        | (BTC/BLOCK)   | [Buy Now](https://www.finexbox.com/market/pair/BLOCK-BTC.html)
-FEX Pro         | (BTC/BLOCK)   | [Buy Now](https://fexpro.net/#/exchange?type=)
-
-<!-- Coinvex         | (BTC/BLOCK)   | [Buy Now](https://coinvex.org/market/BTC-BLOCK) -->
 
 ---
 
@@ -36,6 +30,10 @@ Decentralized exchanges are purely peer-to-peer instead of requiring a trusted e
     * [View Open Orders](https://blockdx.com/orders)
     * [View Trade History](https://blockdx.com/trade-history)
     * [View Exchange Volume](https://twitter.com/DxStats)
+* [Uniswap (ETH/aBLOCK)](https://app.uniswap.org/#/swap?inputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5)  
+* [Anyswap (ETH/aBLOCK)](https://anyswap.exchange/swap)
+
+[Learn about buying aBLOCK and converting it to BLOCK (i.e. unwrapping/unbridging aBLOCK->BLOCK)](https://gist.github.com/ConanMishler/e3bf4218463bf9f8bf1480652d8ad117)
 
 ---
 

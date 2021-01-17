@@ -10,11 +10,20 @@ description: This guide explains how to setup Block DX for secure trading. Block
 
 > [**Watch Video Tutorial**](https://www.youtube.com/watch?v=aFSl60KcaCk)
 
-1. Install the Blocknet wallet. The Blocknet wallet is required to facilitate peer-to-peer trading on Block DX.
+## Setup
+1. Install the Blocknet wallet. The Blocknet wallet is required to
+   facilitate peer-to-peer trading on Block DX.
 	* [Blocknet wallet installation guide](/wallet/setup)
 	* [Read more about Blocknet](/blocknet/introduction)
-1. Install the native wallets of the [digital assets](/resources/glossary/#digital-asset) you will be trading. These wallets are needed to store your funds since Block DX is non-custodial. 
-  * Note: These wallets are the native Qt/cli wallets released by each asset's respective project, which you may already have installed. Block DX is non-custodial and does not generate wallets for you.
+1. Since Block DX is non-custodial, you'll need to store the
+   [digital assets](/resources/glossary/#digital-asset) you want to
+   trade in your own wallet. One convenient option is to store them in your own [XLite wallet](https://xlitewallet.com), a
+   noncustodial, lightweight, decentralized, multi-asset wallet
+   powered by Blocknet. But if XLite doesn't support the assets you
+   want to trade, or if you simply prefer not to use XLite for some
+   assets, then you'll
+   need to install the native wallets of those assets.
+    * Note: These native wallets are the native Qt/cli wallets released by each asset's respective project, which you may already have installed. Block DX does not generate wallets for you.
 	* [View compatible digital assets and wallet versions](/blockdx/listings)
 1. Install Block DX. This is a desktop dApp and not supported in-browser.
 	* [Block DX installation guide](/blockdx/installation)

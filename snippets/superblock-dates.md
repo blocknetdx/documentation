@@ -8,7 +8,7 @@ Superblock        | Estimated Date
 	2030400           | June 21, 2021
 	2073600           | July 21, 2021
 
-??? summary "View more Superblock dates (July 2020 - Dec 2021)"
+??? summary "View more Superblock dates (Aug 2021 - Feb 2022)"
 	Superblock        | Estimated Date  
 	------------------|--------------------
 	2116800           | August 20, 2021

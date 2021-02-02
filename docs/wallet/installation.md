@@ -26,13 +26,13 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 	[![https://youtu.be/r4Xs0RrbAOw](http://img.youtube.com/vi/r4Xs0RrbAOw/0.jpg)](http://www.youtube.com/watch?v=r4Xs0RrbAOw "Blocknet Wallet Installation - Windows")
 
 	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 4 options:
-		1. `blocknet-x.xx.x-win64-setup-unsigned.exe` (recommended for 64-bit)
-		1. `blocknet-x.xx.x-win32-setup-unsigned.exe` (recommended for 32-bit)
-		1. `blocknet-x.xx.x-win64.zip`
-		1. `blocknet-x.xx.x-win32.zip`
 
-		!!! info "Note: Antivirus software may be flagged"
-			It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from [https://blocknet.co](https://blocknet.co) or [Blocknet's Github](https://github.com/blocknetdx/blocknet/releases/), it can be deemed as safe and the warning can be ignored. You can read more about this issue here: [https://bitcoin.org](https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems)
+		1. `blocknet-x.xx.x-win64-setup-unsigned.exe` (recommended for 64-bit)
+	1. `blocknet-x.xx.x-win32-setup-unsigned.exe` (recommended for 32-bit)
+	1. `blocknet-x.xx.x-win64.zip`
+	1. `blocknet-x.xx.x-win32.zip`
+
+	    --8<-- "anti-virus-flagged.md"
 
 	1. Continue to the instructions below for the download you selected:
 
@@ -131,10 +131,12 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 ??? example "MacOS"
 	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 3 options:
-		1. `blocknet-x.xx.x-osx-unsigned.dmg` (recommended)
-		1. `blocknet-x.xx.x-osx-unsigned.tar.gz`
-		1. `blocknet-x.xx.x-osx64.tar.gz`
 
+		1. `blocknet-x.xx.x-osx-unsigned.dmg` (recommended)
+	1. `blocknet-x.xx.x-osx-unsigned.tar.gz`
+	1. `blocknet-x.xx.x-osx64.tar.gz`
+
+	    --8<-- "anti-virus-flagged.md"
 		<!-- !!! bug "Bug: MacOS"
 			The `.dmg` download is unavailable for the latest release. Use the `osx-unsigned.tar.gz` download instead (see guide below). -->
 
@@ -213,9 +215,13 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 ??? example "Linux"
 	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 3 options:
+
 		1. `blocknet-x.xx.x-x86_64-linux-gnu.tar.gz` (recommended for 64-bit)
-		1. `blocknet-x.xx.x-i686-pc-linux-gnu.tar.gz` (recommended for 32-bit)
-		1. `blocknet-x.xx.x-arm-linux-gnueabihf.tar.gz` (recommended for Raspberry Pi)
+	1. `blocknet-x.xx.x-i686-pc-linux-gnu.tar.gz` (recommended for 32-bit)
+	1. `blocknet-x.xx.x-arm-linux-gnueabihf.tar.gz` (recommended for Raspberry Pi)
+
+	    --8<-- "anti-virus-flagged.md"
+
 	1. You may be asked for a confirmation to download, select *Save File* then *OK*.
 
 		![Save](/img/wallet/linux-save.jpg)
@@ -234,34 +240,11 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 	1. Move this file you where you keep your applications, such as your *Desktop*.
 	1. After moving this file, the files you downloaded can be deleted since the `blocknet-qt` executable file is all that is needed.
-	1. Double-click the `blocknet-qt` file to begin the installation process.
-
-		???+ bug "Bug: Terminal needed to open the latest release."
-			1. With any 3.12.1+ release you will encounter an error when you double-click to open it.<br>
-				![Error](/img/wallet/linux-error.jpg)
-
-			1. The wallet must be opened using Terminal. Open Terminal.<br>
-				![Terminal](/img/wallet/linux-terminal.jpg)
-
-			1. Navigate to the location of the `blocknet-qt` executable file. 
-				1. If you moved the file to your *Desktop*, type the following like and press the *Enter* key.
-					```
-					cd Desktop/
-					```
-				1. If you moved the file to your *Downloads*, type the following like and press the *Enter* key.
-					```
-					cd Downloads/
-					```
-				1. If you moved the file to your *Documents*, type the following like and press the *Enter* key.
-					```
-					cd Documents/
-					```
-
-			1. Type the following command and press the *Enter* key.
-				```
-				./blocknet-qt &
-				```
-
+	1. Double-click the `blocknet-qt` file to begin the installation
+       process. (If it fails to open on double-click, you may need to give
+       *executable* permission to the file: Either `sudo chmod +x
+       blocknet-qt` in Debian terminal, or Right-click property, give
+       executable permission.)
 	1. An installation prompt will appear, select *OK*.
 
 		![Install](/img/wallet/linux-install.jpg)
@@ -347,8 +330,3 @@ var relatedLinks = [];
 </script>
 
 --8<-- "extras.md"
-
-
-
-
-

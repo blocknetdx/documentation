@@ -8,15 +8,15 @@ description: This guide explains how to configure wallets for trading on Block D
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=92" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 1. [Install the Blocknet wallet](/wallet/setup). The Blocknet wallet is **required** to facilitate peer-to-peer trading on Block DX.
-1. Install the wallets of the [digital assets](/resources/glossary/#digital-asset) you will be trading and/or the [XLite wallet](https://xlitewallet.com). These wallets are **required** to store your funds since Block DX is non-custodial. [View the list compatible digital assets and wallet versions](/blockdx/listings).
+1. Install the wallets of the [digital assets](/resources/glossary/#digital-asset) you will be trading and/or the [XLite wallet](/xlite/setup). These wallets are **required** to store your funds since Block DX is non-custodial. [View the list compatible digital assets and wallet versions](/blockdx/listings).
 
-	???+ info "Note: XLite wallet is the only supported Lite wallet at this time. Other Lite wallets in general, and Electrum wallets, are not supported."
-		Due to the interactions the wallet needs to make to ensure secure trading, lite wallets and Electrum wallets are not currently supported. However, Blocknet's XRouter allows for the development of decentralized, noncustodial SPV wallets, and  [XLite wallet](https://xlitewallet.com) is one such wallet. If XLite supports the assets you want to trade, you can use XLite instead of installing the native wallets of those assets. Installing the native wallet of an asset will require downloading the full blockchain of the asset; using XLite will not.
+	???+ info "Note: XLite wallet is the only supported lite wallet at this time. Other lite wallets in general, and Electrum wallets, are not supported."
+		Due to the interactions the wallet needs to make to ensure secure trading, lite wallets and Electrum wallets are not currently supported. However, Blocknet's XRouter allows for the development of decentralized, noncustodial SPV wallets, and  [XLite wallet](/xlite/setup) is one such wallet. If XLite supports the assets you want to trade, you can use XLite instead of installing the native wallets of those assets. Installing the native wallet of an asset will require downloading the full blockchain of the asset; using XLite will not.
 
 1. [Install Block DX](/blockdx/installation). This is a desktop dApp and not supported in-browser.
 	
 ???+ warning "Warning"
-    You *__must__* have the Blocknet wallet and the wallets of the assets you will be trading and/or the [XLite wallet](https://xlitewallet.com) installed  *before* continuing. You __*must also*__ have BlockDX v1.9.x or greater to use XLite with BlockDX. [Read about when to use XLite vs when to use asset native wallets](/blockdx/setup#setup)
+    You *__must__* have the Blocknet wallet and the wallets of the assets you will be trading and/or the [XLite wallet](/xlite/setup) installed  *before* continuing. You __*must also*__ have BlockDX v1.9.x or greater to use XLite with BlockDX. [Read about when to use XLite vs when to use asset native wallets](/blockdx/setup#setup)
 
 ## 2 Step Configuration
 
@@ -42,9 +42,9 @@ description: This guide explains how to configure wallets for trading on Block D
 
     * After configuration is complete, you can add new wallets or reconfigure existing wallets at any time under *MENU->Add & Update Wallets*. 
 
-??? example "Step 2 - This step is required if *some* of the [digital assets](/resources/glossary/#digital-asset) you'll be trading will be stored in [XLite wallet](https://xlitewallet.com). "
+??? example "Step 2 - This step is required if *some* of the [digital assets](/resources/glossary/#digital-asset) you'll be trading will be stored in [XLite wallet](/xlite/setup). "
 	
-	* Firstly, if you haven't already done so, install [XLite wallet](https://xlitewallet.com), create a new XLite wallet for yourself, and backup your 12 word mnemonic phrase, then leave XLite open and unlocked.
+	* Firstly, if you haven't already done so, [install XLite wallet](/xlite/setup), create a new XLite wallet for yourself, and backup your 12 word mnemonic phrase, then leave XLite open and unlocked.
 	* At this point, you should have Blocknet wallet open and unlocked, XLite open and unlocked, and BlockDX also open.
 	* In BlockDX, you will likely see an __OPEN CONFIGURATION__ screen like this:
 

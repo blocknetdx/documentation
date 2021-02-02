@@ -5,6 +5,9 @@ description: A compiled list of frequently asked questions about Block DX, inclu
 # Block DX FAQs (Frequently Asked Questions)
 Below are a list of Block DX frequently asked questions. For any questions not answered below, please join the Blocknet community on Discord for further discussion: [Discord Invite](https://discord.gg/2e6s7H8)
 
+??? question "How can I view currently active orders on BlockDX without opening the BlockDX application?"
+	Visit the [Open Orders Page](https://blockdx.com/orders/).
+
 ???+ question "My version of [blockchain] wallet isn’t one of the options to select in the set up process. Can I use this version? Will it still work?""
 	Only use wallet versions that are listed. If a version is not listed, it has either not been tested yet or is not compatible. Using a wallet version not listed may result in failed trades or loss of funds.
 
@@ -21,8 +24,8 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 	If in the BLOCK/LTC market and using BUY order form, you will be buying BLOCK with LTC. Using the SELL order form means you will be selling BLOCK to receive LTC.
 
 
-??? question "Why do I need to download and use full blockchains when trading?""
-	Block DX is a full decentralized exchange with no central components, which requires the full blockchains to be installed and synced locally to submit the trades as transactions on the network. In future updates, using Blocknet’s breakthrough blockchain router (XRouter), it will be possible to trade without the need for the full blockchains to be installed locally.
+??? question "Do I always need to download and use full blockchains when trading?""
+	Block DX is a full decentralized exchange with no central components, which requires the full blockchains to be installed and synced locally to submit the trades as transactions on the network. However, if the assets you want to trade are supported by [XLite wallet](/xlite/setup), you can use XLite and avoid downloading the full blockchains.
 
 
 ??? question "Do I need to have BLOCK in order to trade?""

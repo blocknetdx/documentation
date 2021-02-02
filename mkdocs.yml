@@ -112,7 +112,7 @@ nav:
     - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/#xcloud-api'
   # - "Use Cases <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-business-use-cases.pdf'
   - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.co/'
-- 'Wallet':
+- 'Blocknet Wallet':
   - 'Getting Started': 'wallet/setup.md'
   - 'Installation': 'wallet/installation.md'
   # - 'Updating': 'wallet/updating.md'
@@ -133,6 +133,11 @@ nav:
   # - 'Troubleshooting': 'wallet/troubleshooting.md'
   # - 'Security': 'wallet/security.md'
   - 'Integration': 'wallet/integration.md'
+- 'XLite':
+  - 'Getting Started': 'xlite/setup.md'
+  - 'Installation': 'xlite/installation.md'
+  - 'Create, Backup & Restore': 'xlite/backup-and-restore.md'
+  - 'Using BlockDX w/ XLite': 'xlite/blockdx-xlite.md'
 - 'Block DX':
   - 'Introduction': 'blockdx/introduction.md'
   - 'Getting Started': 'blockdx/setup.md'

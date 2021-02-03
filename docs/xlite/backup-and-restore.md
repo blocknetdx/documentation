@@ -30,12 +30,12 @@ description: This guide explains how to initialize, backup and restore your XLit
 ??? example "Linux"
 
 	* Double-click on the XLite icon wherever you installed it in the [Installation](/xlite/installation) step.
-
+<!--
 	    ??? info "Note: If double-clicking XLite doesn't open it, you may need to give executable permission to the file."
 		Either `sudo chmod +x XLite` in Debian terminal, or
 		*right-click->Property*, give executable permission. This
 		is safe to do, assuming you have [verified your download](/xlite/installation/#verifying-downloads-recommended).
-
+-->
 ### The first time you open XLite after installing it, you'll see this screen:
 
 ![Create New XLite Wallet](/img/xlite/create-wallet.png) 

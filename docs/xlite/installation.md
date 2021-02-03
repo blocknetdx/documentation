@@ -172,21 +172,21 @@ SHA256(xlite-1.0.0-x86_64-linux-gnu.tar.gz)= 9608a66feb4616092ddb2dbeeafef01f5c0
 		1. Navigate to the location of the downloaded file.
 		1. Enter `certUtil -hashfile filename SHA256` with `filename` replaced by the name fo the file you downloaded. 
 		
-		**Example**: `certUtil -hashfile xlite-1.0.0-win64.zip SHA256`
+		**Example**: `certUtil -hashfile xlite-1.0.0-win.exe SHA256`
 
 	??? example "MacOS"
 		1. Open the terminal.
 		1. Navigate to the location of the downloaded file.
 		1. Enter `shasum -a 256 filename` with `filename` replaced by the name fo the file you downloaded. 
 		
-		**Example**: `shasum -a 256 xlite-1.0.0-osx-unsigned.tar.gz`
+		**Example**: `shasum -a 256 xlite-1.0.0-mac.dmg`
 
 	??? example "Linux"
 		1. Open the terminal.
 		1. Navigate to the location of the downloaded file.
 		1. Enter `sha256sum filename` with `filename` replaced by the name fo the file you downloaded. 
 		
-		**Example**: `sha256sum xlite-1.0.0-x86_64-linux-gnu.tar.gz`
+		**Example**: `sha256sum xlite-1.0.0-linux.AppImage`
 
 1. Compare the release hash to the hash of the download. If the hashes do not match, **DO NOT** run the file and delete the file immediately.
 

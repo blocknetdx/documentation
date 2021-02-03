@@ -16,9 +16,9 @@ installed and are updating, the steps are basically the same.
 
 	1. Download the [latest XLite wallet](https://github.com/blocknetdx/xlite/releases/) There are 3 options:
 
-		1.  `xlite-x.x.x-win.exe` (recommended)
-	1.  `xlite-x.x.x-win-x64.zip` (for 64-bit Windows)
-	1.  `xlite-x.x.x-win-ia32.zip` (for 32-bit Windows)
+		1.  `XLite-x.x.x-win.exe` (recommended - works on 64-bit and 32-bit Windows)
+	1.  `XLite-x.x.x-win-x64.zip` (for 64-bit Windows)
+	1.  `XLite-x.x.x-win-ia32.zip` (for 32-bit Windows)
 
 	    --8<-- "anti-virus-flagged.md"
 
@@ -40,17 +40,21 @@ installed and are updating, the steps are basically the same.
 				![SmartScreen Dismiss](/img/wallet/win-protected-dismiss.jpg)
 
 		1. When the Setup Wizard appears, follow the setup
-           instructions to finish installing XLite.
+        instructions to finish installing XLite.
+		1. When installation is complete, you can delete the
+           downloaded `.exe` file.
 
 	??? example "Using the `.zip` download (options b/c)"
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Right-click the file, select *Extract*.
 		1. After the files are extracted, a new folder should open
            with the contents. If a folder did not open, look for the
-           new folder in the directory in which the downloaded file is located.
-		1. Here you will find the `XLite` executable file.
-		1. Move this file you where you keep your applications, such as your *Desktop*. Additionally, you can right-click and *Pin to Start* or *Pin to Taskbar* for easy access.
-		1. After moving this file, the remaining files you downloaded can be deleted since the `XLite` executable file is all that is needed.
+           new folder in the directory where the `.zip` file was downloaded.
+		1. In the newly extracted folder you will find the `XLite` executable file.
+		1. Move this `XLite` executable file to where you keep your applications, such as your *Desktop*. Additionally, you can right-click and *Pin to Start* or *Pin to Taskbar* for easy access.
+		1. After moving this file, the `.zip` and the remaining
+           extracted folders and files can be deleted since the `XLite` executable
+           file was all we needed.
 
 
 	--8<-- "complete-xlite-installation.md"
@@ -59,14 +63,14 @@ installed and are updating, the steps are basically the same.
 ??? example "MacOS"
 	1. Download the [latest XLite wallet](https://github.com/blocknetdx/xlite/releases/) There are 2 options:
 
-		1. `xlite-x.x.x-mac.dmg` (recommended)
-	1. `xlite-x.x.x-mac.zip`
-
+		1. `XLite-x.x.x-mac.dmg` (recommended)
+	1. `XLite-x.x.x-mac.zip`
+	
 	    --8<-- "anti-virus-flagged.md"
 
 	1. Continue to the instructions below for the download you selected:
 
-	??? example "Using the `xlite-x.x.x-mac.dmg` download (option a)"
+	??? example "Using the `.dmg` download (option a)"
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Double-click the file to begin installation.
 		1. Click and drag the *XLite* application icon over to the *Applications* folder and release.
@@ -77,42 +81,63 @@ installed and are updating, the steps are basically the same.
 		  		   
 	    --8<-- "complete-xlite-installation.md"
 
-	??? example "Using the `xlite-x.x.x-mac.zip` download (option b)"
+	??? example "Using the `.zip` download (option b)"
 		1. Find the downloaded file. The default location is in *Downloads*.
-		1. Double-click the file to unpack the contents.
+		1. Double-click the file to unpack the contents into a new
+        folder.
+		1. Within that new folder you should see the *XLite* application.
 		1. Click and drag the *XLite* application over to the *Applications* folder and release.
 		1. If you are prompted with a message asking if you would like to replace an existing version with a newer version, select *Replace*.
-		1. The remaining downloaded files may now be deleted as *XLite* was the
-           only file that was needed from the zipped folder.
+		1. The `.zip` and the remaining unpacked files and folders may now be deleted as *XLite* was the
+           only file we needed.
 
 	    --8<-- "complete-xlite-installation.md"
 
 ??? example "Linux"
-	1. Download the [latest XLite wallet](https://github.com/blocknetdx/xlite/releases/) There are 2 options:
+	1. Download the [latest XLite wallet](https://github.com/blocknetdx/xlite/releases/) There are 3 options:
 
-		1. `xlite-x.x.x-linux.deb` (recommended)
-	1. `xlite-x.x.x-linux.tar.gz` (Gzip archive)
-
+		1. `XLite-x.x.x-linux.AppImage` (recommended - works on all flavors of Linux)
+	1. `XLite-x.x.x-linux.deb` (Install package for Debian & Ubuntu)
+	1. `XLite-x.x.x-linux.tar.gz` (Gzip archive)
+	   
 	    --8<-- "anti-virus-flagged.md"
 
-	??? example "Using the `.deb` download (option a)"
+	1. Continue to the instructions below for the download you selected:
+
+	??? example "Using the `.AppImage` download (option a)"
+		1. You may be asked for a confirmation to download, select *Save File* then *OK*.
+		1. Find the downloaded file. The default location is in *Downloads*.
+		1. Give __executable__ permission to the `.AppImage` file as follows:
+			1. Right-click the `.AppImage` file to display a dropdown menu like this:
+			![Executable](/img/xlite/linux-properties.png)		   
+			1. Select `Properties` at the bottom of the dropdown to reveal a screen similar to this:
+			![Executable](/img/xlite/linux-executable.png)
+			1. Check the box, *Allow executing file as program*
+			1. Click *X* in the upper left corner of the Properties
+            window to close it
+			1. Note: Alternatively, if you prefer the command line, you can simply use `chmod u+x AppImage-File` to make it executable.
+
+	??? example "Using the `.deb` download (option b)"
 		1. You may be asked for a confirmation to download, select *Save File* then *OK*.
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Double-click the file to open the installation screen.
 		1. Select *Install*. 
 		1. You may be asked to enter your account password.
 		1. The installation process may take a few minutes.
-		1. Read the License Agreement and select *Accept* to acknowledge.
 
-	??? example "Using the `.tar.gz` download (option b)"
+	??? example "Using the `.tar.gz` download (option c)"
 		1. You may be asked for a confirmation to download, select *Save File* then *OK*.
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Right-click the file, select *Extract Here*.
-		1. Double-click the `xlite-x.x.x-linux/` folder to view the contents.
+		1. Double-click the `XLite-x.x.x-linux/` folder to view the contents.
 		1. Here you will find the `XLite` executable file.
-		1. Move this file you where you keep your applications, such as your *Desktop*.
-		1. After moving this file, the remaining files you downloaded can be deleted since the `XLite` executable file is all that is needed.
+		1. Move this `XLite` executable file to where you keep your applications, such as your *Desktop*.
+		1. After moving this file, the `.tar.gz` and the remaining
+           extracted folders and files can be deleted since the `XLite` executable
+           file was all we needed.
 
+
+		
 	--8<-- "complete-xlite-installation.md"
 
 ---

@@ -105,8 +105,9 @@ description: This guide explains the process for installing Block DX, a decentra
 
 ??? example "Linux"
 	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 Linux options:
-		1. `BLOCK-DX-x.x.x-linux.deb` (recommended)
-		1. `BLOCK-DX-x.x.x-linux.tar.gz`
+		1. `BLOCK-DX-x.x.x-linux.deb` (recommended - Debian package)
+		1. `BLOCK-DX-x.x.x-linux.tar.gz` (Gzip archive)
+
 	??? example "Using the `.deb` download (option a)"
 		1. You may be asked for a confirmation to download, select *Save File* then *OK*.
 

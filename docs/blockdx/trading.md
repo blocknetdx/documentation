@@ -5,6 +5,7 @@ description: These Block DX trading guides explain how to check your balances, s
 # Block DX Trading
 [Block DX](/blockdx/introduction) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). Follow the guides below to learn how to check your balances, select your market, make orders, take orders, check order status, and view order history. If Block DX has not been setup yet, please follow the [setup guide](/blockdx/setup).
 
+??? Tip "Tip: To view currently active orders on BlockDX, visit the [Open Orders Page](https://blockdx.com/orders/)"
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ??? example "Balances"
@@ -86,7 +87,10 @@ description: These Block DX trading guides explain how to check your balances, s
 
 	1. For *Price* (the second input), enter the price (rate) you would like to trade the first asset for.
 	1. *Total* shows the total amount of the 2nd asset that will be traded for the first asset.
-	1. In the address inputs, enter the addresses the funds will be coming from and going to. Make sure these are legacy addresses and not Segwit addresses.
+	1. In the address inputs, enter the addresses the funds will be
+       coming from and going to. Make sure these are legacy addresses
+       and not Segwit addresses. [See these hints](/xlite/blockdx-xlite) for help finding
+       these addresses when your assets are stored in XLite.
 	1. Ignore *Order ID*, that should be blank when creating an order.
 	1. Review your order.
 	1. Select the place order button.
@@ -111,7 +115,10 @@ description: These Block DX trading guides explain how to check your balances, s
 		![Take Order](/img/blockdx/take-order.png)
 
 	1. Make sure *Balances* shows enough funds in the *Available* column to cover the order.
-	1. In the address inputs, enter the addresses the funds will be coming from and going to. Make sure these are legacy addresses and not Segwit addresses.
+	1. In the address inputs, enter the addresses the funds will be
+       coming from and going to. Make sure these are legacy addresses
+       and not Segwit addresses. [See these hints](/xlite/blockdx-xlite) for help finding
+       these addresses when your assets are stored in XLite.
 	1. Review your order.
 	1. Select the place order button.
 	1. The trade will now be visible under *Active Orders*.

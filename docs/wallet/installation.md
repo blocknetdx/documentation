@@ -34,6 +34,7 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 	    --8<-- "anti-virus-flagged.md"
 
+	1. Before continuing, it is recommended to [verify your download](/wallet/installation/#verifying-downloads)
 	1. Continue to the instructions below for the download you selected:
 
 	??? example "Using the `.exe` download (options a/b)"
@@ -140,6 +141,7 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 		<!-- !!! bug "Bug: MacOS"
 			The `.dmg` download is unavailable for the latest release. Use the `osx-unsigned.tar.gz` download instead (see guide below). -->
 
+	1. Before continuing, it is recommended to [verify your download](/wallet/installation/#verifying-downloads)
 	1. Continue to the instructions below for the download you selected:
 
 	??? example "Using the `osx-unsigned.dmg` download (option a)"
@@ -227,6 +229,7 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 		![Save](/img/wallet/linux-save.jpg)
 
 	1. Find the downloaded file. The default location is in *Downloads*.
+	1. Before continuing, it is recommended to [verify your download](/wallet/installation/#verifying-downloads) 
 	1. Right-click the file, select *Extract Here*.
 
 		![Extract](/img/wallet/linux-extract.jpg)

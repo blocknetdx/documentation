@@ -16,6 +16,9 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. `BLOCK-DX-x.x.x-win-x64.zip`
 		1. `BLOCK-DX-x.x.x-win-ia32.zip`
 
+	1. Before continuing, it is recommended to [verify your download](/blockdx/installation/#verifying-downloads) 
+	1. Continue to the instructions below for the download you selected:
+
 	??? example "Using the `.exe` download (option a)"
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Double-click the file to begin the installation process.
@@ -49,6 +52,9 @@ description: This guide explains the process for installing Block DX, a decentra
 	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 MacOS options:
 		1. `BLOCK-DX-x.x.x-mac.dmg` (recommended)
 		1. `BLOCK-DX-x.x.x-mac.zip`
+
+	1. Before continuing, it is recommended to [verify your download](/blockdx/installation/#verifying-downloads) 
+	1. Continue to the instructions below for the download you selected:
 
 	??? example "Using the `.dmg` download (option a)"
 		1. Find the downloaded file. The default location is in *Downloads*.
@@ -105,8 +111,11 @@ description: This guide explains the process for installing Block DX, a decentra
 
 ??? example "Linux"
 	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 Linux options:
-		1. `BLOCK-DX-x.x.x-linux.deb` (recommended - Debian package)
+		1. `BLOCK-DX-x.x.x-linux.deb` (recommended)
 		1. `BLOCK-DX-x.x.x-linux.tar.gz` (Gzip archive)
+
+	1. Before continuing, it is recommended to [verify your download](/blockdx/installation/#verifying-downloads) 
+	1. Continue to the instructions below for the download you selected:
 
 	??? example "Using the `.deb` download (option a)"
 		1. You may be asked for a confirmation to download, select *Save File* then *OK*.
@@ -152,6 +161,50 @@ description: This guide explains the process for installing Block DX, a decentra
 
 		--8<-- "complete-blockdx-installation.md"
 
+## Verifying Downloads
+
+It is important to verify the integrity of downloads before running them. Depending on how you downloaded it, it's possible the file may have been modified in transit to do something evil when run. The server hosting the download may also have been compromised.
+
+1. Get the sha256 hash of the release you download. These are provided
+on the Github release page as
+[plain text in the release notes](https://github.com/blocknetdx/block-dx/releases/). The
+format follows `SHA256-hash <filename>`. Here is an example of the hashes:
+```
+4a6bd1ad96edf6b052e9929633f978a9a06c85552091a5df1e9bf0bda18ee449  BLOCK-DX-1.9.0-linux-amd64.deb
+d90ad1ff0797fc30d749597252718cb7c52843e1020818edb2fbb2a8dbaf95d0  BLOCK-DX-1.9.0-linux-armv7l.AppImage
+9fdda89ef175621e052b6ff8dbb6ab0826c6bc85e1f380c0ea967f638577373b  BLOCK-DX-1.9.0-linux-x64.tar.gz
+2d23161771b6bcec2a6c6242e872638ac7c6be7864f4bb74df4d7af723716a94  BLOCK-DX-1.9.0-linux-x86_64.AppImage
+83e07323a04873a96264f6f46f541956adfa0f86d17986d6278f773660e704db  BLOCK-DX-1.9.0-mac.dmg
+6e8211d56204acd155273c19329eea629ff5fc6195e178e026734cc3b3ce354f  BLOCK-DX-1.9.0-mac.zip
+45b239611cd4e248d291cd33a9ac7dede927ed4313b29d3eb5728c38420066f2  BLOCK-DX-1.9.0-win-ia32.zip
+cc29caeae49b6f99e28b36f64e678267be46a14526fbef4a311acc215aaa3c79  BLOCK-DX-1.9.0-win-x64.zip
+8be6d4bde7fa182d68047524671ac61b3366c9b3e8f241bf2493e001fa3502ef  BLOCK-DX-1.9.0-win.exe
+```
+1. Take a note of the hash for the specific file you downloaded.
+1. Get the sha256 hash of the file you downloaded:
+
+	??? example "Windows"
+		1. Open the command prompt.
+		1. Navigate to the location of the downloaded file.
+		1. Enter `certUtil -hashfile filename SHA256` with `filename` replaced by the name fo the file you downloaded. 
+		
+		**Example**: `certUtil -hashfile BLOCK-DX-1.9.0-win.exe SHA256`
+
+	??? example "MacOS"
+		1. Open the terminal.
+		1. Navigate to the location of the downloaded file.
+		1. Enter `shasum -a 256 filename` with `filename` replaced by the name fo the file you downloaded. 
+		
+		**Example**: `shasum -a 256 BLOCK-DX-1.9.0-mac.dmg`
+
+	??? example "Linux"
+		1. Open the terminal.
+		1. Navigate to the location of the downloaded file.
+		1. Enter `sha256sum filename` with `filename` replaced by the name fo the file you downloaded. 
+		
+		**Example**: `sha256sum BLOCK-DX-x.x.x-linux.deb`
+
+1. Compare the release hash to the hash of the download. If the hashes do not match, **DO NOT** run the file and delete the file immediately.
 
 
 

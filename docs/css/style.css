@@ -271,7 +271,8 @@ small {
     color: #051937;
 }
 #bn-contributor-group .contributor .fa-user-circle {
-    font-size: 6.9em !important;
+/*    font-size: 6.9em !important;*/
+    font-size: 110px !important;
     color: #051937;
     margin-bottom: 7px;
 }
@@ -279,14 +280,16 @@ small {
     font-weight: bold;
 }
 #bn-contributor-group .contributor .title {
+/*
     font-style: italic;
     margin-top: -3px;
     line-height: 1.5rem;
     height: 28px;
+*/
 }
 #bn-contributor-group .contributor .platform {
     /*margin-top: 5px;*/
-    font-size: 1.5rem;
+    font-size: 0.7rem;
 }
 #bn-contributor-group .contributor .handle {
     font-style: italic;

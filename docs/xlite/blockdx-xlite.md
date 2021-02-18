@@ -9,7 +9,7 @@ When XLite is open to the Dashboard in a large enough window, it should look som
 like this:
 ![XLite Dashboard](/img/xlite/dashboard.png)
 If you don't see the circular *Portfolio* graph and the *Latest
-Transactions* listed below it, expand the size of the XLite window
+Transactions* listed below it, you can expand the size of the XLite window
 until they appear.
 ## Filling in address fields in BlockDX from XLite
 

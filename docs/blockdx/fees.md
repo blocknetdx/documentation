@@ -19,7 +19,7 @@ When accepting an order on Block DX, a static fee of 0.015 [BLOCK](/blockchain/i
 
 In addition to the 0.015 BLOCK fee, there is also the transaction fee for the network of the asset being sold. This is the same type of fee you would incur if sending this asset to another party.
 
-If the taker asset is BLOCK, there needs to be *at least* two UXTOs - one or more to cover the 0.015 BLOCK fee and one or more to cover the traded amount. 
+If the taker asset is BLOCK, there needs to be *at least* two [UTXOs](/resources/glossary/#utxo) - one or more to cover the 0.015 BLOCK fee and one or more to cover the traded amount. 
 
 In a future update, there will be a percent-based fee that’s charged when accepting an order, but the details of this are not yet finalized.
 

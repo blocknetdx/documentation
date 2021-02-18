@@ -24,7 +24,12 @@ installed and are updating, the steps are basically the same.
 
 	1. Find the downloaded file. The default location is in *Downloads*. 
 	1. Before continuing, it is recommended to [verify your download](/xlite/installation/#verifying-downloads)
-	1. Continue to the instructions below for the download you selected:
+	1. Continue to the instructions below for the download you
+       selected (`.exe` or `.zip`):
+
+	??? tip "Important Tip: If installation fails to complete for either the `.exe` or `.zip` instructions below, click here for instructions what to do."
+		1. Install [Visual C++ 2010 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=14632).
+		1. Redo the installation step below (`.exe` or `.zip` depending on your download).
 
 	??? example "Using the `.exe` download (option a)"
 		1. Double-click the downloaded file to begin the installation process.

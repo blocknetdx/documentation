@@ -18,7 +18,13 @@ Orphan
 ---
 
 #### Address
-Each wallet has an *address* (or multiple). Addresses are used similar to bank account routing and checking numbers to tell the network where to send and receive funds during transactions. The address by default is a 34 character alphanumeric string, but an *alias* can also be created as a more user-friendly naming preference to refer to the wallet's default address.
+Each wallet has an *address* (or multiple). Addresses are used similar
+to bank account routing and checking numbers to tell the network where
+to send and receive funds during transactions. The address by default
+is a 34 character alphanumeric string, but an *alias* can also be
+created as a more user-friendly naming preference to refer to the
+wallet's default address. Within each *address* there can exist
+multiple [UTXOs](#utxo) , also called [Inputs](#input).
 
 
 
@@ -61,7 +67,8 @@ A *block reward* is a reward you earn when [staking](#staking) for helping secur
 ---
 
 #### Change Address
-A *change address* is the address where the remaining funds from an [input](#input) are returned after making a transaction. This is always an [address](#address) you own. If you have an input that's 15 BLOCK used in a transaction sending 10 BLOCK, then the remaining 5 BLOCK will be returned to the change address. This is a similar concept to paying for an item in cash and receiving change back. 
+A *change address* is the address where the remaining funds from an
+[input](#input) (a.k.a. [UTXO](#utxo)) are returned after making a transaction. This is always an [address](#address) you own. If you have an input that's 15 BLOCK used in a transaction sending 10 BLOCK, then the remaining 5 BLOCK will be returned to the change address. This is a similar concept to paying for an item in cash and receiving change back. 
 
 #### Client
 Depending on the context, *client* refers either to hardware running the Blocknet blockchain or software utilizing the Blocknet Protocol, which can be a blockchain, microservice, dApp, mobile app, website, etc.
@@ -70,7 +77,7 @@ Depending on the context, *client* refers either to hardware running the Blockne
 *Coin* and *token* refers to [digital assets](#digital-asset).
 
 #### Coin Control
-*Coin Control* enables the ability to break up or combine [inputs](#inputs). This is comparable to going to a bank and exchanging a bunch of smaller bills for a $50 bill or breaking a larger bills for smaller denominations. Using Coin Control you can also choose to select specific inputs, addresses, and [change addresses](#change-address) to use for transactions.
+*Coin Control* enables the ability to break up or combine [inputs](#input). This is comparable to going to a bank and exchanging a bunch of smaller bills for a $50 bill or breaking a larger bills for smaller denominations. Using Coin Control you can also choose to select specific inputs, addresses, and [change addresses](#change-address) to use for transactions.
 
 #### Confirmation
 When transactions are made, the transactions must go through a *confirmation* process, which validates the transaction to make sure it is authentic. Funds that are being confirmed cannot be used until 60 confirmations (about 60 minutes). 
@@ -138,8 +145,8 @@ A *digital asset* is new asset class that describes digital cryptographic coins 
 
 ---
 
-#### Inputs
-Within a users [wallet](#wallet), the total balance is composed of either one large *input* or various smaller *inputs*. Think of an input as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. An input is sometimes also referred to as a [UXTO](#uxto).
+#### Input
+Within a users [wallet](#wallet), the total balance is composed of either one large *input* or various smaller *inputs*. Think of an input as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. An input is sometimes also referred to as a [UTXO](#utxo).
 
 #### Interchain Communication
 *Interchain communication* is the ability for different blockchains to interact and communicate with each other. For example, one blockchain can write their latest block hashes to the Bitcoin blockchain and also call the data to add extra verification and security.
@@ -273,7 +280,7 @@ A *reward* refers to a payment earned for providing a service.
 *SPV* is an acronym that stands for Simplified Payment Verification. It is a method for verifying if particular transactions are included in a block without downloading the entire block.
 
 #### Staking
-*Staking* is used to secure the network by confirming [blocks](#blockchain-block). Users that stake earn rewards. The reward can be referred to as a *stake*. When users earn a staking reward, it is tied to a specific [input](#inputs) in the user's wallet. For a user to stake, the option must be enabled.
+*Staking* is used to secure the network by confirming [blocks](#blockchain-block). Users that stake earn rewards. The reward can be referred to as a *stake*. When users earn a staking reward, it is tied to a specific [input](#input) in the user's wallet. For a user to stake, the option must be enabled.
 
 #### Superblock
 A *Superblock* refers to a specific [block](#blockchain-block) that occurs roughly once a month. The Superblock block finalizes the votes on any active [proposals](#proposals) and makes funding payouts for any passing proposals.
@@ -309,9 +316,8 @@ By having the wallet *locked*, funds cannot be sent and staking cannot be enable
 #### User
 Refers to someone whom has a the wallet program installed on their computer. This may sometimes also be referred to as a [peer](#peers).
 
-#### UXTO
-Within a users [wallet](#wallet), the total balance is composed of either one large *UXTO* or various smaller *inputs*. Think of an UXTO as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. An UXTO is sometimes also referred to as an [input](#input).
-
+#### UTXO
+UTXO stands for [Unspent Transaction Output](https://en.wikipedia.org/wiki/Unspent_transaction_output). Within a user's [wallet](#wallet), the total balance is composed of either one large UTXO or various smaller UTXOs. Think of a UTXO as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. A UTXO is sometimes also referred to as an [input](#input).
 
 
 ---
@@ -332,7 +338,12 @@ Voting is performed by [Service Nodes](#service-node) to voice approval/disappro
 ---
 
 #### Wallet
-A wallet is used to hold you [funds](#funds) of [digital assets](#digital-asset). This is the digital version of your physical wallet that holds physical money, very much like how your bank account works.
+A wallet is used to hold you [funds](#funds) of
+[digital assets](#digital-asset). This is the digital version of your
+physical wallet that holds physical money, very much like how your
+bank account works. Every wallet has one or more associated
+[Addresses](#address) and each wallet *address* can contain multiple
+[UTXOs](#utxo), , also called [Inputs](#input).
 
 
 

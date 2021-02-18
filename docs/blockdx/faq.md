@@ -5,6 +5,12 @@ description: A compiled list of frequently asked questions about Block DX, inclu
 # Block DX FAQs (Frequently Asked Questions)
 Below are a list of Block DX frequently asked questions. For any questions not answered below, please join the Blocknet community on Discord for further discussion: [Discord Invite](https://discord.gg/2e6s7H8)
 
+??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, but the asset didn't arrive in XLite, click here to find out what to do."
+	1. Click on *Receive* in the upper right corner of XLite.
+	1. Select the asset which did not arrive in XLite.
+	1. Click *Generate new address* until the address to which the
+       missing asset was sent appears in the *Your address* box.
+
 ??? question "How can I view currently active orders on BlockDX without opening the BlockDX application?"
 	Visit the [Open Orders Page](https://blockdx.com/orders/).
 

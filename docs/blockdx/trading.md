@@ -5,7 +5,6 @@ description: These Block DX trading guides explain how to check your balances, s
 # Block DX Trading
 [Block DX](/blockdx/introduction) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). Follow the guides below to learn how to check your balances, select your market, make orders, take orders, check order status, and view order history. If Block DX has not been setup yet, please follow the [setup guide](/blockdx/setup).
 
-??? Tip "Tip: To view currently active orders on BlockDX, visit the [Open Orders Page](https://blockdx.com/orders/)"
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ??? example "Balances"
@@ -44,7 +43,9 @@ description: These Block DX trading guides explain how to check your balances, s
 
 
 ??? example "Market Information"
-	Each market has a price chart, depth chart, and market stats available.
+	??? Tip "Tip: To view currently active BlockDX orders from a browser, visit the [Open Orders Page](https://blockdx.com/orders/)"
+
+	Within BlockDX, each market has a price chart, depth chart, and market stats available.
 
 	![Market Data](/img/blockdx/market-data.png)
 
@@ -85,12 +86,28 @@ description: These Block DX trading guides explain how to check your balances, s
 		??? info "Note: There are no limit, market, or partial orders."
 			At the moment there are just *Exact* orders, meaning that orders must be taken for the exact amounts. Due to this setup, if trading a large amount it may be best to instead break the order into a few smaller separate orders.
 
-	1. For *Price* (the second input), enter the price (rate) you would like to trade the first asset for.
+	1. For *Price* (the second input), enter the price (rate) for
+       which you would like to trade the first asset. Note, there is
+       also an option to enter *Price* in terms of BTC.
 	1. *Total* shows the total amount of the 2nd asset that will be traded for the first asset.
-	1. In the address inputs, enter the addresses the funds will be
-       coming from and going to. Make sure these are legacy addresses
-       and not Segwit addresses. [See these hints](/xlite/blockdx-xlite) for help finding
-       these addresses when your assets are stored in XLite.
+	1. In the *Address* fields, enter the addresses the funds will be
+       going to for each asset. In the above example, buying BLOCK
+       with LTC, the *BLOCK Address* is the address where the BLOCK
+       you buy will be sent, and the *LTC Address* is the
+       [change address](/resources/glossary/#change-address) where LTC
+       change from the transaction will be sent. If you don't mind having funds sent to new/empty addresses in your
+       BLOCK and LTC wallets, you can just click the *Generate New BLOCK/LTC
+       Address* options to fill in both of these *Address* fields
+       automatically. However, if you
+       want the asset you're acquiring or the change from the transaction to go
+       to specific addresses in your wallet, you'll
+       need to copy/paste those specific addresses from your wallets into
+       these fields. (For now, these *Address* fields must be legacy addresses,
+       not Segwit addresses.) [See these hints](/xlite/blockdx-xlite) for help finding
+       specific addresses in XLite. Note, the address from which
+       the trade is funded is chosen automatically by BlockDX. BlockDX
+       funds the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
+       which can cover the expense of the trade.
 	1. Ignore *Order ID*, that should be blank when creating an order.
 	1. Review your order.
 	1. Select the place order button.
@@ -104,7 +121,9 @@ description: These Block DX trading guides explain how to check your balances, s
 ??? example "Take Order"
 	1. Review the [trading fees](/blockdx/fees/#taker-fee) for taking orders.
 	1. On the right side of Block DX you will find the order book.
-		![Order Book](/img/blockdx/order-book.png)
+
+	    ![Order Book](/img/blockdx/order-book.png)
+
 	1. Click on the order you would like to take.
 
 		??? info "Note: There are no limit, market, or partial orders."
@@ -115,10 +134,24 @@ description: These Block DX trading guides explain how to check your balances, s
 		![Take Order](/img/blockdx/take-order.png)
 
 	1. Make sure *Balances* shows enough funds in the *Available* column to cover the order.
-	1. In the address inputs, enter the addresses the funds will be
-       coming from and going to. Make sure these are legacy addresses
-       and not Segwit addresses. [See these hints](/xlite/blockdx-xlite) for help finding
-       these addresses when your assets are stored in XLite.
+	1.  In the *Address* fields, enter the addresses the funds will be
+       going to for each asset. In the above example, selling BLOCK
+       for LTC, the *BLOCK Address* is the
+       [change address](/resources/glossary/#change-address) where BLOCK
+       change from the transaction will be sent, and the *LTC Address* is the address where the LTC
+       you acquire from the sale will be sent. If you don't mind having funds sent to new/empty addresses in your
+       BLOCK and LTC wallets, you can just click the *Generate New BLOCK/LTC
+       Address* options to fill in both of these *Address* fields
+       automatically. However, if you
+       want the asset you're acquiring or the change from the transaction to go
+       to specific addresses in your wallet, you'll
+       need to copy/paste those specific addresses from your wallets into
+       these fields. (For now, these address fields must be legacy addresses,
+       not Segwit addresses.) [See these hints](/xlite/blockdx-xlite) for help finding
+       specific addresses in XLite. Note, the address from which
+       the trade is funded is chosen automatically by BlockDX. BlockDX
+       funds the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
+       which can cover the expense of the trade.
 	1. Review your order.
 	1. Select the place order button.
 	1. The trade will now be visible under *Active Orders*.

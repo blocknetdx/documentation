@@ -7,6 +7,9 @@ description: This guide explains how to configure wallets for trading on Block D
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=92" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+[Click here for a "Getting Started" video on setting up XLite + BlockDX](https://theblocknetchannel.medium.com/introducing-xlite-the-new-lightweight-multi-asset-wallet-powered-by-blocknet-4e3f39bd5a23)
+## Written Guide
+
 1. [Install the Blocknet wallet](/wallet/setup). The Blocknet wallet is **required** to facilitate peer-to-peer trading on Block DX.
 1. Install the wallets of the [digital assets](/resources/glossary/#digital-asset) you will be trading and/or the [XLite wallet](/xlite/setup). These wallets are **required** to store your funds since Block DX is non-custodial. [View the list compatible digital assets and wallet versions](/blockdx/listings).
 

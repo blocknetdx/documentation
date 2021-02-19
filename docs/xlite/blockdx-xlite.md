@@ -80,7 +80,7 @@ In this example, the *BLOCK Address* is the address where the BLOCK
            ORDER FORM in BlockDX.  (Ctrl/Cmd-V)
 
 
-??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, but the asset didn't arrive in XLite, click here to find out what to do."
+??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."
 	1. Click on *Receive* in the upper right corner of XLite.
 	1. Select the asset which did not arrive in XLite.
 	1. Click *Generate new address* until the address to which the

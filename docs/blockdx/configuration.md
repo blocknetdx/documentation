@@ -13,9 +13,19 @@ description: This guide explains how to configure wallets for trading on Block D
 1. [Install the Blocknet wallet](/wallet/setup). The Blocknet wallet is **required** to facilitate peer-to-peer trading on Block DX.
 1. Install the wallets of the [digital assets](/resources/glossary/#digital-asset) you will be trading and/or the [XLite wallet](/xlite/setup). These wallets are **required** to store your funds since Block DX is non-custodial. [View the list compatible digital assets and wallet versions](/blockdx/listings).
 
-	???+ info "Note: XLite wallet is the only supported lite wallet at this time. Other lite wallets in general, and Electrum wallets, are not supported."
+	??? info "Note: [XLite wallet](/xlite/setup) is the only supported lite wallet at this time. Other lite wallets in general, and Electrum wallets, are not supported."
 		Due to the interactions the wallet needs to make to ensure secure trading, lite wallets and Electrum wallets are not currently supported. However, Blocknet's XRouter allows for the development of decentralized, noncustodial SPV wallets, and  [XLite wallet](/xlite/setup) is one such wallet. If XLite supports the assets you want to trade, you can use XLite instead of installing the native wallets of those assets. Installing the native wallet of an asset will require downloading the full blockchain of the asset; using XLite will not.
-
+	??? tip "Tip for Goldcoin (GLC) traders"
+		1. Make sure you have [installed the latest BlockDX (v1.9.0 or greater)](/blockdx/installation/#install-block-dx)
+		1. Make sure you have [installed the latest version of Goldcoin wallet (v0.14.7 or above)](https://www.goldcoinproject.org)
+		1. If you created your Goldcoin wallet using an earlier version of the Goldcoin wallet app, you may have a Goldcoin data directory named, `GoldCoin (GLD)`.  You can check this by navigating in a File Explorer (Windows) or Finder (Mac) to this location:
+			- Windows: ` %appdata%\Roaming`
+			- Mac: ` ~/Library/Application Support/`
+			- Linux: ` ~/`
+		1. If you see a directory here named, `GoldCoin (GLD)`, close your Goldcoin wallet and rename `GoldCoin (GLD)`  to `Goldcoin`  (note the small *c* in *coin*). In the case of Linux, rename it to `.goldcoin`.
+		1. Restart your Goldcoin wallet and verify it shows the correct balance.
+		1. If the Goldcoin app asks you to specify the data directory, select the default directory, which should be the new Goldcoin data directory you just made by renaming the old data directory.
+		
 1. [Install Block DX](/blockdx/installation). This is a desktop dApp and not supported in-browser.
 	
 ???+ warning "Warning"

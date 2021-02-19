@@ -138,7 +138,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">Tryou</div>
 	<div class="title">Super Sleuth, QA Testing, Arbitrage Bots</div>
-	<div class="platform">Discord <span class="handle">tryou#9388</span></div>
+	<div class="platform">Discord <span class="handle">@tryou#9388</span></div>
 </div>
 
 </div>

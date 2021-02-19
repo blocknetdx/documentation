@@ -130,7 +130,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
         <a href="https://www.linkedin.com/in/conan-mishler-3974a76/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
 	</div>
 	<div class="title"><a href="https://docs.blocknet.co"
-	target="_blank">Docs</a>, <a href="https://discord.gg/4QtvCCtq" target="_blank">Support</a>, QA Testing</div>
+	target="_blank">Docs</a>, <a href="https://discord.gg/ud5GRvV5Zv" target="_blank">Support</a>, QA Testing</div>
 	<div class="platform">Discord <span class="handle">@Conan#1130</span></div>
 </div>
 

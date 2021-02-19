@@ -4,6 +4,7 @@ description: This page gives hints on how to use BlockDX with XLite.
 ## Configure BlockDX for XLite
 After you have [configured BlockDX to connect to XLite](/blockdx/configuration/), you are now ready to trade XLite assets in BlockDX. Below are a few hints you may find helpful.
 
+---
 ## Expand XLite Window Size
 When XLite is open to the Dashboard in a large enough window, it should look something
 like this:
@@ -11,6 +12,8 @@ like this:
 If you don't see the circular *Portfolio* graph and the *Latest
 Transactions* listed below it, you can expand the size of the XLite window
 until they appear.
+
+---
 ## Filling in address fields in BlockDX from XLite
 
 BlockDX requires you to fill in two addresses in the ORDER FORM before

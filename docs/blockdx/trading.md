@@ -44,6 +44,19 @@ description: These Block DX trading guides explain how to check your balances, s
 
 ??? example "Market Information"
 	??? Tip "Tip: To view currently active BlockDX orders from a browser, visit the [Open Orders Page](https://blockdx.com/orders/)"
+	??? warning "Warning: When opening BlockDX for the first time it can take up to 3 minutes for all currently active orders to display on the screen."
+		This is simply the nature of a fully decentralized, peer-to-peer network. If your
+		XBridge client is connected to very few peers, it can even
+		take slightly longer than 3 minutes.
+
+		??? tip "Hint: Check your peer count."
+			- Redesign Wallet:
+ 
+				![Peers Status](/img/wallet-redesign/status-peers.png)
+
+			- Classic Wallet: 
+
+				![Peers Status](/img/wallet-classic/status-peers.png)
 
 	Within BlockDX, each market has a price chart, depth chart, and market stats available.
 
@@ -190,6 +203,11 @@ description: These Block DX trading guides explain how to check your balances, s
 
 	![Trade History](/img/blockdx/trade-history.png)
 
+??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."
+	1. Click on *Receive* in the upper right corner of XLite.
+	1. Select the asset which did not arrive in XLite.
+	1. Click *Generate new address* until the address to which the
+       missing asset was sent appears in the *Your address* box.
 
 
 

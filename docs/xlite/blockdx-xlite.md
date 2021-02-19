@@ -4,6 +4,7 @@ description: This page gives hints on how to use BlockDX with XLite.
 ## Configure BlockDX for XLite
 After you have [configured BlockDX to connect to XLite](/blockdx/configuration/), you are now ready to trade XLite assets in BlockDX. Below are a few hints you may find helpful.
 
+---
 ## Expand XLite Window Size
 When XLite is open to the Dashboard in a large enough window, it should look something
 like this:
@@ -11,6 +12,8 @@ like this:
 If you don't see the circular *Portfolio* graph and the *Latest
 Transactions* listed below it, you can expand the size of the XLite window
 until they appear.
+
+---
 ## Filling in address fields in BlockDX from XLite
 
 BlockDX requires you to fill in two addresses in the ORDER FORM before
@@ -80,7 +83,7 @@ In this example, the *BLOCK Address* is the address where the BLOCK
            ORDER FORM in BlockDX.  (Ctrl/Cmd-V)
 
 
-??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, but the asset didn't arrive in XLite, click here to find out what to do."
+??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."
 	1. Click on *Receive* in the upper right corner of XLite.
 	1. Select the asset which did not arrive in XLite.
 	1. Click *Generate new address* until the address to which the

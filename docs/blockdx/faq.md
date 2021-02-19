@@ -5,7 +5,7 @@ description: A compiled list of frequently asked questions about Block DX, inclu
 # Block DX FAQs (Frequently Asked Questions)
 Below are a list of Block DX frequently asked questions. For any questions not answered below, please join the Blocknet community on Discord for further discussion: [Discord Invite](https://discord.gg/2e6s7H8)
 
-??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, but the asset didn't arrive in XLite, click here to find out what to do."
+??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."
 	1. Click on *Receive* in the upper right corner of XLite.
 	1. Select the asset which did not arrive in XLite.
 	1. Click *Generate new address* until the address to which the

@@ -89,7 +89,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 	1. Post a message requesting __listing__ and __hosting__ services, tagging
        both __*@CoinWhisperer#5095*__ and __*@walkjivefly#7204*__ in the post.
 
-#### Future Listing Process
+## Future Listing Process
 In the near future, the listing process will become more automated and it
 will be easier for people to "Do It Yourself." There will be a form
 where listing applicants fill in all the

@@ -71,8 +71,13 @@ you are ready to proceed to the next step in listing your asset. At this point, 
            [manifest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest.json). (This
            file is actually identical to `manifest-latest.json`; it may be eliminated someday.)
 
-		The [README.md in the blockchain-configuration-files directory](https://github.com/blocknetdx/blockchain-configuration-files)
-        contains full details on how to create & edit these files.
+		The
+        [README.md in the blockchain-configuration-files directory](https://github.com/blocknetdx/blockchain-configuration-files#blocknets-blockchain-configuration-files)
+        contains full details on how to create & edit these files. It
+        also contains detailed instructions for
+        [Testing a Blockchain for Compatibility](https://github.com/blocknetdx/blockchain-configuration-files#testing-a-blockchain-for-compatibility),
+        which you should be sure to follow before submitting a [Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) to have your listing
+        merged into the *master* branch of the Github repository.
 
 		???+ tip "Tip: you may save some time by identifying an already listed asset which is closely related to your asset, then copying/pasting/modifying from that asset."
 

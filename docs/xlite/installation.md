@@ -57,12 +57,19 @@ installed and are updating, the steps are basically the same.
            new folder in the directory where the `.zip` file was downloaded.
 		1. In the newly extracted folder you will find the `XLite` executable file.
 		1. Move this `XLite` executable file to where you keep your applications, such as your *Desktop*. Additionally, you can right-click and *Pin to Start* or *Pin to Taskbar* for easy access.
-		1. After moving this file, the `.zip` and the remaining
-           extracted folders and files can be deleted since the `XLite` executable
-           was the only file needed.
+		1. After moving this file, the `.zip` and the remaining extracted folders and files can be deleted since the `XLite` executable was the only file needed.
+
+	#### First Time Opening XLite - Windows
+	1. Double-click on the XLite icon wherever you installed it.
+
+	    ??? info "Note: If you see a *Security Warning* from Windows asking if you want to *Run* the file, it is safe to click *Run*, assuming you have [verified your download](#verifying-downloads)."
+
+	    ??? info "If XLite doesn't open when you double-click it, click here"
+		1. Install [Visual C++ 2010 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=14632).
+		1. Redo the installation step above (`.exe` or `.zip` depending on your download).
 
 
-	--8<-- "complete-xlite-installation.md"
+	1. [Create & Backup XLite Wallet](/xlite/backup-and-restore)   __*(Do This Before Funding Your Wallet.)*__
 
 
 ??? example "MacOS"
@@ -78,9 +85,31 @@ installed and are updating, the steps are basically the same.
 	1. Double-click the file to begin installation.
 	1. Click and drag the *XLite* application icon over to the *Applications* folder and release.
 	1. If you are prompted with a message asking if you would like to replace an existing version with a newer version, select *Replace*.
-	1. Find the *XLite* installation drive on your desktop and eject it. (Right-click/two-finger tap on the *XLite* icon, then select *Eject*).
+	1. Find the *XLite* installation drive on your desktop and eject
+       it. (Mouse Right-click/TrackPad two-finger-click on the *XLite* icon, then select *Eject*).
 		  		   
-	--8<-- "complete-xlite-installation.md"
+
+	#### First Time Opening XLite - Mac
+	1. Open the [Finder](https://support.apple.com/en-in/HT201732) from
+      [the dock](https://support.apple.com/en-in/guide/mac-help/mh35859/mac),
+	  then click on *Applications* on the left side of the Finder window to reveal a
+      screen like this:
+	![Finder](/img/xlite/right-click-xlite-in-applications.png)
+	1. Scroll down to locate the *XLite* application, then
+      *right-click* (trackpad *two-finger-click*) on *XLite* and
+      select *Open* to reveal a message like this:
+	  ![Finder](/img/xlite/open-xlite.png)
+
+	    ???+ info "Note: If you see a message like the one below instead of the one above, click *OK* and repeat step 2 above."
+		![Finder](/img/xlite/first-open-attempt.png)
+		
+	1. Click *Open* (This is safe, assuming you have [verified your download](#verifying-downloads).
+	1. [Create & Backup XLite Wallet](/xlite/backup-and-restore)   __*(Do This Before Funding Your Wallet.)*__
+
+	??? tip "Tip: After opening XLite the first time as above, you can now use the [Launchpad](https://support.apple.com/en-in/HT202635) to open XLite in the future."
+		The above procedure was only necessary due to
+		security precautions your Mac takes when opening a new application
+		for the first time.
 
 
 
@@ -112,34 +141,36 @@ installed and are updating, the steps are basically the same.
 	1. Before continuing, it is recommended to [verify your download](/xlite/installation/#verifying-downloads)
 	1. Continue to the instructions below for the download you selected:
 
-	??? example "Using the `.AppImage` download (option a)"
+	    ??? example "Using the `.AppImage` download (option a)"
 		1. Give __executable__ permission to the `.AppImage` file as follows:
 			1. Right-click the `.AppImage` file to display a dropdown menu like this:
 			![Executable](/img/xlite/linux-properties.png)		   
 			1. Select `Properties` at the bottom of the dropdown to reveal a screen similar to this:
 			![Executable](/img/xlite/linux-executable.png)
 			1. Select the *Permissions* tab and check the box, *Allow executing file as program*
-			1. Click *X* in the upper left corner of the Properties
-            window to close it
+			1. Click *X* in the upper left corner of the Properties window to close it
 			1. Note: Alternatively, if you prefer the command line,
                you can simply use `chmod u+x .AppImage-File` to make
                the `.AppImage` file executable.
-		1. Move the `.AppImage` file to where you keep your applications, such as your *Desktop*.
+	    1. Move the `.AppImage` file to where you keep your applications, such as your *Desktop*.
+		1. Double-click on the XLite icon to open it from wherever you installed it.
 
-	??? example "Using the `.deb` download (option b)"
+	    ??? example "Using the `.deb` download (option b)"
 		1. Double-click the downloaded file to open the installation screen.
 		1. Select *Install*. 
 		1. You may be asked to enter your account password.
 		1. The installation process may take a few minutes.
+		1. Double-click on the XLite icon to open it from wherever you installed it
 
-	??? example "Using the `.tar.gz` download (option c)"
+	    ??? example "Using the `.tar.gz` download (option c)"
 		1. Open a Linux Terminal.
 		1. Type:`tar -xzvf XLite-x.x.x-linux.tar.gz` (replacing `x.x.x` with the version you downloaded).
-		1. After files are extracted and unzipped by this command, you
-        will see a new directory named `XLite-x.x.x-linux`.
+		1. After files are extracted and unzipped by this command, you will see a new directory named `XLite-x.x.x-linux`.
 		1. Move this new `XLite-x.x.x-linux` directory to where you keep your applications, such as your *Desktop*.
-		
-	--8<-- "complete-xlite-installation.md"
+		1. In a Terminal window, type `cd <install-dir>/XLite-x.x.x-linux` where `install-dir` is the directory where you moved the `XLite-x.x.x-linux` directory after extracting it, and `x.x.x.` is the version you downloaded.
+		1. Type, `./xlite` to run the application.
+
+	1. [Create & Backup XLite Wallet](/xlite/backup-and-restore) __*(Do This Before Funding Your Wallet.)*__
 
 ---
 

@@ -13,13 +13,13 @@ The Blocknet wallet allows you to securely manage your [BLOCK](/blockchain/intro
 Properly setting up the Blocknet wallet is simple, but takes a few short steps. Complete each of the following guides in order:
 
 1. [Installation](/wallet/installation)
-1. [Bootstrap](https://docs.blocknet.co/wallet/syncing/#bootstrap)(optional)
+1. [Bootstrap](https://docs.blocknet.co/wallet/syncing/#bootstrap) (optional)
 1. [Syncing](/wallet/syncing)
 1. [Encryption](/wallet/encrypting)
+1. [Backup](/wallet/backup-restore) (important)
 1. [Staking](/wallet/staking)
 
 <!-- 
-1. [Backup](/wallet/backup-restore)
 1. [Receive Funds](wallet/addresses/#receiving-addresses)
 1. [Send Funds](/wallet/send-funds)
 -->

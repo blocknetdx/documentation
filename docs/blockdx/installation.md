@@ -76,6 +76,10 @@ description: This guide explains the process for installing Block DX, a decentra
 
 			![Opening](/img/blockdx/mac-open-confirm.png)
 
+	        ???+ info "Note: If you see a message like the one below instead of the one above, click *OK* and repeat step 6 above."
+			![Finder](/img/blockdx/mac-open-confirm-extra-step.png)
+
+
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. Read the License Agreement and select *Accept* to acknowledge.
 

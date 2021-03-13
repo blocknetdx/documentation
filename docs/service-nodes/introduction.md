@@ -33,7 +33,7 @@ For XRouter and XCloud services, it's a free market model where you are able to 
 
 XCloud service can vary widely and not everything requires coding. For instance, you can setup a plugin file that allows you to offer CoinMarketCap pricing info via your Service Node for developers to use on-chain. You can set this up in a minute without any programming. This is just one example of an extremely useful service for developers. Not only do they want access to this data, but offering it through Blocknet allows them to pay in crypto, which is much simpler than needing to deal with fiat payments paid via on-chain functions.
 
-More documentation will be added here progressively, but if you have any questions in the meantime feel free to ask in our [Discord](https://discord.gg/2e6s7H8).
+More documentation will be added here progressively, but if you have any questions in the meantime feel free to ask in our [Discord](https://discord.gg/vGa7GeCu8B).
 
 
 

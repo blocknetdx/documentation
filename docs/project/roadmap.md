@@ -18,7 +18,7 @@ To better convey Blocknet's vast vision and objectives, the project has been sep
 
 Each product track has separate, but sometimes related, milestones. While we try to accurately provide time estimates for completion of various tasks, the timing of completetion is subject to change due to changes is priorities, resources, and unforeseen difficulties. We try to do our best to relay delays to the broader community via the project's various social channels and [bi-weekly newsletter](https://eepurl.com/c5OJMj).
 
-Looking forward Blocknet will have a very successful future as these product tracks mature and come to fruition! Join Blocknet’s community on [Discord](https://discord.gg/2e6s7H8) to take part in discussion discover the latest information and developments.
+Looking forward Blocknet will have a very successful future as these product tracks mature and come to fruition! Join Blocknet’s community on [Discord](https://discord.gg/vGa7GeCu8B) to take part in discussion discover the latest information and developments.
 
 ---
 

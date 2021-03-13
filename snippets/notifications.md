@@ -49,7 +49,7 @@
 
 <div id="notification-bar">
     <!-- <div class="notification" data-expire="">
-        <span class="message"><strong>Need support? <a href="https://discord.gg/2e6s7H8" target="_blank">Join our Discord!</a></strong></span>
+        <span class="message"><strong>Need support? <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Join our Discord!</a></strong></span>
         <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
     </div> -->
     <div class="notification" data-expire="1557294893">

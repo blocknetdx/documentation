@@ -44,7 +44,7 @@ description:
 </div>
 
 <div class="social">
-	<a href="https://discord.gg/2e6s7H8" target="_blank"><i class="fa fa-comments fa-5x" aria-hidden="true"></i></a>
+	<a href="https://discord.gg/vGa7GeCu8B" target="_blank"><i class="fa fa-comments fa-5x" aria-hidden="true"></i></a>
 	<div class="name">Discord</div>
 </div>
 
@@ -105,17 +105,6 @@ description:
 
 <!-- 
 Discord
-	Chinese - https://discord.gg/mtDaf29
-	Danish - https://discord.gg/qjkr9HW
-	Dutch - https://discord.gg/XmQrWb5
-	German - https://discord.gg/qMRwXrA
-	Hindi - https://discord.gg/zUv3zqR
-	Italian - https://discord.gg/D7PPvJW
-	Japanese - https://discord.gg/wW2S9Fk
-	Korean - https://discord.gg/FTYZ2FK
-	Russian - https://discord.gg/zZ7AkUJ
-	Spanish - https://discord.gg/f5ezw9c
-	Vietnamese - https://discord.gg/kmg4F4J
 Telegram
 	Korean - https://t.me/Blocknet_Korea
 SteemIt

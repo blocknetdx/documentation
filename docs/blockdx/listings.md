@@ -15,7 +15,7 @@ digital asset listed, the first step is to confirm the asset meets the following
 requirements. If it doesn't currently meet all these requirements, please work with
 the developers of the project/asset to ensure they
 are all met. If you have questions about any of these requirements, please
-[join Blocknet Discord Server](https://discord.gg/ud5GRvV5Zv) and ask your
+[join Blocknet Discord Server](https://discord.gg/vGa7GeCu8B) and ask your
 questions in the *#block-dx-listing* channel.
 
 #### Requirements
@@ -49,7 +49,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 	1. You are comfortable editing JSON format files
        [like this](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json)
        and creating configuration files [like this](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/xbridge-confs/litecoin--v0.18.1.conf).
-	1. You can __*Thoroughly test*__ your asset in BlockDX, and that requires
+	1. You can __*thoroughly test*__ your asset in BlockDX, and that requires
        a [Service Node](/service-nodes/introduction) to host your
        asset's native wallet. The easiest way to have a Service Node
        host your asset's wallet is to own your own Service Node and
@@ -60,7 +60,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
        asset is expected to have high trade volume, you might
        even find someone to host it for free.) To look for someone to
        host your asset on their Service Node,
-       [join Blocknet Discord Server](https://discord.gg/ud5GRvV5Zv)
+       [join Blocknet Discord Server](https://discord.gg/vGa7GeCu8B)
        and ask around in the *#block-dx-listing* channel.
 
 	1. If you can meet criteria 1, 2 & 3 above, use [Git Fork-and-Branch](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) workflow to:
@@ -89,7 +89,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 
 	This option is obviously not 100% free, but there are Blocknet Community members who are willing to do the work of listing & testing your asset, and also willing to host your asset on their Service Node at very reasonable rates. To pursue this option:
 
-	1. [join Blocknet Discord Server](https://discord.gg/ud5GRvV5Zv)
+	1. [join Blocknet Discord Server](https://discord.gg/vGa7GeCu8B)
 	1. Navigate to the *#block-dx-listing* channel in Blocknet Discord.
 	1. Post a message requesting __listing__ and __hosting__ services, tagging
        both __*@CoinWhisperer#5095*__ and __*@walkjivefly#7204*__ in the post.
@@ -107,7 +107,7 @@ on BlockDX before it can be listed.
 ---
 
 ## Listed Digital Assets
-**Note**: Block DX is not yet compatible with hardware wallets such as Ledger, web wallets such as MyEtherWallet (MEW), or lite wallets such as Jaxx. Desktop Qt wallets must be used. Below is a list of compatible assets and respective wallet versions. 
+**Note**: Block DX is not compatible with hardware wallets such as Ledger, web wallets such as MyEtherWallet (MEW), or lite wallets such as Jaxx. Desktop Qt wallets must be used. Below is a list of compatible assets and respective wallet versions. 
 
 --8<-- "xbridge-compatibility.md"
 

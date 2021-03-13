@@ -25,19 +25,17 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 	[![https://youtu.be/r4Xs0RrbAOw](http://img.youtube.com/vi/r4Xs0RrbAOw/0.jpg)](http://www.youtube.com/watch?v=r4Xs0RrbAOw "Blocknet Wallet Installation - Windows")
 
-	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 4 options:
+	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 2 options:
 
 		1. `blocknet-x.xx.x-win64-setup-unsigned.exe` (recommended for 64-bit)
-	1. `blocknet-x.xx.x-win32-setup-unsigned.exe` (recommended for 32-bit)
 	1. `blocknet-x.xx.x-win64.zip`
-	1. `blocknet-x.xx.x-win32.zip`
 
 	    --8<-- "anti-virus-flagged.md"
 
 	1. Before continuing, it is recommended to [verify your download](/wallet/installation/#verifying-downloads)
 	1. Continue to the instructions below for the download you selected:
 
-	??? example "Using the `.exe` download (options a/b)"
+	??? example "Using the `.exe` download (option a)"
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Double-click the file to begin the installation process.
 
@@ -74,7 +72,7 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 		--8<-- "complete-wallet-installation.md"
 
-	??? example "Using the `.zip` download (options c/d)"
+	??? example "Using the `.zip` download (option b)"
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Right-click the file, select *Extract All*.
 
@@ -151,7 +149,7 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 			![Copy](/img/wallet/mac-copy-1.png)
 
-		1. Open *Finder*, navigate to *Applications*, and find *Blocknet-Qt* in the list of applications.
+		1. Open *Finder*, navigate to *Applications*, and find *Blocknet.app* in the list of applications.
 		1. Right-click the file and select *Open*. If using the touch pad this can be done by clicking with 2 fingers.
 
 			![Open](/img/wallet/mac-open.png)
@@ -160,6 +158,9 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 			![Opening](/img/wallet/mac-open-confirm.png)
 
+	        ???+ info "Note: If you see a message like the one below instead of the one above, click *Cancel* and repeat step 5 above."
+			![Finder](/img/wallet/mac-open-confirm-extra-step.png)
+		
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. An installation prompt will appear, select *OK*.
 
@@ -216,10 +217,9 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 
 ??? example "Linux"
-	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 3 options:
+	1. Download the [latest Blocknet wallet](https://github.com/blocknetdx/blocknet/releases/). There are 2 options:
 
 		1. `blocknet-x.xx.x-x86_64-linux-gnu.tar.gz` (recommended for 64-bit)
-	1. `blocknet-x.xx.x-i686-pc-linux-gnu.tar.gz` (recommended for 32-bit)
 	1. `blocknet-x.xx.x-arm-linux-gnueabihf.tar.gz` (recommended for Raspberry Pi)
 
 	    --8<-- "anti-virus-flagged.md"

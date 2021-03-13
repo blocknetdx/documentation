@@ -3,7 +3,7 @@ description: This guide explains how to setup your Blocknet wallet for staking t
 
 
 # Staking BLOCK
-Staking is the Proof-of-Stake equivelant of mining in Proof-of-Work blockchains. Stakers validate transactions on the network. These transactions are grouped in blocks. With [Blocknet](/project/introduction), there is 1 block every minute with a 1 [BLOCK](/blockchain/introduction) reward. You can stake with any amount of BLOCK and are rewarded for supporting the network with block rewards and all the transaction fees included in that block.
+Staking is the Proof-of-Stake equivalent of mining in Proof-of-Work blockchains. Stakers validate transactions on the network. These transactions are grouped in blocks. With [Blocknet](/project/introduction), there is 1 block every minute with a 1 [BLOCK](/blockchain/introduction) reward. You can stake with any amount of BLOCK and are rewarded for supporting the network with block rewards and all the transaction fees included in that block.
 
 ---
 

@@ -49,7 +49,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 	1. You are comfortable editing JSON format files
        [like this](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json)
        and creating configuration files [like this](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/xbridge-confs/litecoin--v0.18.1.conf).
-	1. You can __*Thoroughly test*__ your asset in BlockDX, and that requires
+	1. You can __*thoroughly test*__ your asset in BlockDX, and that requires
        a [Service Node](/service-nodes/introduction) to host your
        asset's native wallet. The easiest way to have a Service Node
        host your asset's wallet is to own your own Service Node and
@@ -107,7 +107,7 @@ on BlockDX before it can be listed.
 ---
 
 ## Listed Digital Assets
-**Note**: Block DX is not yet compatible with hardware wallets such as Ledger, web wallets such as MyEtherWallet (MEW), or lite wallets such as Jaxx. Desktop Qt wallets must be used. Below is a list of compatible assets and respective wallet versions. 
+**Note**: Block DX is not compatible with hardware wallets such as Ledger, web wallets such as MyEtherWallet (MEW), or lite wallets such as Jaxx. Desktop Qt wallets must be used. Below is a list of compatible assets and respective wallet versions. 
 
 --8<-- "xbridge-compatibility.md"
 

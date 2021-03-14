@@ -125,9 +125,10 @@ While there is no maximum limit due to the Blocknet blockchain being Proof of St
 In this first set of data, the inflation rate displayed takes into account **just block rewards**. The below data represents the minimum inflation possible.
 
 ??? summary "View data"
-	<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUGVYPXkYDso16xDhnGUes4OGGmNGE1wR1QhMtqHO7DtlymWCyZWQd5jQ3DNZqqOl12FvLQIrqM7gJ/pubhtml?gid=795490604&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="400px"></iframe>
+	<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTbCrSUOV9epKU0oB80iiyfZesLCPTCjt3e7laywu69X0os14tb9lLtb_XEDUptg/pubhtml?gid=493878028&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="400px"></iframe>
 
-<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUGVYPXkYDso16xDhnGUes4OGGmNGE1wR1QhMtqHO7DtlymWCyZWQd5jQ3DNZqqOl12FvLQIrqM7gJ/pubchart?oid=1462390457&amp;format=interactive"></iframe>
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTbCrSUOV9epKU0oB80iiyfZesLCPTCjt3e7laywu69X0os14tb9lLtb_XEDUptg/pubchart?oid=255649752&amp;format=interactive"></iframe>
+
 
 
 **Upper Bound of Inflation**
@@ -135,14 +136,9 @@ In this first set of data, the inflation rate displayed takes into account **jus
 In this second set of data, the inflation rate displayed takes into account **both block rewards and the maximum [Superblocks](/governance/introduction#superblock) amount**. It's important to note that the Superblock does not need to mint the full 40,000 BLOCK so in reality the inflation will likely never reach these levels. The below data represents the maximum inflation possible.
 
 ??? summary "View data"
-	<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUGVYPXkYDso16xDhnGUes4OGGmNGE1wR1QhMtqHO7DtlymWCyZWQd5jQ3DNZqqOl12FvLQIrqM7gJ/pubhtml?gid=222507205&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="400px"></iframe>
+	<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTbCrSUOV9epKU0oB80iiyfZesLCPTCjt3e7laywu69X0os14tb9lLtb_XEDUptg/pubhtml?gid=974145469&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="400px" ></iframe>
 
-<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUGVYPXkYDso16xDhnGUes4OGGmNGE1wR1QhMtqHO7DtlymWCyZWQd5jQ3DNZqqOl12FvLQIrqM7gJ/pubchart?oid=2133394205&amp;format=interactive"></iframe>
-
-
-
-
-
+<iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTbCrSUOV9epKU0oB80iiyfZesLCPTCjt3e7laywu69X0os14tb9lLtb_XEDUptg/pubchart?oid=1635035440&amp;format=interactive"></iframe>
 
 
 

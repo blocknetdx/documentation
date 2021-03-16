@@ -12,16 +12,16 @@ accessing your wallet, and that is the file which should be backed up
 is recommended to keep copies of this file on multiple USB drives and
 store them in different locations. Whenever
 funds are added to a new address in your wallet, the latest version of
-`wallet.dat` should be backed up. To locate your `wallet.dat`
-file:
+`wallet.dat` should be backed up. Your `wallet.dat`
+file is stored in your data directory:
 
 ### Data Directory
 
---8<-- "data-directories-2.md"
+--8<-- "data-directories.md"
 
 ### CLI Wallet Backup Option (also works for GUI wallet) 
 
-In the data directory there is a subdirectory called `wallets` which
+In the data directory there is usually a subdirectory called `wallets` which
 is the default place for `wallet.dat` to be stored. If there is no
 `wallet.dat` file in the `wallets` subdirectory of the data
 directory, then there should be a `wallet.dat` in the data directory

@@ -41,7 +41,7 @@ To view the syncing status, use the following instructions:
 
 		![Peers Status](/img/wallet-redesign/status-peers.png)
 
-	- If you have 0 peers, make sure your firewall isn't blocking outgoing connections.
+	- If you have 0 peers, make sure your firewall or antivirus software isn't blocking outgoing connections.
 
 
 ??? abstract "View syncing status using classic wallet"
@@ -64,11 +64,89 @@ To view the syncing status, use the following instructions:
 
 		![Sync Complete](/img/wallet-classic/status-syncing-complete-1.png)
 
-	- The symbol second from the right is how many peers you have. The number of peer is important because you download the blockchain data from them. If you don't have any peers, you will be unable to sync. When you first start the wallet this number will be low, but will increase after a few minutes. Typically you will have 8-16 peers.
+	- Hover over the symbol second from the right to show how many peers you have. The number of peer is important because you download the blockchain data from them. If you don't have any peers, you will be unable to sync. When you first start the wallet this number will be low, but will increase after a few minutes. Typically you will have 8-16 peers.
 
 		![Peers Status](/img/wallet-classic/status-peers.png)
 
 	- If you have 0 peers, make sure your firewall isn't blocking outgoing connections. This also may be due to antivirus software.
+
+### Troubleshoot Syncing Issues
+
+??? warning "Check Peer Connection Count; Fix No Peers Issue"
+	1. If your wallet fails to sync, first count how many peers it has:
+
+	    ??? abstract "Count Peers in Redesigned Wallet"
+		The left-most symbol is how many peers you have:
+		![Peers Status](/img/wallet-redesign/status-peers.png)
+
+	    ??? abstract "Count Peers in Classic Wallet"
+		Hover over the symbol second from the right to show peer connections:
+		![Peers Status](/img/wallet-classic/status-peers.png)
+
+	    ??? abstract "Count Peers in CLI Wallet"
+		In the directory containing `blocknet-cli`,  issue the command:
+		```
+		./blocknet-cli getconnectioncount
+		```
+
+	1. If you have 0 peers, verify your firewall or antivirus software
+       isn't blocking outgoing connections. (Hint: See if you get peers
+       when you disable firewall and antivirus).
+	1. If, after verifying neither firewall nor antivirus is blocking
+       outgoing connections, you still have 0 peers, try adding peers manually:
+		 1. *Quit/Close* your wallet
+		 1. Navigate to your data directory:
+			 --8<-- "data-directories.md"
+		 1. Open the `blocknet.conf` file in your data directory with a text editor (e.g. Notepad for Windows; TextEdit for Mac).
+		 1. Find a list of active peer nodes to add:
+			1. Navigate in a browser to [Chainz Blocknet Explorer Network Page](https://chainz.cryptoid.info/block/#!network):
+			![Node List A](/img/wallet/node-list-a.png) 
+			1. Click on *node list* next to the wallet version you are
+			running:
+			![Node List A](/img/wallet/node-list-b.png)
+			1. Select at least 12 `addnode=xxx.xxx.xxx.xxx` statements
+               and copy them into the clipboard
+	    1. Paste the contents of the clipboard into your
+           `blocknet.conf` file and save the file.
+	    1. Reopen your Blocknet wallet.
+
+??? warning "Syncing Halts Unexpectedly"
+	Occasionally, even when there are plenty of peer connections, a wallet will get stuck while syncing the
+	blockchain. When this happens, syncing simply stops on a
+	particular block and doesn't continue beyond that block. When this
+	happens, it is often possible to resume syncing progress with the
+	following procedure:
+
+	1. Open *Tools->Debug Console*.
+		![Reconsider Block](/img/wallet/reconsider-block.png)
+	1. In the *Debug Console*, type
+	```getblockcount```
+	1. Select & copy the blockcount returned by that command into the
+       clipboard (`1889667` in the example above).
+	1. Type the command,
+	```getblockhash <blockcount>```
+	where `<blockcount>` is pasted into the *Debug Console* from
+	the clipboard.
+	1. Select & copy the blockhash returned by that command into the
+       clipboard (`7512a3a315040e69f6f850b002697d0c6360b8fedf931e7be0f770c906f72c2f`
+       in the example above).
+	1. Type the command,
+	```reconsiderblock <blockhash>```
+	where `<blockhash>` is pasted into the *Debug Console* from
+	the clipboard.
+	1. When you've finished issuing these three commands, your *Debug
+	Console* should look something like the screenshot above. Notice how
+	the number returned from the first command is used in the
+	second command, and the number returned from the second
+	command is used in the third command.
+	1. After issuing these three commands, wait a couple minutes to see if your
+    wallet resumes syncing.
+	1. If it doesn't resume syncing, *Quit/Close* your wallet and try
+    the [bootstrap](#bootstrap) procedure.
+	1. If the Bootstrap procedure also fails, see the __Troubleshooting__ instructions
+    below for getting help from the Blocknet Discord Server.
+
+	!!! info "Note: If using the CLI wallet, the same three commands given above can be issued through the Command Line Interface."
 
 
 --8<-- "troubleshooting.md"

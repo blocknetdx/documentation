@@ -1,14 +1,14 @@
-1. **Windows**
+- **Windows**
 	```
 	C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
 	```
-	Or paste `%appdata%\Roaming\Blocknet\` into the file explorer path field.
-1. **MacOS**
+	Or paste `%appdata%\Roaming\Blocknet\` into the File Explorer path field.
+- **MacOS**
 	```
 	~/Library/Application Support/Blocknet/
 	```
-	Open Finder and in the program menu select *Go* > *To Folder* and enter the above path.
-1. **Linux**
+	Open Finder and in the *Go* menu select *Go to Folder...* and enter the above path.
+- **Linux**
 	```
 	~/.blocknet/
 	```

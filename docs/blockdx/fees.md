@@ -23,7 +23,16 @@ If the taker asset is BLOCK, there needs to be *at least* two [UTXOs](/resources
 
 In a future update, there will be a percent-based fee that’s charged when accepting an order, but the details of this are not yet finalized.
 
+??? warning "Note: Taker Fee *must* be paid from the Blocknet core/native wallet; it cannot be paid with BLOCK stored in XLite."
+	For this reason, it's a good idea to keep a few BLOCK in your
+	[Blocknet core/native wallet](/wallet/setup). In a soon-to-be-released version
+	of BlockDX, it will be possible to pay the Taker Fee with BLOCK
+	stored in XLite and it won't even be necessary to run Blocknet
+	core wallet to trade on BlockDX.
 
+---
+
+--8<-- "acquire-initial-block.md"
 ---
 
 ## Fees Distribution

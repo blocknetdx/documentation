@@ -12,19 +12,26 @@ This guide explains how to create and submit Blocknet Superblock proposals for f
 
 ## Create A Proposal
 
-1. It's recommended to submit a draft proposal to the [proposal forum](https://forum.blocknet.co/c/draft-proposals) that clearly and accurately conveys the following relevant information:
-  * Proposal name using only alpha-numerics (*example*: Qt-Exchange-Widget)
-  * What is being proposed
-  * Rationale and further explanation of proposal & background info
-  * Technical explanation/agenda of feature/proposal
-  * Estimated time for components in the proposal
-  * Teams/person undertaking and responsible for the work
-  * Cost assessment
-  * Fund custodians
-1. See [this guide](https://forum.blocknet.co/t/a-guide-to-proposals-viewing-voting-creating/23) for help posting.
-1. After allowing some time for the draft proposal to be reviewed, the final proposal with any edits should be submitted to the relevant [final proposal Superblock category](https://forum.blocknet.co/c/final-proposals).
-1. Once a final proposal is submitted to the forum, copy the post URL and create a shortened URL: [https://bit.ly/](https://bit.ly/)
+1. Submit a Draft Proposal to the [Blocknet Proposal Forum](https://forum.blocknet.co/c/draft-proposals).
+
+	!!! tip "Tip: Before creating a new proposal, it's recommended to review previous proposals in the [Proposal Forum](https://forum.blocknet.co/c/draft-proposals) to get an idea of what is generally expected and acceptable."
+	1. At the [Blocknet Proposal Forum](https://forum.blocknet.co/c/draft-proposals), you'll see this at the top of the page:
+	![Draft Proposal](/img/governance/draft-proposal.png)
+	1. Select *Draft Proposal* at the top left, then click *+ New Topic* at the top right of the screen.
+	1. Create a proposal, embedding [Markdown Text](https://pandao.github.io/editor.md/en.html) as desired for formatting, which clearly and accurately conveys the following relevant information:
+		1. Proposal name using only alpha-numerics (*example*: Qt-Exchange-Widget). Note, it's often useful to include the applicable SuperBlock number in the name, especially if you submit similar proposals each SuperBlock.
+		1. Previous work relevant to this proposal
+		1. What is being proposed
+		1. Rationale and further explanation of proposal & background info
+		1. Technical explanation/agenda of feature/proposal
+		1. Estimated time for components in the proposal
+		1. Teams/person undertaking and responsible for the work
+		1. Cost assessment
+		1. Fund custodians
+
+1. Once the Draft Proposal has been submitted and posted to the forum, copy the post's URL and create a shortened URL at [https://bit.ly/](https://bit.ly/)
 1. Continue on to [submit the proposal from the Qt wallet](/governance/create-proposal/#submit-from-the-qt-wallet) or to [submit the proposal via command line](/governance/create-proposal/#submit-from-the-terminal).
+1. (Optional) Once the proposal has been submitted, your proposal will be assigned a `voting hash` (a large hex number representing your proposal). Your proposal's `hash` can be found through the Blocknet wallet *Tools->Debug Console* by entering the command, `listproposals <last_SB_number + 1>` where `<last_SB_number + 1>` is 1 more than the [number of the previous SuperBlock](/governance/introduction/#superblock-dates). With that voting hash, you can now edit your post in the Proposal Forum to add the command for voting for your proposal from the command line: `vote [hash] yes`.
 
 ---
 

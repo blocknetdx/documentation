@@ -7,6 +7,10 @@ description: These Block DX trading guides explain how to check your balances, s
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+--8<-- "acquire-initial-block.md"
+
+---
+
 ??? example "Balances"
 	The first thing you want to do when starting Block DX is to check your balances. *Balances* displays the connected wallets along with the *available* balance. A connected wallet is one that has been configured and is currently open and unlocked. The *available* balance is the balance of the funds in a wallet that are not locked up.
 

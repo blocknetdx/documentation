@@ -29,7 +29,7 @@ description: This guide explains how to initialize, backup and restore your XLit
 	1. Enter the 12 word mnemonic passphrase of the XLite wallet you want to restore
 	1. Click *Create Wallet*
 
-???+ Warning "Warning: Before adding funds you your XLite wallet, be sure to back up your 12 word mnemonic passphrase for wallet recovery."
+???+ Warning "Warning: Before adding funds you your XLite wallet, be sure to [back up your 12 word mnemonic passphrase](#back-up-wallet) for wallet recovery."
 
 ## Back up Wallet 
 

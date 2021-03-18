@@ -9,6 +9,15 @@ description: These Block DX trading guides explain how to check your balances, s
 
 --8<-- "acquire-initial-block.md"
 
+??? warning "Note: Taker Fee *must* be paid from the Blocknet core/native wallet; it cannot be paid with BLOCK stored in XLite. Having no BLOCK in your Blocknet core wallet will result in *Insufficient Funds* error from BlockDX when taking/accepting orders."
+	For this reason, it's a good idea to keep a few BLOCK in your
+	[Blocknet core/native wallet](/wallet/setup). In a soon-to-be-released version
+	of BlockDX, it will be possible to pay the Taker Fee with BLOCK
+	stored in XLite and it won't even be necessary to run Blocknet
+	core wallet to trade on BlockDX.
+
+--8<-- "explore-service-nodes.md"
+
 ---
 
 ??? example "Balances"

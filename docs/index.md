@@ -33,6 +33,7 @@ The following are the requirements to operate each type of node:
 * [__Staking Nodes__](/wallet/staking) - A Staking Node can be operated with any amount of BLOCK, but staking more BLOCK yields more frequent rewards.
 * [__Service Nodes__](/service-nodes/introduction) - A Service Node requires 5000 BLOCK.
 
+--8<-- "explore-service-nodes.md"
 ---
 
 ## Tokenomics

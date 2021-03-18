@@ -16,6 +16,8 @@ description: These Block DX trading guides explain how to check your balances, s
 	stored in XLite and it won't even be necessary to run Blocknet
 	core wallet to trade on BlockDX.
 
+--8<-- "explore-service-nodes.md"
+
 ---
 
 ??? example "Balances"

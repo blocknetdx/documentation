@@ -23,6 +23,8 @@ description: Service Nodes are a network of full nodes used as a DHT network ove
 
 The Blocknet Protocol is supported by a network of Service Nodes, which are similar to masternodes but with an increased level of participation. These Service Nodes are used as a DHT network overlay to support [XBridge](/protocol/xbridge/introduction), [XRouter](/protocol/xrouter/introduction), and [XCloud](/protocol/xcloud/introduction) services. In order to support these services, they host full nodes of the blockchains the protocol is compatible with, serve oracle data, verify UTXOs, route communication between blockchains, and perform anti-spam and anti-DOS measures for the network. Service Nodes can also [vote](/governance/proposal-voting) to participate in Blocknet's [self-governance system](/governance/introduction).
 
+--8<-- "explore-service-nodes.md"
+
 Service Nodes require 5000 [BLOCK](/blockchain/introduction). If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
 
 Operating a Service Node should be viewed as a business since the amount of revenue you generate is completely in your control. You can choose to provide as many services as you'd like. The more services you offer and the higher the quality service you provide, the greater the revenue you will be able to produce. You can also invest in your services by advertising them to developers and selling those services to them. You can develop relationships with developers and gather feedback on the type of services that they would find the most valuable and then capitalize on that by offering those services. 

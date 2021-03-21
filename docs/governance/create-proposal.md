@@ -31,7 +31,11 @@ This guide explains how to create and submit Blocknet Superblock proposals for f
 
 1. Once the Draft Proposal has been submitted and posted to the forum, copy the post's URL and create a shortened URL at [https://bit.ly/](https://bit.ly/)
 1. Continue on to [submit the proposal from the Qt wallet](/governance/create-proposal/#submit-from-the-qt-wallet) or to [submit the proposal via command line](/governance/create-proposal/#submit-from-the-terminal).
-1. (Optional) Once the proposal has been submitted, your proposal will be assigned a `voting hash` (a large hex number representing your proposal). Your proposal's `hash` can be found through the Blocknet wallet *Tools->Debug Console* by entering the command, `listproposals <last_SB_number + 1>` where `<last_SB_number + 1>` is 1 more than the [number of the previous SuperBlock](/governance/introduction/#superblock-dates). With that voting hash, you can now edit your post in the Proposal Forum to add the command for voting for your proposal from the command line: `vote [hash] yes`.
+1. (Optional) Once the proposal has been submitted, your proposal will be assigned a `voting hash` (a large string of numbers and letter representing your proposal). The `voting hash` for your proposal will be displayed in a Pop-Up window after submitting your proposal in the Qt/GUI wallet. If using the Command Line Interface, the `voting hash` will be returned after submitting the proposal via the `createproposal` command. You can also display `voting hash` and other information about all upcoming proposals as follows:
+	1. In Blocknet Qt/GUI wallet, go to *Tools->Debug Console*
+	1. Type `listproposals <last_SB_number + 1>` where `<last_SB_number + 1>` is 1 more than the [number of the previous SuperBlock](/governance/introduction/#superblock-dates).
+
+	Once you have your proposal's `voting hash`, you can now edit your post in the Proposal Forum to add the command for voting for your proposal from the command line: `vote [hash] yes`.
 
 ---
 

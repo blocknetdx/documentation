@@ -210,11 +210,161 @@ description: These Block DX trading guides explain how to check your balances, s
 
 	The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.
 
-
 ??? example "Order History"
 	At the bottom-right corner of Block DX you can find the trade history. The trade history information is gathered only for the wallets that are configured. Therefore, the trade history will only show the orders that have been completed since Blocknet wallet and wallets for the currently viewed market have been opened and unlocked. If the Blocknet wallet is restarted, this information will be cleared and no longer visible.
 
 	![Trade History](/img/blockdx/trade-history.png)
+
+---
+
+#### Failed Transactions
+
+??? example "Failed Transactions - How to redeem lost funds."
+	For various reasons, a transaction on BlockDX can occasionally fail and get listed
+	under *INACTIVE ORDERS* as *Failed*:
+	![Failed Order](/img/blockdx/orders-failed.png)
+	When this occurs, BlockDX will attempt to refund both parties in
+	the transaction for up to 2 hours. In most cases it will
+	succeed. __*It's important to keep your Blocknet
+	core wallet open for 2 hours while the refund is attempted because
+	the code which manages the refund currently
+	resides within the Blocknet wallet.*__ If the Blocknet wallet is
+	closed before all refunds are completed, or in the rare case that
+	other factors prevent refunds from completing,
+	the order will continue to display a *Failed* status as shown
+	above, but it will be moved from the *INACTIVE ORDERS* catagory to the
+	*ACTIVE ORDERS* category. If this occurs, you'll need to manually redeem
+	your funds by issuing a `sendrawtransaction <hexstring>` command
+	as follows:
+
+    ##### Manually Redeem Funds
+
+	--8<-- "data-directories-3.md"
+	
+	1. In the data directory there is a `log-tx` subdirectory which
+       contain files named `xbridgep2p_YYYYMMDD.log`. The `hexstring` you'll need to use
+       as the parameter for the `sendrawtransaction <hexstring>`
+       command, will be found in one of the most recent of these `.log` files.
+	1. Starting with the most recent `.log` file, use a text editor (e.g. NotePad on
+       Windows; TextEdit on Mac) to search these files for information
+       about the failed transaction. Search for text that says either, `refund transaction for
+       order` or `redeem counterparty deposit for order`, followed
+       shortly thereafter by the text, `(submit manually using sendrawtransaction)`,
+	   followed by a brief description of the attempted transaction
+       (which will include names of the two coins involved, along with amounts and
+       addresses of each coin), followed by a very large hexadecimal string of over 100
+       characters. This large hexadecimal string is the `hexstring`
+       you're looking for.
+	1. If you find two such `hexstrings` for the failed transaction - one after the text, `refund transaction for
+       order`, and one after the text, `redeem counterparty deposit
+       for order`, make a note of both of them. If you are unsure
+       which to use, it is safe to attempt the refund/redemption with both of them. Here is an
+       example of the text patterns you're looking for. In this
+       example, the transaction was a sale of 24.9 GLC at address Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS in exchange
+       for 1.1952 BLOCK at address Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm:
+	   ```
+	   refund transaction for order
+       77bb55513d72be752ed68b39980cc2e3e821de0e0318a16a7da131840e1211bf
+       (submit manually using sendrawtransaction) GLC(24.900000 -
+       Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS) / BLOCK(1.195200 -
+       Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm)
+       010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500
+       2021-Mar-19 21:56:19 [0x0x70000a9c4000] redeem counterparty
+       deposit for order
+       77bb55513d72be752ed68b39980cc2e3e821de0e0318a16a7da131840e1211bf
+       (submit manually using sendrawtransaction) GLC(24.900000 -
+       Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS) / BLOCK(1.195200 -
+       Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm) 01000000014adf54bf3256d7ca69570cf2af50c7c2b23de75ceb29788b9bfbbdfdc49fc58100000000e6210216d45a58aadad62fd4b910a2b855434d1d2f2d64a9e08df5bc25503e76f7b46f48304502210090449659a2a430ca3a6c817be506e60f1b443903bc45dd91f5f136b94316148402201141a691fcc2a3ebb61887639ce21982dff95176260c8e79ad4e58e122cbe77401210399985ab8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4004c56630367e71cb17576a9145779a2aa6ca981f478f6ad18a87e71525558d8d688ac6776a914dd4dbb870eeded2f9d4ad18588a470804258185088ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768ffffffff0100bb1f07000000001976a914fb3aabbc7c8c0c581df57bd57625d72228be700588ac00000000
+	   ```
+	   1. The two `hexstrings` in the example above are:
+	   ```
+	   010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500
+	   ```
+	   and
+	   ```
+	   01000000014adf54bf3256d7ca69570cf2af50c7c2b23de75ceb29788b9bfbbdfdc49fc58100000000e6210216d45a58aadad62fd4b910a2b855434d1d2f2d64a9e08df5bc25503e76f7b46f48304502210090449659a2a430ca3a6c817be506e60f1b443903bc45dd91f5f136b94316148402201141a691fcc2a3ebb61887639ce21982dff95176260c8e79ad4e58e122cbe77401210399985ab8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4004c56630367e71cb17576a9145779a2aa6ca981f478f6ad18a87e71525558d8d688ac6776a914dd4dbb870eeded2f9d4ad18588a470804258185088ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768ffffffff0100bb1f07000000001976a914fb3aabbc7c8c0c581df57bd57625d72228be700588ac00000000
+	   ```
+	1. Continuing with the example above, if the funds which were not
+       refunded were GLC coin, then you could attempt to recover them
+       manually by opening the GLC core/native wallet, navigating to
+       the *Debug Console*, then issuing the command:
+	   ```
+	   sendrawtransaction <hexstring>
+	   ```
+	   where `<hexstring>` is one of the large hexstrings above. (Try
+       one, then the other hexstring if you're not sure which to use.)
+	1. If in the example above the unrefunded coins were BLOCK, then
+       you would open the BLOCK core/native wallet and issue the
+       `sendrawtransaction <hexstring>` command(s) from that wallet's *Debug
+       Console* (or from the CLI if using the Command Line
+       Interface).
+	1. If the unrefunded coins of the transaction were stored within XLite, proceed as follows:
+
+		1. Open XLite if it's not already open.
+
+		1. Record the necessary details for accessing your coin's
+           XLite wallet as follows:
+
+			1. Navigate to the CloudChains settings directory:
+
+	              - Windows:
+				  ```
+				  C:\Users\[YourUsername]\AppData\CloudChains\settings
+				  ```
+				  Or paste `%appdata%\CloudChains\settings` into the File Explorer path field.
+	
+		          - MacOS:
+				  ```
+				  ~/Library/Application Support/CloudChains/settings
+				  ```
+				  Open Finder and in the program menu select *Go* > *Go to Folder...* and enter the above path.
+
+	              - Linux:
+				  ```
+				  ~/.config/CloudChains/settings
+				  ```
+
+			  1. In a text editor, open the `config-<coin>.json` file of the coin you
+                 want to redeem. For example, if you
+                 need to manually redeem BTC, open `config-BTC.json`
+                 in a text editor. It will look something like this:
+				 ```
+				 {
+				     "rpcPassword": "8vCaDSpOKJ8ZhJdukZxaU4Z4NGFFDa9mPy1b-ZT6tHA",
+					 "fee": 0.0001,
+					 "rpcUsername": "VMvT5inMA0841-458cOxSgz5V0mxJR8J",
+					 "rpcPort": 8332,
+					 "feeFlat": true,
+					 "rpcEnabled": true,
+					 "addressCount": 40,
+					 "_ticker": "BTC"
+				 }
+				 ```
+
+	          1. Make a note of the `rpcPassword`, `rpcUsername`
+				 and `rpcPort` values in this file. In this example
+				 these values are
+				 `8vCaDSpOKJ8ZhJdukZxaU4Z4NGFFDa9mPy1b-ZT6tHA`,
+				 `VMvT5inMA0841-458cOxSgz5V0mxJR8J` and `8332`, respectively.
+
+	    1. Open a Terminal window (Mac/Linux) or a Command
+              Prompt (Windows) and issue the following command:
+			  ```
+			  curl -H "Content-Type: application/json" -d '{"method": "sendrawtransaction", "params": ["hexstring"]}' http://rpcUsername:rpcPassword@127.0.0.1:rpcPort/
+			  ```
+			  where `hexstring` is the large hexadecimal string found
+              in step 3 above, and `rpcUsername`, `rpcPassword` and
+              `rpcPort` are the values found in step 8->b->iii above.
+			  
+              For example, using the values from the examples
+			  above, the `curl` command would look like this:
+			  ```
+			  curl -H "Content-Type: application/json" -d '{"method": "sendrawtransaction", "params": ["010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500"]}' http://VMvT5inMA0841-458cOxSgz5V0mxJR8J:8vCaDSpOKJ8ZhJdukZxaU4Z4NGFFDa9mPy1b-ZT6tHA@127.0.0.1:8332/
+			  ```
+
+			  Note, Windows users may need to [install curl](https://curl.se/download.html) if it is not already installed.
+
+---
 
 ??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."
 	1. Click on *Receive* in the upper right corner of XLite.

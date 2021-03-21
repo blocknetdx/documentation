@@ -8,11 +8,14 @@ description: This guide explains how to backup and restore your Blocknet wallet.
 After your wallet is [encrypted](/wallet/encrypting), it should immediately be backed up. The file
 called `wallet.dat` contains all the critical information for
 accessing your wallet, and that is the file which should be backed up
-(copied) to multiple, physically different locations. For example, it
+(copied) to multiple physically different locations. For example, it
 is recommended to keep copies of this file on multiple USB drives and
-store them in different locations. Whenever
-funds are added to a new address in your wallet, the latest version of
-`wallet.dat` should be backed up. Your `wallet.dat`
+store them in different locations. Also, unless your wallet is an
+[HD Wallet](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp)
+and you are certain no non-HD __PrivateKey/Address__
+pairs have been imported into your wallet, the latest version of
+`wallet.dat` should be backed up whenever
+funds are added to a new address in your wallet. Your `wallet.dat`
 file is typically stored in the `wallets` subdirectory of your data directory:
 
 ### Data Directory
@@ -37,41 +40,13 @@ option in the GUI interface:
 This gives you the option to write a
 backup of your current `wallet.dat` to any location and give it any name.
 
-### Additional Backup Options
+### Dumpfile Backup Option
 If you want to be extra sure you'll be able to restore your wallet,
-there is another format in which your wallet can be backed up, called
-a `dumpfile`. This format can be especially useful for those who are using an
+in addition to backing up your `wallet.dat`, you can also back up your
+wallet in a `dumpfile` format. This format can be especially useful for those who are using an
 [HD Wallet](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp)
-and are certain no non-HD PrivateKey/Address
-pairs were imported, or will be imported into their HD wallet. Those
-who fall into this catagory can back up their wallet just once
-with this method, and not have to back it up again if/when they
-use new addresses in their wallet.
-
-To back up with this method, issue the following command:
-```
-dumpwallet <dumpfile>
-```
-This command can be issued from *Tools->Debug
-Console*, or from the CLI if using a Command Line Interface to the
-wallet.
-
-The `dumpwallet <dumpfile>` command will dump all your wallet's __Private
-Key/Address__ pairs in a
-[human-readable format](https://bitcoin.stackexchange.com/questions/101767/dumpwallet-output-documentation-explanation) to
-the file you specify as your `dumpfile`. Note: Be sure to specify
-the full path of `dumpfile` and make sure it's in a
-directory where you have write permission. For example: (Mac) `dumpwallet
-/Users/(username)/Desktop/dumpfile.txt`, or (Windows)
-`c:\Users\(username)\Desktop\dumpfile.txt`.
-
-??? danger "Caution: It is strongly recommended __*NOT*__ to keep this `dumpfile` stored on a computer while the computer is connected to the Internet."
-	You can print the `dumpfile`, then delete it, then empty your
-	Trash. You can also store it within a 256-bit encrypted folder
-	on your computer and/or on USB drives. (Google for how to encrypt a folder on Windows/Mac.)
-	However, due to the extremely sensitive information in this file, it
-	should __*NOT*__ be kept stored on a computer that can be connected to the
-	Internet (unless it is within a 256-bit encrypted folder).
+because it backs up the wallet's HD seed(s) in a human-readable
+format. 
 
 ??? tip "Tip: Is my wallet an [HD Wallet](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp)? How do I find HD seed(s) in the `dumpfile`? How do I migrate to HD?"
 	In the lower right corner of the Qt/GUI wallet are some symbols
@@ -117,8 +92,30 @@ directory where you have write permission. For example: (Mac) `dumpwallet
 	1. Rename `wallet.dat.hd` back to `wallet.dat`.
 	1. Restart Blocknet.
 
-	
-	   
+To back up your wallet in a `dumpfile` format, issue the following command:
+```
+dumpwallet <dumpfile>
+```
+This command can be issued from *Tools->Debug
+Console*, or from the CLI if using a Command Line Interface to the
+wallet.
+
+The `dumpwallet <dumpfile>` command will dump all your wallet's __Private
+Key/Address__ pairs in a
+[human-readable format](https://bitcoin.stackexchange.com/questions/101767/dumpwallet-output-documentation-explanation) to
+the file you specify as your `dumpfile`. Note: Be sure to specify
+the full path of `dumpfile` and make sure it's in a
+directory where you have write permission. For example: (Mac) `dumpwallet
+/Users/(username)/Desktop/dumpfile.txt`, or (Windows)
+`c:\Users\(username)\Desktop\dumpfile.txt`.
+
+??? danger "Caution: It is strongly recommended __*NOT*__ to keep this `dumpfile` stored on a computer while the computer is connected to the Internet."
+	You can print the `dumpfile`, then delete it, then empty your
+	Trash. You can also store it within a 256-bit encrypted folder
+	on your computer and/or on USB drives. (Google for how to encrypt a folder on Windows/Mac.)
+	However, due to the extremely sensitive information in this file, it
+	should __*NOT*__ be kept stored on a computer that can be connected to the
+	Internet (unless it is within a 256-bit encrypted folder).
 
 ---
 
@@ -149,7 +146,7 @@ Firstly, if you haven't already done so, [Install Blocknet Wallet](/wallet/insta
 
 Next, there are three options:
 
-1. If you [backed up your wallet using the](#additional-backup-options) `dumpwallet <dumpfile>`
+1. If you [backed up your wallet using the](#dumpfile-backup-option) `dumpwallet <dumpfile>`
 command, you can restore it simply by issuing the `importwallet
 <dumpfile>` command from either *Tools->Debug Console* or from the
 CLI if using the Command Line Interface. This is the recommended method of

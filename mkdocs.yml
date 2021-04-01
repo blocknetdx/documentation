@@ -120,6 +120,7 @@ nav:
   - 'Encrypt Wallet': 'wallet/encrypting.md'
   - 'Backup/Restore': 'wallet/backup-restore.md'
   - 'Staking': 'wallet/staking.md'
+  - 'Fix Wrong Balance': wallet/fix-wrong-balance.md
   - 'Fork Management': 'wallet/forking.md'
   # - 'Peers': 'wallet/peers.md'
   - 'Lock/Unlock': 'wallet/lock-unlock.md'

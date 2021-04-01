@@ -258,7 +258,8 @@ description: These Block DX trading guides explain how to check your balances, s
 	1. If you find two such `hexstrings` for the failed transaction - one after the text, `refund transaction for
        order`, and one after the text, `redeem counterparty deposit
        for order`, make a note of both of them. If you are unsure
-       which to use, it is safe to attempt the refund/redemption with both of them. Here is an
+       which to use, it is safe to attempt the refund/redemption with
+       both of them if the trade failed while testing a new coin integration. Here is an
        example of the text patterns you're looking for. In this
        example, the transaction was a sale of 24.9 GLC at address Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS in exchange
        for 1.1952 BLOCK at address Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm:
@@ -292,7 +293,8 @@ description: These Block DX trading guides explain how to check your balances, s
 	   sendrawtransaction <hexstring>
 	   ```
 	   where `<hexstring>` is one of the large hexstrings above. (Try
-       one, then the other hexstring if you're not sure which to use.)
+       one, then the other hexstring if you're not sure which to use
+       and the trade failed while testing a new coin integration.)
 	1. If in the example above the unrefunded coins were BLOCK, then
        you would open the BLOCK core/native wallet and issue the
        `sendrawtransaction <hexstring>` command(s) from that wallet's *Debug

@@ -217,23 +217,28 @@ description: These Block DX trading guides explain how to check your balances, s
 
 ---
 
-#### Failed Transactions
+#### Redeem/Refund Funds from Failed or Cancelled Transactions
 
-??? example "Failed Transactions - How to redeem lost funds."
-	For various reasons, a transaction on BlockDX can occasionally fail and get listed
-	under *INACTIVE ORDERS* as *Failed*:
+??? example "Failed/Cancelled Transactions - How to redeem/refund lost funds."
+	For various reasons, a transaction on BlockDX can occasionally
+	fail or get cancelled and get listed
+	under *INACTIVE ORDERS* as either *Failed*:
 	![Failed Order](/img/blockdx/orders-failed.png)
+	or *Cancelled*:
+	![Inactive Cancelled](/img/blockdx/orders-inactive-cancelled.png)
 	When this occurs, BlockDX will attempt to refund both parties in
 	the transaction for up to 2 hours. In most cases it will
 	succeed. __*It's important to keep your Blocknet
 	core wallet open for 2 hours while the refund is attempted because
 	the code which manages the refund currently
-	resides within the Blocknet wallet.*__ If the Blocknet wallet is
+	resides within the Blocknet wallet.*__ In the case of a Failed
+	Order, if the Blocknet wallet is
 	closed before all refunds are completed, or in the rare case that
 	other factors prevent refunds from completing,
 	the order will continue to display a *Failed* status as shown
 	above, but it will be moved from the *INACTIVE ORDERS* catagory to the
-	*ACTIVE ORDERS* category. If this occurs, you'll need to manually redeem
+	*ACTIVE ORDERS* category. If this occurs, or if your funds were
+	not returned after 2 hours from a *Cancelled* order, you'll need to manually redeem
 	your funds by issuing a `sendrawtransaction <hexstring>` command
 	as follows:
 
@@ -257,10 +262,8 @@ description: These Block DX trading guides explain how to check your balances, s
        you're looking for.
 	1. If you find two such `hexstrings` for the failed transaction - one after the text, `refund transaction for
        order`, and one after the text, `redeem counterparty deposit
-       for order`, make a note of both of them. If you are unsure
-       which to use, it is safe to attempt the refund/redemption with
-       both of them if the trade failed while testing a new coin integration. Here is an
-       example of the text patterns you're looking for. In this
+       for order`, make a note of both of them.
+	1. Here is an example of the text patterns you're looking for. In this
        example, the transaction was a sale of 24.9 GLC at address Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS in exchange
        for 1.1952 BLOCK at address Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm:
 	   ```
@@ -285,22 +288,35 @@ description: These Block DX trading guides explain how to check your balances, s
 	   ```
 	   01000000014adf54bf3256d7ca69570cf2af50c7c2b23de75ceb29788b9bfbbdfdc49fc58100000000e6210216d45a58aadad62fd4b910a2b855434d1d2f2d64a9e08df5bc25503e76f7b46f48304502210090449659a2a430ca3a6c817be506e60f1b443903bc45dd91f5f136b94316148402201141a691fcc2a3ebb61887639ce21982dff95176260c8e79ad4e58e122cbe77401210399985ab8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4004c56630367e71cb17576a9145779a2aa6ca981f478f6ad18a87e71525558d8d688ac6776a914dd4dbb870eeded2f9d4ad18588a470804258185088ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768ffffffff0100bb1f07000000001976a914fb3aabbc7c8c0c581df57bd57625d72228be700588ac00000000
 	   ```
-	1. Continuing with the example above, if the funds which were not
-       refunded were GLC coin, then you could attempt to recover them
+	1. Continuing with the example above, assuming the funds which were not
+       refunded were GLC coin, you could attempt to recover them
        manually by opening the GLC core/native wallet, navigating to
        the *Debug Console*, then issuing the command:
 	   ```
 	   sendrawtransaction <hexstring>
 	   ```
-	   where `<hexstring>` is one of the large hexstrings above. (Try
-       one, then the other hexstring if you're not sure which to use
-       and the trade failed while testing a new coin integration.)
-	1. If in the example above the unrefunded coins were BLOCK, then
-       you would open the BLOCK core/native wallet and issue the
-       `sendrawtransaction <hexstring>` command(s) from that wallet's *Debug
+	   where `<hexstring>` is the large hexstring following the text, `refund transaction for
+       order`. If you want to make sure this recovery attempt will work, you could use a
+       [blockchain explorer](https://chainz.cryptoid.info) to explore
+       the transaction of your funds being sent out of your
+       wallet. If you see the output of that transaction shows, `not
+       yet redeemed` then you should be able to redeem those funds via
+       `sendrawtransaction <hexstring>` using the `hexstring` found
+       after `refund transaction for order`.
+	1. If it's not possible to refund the funds
+       that were sent out of your wallet, then the counterparty of the
+       transaction has likely already redeemed/spent those funds. In
+       this case you can try to redeem the counterparty's deposit. In
+       the example above, the counterparty's deposit would have been
+       BLOCK, so to redeem it for yourself, open the BLOCK core/native wallet and issue the
+       `sendrawtransaction <hexstring>` command from that wallet's *Debug
        Console* (or from the CLI if using the Command Line
-       Interface).
-	1. If the unrefunded coins of the transaction were stored within XLite, proceed as follows:
+       Interface).  This time, the `<hexstring>` to use will be the
+       one following the text, `redeem counterparty deposit
+       for order`.
+	1. If you don't have access to the native/core wallet of the coin
+       for which you need to issue a `sendrawtransaction` command, but
+       that coin is supported by XLite, proceed as follows:
 
 		1. Open XLite if it's not already open.
 
@@ -354,9 +370,9 @@ description: These Block DX trading guides explain how to check your balances, s
 			  ```
 			  curl -H "Content-Type: application/json" -d '{"method": "sendrawtransaction", "params": ["hexstring"]}' http://rpcUsername:rpcPassword@127.0.0.1:rpcPort/
 			  ```
-			  where `hexstring` is the large hexadecimal string found
-              in step 3 above, and `rpcUsername`, `rpcPassword` and
-              `rpcPort` are the values found in step 8->b->iii above.
+			  where `hexstring` is the large hexadecimal string mentioned
+              in steps 3-8 above, and `rpcUsername`, `rpcPassword` and
+              `rpcPort` are the values found in step 9->b->iii above.
 			  
               For example, using the values from the examples
 			  above, the `curl` command would look like this:

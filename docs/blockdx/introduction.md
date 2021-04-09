@@ -7,7 +7,7 @@ description: Block DX is a decentralized exchange dApp powered by the Blocknet P
 # Block DX
 
 * [Start trading on Block DX](/blockdx/setup)
-* [View Block DX listings](/blockdx/listings)
+* [View Block DX listings](/blockdx/listings/#listed-digital-assets)
 * [Read more about Blocknet](/blocknet/introduction)
 * [Buy BLOCK](/project/exchanges)
 

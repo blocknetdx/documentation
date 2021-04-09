@@ -24,10 +24,26 @@ file is typically stored in the `wallets` subdirectory of your data directory:
 
 ---
 
-### CLI Wallet Backup Option (also works for GUI/Qt wallet) 
+### CLI Wallet Backup Options (also works for GUI/Qt wallet) 
 
-* Within the data directory there is usually a subdirectory called `wallets` which is the default place for `wallet.dat`. If you find a `wallet.dat` file in the `wallets` subdirectory, that is the file which should be backed up.
-* If the `wallets` subdirectory does __*not*__ exist, then the `wallet.dat` in the data directory itself is the file which should be backed up.
+1. __Option 1 - Close/Quit Blocknet wallet, then backup `wallet.dat`__
+	1. To ensure `wallet.dat` is not being modified as you are copying
+       it, Close/Quit Blocknet wallet.
+	1. Within the [data directory](#data-directory) there is usually a subdirectory called `wallets` which is the default place for `wallet.dat`. If you find a `wallet.dat` file in the `wallets` subdirectory, that is the file which should be backed up.
+	1. If the `wallets` subdirectory does __*not*__ exist, then the
+      `wallet.dat` in the [data directory](#data-directory) itself is the file which
+      should be backed up.
+
+1. __Option 2 - Issue `backupwallet <backupfile.dat>` command from *Debug Console* or
+*Command Line Interface*__
+	1. This option does *not* require that you Close/Quit the Blocknet
+    wallet.
+	1. Be sure to specify the full path of your `backupfile.dat` and make sure it's in a
+	directory where you have write permission.
+		- Example: (Mac):
+		```backupwallet /Users/(username)/Desktop/mywallet.dat```
+		- Example (Windows):
+		```backupwallet c:\Users\(username)\Desktop\mywallet.dat```
 
 ### GUI/Qt Backup Option
 
@@ -105,9 +121,12 @@ Key/Address__ pairs in a
 [human-readable format](https://bitcoin.stackexchange.com/questions/101767/dumpwallet-output-documentation-explanation) to
 the file you specify as your `dumpfile`. Note: Be sure to specify
 the full path of `dumpfile` and make sure it's in a
-directory where you have write permission. For example: (Mac) `dumpwallet
-/Users/(username)/Desktop/dumpfile.txt`, or (Windows)
-`c:\Users\(username)\Desktop\dumpfile.txt`.
+directory where you have write permission.
+
+- Example: (Mac):
+```dumpwallet /Users/(username)/Desktop/dumpfile.txt```
+- Example (Windows):
+```dumpwallet c:\Users\(username)\Desktop\dumpfile.txt```
 
 ??? danger "Caution: It is strongly recommended __*NOT*__ to keep this `dumpfile` stored on a computer while the computer is connected to the Internet."
 	You can print the `dumpfile`, then delete it, then empty your
@@ -134,7 +153,10 @@ To restore a previously backed up `wallet.dat` file, follow these steps:
 within the data directory, if there is one.
 1. Make a new `wallets` subdirectory/folder in the data directory.
 1. Copy your backup copy of `wallet.dat` into the newly created `wallets` subdirectory
-of your [data directory](#data-directory).
+of your [data directory](#data-directory). Note, it's fine to name
+your `wallet.dat` to something else while it's being stored safely in
+other locations. However, it must be named, `wallet.dat` when
+placed in the `wallets` subdirectory if the Blocknet wallet app is going to find it.
 
 	!!! info "Note, instead of copying your backup `wallet.dat` into the `wallets` subdirectory, you could optionally copy it into the data directory itself. However, if you choose this option, be sure to remove the `wallets` subdirectory because the Blocknet application will *not* use a `wallet.dat` file in the data directory itself if a `wallets` subdirectory exists."
 

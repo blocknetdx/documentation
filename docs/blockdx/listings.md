@@ -84,8 +84,31 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 		???+ tip "Tip: you may save some time by identifying an already listed asset which is closely related to your asset, then copying/pasting/modifying from that asset."
 
 		??? tip "Tip: How to determine config values for *MinTxFee* & *FeePerByte* in XBridge Config. file."
-		*MinTxFee* & *FeePerByte* are two values set in an asset's XBridge Config. file which are sometimes confusing to people. *MinTxFee* can be used to set a minimum transaction fee, but most of the time it works best to keep this value set to 0 and instead adjust the value of *FeePerByte*. *FeePerByte* is how much to charge per byte for an exchange. This can be calculated by looking in the wallet send function for the recommended fee per byte and then multiplying it by 2-2.5 since there are 2 transactions that occur in an exchange: one transaction from one party's address to the P2SH address and then a second transaction from the P2SH address to the counterparty's address. This is one of the reasons why test trades are needed.
+		*MinTxFee* & *FeePerByte* are two values set in an asset's
+		XBridge Config. file which are sometimes confusing to
+		people. *MinTxFee* can be used to set a minimum transaction
+		fee, but most of the time it works best to keep this value set
+		to 0 and instead adjust the value of
+		*FeePerByte*. *FeePerByte* is how much to charge per byte for
+		an exchange. This can be calculated by looking in the wallet
+		send function for the recommended fee per byte and then
+		multiplying it by about 2.5 since there are 2 transactions that occur in an exchange: one transaction from one party's address to the P2SH address and then a second transaction from the P2SH address to the counterparty's address. This is one of the reasons why test trades are needed.
 		
+		??? tip "Tip: Summary of procedure for performing test trades for a new coin integration"
+		Here are the basics of testing an integration of a coin called, __COINX__:
+
+			1. There must be at least 1 [Service Node](/service-nodes/introduction) supporting both of the coins you want to trade (ie: COINX and whatever) 
+		1. You need two instances of:
+		```
+		synced Blocknet wallet + BlockDX + synced COINX wallet
+		```
+		1. You will have to manually configure the BlockDX settings
+           for COINX in the `xbridge.conf` file of each local [Blocknet Data Directory](/wallet/backup-restore/#data-directory) since BlockDX doesn't yet know about COINX (unless you also want to build BlockDX).
+		1. You need a tiny bit of BLOCK in at least one of the BLOCK wallets (whichever will "take" first). Maker orders are free, taker orders pay a 0.015 BLOCK [taker fee](/blockdx/fees/#taker-fee) every time.
+		1. When both instances of both wallets are synced you can start the BlockDXs and tell them you want to trade COINX/BLOCK (or BLOCK/COINX).
+		1. If you want to trade COINX/something else you either need a local synced something else wallet for both instances or use XLite and one of the coins it supports. Both parties of any trade need to have synced wallets for both of the coins in the trade. 
+		1. When it all works you can submit the [Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).
+
 
 ??? example "Option 2. Contract a member of the Blocknet Community to do it for you."
 
@@ -94,7 +117,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 	1. [join Blocknet Discord Server](https://discord.gg/vGa7GeCu8B)
 	1. Navigate to the *#block-dx-listing* channel in Blocknet Discord.
 	1. Post a message requesting __listing__ and __hosting__ services, tagging
-       both __*@CoinWhisperer#5095*__ and __*@walkjivefly#7204*__ in the post.
+       __*@walkjivefly#7204*__ in the post.
 
 ## Future Listing Process
 In the near future, the listing process will become more automated and it

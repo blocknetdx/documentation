@@ -187,6 +187,18 @@ description: These Block DX trading guides explain how to check your balances, s
 
 
 ??? example "Order Status"
+	At the bottom of the screen is the *Order Status* section, where
+	details can be found about the status of an order:
+
+	![Order Status](/img/blockdx/order-status-section.png)
+
+	If you hover your mouse over the `?` symbol in this section,
+    you'll see a chart of every possible status an order can have. The
+    current status is displayed in the *Status* column on the
+    right. Here is the list of every possible status of an order:
+
+	![Order Status Table](/img/blockdx/order-status-table.png)
+
 	Any orders that are open or in progress can be found in *Active Orders*.
 
 	![Active](/img/blockdx/orders-active.png)

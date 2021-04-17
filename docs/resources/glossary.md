@@ -68,7 +68,13 @@ A *block reward* is a reward you earn when [staking](#staking) for helping secur
 
 #### Change Address
 A *change address* is the address where the remaining funds from an
-[input](#input) (a.k.a. [UTXO](#utxo)) are returned after making a transaction. This is always an [address](#address) you own. If you have an input that's 15 BLOCK used in a transaction sending 10 BLOCK, then the remaining 5 BLOCK will be returned to the change address. This is a similar concept to paying for an item in cash and receiving change back. 
+[input](#input) are returned after making a
+transaction. This is always an [address](#address) you own. If you
+have an input that's 20 BLOCK used in a transaction sending 15 BLOCK,
+then the remaining 5 BLOCK will be returned to the change
+address. This is a similar concept to paying for a $15 item with a $20
+bill and receiving a $5 bill back as change. Think of
+[inputs](#input)/[UTXOs](#utxo) as bills.
 
 #### Client
 Depending on the context, *client* refers either to hardware running the Blocknet blockchain or software utilizing the Blocknet Protocol, which can be a blockchain, microservice, dApp, mobile app, website, etc.
@@ -146,7 +152,7 @@ A *digital asset* is new asset class that describes digital cryptographic coins 
 ---
 
 #### Input
-Within a users [wallet](#wallet), the total balance is composed of either one large *input* or various smaller *inputs*. Think of an input as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. An input is sometimes also referred to as a [UTXO](#utxo).
+Within a users [wallet](#wallet), the total balance is composed of either one large *input* or various smaller *inputs*. Think of inputs as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. An input is sometimes also referred to as a [UTXO](#utxo).
 
 #### Interchain Communication
 *Interchain communication* is the ability for different blockchains to interact and communicate with each other. For example, one blockchain can write their latest block hashes to the Bitcoin blockchain and also call the data to add extra verification and security.
@@ -317,7 +323,7 @@ By having the wallet *locked*, funds cannot be sent and staking cannot be enable
 Refers to someone whom has a the wallet program installed on their computer. This may sometimes also be referred to as a [peer](#peers).
 
 #### UTXO
-UTXO stands for [Unspent Transaction Output](https://en.wikipedia.org/wiki/Unspent_transaction_output). Within a user's [wallet](#wallet), the total balance is composed of either one large UTXO or various smaller UTXOs. Think of a UTXO as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. A UTXO is sometimes also referred to as an [input](#input).
+UTXO stands for [Unspent Transaction Output](https://en.wikipedia.org/wiki/Unspent_transaction_output). Within a user's [wallet](#wallet), the total balance is composed of either one large UTXO or various smaller UTXOs. Think of UTXOs as bills in a wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. A UTXO is sometimes also referred to as an [input](#input).
 
 
 ---

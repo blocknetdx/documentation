@@ -12,14 +12,14 @@ Below are a list of Block DX frequently asked questions. For any questions not a
        missing asset was sent appears in the *Your address* box.
 
 ??? question "How can I view currently active orders on BlockDX without opening the BlockDX application?"
-	Visit the [Open Orders Page](https://blockdx.com/orders/).
+	Visit either of the following sites: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) or [BlockDX.co](https://www.blockdx.co/orders).
 
-???+ question "My version of [blockchain] wallet isn’t one of the options to select in the set up process. Can I use this version? Will it still work?""
+??? question "My version of [blockchain] wallet isn’t one of the options to select in the set up process. Can I use this version? Will it still work?""
 	Only use wallet versions that are listed. If a version is not listed, it has either not been tested yet or is not compatible. Using a wallet version not listed may result in failed trades or loss of funds.
 
 
 ??? question "I have Block DX currently working with two wallets. I want to add a third blockchain wallet. Do I need to restart all wallets and go through the set up process again?""
-	Yes, at this point in time the setup process needs to be repeated to add additional wallets. However, the blockchains previously selected will be remembered at the initial selection screen when repeating the setup process. The option to go through the setup process again can be found in the sidebar menu under the ‘Settings’ section.
+	Yes, at this point in time the setup process needs to be repeated to add additional wallets. However, the blockchains previously selected will be remembered at the initial selection screen when repeating the setup process. The option to go through the setup process again can be found in the upper right corner of BlockDX under MENU->Add & Update Wallets.
 
 
 <!-- ??? question "When I try to make an order, it says “There is a problem with your order.” What does that mean?""
@@ -38,12 +38,12 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 	If you are making (placing) an order, no BLOCK is needed. If you are taking (filling) an order, BLOCK is need to cover the trade fee. [Read more...](/blockdx/fees)
 
 
-??? question "If I want to place or accept multiple trades, I need to split my tokens into multiple UTXOs within the same address. How do I do that?""
-	Splitting of tokens (inputs) can be done using the Coin Control functionality within the respective wallet. A tutorial will be released to explain this process.
+??? question "If I want to place or accept multiple trades, I need to split my assets into multiple [UTXOs](/resources/glossary/#utxo) within the same address. How do I do that?""
+	Splitting assets into multiple [UTXOs](/resources/glossary/#utxo) within an address can be done using the `dxsplitinputs` command from the Blocknet wallet *Tools->Debug Console* or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI.
 
 
 ??? question "I keep getting change addresses after making trades. How do I consolidate them all back into one address and then split them back up into multiple UTXOs again?""
-	Combining and splitting of tokens (inputs) can be done using the Coin Control functionality within the respective wallet. A tutorial will be released to explain this process.
+	Combining and splitting of assets (inputs) can be done using the Coin Control functionality within the respective wallet. A tutorial will be released to explain this process.
 
 
 ??? question "Why is my balance shown as 0 even though I have funds in it.""
@@ -55,7 +55,7 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 
 
 ??? question "Why is market pricing showing as ‘N/A’?""
-	If the alternate market pricing is shown as ‘N/A’, this means that the current API source selected does not support the current market. When this happens, another API source should be selected.
+	If the alternate market pricing is shown as ‘N/A’, this means that the current API source selected does not currently support the currently selected market pair. When this happens, another API source should be selected in the upper right corner of BlockDX under MENU->General Settings->Market Pricing->Price Source.
 
 
 

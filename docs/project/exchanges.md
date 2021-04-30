@@ -7,8 +7,27 @@ Blocknet's utility token, [BLOCK](/blockchain/introduction), can be purchased an
 
 ---
 
+## Decentralized Exchanges
+Decentralized exchanges are purely peer-to-peer instead of requiring a trusted entity to manage the transaction. This is the most secure form of trading. The following options are available:
+
+* [__Block DX__](/blockdx/setup)
+    * View Open Orders on BlockDX: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) or [BlockDX.co](https://www.blockdx.co/orders)
+    * [View Trade History](https://www.blockdx.co/trade-history)
+    * [View Exchange Volume](https://twitter.com/DxStats)
+* [Uniswap (aBLOCK/ETH)](https://app.uniswap.org/#/swap?inputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5)  
+* [Anyswap (aBLOCK/ETH)](https://anyswap.exchange/swap)
+
+[Learn about buying aBLOCK and converting it to BLOCK (i.e. unwrapping/unbridging aBLOCK->BLOCK)](https://gist.github.com/ConanMishler/e3bf4218463bf9f8bf1480652d8ad117)
+
+---
+
 ## Centralized Exchanges
-Centralized exchanges are one of the most popular ways to trade cryptocurrency. Some serve different markets, some are in direct competition, some have cheaper fees, and some are subject to more or less strict regulatory requirements. They are operated by a single company, which may be obliged by the laws of the jurisdiction in which it operates to collect data on its customers.The following options are available:
+Centralized exchanges are one of the most popular ways to trade
+cryptocurrency. Some serve different markets, some are in direct
+competition, some have cheaper fees, and some are subject to more or
+less strict regulatory requirements. They are operated by a single
+company, which may be obliged by the laws of the jurisdiction in which
+it operates to collect data on its customers. The following options are available:
 
 Exchange        | Market        | Link
 ----------------|---------------|------
@@ -19,20 +38,6 @@ StakeCube       | (LTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/B
 StakeCube       | (SCC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_SCC)
 StakeCube       | (DASH/BLOCK)  | [Buy Now](https://stakecube.net/app/exchange/BLOCK_DASH)
 FinexBox        | (BTC/BLOCK)   | [Buy Now](https://www.finexbox.com/market/pair/BLOCK-BTC.html)
-
----
-
-## Decentralized Exchanges
-Decentralized exchanges are purely peer-to-peer instead of requiring a trusted entity to manage the transaction. This is the most secure form of trading. The following options are available:
-
-* [__Block DX__](/blockdx/setup)
-    * [View Open Orders](https://blockdx.com/orders)
-    * [View Trade History](https://blockdx.com/trade-history)
-    * [View Exchange Volume](https://twitter.com/DxStats)
-* [Uniswap (ETH/aBLOCK)](https://app.uniswap.org/#/swap?inputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5)  
-* [Anyswap (ETH/aBLOCK)](https://anyswap.exchange/swap)
-
-[Learn about buying aBLOCK and converting it to BLOCK (i.e. unwrapping/unbridging aBLOCK->BLOCK)](https://gist.github.com/ConanMishler/e3bf4218463bf9f8bf1480652d8ad117)
 
 ---
 

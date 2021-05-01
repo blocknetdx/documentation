@@ -139,6 +139,7 @@ nav:
   - 'Installation': 'xlite/installation.md'
   - 'Create, Backup & Restore': 'xlite/backup-and-restore.md'
   - 'Using BlockDX w/ XLite': 'xlite/blockdx-xlite.md'
+  - 'Recover Private Keys': 'xlite/recover-private-keys.md'
 - 'Block DX':
   - 'Introduction': 'blockdx/introduction.md'
   - 'Getting Started': 'blockdx/setup.md'

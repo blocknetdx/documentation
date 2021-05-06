@@ -41,19 +41,6 @@ StakeCube       | (SCC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/B
 StakeCube       | (DASH/BLOCK)  | [Buy Now](https://stakecube.net/app/exchange/BLOCK_DASH)
 FinexBox        | (BTC/BLOCK)   | [Buy Now](https://www.finexbox.com/market/pair/BLOCK-BTC.html)
 
----
-
-## Instant Exchanges
-Instant exchanges perform a similar function to normal exchanges, but without the requirement to log in. They effectively convert one currency to another, with some limits on the amount to be exchanged and usually at a less advantageous rate. Others may even offer to sell cryptocurrency as a credit card purchase. The following options are available:
-
-Exchange        | Market        | Link
-----------------|---------------|------
-xChange         | (BTC/BLOCK)   | [Buy Now](https://xchange.me/)
-
-<!-- CoinSwitch      | (BTC/BLOCK)   | [Buy Now](https://coinswitch.co/) -->
-
-
-
 
 
 

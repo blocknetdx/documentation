@@ -3,10 +3,11 @@ description: This guide explains how to create and submit Blocknet Superblock pr
 
 
 # Proposal Submission
-This guide explains how to create and submit Blocknet Superblock proposals for funded initiatives to be voted on by the Service Node network. Proposal submission is important for the decentralized governance model to function properly.
+This guide explains how to create and submit Blocknet Superblock proposals for funded initiatives to be voted on by the BLOCK holders. Proposal submission is important for the decentralized governance model to function properly.
 
-???+ info "Proposal Submission Deadline"
-    The deadline for creating proposals is 2880 blocks prior to the Superblock.
+## Proposal Submission Deadline
+The deadline for creating proposals is 2880 blocks prior to the Superblock.
+--8<-- "next-proposal-deadline.md"
 
 ---
 

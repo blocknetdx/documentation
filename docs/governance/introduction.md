@@ -17,7 +17,8 @@ To request funding from a Superblock, a proposal must be submitted to the networ
 #### Passing Criteria
 For a proposal to pass and receive funding:
 
-* 25% of all Service Nodes voting in this Superblock must have voted on the proposal
+* 25% of all Service Nodes operating in this Superblock is the minumum
+  number of votes that must have been cast on the proposal (for or against)
 * 60% of votes must be "yes" (in favor)
 * At this point all valid proposals are prioritized according to these requirements:
     1. Descending order by the sum of yes votes minus no votes
@@ -34,7 +35,13 @@ For a proposal to pass and receive funding:
 
 ---
 
-#### Superblock Dates
+#### Superblock Voting Deadline
+
+Voting for proposals ends 60 blocks prior the Superblock.
+
+--8<-- "next-voting-deadline.md"
+
+#### Future Superblock Dates
 
 --8<-- "superblock-dates.md"
 

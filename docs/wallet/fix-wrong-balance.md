@@ -50,7 +50,7 @@ wallet:
 There are several options to *Recover Transactions* and sync you
 wallet balance with the blockchain:
 
-#### Option 1: From the GUI/Qt interface"
+#### Option 1: From the GUI/Qt interface
 
 ??? example "From the GUI/Qt interface"
 	From the GUI/Qt wallet, select *Tools->Wallet Repair->Recover

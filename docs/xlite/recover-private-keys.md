@@ -20,14 +20,10 @@ import the private keys from XLite into another noncustodial  multi-wallet, like
 1. Scroll down on that site and click on `bip39-standalone.html` to download that
 file:
 ![Ian Coleman Repo](/img/xlite/ian-coleman-repo.png)
-1. (Recommended) Verify the integrity of the downloaded file by
-opening a terminal or command prompt to the directory where you
-downloaded the file and typing:
-```
-sha256sum bip39-standalone.html
-```
-Then compare the checksum value returned by that command to the expected checksum
-value listed on [Ian Coleman's Repository](https://github.com/iancoleman/bip39/releases/tag/0.5.2).
+1. (Recommended) Verify the integrity of the downloaded file in the
+same style as you [verify the download of the Blocknet wallet](/wallet/installation/#verifying-downloads).
+(i.e. compare the checksum value of the downloaded file to the expected checksum
+value listed on [Ian Coleman's Repository](https://github.com/iancoleman/bip39/releases/tag/0.5.2)).
 1. (Recommended) For maximum security, disconnect the internet from your computer.
 1. Double-click the file, `bip39-standalone.html` from wherever you
 downloaded it on your computer. This will open the *Ian Coleman Tool* in your

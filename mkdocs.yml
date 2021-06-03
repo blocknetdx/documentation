@@ -154,7 +154,7 @@ nav:
   - 'Trading': 'blockdx/trading.md'
   - 'Listings': 'blockdx/listings.md'
   - 'Fees': 'blockdx/fees.md'
-  # - 'Settings': 'blockdx/settings.md'
+  - 'Settings': 'blockdx/settings.md'
   - 'FAQ': 'blockdx/faq.md'
   # - 'Troubleshooting': 'blockdx/troubleshooting.md'
 - 'Service Nodes':

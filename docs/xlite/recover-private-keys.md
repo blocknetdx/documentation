@@ -22,7 +22,7 @@ file:
 ![Ian Coleman Repo](/img/xlite/ian-coleman-repo.png)
 1. (Recommended) Verify the integrity of the downloaded file in the
 same style as you [verify the download of the Blocknet wallet](/wallet/installation/#verifying-downloads).
-(i.e. compare the checksum value of the downloaded file to the expected checksum
+(i.e. compare the sha256sum value of the downloaded file to the expected sha256sum
 value listed on [Ian Coleman's Repository](https://github.com/iancoleman/bip39/releases/tag/0.5.2)).
 1. (Recommended) For maximum security, disconnect the internet from your computer.
 1. Double-click the file, `bip39-standalone.html` from wherever you

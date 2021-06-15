@@ -1,5 +1,5 @@
 title: Fix Wrong Balance
-description: This guide explains how to fix your wallet balance in your Blocknet wallet if it displayes incorrectly.
+description: This guide explains how to fix your Blocknet wallet balance if it displays incorrectly.
 
 
 # Fix Wrong Wallet Balance

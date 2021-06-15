@@ -11,7 +11,9 @@ install the wallet on each operating system (OS).
 
 ??? info "Upgrading: If you already have the Blocknet wallet installed and you're upgrading to the latest version, click here for instructions."
 	Before upgrading your Blocknet wallet to the latest version,
-	close/quit the Blocknet wallet app.
+	close/quit/stop the Blocknet wallet app. If running the CLI
+	wallet, issue the command, `./blocknet-cli stop` to stop the
+	blocknet daemon.
 
 	Upgrading your wallet from version 4.0 or greater to the latest version is basically the same as installing the wallet from scratch. The differences are:
 

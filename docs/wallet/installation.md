@@ -179,6 +179,9 @@ install the wallet on each operating system (OS).
 	        ???+ info "Note: If you see a message like the one below instead of the one above, click *Cancel* and repeat step 5 above."
 			![Finder](/img/wallet/mac-open-confirm-extra-step.png)
 		
+			??? tip "Tip: If nothing happens when you try to open the Blocknet App..."
+			Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.
+
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. An installation prompt will appear, select *OK*.
 
@@ -211,6 +214,9 @@ install the wallet on each operating system (OS).
 	        ???+ info "Note: If you see a message like the one below instead of the one above, click *Cancel* and repeat step 8 above."
 			![Finder](/img/wallet/mac-open-confirm-extra-step.png)
 
+			??? tip "Tip: If nothing happens when you try to open the Blocknet App..."
+			Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.
+
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. An installation prompt will appear, select *OK*.
 
@@ -229,6 +235,9 @@ install the wallet on each operating system (OS).
 
 	        ???+ info "Note: If you see a message like the one below instead of the one above, click *Cancel* and repeat step 4 above."
 			![Finder](/img/wallet/mac-open-confirm-extra-step.png)
+
+			??? tip "Tip: If nothing happens when you try to open the Blocknet App..."
+			Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.
 
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. Since this is a command line executable file, a command-line window will appear to start the wallet, which begins the installation process.

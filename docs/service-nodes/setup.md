@@ -76,6 +76,9 @@ To setup your Service Node, complete the following guides in order:
 
 		![Create Inputs](/img/service-nodes/redesign-servicenodecreateinputs-response.png)
 
+	1. Prepare to create a `servicenode.conf` file in your
+       [data directory](/wallet/backup-restore/#data-directory) by
+       first deleting any old `servicenode.conf` file in the data directory, or deleting any out-of-date service node references within your `servicenode.conf`. 
 	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node(s). Example:
 		```
 		servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
@@ -149,6 +152,9 @@ To setup your Service Node, complete the following guides in order:
 
 		![Create Inputs](/img/service-nodes/classic-servicenodecreateinputs-response.png)
 
+	1. Prepare to create a `servicenode.conf` file in your
+       [data directory](/wallet/backup-restore/#data-directory) by
+       first deleting any old `servicenode.conf` file in the data directory, or deleting any out-of-date service node references within your `servicenode.conf`. 
 	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node(s). Example:
 		```
 		servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01

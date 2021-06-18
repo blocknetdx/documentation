@@ -32,7 +32,7 @@ description: These Block DX trading guides explain how to check your balances, s
 	* Funds aren't in a legacy address. Right now only legacy addresses are compatible. If you are using a Segwit address, please create a new address to send the funds to. If the wallet has been configured via Block DX, then a legacy address will automatically be created when generating a new address.
 	* The wallet was not [configured](/blockdx/configuration).
 	* The wallet was not restarted after the configuration.
-	* If inputs have been locked via Coin Control.
+	* If inputs have been locked via [Coin Control](/wallet/send-funds/#coin-control).
 
 
 ??? example "Select Market"

@@ -43,7 +43,7 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 
 
 ??? question "I keep getting change addresses after making trades. How do I consolidate them all back into one address and then split them back up into multiple UTXOs again?"
-	Combining and splitting of assets (inputs) can be done using the Coin Control functionality within the respective wallet. A tutorial will be released to explain this process.
+	Combining and splitting of assets (inputs) can be done using the [Coin Control](/wallet/send-funds/#coin-control) functionality within the respective wallet. A tutorial will be released to explain this process.
 
 
 ??? question "Why is my balance shown as 0 even though I have funds in it."

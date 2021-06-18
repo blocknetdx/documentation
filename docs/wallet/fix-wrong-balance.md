@@ -1,5 +1,5 @@
 title: Fix Wrong Balance
-description: This guide explains how to fix your wallet balance in your Blocknet wallet if it displayes incorrectly.
+description: This guide explains how to fix your Blocknet wallet balance if it displays incorrectly.
 
 
 # Fix Wrong Wallet Balance
@@ -50,7 +50,7 @@ wallet:
 There are several options to *Recover Transactions* and sync you
 wallet balance with the blockchain:
 
-#### Option 1: From the GUI/Qt interface"
+#### Option 1: From the GUI/Qt interface
 
 ??? example "From the GUI/Qt interface"
 	From the GUI/Qt wallet, select *Tools->Wallet Repair->Recover
@@ -58,7 +58,10 @@ wallet balance with the blockchain:
 	![Tools Wallet Repair Recover](/img/wallet/tools-recover-transactions.png)
 	This will cause your wallet to close and restart.
 
-	!!! bug "Bug: Sometimes, especially if it takes a long time for your wallet to close, this operation attempts to restart the wallet too quickly and you'll see a message saying: *Can't get a lock*. If this happens, simply restart the wallet and try once again to perform *Tools->Wallet Repair->Recover Transactions(Drop metadata)*."
+	??? bug "Bug: Sometimes, especially if it takes a long time for your wallet to close, this operation attempts to restart the wallet too quickly - before it has shutdown completely, then it displays a message saying: *Can't obtain a lock on data directory...*. More..."
+		![Cannot Obtain Lock](/img/wallet/cannot-obtain-lock.png)
+
+		If you get this error, simply restart the wallet and try once again to perform *Tools->Wallet Repair->Recover Transactions(Drop metadata)*. If it happens a second time, try a third time.
 
 #### Option 2: Add `zapwallettxes=2` to `blocknet.conf` file, then restart wallet.
 
@@ -81,9 +84,12 @@ wallet balance with the blockchain:
 	This will open the `blocknet.conf` file in your default editor.
 
 	An alternate way to edit your `blocknet.conf` file is to locate it
-    in your Blocknet data directory, right-click (trackpad two-finger click) on the file, select *Open With*, then open it with a simple editor
-    (e.g. NotePad on Windows, TextEdit on Mac). The data directory
-    where `blocknet.conf` is found is as follows:
+    in your Blocknet data directory, right-click (trackpad two-finger
+    click) on the file, select *Open With*, then open it with a simple
+    text editor
+    (e.g. NotePad on Windows, TextEdit on Mac). If `blocknet.conf`
+    does not exist in your data directory, create it there with the
+    text editor. The data directory is found as follows:
 
 	--8<-- "data-directories.md"
 

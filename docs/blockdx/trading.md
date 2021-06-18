@@ -18,6 +18,22 @@ description: These Block DX trading guides explain how to check your balances, s
 
 --8<-- "explore-service-nodes.md"
 
+??? tip "Tip: How to stop your Blocknet wallet from staking while it's unlocked for trading."
+	To trade BLOCK on BlockDX from your Blocknet core wallet, your
+	Blocknet core wallet must be fully unlocked. Normally, when your
+	core wallet is unlocked, it automatically begins
+	[staking](/wallet/staking). If, while staking, one of the
+	[UTXOs](/resources/glossary/#utxo) in your wallet "hits a stake",
+	it becomes *immature* for 101 confirmations, and it is unavailable
+	for trading while it's *immature*. At times, it can interfere with
+	trading when a large UTXO goes *immature* for 101
+	confirmations. Fortunately, there's a way to have your Blocknet
+	core wallet unlocked, but not staking. The trick is simply to add
+	`staking=0` to the `blocknet.conf` file in your
+	[data directory](/wallet/backup-restore/#data-directory), then
+	restart your Blocknet core wallet. (If `blocknet.conf` doesn't
+	already exist in your data directory, create it.)
+
 ---
 
 ??? example "Balances"
@@ -32,7 +48,7 @@ description: These Block DX trading guides explain how to check your balances, s
 	* Funds aren't in a legacy address. Right now only legacy addresses are compatible. If you are using a Segwit address, please create a new address to send the funds to. If the wallet has been configured via Block DX, then a legacy address will automatically be created when generating a new address.
 	* The wallet was not [configured](/blockdx/configuration).
 	* The wallet was not restarted after the configuration.
-	* If inputs have been locked via Coin Control.
+	* If inputs have been locked via [Coin Control](/wallet/send-funds/#coin-control).
 
 
 ??? example "Select Market"

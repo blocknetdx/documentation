@@ -149,10 +149,11 @@ To restore a previously backed up `wallet.dat` file, follow these steps:
 1. Close your Blocknet wallet application.
 1. Rename or move the `wallet.dat` file in your
 [data directory](#data-directory), if there is one.
-1. Rename or move the `wallets` subdirectory
-within the data directory, if there is one.
-1. Make a new `wallets` subdirectory/folder in the data directory.
-1. Copy your backup copy of `wallet.dat` into the newly created `wallets` subdirectory
+1. If there is a `wallets` subdirectory/folder in the data directory
+   and it contains a file called `wallet.dat`, rename that `wallet.dat` file to something like `wallet.dat.empty`.
+1. If  a `wallets` subdirectory/folder doesn't already exist in the
+   data directory, make a new `wallets` subdirectory/folder in the data directory.
+1. Copy your backup copy of `wallet.dat` into the `wallets` subdirectory
 of your [data directory](#data-directory). Note, it's fine to name
 your `wallet.dat` to something else while it's being stored safely in
 other locations. However, it must be named, `wallet.dat` when

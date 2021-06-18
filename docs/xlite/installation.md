@@ -28,7 +28,7 @@ installed and are updating, the steps are basically the same.
        selected (`.exe` or `.zip`):
 
 	??? tip "Important Tip: If installation fails to complete for either the `.exe` or `.zip` instructions below, click here for instructions what to do."
-		1. Install [Visual C++ 2010 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=14632).
+		1. Install [Visual C++ 2010 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=26999).
 		1. Redo the installation step below (`.exe` or `.zip` depending on your download).
 
 	??? example "Using the `.exe` download (option a)"
@@ -65,7 +65,7 @@ installed and are updating, the steps are basically the same.
 	    ??? info "Note: If you see a *Security Warning* from Windows asking if you want to *Run* the file, it is safe to click *Run*, assuming you have [verified your download](#verifying-downloads)."
 
 	    ??? info "If XLite doesn't open when you double-click it, click here"
-		1. Install [Visual C++ 2010 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=14632).
+		1. Install [Visual C++ 2010 Redistributable Package (x64)](https://www.microsoft.com/en-us/download/details.aspx?id=26999).
 		1. Redo the installation step above (`.exe` or `.zip` depending on your download).
 
 

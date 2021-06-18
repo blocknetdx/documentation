@@ -3,9 +3,27 @@ description: This guide explains how to install your Blocknet wallet on each ope
 
 
 # Wallet Installation
-Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases) is a simple process. Below are step-by-step instructions for how to install the wallet on each operating system (OS). If you already have the Blocknet wallet installed and are updating, see the updating guide. 
+Installing the Blocknet wallet is a simple process. Below are
+step-by-step instructions for how to
+install the wallet on each operating system (OS).
 
-* For a complete guide on setting up the wallet, see the [setup guide](/wallet/setup).
+* For a complete guide on setting up the wallet, see the [setup guide](/wallet/setup). 
+
+??? info "Upgrading: If you already have the Blocknet wallet installed and you're upgrading to the latest version, click here for instructions."
+	Before upgrading your Blocknet wallet to the latest version,
+	close/quit/stop the Blocknet wallet app. If running the CLI
+	wallet, issue the command, `./blocknet-cli stop` to stop the
+	blocknet daemon.
+
+	Upgrading your wallet from version 4.0 or greater to the latest version is basically the same as installing the wallet from scratch. The differences are:
+
+	- When installing the upgrade version, your operating system may
+      ask you to approve the replacement of your old Blocknet wallet app with the new one. (Select "OK" or "Replace")
+	-  When running the upgrade version for the first time, you won't be prompted for an installation data directory as you were on initial installation.
+	- When running the upgrade version for the first time, you don't have to sync your wallet from scratch like you did on initial installation.
+	- When running the upgrade version for the first time, you won't have to encrypt your wallet as you did on initial installation."
+
+	To upgrade from Blocknet wallet version 3.x, [follow this guide](https://gist.github.com/ConanMishler/00e2ed0d148a897106b53c7c6e19659b).
 
 ??? tip "Tip: There are two wallet variations."
 	There are two wallet variations, a redesigned interface (default) and a classic interface. To use the classic wallet, you'll need to open your `blocknet.conf` file and add `classic=1` on a new line (you may not have a `blocknet.conf` file and will need to create one). You can find the `blocknet.conf` file in your Blocknet data directory:
@@ -161,6 +179,9 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 	        ???+ info "Note: If you see a message like the one below instead of the one above, click *Cancel* and repeat step 5 above."
 			![Finder](/img/wallet/mac-open-confirm-extra-step.png)
 		
+			??? tip "Tip: If nothing happens when you try to open the Blocknet App..."
+			Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.
+
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. An installation prompt will appear, select *OK*.
 
@@ -190,6 +211,12 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 
 			![Opening](/img/wallet/mac-open-confirm.png)
 
+	        ???+ info "Note: If you see a message like the one below instead of the one above, click *Cancel* and repeat step 8 above."
+			![Finder](/img/wallet/mac-open-confirm-extra-step.png)
+
+			??? tip "Tip: If nothing happens when you try to open the Blocknet App..."
+			Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.
+
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. An installation prompt will appear, select *OK*.
 
@@ -205,6 +232,12 @@ Installing the [Blocknet wallet](https://github.com/blocknetdx/blocknet/releases
 		1. If you are prompted with a message asking if you are sure you want to open the application, select *Open*.
 
 			![Opening](/img/wallet/mac-open-confirm.png)
+
+	        ???+ info "Note: If you see a message like the one below instead of the one above, click *Cancel* and repeat step 4 above."
+			![Finder](/img/wallet/mac-open-confirm-extra-step.png)
+
+			??? tip "Tip: If nothing happens when you try to open the Blocknet App..."
+			Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.
 
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. Since this is a command line executable file, a command-line window will appear to start the wallet, which begins the installation process.

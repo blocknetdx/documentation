@@ -120,15 +120,14 @@ nav:
   - 'Encrypt Wallet': 'wallet/encrypting.md'
   - 'Backup/Restore': 'wallet/backup-restore.md'
   - 'Staking': 'wallet/staking.md'
+  - 'Send Funds': 'wallet/send-funds.md'
   - 'Fix Wrong Balance': wallet/fix-wrong-balance.md
   - 'Fork Management': 'wallet/forking.md'
   # - 'Peers': 'wallet/peers.md'
   - 'Lock/Unlock': 'wallet/lock-unlock.md'
   # - 'Balances': 'wallet/balances.md'
   # - 'Addresses': 'wallet/addresses.md'
-  # - 'Send Funds': 'wallet/send-funds.md'
   # - 'Receive Funds': 'wallet/addresses/#receiving-addresses'
-  # - 'Coin Control': 'wallet/coin-control.md'
   # - 'Transactions': 'wallet/transaction-details.md'
   # - 'Debug Console': 'wallet/debug-console.md'
   # - 'Troubleshooting': 'wallet/troubleshooting.md'
@@ -139,6 +138,7 @@ nav:
   - 'Installation': 'xlite/installation.md'
   - 'Create, Backup & Restore': 'xlite/backup-and-restore.md'
   - 'Using BlockDX w/ XLite': 'xlite/blockdx-xlite.md'
+  - 'Recover Private Keys': 'xlite/recover-private-keys.md'
 - 'Block DX':
   - 'Introduction': 'blockdx/introduction.md'
   - 'Getting Started': 'blockdx/setup.md'
@@ -153,7 +153,7 @@ nav:
   - 'Trading': 'blockdx/trading.md'
   - 'Listings': 'blockdx/listings.md'
   - 'Fees': 'blockdx/fees.md'
-  # - 'Settings': 'blockdx/settings.md'
+  - 'Settings': 'blockdx/settings.md'
   - 'FAQ': 'blockdx/faq.md'
   # - 'Troubleshooting': 'blockdx/troubleshooting.md'
 - 'Service Nodes':

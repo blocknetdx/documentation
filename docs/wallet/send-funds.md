@@ -20,8 +20,22 @@ description: This guide explains how to Send Funds from the Blocknet wallet
 1. Next, select *Continue* at the bottom of the *Select Address*
 screen to display a screen like this:
 ![Coin Control](/img/wallet/coin-control.png)
-1. On this screen, enter the amount of BLOCK to be sent. Then, if
-desired, enter a custom
+1. On this screen, first enter the amount of BLOCK to be sent in the
+   first box.
+
+	??? tip "Tip: If you intend to use the [Coin Control](#coin-control) feature to send an amount which is exactly equal to one [input](/resources/glossary/#input), or exactly equal to the sum of several [inputs](/resources/glossary/#input), you may want to pull up the *Coin Control window* to help calculate the sum of the inputs you want to send from. Click here for more Info..."
+		Pull up the *Coin Control window* like this:
+		![Coin Control](/img/wallet/coin-control-window.png)
+
+		Selecting the *Coin Control window* will
+		display a window like this:
+		![Select Inputs](/img/wallet/select-inputs.png)
+
+		On this screen, you can right-click (touchpad two-finger tap)
+		on an input to see an option to copy the amount of the input into the
+		clipboard.
+
+1. Next, if desired, enter a custom
 [change address](/resources/glossary/#change-address).
 1. Next, in the [Coin Control](#coin-control) section of this screen you have the option to either let the Blocknet wallet
 automatically select the [inputs](/resources/glossary/#input) from
@@ -31,23 +45,24 @@ inputs manually*__ as per your choice. If you select __*Choose
 inputs manually*__, then click the __*Select coin inputs*__ button below
 that selection to choose the inputs. (Continued below under [Coin Control](#coin-control).)
 
-    ### Coin Control 
-
 	!!! warning "If you don't see the Coin Control features as shown in the screen above, use your mouse wheel or trackpad to scroll the window until they appear. Alternatively, expand the size of the window until the Coin Control features appear."
-	Funds are organized in your wallet in terms of
+
+
+    ### Coin Control
+
+	Funds in your wallet are organized in terms of
 	[addresses](/resources/glossary/#address) and
 	[inputs](/resources/glossary/#input). To illustrate, we can make an
 	analogy to a physical wallet. An
-	[address](/resources/glossary/#address) would be like a section of your physical wallet which is separated
-	from other sections by some kind of physical divider. An
+	[address](/resources/glossary/#address) is like a section of your physical wallet which is separated
+	from other sections. An
 	[input](/resources/glossary/#input)
-	would be a bill that gets stored in one
-	of the sections of your wallet. In one section of your physical
+	is like a bill that is stored in one section of your wallet. In one section of your physical
 	wallet you might have three $20 bills and two $5 bills, for a
 	total of $70 in that section of your wallet. In a similar way, one
 	address of your Blocknet wallet might contain three 20 BLOCK
 	inputs and two 5 BLOCK inputs, for a total of 70 BLOCK in that
-	address of your Blocknet wallet.
+	address of your wallet.
 
 	When you click the __*Select coin inputs*__ button in the *Coin
 	Control* section of the screen
@@ -78,9 +93,9 @@ that selection to choose the inputs. (Continued below under [Coin Control](#coin
     total*. If you are sending *all* the funds in your wallet, or
     *all* the funds available in the sum of the
     [inputs](/resources/glossary/#input) you selected via
-    [Coin Control](#coin-control), then you'll want to check the box for __*Subtract fee from total*__. Otherwise, probably not. Next, select *Continue* and complete the final confirmations on the next screens.
+    [Coin Control](#coin-control), then you'll want to check the box to __*Subtract fee from total*__. Otherwise, probably not. Next, select *Continue* and complete the final confirmations on the next screens.
 
-##### Sending Error	
+##### Sending Error - What to do
 
 ??? info "If you get an error message saying 'The specified transaction information is bad, please review,' or 'Not enough coin inputs selected to cover this transaction,' click here for what to do..."
 	These errors can occur when the wallet tries to create a

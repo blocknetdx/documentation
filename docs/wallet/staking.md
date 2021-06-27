@@ -82,7 +82,9 @@ Use the following guide to enable staking and start earning rewards.
       Linux. The following are the minimum hardware requirements:
 		  - 1 or more vCPUs
 		  - 20GB or more storage space
-		  - 2GB or more of RAM. (1GB of RAM is sufficient if you [create 1+GB of swap space](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)).
+		  - 2GB or more of RAM. (1GB of RAM is sufficient if you
+            [create 1+GB of swap space](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)
+            after logging in to your VPS in step 8 below).
 	1. Follow the guides available from your VPS provider to launch
        your Ubuntu VPS and connect to it via `ssh` (from Mac or Linux
        Terminal) or via `PuTTY` (from Windows). For
@@ -278,7 +280,7 @@ Use the following guide to enable staking and start earning rewards.
 	1. Fund your staking wallet. Skip to
     step 23 if you don't have an already funded Blocknet wallet, or if
     you prefer to fund your VPS staking wallet by sending funds to it
-    instead of importing an already funded wallet. Otherwise, restore an already funded Blocknet
+    instead of importing an already funded wallet. Otherwise, import an already funded Blocknet
     wallet from your home computer to your VPS as follows.:
 		1. Stop the Blocknet daemon on your VPS with the following
         command:
@@ -339,7 +341,30 @@ Use the following guide to enable staking and start earning rewards.
 		```
 		./blocknetd -daemon
 		```
-		
+
+		??? info "Note: It is *not* necessary to delete, remove, uninstall or stop using the Blocknet wallet on your home computer just because you imported your home computer's `wallet.dat` to your staking VPS. Read more..."
+		You can access the same Blocknet wallet on your home computer
+		that is staking on your VPS. For example, if you've imported
+		the `wallet.dat` from your home computer to your VPS, you can
+		still access the same `wallet.dat` on your home computer to
+		send & receive funds, or to trade BLOCK on
+		[BlockDX](/blockdx/introduction). The only thing you have to
+		be careful *not* to do is to import private key(s) into one
+		`wallet.dat` and not the other. If you absolutely *must*
+		import private keys to the wallet on your home computer, for
+		example, then you should either import the same private keys
+		to the wallet on your VPS, or stop the wallet on your VPS and
+		re-import the `wallet.dat` from your home computer so your VPS
+		wallet will also have the imported private keys. Note, if
+		you've imported private keys, it's recommended to use
+		[Coin Control](/wallet/send-funds/#coin-control) to send the
+		imported keys/addresses to an address in your wallet which is
+		part of the
+		[HD wallet](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp)
+		hierarchy of addresses associated with your wallet (i.e. send
+		them to an address generated from within your wallet). If you do this, you don't have to import the same private key(s) to both your home computer and your VPS wallets, and you don't have to re-import the `wallet.dat` from your home computer to your VPS.
+
+
 
 	1. If you don't have an already funded Blocknet wallet, or you
        prefer to fund your VPS staking wallet by sending funds to it instead

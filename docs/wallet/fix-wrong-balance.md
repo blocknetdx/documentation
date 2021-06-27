@@ -22,7 +22,7 @@ wrong balance for an  extended time, in which case you'll need to *Recover Trans
 [UTXOs](/resources/glossary/#utxo)) where funds are stored in your
 wallet:
 
-	![Coin Control](/img/wallet/coin-control.png) 
+	![Coin Control](/img/wallet/coin-control-window.png) 
 
 	This will display a screen like this (*in Tree mode*):
 	![Coin Control](/img/wallet/coin-control-screen.png)

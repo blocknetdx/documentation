@@ -44,7 +44,8 @@ description: These Block DX trading guides explain how to check your balances, s
 	The *Available* balance may show a value different than what's displayed in the wallet if:
 
 	* The wallet is locked.
-	* You have already made a trade that has locked up funds. You will want to create smaller inputs so that a single trade won't lock up more funds than needed.
+	* You have already made a trade that has locked up
+      funds. [Find out why available balance in BlockDX sometimes drops dramatically when making an order, and how to prevent it from happening](/blockdx/faq/#why-does-available-balance-in-blockdx-drop-so-dramatically-when-making-an-order).
 	* Funds aren't in a legacy address. Right now only legacy addresses are compatible. If you are using a Segwit address, please create a new address to send the funds to. If the wallet has been configured via Block DX, then a legacy address will automatically be created when generating a new address.
 	* The wallet was not [configured](/blockdx/configuration).
 	* The wallet was not restarted after the configuration.

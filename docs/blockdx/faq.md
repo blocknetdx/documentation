@@ -11,6 +11,30 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 	1. Click *Generate new address* until the address to which the
        missing asset was sent appears in the *Your address* box.
 
+??? question "Why does my available balance in BlockDX drop dramatically when I make an order, even though the size of the order is small?"
+	##### Why does available balance in BlockDX drop so dramatically when making an order?
+	Funds in your wallet are organized in terms of
+	[addresses](/resources/glossary/#address) and
+	[inputs](/resources/glossary/#input). To illustrate, we can make an
+	analogy to a physical wallet. An
+	[address](/resources/glossary/#address) is like a section of your physical wallet which is separated
+	from other sections. An
+	[input](/resources/glossary/#input)
+	is like a bill that is stored in one section of your wallet. In one section of your physical
+	wallet you might have three $20 bills and two $5 bills, for a
+	total of $70 in that section of your wallet. In a similar way, one
+	address of your Blocknet wallet might contain three 20 BLOCK
+	inputs and two 5 BLOCK inputs, for a total of 70 BLOCK in that
+	address of your wallet.
+
+	If, for example, you make an order to buy some asset, and the cost of your purchase will be 5 LTC, but the smallest LTC [input](/resources/glossary/#input) in your wallet is 100 LTC, then the entire 100 LTC input becomes unavailable until the change from the transaction is received in your [change address](/resources/glossary/#change-address). This is like if you are buying a $5 item and the smallest bill in your wallet is a $100 bill. The $100 bill becomes unavailable during the transaction, then you receive $95 in change. To avoid having a large amount of funds becoming unavailable during a transaction in this way, you can *split* the [inputs](/resources/glossary/#input) of the asset you're selling before making the order. This is like breaking your $100 bill into smaller denominations before purchasing the $5 item.
+
+	Splitting assets into multiple [Inputs](/resources/glossary/#input) within an address can be done using the `dxSplitInputs` command from the Blocknet wallet *Tools->Debug Console*, or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI. You may also want to use the `dxSplitAddress` command. Get help on how to use the `dxsplitaddress` command by typing `dxsplitaddress` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitaddress` from the Blocknet wallet CLI.
+
+	Note: Splitting assets into multiple inputs incurs a transaction fee, and the transaction fee for some chains (e.g. [BTC Tx fee](https://ycharts.com/indicators/bitcoin_average_transaction_fee)) can be high.
+
+	Soon, BlockDX will offer to automatically split assets into smaller inputs in the background so you'll always have some "small change" on hand, ready to trade.
+
 ??? question "How can I view currently active orders on BlockDX without opening the BlockDX application?"
 	Visit either of the following sites: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) or [BlockDX.co](https://www.blockdx.co/orders).
 
@@ -39,11 +63,11 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 
 
 ??? question "If I want to place or accept multiple trades, I need to split my assets into multiple [UTXOs](/resources/glossary/#utxo) within the same address. How do I do that?"
-	Splitting assets into multiple [UTXOs](/resources/glossary/#utxo) within an address can be done using the `dxsplitinputs` command from the Blocknet wallet *Tools->Debug Console* or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI.
+	Splitting assets into multiple [UTXOs](/resources/glossary/#utxo) within an address can be done using the `dxSplitInputs` command from the Blocknet wallet *Tools->Debug Console*, or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI. You may also want to use the `dxSplitAddress` command. Get help on how to use the `dxsplitaddress` command by typing `dxsplitaddress` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitaddress` from the Blocknet wallet CLI. 
 
 
 ??? question "I keep getting change addresses after making trades. How do I consolidate them all back into one address and then split them back up into multiple UTXOs again?"
-	Combining and splitting of assets (inputs) can be done using the [Coin Control](/wallet/send-funds/#coin-control) functionality within the respective wallet. A tutorial will be released to explain this process.
+	Combining and splitting of assets (inputs) can be done using the [Coin Control](/wallet/send-funds/#coin-control) functionality within the respective wallet.
 
 
 ??? question "Why is my balance shown as 0 even though I have funds in it."

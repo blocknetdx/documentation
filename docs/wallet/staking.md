@@ -62,7 +62,7 @@ Use the following guide to enable staking and start earning rewards.
 #### Staking from CLI on a VPS running Ubuntu Linux
 
 ??? example "Staking from CLI on a VPS running Ubuntu Linux"
-	!!! info "Note: The instructions below assume default data directories are used for all Blocknet wallets. If using custom data directories, please adjust the data directory references accordingly."
+	!!! info "Note: The instructions below assume default data directories are used for all Blocknet wallets. If using custom data directories, please adjust the data directory references accordingly. They also assume *bash* shell, the default shell for Ubuntu, is used. Please adjust as necessary if a different shell is used."
 
 	1. If you're new to the Linux Command Line Interface (CLI),
        [learn the basics](http://www.linuxcommand.org/index.php). You
@@ -75,8 +75,25 @@ Use the following guide to enable staking and start earning rewards.
        economical and reliable services available. You might also
        compare prices with [Amazon AWS](https://aws.amazon.com) and
        [Google Cloud Computing](https://cloud.google.com) and other
-       services. As of this writing (June, 2021), you can rent a VPS capable of running
-      a staking wallet for less than USD $7.00 per month.
+       services. As of this writing (June, 2021), you can rent a VPS
+       capable of running a staking wallet for less than USD $7.00 per month.
+
+	    ??? tip "Tip: If you might run a [Service Node](/service-nodes/introduction) on your VPS at some point, [Contabo](https://contabo.com/en/) is probably the best choice. Read more..."
+		As of this writing, [Contabo](https://contabo.com/en/) seems to
+		offer the most disk space and compute power for your money. For
+		staking, you don't need much of either. However, for running a
+		[Service Node](/service-nodes/introduction), you'll need a
+		quite a lot of disk space, and a fair amount of compute
+		power as well. See [Service Node Setup](/service-nodes/setup)
+		for a rough estimates hardware requirements as of this writing. Note, if you just
+		want to stake on your VPS at present, but might add a Service Node to your
+		VPS later on,
+		[a small (Size S) Contabo VPS](https://contabo.com/en/vps/)
+		may be the best choice.
+		You can upgrade your VPS size at any time without losing any of
+		your staking wallet data, which is convenient. (The size upgrade can be done quickly and
+		easily from the [Contabo Customer ControlPanel](https://my.contabo.com/).)
+
 	1. Through your VPS provider, launch a small,
       economical VPS running a recent (v16+) version of Ubuntu
       Linux. The following are the minimum hardware requirements:
@@ -141,47 +158,83 @@ Use the following guide to enable staking and start earning rewards.
        VPS via SSH Keys, back up your SSH Private key and save the
        password you choose to unlock your SSH Private Key.*
 	1. Visit [https://github.com/blocknetdx/blocknet/releases/](https://github.com/blocknetdx/blocknet/releases/) to see
-    the latest release version of the Blocknet wallet:
+    the latest release version of the Blocknet core wallet:
 	![Latest Release](/img/wallet/latest-release.png)
-	As shown in the image above, the latest release version at this
-    time is `4.3.2`.
-	1. Logged in to your VPS Linux Terminal as `<username>` (not root), type the following
-    sequence of commands, replacing all instances of `4.3.2` with the
-    latest version number:
-
+		1. As shown in the image above, the latest release version at this
+    time is `4.3.3`.
+		1. If there is a "v" before the release version number,
+           ignore it; do not prepend "v" to the BLOCKNET_VERSION
+           you specify in the next step.
+	1. Create some aliases for easy access to the Blocknet wallet
+    daemon and Blocknet wallet CLI.
+		1. Use a text editor like
+           [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
+           or
+           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/)
+           to edit your `~/.bashrc` file. Look for the following 3 lines:
+		```
+		if [ -f ~/.bash_aliases ]; then
+			. ~/.bash_aliases
+		fi
+		```
+		1. If those 3 lines are not already in your `~/.bashrc` file, add
+           them, then save the file.
+	    1. Edit `~/.bash_aliases`. (Create a new one if it
+           doesn't exist.)
+		1. Copy/Paste the following variable and alias definitions
+         into `~/.bash_aliases`, replacing `4.3.3` with the latest version of the
+         Blocknet core wallet. (If upgrading from an old version, simply set
+         BLOCKNET_VERSION to the latest version and don't bother changing the
+         alias statements if they are already there from a previous installation.):
+		 ```
+		 BLOCKNET_VERSION='4.3.3'
+		 # stdaemon = Start Blocknet daemon for staking wallet
+		 alias stdaemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon'
+         # stcli = Staking wallet Command Line Interface
+		 alias stcli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli'
+         # stunlock = Unlock staking wallet for staking only
+		 alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
+         # stunlockfull = Unlock staking wallet fully
+		 alias stunlockfull='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 false'
+		 ```
+		 1. Save your edits to `~/.bash_aliases`, exit the editor and
+          type the following to activate all the aliases you just
+          defined:
+		  ```
+		  source ~/.bash_aliases
+		  ```
+		 1. To confirm all your new aliases have been set, type `alias`. It should show you a list of all your
+         current aliases, including all you just added.
+	1. Copy/Paste the following sequence of commands to download and unpack
+       the latest version of the Blocknet core wallet:
 		1. Change Directory to home directory.
 		```
 		cd ~
 		```
-	1. Download the latest Blocknet wallet (replacing `4.3.2` twice w/ latest version).
+		1. Download the latest Blocknet wallet:
 	    ```
-		wget https://github.com/blocknetdx/blocknet/releases/download/v4.3.2/blocknet-4.3.2-x86_64-linux-gnu.tar.gz
+		wget https://github.com/blocknetdx/blocknet/releases/download/v${BLOCKNET_VERSION}/blocknet-${BLOCKNET_VERSION}-x86_64-linux-gnu.tar.gz
 		```
-	1. Unpack the download (replacing `4.3.2` w/ latest version).
+		1. Unpack the download:
 		```
-		tar xzvf blocknet-4.3.2-x86_64-linux-gnu.tar.gz
+		tar xzvf blocknet-${BLOCKNET_VERSION}-x86_64-linux-gnu.tar.gz
 		```
-	1. (Recommended) Remove the download package (replacing `4.3.2` w/ latest version):
+		1. (Recommended) Remove the download package:
 		```
-		rm blocknet-4.3.2-x86_64-linux-gnu.tar.gz
+		rm blocknet-${BLOCKNET_VERSION}-x86_64-linux-gnu.tar.gz
 		```
-
-	1. Change Directory to the newly created `bin` directory for the
-    version you downloaded (`blocknet-4.3.2` in this example):
-	```
-	cd ~/blocknet-4.3.2/bin
-	```
-	1. Start the Blocknet daemon. The first time the Blocknet daemon
+	1. Start the Blocknet daemon using the `stdaemon` alias you defined above. The first time the Blocknet daemon
 	is started, it creates the Blocknet data directory, `~/.blocknet`:
 	```
-	./blocknetd -daemon
+	stdaemon
 	```
-	1. Without waiting for the wallet to sync, stop the Blocknet daemon:
+	1. Without waiting for the wallet to [sync](/resources/glossary/#syncing), stop the Blocknet
+	daemon using the `stcli` alias you defined above:
 	```
-	./blocknet-cli stop
+	stcli stop
 	```
 
-	1. To save a day or more of time in syncing, it's recommended to
+	1. To save a day or more of time in [syncing](/resources/glossary/#syncing), it's recommended to
        use the *bootstrap* method to speed up syncing:
 		1. Remove existing `blocks`, `chainstate` & `indexes`
 		directories from the blocknet data directory:
@@ -208,9 +261,9 @@ Use the following guide to enable staking and start earning rewards.
 
 	1. Restart the Blocknet daemon:
 	```
-	./blocknetd -daemon
+	stdaemon
 	```
-	1. Issue the command `./blocknet-cli getblockcount` every 5
+	1. Issue the command `stcli getblockcount` every 5
        minutes or so until the command stops returning error messages and
        returns a block height which matches that of
        [Chainz Blockchain Explorer](https://chainz.cryptoid.info/block/).
@@ -220,62 +273,34 @@ Use the following guide to enable staking and start earning rewards.
 	1. At this point, the latest Blocknet wallet is installed and
     fully synced. Now you can interact with the Blocknet daemon through
     the Command Line Interface (CLI) as follows:
-		1. If you're not already there, Change Directory to the `bin` directory where the Blocknet
-        daemon was installed (replacing `4.3.2` w/ the version you installed):
-		```
-		cd ~/blocknet-4.3.2/bin
-		```
 		1. The following are examples of commands you can issue to the Blocknet daemon through the CLI:
 		```
-		./blocknet-cli getblockchaininfo 
-		./blocknet-cli getstakingstatus 
-		./blocknet-cli getblockcount 
-		./blocknet-cli getblockhash <height>
+		stcli getblockchaininfo 
+		stcli getstakingstatus 
+		stcli getblockcount 
+		stcli getblockhash <height>
 		```
 		Note: Some of the Blocknet CLI commands take parameters. In
 		the last example above, *<height\>* represents a number to be
 		passed to the `getblockhash` command as a parameter.
 		To see a full list of all the Blocknet CLI commands, type:
 		```
-		./blocknet-cli help 
+		stcli help 
 		```
 		To learn the details about what a command does and how to use
 		it, type:
 		```
-		./blocknet-cli help <command>
+		stcli help <command>
 		```
 		...where *<command\>* is the command you want to learn about.
 		For example, the following will give full details on the
 		function and use of the `getnewaddress` command:
 		```
-		./blocknet-cli help getnewaddress
+		stcli help getnewaddress
 		```
 		You can also find the same details about all available
 		Blocknet commands at the
 		[Blocknet API Portal](https://api.blocknet.co).
-
-	    ??? tip "Tip: For convenient access to `blocknet-cli` from any directory, you may want to create a full-path alias for it, or add the directory that contains `blocknet-cli` to your $PATH."
-		For example, you may want to add a line like this to your
-		`~/.bash_aliases` file (or whichever file contains your aliases,
-		depending which shell you're running):
-		```
-		alias cli='~/blocknet-4.3.2/bin/blocknet-cli'
-		```
-		Then activate your new `cli` alias with:
-		```
-		source ~/.bash_aliases 
-		```
-		Now you can, for example, type the following command,
-		independent of your [Present Working Directory (pwd)](http://www.linuxcommand.org/lc3_lts0020.php):
-		```
-		cli getbalance
-		```
-		Another way to make the `blocknet-cli` executable file available from any [Present Working Directory (pwd)](http://www.linuxcommand.org/lc3_lts0020.php) is to
-		[add the directory that contains `blocknet-cli` to your *$PATH* variable](https://linoxide.com/add-path-command-line/). Without
-		creating an alias as above, or modifying your $PATH in this way, `./blocknet-cli` only works if your
-		[Present Working Directory (pwd)](http://www.linuxcommand.org/lc3_lts0020.php)
-		is the directory where the `blocknet-cli` executable file is
-		located.
 
 	1. Fund your staking wallet. Skip to
     step 23 if you don't have an already funded Blocknet wallet, or if
@@ -285,7 +310,7 @@ Use the following guide to enable staking and start earning rewards.
 		1. Stop the Blocknet daemon on your VPS with the following
         command:
 		```
-		./blocknet-cli stop
+		stcli stop
 		```
 		1. Make space for the funded `wallet.dat` to be imported to your VPS
         by renaming the empty `wallet.dat` to `wallet.dat.empty`:
@@ -339,7 +364,7 @@ Use the following guide to enable staking and start earning rewards.
 		1. Restart the Blocknet daemon on your VPS with the following
         command:
 		```
-		./blocknetd -daemon
+		stdaemon
 		```
 
 		??? info "Note: It is *not* necessary to delete, remove, uninstall or stop using the Blocknet wallet on your home computer just because you imported your home computer's `wallet.dat` to your staking VPS. Read more..."
@@ -373,7 +398,7 @@ Use the following guide to enable staking and start earning rewards.
           command. Get details on how to use the `encryptwallet`
           command by typing:
 		  ```
-		  ./blocknet-cli help encryptwallet
+		  stcli help encryptwallet
 		  ```
 		  1. [Back up your VPS Blocknet wallet](/wallet/backup-restore). Hint:
              Use
@@ -386,7 +411,7 @@ Use the following guide to enable staking and start earning rewards.
 			 Blocknet wallet to which you can send BLOCK. Get details on how to use the `getnewaddress`
 			 command by typing:
 		  ```
-		  ./blocknet-cli help getnewaddress
+		  stcli help getnewaddress
 		  ```
 		  1. Fund your VPS Blocknet wallet by sending BLOCK to the address
 			 you got from issuing the `getnewaddress` command.
@@ -396,12 +421,19 @@ Use the following guide to enable staking and start earning rewards.
        wallet for staking*. To unlock your wallet for staking only,
        issue the command:
 	   ```
-	   ./blocknet-cli walletpassphrase "$(read -sp "Enter Wallet Passphrase:" undo; echo $undo;undo=)" 9999999999 true
+	   stunlock
 	   ```
 	   When prompted, enter your wallet passphrase to unlock your
        wallet for staking only. (Your wallet passphrase is the
-       passphrase you specified when you encrypted the wallet.) The
-       parameters of this command are as follows:
+       passphrase you specified when you encrypted the wallet.) To see
+       what the `stunlock` alias does, type `alias stunlock`. It
+       should show you this command:
+	   ```
+	   alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli
+       walletpassphrase "$(read -sp "Enter Password:" undo; echo
+       $undo;undo=)" 9999999999 true'
+	   ```
+	   The parameters of this command are as follows:
 		   - `"$(read -sp "Enter Wallet Passphrase:" undo; echo
 			 $undo;undo=)"`  This parameter uses a
 			 special *bash shell* trick which prompts the user for a
@@ -416,35 +448,16 @@ Use the following guide to enable staking and start earning rewards.
 		   unlock for staking *only*; don't unlock the wallet fully, which
 		   would be a security risk.
 
-	    ??? tip "Tip: To conveniently unlock your wallet for staking only, you may want to create a full-path alias for doing so. (Click here for an example.)"
-		You may want to add a line like this to your
-		`~/.bash_aliases` file (or whichever file contains your aliases,
-		depending which shell you're running):
-		```
-		alias unlock='./blocknet-cli walletpassphrase "$(read -sp "Enter Wallet Passphrase:" undo; echo $undo;undo=)" 9999999999 true'
-		```
-		Then activate your new `unlock` alias with:
-		```
-		source ~/.bash_aliases 
-		```
-		Now you can unlock your wallet for staking, independent of
-		your
-		[Present Working Directory (pwd)](http://www.linuxcommand.org/lc3_lts0020.php),
-		simply by typing:
-		```
-		unlock
-		```
-
 	1. Confirm your wallet is staking by issuing the command:
 		```
-		./blocknet-cli getstakingstatus
+		stcli getstakingstatus
 		```
 		When this command returns, `"status": "Staking is active"`,
 		then you know your wallet is staking properly.
 		Note, you may also want to confirm your staking wallet balance
 		is correct with:
 		```
-		./blocknet-cli getbalance
+		stcli getbalance
 		```
 
 	1. Whenever a new version of the Blocknet wallet is released, upgrade
@@ -452,13 +465,13 @@ Use the following guide to enable staking and start earning rewards.
     these steps:
 		1. Stop the Blocknet daemon:
 		```
-		./blocknet-cli stop
+		stcli stop
 		```
 		1. Follow steps 13 through 16 above to install the latest
 		version of the Blocknet wallet and start the new Blocknet daemon.
 		1. Unlock your wallet for staking with:
 	   ```
-	   ./blocknet-cli walletpassphrase "$(read -sp "Enter Wallet Passphrase:" undo; echo $undo;undo=)" 9999999999 true
+	   stunlock
 	   ```
 		   1. Confirm your wallet is staking as in step 25 above.
 		   1. (Recommended) Remove the directory tree of the old

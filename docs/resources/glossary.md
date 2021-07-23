@@ -26,7 +26,8 @@ created as a more user-friendly naming preference to refer to the
 wallet's default address. Within each *address* there can exist
 multiple [UTXOs](#utxo) , also called [Inputs](#input).
 
-
+#### Avalanche Indexer
+See [Indexer](#indexer)
 
 ---
 
@@ -67,11 +68,10 @@ A *block reward* is a reward you earn when [staking](#staking) for helping secur
 ---
 
 #### Change Address
-A *change address* is the address where the remaining funds from a
-[UTXO](#utxo) are returned after making a transaction. This is always
-an [address](#address) you own. If your wallet uses a UTXO of 20 BLOCK
-to fund a transaction sending only 15 BLOCK, then the remaining 5 BLOCK
-will be returned to your wallet in the change address. This is similar
+A *change address* is the address where the 'change' of a transaction is returned to your wallet. This is always
+an [address](#address) you own. If your wallet uses a [UTXO](#utxo) of 20 BLOCK
+to fund a transaction in which you are sending only 15 BLOCK, then the remaining 5
+BLOCK 'change' from the transaction will be returned to your wallet in the change address. This is similar
 to the concept of paying for an $15 item with a $20 bill and receiving $5 back as change.
 
 #### Client
@@ -148,6 +148,11 @@ A *digital asset* is new asset class that describes digital cryptographic coins 
 ## I
 
 ---
+
+#### Indexer
+An Indexing service makes blockchain data readily accessible to
+developers. The Blocknet Avalanche Indexer makes Avalanche blockchain
+data available to developers in a decentralized fashion, which is vital to maintaining the decentralization of the apps built with it.
 
 #### Input
 Within a users [wallet](#wallet), the total balance is composed of
@@ -247,7 +252,10 @@ A *naked node* is a [Service Node](#service-node) that does not run any [xwallet
 *Proof-of-stake*, also known as PoS, is a type of algorithm by which a blockchain [network](#network) achieves distributed consensus. 
 
 #### Proposals
-*Proposal* are suggested plans for consideration. Each [Superblock](#superblock) period, new proposals are submitted and [Service Nodes](#service-node) vote on these proposals. Proposals can also be used to request funding for contributions to the Blocknet ecosystem.
+*Proposals* are requests for funding for contributions to the Blocknet ecosystem. Each
+[Superblock](#superblock) period, new proposals are submitted and
+BLOCK holders can cast 1 vote on these proposals for every 5000 BLOCK
+they own. See details [here](/governance/introduction)
 
 
 
@@ -277,13 +285,19 @@ A *reward* refers to a payment earned for providing a service.
 ---
 
 #### Service Node
-*Service Nodes* provide services to the Blocknet [network](#network). They are users that own 5000 [BLOCK](#block) and have a certain setup outside of the wallet that allows them the ability to earn rewards for these service and grants them the ability to vote on [proposals](#proposals).
+*Service Nodes* provide services to the Blocknet [network](#network). Read about Service Nodes [here](/service-nodes/introduction)
 
 #### Snode
 *Snode* is a short-hand term to refer to a [Service Node](#service-node).
 
 #### SPV
-*SPV* is an acronym that stands for Simplified Payment Verification. It is a method for verifying if particular transactions are included in a block without downloading the entire block.
+*SPV* is an acronym that stands for __Simplified Payment
+Verification__. It is a method of verifying if particular transactions
+are included in a block without downloading the entire blockchain. An SPV
+wallet is a wallet which enables SPV by hosting the full blockchain so
+the client requesting the SPV doesn't have
+to. Blocknet [Service Nodes](#service-node) host multiple SPV wallets and thereby allow
+SPV for multiple blockchains.
 
 #### Staking
 *Staking* is used to secure the network by confirming [blocks](#blockchain-block). Users that stake earn rewards. The reward can be referred to as a *stake*. When users earn a staking reward, it is tied to a specific [input](#input) in the user's wallet. For a user to stake, the option must be enabled.

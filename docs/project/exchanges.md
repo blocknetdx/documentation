@@ -17,7 +17,7 @@ Decentralized exchanges are purely peer-to-peer instead of requiring a trusted e
     * [View Exchange Volume on BlockDX](https://twitter.com/DxStats)
 * [Pangolin (aaBLOCK/AVAX)](https://app.pangolin.exchange/#/swap?inputCurrency=0xc931f61b1534eb21d8c11b24f3f5ab2471d4ab50) -- [Learn about buying aaBLOCK and redeeming it for BLOCK](https://gist.github.com/ConanMishler/bdbd910a63197c4c6598d1475164362b)
 
-* [Uniswap (aBLOCK/ETH)](https://app.uniswap.org/#/swap?inputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5) -- [Learn about buying aBLOCK and redeeming it for BLOCK](https://gist.github.com/ConanMishler/e3bf4218463bf9f8bf1480652d8ad117)
+* [Uniswap (aBLOCK/ETH)](https://app.uniswap.org/#/swap?outputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5) -- [Learn about buying aBLOCK and redeeming it for BLOCK](https://gist.github.com/ConanMishler/e3bf4218463bf9f8bf1480652d8ad117)
 
 * [Anyswap (aBLOCK/ETH)](https://anyswap.exchange/swap)
 
@@ -34,6 +34,8 @@ it operates to collect data on its customers. The following options are availabl
 Exchange        | Market        | Link
 ----------------|---------------|------
 Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)
+SouthExchange | (USDT/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/USDT) 
+SouthExchange | (BTC/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/BTC) 
 DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.io/en-ww/trade/BTC/BLOCK)
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC)
 StakeCube       | (LTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_LTC)

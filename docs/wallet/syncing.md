@@ -162,7 +162,7 @@ A bootstrap is a set of files containing blockchain data up to a certain point i
 	* [MacOS](https://www.youtube.com/watch?v=kTJ-YBdHrtM)
 
 1. [Install the wallet](/wallet/installation) or update to the [latest release](https://blocknet.co/#downloads).
-1. Download the [latest bootstrap files](https://github.com/blocknetdx/blocknet-blockchain-bootstrap/releases/download/v4.0/Blocknet.zip).
+1. Download the [latest bootstrap files](https://blocknet.co/files/Blocknet.zip).
 1. Find the downloaded `Blocknet.zip` file. The default location is in your *Downloads* folder.
 1. Double-click the file to unzip and reveal a folder named `Blocknet`.
 1. Close and quit the Blocknet wallet if it is running.

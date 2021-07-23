@@ -190,7 +190,7 @@ Use the following guide to enable staking and start earning rewards.
 		```
 		1. Get the latest bootstrap file:
 		```
-		wget https://github.com/blocknetdx/blocknet-blockchain-bootstrap/releases/download/v4.0/Blocknet.zip
+		wget https://blocknet.co/files/Blocknet.zip
 		```
 		1. Unzip the bootstrap file:
 		```

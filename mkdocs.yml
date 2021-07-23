@@ -133,12 +133,14 @@ nav:
   # - 'Troubleshooting': 'wallet/troubleshooting.md'
   # - 'Security': 'wallet/security.md'
   - 'Integration': 'wallet/integration.md'
+  - 'Log Files': 'wallet/log-files.md'
 - 'XLite':
   - 'Getting Started': 'xlite/setup.md'
   - 'Installation': 'xlite/installation.md'
   - 'Create, Backup & Restore': 'xlite/backup-and-restore.md'
   - 'Using BlockDX w/ XLite': 'xlite/blockdx-xlite.md'
   - 'Recover Private Keys': 'xlite/recover-private-keys.md'
+  - 'Log Files': 'xlite/log-files.md'
 - 'Block DX':
   - 'Introduction': 'blockdx/introduction.md'
   - 'Getting Started': 'blockdx/setup.md'
@@ -155,6 +157,7 @@ nav:
   - 'Fees': 'blockdx/fees.md'
   - 'Settings': 'blockdx/settings.md'
   - 'FAQ': 'blockdx/faq.md'
+  - 'Log Files': 'blockdx/log-files.md'
   # - 'Troubleshooting': 'blockdx/troubleshooting.md'
 - 'Service Nodes':
   - 'Introduction': 'service-nodes/introduction.md'

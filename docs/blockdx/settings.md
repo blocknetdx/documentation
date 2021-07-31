@@ -53,6 +53,26 @@ Selecting the *MENU* button will display a *Settings Menu*:
 
 	!!! tip "Tip: It's a good idea to always keep a few BLOCK in your Blocknet Core wallet because [Taker Fees](/blockdx/fees/#taker-fee) can *only* be paid from the Blocknet Core wallet."
 
+### Auto-Generate Addresses in Order Form
+
+??? example "Auto-Generate Addresses in Order Form"
+	When making or taking an order in BlockDX, the ORDER FORM requires an
+	address from the wallet of the asset being bought, and an address
+	from the wallet of the asset being sold. In the following ORDER
+	FORM example, *BLOCK Address* is an address from the wallet of the
+	asset being bought, and *LTC Address* is an address from the wallet of the
+	asset being sold:
+
+	![Select Balances](/img/blockdx/make-order.png)
+
+	To control whether those two address fields are filled in automatically, or
+    whether the user must select *Generate New Address* to generate those addresses manually:
+
+	1. Select *General Settings* from the [Settings Menu](#settings-menu).
+	   ![Select Balances](/img/blockdx/auto-gen-addresses.png)
+	1. Select *Order Form*
+	1. In the *Auto Generate Address?* dropdown, select *Yes* or *No*, according to your preference. 
+	   
 
 <script type="text/javascript">
 // read instructions for related links in ../snippets/extras.md

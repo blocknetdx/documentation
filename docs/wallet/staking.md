@@ -73,7 +73,7 @@ Use the following guide to enable staking and start earning rewards.
        [Digital Ocean](https://www.digitalocean.com) and
        [Contabo](https://contabo.com/en/) seem to be some of the most
        economical and reliable services available. You might also
-       compare prices with [Amazon AWS](https://aws.amazon.com) and
+       compare prices with [Vultr](https://www.vultr.com/products/cloud-compute/#pricing), [Amazon AWS](https://aws.amazon.com) and
        [Google Cloud Computing](https://cloud.google.com) and other
        services. As of this writing (June, 2021), you can rent a VPS
        capable of running a staking wallet for less than USD $7.00 per month.
@@ -95,7 +95,7 @@ Use the following guide to enable staking and start earning rewards.
 		easily from the [Contabo Customer ControlPanel](https://my.contabo.com/).)
 
 	1. Through your VPS provider, launch a small,
-      economical VPS running a recent (v16+) version of Ubuntu
+      economical VPS running a recent (v18+) version of Ubuntu
       Linux. The following are the minimum hardware requirements:
 		  - 1 or more vCPUs
 		  - 20GB or more storage space
@@ -147,8 +147,7 @@ Use the following guide to enable staking and start earning rewards.
 	   ```
 	1. Make sure `nano` and `unzip` packages are installed.
 	   ```
-	   sudo apt install nano
-	   sudo apt install unzip
+	   sudo apt install nano unzip
 	   ```
 	1. (Recommended)
        Increase the security of your VPS by
@@ -234,7 +233,7 @@ Use the following guide to enable staking and start earning rewards.
 	stcli stop
 	```
 
-	1. To save a day or more of time in [syncing](/resources/glossary/#syncing), it's recommended to
+	1. To save 3.5+ hours of time in [syncing](/resources/glossary/#syncing), it's recommended to
        use the *bootstrap* method to speed up syncing:
 		1. Remove existing `blocks`, `chainstate` & `indexes`
 		directories from the blocknet data directory:

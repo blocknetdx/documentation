@@ -114,6 +114,25 @@ A *digital asset* is new asset class that describes digital cryptographic coins 
 #### Encrypted
 *Encrypting* your wallet adds an additional level of security. An encrypted wallet requires a passphrase set by the user to spend funds the wallet.
 
+#### Enterprise XRouter
+An *Enterprise XRouter* Service Node (also called an *EXR* Service Node) is a
+[Service Node](#service-node) which services [XRouter](#xrouter),
+[XBridge](#xbridge) and [XCloud](#xcloud) requests from two different
+networks simultaneously:
+
+1. The original Peer-to-Peer (P2P) Blocknet network of Service Nodes
+1. An HTTP based, high performance, metered P2P network of Service Nodes
+
+Here are architectural diagrams of the *current* and *future* versions of
+[Hydra](#hydra) Service Nodes. These illustrate the implementation
+details of an *Enterprise XRouter* and its relationship to a
+[Hydra](#hydra) Service Node:
+
+![Current Hydra](/img/resources/current-hydra.png) 
+![Future Hydra](/img/resources/future-hydra.png) 
+
+#### EXR 
+EXR stands for *Enterprise XRouter*. See [Enterprise XRouter](#enterprise-xrouter) 
 
 
 ---
@@ -127,21 +146,32 @@ A *digital asset* is new asset class that describes digital cryptographic coins 
 
 
 
-<!-- ---
+---
 
 ## G
 
---- -->
+---
+
+#### GETH
+GETH stands for *Go ETH*. It is an implementation of the Ethereum
+core node protocol written in Golang.
 
 
-
-<!-- ---
+---
 
 ## H
 
---- -->
+---
 
+#### Hydra
+A *Hydra Service Node* is simply an [Enterprise XRouter Service Node](#enterprise-xrouter) which
+hosts the Ethereum (ETH) blockchain as one of its [SPV wallets](#spv).
 
+These architectural diagrams illustrate the implementation
+details of a Hydra Service Node:
+
+![Current Hydra](/img/resources/current-hydra.png) 
+![Future Hydra](/img/resources/future-hydra.png) 
 
 ---
 

@@ -79,7 +79,17 @@ you are ready to proceed to the next step in listing your asset. At this point, 
         also contains detailed instructions for
         [Testing a Blockchain for Compatibility](https://github.com/blocknetdx/blockchain-configuration-files#testing-a-blockchain-for-compatibility),
         which you should be sure to follow before submitting a [Pull Request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) to have your listing
-        merged into the *master* branch of the Github repository.
+        merged into the *master* branch of the Github
+        repository. Note: Because no docker image for your new coin
+        will be available when you first test it, you'll need to use
+        the
+        [Manual Service Node Setup](/service-nodes/setup/#manual-service-node-setup-deprecated)
+        procedure to set up the Service Node required for testing your
+        new coin. If you are running a staking wallet on the computer
+               where the Service Node will be manually set up, it will
+               be good to review the information on how to avoid data
+        dir conflicts when
+               [running a staking wallet and a service node wallet on the same computer](/service-nodes/setup/#running-a-collateral-or-staking-wallet-and-a-service-node-wallet-on-the-same-computer).
 
 		???+ tip "Tip: you may save some time by identifying an already listed asset which is closely related to your asset, then copying/pasting/modifying from that asset."
 
@@ -97,7 +107,19 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 		??? tip "Tip: Summary of procedure for performing test trades for a new coin integration"
 		Here are the basics of testing an integration of a coin called, __COINX__:
 
-			1. There must be at least 1 [Service Node](/service-nodes/introduction) supporting both of the coins you want to trade (ie: COINX and whatever) 
+			1. There must be at least 1
+               [Service Node](/service-nodes/introduction) supporting
+               both of the coins you want to trade (ie: COINX and
+               whatever). Note: Because no docker image for your new coin
+        will be available when you first test it, you'll need to use
+        the
+        [Manual Service Node Setup](/service-nodes/setup/#manual-service-node-setup-deprecated)
+        procedure to set up the Service Node required for testing your
+        new coin. If you are running a staking wallet on the computer
+               where the Service Node will be manually set up, it will
+               be good to review the information on how to avoid data
+        dir conflicts when
+               [running a staking wallet and a service node wallet on the same computer](/service-nodes/setup/#running-a-collateral-or-staking-wallet-and-a-service-node-wallet-on-the-same-computer).
 		1. You need two instances of:
 		```
 		synced Blocknet wallet + BlockDX + synced COINX wallet

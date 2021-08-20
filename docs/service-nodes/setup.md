@@ -7,13 +7,13 @@ This guide explains step-by-step how to setup a [Service Node](/service-nodes/in
 
 Operating as a Service Node requires two Blocknet wallets:
 
-* __Collateral Wallet__ - The wallet will contain the 5000 BLOCK
+* __Collateral Wallet__ - This wallet will contain the 5000 BLOCK
   collateral and does *NOT* need to remain online and unlocked unless the 5000 BLOCK is being staked or you are [voting on a proposal](/governane/proposal-voting).
 * __Service Node Wallet__ - This wallet will act as the Service Node
   and must remain online and open at all times.
 ## Hardware Requirements For Service Node Wallet
 
-??? example "Hardware Requirements For Service Node Wallet"
+??? abstract "Hardware Requirements For Service Node Wallet"
 	Hardware requirements for a Service Node vary depending on which
 	[SPV wallets](/resources/glossary/#spv) and services your node will support.
 
@@ -95,8 +95,8 @@ Operating as a Service Node requires two Blocknet wallets:
 
 	If you want to compare prices between VPS service providers, you
     can compare the offerings of companies like [Digital Ocean](https://www.digitalocean.com),
-       [Contabo](https://contabo.com/en/vps/),
-    [Amazon AWS](https://aws.amazon.com), and
+       [Contabo](https://contabo.com/en/vps/), [Vultr](https://www.vultr.com/products/cloud-compute/#pricing),
+     [Amazon AWS](https://aws.amazon.com), and
        [Google Cloud Computing](https://cloud.google.com). A
     Google search for "VPS Hosting Service Provider" will show many
     more options. As of this
@@ -151,11 +151,685 @@ Operating as a Service Node requires two Blocknet wallets:
     [Blocknet Discord](https://discord.gg/cQ9JNyNRW4).
 
 	Another option for meeting the HW requirements of a Hydra node is to purchase your own
-    hardware and run it at home. Discussions about HW details can also
+    hardware and run it at home. If purchasing your own SSD drives, be
+    aware that ETH core will be writing to your SSDs continuously, so
+    you'll want to get SSDs with a high "durability" rating. For
+    example, a company called *Sabrent* offers an 8TB NVMe SSD. On the
+    surface, it may look like a good choice to use for building a
+    system with lots of fast storage space. Unfortunately, this
+    particular drive only has a TBW (Total Bytes Written) durability
+    rating of 1,800 TB TBW, which, according to
+    [this review](https://www.youtube.com/watch?v=iFXjC7k1OOw) makes
+    it not very suitable to be used in an application that writes to
+    it frequently. More discussions about HW details can
     be found in the #hydra channel of
     [Blocknet Discord](https://discord.gg/cQ9JNyNRW4).
 
-To setup your Service Node, complete the following guides in order:
+## Running a *Collateral or Staking Wallet* and a *Service Node Wallet* on the same computer
+
+??? example "Click Here to learn about running a *Collateral or Staking Wallet* and a *Service Node Wallet* on the same computer. Do this *before* setting up your Service Node."
+	Service Node operators will often want to run a *Collateral Wallet* or a
+	*Staking Wallet* on the same computer as their
+	*Service Node Wallet*. In almost all cases, the *Collateral
+	Wallet* will also be [staking](/resources/glossary/#staking), so we
+	can say it is also a *Staking Wallet*. A *Staking Wallet*,
+	however, is not always used as a *Collateral Wallet*.
+
+	To run a *Staking Wallet* and a *Service Node Wallet* on the same
+	computer, follow these steps:
+
+	1. Set up your *Staking Wallet*. [Here is an example guide for
+	setting up a *Staking Wallet* on a VPS running Ubuntu Linux](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux). Note,
+	the Hardware Requirements mentioned in that VPS Staking guide
+	should be ignored in this case. The
+	[Hardware Requirements for a Service Node Wallet](#hardware-requirements-for-service-node-wallet)
+	should be followed instead.
+	1. Change the Peer-to-Peer (P2P) port and the RPC port of your *Staking Wallet* so they don't
+    conflict with the P2P port and the RPC port of your
+    *Service Node Wallet*. To do this on a Linux system,
+		1. Change directory to your *Staking Wallet* data
+           directory. If your *Staking Wallet* has been set up according to
+           the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+           your *Staking Wallet* data directory will be `~/.blocknet`.
+		   For Example:
+	       ```
+		   cd ~/.blocknet
+		   ```
+	    1. Use a simple text editor like
+           [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
+           or
+           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/)
+		   to edit the wallet configuration file,`blocknet.conf`.
+		   For Example:
+	       ```
+		   nano blocknet.conf 
+		   ```
+		   Note, editing `blocknet.conf` will create `blocknet.conf` if it doesn't
+           already exist.
+	    1. Add two lines like the following to your `blocknet.conf`:
+	       ```
+		   port=41413
+		   rpcport=41415 
+		   ```
+		   Note: The `port` and `rpcport` values you set in your `blocknet.conf` don't have
+	       to be 41413 and 41415, as in the example above; they just
+	       have to be port numbers which are __*not*__ used as either
+	       `port` or `rpcport` in the default
+	       Blocknet wallet configuration. Therefore you must __*not*__ use
+	       41412 or 41414, which are the default values for `port` and
+	       `rpcport`, respectively. You should also __*not*__ use the
+	       default `port` or `rpcport` values for Blocknet testnet,
+	       which are 41474 and 41419, respectively. Incrementing the
+	       default Blocknet `port` and `rpcport` values by 1, as in
+	       the example above, is a pretty safe strategy for
+	       avoiding potential port conflicts. Not only does this avoid
+	       potential port conflicts with the
+	       Blocknet testnet, but also with other [SPV wallets](/resources/glossary#spv)
+		   running on your Service Node.
+	    1. Save your edits to `blocknet.conf`, exit the editor and restart your
+           *Staking Wallet*. If your *Staking Wallet* has been set up
+		   according to
+		   the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+		   and the aliases for `stcli`, `stdaemon` and `stunlock` have
+		   also been set up according to that guide, you can restart
+		   your *Staking Wallet* and start it staking again by
+		   issuing the follow commands:
+			  ```
+			  stcli stop
+			  stdaemon
+			  ```
+		   Note, you will probably need to wait at least 30 seconds
+		   after issuing `stcli stop` before you'll be allowed to
+		   launch `stdaemon.` Just keep trying every 30 seconds or so to launch `stdaemon`
+		   until you no longer get, "*Error: Cannot obtain a lock on data directory.*"
+		   1. Unlock your staking wallet for staking only:
+		   ```
+		   stunlock
+		   ```
+		   (Enter your wallet password when prompted.)
+		   1. Confirm your wallet is staking by issuing the command:
+		   ```
+		   stcli getstakingstatus
+		   ```
+		   When this command returns, `"status": "Staking is active"`,
+		   then you know your wallet is staking properly.
+		   Note, you may also want to confirm your staking wallet balance
+		   is correct with:
+		   ```
+		   stcli getbalance
+		   ```
+
+	1. If you will be setting up your Service Node following the
+       [Automated Docker-Based EXR Service Node Setup Guide](#automated-docker-based-exr-service-node-setup-recommended),
+       there is nothing more you need to do regarding your *Staking
+       Wallet* and you can proceed directly to the
+       [Automated Docker-Based EXR Service Node Setup Guide](#automated-docker-based-exr-service-node-setup-recommended). However,
+       if you will be setting up your Service Node following the
+       [Manual Service Node Setup Guide](#manual-service-node-setup-deprecated),
+       you'll need to move your *Staking Wallet* data directory to
+       allow the *Service Node Wallet* data directory to occupy the
+       [default data directory location](/wallet/backup-restore/#data-directory). To
+       move your *Staking Wallet* data directory, follow these steps:
+		   1. Stop your *Staking Wallet*. If your *Staking Wallet* has
+			  been set up according to the
+		   [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+		   and the alias for `stcli` has also been set up according to that
+			  guide, you
+		   can stop your *Staking Wallet* with:
+		   ```
+		   stcli stop
+		   ```
+		   1. Wait till your *Staking Wallet* stops completely. You
+              can monitor the *Staking Wallet* Linux process (called `blocknetd`) by
+              repeatedly  pasting/issuing the following command:
+		   ```
+		   ps x -o args | grep -v "grep" | grep "blocknetd"
+		   ```
+		   Before the *Staking Wallet* Linux process has stopped
+           completely, that command will return something like this:
+		   ```
+		   /home/[user]/blocknet-4.3.3/bin/blocknetd -daemon
+		   ```
+		   Continue issuing that `ps x -o args` command until it returns
+              nothing. Then you know the `blocknetd` process has stopped completely and it's
+              safe to move your data directory.
+		  1. Issue the following commands to move
+          (rename) your *Staking Wallet* data directory:
+		  ```
+		  cd ~
+		  mv .blocknet .blocknet_staking
+		  ```
+		  1. Now, assuming your *Staking Wallet* access
+             aliases have been set up according to the
+		   [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+             you'll need to change those alias definitions to reflect
+             the fact that your *Staking Wallet* data directory has
+             changed. To do so, use [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
+           or
+           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/)
+		   to edit the `~/.bash_aliases` file.
+		   For Example:
+	       ```
+		   nano ~/.bash_aliases
+		   ```
+		   Leave the first line of the file as it is:
+		   ```
+		   BLOCKNET_VERSION='4.3.3'
+		   ```
+		   With `4.3.3` being replaced by whatever version of Blocknet
+           wallet your *Staking Wallet* is running.
+		   Then change all the alias definitions to be as follows:
+		   ```
+		   BLOCKNET_VERSION='4.3.3'
+		   # stdaemon = Start Blocknet daemon for staking wallet
+		   alias stdaemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon -datadir=$HOME/.blocknet_staking/'
+           # stcli = Staking wallet Command Line Interface
+		   alias stcli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/'
+           # stunlock = Unlock staking wallet for staking only
+		   alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
+           # stunlockfull = Unlock staking wallet fully
+		   alias stunlockfull='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 false'
+		   ```
+		   1. Save your edits to `~/.bash_aliases`, exit the editor, then
+		   activate your new alias definitions with:
+		   ```
+		   source ~/.bash_aliases
+		   ```
+		   1. Restart your staking wallet with:
+		   ```
+		   stdaemon
+		   ```
+		   1. Unlock your staking wallet for staking only:
+		   ```
+		   stunlock
+		   ```
+		   (Enter your wallet password when prompted.)
+		   1. Confirm your wallet is staking by issuing the command:
+		   ```
+		   stcli getstakingstatus
+		   ```
+		   When this command returns, `"status": "Staking is active"`,
+		   then you know your wallet is staking properly.
+		   Note, you may also want to confirm your staking wallet balance
+		   is correct with:
+		   ```
+		   stcli getbalance
+		   ```
+
+
+## Automated Docker-Based [EXR](/resources/glossary/#enterprise-xrouter) Service Node Setup (Recommended)
+
+Note: This Automated Docker-Based EXR Service Node Setup guide is for
+setting up a Service Node on a computer running Ubuntu Linux
+OS. Please adjust any Ubuntu-specific steps as necessary if
+setting up your Service Node on a different OS.
+
+To setup your Service Node using the Automated
+Docker-Based EXR Service Node Setup,
+complete the following guides in order:
+
+1. [Set up an Ubuntu Linux server](#set-up-an-ubuntu-linux-server)
+1. [Collateral Wallet Setup for Automated Service Node Setup](#collateral-wallet-setup-for-automated-service-node-setup)
+1. [Prepare to Deploy Service Node](#prepare-to-deploy-service-node)
+1. [Auto-Deploy Service Node](#auto-deploy-service-node)
+
+
+### Set up an Ubuntu Linux server
+
+??? abstract "Set up an Ubuntu Linux server"
+
+	If you didn't follow, and don't plan to follow the
+	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
+	to set up a staking wallet on your Service Node computer, then complete steps 1-12 of the
+	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
+	to set up an Ubuntu Linux server as your Service Node computer, ignoring
+	the Hardware Requirements in that *VPS Staking guide* and instead following the
+	[Hardware Requirements for a Service Node](#hardware-requirements-for-service-node-wallet).
+
+### Collateral Wallet Setup for Automated Service Node Setup
+
+??? example "Collateral Wallet Setup for Automated Service Node Setup"
+
+	!!! info "Important Note"
+		This Collateral Wallet Setup guide assumes
+		your collateral wallet has been set up according to the
+		[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+		and the aliases for `stcli`, `stdaemon` and `stunlock` have
+		also been created according to that
+		guide. If your collateral wallet is instead a GUI/Qt Blocknet
+		wallet on a different computer, the wallet commands given in this
+		guide in the form,`stcli wallet-command` can instead be issued in your
+		GUI/Qt wallet under *Tools->Debug
+		Console*. For example, a *Staking Wallet*
+		command given in this guide as `stcli getnewaddress snode01`
+		can be issued in a GUI/Qt wallet under *Tools->Debug Console* as
+		simply `getnewaddress snode01`.
+
+	1. If your collateral wallet is not yet funded, send collateral funds
+	   to your collateral wallet. Send at least 5001 BLOCK for every Service Node
+	   your collateral wallet will support, plus 1 extra BLOCK. (The 1
+	   extra BLOCK, and the 1 extra BLOCK per Service Node will cover
+	   transaction fees. For example, send at least 15,004 BLOCK for 3
+	   Service Nodes' collateral.) To send BLOCK to
+	   your collateral wallet:
+		   1. Create an address in your collateral wallet to which you can
+		   send the funds. On your *Collateral Wallet* computer (which
+		   could be the same as your *Service Node Wallet* computer),
+		   issue the following command:
+		   ```
+		   stcli getnewaddress
+		   ```
+		   Note, you can optionally give a label to the new address you
+		   create by passing a *label* parameter to the `getnewaddress`
+		   command. For example, you can label your new address,
+		   "*receive-address*" by issuing the following command:
+		   ```
+		   stcli getnewaddress receive-address
+		   ```
+		   1. Send BLOCK to the address returned by the `getnewaddress` command.
+	1. Create a new public address for the Service Node. A unique name for
+		this address will need to be provided as an alias. To do this,
+		type `stcli getnewaddress [ALIAS]` into the terminal with `[ALIAS]` replaced with the alias you will be using for this address. Example:
+		```
+		stcli getnewaddress snode01
+		BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+		```
+		In this example, `BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP` was the
+		address returned by `getnewaddress`.
+
+	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
+		```
+		stcli servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
+		```
+		* `NODE_ADDRESS` = The address returned in the previous step.
+		* `NODE_COUNT` = The number of Service Nodes to create. 
+			* Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee).
+			* If left blank, it defaults to `1`.
+			* Example: 20,001 BLOCK will be needed to create 4 Service Nodes
+
+		* `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
+		  * Must be >= `500` and <= `5000`.
+		  * If left blank, it defaults to `1250`.
+		  * Example: `1000` will create 5 inputs of 1000 BLOCK each per Service Node
+
+	    Single Service Node Example:
+		```
+		stcli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+		```
+	Single Service Node (2 inputs) Example:
+	```
+	stcli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
+	```
+	Multiple Service Nodes (10k BLOCK) Example:
+	```
+	stcli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000
+	```
+
+	1. Prepare to create a `servicenode.conf` file in your
+       data directory (Linux data dir =`~/.blocknet` by default). Delete any old `servicenode.conf` file in the data directory, or delete any out-of-date service node references within your `servicenode.conf`. 
+	1. Create a `servicenode.conf` configuration file. Enter the command:
+	```
+	stcli servicenodesetup [NODE_ADDRESS] [ALIAS]
+	```
+	Where `[NODE_ADDRESS]` is the address created for your Service
+	Node in step 2 above, and `[ALIAS]` is any name you want to give
+	to your Service Node. With this command, 	an entry will be
+	created for the Service Node in the `servicenode.conf` file in
+	your collateral wallet data dir. Example: 
+		```
+		stcli servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
+		{
+			"alias": "snode01",
+			"tier": "SPV",
+			"snodekey": "02a5d0279e484a3df81acd611e1052d2e0797e796564ecbc25c7fe19f36e9985e5",
+			"snodeprivkey": "PswGMd6faZf1ceLojzGeKn7LQuXVwYgRQG8obUKrThZ8ap4pkRR7",
+			"address": "BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP"
+		}
+		```
+	1. Copy the *snodeprivkey* and the *address* returned in the
+       previous step and paste them into a temporary text file. You'll
+       need them later on. (In the above example, *snodeprivkey* is
+       `PswGMd6faZf1ceLojzGeKn7LQuXVwYgRQG8obUKrThZ8ap4pkRR7`, and
+       *address* is `BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`). Note, both
+       the *snodeprivkey* and the *address* of your Service Node are
+       also stored at this point in the `servicenode.conf` file in
+       your collateral wallet data directory, so you can always find
+       them there if you don't want to paste them into a temporary
+       text file to record them.
+	   1. Restart the *Collateral Wallet*.
+	   ```
+	   stcli stop
+	   stdaemon
+	   ```
+	   Note, you will probably need to wait at least 30 seconds
+	   after issuing `stcli stop` before you'll be allowed to
+	   launch `stdaemon.` Just keep trying every 30 seconds or so to launch `stdaemon`
+	   until you no longer get, "*Error: Cannot obtain a lock on data directory.*"
+	   1. Assuming you want to [stake](/resources/glossary/#staking) your collateral, unlock your staking wallet for staking only:
+	   ```
+	   stunlock
+	   ```
+	   (Enter your wallet password when prompted.)
+	   1. Confirm your wallet is staking by issuing the command:
+	   ```
+	   stcli getstakingstatus
+	   ```
+	   When this command returns, `"status": "Staking is active"`,
+	   then you know your wallet is staking properly.
+	   Note, you may also want to confirm your staking wallet balance
+	   is correct with:
+	   ```
+	   stcli getbalance
+	   ```
+	1. Continue on to [Prepare to Deploy Service Node](#prepare-to-deploy-service-node).
+
+
+### Prepare to Deploy Service Node
+
+??? example "Prepare to Deploy Service Node"
+
+	Logged in to the Ubuntu Linux server you
+    [set up above](#set-up-an-ubuntu-linux-server), (logged in as the
+    user you created according to the setup instructions, not as root),
+
+	1. Install necessary SW packages:
+	```
+	sudo apt install git python3 python3-pip
+	```
+	(Enter your user's password when prompted - not the root password.)
+	1. Add your Linux user to the *docker* group:
+		1. `sudo groupadd docker`
+		1. `sudo gpasswd -a $USER docker`
+		1. `exit` to disconnect from your VPS
+		1. Reconnect to your VPS, logging in again as the same user as before (not as root).
+	1. Change directory to the directory where you want to install the
+       Service Node Automated Setup tools. In this guide, we'll use the
+       user's home directory (`~`):
+	```
+	cd ~
+	```
+	1. Copy the Service Node Automated Setup tools from the Blocknet
+    Github repository:
+	```
+	git clone https://github.com/blocknetdx/exrproxy-env
+	```
+	1. Change directory to the `autobuild` subdirectory:
+	```
+	cd exrproxy-env/autobuild
+	```
+	1. Install necessary Python3 libraries:
+	```
+	pip3 install -r requirements.txt
+	```
+	1. Copy `alldaemons.yaml` example configuration file to
+    `custom.yaml` in preparation to configure your Service Node:
+	```
+	cp examples/alldaemons.yaml custom.yaml
+	```
+	Explanation: The configuration file used to specify which SPV wallets you want to deploy &
+    support on your Service Node is called, `custom.yaml`. It lives
+    in the `autobuild` subdirectory of the `exrproxy-env` directory. The
+    `examples/alldaemons.yaml` configuration file is meant to be an example of how
+    `custom.yaml` should look if you were going to configure your
+    Service Node to support *all available SPV
+    wallet daemons.* The way to create a `custom.yaml` which
+    configures *only* the SPV wallets you want to support is to start
+    with the `alldaemons.yaml` file, then delete the entries of the
+    SPV wallets you *don't* want to support. This is the reason we copied `examples/alldaemons.yaml` to
+    `custom.yaml` in the `autobuild` directory.
+	1. Edit `custom.yaml` with a simple text editor like
+       [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm) or
+       [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/).
+	   For example:
+	   ```
+	   vi custom.yaml
+	   ```
+	1. Because we copied `alldaemons.yaml` to `custom.yaml` earlier,
+       editing `custom.yaml` for the first time will reveal a file
+       that looks something like the following:
+	   ```
+	   --- # snode daemon LIST
+	   - j2template: dockercompose.j2
+		 name: dockercompose
+		 daemons:
+			 - name: XR_PROXY
+				image: blocknetdx/exrproxy:0.7.9
+				config_mount_dir: /snode/xr_proxy/config
+				nginx_mount_dir: /snode/xr_proxy/nginx
+			 - name: ETH
+			    image: blocknetdx/eth-payment-processor:0.5.2
+				postgresql_data_mount_dir: /snode/eth_pymt_db
+				geth_data_mount_dir: /snode
+			 - name: SNODE
+			    image: blocknetdx/servicenode:latest
+				config_mount_dir: /snode
+				data_mount_dir: /snode
+			 - name: BTC
+			    image: blocknetdx/bitcoin:v0.20.0
+				config_mount_dir: /snode
+				data_mount_dir: /snode
+			 - name: LTC
+			    image: blocknetdx/litecoin:v0.18.1
+				config_mount_dir: /snode
+				data_mount_dir: /snode
+			 - name: DGB
+			    image: blocknetdx/digibyte:v7.17.2
+				config_mount_dir: /snode
+				data_mount_dir: /snode
+	   ```
+	1. __Important:__ The first 3 entries in `custom.yaml` (__XR_PROXY,
+       ETH and SNODE__) should *not* be deleted, even if your Service
+       Node will not support ETH. (The ETH entry will be ignored if
+       you don't specifically deploy an ETH node in a later step.)
+	1. Proceed to delete the entries of those SPV wallets you do *not*
+       want to support on your Service Node. For example, if you don't
+       want to support __DGB__, you would delete the following 4 lines:
+	```
+		- name: DGB
+		   image: blocknetdx/digibyte:v7.17.2
+		   config_mount_dir: /snode
+		   data_mount_dir: /snode
+	```
+	1. Note: The `/snode` mount point used in the `alldaemons.yaml`
+       example can be changed as desired. If changing the mount
+       points, the only requirements are:
+		   1. The two mount points in the __XR_PROXY__ entry must be unique,
+			  as they are in the `alldaemons.yaml` example.
+		   1. The mount point for `postgresql_data_mount_dir:` in the
+			  __ETH__ entry must  be unique, as it is in the `alldaemons.yaml` example.
+		   1. All remaining mount points will be automatically
+			  "*uniquified*" by the autobuild scripts. For example,
+			  specifying `data_mount_dir: /snode` in the __BTC__ entry
+			  will cause BTC data to be stored in the unique directory, `/snode/BTC/data`.
+	1. If you will deploy an archival
+       [GETH](/resources/glossary/#geth) node, the mount point you
+       choose in the __ETH__ entry for `geth_data_mount_dir:` *must* have at least 10TB of
+       SSD storage space available as of this writing. See
+       [Hardware Requirements For Service Node Wallet](#hardware-requirements-for-service-node-wallet)
+       for more details.
+	1. __Testnet__: If you want your Service Node to run on *testnet*
+    instead of *mainnet*, simply replace the line:
+	```
+	- name: SNODE
+	```
+	with this line:
+	```
+	- name: testSNODE
+	```
+	1. __Trading Node__: The autobuild deployment tools also allow
+       you to deploy a *Trading Node* instead of a *Service Node* if
+       you wish. A *Trading Node* is simply a Blocknet core wallet
+       which is *not* configured to run as a Service Node. When you
+       configure `custom.yaml` to deploy a *Trading Node* instead of a
+       Service Node, the other wallet daemons listed in your
+       `custom.yaml` become trading wallets rather than SPV
+       wallets of an Service Node. The *Trading Node* will automatically be
+       connected to all the other wallets daemons listed in your
+       `custom.yaml`. As such, issuing `dxGetLocalTokens` from
+        your *Trading Node's CLI* will return a list of all the coins
+       you had listed in `custom.yaml`, and you can trade
+       between any of them from the CLI of your *Trading Node*. To
+       deploy a *Trading Node* instead of a Service Node, simply
+       replace the line:
+	   ```
+	   - name: SNODE
+	   ```
+	   with this line:
+	   ```
+	   - name: TNODE
+	   ```
+	1. Save your edits to `custom.yaml` and exit the editor.
+	1. Continue on to [auto-deploy your Service Node](#auto-deploy-service-node).
+
+	??? tip "Didn't see an entry in `alldaemons.yaml` for the coin/daemon you want to support?"
+		As of this writing, we don't yet have many coin/daemon/SPV wallet
+		entries listed in `alldaemons.yaml`. This will be changing very
+		soon. The goal is that every coin supported by BlockDX, which
+		means every coin listed in the [Blocknet
+		manifest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest.json),
+		will have an entry in `alldaemons.yaml` and thus be readily
+		available for Service Nodes to support. One thing you can do
+		to ensure you have the latest available version of
+		`alldaemons.yaml` (and the latest version of the autobuild
+		tools in general) is the following:
+		```
+		cd ~/exrproxy-env
+		git pull
+		```
+		Note: If you are trying to
+		add Service Node support for a new coin so the new coin can be tested and
+		then added to the *manifest.json*, you will need to
+		[set up the Service Node Manually](#manual-service-node-setup-deprecated)
+		for that purpose.
+
+
+### Auto-Deploy Service Node
+
+??? example "Auto-Deploy Service Node"
+	
+	1. At this point in the process, your *Present Working Directory* ($PWD) should be
+       `~/exrproxy-env/autobuild` and the `custom.yaml` file in that
+       directory should contain a list of coins/SPV wallets/daemons
+       you want to deploy and support on your Service Node. (Type
+       `pwd` to confirm your *Present Working Directory*. Review the contents of `custom.yaml` with:
+       `less custom.yaml`.)
+	1. Run the *autobuild* script to translate your `custom.yaml`
+       configuration file into a `dockercompose-custom.yaml` file
+       which can be used by *docker-compose* to launch all the docker
+       containers needed to run your Service Node:
+		   - If your Service Node will *not* be supporting a
+		   [GETH](/resources/glossary/#geth) node, issue the following command:
+		   ```
+		   ./app.py
+		   ```
+		   - If your Service Node will support a [GETH](/resources/glossary/#geth) node locally, issue
+		   the following command:
+		   ```
+		   ./app.py --deploy_eth
+		   ```
+		   - If your Service Node will support an *external* [GETH](/resources/glossary/#geth) node, issue
+		   the following command:
+		   ```
+		   ./app.py --gethexternal [IP-Address-of-External-GETH-Node]
+		   ```
+		   Note, this *--gethexternal* option has not been fully tested as
+		   of this writing.
+	1. Move the `dockercompose-custom.yaml` we just generated to the
+       `exrproxy-env` directory and give it the name *docker-compose*
+       will be looking for:
+	   ```
+	   mv  dockercompose-custom.yaml ../docker-compose.yml
+	   ```
+	1. Change directory to the `exrproxy-env` directory:
+	   ```
+	   cd ..
+	   ```
+	1. Prepare to enter all the details you'll need when you launch
+    the `deploy.sh` script:
+		1. Fetch your Service Node computer's Public IP address, then
+        copy/paste it to a temporary text file for easy access:
+		```
+		curl ifconfig.co
+		```
+		1. Make sure you have easy copy/paste access to your *Servicenode Private
+           Key* and *Servicenode Address*, which you got earlier from the [Collateral Wallet Setup Procedure](#collateral-wallet-setup-for-automated-service-node-setup).
+	    1. Think of a name for your Service Node. It doesn't have to be
+          the same name you chose to label the address of your Service
+          Node during the *Collateral Wallet Setup*, but it can be.
+	    1. Think of a name and a password for the RPC user your Service
+          Node will use for communication with the coin daemons it supports.
+	1. Run the `deploy.sh` script:
+	```
+	./deploy.sh
+	```
+	You'll be asked if you want to install *docker*. If you have not
+	yet installed *docker* on your Service Node computer, enter *y*
+	for "yes." Then proceed to enter the information you prepared in the
+	previous step as the `deploy.sh` script prompts you for each item
+	individually. Note, the values you enter for *Servicenode Private
+	Key* and *RPC Password* will not be displayed. If you are
+	pasting in these values, be sure not to paste twice.
+	1. (Informational) You should now see the scripts do their magic and launch [docker
+       containers](https://www.docker.com/resources/what-container)
+       for all the daemons you configured your Service Node to
+       support. You can see all the running docker containers by
+       issuing the command:
+	   ```
+	   docker ps
+	   ```
+	   This command will display the CONTAINER ID, the IMAGE used to
+       build it, the COMMAND running in the container, when it was
+       CREATED, its current STATUS, which PORTS it uses, and any NAMES
+       assigned to it.
+	 1. To complete the Service Node deployment, we'll
+       need to know either the CONTAINER ID or container NAME of the
+       Service Node container. For that, we can filter the above
+       `docker ps` output through `grep` like this:
+	   ```
+	   docker ps | grep snode
+	   ```
+	   That command should return information about the *snode* container, something like this:
+	   ```
+	   f9b910221ca2   blocknetdx/servicenode:latest              "/opt/blockchain/sta…"   26 hours ago   Up 26 hours   41412/tcp, 41414/tcp, 41419/tcp, 41474/tcp         exrproxy-env_snode_1
+	   ```
+	   The first item returned in this example (`f9b910221ca2`) is the CONTAINER ID, and the last item returned (`exrproxy-env_snode_1`) is the NAME of the container. Either of these two values can be used to access the *snode* container.
+	 1. It will take 3.5+ hours for the Blocknet blockchain to sync in your *snode* container. Periodically monitor the current block height of the Blocknet wallet running in the *snode* container by issuing the following command:
+	 ```
+	 docker exec exrproxy-env_snode_1 blocknet-cli getblockcount
+	 ```
+	 Note, here we are executing the command, `blocknet-cli` within the `exrproxy-env_snode_1` container, which is the name we found for the *snode* container in the previous step.
+	 1. When the block height in the *snode* container matches that of the [Blocknet blockchain explorer](https://chainz.cryptoid.info/block/), your Service Node wallet is fully synced and you can now activate your Service Node as follows:
+		 1. On your *Collateral Wallet*, issue the command, `servicenoderegister`. If your *Collateral Wallet was set up according to the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+		and the alias for `stcli` was also created according to that
+		guide, you can issue the `servicenoderegister` command as follows:
+		```
+		stcli servicenoderegister
+		```
+		Otherwise, if your *Collateral Wallet* is a GUI/Qt wallet running on a different computer, simply enter `servicenoderegister` in *Tools->Debug Console*.
+		1. On your *Service Node Wallet*, issue the `servicenodesendping` command like this:
+		```
+		docker exec exrproxy-env_snode_1 blocknet-cli servicenodesendping
+		```
+	1. On your *Service Node Wallet*, check to confirm your Service Node is running and supporting all the right coins/SPV wallets like this:
+		```
+		docker exec exrproxy-env_snode_1 blocknet-cli servicenodestatus
+		```
+		This command should return `"status": "running",` and also the corrrect/expected list of supported services.
+	 1. You can also verify your Service Node is visible on the network by issuing the following command on your *Collateral Wallet*:
+		```
+		stcli servicenodestatus 
+		```
+	 1. To learn how to add or subtract coins/SPV Wallets from your Service Node, and generally navigate and manage the docker containers of your Service Node, continue on to [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
+
+### Maintenance of Auto-Deployed Service Node
+
+*Coming Soon...*
+
+## Manual Service Node Setup (Deprecated)
+
+To setup your Service Node Manually, without using the [Automated
+Docker-Based EXR Service Node Setup](#automated-docker-based-exr-service-node-setup-recommended),
+complete the following guides in order:
 
 1. [Collateral Wallet Setup](/service-nodes/setup/#collateral-wallet-setup)
 1. [Service Node Wallet Setup](/service-nodes/setup/#service-node-wallet-setup)
@@ -164,7 +838,7 @@ To setup your Service Node, complete the following guides in order:
 
 ---
 
-## Collateral Wallet Setup
+### Collateral Wallet Setup
 
 ??? example "Setup using the redesign wallet"
 	![Redesign Wallet](/img/service-nodes/redesign-wallet.png)
@@ -214,16 +888,25 @@ To setup your Service Node, complete the following guides in order:
 		  * Example: `1000` will create 5 inputs of 1000 BLOCK each per Service Node
 
 	1. Type the above command replacing the variables with the respective values in place. See examples below:
-		* Single Service Node: `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`
-		* Single Service Node (2 inputs): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500`
-		* Multiple Service Nodes (10k BLOCK): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000`
+		  * Single Service Node:
+		  ```
+		  servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+		  ```
+		  * Single Service Node (2 inputs):
+		  ```
+		  servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
+		  ```
+		  * Multiple Service Nodes (10k BLOCK):
+		  ```
+		  servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000
+		  ```
 
 		![Create Inputs](/img/service-nodes/redesign-servicenodecreateinputs-response.png)
 
 	1. Prepare to create a `servicenode.conf` file in your
        [data directory](/wallet/backup-restore/#data-directory) by
        first deleting any old `servicenode.conf` file in the data directory, or deleting any out-of-date service node references within your `servicenode.conf`. 
-	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node(s). Example:
+	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node. Example:
 		```
 		servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
 		```
@@ -239,7 +922,7 @@ To setup your Service Node, complete the following guides in order:
 
 	1. Copy this output hash for later use.
 	1. Restart the Blocknet wallet.
-	1. Continue on to [Service Node Wallet Setup](/service-nodes/setup/#snode-server-wallet-setup).
+	1. Continue on to [Service Node Wallet Setup](#service-node-wallet-setup).
 
 ??? example "Setup using the classic wallet"
 	![Classic Wallet](/img/service-nodes/classic-wallet.png)
@@ -299,7 +982,7 @@ To setup your Service Node, complete the following guides in order:
 	1. Prepare to create a `servicenode.conf` file in your
        [data directory](/wallet/backup-restore/#data-directory) by
        first deleting any old `servicenode.conf` file in the data directory, or deleting any out-of-date service node references within your `servicenode.conf`. 
-	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node(s). Example:
+	1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node. Example:
 		```
 		servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
 		```
@@ -315,11 +998,11 @@ To setup your Service Node, complete the following guides in order:
 
 	1. Copy this output hash for later use.
 	1. Restart the Blocknet wallet.
-	1. Continue on to [Service Node Wallet Setup](/service-nodes/setup/#snode-server-wallet-setup).
+	1. Continue on to [Service Node Wallet Setup](#service-node-wallet-setup).
 
 ---
 
-## Service Node Wallet Setup
+### Service Node Wallet Setup
 
 ??? example "Setup using the redesign wallet"
 	![Redesign Wallet](/img/service-nodes/redesign-wallet.png)
@@ -479,7 +1162,7 @@ To setup your Service Node, complete the following guides in order:
 
 ---
 
-## Additional Configuration
+### Additional Configuration
 At this point you have completed the basic setup for a Service Node. The Service Node can operate but will not be supporting any service. Now what you need to do is setup the Service Node to support services on the network where 100% of fees are distributed to Service Nodes:
 
 * With [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes for hosting full blockchain nodes and providing verification checks for trustless exchange between digital assets. For setup, see the [XBridge Configuration Guide](/service-nodes/xbridge-configuration).
@@ -490,7 +1173,7 @@ At this point you have completed the basic setup for a Service Node. The Service
 
 ---
 
-## Deploying Service Node
+### Deploying Service Node
 
 ??? example "Setup using the redesign wallet"
 
@@ -611,8 +1294,4 @@ var relatedLinks = [];
 </script>
 
 --8<-- "extras.md"
-
-
-
-
 

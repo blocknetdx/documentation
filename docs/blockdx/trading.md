@@ -139,10 +139,9 @@ description: These Block DX trading guides explain how to check your balances, s
        you buy will be sent, and the *LTC Address* is the
        [change address](/resources/glossary/#change-address) where LTC
        change from the transaction will be sent. If you don't mind having funds sent to new/empty addresses in your
-       BLOCK and LTC wallets, you can just click the *Generate New BLOCK/LTC
-       Address* options to fill in both of these *Address* fields
-       automatically. However, if you
-       want the asset you're acquiring or the change from the transaction to go
+       BLOCK and LTC wallets, you can use the
+       [auto-generated addresses](/blockdx/settings/#auto-generate-addresses-in-order-form). However, if you
+       want the asset you're acquiring or the [change from the transaction](/resources/glossary/#change-address) to go
        to specific addresses in your wallet, you'll
        need to copy/paste those specific addresses from your wallets into
        these fields. (For now, these *Address* fields must be legacy addresses,
@@ -151,7 +150,7 @@ description: These Block DX trading guides explain how to check your balances, s
        the trade is funded is chosen automatically by BlockDX. BlockDX
        funds the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
        which can cover the expense of the trade.
-	1. Ignore *Order ID*, that should be blank when creating an order.
+	1. Ignore *Order ID*. That should be blank when creating an order.
 	1. Review your order.
 	1. Select the place order button.
 	1. The trade will now be visible as *Open* under *Active Orders*.
@@ -183,10 +182,10 @@ description: These Block DX trading guides explain how to check your balances, s
        [change address](/resources/glossary/#change-address) where BLOCK
        change from the transaction will be sent, and the *LTC Address* is the address where the LTC
        you acquire from the sale will be sent. If you don't mind having funds sent to new/empty addresses in your
-       BLOCK and LTC wallets, you can just click the *Generate New BLOCK/LTC
-       Address* options to fill in both of these *Address* fields
-       automatically. However, if you
-       want the asset you're acquiring or the change from the transaction to go
+       BLOCK and LTC wallets, you can use the
+       [auto-generated addresses](/blockdx/settings/#auto-generate-addresses-in-order-form).
+       However, if you
+       want the asset you're acquiring or the [change from the transaction](/resources/glossary/#change-address) to go
        to specific addresses in your wallet, you'll
        need to copy/paste those specific addresses from your wallets into
        these fields. (For now, these address fields must be legacy addresses,

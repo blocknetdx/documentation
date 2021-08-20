@@ -28,11 +28,49 @@ file is typically stored in the `wallets` subdirectory of your data directory:
 
 1. __Option 1 - Close/Quit Blocknet wallet, then backup `wallet.dat`__
 	1. To ensure `wallet.dat` is not being modified as you are copying
-       it, Close/Quit Blocknet wallet.
+       it, Close/Quit Blocknet wallet. If you are running a CLI
+       wallet on a Linux OS, quit your wallet by issuing the CLI command,
+       `./blocknet-cli stop` in the directory where `blocknet-cli`
+       is located. Note, if your CLI wallet was set up on a Linux
+       system according to the
+       [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+       you can stop your CLI wallet from any directory with:
+		   ```
+		   stcli stop
+		   ```
+	 1. Wait till your Wallet stops completely. If running the GUI/Qt wallet,
+              this means waiting till the "*Blocknet is shutting
+              down...*" message disappears. If running a CLI wallet on
+              Linux, you can monitor the Linux process called `blocknetd` by
+              repeatedly  pasting/issuing the following command:
+		   ```
+		   ps x -o args | grep -v "grep" | grep "blocknetd"
+		   ```
+		   Before the `blocknetd` Linux process has stopped
+           completely, that command will return something like this:
+		   ```
+		   /home/[user]/blocknet-4.3.3/bin/blocknetd -daemon
+		   ```
+		   Continue issuing that `ps x -o args` command until it returns
+              nothing. Then you know the `blocknetd` process has
+              stopped completely and it's safe to backup/copy your `wallet.dat` file.
+
 	1. Within the [data directory](#data-directory) there is usually a subdirectory called `wallets` which is the default place for `wallet.dat`. If you find a `wallet.dat` file in the `wallets` subdirectory, that is the file which should be backed up.
 	1. If the `wallets` subdirectory does __*not*__ exist, then the
       `wallet.dat` in the [data directory](#data-directory) itself is the file which
       should be backed up.
+	1. Back up your `wallet.dat` simply by copying it to different
+       computer(s) and/or USB drives.
+	1. Restart your Blocknet wallet. If you are running a CLI
+       wallet on a Linux OS, restart your wallet by issuing the CLI command,
+       `./blocknetd -daemon` in the directory where `blocknetd`
+       is located. Note, if your CLI wallet was set up on a Linux
+       system according to the
+       [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+       you can restart your CLI wallet from any directory with:
+		   ```
+		   stdaemon
+		   ```
 
 1. __Option 2 - Issue `backupwallet <backupfile.dat>` command from *Debug Console* or
 *Command Line Interface*__

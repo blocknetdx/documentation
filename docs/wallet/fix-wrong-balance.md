@@ -69,7 +69,14 @@ wallet balance with the blockchain:
 	This option can be used with either GUI/Qt wallet or CLI wallet.
 	The easiest way to edit your `blocknet.conf` file is as follows:
 
-	1. Select *Blocknet->Preferences*:
+	1. Select *Settings->Options* (Windows) or
+       *Blocknet->Preferences* (Mac): 
+
+	    - Windows:
+
+	    ![Options](/img/wallet/windows-options.png)	
+
+	    - Mac: 
 
 	    ![Preferences](/img/wallet/preferences.png)
 

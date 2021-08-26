@@ -372,7 +372,7 @@ complete the following guides in order:
 1. [Collateral Wallet Setup for Automated Service Node Setup](#collateral-wallet-setup-for-automated-service-node-setup)
 1. [Prepare to Deploy Service Node](#prepare-to-deploy-service-node)
 1. [Auto-Deploy Service Node](#auto-deploy-service-node)
-
+1. [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
 
 ### Set up an Ubuntu Linux server
 
@@ -618,7 +618,7 @@ complete the following guides in order:
 				data_mount_dir: /snode
 	   ```
 	1. __Important:__ The first 3 entries in `custom.yaml` (__XR_PROXY,
-       ETH and SNODE__) should *not* be deleted, even if your Service
+       ETH__ and __SNODE__) should *not* be deleted, even if your Service
        Node will not support ETH. (The ETH entry will be ignored if
        you don't specifically deploy an ETH node in a later step.)
 	1. Proceed to delete the entries of those SPV wallets you do *not*
@@ -797,7 +797,38 @@ complete the following guides in order:
 	 ```
 	 docker exec exrproxy-env_snode_1 blocknet-cli getblockcount
 	 ```
-	 Note, here we are executing the command, `blocknet-cli` within the `exrproxy-env_snode_1` container, which is the name we found for the *snode* container in the previous step.
+	 Note, here we are executing the command, `blocknet-cli` within
+	 the `exrproxy-env_snode_1` container, which is the name we found
+	 for the *snode* container in the previous step. Also note,
+	 initial calls to `getblockcount` may return errors until headers
+	 finish syncing. This is normal and nothing to be concerned about.
+
+	    ??? tip "Tips for monitoring block height during syncing, and generally accessing blocknet-cli more easily."
+		  To make access to the `blocknet-cli` program more
+		  convenient, you may want to create an alias something like
+		  the following:
+		  ```
+		  alias snode-cli='docker exec exrproxy-env_snode_1 blocknet-cli'
+		  ```
+		  If you add that alias to `~/.bash_aliases` (or any file
+		  sourced on login), it will be defined automatically every
+		  time you login to your Linux system. Another idea is to
+		  create a small Bash Shell script something like this:
+		  ```
+		  #!/bin/bash
+		  docker exec exrproxy-env_snode_1 blocknet-cli $*
+		  ```
+		  If you create such a shell script, give it a name like `snode-cli`, give it executable
+		  permissions (`chmod +x snode-cli`), then move it to some
+		  directory in your *$PATH*, then you can use the Linux
+		  `watch` utility like this:
+		  ```
+		  watch snode-cli getblockcount
+		  ```
+		  (Enter `echo $PATH` to see which directories are in your
+		  *$PATH*. Enter`man watch` to learn about the `watch` utility and
+		  its options.)
+
 	 1. When the block height in the *snode* container matches that of the [Blocknet blockchain explorer](https://chainz.cryptoid.info/block/), your Service Node wallet is fully synced and you can now activate your Service Node as follows:
 		 1. On your *Collateral Wallet*, issue the command, `servicenoderegister`. If your *Collateral Wallet was set up according to the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
 		and the alias for `stcli` was also created according to that
@@ -805,11 +836,16 @@ complete the following guides in order:
 		```
 		stcli servicenoderegister
 		```
-		Otherwise, if your *Collateral Wallet* is a GUI/Qt wallet running on a different computer, simply enter `servicenoderegister` in *Tools->Debug Console*.
+		Otherwise, if your *Collateral Wallet* is a GUI/Qt wallet
+		running on a different computer, simply enter
+		`servicenoderegister` in *Tools->Debug Console* of your
+		*Collateral Wallet*.
 		1. On your *Service Node Wallet*, issue the `servicenodesendping` command like this:
 		```
 		docker exec exrproxy-env_snode_1 blocknet-cli servicenodesendping
 		```
+		(Note, if you created the `snode-cli` alias or shell script as
+		suggested in the *Tip* above, you can enter simply, `snode-cli servicenodesendping`.)
 	1. On your *Service Node Wallet*, check to confirm your Service Node is running and supporting all the right coins/SPV wallets like this:
 		```
 		docker exec exrproxy-env_snode_1 blocknet-cli servicenodestatus
@@ -823,7 +859,215 @@ complete the following guides in order:
 
 ### Maintenance of Auto-Deployed Service Node
 
-*Coming Soon...*
+??? abstract "Maintenance of Auto-Deployed Service Node"
+
+	> Changing Configuration of a Docker-Based Service Node (or Trading Node)
+
+	1. Before you can add or subtract coin daemons, or change the
+	configuration of your Service Node in any way, you first need to shut it down as follows:
+	```
+	cd ~/exrproxy-env
+	docker-compose down
+	```
+	This will not only stop all the docker containers you
+	deployed from the `docker-compose.yml` file, it
+    will also remove all those docker containers. It will *not*
+    remove the blockchain data for each of the coin daemons you
+    deployed. That data is safely stored in the place(s) you had
+    specified as the `config_mount_dir` and `data_mount_dir` in
+	`custom.yaml` (`/snode` by default). That means you won't have to wait for the
+	blockchains of the various coin daemons to sync again the next
+	time you bring up your Service Node.
+	1. Once your Service Node has been brought down, you can edit the
+       configuration file, `~/exrproxy-env/autobuild/custom.yaml`, to
+       add or subtract coin daemons as desired. You can also, for example, convert
+       your Service Node into a *testnet* Service Node by replacing
+       `SNODE` with `testSNODE` in `custom.yaml`. To make sure you
+       have a current reference for all coin daemons currently
+       available, it is recommended to *pull* the latest changes from
+       the Github repository:
+	   ```
+	   cd ~/exrproxy-env
+	   git pull
+	   ```
+	   This will pull all available updates to your local
+       `exrproxy-env` repository, including any updates to
+       `~/exrproxy-env/autobuild/examples/alldaemons.yaml`. `alldaemons.yaml`
+       will be updated frequently with new coin daemons/SPV wallets,
+       so it'll be good to pull the latest version frequently. When
+       you have the latest `alldaemons.yaml`, you can copy/paste coin
+       daemon entries from `alldaemons.yaml` into
+       `~/exrproxy-env/autobuild/custom.yaml`, as desired.
+	1. Once you've finished editing
+       `~/exrproxy-env/autobuild/custom.yaml` according to the new
+       configuration you want (or even if you didn't edit
+       `custom.yaml` at all), you can bring your Service Node back up
+       as you did before in
+       [Auto-Deploy Service Node](#auto-deploy-service-node), using the
+       `app.py` script and the `deploy.sh` script as instructed there.
+	1. IMPORTANT: If you are likely to bring your Service Node
+       down and back up again multiple times, it is *highly
+       recommended* to create a simple Bash Shell script like the
+       following to avoid having to use `~/exrprox-env/deploy.sh` each
+       time you want to bring your Service Node up. That way you can avoid
+       answering all the questions asked by
+       `deploy.sh` each time you bring your Service Node up:
+	   ```
+	   #!/bin/bash
+
+	   export PUBLIC_IP="75.120.155.29"  # Update with your public ip address
+	   export SN_NAME="snode01"  # Update with your snode name
+	   export SN_KEY="PswGMd6gaZf1ceLojzGeKn7PQuXVwYgRQG8obUKrThZ8ap4pkRR7"  # Update with your snode private key
+	   export SN_ADDRESS="BqNaZmLJt9wEGBHDNid9FvsgrG2x7Hbfex"  # Update with your snode address
+	   export RPC_USER="my-rpc-user"   # Update with your rpc user
+	   export RPC_PASSWORD="my-rpc-pw"    # Update with your rpc password
+	   
+	   docker-compose -f "docker-compose.yml" up -d --build
+	   ```
+	   Create the above Bash Shell script and give it a name like,
+	   `dockerup.sh`. You can keep it anywhere, but `~/exrproxy-env`
+	   is probably a convenient place to keep it. Give it executable
+	   permissions too: `chmod +x dockerup.sh`. Now, instead of
+	   running `./deploy.sh` in step 6 of the
+	   [Auto-Deploy Service Node](#auto-deploy-service-node)
+	   instructions, you can run `./dockerup.sh`.
+	1. If you've subtracted one or more coin daemons from your
+      `custom.yaml` because you want to save the disk space used
+      by the blockchains of those coin daemons, please remember that
+      the blockchain data is not deleted/removed when the docker container is
+      removed. As mentioned above, the blockchain data of a coin
+      daemon persists in a special mounted directory. If you kept the
+      default data and config dir mount points given in
+      `alldaemons.yaml`, which is `/snode`, then the blockchain data
+      for DGB, for example, will be stored in `/snode/DGB/config`, and
+      it can occupy many GB of space. To find out exactly how much
+      space is being used by each coin daemon, you can enter:
+	  ```
+	  sudo du -d 0 -h /snode/*
+	  57G	/snode/LTC
+	  3.6G	/snode/MONA
+	  222M	/snode/testsnode
+	  3.3G	/snode/snode
+	  27G	/snode/DGB
+	  16K	/snode/xr_proxy
+	  11G	/snode/RVN
+	  48M	/snode/eth_pymt_db
+	  ```
+	  Sudo is necessary here because `/snode` directory is owned by
+      `root`, not by $USER. So, if you want to stop supporting DGB
+	  coin, for example, and you also want to free up the 27GB of
+	  space the DGB blockchain is taking up, you'll need to first
+	  make sure your Service Node is shut down according to step 1
+	  above, then make sure the DGB entry has been removed from
+	  `custom.yaml` according to step 2 above, then issue the
+	  following command to permanently remove DGB blockchain data and
+	  free the space it is occupying:
+	  ```
+	  sudo rm -rf /snode/DGB
+	  ```
+
+	    !!! warning "Warning: Be very careful to enter the `rm -rf` command very precisely. A typo could be disastrous. Also, be aware that adding support for DGB again after deleting its blockchain data will require the DGB blockchain to sync from scratch."
+
+	> About *docker*
+
+	For the most part, the *docker-compose* commands given thus far in
+    this guide will suffice to manage your Service Node. However, if
+    something "out of the ordinary" happens, or if you want to do
+    something fancy with your docker objects,  there are a few more
+    things it will be good to know about docker:
+
+	- Let's say, for example, you want to interact directly with
+      the DGB daemon, but you aren't sure the name of the DGB CLI
+      executable command. Here's one way to find it:
+		  1. Start an interactive *Bash* shell in the DGB container:
+		  ```
+		  docker exec -it exrproxy-env_DGB_1 /bin/bash
+		  root@f4c21d83d6fe:/opt/blockchain#
+		  ```
+		  1. Explore the file system of the DGB container:
+		  ```
+		  root@f4c21d83d6fe:/opt/blockchain# ls
+		  config  data  dist  start-digibyte.sh
+		  ```
+		  1. Note there is a `dist` directory, which is often a good
+             place to find executable files. In fact, if we explore
+             far enough down the `dist` directory, we eventually find
+             a `bin` directory:
+			 ```
+			 # ls dist/opt/digibyte/digibyte/depends/x86_64-pc-linux-gnu/bin/
+			 bench_digibyte  digibyte-cli  digibyte-tx  digibyted  test_digibyte
+			 ```
+		 1. In this `bin` directory we see the executable command we were looking for:
+            `digibyte-cli`. Now we can verify the `digibyte-cli`
+            command has been added to the search $PATH:
+			```
+			root@f4c21d83d6fe:/opt/blockchain# which digibyte-cli
+			/usr/bin/digibyte-cli
+			```
+			And now that we see it's in the search $PATH, we can use
+            the command from any directory in the DGB container:
+			```
+			root@f4c21d83d6fe:/opt/blockchain# digibyte-cli getblockcount
+			13535747
+			```
+			Alternatively, we can exit the Bash shell running in the
+            DGB container, then execute the `digibyte-cli` command
+            from outside the docker container:
+			```
+			root@f4c21d83d6fe:/opt/blockchain# exit
+			exit
+			~$ docker exec exrproxy-env_DGB_1 digibyte-cli getblockcount
+			13535762
+			```
+	- Now let's consider another case where more *docker* knowledge
+      could be required. Let's consider the case where
+      `docker-compose down` fails to complete due to receiving a timeout
+      error something like the following:
+	  ```
+	  UnixHTTPConnectionPool(host='localhost', port=None): Read timed out.
+	  ```
+	  Some users have actually seen this exact error when trying to run
+      `docker-compose down` while an I/O intensive process (e.g.
+      `lbrycrdd`) is running on the
+      system. [Here are some potentially helpful suggestions on how to fix/avoid this timeout error](https://stackoverflow.com/questions/42230536/docker-compose-up-times-out-with-unixhttpconnectionpool). However,
+      once `docker-compose down` has failed to complete even once, it can leave
+      your docker environment in a state where some docker containers have been
+      *stopped*, but have not yet been removed. This state is
+      problematic because your next attempt to bring up your Service
+      Node with `deploy.sh` (or `dockerup.sh`) will give errors saying the
+      container names you're trying to create, already exist. If you suspect such
+      a situation has developed, one thing you can do is to list *all*
+      docker containers - both running and stopped:
+	  ```
+	  docker ps -a
+	  ```
+	  If this command shows some containers with a *stopped* STATUS,
+      then you probably need to remove those *stopped*
+      containers. Fortunately, docker has a handy *prune* utility
+      for removing all *stopped* containers:
+	  ```
+	  docker container prune
+	  ```
+      Also, if your docker containers, images, volumes and/or networks
+      get messed up for any reason,
+      [docker offers a variety of *prune* utilities to clean up the current state of your *docker* environment](https://docs.docker.com/config/pruning/).
+	- *docker* offers a variety of useful utilities for managing and
+    interacting with various docker objects. To see a list of all
+    docker options and commands,
+    enter:
+	```
+	docker --help
+	```
+	To get help on a specific docker command, enter:
+	```
+	docker COMMAND --help
+	```
+	For example,
+	```
+	docker export --help
+	```
+	There are also docker guides available at [https://docs.docker.com/go/guides/](https://docs.docker.com/go/guides/).
+
 
 ## Manual Service Node Setup (Deprecated)
 

@@ -343,8 +343,35 @@ description: These Block DX trading guides explain how to check your balances, s
        one following the text, `redeem counterparty deposit
        for order`.
 	1. If you don't have access to the native/core wallet of the coin
-       for which you need to issue a `sendrawtransaction` command, but
-       that coin is supported by XLite, proceed as follows:
+       for which you need to issue a `sendrawtransaction` command, the
+       easiest way to send the raw transaction to the right blockchain
+       network is to use the `xrsendtransaction` command. The
+       `xrsendtransaction` command can be sent through the Blocknet
+       core wallet under *Tools->Debug Console* of the GUI/Qt
+       Blocknet, or it can be sent from the
+       Blocknet CLI. As long as there is a Service Node on the
+       Blocknet network which offers the XRouter service `xrsendtransaction` for free
+       for the coin you need it for, you can use
+       `xrsendtransaction`. For example, to send the transaction hex
+       string to redeem lost GLC in the example above, you would issue
+       the following command in *Tools->Debug Console* or from
+       Blocknet CLI:
+	   ```
+	   xrsendtransaction GLC <hexstring>
+	   ```
+	   where `<hexstring>` would be the large
+       hexstring following the text, `refund transaction for
+       order`. In other words, it would look like this:
+	   ```
+	   xrsendtransaction GLC
+       010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500
+	   ```
+	   
+	   1. If it turns out there is no Service Node offering an XRouter
+          service `xrsendtransaction` for free for the coin you need
+          it for, but the coin is supported by XLite, proceed as
+          follows to issue the `sendrawtransaction` via `curl` to the
+          CloudChains daemon:
 
 		1. Open XLite if it's not already open.
 

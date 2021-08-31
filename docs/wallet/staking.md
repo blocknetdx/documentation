@@ -170,14 +170,17 @@ Use the following guide to enable staking and start earning rewards.
            [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
            or
            [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/)
-           to edit your `~/.bashrc` file. Look for the following 3 lines:
+           to edit your `~/.bashrc` file. Examples:
+			   - `vi ~/.bashrc`
+			   - `nano ~/.bashrc`
+	    1. Look for the following 3 lines within `~/.bashrc`:
 		```
 		if [ -f ~/.bash_aliases ]; then
 			. ~/.bash_aliases
 		fi
 		```
 		1. If those 3 lines are not already in your `~/.bashrc` file, add
-           them, then save the file.
+           them, then save the file and exit the editor.
 	    1. Edit `~/.bash_aliases`. (Create a new one if it
            doesn't exist.)
 		1. Copy/Paste the following variable and alias definitions

@@ -32,16 +32,20 @@ The deadline for creating proposals is 2880 blocks prior to the Superblock.
 
 1. Once the Draft Proposal has been submitted and posted to the forum, copy the post's URL and create a shortened URL at [https://bit.ly/](https://bit.ly/)
 1. Continue on to [submit the proposal from the Qt wallet](/governance/create-proposal/#submit-from-the-qt-wallet) or to [submit the proposal via command line](/governance/create-proposal/#submit-from-the-terminal).
-1. (Optional) Once the proposal has been submitted, your proposal will be assigned a `voting hash` (a large string of numbers and letter representing your proposal). The `voting hash` for your proposal will be displayed in a Popup window after submitting your proposal in the Qt/GUI wallet:
-   ![After Vote Popup](/img/governance/after-vote.png)
-If using the Command Line Interface, the `voting hash` will be returned after submitting the proposal via the `createproposal` command. You can also display `voting hash` and other information about all upcoming proposals as follows:
+1. (Optional) Once the proposal has been submitted, your proposal will be assigned a `proposal hash` (a large string of numbers and letter representing your proposal). 
+If using the Command Line Interface, the `proposal hash` will be returned after submitting the proposal via the `createproposal` command. The `proposal hash` will be the `xxxx` value in the `"hash":"xxxx",` value returned. You can also display `proposal hash` and other information about all upcoming proposals as follows:
 	1. In Blocknet Qt/GUI wallet, go to *Tools->Debug Console*
-	1. Type `listproposals <last_SB_number + 1>` where `<last_SB_number + 1>` is 1 more than the [number of the previous SuperBlock](/governance/introduction/#superblock-dates). (From CLI: `./blocknet-cli listproposals <last_SB_number + 1>`)
+	1. Type `listproposals <last_SB_number + 1>` where `<last_SB_number + 1>` is 1 more than the [number of the previous SuperBlock](/governance/introduction/#future-superblock-dates).
+	1. Or from CLI: `./blocknet-cli listproposals <last_SB_number + 1>`
 
-Once you have your proposal's `voting hash`, you can now edit your post in the Proposal Forum to add the command for voting for your proposal from the command line, which is:
-```
-vote [voting hash] yes
-```
+	Once you have your proposal's `proposal hash`, you can now edit your post in the    Proposal Forum to add the command for voting for your proposal from the command line, which is:
+	```
+	vote [proposal hash] yes
+	```
+	For example,
+	```
+	vote 8333cdf2fbfe25a78e08876b6ed1bc5cd09efa9edbdf491d2a06e43faf252698 yes
+	```
 
 ---
 

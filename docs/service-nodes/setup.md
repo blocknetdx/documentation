@@ -184,6 +184,16 @@ Operating as a Service Node requires two Blocknet wallets:
 	should be ignored in this case. The
 	[Hardware Requirements for a Service Node Wallet](#hardware-requirements-for-service-node-wallet)
 	should be followed instead.
+	1. Stop your *Staking Wallet*. If your *Staking Wallet* has been set up
+		   according to
+		   the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+		   and the alias for `stcli` has
+		   also been set up according to that guide, you can stop
+		   your *Staking Wallet* by
+		   issuing the follow command:
+			  ```
+			  stcli stop
+			  ```
 	1. Change the Peer-to-Peer (P2P) port and the RPC port of your *Staking Wallet* so they don't
     conflict with the P2P port and the RPC port of your
     *Service Node Wallet*. To do this on a Linux system,
@@ -235,13 +245,12 @@ Operating as a Service Node requires two Blocknet wallets:
 		   your *Staking Wallet* and start it staking again by
 		   issuing the follow commands:
 			  ```
-			  stcli stop
 			  stdaemon
 			  ```
-		   Note, you will probably need to wait at least 30 seconds
-		   after issuing `stcli stop` before you'll be allowed to
-		   launch `stdaemon.` Just keep trying every 30 seconds or so to launch `stdaemon`
-		   until you no longer get, "*Error: Cannot obtain a lock on data directory.*"
+			  (You'll need to wait a few minutes after starting the
+			  Blocknet daemon for your wallet to
+			  sync the headers. Then you'll be allowed
+			  to unlock your wallet for staking in the next step.)
 		   1. Unlock your staking wallet for staking only:
 		   ```
 		   stunlock

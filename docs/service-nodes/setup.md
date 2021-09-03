@@ -734,7 +734,7 @@ complete the following guides in order:
 		   - If your Service Node will support a [GETH](/resources/glossary/#geth) node locally, issue
 		   the following command:
 		   ```
-		   ./app.py --deploy_eth
+		   ./app.py --deploy_eth True
 		   ```
 		   - If your Service Node will support an *external* [GETH](/resources/glossary/#geth) node, issue
 		   the following command:

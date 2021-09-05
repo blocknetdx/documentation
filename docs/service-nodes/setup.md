@@ -399,7 +399,7 @@ complete the following guides in order:
 
 ??? example "Collateral Wallet Setup for Automated Service Node Setup"
 
-	!!! info "Important Note"
+	!!! warning "IMPORTANT"
 		This Collateral Wallet Setup guide assumes
 		your collateral wallet has been set up according to the
 		[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
@@ -756,9 +756,12 @@ complete the following guides in order:
 	1. Prepare to enter all the details you'll need when you launch
     the `deploy.sh` script:
 		1. Fetch your Service Node computer's Public IP address, then
-        copy/paste it to a temporary text file for easy access:
+        copy/paste it to a temporary text file for easy access.
+		Some options for fetching your Service Node computer's Public IP include:
 		```
+		curl ipconfig.io
 		curl ifconfig.co
+		dig +short myip.opendns.com @resolver1.opendns.com
 		```
 		1. Make sure you have easy copy/paste access to your *Servicenode Private
            Key* and *Servicenode Address*, which you got earlier from the [Collateral Wallet Setup Procedure](#collateral-wallet-setup-for-automated-service-node-setup).

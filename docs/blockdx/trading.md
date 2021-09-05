@@ -409,8 +409,7 @@ description: These Block DX trading guides explain how to check your balances, s
 					 "rpcPort": 8332,
 					 "feeFlat": true,
 					 "rpcEnabled": true,
-					 "addressCount": 40,
-					 "_ticker": "BTC"
+					 "addressCount": 40
 				 }
 				 ```
 

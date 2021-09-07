@@ -36,7 +36,6 @@ Exchange        | Market        | Link
 Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)
 SouthExchange | (USDT/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/USDT) 
 SouthExchange | (BTC/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/BTC) 
-DigiFinex       | (BTC/BLOCK)   | [Buy Now](https://www.digifinex.io/en-ww/trade/BTC/BLOCK)
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC)
 StakeCube       | (LTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_LTC)
 StakeCube       | (SCC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_SCC)

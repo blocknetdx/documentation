@@ -438,6 +438,39 @@ description: These Block DX trading guides explain how to check your balances, s
 
 ---
 
+#### Clear Forever Pending Transactions
+
+??? example "Clear Forever Pending Transactions"
+	On rare occasion, an order can get into a "stuck" state where it 
+	fails to complete, but cannot be cancelled or deleted through the
+	usual means. The main cause of this situation is when a new coin has
+	been added to BlockDX and improperly configured. (Specifically, the
+	culprit is usually that the *FeePerByte* value in the XBridge config
+	for the coin is set too low. It should be set by looking in the wallet
+	send function for the recommended fee per byte and then multiplying it
+	by about 2.5.)
+
+	If you have an order in a "stuck" state, the first thing to do is to
+	wait at least 2.5 hours to see if XBridge can either
+	complete the order or cancel the order and automatically refund
+	any funds you have committed to the
+	order. BE SURE TO KEEP YOUR BLOCKNET WALLET AND ANY WALLETS
+	INVOLVED IN THE ORDER OPEN AND UNLOCKED WHILE WAITING THE 2.5
+	HOURS! If the order is still stuck after 2.5 hours, and you're not
+	able to cancel or delete it through normal means, and you
+	need/want to clear the stuck order, here's what to do:
+
+	1. Close BlockDX and Blocknet wallet.
+	--8<-- "data-directories-1.md"
+	1. Rename (or delete) the file, `orders.dat` in your data directory.
+	1. Restart Blocknet wallet and, after it has synced, restart BlockDX.
+	1. If you *lost* funds as a result of the stuck order,
+    [read here how to manually redeem the funds](#redeemrefund-funds-from-failed-or-cancelled-transactions).
+
+	!!! warning "Warning: Deleting `orders.dat` will delete all historical records of orders you've made."
+
+---
+
 ??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."
 	1. Click on *Receive* in the upper right corner of XLite.
 	1. Select the asset which did not arrive in XLite.

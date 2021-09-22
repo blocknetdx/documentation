@@ -16,6 +16,11 @@ description: These Block DX trading guides explain how to check your balances, s
 	stored in XLite and it won't even be necessary to run Blocknet
 	core wallet to trade on BlockDX.
 
+??? warning "IMPORTANT: Your Blocknet wallet and the wallets of the assets you are trading *must* remain open and unlocked during atomic swaps."
+	If any of these wallets goes offline in the middle of an atomic
+	swap, it could result in loss of funds if you do not bring them
+	back online immediately.
+
 --8<-- "explore-service-nodes.md"
 
 ??? tip "Tip: How to stop your Blocknet wallet from staking while it's unlocked for trading."
@@ -255,18 +260,21 @@ description: These Block DX trading guides explain how to check your balances, s
 	or *Cancelled*:
 	![Inactive Cancelled](/img/blockdx/orders-inactive-cancelled.png)
 	When this occurs, BlockDX will attempt to refund both parties in
-	the transaction for up to 2 hours. In most cases it will
+	the transaction for up to 2.5 hours. In most cases it will
 	succeed. __*It's important to keep your Blocknet
-	core wallet open for 2 hours while the refund is attempted because
+	core wallet, and any wallets involved
+	in the transaction, open and unlocked for 2.5 hours while the refund is attempted.
+	(Blocknet wallet must remain open and unlocked for 2.5 hours no
+	matter which coins were involved in the transaction because
 	the code which manages the refund currently
-	resides within the Blocknet wallet.*__ In the case of a Failed
+	resides within the Blocknet wallet.*)__ In the case of a Failed
 	Order, if the Blocknet wallet is
 	closed before all refunds are completed, or in the rare case that
 	other factors prevent refunds from completing,
 	the order will continue to display a *Failed* status as shown
 	above, but it will be moved from the *INACTIVE ORDERS* catagory to the
 	*ACTIVE ORDERS* category. If this occurs, or if your funds were
-	not returned after 2 hours from a *Cancelled* order, you'll need to manually redeem
+	not returned after 2.5 hours from a *Cancelled* order, you'll need to manually redeem
 	your funds by issuing a `sendrawtransaction <hexstring>` command
 	as follows:
 
@@ -438,37 +446,51 @@ description: These Block DX trading guides explain how to check your balances, s
 
 ---
 
-#### Clear Forever Pending Transactions
+#### Clear All Order History, including Stuck Orders
 
-??? example "Clear Forever Pending Transactions"
-	On rare occasion, an order can get into a "stuck" state where it 
+??? example "Clear All Order History, including Stuck Orders"
+	There are two cases when you might want to clear all your BlockDX
+	order history:
+
+	1. If you've been placing a *lot* of orders, for example with a
+	trading bot, the list of orders in the order history file can
+	actually grow to the point where it slows down BlockDX performance.
+
+	1. On rare occasion, an order can get into a "stuck" state where it 
 	fails to complete, but cannot be cancelled or deleted through the
 	usual means. The main cause of this situation is when a new coin has
 	been added to BlockDX and improperly configured. (Specifically, the
 	culprit is usually that the *FeePerByte* value in the XBridge config
 	for the coin is set too low. It should be set by looking in the wallet
 	send function for the recommended fee per byte and then multiplying it
-	by about 2.5.)
+	by about 2.5.)  If you have an order in a "stuck" state like this,
+	the first thing you'll want to do is to recover any funds you
+	might have tied up in the stuck order. For this, the first
+	step is to __wait at least 2.5 hours, keeping your Blocknet
+	core wallet, and any wallets involved in the order, open and
+	unlocked__.  XBridge code will attempt to refund any funds you
+	have committed to a trade for up to 2.5 hours and your only
+	responsibility during this time is to wait and keep all your
+	wallets open and unlocked. Note, Blocknet wallet must remain open
+	and unlocked for 2.5 hours no
+	matter which coins were involved in the transaction because
+	the code which manages the refund currently
+	resides within the Blocknet wallet. If the funds you had
+	committed to the order are not refunded to your wallet after 2.5
+	hours, [redeem your funds the manual way](#redeemrefund-funds-from-failed-or-cancelled-transactions).
 
-	If you have an order in a "stuck" state, the first thing to do is to
-	wait at least 2.5 hours to see if XBridge can either
-	complete the order or cancel the order and automatically refund
-	any funds you have committed to the
-	order. BE SURE TO KEEP YOUR BLOCKNET WALLET AND ANY WALLETS
-	INVOLVED IN THE ORDER OPEN AND UNLOCKED WHILE WAITING THE 2.5
-	HOURS! If the order is still stuck after 2.5 hours, and you're not
-	able to cancel or delete it through normal means, and you
-	need/want to clear the stuck order, here's what to do:
+	1. Now you're ready to clear your BlockDX order history by
+       renaming the `orders.dat` file as follows:
+	    1. Close BlockDX and Blocknet wallet.
+		--8<-- "data-directories-1.md"
+		1. Rename the file, `orders.dat` in your data directory.
+		1. Restart Blocknet wallet and, after it has synced, restart BlockDX.
 
-	1. Close BlockDX and Blocknet wallet.
-	--8<-- "data-directories-1.md"
-	1. Rename (or delete) the file, `orders.dat` in your data directory.
-	1. Restart Blocknet wallet and, after it has synced, restart BlockDX.
-	1. If you *lost* funds as a result of the stuck order,
-    [read here how to manually redeem the funds](#redeemrefund-funds-from-failed-or-cancelled-transactions).
-
-	!!! warning "Warning: Deleting `orders.dat` will delete all historical records of orders you've made."
-
+	    ??? warning "Warning: Deleting `orders.dat` will delete all historical records of orders you've made."
+		Instead of renaming `orders.dat` as instructed above, you can
+		optionally delete it. Renaming is preferable because deleting
+		cannot be undone.
+	
 ---
 
 ??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."

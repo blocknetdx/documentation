@@ -498,21 +498,31 @@ stake hits, like this:
 
 ![Orphan](/img/wallet/orphan.png)
 
-If you hover the mouse over the text of the red/orphaned stake hit, it
+If you hover the mouse over the text of the red/orphaned block, it
 will display the text, "Generated but not accepted."
 
-An orphan happens when another block beat your staking node,
-which generally happens because the staker who won that block was able
-to get the winning block out to more nodes before your node.
+The occasional appearance of a red/orphaned block is normal and
+nothing to be concerned about. An orphan happens when another block
+beats your staking node, which generally happens because the staker who
+won that block was able to get the winning block out to more nodes
+before your node.
 
-Possible causes of orphans:
+If, however, you notice a large number of
+red/orphaned blocks happening in a short time period, like 5 or more
+per day, it could mean your staking wallet is
+[on a fork.](/wallet/forking/#fork-management). If you determine your
+staking wallet is
+[on a fork, follow the instructions in the Fork Management Guide to get your wallet back on the correct chain.](/wallet/forking/#fork-management)
 
-1. Your staking wallet is [on a fork](/wallet/forking/#fork-management).
+If your staking wallet is *not* on a fork, but still producing more
+red/orphaned blocks than you like, here are some possible causes and
+ideas to reduce the number of orphaned blocks seen by your staking wallet:
+
 1. Your staking wallet doesn't have `listen=1` set in its
    `blocknet.conf` file (located in the
    [Data Directory](/wallet/backup-restore/#data-directory)). If you
-   need to change this, stop your wallet, make the change, then restart
-   your wallet.
+   need to add `listen=1` to your `blocknet.conf`, stop your wallet,
+   make the change, then restart your wallet.
 1. Your staking wallet doesn't have its P2P port (41412 by default)
    open to the external world and forwarding to your blocknet
    wallet. You can check if your wallet's P2P port is open to the

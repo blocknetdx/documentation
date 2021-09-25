@@ -491,6 +491,33 @@ Use the following guide to enable staking and start earning rewards.
 		   ...which does *not* request confirmation before removing all directories and files in the specified
 		   directory tree.
 
+### Orphaned Stakes
+
+While staking, you may occasionally see a red flag next to one of your
+stake hits, like this:
+
+![Orphan](/img/wallet/orphan.png)
+
+If you hover the mouse over the text of the red/orphaned stake hit, it
+will display the text, "Generated but not accepted."
+
+An orphan happens when another block beat your staking node,
+which generally happens because the staker who won that block was able
+to get the winning block out to more nodes before your node.
+
+Possible causes of orphans:
+
+1. Your staking wallet is [on a fork](/wallet/forking/#fork-management).
+1. Your staking wallet doesn't have `listen=1` set in its
+   `blocknet.conf` file (located in the
+   [Data Directory](/wallet/backup-restore/#data-directory)). If you
+   need to change this, stop your wallet, make the change, then restart
+   your wallet.
+1. Your staking wallet doesn't have its P2P port (41412 by default)
+   open to the external world and forwarding to your blocknet
+   wallet. You can check if your wallet's P2P port is open to the
+   external world using [this tool](https://www.yougetsignal.com/tools/open-ports/).
+
 ### Maximizing Staking Rewards:
 
 ##### Peer Connections

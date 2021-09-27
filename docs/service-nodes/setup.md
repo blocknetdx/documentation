@@ -112,7 +112,7 @@ Operating as a Service Node requires two Blocknet wallets:
 	- 16 GB RAM
 	
 	The storage space requirements for a Hydra node are a bit more
-    demanding. The Ethereum (ETH) full archival node, which is the SPV wallet
+    demanding. The Go-Ethereum (GETH) full archival node, which is the SPV wallet
     needed to run a *Hydra* Service Node, occupies about 8TB of space
     as of this writing (July 17, 2021). Furthermore, it is growing by 3TB per
     year. (Its current size can be found
@@ -121,28 +121,39 @@ Operating as a Service Node requires two Blocknet wallets:
     for ETH alone, plus maybe another 1-2TB for running other SPV
     wallets and the [Avalanche Indexer](/resources/glossary/#indexer). It
     should also have the ability to expand its storage space by 3TB
-    per year.
+    per year. *Update Sept. 27, 2021: Some community members are
+    researching the possibility of using the [Erigon ETH archival node](https://github.com/ledgerwatch/erigon) instead
+    of the Go ETH (GETH) archival node. This is promising research as
+    the Erigon ETH archival node occupies only about a quarter of the
+    space of the GETH archival node. In other words, only about 2TB
+    instead of 8TB as of this writing. Erigon ETH archival node also
+    syncs in about one quarter the time it takes GETH to sync. Please
+    join discussions in the #hydra channel of
+    [Blocknet Discord](https://discord.gg/cQ9JNyNRW4) to learn the
+    latest on this development.*
 
 	It's also important to note that the storage for the ETH full
     archival node *must* be very fast. In other words, it must use
-    SSDs, not HDDs. As of this writing, it hasn't been confirmed that
-    SATA bus SSDs will be fast enough, but probably they
-    will. NVMe/PCIe SSDs will *definitely* be fast enough and greatly
-    accelerate the syncing of the ETH blockchain, which takes over a month.
+    SSDs, not HDDs. There are 2 types of SSDs: SATA and NVMe/PCIe. The
+    latter are much faster and are *definitely* the preferred variety
+    when it comes to hosting an ETH archival node. In fact, it hasn't
+    even been confirmed that SATA SSDs will be fast enough to allow the
+    node to sync.
 
 	It is also recommended that the SSDs in a Hydra node be configured
     in a RAID mirror configuration (e.g. RAID-1, RAID-10,
     RAID-Z2). Without RAID mirroring, an SSD failure will almost certainly mean
     you'll have to resync the entire ETH full archival node, which
-    takes over a month, and your Hydra node will be offline for the
+    takes over a month for a GETH node (but probably only a quarter of
+    that time for an Erigon ETH node). Your Hydra node will be offline for the
     duration of the resync.
 
-	As of this writing, *none* of the VPS Provider Options mentioned
+	As of this writing, it's not clear that any of the VPS Provider Options mentioned
     above are capable of providing a VPS which meets the HW
-    requirements for a Hydra node, or if they are capable, the cost is
-    a bit extreme and it's not clear they can expand storage space as
-    needed to support the growing ETH full archival node. There *are*
-    some VPS providers who are capable of both meeting current HW
+    requirements for a Hydra node, or if they are capable, the cost
+    can be a bit extreme and it's not clear they can expand storage space as
+    needed to support the growing ETH full archival node. There may
+    well be some smaller VPS providers who are capable of both meeting current HW
     needs and allowing for storage space expansion in the
     future. There are also efforts underway to coordinate "package
     discounts" from such VPS provider(s) for a person or group of people to rent
@@ -150,8 +161,9 @@ Operating as a Service Node requires two Blocknet wallets:
     discussions on this topic in the #hydra channel of
     [Blocknet Discord](https://discord.gg/cQ9JNyNRW4).
 
-	Another option for meeting the HW requirements of a Hydra node is to purchase your own
-    hardware and run it at home. If purchasing your own SSD drives, be
+	Another option for meeting the HW requirements of a Hydra node is
+    to purchase your own hardware and run it at home. If purchasing
+    your own SSD drives, be
     aware that ETH core will be writing to your SSDs continuously, so
     you'll want to get SSDs with a high "durability" rating. For
     example, a company called *Sabrent* offers an 8TB NVMe SSD. On the

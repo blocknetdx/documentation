@@ -1006,30 +1006,43 @@ complete the following guides in order:
 		  1. Start an interactive *Bash* shell in the DGB container:
 		  ```
 		  docker exec -it exrproxy-env_DGB_1 /bin/bash
+		  ```
+		  You should see a prompt like this:
+		  ```
 		  root@f4c21d83d6fe:/opt/blockchain#
 		  ```
-		  1. Explore the file system of the DGB container:
+		  1. Find which daemons are running in the DGB container:
 		  ```
-		  root@f4c21d83d6fe:/opt/blockchain# ls
-		  config  data  dist  start-digibyte.sh
+		  root@f4c21d83d6fe:/opt/blockchain# ps uax
 		  ```
-		  1. Note there is a `dist` directory, which is often a good
-             place to find executable files. In fact, if we explore
-             far enough down the `dist` directory, we eventually find
-             a `bin` directory:
+		  It should show you something like this:
+		  ```
+		  USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+		  root         1 46.4 28.7 8132896 4726660 ?     SLsl 11:37  25:38 digibyted -conf=/opt/blockchain/config/digibyte.conf
+		  root        29  1.7  0.0  18248  3280 pts/0    Ss   12:33   0:00 /bin/bash
+		  root        39  0.0  0.0  34424  2788 pts/0    R+   12:33   0:00 ps uax
+		  ```
+		  1. Note there is one running process called,
+			 `digibyted`. This is the name of the Digibyte daemon
+			 process and it is also a great clue about the name of the
+			 CLI command for interacting with the Digibyte daemon. The
+			 name of the CLI command
+			 can usually be derived from the name of the daemon
+			 process by simply replacing the `d` at the end of
+			 the daemon process with `-cli`, like this:
 			 ```
-			 # ls dist/opt/digibyte/digibyte/depends/x86_64-pc-linux-gnu/bin/
-			 bench_digibyte  digibyte-cli  digibyte-tx  digibyted  test_digibyte
+			 digibyted -> digibyte-cli
 			 ```
-		 1. In this `bin` directory we see the executable command we were looking for:
-            `digibyte-cli`. Now we can verify the `digibyte-cli`
-            command has been added to the search $PATH:
+		 1. If you want to verify there is a `digibyte-cli` command,
+            you can do this:
 			```
-			root@f4c21d83d6fe:/opt/blockchain# which digibyte-cli
+			which digibyte-cli
+			```
+			which should return this:
+			```			
 			/usr/bin/digibyte-cli
 			```
-			And now that we see it's in the search $PATH, we can use
-            the command from any directory in the DGB container:
+		 1. Now you can interact with the Digibyte daemon as follows:
 			```
 			root@f4c21d83d6fe:/opt/blockchain# digibyte-cli getblockcount
 			13535747
@@ -1043,6 +1056,44 @@ complete the following guides in order:
 			~$ docker exec exrproxy-env_DGB_1 digibyte-cli getblockcount
 			13535762
 			```
+	- Now let's consider the case where the docker container with
+	  which you want to interact does
+      *not* have *Bash* shell available. This is the case for the Syscoin
+	  container, for example. Attempting to invoke the *Bash*
+	  shell in the Syscoin container will result in an error:
+	  ```
+	  docker exec -it exrproxy-env_SYS_1 /bin/bash
+	  OCI runtime exec failed: exec failed: container_linux.go:380:
+	  starting container process caused: exec: "/bin/bash": stat
+	  /bin/bash: no such file or directory: unknown
+	  ```
+	  The solution is to invoke a shell which *does* exist in the
+	  container, like this:
+	  ```
+	  docker exec -it exrproxy-env_SYS_1 /bin/sh
+	  ```
+	- Another unique feature of the Syscoin container is that the
+      `syscoin-cli` command requires certain parameters to be passed
+      to it in order to work properly. For example:
+	  ```
+	  docker exec exrproxy-env_SYS_1 syscoin-cli getblockcount 
+	  ```
+	  returns
+	  ```
+	  error: Could not locate RPC credentials. No authentication cookie could be found, and RPC password is not set.  See -rpcpassword and -stdinrpcpass.  Configuration file: (/root/.syscoin/syscoin.conf)
+	  ```
+	  But invoking `syscoin-cli` as follows, works properly:
+	  ```
+	  docker exec exrproxy-env_SYS_1 syscoin-cli -conf=/opt/blockchain/config/syscoin.conf getblockcount
+	  1218725
+	  ```
+	  Alternatively, this also works:
+	  ```
+	  docker exec exrproxy-env_SYS_1 syscoin-cli -datadir=/opt/blockchain/config getblockcount
+	  1218725
+	  ```
+	  Note: The DASH container, and perhaps others containers, will also require
+      these same parameters to be passed to the CLI command.
 	- Now let's consider another case where more *docker* knowledge
       could be required. Let's consider the case where
       `docker-compose down` fails to complete due to receiving a timeout
@@ -1075,6 +1126,16 @@ complete the following guides in order:
       Also, if your docker containers, images, volumes and/or networks
       get messed up for any reason,
       [docker offers a variety of *prune* utilities to clean up the current state of your *docker* environment](https://docs.docker.com/config/pruning/).
+	  - Note: In the context of a docker-based Service Node
+      auto-deployment, executing the following 2 command should be
+      equivalent to `docker-compose down`:
+	  ```
+	  docker stop $(docker ps -q -f name=exrproxy-env_*)
+	  docker rm $(docker ps -q -f name=exrproxy-env_*)
+	  ```
+	  This trick can be useful if, for example, `docker-compose.yml`
+      is accidentally reconfigured before `docker-compose down` is
+      executed, causing `docker-compose down` to fail.
 	- *docker* offers a variety of useful utilities for managing and
     interacting with various docker objects. To see a list of all
     docker options and commands,

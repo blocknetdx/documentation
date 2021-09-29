@@ -83,6 +83,8 @@ nav:
   - 'Introduction': 'blockchain/introduction.md'
   # - 'Tokenomics': 'blockchain/tokenomics.md'
   - 'Exchanges': 'project/exchanges.md'
+  - 'aaBLOCK': 'blockchain/aablock.md'
+  - 'aBLOCK': 'blockchain/ablock.md'
   - 'Explorers': 'blockchain/explorers.md'
 - 'Protocol':
   - 'XBridge':

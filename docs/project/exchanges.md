@@ -15,11 +15,11 @@ Decentralized exchanges are purely peer-to-peer instead of requiring a trusted e
     * View Open Orders on BlockDX: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) or [BlockDX.co](https://www.blockdx.co/orders)
     * [View Trade History on BlockDX](https://www.blockdx.co/trade-history)
     * [View Exchange Volume on BlockDX](https://twitter.com/DxStats)
-* [Pangolin (aaBLOCK/AVAX)](https://app.pangolin.exchange/#/swap?inputCurrency=0xc931f61b1534eb21d8c11b24f3f5ab2471d4ab50) -- [Learn about buying aaBLOCK and redeeming it for BLOCK](https://gist.github.com/ConanMishler/bdbd910a63197c4c6598d1475164362b)
+* [Pangolin (aaBLOCK/AVAX)](https://app.pangolin.exchange/#/swap?outputCurrency=0xc931f61b1534eb21d8c11b24f3f5ab2471d4ab50) -- [Learn about buying aaBLOCK and redeeming it for BLOCK](/blockchain/aablock)
 
-* [Uniswap (aBLOCK/ETH)](https://app.uniswap.org/#/swap?outputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5) -- [Learn about buying aBLOCK and redeeming it for BLOCK](https://gist.github.com/ConanMishler/e3bf4218463bf9f8bf1480652d8ad117)
+* [Uniswap (aBLOCK/ETH)](https://app.uniswap.org/#/swap?outputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5) -- [Learn about buying aBLOCK and redeeming it for BLOCK](/blockchain/ablock)
 
-* [Anyswap (aBLOCK/ETH)](https://anyswap.exchange/swap)
+* [Anyswap (aBLOCK/ETH)](https://v1.anyswap.exchange/swap)
 
 ---
 

@@ -5,7 +5,17 @@ This repository contains the source code for Blocknet's [documentation portal we
 
 
 ## Contributing
-In order to contribute to this project, fork the repository and in your own forked repository create a new branch off `draft`. In this new branch you can commit and push your updates by following the [Editing](#Editing) guidelines stated below in this README. Subsequently, create a pull request to merge from your forked repository `draft` branch into the original repository `draft` branch.
+To contribute to this project, follow the
+[Fork-and-Branch Git Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/):
+Fork this repository and in your own forked repository create a new
+branch off `draft`. In this
+new branch you can commit and push your updates by following the
+[Editing](#Editing) guidelines stated below in this README. Following
+the MkDocs instructions below under
+[Getting Started](#getting-started), you can
+also view how your changes will look when rendered by MkDocs to
+HTML. Once you're satisfied with the way your edits look in HTML, merge
+your new branch to your forked `draft` branch. Subsequently, create a pull request to merge from your forked repository `draft` branch into the original repository `draft` branch.
 
 If you're not familiar enough with for how to do this, feel free to create a [Github issue](https://github.com/blocknetdx/documentation/issues/new) with corrections, edits, or additions. If you have a lot of content to add, the best method would be to enter the content into a Google Doc (with settings set to public comments allowed) and link that in your Github issue.
 

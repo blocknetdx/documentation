@@ -44,6 +44,32 @@ Blocknet is an open-source project with a team consisting of contributors from a
 </div>
 
 <div class="contributor">
+	<div class="img-round"><img src="/img/contributors/shorn.jpeg"></div>
+	<div class="name">Shorn
+        <a href="https://www.linkedin.com/in/shornkeld/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
+	</div>
+	<div class="title">Project Coordinator</div>
+	<div class="platform">Discord <span class="handle">@shorn#3406</span></div>
+</div>
+
+<div class="contributor"> 
+	<div class="img-round"><img src="/img/contributors/conan-mishler.jpeg"></div>
+	<div class="name">Conan Mishler 
+        <a href="https://www.linkedin.com/in/conan-mishler-3974a76/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
+	</div>
+	<div class="title"><a href="https://docs.blocknet.co"
+	target="_blank">Docs</a>, <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Support</a>, QA Testing</div>
+	<div class="platform">Discord <span class="handle">@Conan#1130</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">Tryou</div>
+	<div class="title">Super Sleuth, QA Testing, Trading Bots</div>
+	<div class="platform">Discord <span class="handle">@tryou#9388</span></div>
+</div>
+
+<div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@rBurgett</div>
 	<div class="title">Development</div>
@@ -52,25 +78,37 @@ Blocknet is an open-source project with a team consisting of contributors from a
 
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">Shorn
-        <a href="https://www.linkedin.com/in/shornkeld/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
-	</div>
-	<div class="title">Project Coordinator</div>
-	<div class="platform">Discord <span class="handle">@shorn#3406</span></div>
+	<div class="name">@Corvaxx</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@Corvaxx</span></div>
 </div>
 
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">@redactedman</div>
-	<div class="title">Operations</div>
-	<div class="platform">Discord <span class="handle">@redactedman#8191</span></div>
+	<div class="name">@rikublock</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@rikublock</span></div>
 </div>
 
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">@aderks</div>
-	<div class="title">User Acceptance Testing</div>
-	<div class="platform">Discord <span class="handle">@aderks#7408</span></div>
+	<div class="name">@Akado2009</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@Akado2009</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">@leonVrashitov</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@leonVrashitov</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">@FrancoBenner</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@FrancoBenner</span></div>
 </div>
 
 <div class="contributor">
@@ -85,13 +123,6 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="name">@Philip Marshall</div>
 	<div class="title">Social Media Coordinator</div>
 	<div class="platform">Discord <span class="handle">@Philip Marshall#9143</span></div>
-</div>
-
-<div class="contributor">
-	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">@CRYPTO CORGI</div>
-	<div class="title"><a href="https://twitter.com/BlockDXExchange" target="_blank">Official Twitter Accounts</a></div>
-	<div class="platform">Discord <span class="handle">@CRYPTO CORGI#6691</span></div>
 </div>
 
 <div class="contributor">
@@ -124,21 +155,11 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="platform">Discord <span class="handle">@nik_chis#7731</span></div>
 </div>
 
-<div class="contributor"> 
-	<div class="img-round"><img src="/img/contributors/conan-mishler.jpeg"></div>
-	<div class="name">Conan Mishler 
-        <a href="https://www.linkedin.com/in/conan-mishler-3974a76/" target="_blank"><i class="fa fa-linkedin-square fa-1x" aria-hidden="true"></i></a>
-	</div>
-	<div class="title"><a href="https://docs.blocknet.co"
-	target="_blank">Docs</a>, <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Support</a>, QA Testing</div>
-	<div class="platform">Discord <span class="handle">@Conan#1130</span></div>
-</div>
-
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">Tryou</div>
-	<div class="title">Super Sleuth, QA Testing, Arbitrage Bots</div>
-	<div class="platform">Discord <span class="handle">@tryou#9388</span></div>
+	<div class="name">@redactedman</div>
+	<div class="title">Operations</div>
+	<div class="platform">Discord <span class="handle">@redactedman#8191</span></div>
 </div>
 
 </div>

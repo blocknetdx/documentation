@@ -83,6 +83,8 @@ nav:
   - 'Introduction': 'blockchain/introduction.md'
   # - 'Tokenomics': 'blockchain/tokenomics.md'
   - 'Exchanges': 'project/exchanges.md'
+  - 'aaBLOCK': 'blockchain/aablock.md'
+  - 'aBLOCK': 'blockchain/ablock.md'
   - 'Explorers': 'blockchain/explorers.md'
 - 'Protocol':
   - 'XBridge':
@@ -139,6 +141,7 @@ nav:
   - 'Installation': 'xlite/installation.md'
   - 'Create, Backup & Restore': 'xlite/backup-and-restore.md'
   - 'Using BlockDX w/ XLite': 'xlite/blockdx-xlite.md'
+  - 'Access Coin Daemons via RPC': 'xlite/access-coin-daemons-via-rpc.md'
   - 'Recover Private Keys': 'xlite/recover-private-keys.md'
   - 'Log Files': 'xlite/log-files.md'
 - 'Block DX':

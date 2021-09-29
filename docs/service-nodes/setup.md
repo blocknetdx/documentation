@@ -112,7 +112,7 @@ Operating as a Service Node requires two Blocknet wallets:
 	- 16 GB RAM
 	
 	The storage space requirements for a Hydra node are a bit more
-    demanding. The Ethereum (ETH) full archival node, which is the SPV wallet
+    demanding. The Go-Ethereum (GETH) full archival node, which is the SPV wallet
     needed to run a *Hydra* Service Node, occupies about 8TB of space
     as of this writing (July 17, 2021). Furthermore, it is growing by 3TB per
     year. (Its current size can be found
@@ -121,28 +121,39 @@ Operating as a Service Node requires two Blocknet wallets:
     for ETH alone, plus maybe another 1-2TB for running other SPV
     wallets and the [Avalanche Indexer](/resources/glossary/#indexer). It
     should also have the ability to expand its storage space by 3TB
-    per year.
+    per year. *Update Sept. 27, 2021: Some community members are
+    researching the possibility of using the [Erigon ETH archival node](https://github.com/ledgerwatch/erigon) instead
+    of the Go ETH (GETH) archival node. This is promising research as
+    the Erigon ETH archival node occupies only about a quarter of the
+    space of the GETH archival node. In other words, only about 2TB
+    instead of 8TB as of this writing. Erigon ETH archival node also
+    syncs in about one quarter the time it takes GETH to sync. Please
+    join discussions in the #hydra channel of
+    [Blocknet Discord](https://discord.gg/cQ9JNyNRW4) to learn the
+    latest on this development.*
 
 	It's also important to note that the storage for the ETH full
     archival node *must* be very fast. In other words, it must use
-    SSDs, not HDDs. As of this writing, it hasn't been confirmed that
-    SATA bus SSDs will be fast enough, but probably they
-    will. NVMe/PCIe SSDs will *definitely* be fast enough and greatly
-    accelerate the syncing of the ETH blockchain, which takes over a month.
+    SSDs, not HDDs. There are 2 types of SSDs: SATA and NVMe/PCIe. The
+    latter are much faster and are *definitely* the preferred variety
+    when it comes to hosting an ETH archival node. In fact, it hasn't
+    even been confirmed that SATA SSDs will be fast enough to allow the
+    node to sync.
 
 	It is also recommended that the SSDs in a Hydra node be configured
     in a RAID mirror configuration (e.g. RAID-1, RAID-10,
     RAID-Z2). Without RAID mirroring, an SSD failure will almost certainly mean
     you'll have to resync the entire ETH full archival node, which
-    takes over a month, and your Hydra node will be offline for the
+    takes over a month for a GETH node (but probably only a quarter of
+    that time for an Erigon ETH node). Your Hydra node will be offline for the
     duration of the resync.
 
-	As of this writing, *none* of the VPS Provider Options mentioned
+	As of this writing, it's not clear that any of the VPS Provider Options mentioned
     above are capable of providing a VPS which meets the HW
-    requirements for a Hydra node, or if they are capable, the cost is
-    a bit extreme and it's not clear they can expand storage space as
-    needed to support the growing ETH full archival node. There *are*
-    some VPS providers who are capable of both meeting current HW
+    requirements for a Hydra node, or if they are capable, the cost
+    can be a bit extreme and it's not clear they can expand storage space as
+    needed to support the growing ETH full archival node. There may
+    well be some smaller VPS providers who are capable of both meeting current HW
     needs and allowing for storage space expansion in the
     future. There are also efforts underway to coordinate "package
     discounts" from such VPS provider(s) for a person or group of people to rent
@@ -150,8 +161,9 @@ Operating as a Service Node requires two Blocknet wallets:
     discussions on this topic in the #hydra channel of
     [Blocknet Discord](https://discord.gg/cQ9JNyNRW4).
 
-	Another option for meeting the HW requirements of a Hydra node is to purchase your own
-    hardware and run it at home. If purchasing your own SSD drives, be
+	Another option for meeting the HW requirements of a Hydra node is
+    to purchase your own hardware and run it at home. If purchasing
+    your own SSD drives, be
     aware that ETH core will be writing to your SSDs continuously, so
     you'll want to get SSDs with a high "durability" rating. For
     example, a company called *Sabrent* offers an 8TB NVMe SSD. On the
@@ -399,7 +411,7 @@ complete the following guides in order:
 
 ??? example "Collateral Wallet Setup for Automated Service Node Setup"
 
-	!!! info "Important Note"
+	!!! warning "IMPORTANT"
 		This Collateral Wallet Setup guide assumes
 		your collateral wallet has been set up according to the
 		[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
@@ -756,9 +768,12 @@ complete the following guides in order:
 	1. Prepare to enter all the details you'll need when you launch
     the `deploy.sh` script:
 		1. Fetch your Service Node computer's Public IP address, then
-        copy/paste it to a temporary text file for easy access:
+        copy/paste it to a temporary text file for easy access.
+		Some options for fetching your Service Node computer's Public IP include:
 		```
+		curl ipconfig.io
 		curl ifconfig.co
+		dig +short myip.opendns.com @resolver1.opendns.com
 		```
 		1. Make sure you have easy copy/paste access to your *Servicenode Private
            Key* and *Servicenode Address*, which you got earlier from the [Collateral Wallet Setup Procedure](#collateral-wallet-setup-for-automated-service-node-setup).
@@ -991,30 +1006,43 @@ complete the following guides in order:
 		  1. Start an interactive *Bash* shell in the DGB container:
 		  ```
 		  docker exec -it exrproxy-env_DGB_1 /bin/bash
+		  ```
+		  You should see a prompt like this:
+		  ```
 		  root@f4c21d83d6fe:/opt/blockchain#
 		  ```
-		  1. Explore the file system of the DGB container:
+		  1. Find which daemons are running in the DGB container:
 		  ```
-		  root@f4c21d83d6fe:/opt/blockchain# ls
-		  config  data  dist  start-digibyte.sh
+		  root@f4c21d83d6fe:/opt/blockchain# ps uax
 		  ```
-		  1. Note there is a `dist` directory, which is often a good
-             place to find executable files. In fact, if we explore
-             far enough down the `dist` directory, we eventually find
-             a `bin` directory:
+		  It should show you something like this:
+		  ```
+		  USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+		  root         1 46.4 28.7 8132896 4726660 ?     SLsl 11:37  25:38 digibyted -conf=/opt/blockchain/config/digibyte.conf
+		  root        29  1.7  0.0  18248  3280 pts/0    Ss   12:33   0:00 /bin/bash
+		  root        39  0.0  0.0  34424  2788 pts/0    R+   12:33   0:00 ps uax
+		  ```
+		  1. Note there is one running process called,
+			 `digibyted`. This is the name of the Digibyte daemon
+			 process and it is also a great clue about the name of the
+			 CLI command for interacting with the Digibyte daemon. The
+			 name of the CLI command
+			 can usually be derived from the name of the daemon
+			 process by simply replacing the `d` at the end of
+			 the daemon process with `-cli`, like this:
 			 ```
-			 # ls dist/opt/digibyte/digibyte/depends/x86_64-pc-linux-gnu/bin/
-			 bench_digibyte  digibyte-cli  digibyte-tx  digibyted  test_digibyte
+			 digibyted -> digibyte-cli
 			 ```
-		 1. In this `bin` directory we see the executable command we were looking for:
-            `digibyte-cli`. Now we can verify the `digibyte-cli`
-            command has been added to the search $PATH:
+		 1. If you want to verify there is a `digibyte-cli` command,
+            you can do this:
 			```
-			root@f4c21d83d6fe:/opt/blockchain# which digibyte-cli
+			which digibyte-cli
+			```
+			which should return this:
+			```			
 			/usr/bin/digibyte-cli
 			```
-			And now that we see it's in the search $PATH, we can use
-            the command from any directory in the DGB container:
+		 1. Now you can interact with the Digibyte daemon as follows:
 			```
 			root@f4c21d83d6fe:/opt/blockchain# digibyte-cli getblockcount
 			13535747
@@ -1028,6 +1056,44 @@ complete the following guides in order:
 			~$ docker exec exrproxy-env_DGB_1 digibyte-cli getblockcount
 			13535762
 			```
+	- Now let's consider the case where the docker container with
+	  which you want to interact does
+      *not* have *Bash* shell available. This is the case for the Syscoin
+	  container, for example. Attempting to invoke the *Bash*
+	  shell in the Syscoin container will result in an error:
+	  ```
+	  docker exec -it exrproxy-env_SYS_1 /bin/bash
+	  OCI runtime exec failed: exec failed: container_linux.go:380:
+	  starting container process caused: exec: "/bin/bash": stat
+	  /bin/bash: no such file or directory: unknown
+	  ```
+	  The solution is to invoke a shell which *does* exist in the
+	  container, like this:
+	  ```
+	  docker exec -it exrproxy-env_SYS_1 /bin/sh
+	  ```
+	- Another unique feature of the Syscoin container is that the
+      `syscoin-cli` command requires certain parameters to be passed
+      to it in order to work properly. For example:
+	  ```
+	  docker exec exrproxy-env_SYS_1 syscoin-cli getblockcount 
+	  ```
+	  returns
+	  ```
+	  error: Could not locate RPC credentials. No authentication cookie could be found, and RPC password is not set.  See -rpcpassword and -stdinrpcpass.  Configuration file: (/root/.syscoin/syscoin.conf)
+	  ```
+	  But invoking `syscoin-cli` as follows, works properly:
+	  ```
+	  docker exec exrproxy-env_SYS_1 syscoin-cli -conf=/opt/blockchain/config/syscoin.conf getblockcount
+	  1218725
+	  ```
+	  Alternatively, this also works:
+	  ```
+	  docker exec exrproxy-env_SYS_1 syscoin-cli -datadir=/opt/blockchain/config getblockcount
+	  1218725
+	  ```
+	  Note: The DASH container, and perhaps others containers, will also require
+      these same parameters to be passed to the CLI command.
 	- Now let's consider another case where more *docker* knowledge
       could be required. Let's consider the case where
       `docker-compose down` fails to complete due to receiving a timeout
@@ -1060,6 +1126,16 @@ complete the following guides in order:
       Also, if your docker containers, images, volumes and/or networks
       get messed up for any reason,
       [docker offers a variety of *prune* utilities to clean up the current state of your *docker* environment](https://docs.docker.com/config/pruning/).
+	  - Note: In the context of a docker-based Service Node
+      auto-deployment, executing the following 2 command should be
+      equivalent to `docker-compose down`:
+	  ```
+	  docker stop $(docker ps -q -f name=exrproxy-env_*)
+	  docker rm $(docker ps -q -f name=exrproxy-env_*)
+	  ```
+	  This trick can be useful if, for example, `docker-compose.yml`
+      is accidentally reconfigured before `docker-compose down` is
+      executed, causing `docker-compose down` to fail.
 	- *docker* offers a variety of useful utilities for managing and
     interacting with various docker objects. To see a list of all
     docker options and commands,

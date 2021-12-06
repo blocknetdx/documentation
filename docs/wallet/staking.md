@@ -100,8 +100,7 @@ Use the following guide to enable staking and start earning rewards.
 		  - 1 or more vCPUs
 		  - 20GB or more storage space
 		  - 2GB or more of RAM. (1GB of RAM is sufficient if you
-            [create 1+GB of swap space](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)
-            after logging in to your VPS in step 8 below).
+            create 1+GB of swap space in step 12 below).
 	1. Follow the guides available from your VPS provider to launch
        your Ubuntu VPS and connect to it via `ssh` (from Mac or Linux
        Terminal) or via `PuTTY` (from Windows). For
@@ -149,6 +148,34 @@ Use the following guide to enable staking and start earning rewards.
 	   ```
 	   sudo apt install nano unzip
 	   ```
+    1. Create at least as much swap space as you have RAM. So,
+       if you have 16 GB or RAM, you should create at least 16 GB of
+       swap space. Many recommend creating twice as much swap space as
+       you have RAM, which is a good idea if you can spare the disk
+       space. However, more than 16 GB of swap
+       space may not be required for supporting Blocknet
+       services, even if you plan to host a
+       [Service Node](/resources/glossary/#service-node) and
+       [XQuery](/resources/glossary/#xquery). To create swap space:
+	   Check if your system already has swap space allocated:
+	   ```
+	   swapon --show
+	   ```
+		- If the results of `swapon --show` look similar to this:
+		   ```
+		   swapon --show
+		   NAME      TYPE SIZE USED PRIO
+		   /swapfile file   2G   0B   -2
+		   ```
+		   that means you alreday have some swap space allocated and
+		   you should follow
+		   [this guide](https://linuxhandbook.com/increase-swap-ubuntu/)
+		   to allocate 1x-2x more swap space than you have GB of RAM.
+		- If the results of `swapon --show` do *not* indicate that
+          your system has a *swapfile* of type `file`, you'll need to
+          create a new swap file with 1x-2x more swap space than you have
+          GB of RAM. To do so, follow [this guide](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)
+
 	1. (Recommended)
        Increase the security of your VPS by
        [setting up SSH Keys to restrict access to your VPS from any computer other than
@@ -270,12 +297,13 @@ Use the following guide to enable staking and start earning rewards.
        returns a block height which matches that of
        [Chainz Blockchain Explorer](https://chainz.cryptoid.info/block/).
        (Check the block height much less frequently if you did not
-       speed up syncing with the bootstrap method of step 18.)
+       speed up syncing with the bootstrap method of step 19.)
 
 	1. At this point, the latest Blocknet wallet is installed and
     fully synced. Now you can interact with the Blocknet daemon through
     the Command Line Interface (CLI) as follows:
-		1. The following are examples of commands you can issue to the Blocknet daemon through the CLI:
+
+		The following are examples of commands you can issue to the Blocknet daemon through the CLI:
 		```
 		stcli getblockchaininfo 
 		stcli getstakingstatus 
@@ -304,8 +332,10 @@ Use the following guide to enable staking and start earning rewards.
 		Blocknet commands at the
 		[Blocknet API Portal](https://api.blocknet.co).
 
+	    !!! info "Note: The online help documentation you'll find by issuing `stcli help` or `stcli help <command>` may suggest using the command `blocknet-cli` to access the commands of the staking wallet. You can indeed use the `./blocknet-cli` command as the online help suggests, but only if your Current Directory is `~/blocknet-${BLOCKNET_VERSION}/bin/`. You can also use `blocknet-cli` if `~/blocknet-${BLOCKNET_VERSION}/bin/` is in your `$PATH` environment variable. However, an easy way to avoid having to make sure one of those two conditions is true is to use the `stcli` alias we defined above to call the `blocknet-cli` command."
+
 	1. Fund your staking wallet. Skip to
-    step 23 if you don't have an already funded Blocknet wallet, or if
+    step 24 if you don't have an already funded Blocknet wallet, or if
     you prefer to fund your VPS staking wallet by sending funds to it
     instead of importing an already funded wallet. Otherwise, import an already funded Blocknet
     wallet from your home computer to your VPS as follows.:
@@ -356,7 +386,7 @@ Use the following guide to enable staking and start earning rewards.
 
 				1. Copy your funded `wallet.dat` to your VPS as follows:
 			   ```
-			   cd %appdata%\Roaming\Blocknet\wallets
+			   cd %appdata%\Blocknet\wallets
 			   pscp wallet.dat <username>@VPS_IP:.blocknet/wallets 
 			   ```
 			   ...where *<username\>* is the name of the user you
@@ -469,13 +499,13 @@ Use the following guide to enable staking and start earning rewards.
 		```
 		stcli stop
 		```
-		1. Follow steps 13 through 16 above to install the latest
+		1. Follow steps 14 through 17 above to install the latest
 		version of the Blocknet wallet and start the new Blocknet daemon.
 		1. Unlock your wallet for staking with:
 	   ```
 	   stunlock
 	   ```
-		   1. Confirm your wallet is staking as in step 25 above.
+		   1. Confirm your wallet is staking as in step 26 above.
 		   1. (Recommended) Remove the directory tree of the old
 		   version. Use caution with this command; it recursively
 		   removes all files and directories in the specified

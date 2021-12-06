@@ -8,7 +8,8 @@ description: Blocknet blockchain explorers, usually referred to as block explore
 ## Introduction
 The following is a list of Blocknet explorers:
 
-* [CryptoID](https://chainz.cryptoid.info/block/) (recommended)
+* [Blocknet](https://explorer.blocknet.co/)  (recommended)
+* [CryptoID](https://chainz.cryptoid.info/block/)
 * [CryptoCore](https://block.ccore.online/)
 * [TokenView](https://block.tokenview.com/en/coininfo)
 

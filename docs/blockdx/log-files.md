@@ -9,7 +9,7 @@ description: This page gives the default location of BlockDX & XBridge log files
 
 - **Windows**
 	```
-	%appdata%\Roaming\Blocknet\log\xbridgep2p_YYYYMMDD.log
+	%appdata%\Blocknet\log\xbridgep2p_YYYYMMDD.log
 	```
 - **MacOS**
 	```

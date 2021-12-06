@@ -3,7 +3,7 @@
 		```
 		C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
 		```
-		Or paste `%appdata%\Roaming\Blocknet\` into the File Explorer path field.
+		Or paste `%appdata%\Blocknet\` into the File Explorer path field.
 	- **MacOS**
 		```
 		~/Library/Application Support/Blocknet/

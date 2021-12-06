@@ -45,15 +45,6 @@ Voting for proposals ends 60 blocks prior the Superblock.
 
 --8<-- "superblock-dates.md"
 
----
-
-
-## Community Funds
-In addition to Superblocks, there are also Community Funds. These funds were created after a [staking protocol exploit](https://steemit.com/blocknet/@theblocknet/stake-bug-resolved-announcing-the-blocknet-bug-bounty) was successfully stopped and [it was voted on](http://blocknetdx.forumotion.com/t10-community-fund-proposals-redeem-fund-allocations) by the community to create various funds. [An additional proposal](/proposals/project-funding) was voted on (and passed) to also add the retrieved exploited funds to the Community Funds instead of those funds being burns, as was originally planned. 
-<!--
-The current balance and use of these funds can be tracked in the [Blocknet's Financial Tracker](https://docs.google.com/spreadsheets/d/1xFm5LJsRNN62-9XZFqfDckUt2x8ps3pUOBISUxNQYpc/). Usage of these funds go through a 3-of-5 approval process by the fund approvers.
--->
-
 
 
 

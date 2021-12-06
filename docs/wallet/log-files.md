@@ -5,7 +5,7 @@ description: This page gives the default location of Blocknet Core log files.
 
 - **Windows**
 	```
-	%appdata%\Roaming\Blocknet\debug.log
+	%appdata%\Blocknet\debug.log
 	```
 - **MacOS**
 	```

@@ -50,10 +50,15 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 ---
 
 ## Viewing from the Browser
-There are various options for viewing the proposals in the browser. Below is a comparison list with the features of each website.
+There are various options for viewing the proposals in the browser. Each option has its own unique features. As of this writing, the websites where proposals can be viewed include the following:
 
+[Proposal Forum](https://forum.blocknet.co/c/draft-proposals)
 
-| Website | [Proposal Forum](https://forum.blocknet.co/c/final-proposals) | [blockdx.co](https://blockdx.co/funding-proposals)
+[Blocknet Monitor](https://blocknetmonitor.com/?p=proposals)
+<!--
+Below is a comparison list with the features of each website.
+
+| Website | [Proposal Forum](https://forum.blocknet.co/c/draft-proposals) | [blockdx.co](https://blockdx.co/funding-proposals)
 ------------------------|-----------------------------|----------------------------|
 Mobile friendly         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
 Lists proposals         | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
@@ -65,6 +70,8 @@ Shows deposit addresses | <i class="fa fa-times"></i> | <i class="fa fa-times"><
 Shows past proposals    | <i class="fa fa-check"></i> | (in progress)              
 Allows for discussion   | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
 Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"></i>
+
+-->
 
 ---
 
@@ -104,7 +111,7 @@ Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"><
 			??? tip "Tip: This requires the *blocknet-[version]-win64.zip* download version."
 				To interact with the wallet via the command line, the `blocknet-[version]-win64.zip` wallet version is needed.
 
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\Blocknet` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Roaming\Blocknet\` into the file explorer path field.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\Blocknet` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Blocknet\` into the file explorer path field.
 
 				blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD]
 

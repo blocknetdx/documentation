@@ -151,7 +151,7 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 			??? tip "Tip: This requires the *blocknet-[version]-win64.zip* download version"
 				To interact with the wallet via the command line, the `blocknet-[version]-win64.zip` wallet version is needed.
 
-		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\Blocknet` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Roaming\Blocknet\` into the file explorer path field.
+		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in the `C:\Users\[YourUsername]\AppData\Roaming\Blocknet` directory. This directory can be found by opening the file explorer and pasting in `%appdata%\Blocknet\` into the file explorer path field.
 
 				./blocknetd -rpcuser=[USERNAME] -rpcpassword=[PASSWORD] -daemon
 

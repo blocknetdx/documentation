@@ -17,7 +17,7 @@ also view how your changes will look when rendered by MkDocs to
 HTML. Once you're satisfied with the way your edits look in HTML, merge
 your new branch to your forked `draft` branch. Subsequently, create a pull request to merge from your forked repository `draft` branch into the original repository `draft` branch.
 
-If you're not familiar enough with for how to do this, feel free to create a [Github issue](https://github.com/blocknetdx/documentation/issues/new) with corrections, edits, or additions. If you have a lot of content to add, the best method would be to enter the content into a Google Doc (with settings set to public comments allowed) and link that in your Github issue.
+If you're not familiar enough with how to do this, feel free to create a [Github issue](https://github.com/blocknetdx/documentation/issues/new) with corrections, edits, or additions. If you have a lot of content to add, the best method would be to enter the content into a Google Doc (with settings set to public comments allowed) and link that in your Github issue.
 
 
 ## Getting Started

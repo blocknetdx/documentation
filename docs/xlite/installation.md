@@ -9,6 +9,16 @@ operating system (OS). If you already have the XLite wallet
 installed and are updating, the steps are basically the same.
 
 ---
+??? warning "Note: [SegWit Format Addresses](https://blockchain.news/wiki/know-your-bitcoin-address-differences-between-legacy-nested-segwit-and-native-segwit-formats) support is coming soon to XLite. However, as of this writing (Dec 4, 2021), XLite does *not* support sending funds to SegWit format addresses."
+	Some exchange wallets receive BTC (and perhaps other coins) in
+	[SegWit Format Addresses](https://blockchain.news/wiki/know-your-bitcoin-address-differences-between-legacy-nested-segwit-and-native-segwit-formats)
+	by default. A *SegWit* format address is sometimes also called a *native*
+	or *bech32* format address. For the moment, you cannot
+	send BTC or other coins from XLite to a wallet using a *SegWit*
+	format address. You can only send funds to *Legacy* format addresses.
+	*SegWit* format address support will be added soon.
+
+---
 
 ## Install GUI Wallet
 

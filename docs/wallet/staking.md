@@ -356,7 +356,7 @@ Use the following guide to enable staking and start earning rewards.
 
 				1. Copy your funded `wallet.dat` to your VPS as follows:
 			   ```
-			   cd %appdata%\Roaming\Blocknet\wallets
+			   cd %appdata%\Blocknet\wallets
 			   pscp wallet.dat <username>@VPS_IP:.blocknet/wallets 
 			   ```
 			   ...where *<username\>* is the name of the user you

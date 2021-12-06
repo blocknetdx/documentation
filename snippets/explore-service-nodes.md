@@ -6,6 +6,8 @@
 	- [BlocknetMonitor](https://www.blocknetmonitor.com) (Thank you *@walkjivefly*!)
 	- [BlockDXServiceNodes](https://block.denarius.pro) (Thank you *@BuzzkillB*!)
 	- [CryptoCoreExplorer](https://block.ccore.online/) (Thank you Telegram user *@jimwal*!)
-	- [BlockDX 24h Volume & much more](https://blockdx.co/orders) (Thank you *@littleeagle*!)
-	- [Raw Volume Data](https://data.blocknet.co/api/v2.0/ticker)
+	- [Raw Volume Data](https://data.blocknet.co/api/v2.0/ticker) 
+<!--
+- [BlockDX 24h Volume & much more](https://blockdx.co/orders) (Thank you *@littleeagle*!)
+-->
 

@@ -78,7 +78,7 @@ description: These Block DX trading guides explain how to check your balances, s
 
 
 ??? example "Market Information"
-	??? Tip "Tip: To view currently active BlockDX orders from a browser, visit [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) or [BlockDX.co](https://www.blockdx.co/orders)"
+	??? Tip "Tip: To view currently active BlockDX orders from a browser, visit [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders)"
 	??? warning "Warning: When opening BlockDX for the first time it can take up to 3 minutes for all currently active orders to display on the screen."
 		This is simply the nature of a fully decentralized, peer-to-peer network. If your
 		XBridge client is connected to very few peers, it can even

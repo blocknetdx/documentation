@@ -26,9 +26,6 @@ created as a more user-friendly naming preference to refer to the
 wallet's default address. Within each *address* there can exist
 multiple [UTXOs](#utxo) , also called [Inputs](#input).
 
-#### Avalanche Indexer
-See [Indexer](#indexer)
-
 ---
 
 ## B
@@ -181,8 +178,13 @@ details of a Hydra Service Node:
 
 #### Indexer
 An Indexing service makes blockchain data readily accessible to
-developers. The Blocknet Avalanche Indexer makes Avalanche blockchain
-data available to developers in a decentralized fashion, which is vital to maintaining the decentralization of the apps built with it.
+developers. The Blocknet Indexer, called XQuery, makes data from blockchains like
+Avalanche, Ethereum, and potentially many more, readily available to developers in a
+decentralized fashion. A decentralized indexing service is vital to
+DApps which need ready access to blockchain data and want to maintain
+their status as a DApp (Decentralized Application). See
+[this guide](/service-nodes/setup/#service-node-setup) to learn about
+hosting Blocknet's XQuery service on a Service Node.
 
 #### Input
 Within a users [wallet](#wallet), the total balance is composed of
@@ -412,6 +414,9 @@ The [decentralized exchange](#decentralized-exchange) component of the [Blocknet
 
 #### XCloud
 The decentralized cloud component of the [Blocknet Protocol](#blocknet-protocol).
+
+#### XQuery
+XQuery is the name of Blocknet's [Indexer service](#indexer)
 
 #### XRouter
 The [interchain communication](#interchain-communication) component of the [Blocknet Protocol](#blocknet-protocol).

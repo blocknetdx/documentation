@@ -19,7 +19,7 @@ description: This guide explains how to configure wallets for trading on Block D
 		1. Make sure you have [installed the latest BlockDX (v1.9.0 or greater)](/blockdx/installation/#install-block-dx)
 		1. Make sure you have [installed the latest version of Goldcoin wallet (v0.14.7 or above)](https://www.goldcoinproject.org)
 		1. If you created your Goldcoin wallet using an earlier version of the Goldcoin wallet app, you may have a Goldcoin data directory named, `GoldCoin (GLD)`.  You can check this by navigating in a File Explorer (Windows) or Finder (Mac) to this location:
-			- Windows: ` %appdata%\Roaming`
+			- Windows: ` %appdata%`
 			- Mac: ` ~/Library/Application Support/`
 			- Linux: ` ~/`
 		1. If you see a directory here named, `GoldCoin (GLD)`, close your Goldcoin wallet and rename `GoldCoin (GLD)`  to `Goldcoin`  (note the small *c* in *coin*). In the case of Linux, rename it to `.goldcoin`.

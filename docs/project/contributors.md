@@ -139,6 +139,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="platform">Discord <span class="handle">@fazer#0903</span></div>
 </div>
 
+<!--
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@littleeagle&nbsp;&nbsp;
@@ -147,6 +148,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="title"><a href="https://blockdx.co/" target="_blank">blockdx.co</a></div>
 	<div class="platform">Discord <span class="handle">@littleeagle#3663</span></div>
 </div>
+-->
 
 <div class="contributor"> 
 	<div class="img-round"><img src="/img/contributors/nikita-chisnikov.jpg"></div>
@@ -155,6 +157,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="platform">Discord <span class="handle">@nik_chis#7731</span></div>
 </div>
 
+<!--
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@redactedman</div>
@@ -163,7 +166,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 </div>
 
 </div>
-
+-->
 
 <script type="text/javascript">
 // read instructions for related links in ../snippets/extras.md

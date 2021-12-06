@@ -24,43 +24,37 @@ Operating as a Service Node requires two Blocknet wallets:
 
 	- 4 CPU cores (or 4 vCPUs if the Service Node runs on a VPS)
 	- 8 GB RAM
-	- 200 GB SSD Storage (not sure if slower, HDD drives would work).
-	- 25+MBit/s Internet download speed
+	- 200 GB SSD Storage (doubtful that slower, HDD drives would work).
+	- 25+MBit/s Internet download speed. (100+ MBit/s is much better
+      for faster syncing.)
 
-	Such a system should be able to support a Service Node running the
-	[Avalanche Indexer](/resources/glossary/#indexer), which requires >= 2 vCPUs and >= 100GB
-	Storage. In addition to the Avalanche Indexer, it could support
+	Such a system could support
 	a few small SPV wallets and a Blocknet staking wallet.
 	As of this writing, the most economical place to rent a VPS with
 	the above specs seems to be
 	[Contabo](https://contabo.com/en/vps/). In fact, Contabo's "S"
 	size VPS has exactly those minimum level specs and currently rents for €4.99 /
-	mo. One nice feature of renting a VPS to run a Service Node is
-	that the VPS provider usually gives you the option to *upgrade*
-	your system (i.e. add more storage space, vCPUs & RAM)
-	without losing any of your data. So, if you're running the
-	Avalanche Indexer
-	on a Contabo size "S" VPS and one day the Indexer starts to require
-	more storage space than you have available, or if you decide you
-	want to start hosting more SPV wallets, you can easily upgrage
-	your VPS to "M", "L", or ever "XL" size.
+	mo.
 
 	> Medium & Large Systems
 	
-	If you want to host the [Avalanche Indexer](/resources/glossary/#indexer) *and* several large SPV
-    wallets as well, youll need more than 200GB of storage space.
+	If you want to host the
+    [XQuery Indexer](/resources/glossary/#indexer) (and maybe a few SPV
+    wallets as well), youll need 16 GB of RAM and more than 200GB of
+    SSD storage space. XQuery *alone* requires 200 GB of storage
+    space, so if you want to host XQuery *and* a few SPV wallets, you
+    should really have 400+ GB of SSD storage space.
+
+	!!! warning "16 GB of RAM and more than 200 GB of SSD storage space are required for supporting XQuery!"
+
 	HW requirements for a medium to large Service Node would be
     something like this:
 
 	- 6-8 CPU cores (or 6-8 vCPUs if the Service Node runs on a VPS)
-	- 8-16 GB RAM
-	- 400+ GB SSD Storage (not sure if slower, HDD drives would work).
-	- 25+MBit/s Internet download speed
-
-	The Avalanche Indexer, as of June 22, 2021, requires about 100GB of
-    space (~40GB for database + ~50GB for AVAX chain data).
-
-	Then you'll need space for each of the SPV wallets you intend to host.
+	- 16 GB RAM
+	- 400+ GB SSD Storage
+	- 25+MBit/s Internet download speed  (100+ MBit/s is much better
+      for faster syncing.)
 
 	To give an estimate of how much storage space is required for various
     SPV wallets, here is a snapshot of approximate disk space utilizations taken June 7, 2021:
@@ -91,6 +85,7 @@ Operating as a Service Node requires two Blocknet wallets:
 		egulden        | 1.4
 		stakecubecoin        | 1.0
 
+
 	> VPS Provider Options for Small, Medium & Large Systems
 
 	If you want to compare prices between VPS service providers, you
@@ -118,10 +113,12 @@ Operating as a Service Node requires two Blocknet wallets:
     year. (Its current size can be found
     [here](https://etherscan.io/chartsync/chainarchive).) Therefore, a
     Hydra Service Node should probably have at least 10TB
-    for ETH alone, plus maybe another 1-2TB for running other SPV
-    wallets and the [Avalanche Indexer](/resources/glossary/#indexer). It
+    for ETH alone, plus maybe another 1.5-2TB for running other SPV
+    wallets and the [XQuery Indexer](/resources/glossary/#indexer). It
     should also have the ability to expand its storage space by 3TB
-    per year. *Update Sept. 27, 2021: Some community members are
+    per year.
+
+	*Update Sept. 27, 2021: Some Blocknet community members are
     researching the possibility of using the [Erigon ETH archival node](https://github.com/ledgerwatch/erigon) instead
     of the Go ETH (GETH) archival node. This is promising research as
     the Erigon ETH archival node occupies only about a quarter of the
@@ -134,11 +131,12 @@ Operating as a Service Node requires two Blocknet wallets:
 
 	It's also important to note that the storage for the ETH full
     archival node *must* be very fast. In other words, it must use
-    SSDs, not HDDs. There are 2 types of SSDs: SATA and NVMe/PCIe. The
-    latter are much faster and are *definitely* the preferred variety
-    when it comes to hosting an ETH archival node. In fact, it hasn't
-    even been confirmed that SATA SSDs will be fast enough to allow the
-    node to sync.
+    SSDs, not HDDs. There are 3 types of SSDs: SATA, SAS and
+    NVMe/PCIe. Of the 3, SATA are the slowest, SAS are a little
+    faster, and NVMe are by far the fastest. NVMe are *definitely*
+    the preferred variety of SSD drive when it comes to hosting an ETH archival
+    node. In fact, it looks doubtful that SATA or SAS SSD drives will be
+    fast enough to allow the ETH node to sync.
 
 	It is also recommended that the SSDs in a Hydra node be configured
     in a RAID mirror configuration (e.g. RAID-1, RAID-10,
@@ -401,7 +399,7 @@ complete the following guides in order:
 
 	If you didn't follow, and don't plan to follow the
 	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
-	to set up a staking wallet on your Service Node computer, then complete steps 1-12 of the
+	to set up a staking wallet on your Service Node computer, then complete steps 1-13 of the
 	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
 	to set up an Ubuntu Linux server as your Service Node computer, ignoring
 	the Hardware Requirements in that *VPS Staking guide* and instead following the
@@ -699,6 +697,15 @@ complete the following guides in order:
 	   ```
 	   - name: TNODE
 	   ```
+	1. (Recommended) It is recommended to deploy certain SPV Wallets
+	   in stages. The reason is because some SPV wallets are known to
+	   require large amounts of RAM and/or I/O bandwidth while they
+	   are syncing their respective blockchains. AVAX, LBC and DGB all
+	   fall into this category. For this reason, it is recommended
+	   *not* to run more than one of those 3 while any one of them is
+	   syncing. For example, it's best *not* to run LBC or DGB while
+	   AVAX is syncing, or to run AVAX or DGB while LBC is syncing. To
+	   learn techniques for syncing just one of these 3 at a time, see the information given in the [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node) section of this guide.
 	1. Save your edits to `custom.yaml` and exit the editor.
 	1. Continue on to [auto-deploy your Service Node](#auto-deploy-service-node).
 
@@ -707,7 +714,7 @@ complete the following guides in order:
 		entries listed in `alldaemons.yaml`. This will be changing very
 		soon. The goal is that every coin supported by BlockDX, which
 		means every coin listed in the [Blocknet
-		manifest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest.json),
+		manifest-latest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json),
 		will have an entry in `alldaemons.yaml` and thus be readily
 		available for Service Nodes to support. One thing you can do
 		to ensure you have the latest available version of
@@ -717,11 +724,24 @@ complete the following guides in order:
 		cd ~/exrproxy-env
 		git pull
 		```
+		If the `git pull` command gives errors like "Merge conflict" or "error:
+		Your local changes to the following files would be overwritten
+		by merge," it means you have locally changed one or more of the files `git` is
+		trying to pull from the upstream repository. In this case, you can
+		undo any local changes you made to any of the files tracked by
+		`git` by issuing the command:
+		```
+		git reset --hard
+		```
+		Note, `git reset --hard` will cause any changes you made to
+		tracked files in the `exrproxy-env` directory tree to be lost.
+		After issuing `git reset --hard`, you should now be able to
+		issue the `git pull` command without errors.
+
 		Note: If you are trying to
 		add Service Node support for a new coin so the new coin can be tested and
-		then added to the *manifest.json*, you will need to
-		[set up the Service Node Manually](#manual-service-node-setup-deprecated)
-		for that purpose.
+		then added to the *manifest-latest.json*, please refer to the
+		[Listing Process](/blockdx/listings/#listing-process).
 
 
 ### Auto-Deploy Service Node
@@ -908,17 +928,32 @@ complete the following guides in order:
        your Service Node into a *testnet* Service Node by replacing
        `SNODE` with `testSNODE` in `custom.yaml`. To make sure you
        have a current reference for all coin daemons currently
-       available, it is recommended to *pull* the latest changes from
+       available (and the latest version of the autobuild
+		tools in general), it is recommended to *pull* the latest changes from
        the Github repository:
 	   ```
 	   cd ~/exrproxy-env
 	   git pull
 	   ```
-	   This will pull all available updates to your local
-       `exrproxy-env` repository, including any updates to
-       `~/exrproxy-env/autobuild/examples/alldaemons.yaml`. `alldaemons.yaml`
-       will be updated frequently with new coin daemons/SPV wallets,
-       so it'll be good to pull the latest version frequently. When
+		If the `git pull` command gives errors like "Merge conflict" or "error:
+		Your local changes to the following files would be overwritten
+		by merge," it means you have locally changed one or more of the files `git` is
+		trying to pull from the upstream repository. In this case, you can
+		undo any local changes you made to any of the files tracked by
+		`git` by issuing the command:
+		```
+		git reset --hard
+		```
+		Note, `git reset --hard` will cause any changes you made to
+		tracked files in the `exrproxy-env` directory tree to be lost.
+		After issuing `git reset --hard`, you should now be able to
+		issue the `git pull` command without errors.
+		`git pull` will pull all available updates to your local
+		`exrproxy-env` repository, including any updates to
+		`~/exrproxy-env/autobuild/examples/alldaemons.yaml`. The
+		remote/upstream version of `alldaemons.yaml`
+		will be updated frequently with new coin daemons/SPV wallets,
+		so it'll be good to pull the latest version frequently. When
        you have the latest `alldaemons.yaml`, you can copy/paste coin
        daemon entries from `alldaemons.yaml` into
        `~/exrproxy-env/autobuild/custom.yaml`, as desired.
@@ -1072,7 +1107,7 @@ complete the following guides in order:
 	  ```
 	  docker exec -it exrproxy-env_SYS_1 /bin/sh
 	  ```
-	- Another unique feature of the Syscoin container is that the
+	- Another unique feature of [an earlier version of] the Syscoin container is that the
       `syscoin-cli` command requires certain parameters to be passed
       to it in order to work properly. For example:
 	  ```
@@ -1093,8 +1128,9 @@ complete the following guides in order:
 	  1218725
 	  ```
 	  Note: The DASH container, and perhaps others containers, will also require
-      these same parameters to be passed to the CLI command.
-	- Now let's consider another case where more *docker* knowledge
+      these same parameters to be passed to the CLI
+      command. [edit: The latest SYS container does *not* require the additional parameter]
+	  - Now let's consider another case where more *docker* knowledge
       could be required. Let's consider the case where
       `docker-compose down` fails to complete due to receiving a timeout
       error something like the following:
@@ -1124,7 +1160,9 @@ complete the following guides in order:
 	  docker container prune
 	  ```
       Also, if your docker containers, images, volumes and/or networks
-      get messed up for any reason,
+      get messed up for any reason, or if you end up with docker
+      images on your server which are no longer used and taking up
+      space unnecessarily,
       [docker offers a variety of *prune* utilities to clean up the current state of your *docker* environment](https://docs.docker.com/config/pruning/).
 	  - Note: In the context of a docker-based Service Node
       auto-deployment, executing the following 2 command should be

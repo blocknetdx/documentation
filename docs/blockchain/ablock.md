@@ -49,7 +49,7 @@ After your deposit has enough confirmations, you will then have ERC20 aBLOCK in 
 
 #### Unwrapping fees
 
-There is no fee for wrapping BLOCK into aBLOCK (a.k.a. bridging BLOCK to aBLOCK). However, when unwrapping aBLOCK to redeem the BLOCK inside (a.k.a. unbridging aBLOCK to BLOCK), there is a 0.1%  "gateway" fee, payable in BLOCK. (min  gateway fee = 5 BLOCK; min redeem amount = 10 BLOCK). Also, to cover gas fees, users should maintain some ETH in their wallets.
+There is no fee for wrapping BLOCK into aBLOCK (a.k.a. bridging BLOCK to aBLOCK). However, when unwrapping aBLOCK to redeem the BLOCK inside (a.k.a. unbridging aBLOCK to BLOCK), there is a 0.1%  "gateway" fee, payable in BLOCK. (min  gateway fee = 5 BLOCK; min redeem amount = 10 BLOCK). Also, to cover gas fees, users should maintain some ETH in their wallets. __NOTE:__ It's recently been reported that these unwrapping fees can be *much* higher than listed here when eth gas fees are high.
 
 ## Add Liquidity
 ### Add Uniswap Liquidity

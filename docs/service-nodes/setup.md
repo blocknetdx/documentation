@@ -35,17 +35,16 @@ Operating as a Service Node requires two Blocknet wallets:
 	[Contabo](https://contabo.com/en/vps/). In fact, Contabo's "S"
 	size VPS has exactly those minimum level specs and currently rents for €4.99 /
 	mo.
-
 	> Medium & Large Systems
 	
 	If you want to host the
     [XQuery Indexer](/resources/glossary/#indexer) (and maybe a few SPV
-    wallets as well), youll need 16 GB of RAM and more than 200GB of
-    SSD storage space. XQuery *alone* requires 200 GB of storage
+    wallets as well), youll need 16 GB of RAM and more than 300GB of
+    SSD storage space. XQuery *alone* requires 300 GB of storage
     space, so if you want to host XQuery *and* a few SPV wallets, you
     should really have 400+ GB of SSD storage space.
 
-	!!! warning "16 GB of RAM and more than 200 GB of SSD storage space are required for supporting XQuery!"
+	!!! warning "16 GB of RAM and 300 GB of SSD storage space are required to support indexing of the AVAX chain by XQuery!"
 
 	HW requirements for a medium to large Service Node would be
     something like this:
@@ -591,7 +590,7 @@ complete the following guides in order:
     `examples/alldaemons.yaml` configuration file is meant to be an example of how
     `custom.yaml` should look if you were going to configure your
     Service Node to support *all available SPV
-    wallet daemons.* The way to create a `custom.yaml` which
+    wallet daemons and Blocknet Services.* The way to create a `custom.yaml` which
     configures *only* the SPV wallets you want to support is to start
     with the `alldaemons.yaml` file, then delete the entries of the
     SPV wallets you *don't* want to support. This is the reason we copied `examples/alldaemons.yaml` to
@@ -605,46 +604,61 @@ complete the following guides in order:
 	   ```
 	1. Because we copied `alldaemons.yaml` to `custom.yaml` earlier,
        editing `custom.yaml` for the first time will reveal a file
-       that looks something like the following:
+       identical to `alldaemons.yaml`, something like the following:
 	   ```
 	   --- # snode daemon LIST
 	   - j2template: dockercompose.j2
 		 name: dockercompose
 		 daemons:
-			 - name: XR_PROXY
-				image: blocknetdx/exrproxy:0.7.9
-				config_mount_dir: /snode/xr_proxy/config
-				nginx_mount_dir: /snode/xr_proxy/nginx
-			 - name: ETH
-			    image: blocknetdx/eth-payment-processor:0.5.2
-				postgresql_data_mount_dir: /snode/eth_pymt_db
-				geth_data_mount_dir: /snode
-			 - name: SNODE
-			    image: blocknetdx/servicenode:latest
-				config_mount_dir: /snode
-				data_mount_dir: /snode
-			 - name: BTC
+             # DO NOT DELETE XR_PROXY ENTRY
+			 - name: XR_PROXY # DO NOT DELETE
+				 image: blocknetdx/exrproxy:0.8.0 # DO NOT DELETE
+				 config_mount_dir: /snode/xr_proxy/config # DO NOT DELETE
+				 nginx_mount_dir: /snode/xr_proxy/nginx # DO NOT DELETE
+             # DELETE THE FOLLOWING ETH ENTRY IF YOU DON'T WANT TO DEPLOY A 10+ TB GETH NODE
+			 - name: ETH # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS: 10+ TB NVMe SSD storage (21 Dec, 2021), 16 GB RAM when GETH deployed locally
+				 image: blocknetdx/eth-payment-processor:0.5.2 # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS
+				 postgresql_data_mount_dir: /snode/eth_pymt_db # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS
+				 geth_data_mount_dir: /snode # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS
+             # DO NOT DELETE SNODE ENTRY
+			 - name: SNODE # DO NOT DELETE
+				 image: blocknetdx/servicenode:latest # DO NOT DELETE
+				 config_mount_dir: /snode # DO NOT DELETE
+				 data_mount_dir: /snode # DO NOT DELETE
+			 # AVALANCHE INDEXER - DELETE IF YOU DON'T WANT TO SUPPORT XQUERY
+			 - name: AVAX # Requires 300 GB of SSD disk, 16 GB RAM & 6 vCPUs for XQUERY (21 December, 2021)
+				 image: avaplatform/avalanchego:v1.7.3
+				 data_mount_dir: /snode
+			 # THE STANDARD XLITE WALLET SET - DELETE ANY YOU DON'T WANT TO SUPPORT  
+			 - name: BTC # Requires 451 GB of disk (15 December, 2021)
 			    image: blocknetdx/bitcoin:v0.20.0
 				config_mount_dir: /snode
 				data_mount_dir: /snode
-			 - name: LTC
+			 - name: LTC # Requires 71 GB of disk (15 December, 2021)
 			    image: blocknetdx/litecoin:v0.18.1
 				config_mount_dir: /snode
 				data_mount_dir: /snode
-			 - name: DGB
+			- name: DGB # Requires 27 GB of disk (15 December, 2021), 4-5 GB RAM/Swap
 			    image: blocknetdx/digibyte:v7.17.2
 				config_mount_dir: /snode
 				data_mount_dir: /snode
+			...
 	   ```
-	1. __Important:__ The first 3 entries in `custom.yaml` (__XR_PROXY,
-       ETH__ and __SNODE__) should *not* be deleted, even if your Service
-       Node will not support ETH. (The ETH entry will be ignored if
-       you don't specifically deploy an ETH node in a later step.)
+	1. __Important:__ Pay close attention to the comments embedded in
+       this file. Note that some of the entries, like __XR_PROXY__ and
+        __SNODE__, should *never* be deleted. Other entries,
+       like __ETH__, __BTC__,  __AVAX__, and __LBC__ for example, have comments
+       attached to them indicating they require more HW resources
+       than some of the other entries. If the sum total of the HW
+       resources required by all the entries you have listed in this file
+       exceeds the HW resources your server has available, you'll need
+       to delete entries until the amount of HW resources required is less than
+       what your server has available.
 	1. Proceed to delete the entries of those SPV wallets you do *not*
        want to support on your Service Node. For example, if you don't
        want to support __DGB__, you would delete the following 4 lines:
 	```
-		- name: DGB
+		- name: DGB # Requires 27 GB of disk (15 December, 2021), 4-5 GB RAM/Swap
 		   image: blocknetdx/digibyte:v7.17.2
 		   config_mount_dir: /snode
 		   data_mount_dir: /snode
@@ -705,7 +719,12 @@ complete the following guides in order:
 	   *not* to run more than one of those 3 while any one of them is
 	   syncing. For example, it's best *not* to run LBC or DGB while
 	   AVAX is syncing, or to run AVAX or DGB while LBC is syncing. To
-	   learn techniques for syncing just one of these 3 at a time, see the information given in the [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node) section of this guide.
+	   learn techniques for syncing just one of these 3 at a time, see
+	   the information given in the
+	   [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
+	   section of this guide. Note, if you have over 32 GB of RAM and NVMe
+	   storage, you may well be able to sync all of these HW intensive
+	   blockchains in parallel without issue.
 	1. Save your edits to `custom.yaml` and exit the editor.
 	1. Continue on to [auto-deploy your Service Node](#auto-deploy-service-node).
 
@@ -1002,7 +1021,7 @@ complete the following guides in order:
       it can occupy many GB of space. To find out exactly how much
       space is being used by each coin daemon, you can enter:
 	  ```
-	  sudo du -d 0 -h /snode/*
+	  sudo du -d 1 -h /snode
 	  57G	/snode/LTC
 	  3.6G	/snode/MONA
 	  222M	/snode/testsnode
@@ -1169,7 +1188,7 @@ complete the following guides in order:
       equivalent to `docker-compose down`:
 	  ```
 	  docker stop $(docker ps -q -f name=exrproxy-env_*)
-	  docker rm $(docker ps -q -f name=exrproxy-env_*)
+	  docker rm $(docker ps -a -q -f name=exrproxy-env_*)
 	  ```
 	  This trick can be useful if, for example, `docker-compose.yml`
       is accidentally reconfigured before `docker-compose down` is

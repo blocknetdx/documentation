@@ -71,6 +71,13 @@ Blocknet is an open-source project with a team consisting of contributors from a
 
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">Walkjivefly</div>
+	<div class="title">Coin Integration</div>
+	<div class="platform">Discord <span class="handle">@walkjivefly#7204</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@rBurgett</div>
 	<div class="title">Development</div>
 	<div class="platform">Github <span class="handle">@rBurgett</span></div>

@@ -33,7 +33,8 @@ it operates to collect data on its customers. The following options are availabl
 
 Exchange        | Market        | Link
 ----------------|---------------|------
-Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)
+Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)  
+Bittrex Global  | (USDT/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=USDT-BLOCK)  
 SouthExchange | (USDT/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/USDT) 
 SouthExchange | (BTC/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/BTC) 
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC)

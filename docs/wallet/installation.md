@@ -9,6 +9,8 @@ install the wallet on each operating system (OS).
 
 * For a complete guide on setting up the wallet, see the [setup guide](/wallet/setup). 
 
+## Upgrade Wallet
+
 ??? info "Upgrading: If you already have the Blocknet wallet installed and you're upgrading to the latest version, click here for instructions."
 	Before upgrading your Blocknet wallet to the latest version,
 	close/quit/stop the Blocknet wallet app. If running the CLI
@@ -287,20 +289,11 @@ install the wallet on each operating system (OS).
 
 	--8<-- "complete-wallet-installation.md"
 
-
-<!--
 ---
 
-## Install CLI Wallet
+## Install CLI Wallet on Linux
 
-??? example "Windows"
-
-
-??? example "MacOS"
-	
-
-??? example "Linux"
--->	
+See [Staking from CLI on a VPS running Ubuntu Linux](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
 
 ---
 

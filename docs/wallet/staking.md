@@ -10,7 +10,8 @@ Staking is the Proof-of-Stake equivalent of mining in Proof-of-Work blockchains.
 ## Staking Guide
 Staking can be performed with any amount of BLOCK, there is no minimum. However, since staking with Blocknet is probability-based, you will receive rewards more frequently by owning and staking more BLOCK. BLOCK can be acquired through [various options available](/project/exchanges).
 
-Use the following guide to enable staking and start earning rewards.
+Use one of the following guides to enable staking and start earning
+rewards.
 
 #### Staking from a GUI wallet
 
@@ -61,6 +62,16 @@ Use the following guide to enable staking and start earning rewards.
 
 #### Staking from CLI on a VPS running Ubuntu Linux
 
+??? warning "Warning: If you stake on a VPS, there is *some* risk your BLOCK could be stolen if your VPS provider turns out to be malicious, or if they carelessly place a malicious actor in a privileged position."
+	The chances of this may be slim for a well-established, reputable
+	VPS provider, yet they do exist because your wallet's private keys
+	are exposed while staking. The risk of this needs to be weighed by
+	each individual against the convenience of staking 24/7 on a
+	remote VPS. Note, some VPS providers *do* offer services which
+	enable you to easily create and control the keys used for
+	cryptographic operations. [Here](https://aws.amazon.com/kms/faqs/) is an 
+	example of such a service.
+
 ??? example "Staking from CLI on a VPS running Ubuntu Linux"
 	!!! info "Note: The instructions below assume default data directories are used for all Blocknet wallets. If using custom data directories, please adjust the data directory references accordingly. They also assume *bash* shell, the default shell for Ubuntu, is used. Please adjust as necessary if a different shell is used."
 
@@ -77,22 +88,6 @@ Use the following guide to enable staking and start earning rewards.
        [Google Cloud Computing](https://cloud.google.com) and other
        services. As of this writing (June, 2021), you can rent a VPS
        capable of running a staking wallet for less than USD $7.00 per month.
-
-	    ??? tip "Tip: If you might run a [Service Node](/service-nodes/introduction) on your VPS at some point, [Contabo](https://contabo.com/en/) is probably the best choice. Read more..."
-		As of this writing, [Contabo](https://contabo.com/en/) seems to
-		offer the most disk space and compute power for your money. For
-		staking, you don't need much of either. However, for running a
-		[Service Node](/service-nodes/introduction), you'll need a
-		quite a lot of disk space, and a fair amount of compute
-		power as well. See [Service Node Setup](/service-nodes/setup)
-		for a rough estimates hardware requirements as of this writing. Note, if you just
-		want to stake on your VPS at present, but might add a Service Node to your
-		VPS later on,
-		[a small (Size S) Contabo VPS](https://contabo.com/en/vps/)
-		may be the best choice.
-		You can upgrade your VPS size at any time without losing any of
-		your staking wallet data, which is convenient. (The size upgrade can be done quickly and
-		easily from the [Contabo Customer ControlPanel](https://my.contabo.com/).)
 
 	1. Through your VPS provider, launch a small,
       economical VPS running a recent (v18+) version of Ubuntu
@@ -167,7 +162,7 @@ Use the following guide to enable staking and start earning rewards.
 		   NAME      TYPE SIZE USED PRIO
 		   /swapfile file   2G   0B   -2
 		   ```
-		   that means you alreday have some swap space allocated and
+		   that means you already have some swap space allocated and
 		   you should follow
 		   [this guide](https://linuxhandbook.com/increase-swap-ubuntu/)
 		   to allocate 1x-2x more swap space than you have GB of RAM.
@@ -176,7 +171,7 @@ Use the following guide to enable staking and start earning rewards.
           create a new swap file with 1x-2x more swap space than you have
           GB of RAM. To do so, follow [this guide](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)
 
-	1. (Recommended)
+	1. (Highly Recommended)
        Increase the security of your VPS by
        [setting up SSH Keys to restrict access to your VPS from any computer other than
        your own](https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/). Those connecting via `PuTTY` from Windows should first follow [this

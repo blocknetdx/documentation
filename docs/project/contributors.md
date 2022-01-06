@@ -72,7 +72,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">Walkjivefly</div>
-	<div class="title">Coin Integration</div>
+	<div class="title"><a href="https://blocknetmonitor.com" target="_blank">Blocknet Monitor</a>, Coin Integration</div>
 	<div class="platform">Discord <span class="handle">@walkjivefly#7204</span></div>
 </div>
 
@@ -83,13 +83,15 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="platform">Github <span class="handle">@rBurgett</span></div>
 </div>
 
+<!--
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@Corvaxx</div>
 	<div class="title">Development</div>
 	<div class="platform">Github <span class="handle">@Corvaxx</span></div>
 </div>
-
+-->
+	
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@rikublock</div>
@@ -111,27 +113,33 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="platform">Github <span class="handle">@leonVrashitov</span></div>
 </div>
 
+<!--
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@FrancoBenner</div>
 	<div class="title">Development</div>
 	<div class="platform">Github <span class="handle">@FrancoBenner</span></div>
 </div>
+-->
 
+<!--
 <div class="contributor">
 	<div class="img-round"><img src="/img/contributors/thevoice.jpg"></div>
 	<div class="name">@TheVoice</div>
 	<div class="title">Support</div>
 	<div class="platform">Discord <span class="handle">@TheVoice#8464</span></div>
 </div>
-
+-->
+	
+<!--
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@Philip Marshall</div>
 	<div class="title">Social Media Coordinator</div>
 	<div class="platform">Discord <span class="handle">@Philip Marshall#9143</span></div>
 </div>
-
+-->
+	
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@lucien</div>
@@ -180,7 +188,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 var relatedLinks = [];
 </script>
 
---8<-- "extras.md"
+<!-- --8<-- "extras.md" -->
 
 
 

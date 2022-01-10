@@ -653,7 +653,13 @@ complete the following guides in order:
        resources required by all the entries you have listed in this file
        exceeds the HW resources your server has available, you'll need
        to delete entries until the amount of HW resources required is less than
-       what your server has available.
+       what your server has available. The cumulative HW resource requirements
+       referred to here are mainly the disk space requirements. The
+       RAM and CPU requirements of different entries are not
+       necessarily cumulative. For Example, ETH and AVAX both require 16 GB of
+       RAM, but that doesn't necessarily mean you need 32 GB RAM to support both
+       of them on your SNode. However, if you want to have the ability to sync both
+       of them concurrently, then 32+ GB RAM would be recommended.
 	1. Proceed to delete the entries of those SPV wallets you do *not*
        want to support on your Service Node. For example, if you don't
        want to support __DGB__, you would delete the following 4 lines:
@@ -680,7 +686,7 @@ complete the following guides in order:
        SSD storage space available as of this writing. See
        [Hardware Requirements For Service Node Wallet](#hardware-requirements-for-service-node-wallet)
        for more details.
-	1. __Testnet__: If you want your Service Node to run on *testnet*
+	1. __Testnet SNODE__: If you want your Service Node to run on *testnet*
     instead of *mainnet*, simply replace the line:
 	```
 	- name: SNODE
@@ -711,6 +717,15 @@ complete the following guides in order:
 	   ```
 	   - name: TNODE
 	   ```
+	1. __Testnet TNODE__: If you want your Trading Node to run on *testnet*
+    instead of *mainnet*, simply replace the line:
+	```
+	- name: TNODE
+	```
+	with this line:
+	```
+	- name: testTNODE
+	```
 	1. (Recommended) It is recommended to deploy certain SPV Wallets
 	   in stages. The reason is because some SPV wallets are known to
 	   require large amounts of RAM and/or I/O bandwidth while they
@@ -918,6 +933,214 @@ complete the following guides in order:
 		```
 		stcli servicenodestatus 
 		```
+	 1. (Recommended) Install `fail2ban` to protect your EXR SNode from malicious http
+	attacks. The following steps are for setting up `fail2ban v0.11.1-1`
+	on `Ubuntu 20.04.3 LTS`. The steps for setting up other
+	versions of `fail2ban` should be very similar, but they may not be exactly the same.
+
+	    ??? example "Install `fail2ban`"
+		  1. Get the *xr_proxy-log-path*:
+		  ```
+		  docker inspect exrproxy-env_xr_proxy_1 | grep '"LogPath":'
+		  ```
+		  This will return something like the following:
+		  ```
+		   "LogPath": "/var/lib/docker/containers/6554ded0f7dd2abc0f415a511ff0099c5233fca6e17f2b409e9f40be4d43d9cf/6554ded0f7dd2abc0f415a511ff0099c5233fca6e17f2b409e9f40be4d43d9cf-json.log",
+	      ```
+		  The `/var/lib/docker/containers/<big-hex-number>-json.log` part of what's
+		  returned is the *xr_proxy-log-path* we'll need in future
+		  steps, so copy it someplace for future use.
+		  1. Find your LAN address range.
+		   Your LAN address range can be found by issuing this command:
+		   ```
+		   ip addr
+		   ```
+		   The `ip addr` command will return something like this:
+		   ```
+		   1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+		   link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+		   inet 127.0.0.1/8 scope host lo
+		   valid_lft forever preferred_lft forever
+		   inet6 ::1/128 scope host
+		   valid_lft forever preferred_lft forever
+		   2: wlp58s0: mtu 1500 qdisc mq state UP group default qlen 1000
+		   link/ether 9c:b6:d0:d0:fc:b5 brd ff:ff:ff:ff:ff:ff
+		   inet 192.168.1.20/24 brd 192.168.1.255 scope global dynamic noprefixroute wlp58s0
+		   valid_lft 5962sec preferred_lft 5962sec
+		   inet6 fe80::bf14:21e3:4223:e5e4/64 scope link noprefixroute
+		   valid_lft forever preferred_lft forever
+		   ```
+		   In the above output, you can ignore item 1: called
+		   *lo* (loopback). You can see that the IP address range of
+		   the LAN in this example is displayed in item 2: just after
+		   the word, *inet*: `192.168.1.20/24`. The `/24` at the end tells
+		   us that the first 24 bits of this address define the range
+		   of the LAN's
+		   [subnet mask](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking). `192.168.1.20/24` then represents the full
+		   range of addresses used by the LAN in this example system. Copy whatever value
+		   represents the full range of the LAN for *your* system.
+		   We'll need it in a future step.
+		  1. Intall `fail2ban`:
+		  ```
+		  sudo apt install fail2ban
+		  ```
+		  1. Initialize setup
+		  ```
+		  sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+		  ```
+		  1. Edit config file:
+		  Use a simple text editor like [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm) or
+		  [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) to
+		  edit `/etc/fail2ban/jail.local`. For example:
+		  ```
+		  sudo nano /etc/fail2ban/jail.local
+		  ```
+			  1. Within `/etc/fail2ban/jail.local`, search for these 3
+			  commented out lines:
+			  ```
+			  #bantime.increment = true
+			  #bantime.factor = 1
+			  #bantime.formula = ban.Time * (1<<(ban.Count if ban.Count<20 else 20)) * banFactor
+			  ```
+			   Note, these 3 lines will be in different parts of the
+			  file, *not* contiguous as they are displayed above.
+			  1. Uncomment those 3 line by removing the
+			  `#` at the beginning of each line:
+			  ```
+			  bantime.increment = true
+			  bantime.factor = 1
+			  bantime.formula = ban.Time * (1<<(ban.Count if ban.Count<20 else 20)) * banFactor
+			  ```
+			  1. Search for the following line
+			  ```
+			  #ignoreip = 127.0.0.1/8 ::1
+			  ```
+			  1. Uncomment this line by removing the `#` at the
+              begginning of the line so it looks like this:
+			  ```
+			  ignoreip = 127.0.0.1/8 ::1
+			  ```
+			  It will also be good to add the
+                 full address range of your LAN, as discovered above in step *b*, to the end of this
+                 line. This will *whitelist* all the IP addresses of your LAN so they can't get
+                 banned. For example, 
+				 to *whitelist* all LAN
+				 addresses for the example system of step
+                 *b* above, you would simply add a space and then `192.168.1.20/24` to
+				 the end of the `ipignore` line, like this:
+			  ```
+			  ignoreip = 127.0.0.1/8 ::1 192.168.1.20/24
+			  ```
+			  (Be sure to replace `192.168.1.20/24` here with whatever
+                 LAN address range you discovered for *your* system in step *b* above.)
+			  1. Search for the following line:
+			  ```
+			  banaction = iptables-multiport
+			  ```
+			  Change it to:
+			  ```
+			  banaction = iptables-allports
+			  ```
+			  1. Search for these 3 lines:
+			  ```
+			  #
+              # JAILS
+              #
+			  ```
+			  Just below those 3 lines, add the following lines,
+			  replacing *xr_proxy-log-path* with the
+			  *xr_proxy-log-path* you found in step *a* above:
+			  ```
+			  [nginx-x00]
+
+			  enabled   = true
+			  port      = http,https
+			  filter    = nginx-x00
+			  logpath  = xr_proxy-log-path
+			  maxretry = 1
+			  findtime = 3600
+			  bantime  = 24h
+
+			  [nginx-404]
+
+			  enabled  = true
+			  port     = http,https
+			  filter   = nginx-404
+			  logpath  = xr_proxy-log-path
+			  maxretry = 1
+			  findtime = 3600
+			  bantime  = 1h
+			  ```
+			  After replacing *xr_proxy-log-path* with the value you
+			  found in step *a* above, the `logpath =` lines will look
+			  something like this:
+			  ```
+			  logpath  = /var/lib/docker/containers/<big-hex-number>-json.log
+			  ```
+			  1. Save your edits to `/etc/fail2ban/jail.local` and
+                 exit the editor.
+	      1. Add Filters: 
+			  1. Use a simple text editor like *vi* or *nano* to
+                 create the file,
+                 `/etc/fail2ban/filter.d/nginx-x00.conf`. For example:
+			  ```
+			  sudo nano /etc/fail2ban/filter.d/nginx-x00.conf
+			  ```
+			  Add the following lines to the file:
+			  ```
+			  [Definition]
+			  failregex = ^{"log":"<HOST> .* .*\\x
+			  ignoreregex =
+			  ```
+			  Then save the file and exit the editor.
+			  1. Use a simple text editor like *vi* or *nano* to
+                 create the file,
+                 `/etc/fail2ban/filter.d/nginx-404.conf`. For example:
+			  ```
+			  sudo nano /etc/fail2ban/filter.d/nginx-404.conf
+			  ```
+			  Add the following lines to the file:
+			  ```
+			  [Definition]
+			  failregex = {"log":"<HOST>.*(GET|POST|HEAD).*( 404 )
+			  ignoreregex =
+			  ```
+			  Then save the file and exit the editor.
+		  1. Restart `fail2ban` service:
+		  ```
+		  sudo service fail2ban restart
+		  ```
+		  1. Verify `fail2ban` is running properly:
+		  ```
+		  sudo service fail2ban status
+		  ```
+		  1. Check the logs of `fail2ban`:
+		  ```
+		  sudo tail -f /var/log/fail2ban.log
+		  ```
+		  (Ctrl-C to exit scrolling logs.)
+		  1. Fix iptables. To complete this last step, you must wait
+             for at least one IP address to get banned in each of the
+             two jails we created above (`nginx-x00` and
+             `nginx-404`). This may take a few hours, so you may want
+             to just let `fail2ban` run overnight before coming back
+             to this step. Then check the `fail2ban` logs to confirm there has been at
+             least one IP banned in each of the new jails:
+		  ```
+		  sudo less /var/log/fail2ban.log
+		  ```
+		  Search with `less` for `nginx-404` and `nginx-x00` to confirm
+             at least one IP ban in each jail. Once this
+             has been confirmed, you can fix the system IP tables so
+             the `fail2ban` logs will no longer print the "Already Banned" messages.
+             Fix the IP tables by issuing these two commands:
+		  ```
+		  sudo iptables -I FORWARD -j f2b-nginx-x00
+		  ```
+		  ```
+		  sudo iptables -I FORWARD -j f2b-nginx-404
+		  ```
+
 	 1. To learn how to add or subtract coins/SPV Wallets from your Service Node, and generally navigate and manage the docker containers of your Service Node, continue on to [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
 
 ### Maintenance of Auto-Deployed Service Node

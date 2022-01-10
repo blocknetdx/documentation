@@ -78,6 +78,35 @@ Blocknet is an open-source project with a team consisting of contributors from a
 
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">Desac</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@pom11</span></div>
+	<div class="platform">Discord <span class="handle">@desac#4660</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">@Akado2009</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@Akado2009</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">@leonVrashitov</div>
+	<div class="title">Development</div>
+	<div class="platform">Github <span class="handle">@leonVrashitov</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="name">Buurman</div>
+	<div class="title">Social Media Marketing Pro</div>
+	<div class="platform">Discord <span class="handle">Buurman#3747</span></div>
+</div>
+
+<div class="contributor">
+	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">@rBurgett</div>
 	<div class="title">Development</div>
 	<div class="platform">Github <span class="handle">@rBurgett</span></div>
@@ -97,20 +126,6 @@ Blocknet is an open-source project with a team consisting of contributors from a
 	<div class="name">@rikublock</div>
 	<div class="title">Development</div>
 	<div class="platform">Github <span class="handle">@rikublock</span></div>
-</div>
-
-<div class="contributor">
-	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">@Akado2009</div>
-	<div class="title">Development</div>
-	<div class="platform">Github <span class="handle">@Akado2009</span></div>
-</div>
-
-<div class="contributor">
-	<div class="fa fa-user-circle" aria-hidden="true"></div>
-	<div class="name">@leonVrashitov</div>
-	<div class="title">Development</div>
-	<div class="platform">Github <span class="handle">@leonVrashitov</span></div>
 </div>
 
 <!--

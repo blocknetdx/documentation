@@ -90,8 +90,8 @@ rewards.
        capable of running a staking wallet for less than USD $7.00 per month.
 
 	1. Through your VPS provider, launch a small,
-      economical VPS running a recent (v18+) version of Ubuntu
-      Linux. The following are the minimum hardware requirements:
+      economical VPS running Ubuntu 20.04.3 LTS Linux. The following
+      are the minimum hardware requirements:
 		  - 1 or more vCPUs
 		  - 20GB or more storage space
 		  - 2GB or more of RAM. (1GB of RAM is sufficient if you

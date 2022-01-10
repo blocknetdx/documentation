@@ -27,6 +27,8 @@ install the wallet on each operating system (OS).
 
 	To upgrade from Blocknet wallet version 3.x, [follow this guide](https://gist.github.com/ConanMishler/00e2ed0d148a897106b53c7c6e19659b).
 
+---
+
 ??? tip "Tip: There are two wallet variations."
 	There are two wallet variations, a redesigned interface (default) and a classic interface. To use the classic wallet, you'll need to open your `blocknet.conf` file and add `classic=1` on a new line (you may not have a `blocknet.conf` file and will need to create one). You can find the `blocknet.conf` file in your Blocknet data directory:
 
@@ -37,7 +39,6 @@ install the wallet on each operating system (OS).
 	**Classic Wallet**
 	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
 
----
 
 ## Install GUI Wallet
 

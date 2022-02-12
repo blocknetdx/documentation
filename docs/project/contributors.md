@@ -63,7 +63,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 </div>
 
 <div class="contributor">
-	<div class="fa fa-user-circle" aria-hidden="true"></div>
+	<div class="img-round"><img src="/img/contributors/tryou.png"></div>
 	<div class="name">Tryou</div>
 	<div class="title">Super Sleuth, QA Testing, Trading Bots</div>
 	<div class="platform">Discord <span class="handle">@tryou#9388</span></div>
@@ -101,7 +101,7 @@ Blocknet is an open-source project with a team consisting of contributors from a
 <div class="contributor">
 	<div class="fa fa-user-circle" aria-hidden="true"></div>
 	<div class="name">Buurman</div>
-	<div class="title">Social Media Marketing Pro</div>
+	<div class="title">Reddit Community Manager/Growth Hacker</div>
 	<div class="platform">Discord <span class="handle">Buurman#3747</span></div>
 </div>
 

@@ -92,8 +92,40 @@ To view the syncing status, use the following instructions:
 	1. If you have 0 peers, verify your firewall or antivirus software
        isn't blocking outgoing connections. (Hint: See if you get peers
        when you disable firewall and antivirus).
-	1. If, after verifying neither firewall nor antivirus is blocking
-       outgoing connections, you still have 0 peers, try adding peers manually:
+	1. If the Internet connection on your staking computer may have
+       been unstable, it will be good to see if your wallet has mistakenly banned
+       peers it shouldn't have banned.
+		   - Check this in the GUI/Qt wallet
+			   by going to *Tools->Debug Console* and issuing the following command:
+			   ```
+			   listbanned
+			   ```
+		   - In the CLI wallet, simply type this in the dir where `blocknet-cli` exists:
+			   ```
+			   ./blocknet-cli listbanned 
+			   ```
+	   If *listbanned* shows you have lots
+       of banned peers, it will likely be helpful to issue the *clearbanned* command.
+		   - In *Tools->Debug Console* of
+			   the GUI/Qt wallet:
+			   ```
+			   clearbanned
+			   ```
+		   - Or in the CLI wallet, simply type this in the dir where `blocknet-cli` exists:
+			   ```
+			   ./blocknet-cli clearbanned
+			   ```
+	   If peer banning becomes a recurring problem, you may
+       want to limit the time for which a peer is banned by adding the
+       following line to your `blocknet.conf` file, located by default
+       in your
+       [Blocknet Data Directory](/wallet/backup-restore/#data-directory):
+	   ```
+	   bantime=180
+	   ```
+	   Then restart your Blocknet wallet for the new bantime to take effect.
+	1. If, after verifying neither firewall nor antivirus nor banned
+       peers is blocking outgoing connections, you still have 0 peers, try adding peers manually:
 		 1. *Quit/Close* your wallet
 		 1. Navigate to your data directory:
 			 --8<-- "data-directories.md"

@@ -36,7 +36,7 @@ file is typically stored in the `wallets` subdirectory of your data directory:
        [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
        you can stop your CLI wallet from any directory with:
 		   ```
-		   stcli stop
+		   blocknet-cli stop
 		   ```
 	 1. Wait till your Wallet stops completely. If running the GUI/Qt wallet,
               this means waiting till the "*Blocknet is shutting

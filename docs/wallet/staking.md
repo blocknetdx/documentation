@@ -177,7 +177,7 @@ rewards.
        your own](https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/). Those connecting via `PuTTY` from Windows should first follow [this
        guide to set up SSH Keys with PuTTY](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/). *Note: If you follow this recommendation to restrict access to your
        VPS via SSH Keys, back up your SSH Private key and save the
-       password you choose to unlock your SSH Private Key.*
+       password you choose to unlock your SSH Private Key.* **Stop here if you're just setting up an Ubuntu VPS for an SNode and don't plan to stake on the VPS.**
 	1. Visit [https://github.com/blocknetdx/blocknet/releases/](https://github.com/blocknetdx/blocknet/releases/) to see
     the latest release version of the Blocknet core wallet:
 	![Latest Release](/img/wallet/latest-release.png)
@@ -214,8 +214,8 @@ rewards.
 		 BLOCKNET_VERSION='4.3.3'
 		 # stdaemon = Start Blocknet daemon for staking wallet
 		 alias stdaemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon'
-         # stcli = Staking wallet Command Line Interface
-		 alias stcli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli'
+         # blocknet-cli = Staking wallet Command Line Interface
+		 alias blocknet-cli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli'
          # stunlock = Unlock staking wallet for staking only
 		 alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
          # stunlockfull = Unlock staking wallet fully
@@ -253,9 +253,9 @@ rewards.
 	stdaemon
 	```
 	1. Without waiting for the wallet to [sync](/resources/glossary/#syncing), stop the Blocknet
-	daemon using the `stcli` alias you defined above:
+	daemon using the `blocknet-cli` alias you defined above:
 	```
-	stcli stop
+	blocknet-cli stop
 	```
 
 	1. To save 3.5+ hours of time in [syncing](/resources/glossary/#syncing), it's recommended to
@@ -287,7 +287,7 @@ rewards.
 	```
 	stdaemon
 	```
-	1. Issue the command `stcli getblockcount` every 5
+	1. Issue the command `blocknet-cli getblockcount` every 5
        minutes or so until the command stops returning error messages and
        returns a block height which matches that of
        [Chainz Blockchain Explorer](https://chainz.cryptoid.info/block/).
@@ -300,34 +300,32 @@ rewards.
 
 		The following are examples of commands you can issue to the Blocknet daemon through the CLI:
 		```
-		stcli getblockchaininfo 
-		stcli getstakingstatus 
-		stcli getblockcount 
-		stcli getblockhash <height>
+		blocknet-cli getblockchaininfo 
+		blocknet-cli getstakingstatus 
+		blocknet-cli getblockcount 
+		blocknet-cli getblockhash <height>
 		```
 		Note: Some of the Blocknet CLI commands take parameters. In
 		the last example above, *<height\>* represents a number to be
 		passed to the `getblockhash` command as a parameter.
 		To see a full list of all the Blocknet CLI commands, type:
 		```
-		stcli help 
+		blocknet-cli help 
 		```
 		To learn the details about what a command does and how to use
 		it, type:
 		```
-		stcli help <command>
+		blocknet-cli help <command>
 		```
 		...where *<command\>* is the command you want to learn about.
 		For example, the following will give full details on the
 		function and use of the `getnewaddress` command:
 		```
-		stcli help getnewaddress
+		blocknet-cli help getnewaddress
 		```
 		You can also find the same details about all available
 		Blocknet commands at the
 		[Blocknet API Portal](https://api.blocknet.co).
-
-	    !!! info "Note: The online help documentation you'll find by issuing `stcli help` or `stcli help <command>` may suggest using the command `blocknet-cli` to access the commands of the staking wallet. You can indeed use the `./blocknet-cli` command as the online help suggests, but only if your Current Directory is `~/blocknet-${BLOCKNET_VERSION}/bin/`. You can also use `blocknet-cli` if `~/blocknet-${BLOCKNET_VERSION}/bin/` is in your `$PATH` environment variable. However, an easy way to avoid having to make sure one of those two conditions is true is to use the `stcli` alias we defined above to call the `blocknet-cli` command."
 
 	1. Fund your staking wallet. Skip to
     step 24 if you don't have an already funded Blocknet wallet, or if
@@ -337,7 +335,7 @@ rewards.
 		1. Stop the Blocknet daemon on your VPS with the following
         command:
 		```
-		stcli stop
+		blocknet-cli stop
 		```
 		1. Make space for the funded `wallet.dat` to be imported to your VPS
         by renaming the empty `wallet.dat` to `wallet.dat.empty`:
@@ -425,7 +423,7 @@ rewards.
           command. Get details on how to use the `encryptwallet`
           command by typing:
 		  ```
-		  stcli help encryptwallet
+		  blocknet-cli help encryptwallet
 		  ```
 		  1. [Back up your VPS Blocknet wallet](/wallet/backup-restore). Hint:
              Use
@@ -438,7 +436,7 @@ rewards.
 			 Blocknet wallet to which you can send BLOCK. Get details on how to use the `getnewaddress`
 			 command by typing:
 		  ```
-		  stcli help getnewaddress
+		  blocknet-cli help getnewaddress
 		  ```
 		  1. Fund your VPS Blocknet wallet by sending BLOCK to the address
 			 you got from issuing the `getnewaddress` command.
@@ -477,14 +475,14 @@ rewards.
 
 	1. Confirm your wallet is staking by issuing the command:
 		```
-		stcli getstakingstatus
+		blocknet-cli getstakingstatus
 		```
 		When this command returns, `"status": "Staking is active"`,
 		then you know your wallet is staking properly.
 		Note, you may also want to confirm your staking wallet balance
 		is correct with:
 		```
-		stcli getbalance
+		blocknet-cli getbalance
 		```
 
 	1. Whenever a new version of the Blocknet wallet is released, upgrade
@@ -492,7 +490,7 @@ rewards.
     these steps:
 		1. Stop the Blocknet daemon:
 		```
-		stcli stop
+		blocknet-cli stop
 		```
 		1. Follow steps 14 through 17 above to install the latest
 		version of the Blocknet wallet and start the new Blocknet daemon.

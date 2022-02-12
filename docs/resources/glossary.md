@@ -128,6 +128,9 @@ details of an *Enterprise XRouter* and its relationship to a
 ![Current Hydra](/img/resources/current-hydra.png) 
 ![Future Hydra](/img/resources/future-hydra.png) 
 
+See [this guide](/service-nodes/setup/#service-node-setup) to learn about
+hosting Blocknet's XQuery and Hydra services on a Service Node.
+
 #### EXR 
 EXR stands for *Enterprise XRouter*. See [Enterprise XRouter](#enterprise-xrouter) 
 
@@ -162,13 +165,21 @@ core node protocol written in Golang.
 
 #### Hydra
 A *Hydra Service Node* is simply an [Enterprise XRouter Service Node](#enterprise-xrouter) which
-hosts the Ethereum (ETH) blockchain as one of its [SPV wallets](#spv).
+hosts Ethereum Virtual Machine (EVM) blockchains such as Ethereum/ETH,
+Avalanche/AVAX, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA,
+Etc. A Hydra Service Node can also be easily configured to provide
+[XQuery](#indexer) services, since Hydra and XQuery services share the
+same payment mechanism, the same reverse proxy services, and the same
+hosted EVM blockchains.
 
 These architectural diagrams illustrate the implementation
 details of a Hydra Service Node:
 
 ![Current Hydra](/img/resources/current-hydra.png) 
 ![Future Hydra](/img/resources/future-hydra.png) 
+
+See [this guide](/service-nodes/setup/#service-node-setup) to learn about
+hosting Blocknet's XQuery and Hydra services on a Service Node.
 
 ---
 
@@ -178,13 +189,19 @@ details of a Hydra Service Node:
 
 #### Indexer
 An Indexing service makes blockchain data readily accessible to
-developers. The Blocknet Indexer, called XQuery, makes data from blockchains like
-Avalanche, Ethereum, and potentially many more, readily available to developers in a
+developers. The Blocknet Indexer, called XQuery, makes indexed data from blockchains like
+Ethereum/ETH, Avalanche/AVAX, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA,
+Etc., readily available to developers in a
 decentralized fashion. A decentralized indexing service is vital to
 DApps which need ready access to blockchain data and want to maintain
-their status as a DApp (Decentralized Application). See
+their status as a DApp (Decentralized Application). Note, since
+XQuery and [Hydra](#hydra) services share the
+same payment mechanism, the same reverse proxy services, and the same
+hosted EVM blockchains, a Service
+Node set up to provide XQuery services can easily be configured to
+also provide [Hydra](#hydra) services.  See
 [this guide](/service-nodes/setup/#service-node-setup) to learn about
-hosting Blocknet's XQuery service on a Service Node.
+hosting Blocknet's XQuery and Hydra services on a Service Node.
 
 #### Input
 Within a users [wallet](#wallet), the total balance is composed of

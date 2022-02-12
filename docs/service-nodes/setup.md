@@ -37,16 +37,21 @@ Operating as a Service Node requires two Blocknet wallets:
 	mo.
 	> Medium & Large Systems
 	
-	If you want to host the
-    [XQuery Indexer](/resources/glossary/#indexer) (and maybe a few SPV
-    wallets as well), youll need 16 GB of RAM and more than 300GB of
-    SSD storage space. XQuery *alone* requires 300 GB of storage
-    space, so if you want to host XQuery *and* a few SPV wallets, you
+	If you want to host the [Hydra](/resources/glossary/#hydra) and/or
+    [XQuery Indexer](/resources/glossary/#indexer) services (and maybe a few SPV
+    wallets as well), youll need 16 GB of RAM and 400+ GB of
+    SSD storage space. Hosting  Hydra or XQuery services requires
+    hosting an EVM (Ethereum Virtual Machine) blockchain like
+    Ethereum/ETH, Avalanche/AVAX, Fantom/FTM, Solana/SOL,
+    Polkadot/DOT, Cardana/ADA, Etc. As of this writing, the smallest EVM
+    blockchain supported by Blocknet is Avalanche/AVAX. AVAX
+    blockchain *alone* requires 300-400 GB of storage
+    space, so if you want to host XQuery/Hydra services *and* a few SPV wallets, you
     should really have 400+ GB of SSD storage space.
 
-	!!! warning "16 GB of RAM and 300 GB of SSD storage space are required to support indexing of the AVAX chain by XQuery!"
+	!!! warning "16 GB of RAM and 300-400 GB of SSD storage space are required to host the Avalanche/AVAX blockchain for Hydra/XQuery services!"
 
-	HW requirements for a medium to large Service Node would be
+	Minumum HW requirements for a medium to large Service Node would be
     something like this:
 
 	- 6-8 CPU cores (or 6-8 vCPUs if the Service Node runs on a VPS)
@@ -97,24 +102,27 @@ Operating as a Service Node requires two Blocknet wallets:
     writing, [Contabo](https://contabo.com/en/vps/) seems to offer the most hardware for the money,
     but it's always good to do a little comparison shopping.
 
-	> Extra Large System for supporting ETH full archival node, a.k.a. Hydra
+	> Extra Large System for supporting ETH archival node
 
-	In terms of CPU and RAM requirements, running a Hydra node
+	To support [Hydra](/resources/glossary/#hydra) and/or
+    [XQuery Indexer](/resources/glossary/#indexer) services of the
+    Ethereum/ETH blockchain, a Service Node must host an ETH archival node.
+	In terms of CPU and RAM requirements, running an ETH archival node
     requires:
 
-	- 8 CPU Cores (or 8 vCPUs if the Hydra Node runs on a VPS)
+	- 8 CPU Cores (or 8 vCPUs if the ETH archival Node runs on a VPS)
 	- 16 GB RAM
 	
-	The storage space requirements for a Hydra node are a bit more
-    demanding. The Go-Ethereum (GETH) full archival node, which is the SPV wallet
-    needed to run a *Hydra* Service Node, occupies about 8TB of space
+	The storage space requirements for an ETH archival node are a bit more
+    demanding. The Go-Ethereum (GETH) archival node, which is the core wallet
+    needed to run an ETH archival node, occupies about 8TB of space
     as of this writing (July 17, 2021). Furthermore, it is growing by 3TB per
     year. (Its current size can be found
-    [here](https://etherscan.io/chartsync/chainarchive).) Therefore, a
-    Hydra Service Node should probably have at least 10TB
+    [here](https://etherscan.io/chartsync/chainarchive).) Therefore,
+    a Service Node supporting an
+    ETH archival node should probably have at least 10TB
     for ETH alone, plus maybe another 1.5-2TB for running other SPV
-    wallets and the [XQuery Indexer](/resources/glossary/#indexer). It
-    should also have the ability to expand its storage space by 3TB
+    wallets. It should also have the ability to expand its storage space by 3TB
     per year.
 
 	*Update Sept. 27, 2021: Some Blocknet community members are
@@ -123,10 +131,14 @@ Operating as a Service Node requires two Blocknet wallets:
     the Erigon ETH archival node occupies only about a quarter of the
     space of the GETH archival node. In other words, only about 2TB
     instead of 8TB as of this writing. Erigon ETH archival node also
-    syncs in about one quarter the time it takes GETH to sync. Please
+    syncs in about one quarter the time it takes GETH to sync. As of
+    this writing, it appears Erigon ETH may well be able to support
+    Hydra services of ETH in its current stage of development, but
+    until Erigon has standard ETH filter
+    methods, it won't support XQuery services of ETH. Please
     join discussions in the #hydra channel of
-    [Blocknet Discord](https://discord.gg/cQ9JNyNRW4) to learn the
-    latest on this development.*
+    [Blocknet Discord](https://discord.gg/cQ9JNyNRW4) to keep up with the
+    latest developments on Erigon ETH.*
 
 	It's also important to note that the storage for the ETH full
     archival node *must* be very fast. In other words, it must use
@@ -137,31 +149,33 @@ Operating as a Service Node requires two Blocknet wallets:
     node. In fact, it looks doubtful that SATA or SAS SSD drives will be
     fast enough to allow the ETH node to sync.
 
-	It is also recommended that the SSDs in a Hydra node be configured
+	It is also recommended that the SSDs used for an ETH archival node be configured
     in a RAID mirror configuration (e.g. RAID-1, RAID-10,
     RAID-Z2). Without RAID mirroring, an SSD failure will almost certainly mean
     you'll have to resync the entire ETH full archival node, which
     takes over a month for a GETH node (but probably only a quarter of
-    that time for an Erigon ETH node). Your Hydra node will be offline for the
+    that time for an Erigon ETH node). Your ETH archival node will be offline for the
     duration of the resync.
 
 	As of this writing, it's not clear that any of the VPS Provider Options mentioned
     above are capable of providing a VPS which meets the HW
-    requirements for a Hydra node, or if they are capable, the cost
+    requirements for an ETH archival node, or if they are capable, the cost
     can be a bit extreme and it's not clear they can expand storage space as
     needed to support the growing ETH full archival node. There may
     well be some smaller VPS providers who are capable of both meeting current HW
-    needs and allowing for storage space expansion in the
+    requirements and allowing for storage space expansion in the
     future. There are also efforts underway to coordinate "package
     discounts" from such VPS provider(s) for a person or group of people to rent
-    a number of Hydra-capable VPS's at a discounted rate. Please join
+    a number of ETH archival-capable VPS's at a discounted rate. Please join
     discussions on this topic in the #hydra channel of
     [Blocknet Discord](https://discord.gg/cQ9JNyNRW4).
 
-	Another option for meeting the HW requirements of a Hydra node is
-    to purchase your own hardware and run it at home. If purchasing
-    your own SSD drives, be
-    aware that ETH core will be writing to your SSDs continuously, so
+	Another option for meeting the HW requirements of an ETH archival node is
+    to purchase your own hardware and run it at home or in a
+    *colocation hosting* data center. (Colocation hosting services can be found
+    for USD $50 per month per server, as of Feb., 2022.) If purchasing
+    your own SSD drives, be aware that ETH core will be writing to
+    your SSDs continuously, so
     you'll want to get SSDs with a high "durability" rating. For
     example, a company called *Sabrent* offers an 8TB NVMe SSD. On the
     surface, it may look like a good choice to use for building a
@@ -170,7 +184,9 @@ Operating as a Service Node requires two Blocknet wallets:
     rating of 1,800 TB TBW, which, according to
     [this review](https://www.youtube.com/watch?v=iFXjC7k1OOw) makes
     it not very suitable to be used in an application that writes to
-    it frequently. More discussions about HW details can
+    it frequently. (Note, Samsung NVMe drives and/or any NVMe drives rated
+    for industrial use are probably quite *durable* and suitable for
+    supporting an archival ETH node.) More discussions about HW details can
     be found in the #hydra channel of
     [Blocknet Discord](https://discord.gg/cQ9JNyNRW4).
 
@@ -196,12 +212,12 @@ Operating as a Service Node requires two Blocknet wallets:
 	1. Stop your *Staking Wallet*. If your *Staking Wallet* has been set up
 		   according to
 		   the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		   and the alias for `stcli` has
+		   and the alias for `blocknet-cli` has
 		   also been set up according to that guide, you can stop
 		   your *Staking Wallet* by
 		   issuing the follow command:
 			  ```
-			  stcli stop
+			  blocknet-cli stop
 			  ```
 	1. Change the Peer-to-Peer (P2P) port and the RPC port of your *Staking Wallet* so they don't
     conflict with the P2P port and the RPC port of your
@@ -249,7 +265,7 @@ Operating as a Service Node requires two Blocknet wallets:
            *Staking Wallet*. If your *Staking Wallet* has been set up
 		   according to
 		   the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		   and the aliases for `stcli`, `stdaemon` and `stunlock` have
+		   and the aliases for `blocknet-cli`, `stdaemon` and `stunlock` have
 		   also been set up according to that guide, you can restart
 		   your *Staking Wallet* and start it staking again by
 		   issuing the follow commands:
@@ -267,14 +283,14 @@ Operating as a Service Node requires two Blocknet wallets:
 		   (Enter your wallet password when prompted.)
 		   1. Confirm your wallet is staking by issuing the command:
 		   ```
-		   stcli getstakingstatus
+		   blocknet-cli getstakingstatus
 		   ```
 		   When this command returns, `"status": "Staking is active"`,
 		   then you know your wallet is staking properly.
 		   Note, you may also want to confirm your staking wallet balance
 		   is correct with:
 		   ```
-		   stcli getbalance
+		   blocknet-cli getbalance
 		   ```
 
 	1. If you will be setting up your Service Node following the
@@ -291,11 +307,11 @@ Operating as a Service Node requires two Blocknet wallets:
 		   1. Stop your *Staking Wallet*. If your *Staking Wallet* has
 			  been set up according to the
 		   [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		   and the alias for `stcli` has also been set up according to that
+		   and the alias for `blocknet-cli` has also been set up according to that
 			  guide, you
 		   can stop your *Staking Wallet* with:
 		   ```
-		   stcli stop
+		   blocknet-cli stop
 		   ```
 		   1. Wait till your *Staking Wallet* stops completely. You
               can monitor the *Staking Wallet* Linux process (called `blocknetd`) by
@@ -341,8 +357,8 @@ Operating as a Service Node requires two Blocknet wallets:
 		   BLOCKNET_VERSION='4.3.3'
 		   # stdaemon = Start Blocknet daemon for staking wallet
 		   alias stdaemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon -datadir=$HOME/.blocknet_staking/'
-           # stcli = Staking wallet Command Line Interface
-		   alias stcli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/'
+           # blocknet-cli = Staking wallet Command Line Interface
+		   alias blocknet-cli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/'
            # stunlock = Unlock staking wallet for staking only
 		   alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
            # stunlockfull = Unlock staking wallet fully
@@ -364,14 +380,14 @@ Operating as a Service Node requires two Blocknet wallets:
 		   (Enter your wallet password when prompted.)
 		   1. Confirm your wallet is staking by issuing the command:
 		   ```
-		   stcli getstakingstatus
+		   blocknet-cli getstakingstatus
 		   ```
 		   When this command returns, `"status": "Staking is active"`,
 		   then you know your wallet is staking properly.
 		   Note, you may also want to confirm your staking wallet balance
 		   is correct with:
 		   ```
-		   stcli getbalance
+		   blocknet-cli getbalance
 		   ```
 
 
@@ -412,14 +428,14 @@ complete the following guides in order:
 		This Collateral Wallet Setup guide assumes
 		your collateral wallet has been set up according to the
 		[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		and the aliases for `stcli`, `stdaemon` and `stunlock` have
+		and the aliases for `blocknet-cli`, `stdaemon` and `stunlock` have
 		also been created according to that
 		guide. If your collateral wallet is instead a GUI/Qt Blocknet
 		wallet on a different computer, the wallet commands given in this
-		guide in the form,`stcli wallet-command` can instead be issued in your
+		guide in the form,`blocknet-cli wallet-command` can instead be issued in your
 		GUI/Qt wallet under *Tools->Debug
 		Console*. For example, a *Staking Wallet*
-		command given in this guide as `stcli getnewaddress snode01`
+		command given in this guide as `blocknet-cli getnewaddress snode01`
 		can be issued in a GUI/Qt wallet under *Tools->Debug Console* as
 		simply `getnewaddress snode01`.
 
@@ -435,21 +451,21 @@ complete the following guides in order:
 		   could be the same as your *Service Node Wallet* computer),
 		   issue the following command:
 		   ```
-		   stcli getnewaddress
+		   blocknet-cli getnewaddress
 		   ```
 		   Note, you can optionally give a label to the new address you
 		   create by passing a *label* parameter to the `getnewaddress`
 		   command. For example, you can label your new address,
 		   "*receive-address*" by issuing the following command:
 		   ```
-		   stcli getnewaddress receive-address
+		   blocknet-cli getnewaddress receive-address
 		   ```
 		   1. Send BLOCK to the address returned by the `getnewaddress` command.
 	1. Create a new public address for the Service Node. A unique name for
 		this address will need to be provided as an alias. To do this,
-		type `stcli getnewaddress [ALIAS]` into the terminal with `[ALIAS]` replaced with the alias you will be using for this address. Example:
+		type `blocknet-cli getnewaddress [ALIAS]` into the terminal with `[ALIAS]` replaced with the alias you will be using for this address. Example:
 		```
-		stcli getnewaddress snode01
+		blocknet-cli getnewaddress snode01
 		BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
 		```
 		In this example, `BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP` was the
@@ -457,7 +473,7 @@ complete the following guides in order:
 
 	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
 		```
-		stcli servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
+		blocknet-cli servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
 		```
 		* `NODE_ADDRESS` = The address returned in the previous step.
 		* `NODE_COUNT` = The number of Service Nodes to create. 
@@ -472,22 +488,22 @@ complete the following guides in order:
 
 	    Single Service Node Example:
 		```
-		stcli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+		blocknet-cli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
 		```
 	Single Service Node (2 inputs) Example:
 	```
-	stcli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
+	blocknet-cli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
 	```
 	Multiple Service Nodes (10k BLOCK) Example:
 	```
-	stcli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000
+	blocknet-cli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000
 	```
 
 	1. Prepare to create a `servicenode.conf` file in your
        data directory (Linux data dir =`~/.blocknet` by default). Delete any old `servicenode.conf` file in the data directory, or delete any out-of-date service node references within your `servicenode.conf`. 
 	1. Create a `servicenode.conf` configuration file. Enter the command:
 	```
-	stcli servicenodesetup [NODE_ADDRESS] [ALIAS]
+	blocknet-cli servicenodesetup [NODE_ADDRESS] [ALIAS]
 	```
 	Where `[NODE_ADDRESS]` is the address created for your Service
 	Node in step 2 above, and `[ALIAS]` is any name you want to give
@@ -495,7 +511,7 @@ complete the following guides in order:
 	created for the Service Node in the `servicenode.conf` file in
 	your collateral wallet data dir. Example: 
 		```
-		stcli servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
+		blocknet-cli servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
 		{
 			"alias": "snode01",
 			"tier": "SPV",
@@ -516,11 +532,11 @@ complete the following guides in order:
        text file to record them.
 	   1. Restart the *Collateral Wallet*.
 	   ```
-	   stcli stop
+	   blocknet-cli stop
 	   stdaemon
 	   ```
 	   Note, you will probably need to wait at least 30 seconds
-	   after issuing `stcli stop` before you'll be allowed to
+	   after issuing `blocknet-cli stop` before you'll be allowed to
 	   launch `stdaemon.` Just keep trying every 30 seconds or so to launch `stdaemon`
 	   until you no longer get, "*Error: Cannot obtain a lock on data directory.*"
 	   1. Assuming you want to [stake](/resources/glossary/#staking) your collateral, unlock your staking wallet for staking only:
@@ -530,14 +546,14 @@ complete the following guides in order:
 	   (Enter your wallet password when prompted.)
 	   1. Confirm your wallet is staking by issuing the command:
 	   ```
-	   stcli getstakingstatus
+	   blocknet-cli getstakingstatus
 	   ```
 	   When this command returns, `"status": "Staking is active"`,
 	   then you know your wallet is staking properly.
 	   Note, you may also want to confirm your staking wallet balance
 	   is correct with:
 	   ```
-	   stcli getbalance
+	   blocknet-cli getbalance
 	   ```
 	1. Continue on to [Prepare to Deploy Service Node](#prepare-to-deploy-service-node).
 
@@ -626,7 +642,7 @@ complete the following guides in order:
 				 config_mount_dir: /snode # DO NOT DELETE
 				 data_mount_dir: /snode # DO NOT DELETE
 			 # AVALANCHE INDEXER - DELETE IF YOU DON'T WANT TO SUPPORT XQUERY
-			 - name: AVAX # Requires 300 GB of SSD disk, 16 GB RAM & 6 vCPUs for XQUERY (21 December, 2021)
+			 - name: AVAX # Requires 400 GB of SSD disk, 16 GB RAM & 6 vCPUs for XQUERY (21 December, 2021)
 				 image: avaplatform/avalanchego:v1.7.3
 				 data_mount_dir: /snode
 			 # THE STANDARD XLITE WALLET SET - DELETE ANY YOU DON'T WANT TO SUPPORT  
@@ -909,10 +925,10 @@ complete the following guides in order:
 
 	 1. When the block height in the *snode* container matches that of the [Blocknet blockchain explorer](https://chainz.cryptoid.info/block/), your Service Node wallet is fully synced and you can now activate your Service Node as follows:
 		 1. On your *Collateral Wallet*, issue the command, `servicenoderegister`. If your *Collateral Wallet was set up according to the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		and the alias for `stcli` was also created according to that
+		and the alias for `blocknet-cli` was also created according to that
 		guide, you can issue the `servicenoderegister` command as follows:
 		```
-		stcli servicenoderegister
+		blocknet-cli servicenoderegister
 		```
 		Otherwise, if your *Collateral Wallet* is a GUI/Qt wallet
 		running on a different computer, simply enter
@@ -931,7 +947,7 @@ complete the following guides in order:
 		This command should return `"status": "running",` and also the corrrect/expected list of supported services.
 	 1. You can also verify your Service Node is visible on the network by issuing the following command on your *Collateral Wallet*:
 		```
-		stcli servicenodestatus 
+		blocknet-cli servicenodestatus 
 		```
 	 1. (Recommended) Install `fail2ban` to protect your EXR SNode from malicious http
 	attacks. The following steps are for setting up `fail2ban v0.11.1-1`

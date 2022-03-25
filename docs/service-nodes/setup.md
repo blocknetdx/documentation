@@ -39,24 +39,24 @@ Operating as a Service Node requires two Blocknet wallets:
 	
 	If you want to host the [Hydra](/resources/glossary/#hydra) and/or
     [XQuery Indexer](/resources/glossary/#indexer) services (and maybe a few SPV
-    wallets as well), youll need 16 GB of RAM and 400+ GB of
+    wallets as well), youll need 8 vCPUs, 16 GB of RAM and 512+ GB of
     SSD storage space. Hosting  Hydra or XQuery services requires
     hosting an EVM (Ethereum Virtual Machine) blockchain like
-    Ethereum/ETH, Avalanche/AVAX, Fantom/FTM, Solana/SOL,
+    Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL,
     Polkadot/DOT, Cardana/ADA, Etc. As of this writing, the smallest EVM
     blockchain supported by Blocknet is Avalanche/AVAX. AVAX
-    blockchain *alone* requires 300-400 GB of storage
-    space, so if you want to host XQuery/Hydra services *and* a few SPV wallets, you
-    should really have 400+ GB of SSD storage space.
+    blockchain *alone* requires 8 vCPUs, 16 GB of RAM and 512 GB of storage
+    space. Therefore, if you want to host XQuery/Hydra services *and* a few SPV wallets, you
+    should really have more than 512 GB of SSD storage space.
 
-	!!! warning "16 GB of RAM and 300-400 GB of SSD storage space are required to host the Avalanche/AVAX blockchain for Hydra/XQuery services!"
+	!!! warning "8 vCPUs, 16 GB of RAM and 512+ GB of SSD storage space are required to host the Avalanche/AVAX blockchain for Hydra/XQuery services!"
 
 	Minumum HW requirements for a medium to large Service Node would be
     something like this:
 
-	- 6-8 CPU cores (or 6-8 vCPUs if the Service Node runs on a VPS)
+	- 8 CPU cores (or 8 vCPUs if the Service Node runs on a VPS)
 	- 16 GB RAM
-	- 400+ GB SSD Storage
+	- 512+ GB SSD Storage
 	- 25+MBit/s Internet download speed  (100+ MBit/s is much better
       for faster syncing.)
 
@@ -265,12 +265,12 @@ Operating as a Service Node requires two Blocknet wallets:
            *Staking Wallet*. If your *Staking Wallet* has been set up
 		   according to
 		   the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		   and the aliases for `blocknet-cli`, `stdaemon` and `stunlock` have
+		   and the aliases for `blocknet-cli`, `blocknet-daemon` and `blocknet-unlock` have
 		   also been set up according to that guide, you can restart
 		   your *Staking Wallet* and start it staking again by
 		   issuing the follow commands:
 			  ```
-			  stdaemon
+			  blocknet-daemon
 			  ```
 			  (You'll need to wait a few minutes after starting the
 			  Blocknet daemon for your wallet to
@@ -278,7 +278,7 @@ Operating as a Service Node requires two Blocknet wallets:
 			  to unlock your wallet for staking in the next step.)
 		   1. Unlock your staking wallet for staking only:
 		   ```
-		   stunlock
+		   blocknet-unlock
 		   ```
 		   (Enter your wallet password when prompted.)
 		   1. Confirm your wallet is staking by issuing the command:
@@ -355,14 +355,14 @@ Operating as a Service Node requires two Blocknet wallets:
 		   Then change all the alias definitions to be as follows:
 		   ```
 		   BLOCKNET_VERSION='4.3.3'
-		   # stdaemon = Start Blocknet daemon for staking wallet
-		   alias stdaemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon -datadir=$HOME/.blocknet_staking/'
+		   # blocknet-daemon = Start Blocknet daemon for staking wallet
+		   alias blocknet-daemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon -datadir=$HOME/.blocknet_staking/'
            # blocknet-cli = Staking wallet Command Line Interface
 		   alias blocknet-cli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/'
-           # stunlock = Unlock staking wallet for staking only
-		   alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
-           # stunlockfull = Unlock staking wallet fully
-		   alias stunlockfull='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 false'
+           # blocknet-unlock = Unlock staking wallet for staking only
+		   alias blocknet-unlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
+           # blocknet-unlockfull = Unlock staking wallet fully
+		   alias blocknet-unlockfull='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 false'
 		   ```
 		   1. Save your edits to `~/.bash_aliases`, exit the editor, then
 		   activate your new alias definitions with:
@@ -371,11 +371,11 @@ Operating as a Service Node requires two Blocknet wallets:
 		   ```
 		   1. Restart your staking wallet with:
 		   ```
-		   stdaemon
+		   blocknet-daemon
 		   ```
 		   1. Unlock your staking wallet for staking only:
 		   ```
-		   stunlock
+		   blocknet-unlock
 		   ```
 		   (Enter your wallet password when prompted.)
 		   1. Confirm your wallet is staking by issuing the command:
@@ -404,7 +404,6 @@ complete the following guides in order:
 
 1. [Set up an Ubuntu Linux server](#set-up-an-ubuntu-linux-server)
 1. [Collateral Wallet Setup for Automated Service Node Setup](#collateral-wallet-setup-for-automated-service-node-setup)
-1. [Prepare to Deploy Service Node](#prepare-to-deploy-service-node)
 1. [Auto-Deploy Service Node](#auto-deploy-service-node)
 1. [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
 
@@ -428,7 +427,7 @@ complete the following guides in order:
 		This Collateral Wallet Setup guide assumes
 		your collateral wallet has been set up according to the
 		[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		and the aliases for `blocknet-cli`, `stdaemon` and `stunlock` have
+		and the aliases for `blocknet-cli`, `blocknet-daemon` and `blocknet-unlock` have
 		also been created according to that
 		guide. If your collateral wallet is instead a GUI/Qt Blocknet
 		wallet on a different computer, the wallet commands given in this
@@ -531,18 +530,23 @@ complete the following guides in order:
        them there if you don't want to paste them into a temporary
        text file to record them.
 	   1. Restart the *Collateral Wallet*.
-	   ```
-	   blocknet-cli stop
-	   stdaemon
-	   ```
+		  * For CLI wallet:
+		  ```
+		  blocknet-cli stop
+		  blocknet-daemon
+		  ```
+		  * For GUI/Qt wallet, simply close the wallet application, then open it again.
 	   Note, you will probably need to wait at least 30 seconds
-	   after issuing `blocknet-cli stop` before you'll be allowed to
-	   launch `stdaemon.` Just keep trying every 30 seconds or so to launch `stdaemon`
+	   after issuing `blocknet-cli stop` or closing the GUI wallet app before you'll be allowed to
+	   launch `blocknet-daemon` or re-launch the GUI wallet.  Just keep trying every 30 seconds or so to launch `blocknet-daemon`
 	   until you no longer get, "*Error: Cannot obtain a lock on data directory.*"
 	   1. Assuming you want to [stake](/resources/glossary/#staking) your collateral, unlock your staking wallet for staking only:
-	   ```
-	   stunlock
-	   ```
+		  * For CLI wallet:
+		  ```
+		  blocknet-unlock 
+		  ```
+		  * For GUI/Qt wallet, unlock your wallet for staking only
+	   according to [the staking guide for GUI wallet](/wallet/staking/#staking-from-a-gui-wallet).
 	   (Enter your wallet password when prompted.)
 	   1. Confirm your wallet is staking by issuing the command:
 	   ```
@@ -555,317 +559,455 @@ complete the following guides in order:
 	   ```
 	   blocknet-cli getbalance
 	   ```
-	1. Continue on to [Prepare to Deploy Service Node](#prepare-to-deploy-service-node).
-
-
-### Prepare to Deploy Service Node
-
-??? example "Prepare to Deploy Service Node"
-
-	Logged in to the Ubuntu Linux server you
-    [set up above](#set-up-an-ubuntu-linux-server), (logged in as the
-    user you created according to the setup instructions, not as root),
-
-	1. Install necessary SW packages:
-	```
-	sudo apt install git python3 python3-pip
-	```
-	(Enter your user's password when prompted - not the root password.)
-	1. Add your Linux user to the *docker* group:
-		1. `sudo groupadd docker`
-		1. `sudo gpasswd -a $USER docker`
-		1. `exit` to disconnect from your VPS
-		1. Reconnect to your VPS, logging in again as the same user as before (not as root).
-	1. Change directory to the directory where you want to install the
-       Service Node Automated Setup tools. In this guide, we'll use the
-       user's home directory (`~`):
-	```
-	cd ~
-	```
-	1. Copy the Service Node Automated Setup tools from the Blocknet
-    Github repository:
-	```
-	git clone https://github.com/blocknetdx/exrproxy-env
-	```
-	1. Change directory to the `autobuild` subdirectory:
-	```
-	cd exrproxy-env/autobuild
-	```
-	1. Install necessary Python3 libraries:
-	```
-	pip3 install -r requirements.txt
-	```
-	1. Copy `alldaemons.yaml` example configuration file to
-    `custom.yaml` in preparation to configure your Service Node:
-	```
-	cp examples/alldaemons.yaml custom.yaml
-	```
-	Explanation: The configuration file used to specify which SPV wallets you want to deploy &
-    support on your Service Node is called, `custom.yaml`. It lives
-    in the `autobuild` subdirectory of the `exrproxy-env` directory. The
-    `examples/alldaemons.yaml` configuration file is meant to be an example of how
-    `custom.yaml` should look if you were going to configure your
-    Service Node to support *all available SPV
-    wallet daemons and Blocknet Services.* The way to create a `custom.yaml` which
-    configures *only* the SPV wallets you want to support is to start
-    with the `alldaemons.yaml` file, then delete the entries of the
-    SPV wallets you *don't* want to support. This is the reason we copied `examples/alldaemons.yaml` to
-    `custom.yaml` in the `autobuild` directory.
-	1. Edit `custom.yaml` with a simple text editor like
-       [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm) or
-       [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/).
-	   For example:
-	   ```
-	   vi custom.yaml
-	   ```
-	1. Because we copied `alldaemons.yaml` to `custom.yaml` earlier,
-       editing `custom.yaml` for the first time will reveal a file
-       identical to `alldaemons.yaml`, something like the following:
-	   ```
-	   --- # snode daemon LIST
-	   - j2template: dockercompose.j2
-		 name: dockercompose
-		 daemons:
-             # DO NOT DELETE XR_PROXY ENTRY
-			 - name: XR_PROXY # DO NOT DELETE
-				 image: blocknetdx/exrproxy:0.8.0 # DO NOT DELETE
-				 config_mount_dir: /snode/xr_proxy/config # DO NOT DELETE
-				 nginx_mount_dir: /snode/xr_proxy/nginx # DO NOT DELETE
-             # DELETE THE FOLLOWING ETH ENTRY IF YOU DON'T WANT TO DEPLOY A 10+ TB GETH NODE
-			 - name: ETH # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS: 10+ TB NVMe SSD storage (21 Dec, 2021), 16 GB RAM when GETH deployed locally
-				 image: blocknetdx/eth-payment-processor:0.5.2 # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS
-				 postgresql_data_mount_dir: /snode/eth_pymt_db # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS
-				 geth_data_mount_dir: /snode # DELETE THIS ENTRY IF YOUR SERVER DOESN'T MEET HW REQUIREMENTS
-             # DO NOT DELETE SNODE ENTRY
-			 - name: SNODE # DO NOT DELETE
-				 image: blocknetdx/servicenode:latest # DO NOT DELETE
-				 config_mount_dir: /snode # DO NOT DELETE
-				 data_mount_dir: /snode # DO NOT DELETE
-			 # AVALANCHE INDEXER - DELETE IF YOU DON'T WANT TO SUPPORT XQUERY
-			 - name: AVAX # Requires 400 GB of SSD disk, 16 GB RAM & 6 vCPUs for XQUERY (21 December, 2021)
-				 image: avaplatform/avalanchego:v1.7.3
-				 data_mount_dir: /snode
-			 # THE STANDARD XLITE WALLET SET - DELETE ANY YOU DON'T WANT TO SUPPORT  
-			 - name: BTC # Requires 451 GB of disk (15 December, 2021)
-			    image: blocknetdx/bitcoin:v0.20.0
-				config_mount_dir: /snode
-				data_mount_dir: /snode
-			 - name: LTC # Requires 71 GB of disk (15 December, 2021)
-			    image: blocknetdx/litecoin:v0.18.1
-				config_mount_dir: /snode
-				data_mount_dir: /snode
-			- name: DGB # Requires 27 GB of disk (15 December, 2021), 4-5 GB RAM/Swap
-			    image: blocknetdx/digibyte:v7.17.2
-				config_mount_dir: /snode
-				data_mount_dir: /snode
-			...
-	   ```
-	1. __Important:__ Pay close attention to the comments embedded in
-       this file. Note that some of the entries, like __XR_PROXY__ and
-        __SNODE__, should *never* be deleted. Other entries,
-       like __ETH__, __BTC__,  __AVAX__, and __LBC__ for example, have comments
-       attached to them indicating they require more HW resources
-       than some of the other entries. If the sum total of the HW
-       resources required by all the entries you have listed in this file
-       exceeds the HW resources your server has available, you'll need
-       to delete entries until the amount of HW resources required is less than
-       what your server has available. The cumulative HW resource requirements
-       referred to here are mainly the disk space requirements. The
-       RAM and CPU requirements of different entries are not
-       necessarily cumulative. For Example, ETH and AVAX both require 16 GB of
-       RAM, but that doesn't necessarily mean you need 32 GB RAM to support both
-       of them on your SNode. However, if you want to have the ability to sync both
-       of them concurrently, then 32+ GB RAM would be recommended.
-	1. Proceed to delete the entries of those SPV wallets you do *not*
-       want to support on your Service Node. For example, if you don't
-       want to support __DGB__, you would delete the following 4 lines:
-	```
-		- name: DGB # Requires 27 GB of disk (15 December, 2021), 4-5 GB RAM/Swap
-		   image: blocknetdx/digibyte:v7.17.2
-		   config_mount_dir: /snode
-		   data_mount_dir: /snode
-	```
-	1. Note: The `/snode` mount point used in the `alldaemons.yaml`
-       example can be changed as desired. If changing the mount
-       points, the only requirements are:
-		   1. The two mount points in the __XR_PROXY__ entry must be unique,
-			  as they are in the `alldaemons.yaml` example.
-		   1. The mount point for `postgresql_data_mount_dir:` in the
-			  __ETH__ entry must  be unique, as it is in the `alldaemons.yaml` example.
-		   1. All remaining mount points will be automatically
-			  "*uniquified*" by the autobuild scripts. For example,
-			  specifying `data_mount_dir: /snode` in the __BTC__ entry
-			  will cause BTC data to be stored in the unique directory, `/snode/BTC/data`.
-	1. If you will deploy an archival
-       [GETH](/resources/glossary/#geth) node, the mount point you
-       choose in the __ETH__ entry for `geth_data_mount_dir:` *must* have at least 10TB of
-       SSD storage space available as of this writing. See
-       [Hardware Requirements For Service Node Wallet](#hardware-requirements-for-service-node-wallet)
-       for more details.
-	1. __Testnet SNODE__: If you want your Service Node to run on *testnet*
-    instead of *mainnet*, simply replace the line:
-	```
-	- name: SNODE
-	```
-	with this line:
-	```
-	- name: testSNODE
-	```
-	1. __Trading Node__: The autobuild deployment tools also allow
-       you to deploy a *Trading Node* instead of a *Service Node* if
-       you wish. A *Trading Node* is simply a Blocknet core wallet
-       which is *not* configured to run as a Service Node. When you
-       configure `custom.yaml` to deploy a *Trading Node* instead of a
-       Service Node, the other wallet daemons listed in your
-       `custom.yaml` become trading wallets rather than SPV
-       wallets of an Service Node. The *Trading Node* will automatically be
-       connected to all the other wallets daemons listed in your
-       `custom.yaml`. As such, issuing `dxGetLocalTokens` from
-        your *Trading Node's CLI* will return a list of all the coins
-       you had listed in `custom.yaml`, and you can trade
-       between any of them from the CLI of your *Trading Node*. To
-       deploy a *Trading Node* instead of a Service Node, simply
-       replace the line:
-	   ```
-	   - name: SNODE
-	   ```
-	   with this line:
-	   ```
-	   - name: TNODE
-	   ```
-	1. __Testnet TNODE__: If you want your Trading Node to run on *testnet*
-    instead of *mainnet*, simply replace the line:
-	```
-	- name: TNODE
-	```
-	with this line:
-	```
-	- name: testTNODE
-	```
-	1. (Recommended) It is recommended to deploy certain SPV Wallets
-	   in stages. The reason is because some SPV wallets are known to
-	   require large amounts of RAM and/or I/O bandwidth while they
-	   are syncing their respective blockchains. AVAX, LBC and DGB all
-	   fall into this category. For this reason, it is recommended
-	   *not* to run more than one of those 3 while any one of them is
-	   syncing. For example, it's best *not* to run LBC or DGB while
-	   AVAX is syncing, or to run AVAX or DGB while LBC is syncing. To
-	   learn techniques for syncing just one of these 3 at a time, see
-	   the information given in the
-	   [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
-	   section of this guide. Note, if you have over 32 GB of RAM and NVMe
-	   storage, you may well be able to sync all of these HW intensive
-	   blockchains in parallel without issue.
-	1. Save your edits to `custom.yaml` and exit the editor.
 	1. Continue on to [auto-deploy your Service Node](#auto-deploy-service-node).
-
-	??? tip "Didn't see an entry in `alldaemons.yaml` for the coin/daemon you want to support?"
-		As of this writing, we don't yet have many coin/daemon/SPV wallet
-		entries listed in `alldaemons.yaml`. This will be changing very
-		soon. The goal is that every coin supported by BlockDX, which
-		means every coin listed in the [Blocknet
-		manifest-latest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json),
-		will have an entry in `alldaemons.yaml` and thus be readily
-		available for Service Nodes to support. One thing you can do
-		to ensure you have the latest available version of
-		`alldaemons.yaml` (and the latest version of the autobuild
-		tools in general) is the following:
-		```
-		cd ~/exrproxy-env
-		git pull
-		```
-		If the `git pull` command gives errors like "Merge conflict" or "error:
-		Your local changes to the following files would be overwritten
-		by merge," it means you have locally changed one or more of the files `git` is
-		trying to pull from the upstream repository. In this case, you can
-		undo any local changes you made to any of the files tracked by
-		`git` by issuing the command:
-		```
-		git reset --hard
-		```
-		Note, `git reset --hard` will cause any changes you made to
-		tracked files in the `exrproxy-env` directory tree to be lost.
-		After issuing `git reset --hard`, you should now be able to
-		issue the `git pull` command without errors.
-
-		Note: If you are trying to
-		add Service Node support for a new coin so the new coin can be tested and
-		then added to the *manifest-latest.json*, please refer to the
-		[Listing Process](/blockdx/listings/#listing-process).
-
 
 ### Auto-Deploy Service Node
 
 ??? example "Auto-Deploy Service Node"
-	
-	1. At this point in the process, your *Present Working Directory* ($PWD) should be
-       `~/exrproxy-env/autobuild` and the `custom.yaml` file in that
-       directory should contain a list of coins/SPV wallets/daemons
-       you want to deploy and support on your Service Node. (Type
-       `pwd` to confirm your *Present Working Directory*. Review the contents of `custom.yaml` with:
-       `less custom.yaml`.)
-	1. Run the *autobuild* script to translate your `custom.yaml`
-       configuration file into a `dockercompose-custom.yaml` file
-       which can be used by *docker-compose* to launch all the docker
-       containers needed to run your Service Node:
-		   - If your Service Node will *not* be supporting a
-		   [GETH](/resources/glossary/#geth) node, issue the following command:
-		   ```
-		   ./app.py
-		   ```
-		   - If your Service Node will support a [GETH](/resources/glossary/#geth) node locally, issue
-		   the following command:
-		   ```
-		   ./app.py --deploy_eth
-		   ```
-		   - If your Service Node will support an *external* [GETH](/resources/glossary/#geth) node, issue
-		   the following command:
-		   ```
-		   ./app.py --gethexternal [IP-Address-of-External-GETH-Node]
-		   ```
-		   Note, this *--gethexternal* option has not been fully tested as
-		   of this writing.
-	1. Move the `dockercompose-custom.yaml` we just generated to the
-       `exrproxy-env` directory and give it the name *docker-compose*
-       will be looking for:
-	   ```
-	   mv  dockercompose-custom.yaml ../docker-compose.yml
-	   ```
-	1. Change directory to the `exrproxy-env` directory:
-	   ```
-	   cd ..
-	   ```
-	1. Prepare to enter all the details you'll need when you launch
-    the `deploy.sh` script:
+
+	> First Time Deploying an [EXR](/resources/glossary/#exr) Service Node 
+
+	If you are deploying an EXR Service Node on a server which has
+    never hosted an EXR Service Node before, log in to the
+    Ubuntu Linux server you
+    [set up above](#set-up-an-ubuntu-linux-server), (log in as the
+    user you created, not as root), then issue these commands:
+	```
+	curl -fsSL https://blocknetdx.github.io/blocknetdx -o env_installer.sh
+	chmod +x env_installer.sh
+	./env_installer.sh --install
+	```
+	Then continue following the steps below.
+
+	>  Deploying an [EXR](/resources/glossary/#exr) Service Node 
+
+	1. Prepare to enter all the details you'll need when you run
+    the `builder.py` script:
 		1. Fetch your Service Node computer's Public IP address, then
         copy/paste it to a temporary text file for easy access.
-		Some options for fetching your Service Node computer's Public IP include:
+		Some options for fetching your Service Node computer's Public IP include: 
 		```
 		curl ipconfig.io
 		curl ifconfig.co
 		dig +short myip.opendns.com @resolver1.opendns.com
 		```
+		Most likely, `builder.py` will automatically find your server's public IP
+        address and display it, but it will be good to know it so you can
+        verify it.
 		1. Make sure you have easy copy/paste access to your *Servicenode Private
            Key* and *Servicenode Address*, which you got earlier from the [Collateral Wallet Setup Procedure](#collateral-wallet-setup-for-automated-service-node-setup).
 	    1. Think of a name for your Service Node. It doesn't have to be
           the same name you chose to label the address of your Service
-          Node during the *Collateral Wallet Setup*, but it can be.
+          Node during the *Collateral Wallet Setup*, but it's often
+          convenient to use the same name.
 	    1. Think of a name and a password for the RPC user your Service
-          Node will use for communication with the coin daemons it supports.
-	1. Run the `deploy.sh` script:
+          Node will use when communication with the services/coins it supports.
+	1. Change directory to your local `exrproxy-env` repository
+	(`exrproxy-env` is located `~` by default.):
 	```
-	./deploy.sh
+	cd ~/exrproxy-env 
 	```
-	You'll be asked if you want to install *docker*. If you have not
-	yet installed *docker* on your Service Node computer, enter *y*
-	for "yes." Then proceed to enter the information you prepared in the
-	previous step as the `deploy.sh` script prompts you for each item
-	individually. Note, the values you enter for *Servicenode Private
-	Key* and *RPC Password* will not be displayed. If you are
-	pasting in these values, be sure not to paste twice.
-	1. (Informational) You should now see the scripts do their magic and launch [docker
+	1. Update your local repository and system environment:
+
+	    * If you've deployed an [EXR](/resources/glossary/#exr) [SNode](/resources/glossary/#snode) before on this server, but this is your
+        first time using the `exr_env.sh` and `builder.py` scripts to deploy an SNode on
+        this server, you'll want to issue these command:
+		```
+		git stash
+		git pull
+		./exr_env.sh -p -o -D -d -b ""
+		```
+	* Otherwise, if you have used the `exr_env.sh` and `builder.py`
+	scripts on this server before, you should issue this command:
+	```
+	./exr_env.sh -u -p -b ""
+	```
+	* For an explanation of what each of those `exr_env.sh`
+      parameters does, issue the following command:
+	```
+	./exr_env.sh -h 
+	```
+	Note: The `-b ""` parameter of `./exr_env.sh` launches the
+      `builder.py` tool when `./exr_env.sh` completes all the tasks
+      assigned to it by the other parameters. If you prefer,
+      you can leave off the `-b ""` parameter and call `./builder.py`
+      manually after `./exr_env.sh` completes, like this:
+	```
+	./builder.py
+	```
+	IMPORTANT: When passing parameters to `./builder.py` through
+      `./exr_env.sh`, the parameters of `./builder.py` must follow the
+      `-b` parameter and they must all be enclosed in double quotes
+      ("). For example:
+	```
+	./exr_env.sh -b "--source inputs_yaml/latest.yaml"
+	./exr_env.sh -b ""
+	```
+	Parameters passed to `./builder.py` when it is called outside of
+      `exr_env.sh` do *not* require double quotes around them. For
+      example:
+	```
+	./builder.py --source inputs_yaml/latest.yaml
+	```
+
+	1. `builder.py` will first check to see if the necessary versions
+       of `docker` and `docker-compose`
+       have already been installed on your server. If not, it will instruct
+       you on how to install them. If `builder.py` stops due to
+       failing this check, issue the `./builder.py` command again once
+       they've been installed.
+	1. Next, it will display some information about your system's available hardware
+    resources. This information will be useful in the SNode
+    configuration process. It will look something like this:
+	![available-hw](/img/service-nodes/system-hw.png)
+	1. Next, it will prompt you for your *sudo* password. Enter your
+       *user* password, not your *root* password.
+	1. Next, it will ask you some questions about how you want to
+		configure your Service Node. If at any time you want to change
+		any of the answers you have given while configuring your SNode,
+		simply issue *Control-C* to stop the configuration process,
+		then run `./builder.py` (or `./exr_env.sh -b ""`) again.
+	1. First it will request your Public IP address, Service Node
+		Name, Service Node Private Key, Service Node Address, RPC User
+		and RPC Password. You should
+		have the answers to all these questions already prepared from
+		step 1 above.
+	1. Next, you'll be presented with a series of queries about which
+       services you want to support on your Service Node. The
+       approximate amount of RAM,
+       # of CPUs, and amount of DISK (SSD) storage space required to support each
+       service will be displayed next to the service name. Note
+       that the cumulative DISK storage space of all the services you
+       select for each mounted directory on your server must be less
+       than the total amount of DISK storage space available for each mounted
+       directory. The available space on each of your server's mounted
+       directories is displayed when you first run `builder.py`, as in
+       step 5 above. The RAM and CPU requirements of different services are not
+       necessarily cumulative in the same way. For Example, ETH and AVAX both require 16 GB of RAM, but that doesn't necessarily mean you need 32 GB RAM to support both
+       of them on your SNode. However, if you want to have the ability to sync both
+       of them concurrently, or to guarantee optimal performance, then
+       32+ GB RAM would be recommended.
+	1. The first services you'll be given the option to
+       support will be the XBridge [SPV](/resources/glossary/#spv)
+       blockchain services. In the
+       following example, SPV blockchains DASH, LTC, PIVX and SYS have been
+       selected to be supported as XBridge services:
+	   ![xbridge-chains](/img/service-nodes/xbridge-chains.png) <br> Next to each XBridge service in the list, the
+       approximate RAM, # of CPU cores and
+       DISK requirements for the blockchain are displayed. The default
+       *data mount directory* (`/snode` in this example) is also displayed for each
+       blockchain. (In a later step, you'll be given the option to change the *data
+       mount directory* for specific services.)
+	   If you want to change the global default *data mount directory* for *all* services
+       you'll deploy, you can change it from `/snode` to some other
+       directory by following this procedure:
+
+	    ??? example "Change Global Default Data Mount Directory."
+		  1. Issue *Control-C* to stop `builder.py` if it's currently running.
+		  1. Make a copy of `autobuild/sources.yaml`. For example:
+		  ```
+		  cp autobuild/sources.yaml autobuild/custom.yaml
+		  ```
+		  1. Use a simple editor like  [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
+           or
+           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/),
+           to edit the copy you just made. For
+           Example:
+		   ```
+		   vi autobuild/custom.yaml
+		   ```
+		   1. In the editor, search for all occurrances of `/snode`
+		   and replace them with whatever new global default you want for your *data
+		   mount dir*.
+		   1. Save the file and exit the editor.
+		   1. Run `./builder.py`, passing it a parameter to
+		   specify the file you just edited as the *source* of available
+		   coins/services. For example:
+		   ```
+		   ./builder.py --source autobuild/custom.yaml
+		   ```
+
+	1. Next, you'll be given the option to choose which
+       [EVM](/resources/glossary/#evm) blockchains you 
+       want to support.  In the following example, both ETH and AVAX
+       EVM blockchains are selected to be supported:
+	   ![xbridge-chains](/img/service-nodes/evm-chains.png) <br>
+	   The HW requirements and default
+       *data mount directory* (`/snode` in this example) are displayed for each
+       blockchain. Note: The HW requirements listed next to
+       each EVM chain assume the EVM chain will be hosted *internally*,
+       on the SNode server itself. Supporting an *externally* hosted EVM
+       does not add any HW requirements to the SNode server.  (In a
+       later step, you'll be given the option to
+       specify the Host IPs of the EVM blockchains your
+       SNode will support *externally*.)
+	1. If you chose to support [EVM](/resources/glossary/#evm) blockchains,
+       you'll be given the option to support [Hydra](/resources/glossary/#hydra) and/or
+       [XQuery](/resources/glossary/#indexer) services for each of the
+       EVMs you'll support.
+	1. If you chose to support XQuery, you'll be given the
+       option to select which indices you want XQuery to support for each EVM you'll
+       support. Supporting all available indices is recommended. For
+       example:
+
+	       ![eth-indices](/img/service-nodes/eth-indices.png)	   
+    	   ![avax-indices](/img/service-nodes/avax-indices.png)	   
+
+	1. Next, if you chose to support [EVM](/resources/glossary/#evm)
+	   blockchains, you'll be prompted to enter the
+	   US dollar values you want to charge for access to *tier1* and
+       *tier2* [Hydra](/resources/glossary/#hydra) and
+       [XQuery](/resources/glossary/#indexer) services on your Service
+	   Node. (Default values are recommended.) See
+       [XQuery/Hydra Project Payment API](https://api.blocknet.co) for
+	   definitions of *tier1* and *tier2* payments.
+	1. Next, you'll be prompted to enter the
+	   discount percentages you want to offer clients for payments in aBLOCK or
+	   aaBLOCK. These payment discounts are relative to the US dollar
+	   values entered in the previous step. The idea of giving
+	   discounts to clients paying with aBLOCK or aaBLOCK came from
+	   the idea that we want to encourage payment in various forms of
+	   BLOCK in order to increase demand for BLOCK. Due to high eth
+	   gas fees currently associated with paying in aBLOCK, and due to aaBLOCK
+	   being the *only* form of payment available on the AVAX
+	   blockchain, default values of 20% discount for aBLOCK, and 0%
+	   discount for aaBLOCK are recommended.
+	1. Next, you'll be asked, "*Do you wish to change install
+       locations?*"  Type "*y*" here if you want to change the *data
+       mount directory* of any service from `/snode` to some other
+       directory. This option can
+       be useful if, for example, you have a separate, very large, fast disk
+       dedicated to supporting ETH, a service which requires large,
+       fast NVMe SSD storage. Selecting "*y*" here will display
+       a selection menu which displays the current *data
+       mount directory* for each service and allows you to select the
+       services for which you want to change the *data
+       mount directory*. The selection menu will look something like
+       the following:
+	   ![xbridge-chains](/img/service-nodes/select-new-install.png)
+	1. Next, a *storage space calculations* table will be displayed
+       which can help you confirm that your server's storage space
+       resources are capable of supporting all the services you've elected
+       to support. The table will look something like this:
+	   ![xbridge-chains](/img/service-nodes/storage-calcs.png) <br>
+	   On analyzing this table, if you determine that your server's storage space
+       resources are *not* capable of supporting all the services you've elected
+       to support, issue *Control-C* to stop the configuration process,
+       then run `./builder.py` (or `./exr_env.sh -b ""`) again. <br>
+	   There are 6 columns in the *storage space calculations*  table:
+		   * __Directory__: This column displays the directory in which
+             the data for the service will be stored, called the *data mount directory*.
+		   * __Available__: This column displays the available disk
+             space in the *data mount directory* of the
+             service.
+		   * __Required__: This column displays the approximate space
+             required to host the blockchain of the service.
+		   * __Existing dir__: If a previously synced blockchain of the service was
+             found in the *data mount directory* of the
+             service, this column displays the subdirectory in which
+             the synced blockchain
+             was found (e.g. `BTC`, `LTC`) and size of that
+			 synced blockchain (e.g. `456.64 GB`, `76.95 GB`).  If none was
+             found, it displays no subdirectory and `0 GB` for size.
+		   * __Checks__: This column displays a green __PASS__ if
+			 the *data mount directory* of the service has enough
+			 space to host the service. Otherwise, it displays
+			 a red __WARNING__. <br> Note: A __WARNING__ message in the
+			 __Checks__ column should *only* be ignored if you are
+			 certain the value displayed in the __Required__ column is
+			 too large/not accurate, and you have carefully calculated that all
+			 your selected services will actually fit on the selected
+			 *data mount directories* of your system.
+		   * __Requirement Calculations__: This column displays the
+             calculations performed to determine if green __PASS__ or
+             red __WARNING__ should be displayed in the __Checks__
+             column. <br>
+			 If the calculation, "__Available__ - (__Required__ - __Existing
+             dir__)" yields a positive number, __PASS__ is displayed;
+             Otherwise, __WARNING__ is displayed.
+		   * At the bottom of the *storage space calculations*  table
+             is a row titled, __TOTAL__, which gives a cumulative
+             summary of all the rows above.
+	1. Finally, you'll be given the option to use a unique
+       auto-generated file name, or a user-specified file name for
+       storing the SNode configuration information you've
+       entered. If, for example, you enter the file name `latest` then
+       a file containing your SNode configuration will be generated in
+       the `inputs_yaml` directory, and the file will be
+       named, `latest.yaml` (i.e. your SNode config will be stored as `inputs_yaml/latest.yaml`).
+	1. (Informational) In addition to being stored in the `.yaml` format mentioned
+       in the previous step, your SNode configuration will also be stored in
+       a processed form in the file,
+       `docker-compose.yml`. `docker-compose.yml` will then
+       be used by the `./deploy.sh` script when you're ready to deploy
+       your Service Node. <br>
+	   Note for advanced users: If you ever want to manually modify
+       the `.yaml` file mentioned in the previous step, then use your
+       modified `.yaml` file to generate a new `docker-compose.yml` file, you
+       can do so using the `--yaml` parameter like this:
+	   ```
+	   ./builder.py --yaml inputs_yaml/latest.yaml
+	   ```
+	1. Before you deploy your Service Node, you may want to review the
+       SNode config file generated by `builder.py`
+       (e.g. `inputs_yaml/latest.yaml`) to confirm that everything is
+       configured as intended. For example, you may want to review the
+       *data mount directory* (`data_mount_dir`) for the services
+       which require large amounts of disk space to confirm the
+       specified `data_mount_dir` has enough disk space
+       available to support the service. If the configuration looks
+       good, you can launch your Service Node by issuing
+       the following command:
+	   ```
+	   ./deploy.sh
+	   ```
+	    Tip: If you pass the `--deploy` paramter to `./builder.py`,
+        it will automatically call `./deploy.sh` after it finishes
+		generating the SNode configuration files. <br>
+		Examples:<br>
+		```
+		./builder.py --deploy
+		./exr_env.sh -b "--deploy"
+		```
+		__Most likely you
+       won't need to follow the remaining steps below if you have
+       followed them previously and you're simply reconfiguring you
+       SNode on this run. However, if your SNode has been offline for a
+       while, you may need to reregister it as per steps 25-29
+       below. You can check if your SNode needs to be reregistered by
+       following steps 28 & 29 below.__
+
+	    ??? info "Didn't see an option to support the service or coin you want to support?"
+		Options to support more services/coins are continuously being
+		added. The goal is that Service Nodes will have an option to
+		support every coin supported by [BlockDX](/blockdx/introduction/), which
+		means every coin listed in [Blocknet
+		manifest-latest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json). Service
+		Nodes will also soon have the option to support a wide variety
+		of EVM blockchains, like Ethereum/ETH, Avalanche/AVAX, Binance
+		Smart Chain/BSC, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA, Etc.
+
+	    ??? tip "Tip: How to Reset Configuration Defaults."
+		`builder.py` *remembers* previous SNode configuration
+		choices. Usually this is quite handy and desirable, but
+		sometimes it's useful to make it *forget* previous
+		configuration choices. There are 5 files `builder.py` uses to
+		*remember* previous configuration choices made by the user:
+		`.env`, `.known_hosts`, `.known_volumes`, `.cache` and
+		`.cache_ip`. If you want to reset any of the default values
+		`builder.py` presents to you during the configuration process,
+		deleting (or renaming) one or more of these files before
+		running `./builder.py` will likely do the trick.
+
+	        * `.env` - remembers your Public IP address, Service Node
+				Name, Service Node Private Key, Service Node Address, RPC User
+				and RPC Password.
+			* `.known_hosts` - remembers the IP addresses of any
+				externally hosted EVM chains.
+			* `.known_volumes` - remembers any special *data mount
+				directories* you chose for specific services.
+			* `.cache` - remembers choices you made about which
+				services to support, and how to set up payments
+			* `.cache_ip` - remembers the IP addresses assigned to
+				docker containers on the last deployment (so it can try
+				to assign the same IP addresses again if they are available).
+
+	1. If you are trying to add Service Node support for a *new*
+		coin which is not yet listed in [Blocknet
+		manifest-latest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json)
+		configuration file, please refer to the
+		[Listing Process](/blockdx/listings/#listing-process) for
+		general information on listing a new coin. Then, to add support for
+		the new coin on your Service Node, follow this procedure:
+
+	    ??? example "Add Support for a New Coin or a New Config of a Coin."
+		1. Make a copy of `autobuild/sources.yaml`. For example:
+		```
+		cp autobuild/sources.yaml autobuild/custom.yaml
+		```
+		1. Use a simple editor like  [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
+           or
+           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/),
+           to edit the copy you just made. For
+           Example:
+		   ```
+		   vi autobuild/custom.yaml
+		   ```
+	    1. In the editor, duplicate the entry for some common coin (e.g. LTC), then
+		modify the duplicate entry so that it references the name and docker
+		image of the new coin you want to support.
+        1. Save the file and exit the editor.
+	    1. Run `./builder.py`, passing it two parameters: One to
+		specify the file you just edited as the *source* of available
+		coins/services, and one to instruct it to reference a configuration repository
+		which contains configuration data for the new coin. For example:
+		```
+		./builder.py --source autobuild/custom.yaml --branchpath https://raw.githubusercontent.com/ConanMishler/blockchain-configuration-files/bitcoin--v0.22.0.conf
+		```
+		NOTE: The URL passed via the `--branchpath` parameter must be in *raw* form, 
+		as in the example above. 
+		1. Launch your SNode by issuing the following command:
+	    ```
+	    ./deploy.sh
+	    ```
+
+	1. Advanced users may want to deploy a *Testnet SNode*, a *Trading Node*, or a
+		*Testnet Trading Node* instead of a regular *SNode*. These 3
+		special kinds of nodes are [defined here](/service-nodes/introduction/#special-kinds-of-service-nodes-for-advanced-users).
+
+	    ??? example "Deploy a *Testnet SNode*, a *Trading Node*, or a *Testnet Trading Node*."
+		  1. Make a copy of `autobuild/sources.yaml`. For example:
+		  ```
+		  cp autobuild/sources.yaml autobuild/custom.yaml
+		  ```
+		  1. Use a simple editor like  [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
+           or
+           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/),
+           to edit the copy you just made. For
+           Example:
+		   ```
+		   vi autobuild/custom.yaml
+		   ```
+		   1. In the editor, search for the following text
+		   ```
+		   - name: SNODE
+		   ```
+		   then change __SNODE__ to one of the following,
+           depending which type of node you want to deploy:
+			   * __testSNODE__
+			   * __TNODE__
+			   * __testTNODE__
+		   1. Save the file and exit the editor.
+		   1. Run `./builder.py`, passing it a parameter to
+		   specify the file you just edited as the *source* of available
+		   coins/services. For example:
+		   ```
+		   ./builder.py --source autobuild/custom.yaml
+		   ```
+		   1. Launch your node by issuing the following command:
+		   ```
+		   ./deploy.sh
+		   ```
+
+	1. (Recommended for servers with less than 32
+	   GB RAM or less than 10 CPU cores.) If your server HW resources
+	   are somewhat limited, it is recommended to deploy certain SNode services
+	   in stages. The reason is because some services are known to
+	   require large amounts of RAM and/or I/O bandwidth while they
+	   are syncing their respective blockchains. ETH, AVAX, LBC and DGB all
+	   fall into this category. For this reason, it is recommended
+	   *not* to run more than one of those 4 while any one of them is
+	   syncing on a server with limited HW resources. For example, it's
+	   best *not* to run LBC or DGB while
+	   AVAX is syncing, or to run AVAX or DGB while LBC is syncing. To
+	   deploy SNode services in stages, simply limit which services
+	   you select to support the first time you run `./builder.py`,
+	   then run `./builder.py` again after the resource intensive
+	   blockchain(s) have synced, this time selecting additional
+	   services to support.
+	1. (Informational) Once your SNode is configured and deployed, you should see the scripts do their magic and launch [docker
        containers](https://www.docker.com/resources/what-container)
-       for all the daemons you configured your Service Node to
+       for all the services you configured your Service Node to
        support. You can see all the running docker containers by
        issuing the command:
 	   ```
@@ -884,15 +1026,15 @@ complete the following guides in order:
 	   ```
 	   That command should return information about the *snode* container, something like this:
 	   ```
-	   f9b910221ca2   blocknetdx/servicenode:latest              "/opt/blockchain/sta…"   26 hours ago   Up 26 hours   41412/tcp, 41414/tcp, 41419/tcp, 41474/tcp         exrproxy-env_snode_1
+	   f9b910221ca2   blocknetdx/servicenode:latest              "/opt/blockchain/sta…"   26 hours ago   Up 26 hours   41412/tcp, 41414/tcp, 41419/tcp, 41474/tcp         exrproxy-env-snode-1
 	   ```
-	   The first item returned in this example (`f9b910221ca2`) is the CONTAINER ID, and the last item returned (`exrproxy-env_snode_1`) is the NAME of the container. Either of these two values can be used to access the *snode* container.
+	   The first item returned in this example (`f9b910221ca2`) is the CONTAINER ID, and the last item returned (`exrproxy-env-snode-1`) is the NAME of the container. Either of these two values can be used to access the *snode* container.
 	 1. It will take 3.5+ hours for the Blocknet blockchain to sync in your *snode* container. Periodically monitor the current block height of the Blocknet wallet running in the *snode* container by issuing the following command:
 	 ```
-	 docker exec exrproxy-env_snode_1 blocknet-cli getblockcount
+	 docker exec exrproxy-env-snode-1 blocknet-cli getblockcount
 	 ```
 	 Note, here we are executing the command, `blocknet-cli` within
-	 the `exrproxy-env_snode_1` container, which is the name we found
+	 the `exrproxy-env-snode-1` container, which is the name we found
 	 for the *snode* container in the previous step. Also note,
 	 initial calls to `getblockcount` may return errors until headers
 	 finish syncing. This is normal and nothing to be concerned about.
@@ -902,7 +1044,7 @@ complete the following guides in order:
 		  convenient, you may want to create an alias something like
 		  the following:
 		  ```
-		  alias snode-cli='docker exec exrproxy-env_snode_1 blocknet-cli'
+		  alias snode-cli='docker exec exrproxy-env-snode-1 blocknet-cli'
 		  ```
 		  If you add that alias to `~/.bash_aliases` (or any file
 		  sourced on login), it will be defined automatically every
@@ -910,7 +1052,7 @@ complete the following guides in order:
 		  create a small Bash Shell script something like this:
 		  ```
 		  #!/bin/bash
-		  docker exec exrproxy-env_snode_1 blocknet-cli $*
+		  docker exec exrproxy-env-snode-1 blocknet-cli $*
 		  ```
 		  If you create such a shell script, give it a name like `snode-cli`, give it executable
 		  permissions (`chmod +x snode-cli`), then move it to some
@@ -924,7 +1066,7 @@ complete the following guides in order:
 		  its options.)
 
 	 1. When the block height in the *snode* container matches that of the [Blocknet blockchain explorer](https://chainz.cryptoid.info/block/), your Service Node wallet is fully synced and you can now activate your Service Node as follows:
-		 1. On your *Collateral Wallet*, issue the command, `servicenoderegister`. If your *Collateral Wallet was set up according to the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+		 1. On your *Collateral Wallet*, issue the command, `servicenoderegister`. If your *Collateral Wallet* was set up according to the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
 		and the alias for `blocknet-cli` was also created according to that
 		guide, you can issue the `servicenoderegister` command as follows:
 		```
@@ -936,19 +1078,22 @@ complete the following guides in order:
 		*Collateral Wallet*.
 		1. On your *Service Node Wallet*, issue the `servicenodesendping` command like this:
 		```
-		docker exec exrproxy-env_snode_1 blocknet-cli servicenodesendping
+		docker exec exrproxy-env-snode-1 blocknet-cli servicenodesendping
 		```
 		(Note, if you created the `snode-cli` alias or shell script as
 		suggested in the *Tip* above, you can enter simply, `snode-cli servicenodesendping`.)
-	1. On your *Service Node Wallet*, check to confirm your Service Node is running and supporting all the right coins/SPV wallets like this:
+	1. On your *Service Node Wallet*, check to confirm your Service Node is running and supporting all the right coins/services, like this:
 		```
-		docker exec exrproxy-env_snode_1 blocknet-cli servicenodestatus
+		docker exec exrproxy-env-snode-1 blocknet-cli servicenodestatus
 		```
 		This command should return `"status": "running",` and also the corrrect/expected list of supported services.
 	 1. You can also verify your Service Node is visible on the network by issuing the following command on your *Collateral Wallet*:
 		```
-		blocknet-cli servicenodestatus 
+		blocknet-cli servicenodestatus
 		```
+		(If your *Collateral Wallet* is a GUI/Qt wallet,
+		simply enter `servicenodestatus` in *Tools->Debug Console* of your
+		*Collateral Wallet*.)
 	 1. (Recommended) Install `fail2ban` to protect your EXR SNode from malicious http
 	attacks. The following steps are for setting up `fail2ban v0.11.1-1`
 	on `Ubuntu 20.04.3 LTS`. The steps for setting up other
@@ -1157,7 +1302,7 @@ complete the following guides in order:
 		  sudo iptables -I FORWARD -j f2b-nginx-404
 		  ```
 
-	 1. To learn how to add or subtract coins/SPV Wallets from your Service Node, and generally navigate and manage the docker containers of your Service Node, continue on to [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
+	 1. To learn how to add or subtract supported services/coins from your Service Node, and generally navigate and manage the docker containers of your Service Node, continue on to [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
 
 ### Maintenance of Auto-Deployed Service Node
 
@@ -1165,102 +1310,28 @@ complete the following guides in order:
 
 	> Changing Configuration of a Docker-Based Service Node (or Trading Node)
 
-	1. Before you can add or subtract coin daemons, or change the
-	configuration of your Service Node in any way, you first need to shut it down as follows:
-	```
-	cd ~/exrproxy-env
-	docker-compose down
-	```
-	This will not only stop all the docker containers you
-	deployed from the `docker-compose.yml` file, it
-    will also remove all those docker containers. It will *not*
-    remove the blockchain data for each of the coin daemons you
-    deployed. That data is safely stored in the place(s) you had
-    specified as the `config_mount_dir` and `data_mount_dir` in
-	`custom.yaml` (`/snode` by default). That means you won't have to wait for the
-	blockchains of the various coin daemons to sync again the next
-	time you bring up your Service Node.
-	1. Once your Service Node has been brought down, you can edit the
-       configuration file, `~/exrproxy-env/autobuild/custom.yaml`, to
-       add or subtract coin daemons as desired. You can also, for example, convert
-       your Service Node into a *testnet* Service Node by replacing
-       `SNODE` with `testSNODE` in `custom.yaml`. To make sure you
-       have a current reference for all coin daemons currently
-       available (and the latest version of the autobuild
-		tools in general), it is recommended to *pull* the latest changes from
-       the Github repository:
-	   ```
-	   cd ~/exrproxy-env
-	   git pull
-	   ```
-		If the `git pull` command gives errors like "Merge conflict" or "error:
-		Your local changes to the following files would be overwritten
-		by merge," it means you have locally changed one or more of the files `git` is
-		trying to pull from the upstream repository. In this case, you can
-		undo any local changes you made to any of the files tracked by
-		`git` by issuing the command:
-		```
-		git reset --hard
-		```
-		Note, `git reset --hard` will cause any changes you made to
-		tracked files in the `exrproxy-env` directory tree to be lost.
-		After issuing `git reset --hard`, you should now be able to
-		issue the `git pull` command without errors.
-		`git pull` will pull all available updates to your local
-		`exrproxy-env` repository, including any updates to
-		`~/exrproxy-env/autobuild/examples/alldaemons.yaml`. The
-		remote/upstream version of `alldaemons.yaml`
-		will be updated frequently with new coin daemons/SPV wallets,
-		so it'll be good to pull the latest version frequently. When
-       you have the latest `alldaemons.yaml`, you can copy/paste coin
-       daemon entries from `alldaemons.yaml` into
-       `~/exrproxy-env/autobuild/custom.yaml`, as desired.
-	1. Once you've finished editing
-       `~/exrproxy-env/autobuild/custom.yaml` according to the new
-       configuration you want (or even if you didn't edit
-       `custom.yaml` at all), you can bring your Service Node back up
-       as you did before in
-       [Auto-Deploy Service Node](#auto-deploy-service-node), using the
-       `app.py` script and the `deploy.sh` script as instructed there.
-	1. IMPORTANT: If you are likely to bring your Service Node
-       down and back up again multiple times, it is *highly
-       recommended* to create a simple Bash Shell script like the
-       following to avoid having to use `~/exrprox-env/deploy.sh` each
-       time you want to bring your Service Node up. That way you can avoid
-       answering all the questions asked by
-       `deploy.sh` each time you bring your Service Node up:
-	   ```
-	   #!/bin/bash
-
-	   export PUBLIC_IP="75.120.155.29"  # Update with your public ip address
-	   export SN_NAME="snode01"  # Update with your snode name
-	   export SN_KEY="PswGMd6gaZf1ceLojzGeKn7PQuXVwYgRQG8obUKrThZ8ap4pkRR7"  # Update with your snode private key
-	   export SN_ADDRESS="BqNaZmLJt9wEGBHDNid9FvsgrG2x7Hbfex"  # Update with your snode address
-	   export RPC_USER="my-rpc-user"   # Update with your rpc user
-	   export RPC_PASSWORD="my-rpc-pw"    # Update with your rpc password
-	   
-	   docker-compose -f "docker-compose.yml" up -d --build
-	   ```
-	   Create the above Bash Shell script and give it a name like,
-	   `dockerup.sh`. You can keep it anywhere, but `~/exrproxy-env`
-	   is probably a convenient place to keep it. Give it executable
-	   permissions too: `chmod +x dockerup.sh`. Now, instead of
-	   running `./deploy.sh` in step 6 of the
-	   [Auto-Deploy Service Node](#auto-deploy-service-node)
-	   instructions, you can run `./dockerup.sh`.
-	1. If you've subtracted one or more coin daemons from your
-      `custom.yaml` because you want to save the disk space used
-      by the blockchains of those coin daemons, please remember that
-      the blockchain data is not deleted/removed when the docker container is
-      removed. As mentioned above, the blockchain data of a coin
-      daemon persists in a special mounted directory. If you kept the
-      default data and config dir mount points given in
-      `alldaemons.yaml`, which is `/snode`, then the blockchain data
-      for DGB, for example, will be stored in `/snode/DGB/config`, and
+	1. With the advent of the `builder.py` script, the procedure for
+       changing the configuration of an SNode is basically the same as
+       it is for configuring and deploying an SNode for the first
+       time. That procedure is given in the first 20 steps of the
+       [Auto-Deploy Service Node](#auto-deploy-service-node) guide.
+	   Note, however, if you've subtracted one or more services/coins from your SNode's
+      supported services because you want to save the disk space occupied
+      by those services/coins, please remember that
+      the blockchain data is not deleted/removed when the docker
+       container of a service is removed by `builder.py`. The
+       blockchain data of a service/coin persists in the
+      *data mount directory* you chose for the service when configuring
+      your SNode. If you kept the default *data mount directory*, which
+      is `/snode`, then the blockchain data
+      for DGB, for example, will be stored in `/snode/DGB`, and
       it can occupy many GB of space. To find out exactly how much
-      space is being used by each coin daemon, you can enter:
+      space is being used by each service/coin, you can enter:
 	  ```
 	  sudo du -d 1 -h /snode
+	  ```
+	  which will return something like this:
+	  ```
 	  57G	/snode/LTC
 	  3.6G	/snode/MONA
 	  222M	/snode/testsnode
@@ -1273,10 +1344,9 @@ complete the following guides in order:
 	  Sudo is necessary here because `/snode` directory is owned by
       `root`, not by $USER. So, if you want to stop supporting DGB
 	  coin, for example, and you also want to free up the 27GB of
-	  space the DGB blockchain is taking up, you'll need to first
-	  make sure your Service Node is shut down according to step 1
-	  above, then make sure the DGB entry has been removed from
-	  `custom.yaml` according to step 2 above, then issue the
+	  space the DGB blockchain is occupying, you'll need to first
+	  use `./builder.py` to reconfigure and relaunch your SNode
+	  *without* DGB support, then issue the
 	  following command to permanently remove DGB blockchain data and
 	  free the space it is occupying:
 	  ```
@@ -1287,7 +1357,7 @@ complete the following guides in order:
 
 	> About *docker*
 
-	For the most part, the *docker-compose* commands given thus far in
+	For the most part, the *docker* commands given thus far in
     this guide will suffice to manage your Service Node. However, if
     something "out of the ordinary" happens, or if you want to do
     something fancy with your docker objects,  there are a few more
@@ -1298,7 +1368,7 @@ complete the following guides in order:
       executable command. Here's one way to find it:
 		  1. Start an interactive *Bash* shell in the DGB container:
 		  ```
-		  docker exec -it exrproxy-env_DGB_1 /bin/bash
+		  docker exec -it exrproxy-env-DGB-1 /bin/bash
 		  ```
 		  You should see a prompt like this:
 		  ```
@@ -1346,16 +1416,16 @@ complete the following guides in order:
 			```
 			root@f4c21d83d6fe:/opt/blockchain# exit
 			exit
-			~$ docker exec exrproxy-env_DGB_1 digibyte-cli getblockcount
+			~$ docker exec exrproxy-env-DGB-1 digibyte-cli getblockcount
 			13535762
 			```
 	- Now let's consider the case where the docker container with
 	  which you want to interact does
-      *not* have *Bash* shell available. This is the case for the Syscoin
+      *not* have *Bash* shell available. This is [edit: *was*] the case for the Syscoin
 	  container, for example. Attempting to invoke the *Bash*
 	  shell in the Syscoin container will result in an error:
 	  ```
-	  docker exec -it exrproxy-env_SYS_1 /bin/bash
+	  docker exec -it exrproxy-env-SYS-1 /bin/bash
 	  OCI runtime exec failed: exec failed: container_linux.go:380:
 	  starting container process caused: exec: "/bin/bash": stat
 	  /bin/bash: no such file or directory: unknown
@@ -1363,13 +1433,13 @@ complete the following guides in order:
 	  The solution is to invoke a shell which *does* exist in the
 	  container, like this:
 	  ```
-	  docker exec -it exrproxy-env_SYS_1 /bin/sh
+	  docker exec -it exrproxy-env-SYS-1 /bin/sh
 	  ```
 	- Another unique feature of [an earlier version of] the Syscoin container is that the
       `syscoin-cli` command requires certain parameters to be passed
       to it in order to work properly. For example:
 	  ```
-	  docker exec exrproxy-env_SYS_1 syscoin-cli getblockcount 
+	  docker exec exrproxy-env-SYS-1 syscoin-cli getblockcount 
 	  ```
 	  returns
 	  ```
@@ -1377,19 +1447,22 @@ complete the following guides in order:
 	  ```
 	  But invoking `syscoin-cli` as follows, works properly:
 	  ```
-	  docker exec exrproxy-env_SYS_1 syscoin-cli -conf=/opt/blockchain/config/syscoin.conf getblockcount
+	  docker exec exrproxy-env-SYS-1 syscoin-cli -conf=/opt/blockchain/config/syscoin.conf getblockcount
 	  1218725
 	  ```
 	  Alternatively, this also works:
 	  ```
-	  docker exec exrproxy-env_SYS_1 syscoin-cli -datadir=/opt/blockchain/config getblockcount
+	  docker exec exrproxy-env-SYS-1 syscoin-cli -datadir=/opt/blockchain/config getblockcount
 	  1218725
 	  ```
-	  Note: The DASH container, and perhaps others containers, will also require
+	  Note: The DASH container, and perhaps other containers, will also require
       these same parameters to be passed to the CLI
       command. [edit: The latest SYS container does *not* require the additional parameter]
 	  - Now let's consider another case where more *docker* knowledge
-      could be required. Let's consider the case where
+      could be required. Let's consider the case where you try to
+      manually stop and remove all the docker containers of your SNode
+      using `docker-compose down` in the `~/exrproxy-env`
+      directory. Consider the example where
       `docker-compose down` fails to complete due to receiving a timeout
       error something like the following:
 	  ```
@@ -1403,7 +1476,7 @@ complete the following guides in order:
       your docker environment in a state where some docker containers have been
       *stopped*, but have not yet been removed. This state is
       problematic because your next attempt to bring up your Service
-      Node with `deploy.sh` (or `dockerup.sh`) will give errors saying the
+      Node with `deploy.sh` will give errors saying the
       container names you're trying to create, already exist. If you suspect such
       a situation has developed, one thing you can do is to list *all*
       docker containers - both running and stopped:
@@ -1429,7 +1502,7 @@ complete the following guides in order:
 	  docker stop $(docker ps -q -f name=exrproxy-env_*)
 	  docker rm $(docker ps -a -q -f name=exrproxy-env_*)
 	  ```
-	  This trick can be useful if, for example, `docker-compose.yml`
+	  This trick can be useful, for example, if `docker-compose.yml`
       is accidentally reconfigured before `docker-compose down` is
       executed, causing `docker-compose down` to fail.
 	- *docker* offers a variety of useful utilities for managing and

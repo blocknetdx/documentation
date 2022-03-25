@@ -114,10 +114,10 @@ description: This guide explains the process for installing Block DX, a decentra
 
 
 ??? example "Linux"
-	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 2 Linux options:
+	1. Download the [latest Block DX release](https://github.com/blocknetdx/block-dx/releases/). There are 3 Linux options:
 		1. `BLOCK-DX-x.x.x-linux.deb` (recommended)
 		1. `BLOCK-DX-x.x.x-linux.tar.gz` (Gzip archive)
-
+		1. `BLOCK-DX-x.x.x-linux-x86_64.AppImage` (For Fedora Linux)
 	1. Before continuing, it is recommended to [verify your download](/blockdx/installation/#verifying-downloads) 
 	1. Continue to the instructions below for the download you selected:
 
@@ -162,6 +162,22 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. Read the License Agreement and select *Accept* to acknowledge.
 
 			![License](/img/blockdx/license-agreement.png)
+
+		--8<-- "complete-blockdx-installation.md"
+
+	??? example "Using the `.AppImage` download (option c)"
+		1. Save the `.AppImage` file wherever you normally keep your
+        `.AppImage` files.
+		1. In the directory where the `.AppImage` file is saved,
+        launch BlockDX as follows:
+		```
+		./BLOCK-DX-x.x.x-linux-x86_64.AppImage --disable-gpu-sandbox
+		```
+		where `x.x.x` is the version you downloaded.
+		Note, if that doesn't work, you might also try passing this param:
+		```
+		--disable-seccomp-filter-sandbox
+		```
 
 		--8<-- "complete-blockdx-installation.md"
 

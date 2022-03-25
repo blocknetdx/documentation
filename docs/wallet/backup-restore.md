@@ -69,7 +69,7 @@ file is typically stored in the `wallets` subdirectory of your data directory:
        [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
        you can restart your CLI wallet from any directory with:
 		   ```
-		   stdaemon
+		   blocknet-daemon
 		   ```
 
 1. __Option 2 - Issue `backupwallet <backupfile.dat>` command from *Debug Console* or

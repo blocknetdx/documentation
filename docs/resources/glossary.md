@@ -131,6 +131,11 @@ details of an *Enterprise XRouter* and its relationship to a
 See [this guide](/service-nodes/setup/#service-node-setup) to learn about
 hosting Blocknet's XQuery and Hydra services on a Service Node.
 
+#### EVM
+EVM stands for *Ethereum Virtual Machine*. It refers to any blockchain
+which supports smart contracts in the style of Ethereum. These include
+blockchains like Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA, Etc.
+
 #### EXR 
 EXR stands for *Enterprise XRouter*. See [Enterprise XRouter](#enterprise-xrouter) 
 
@@ -165,9 +170,7 @@ core node protocol written in Golang.
 
 #### Hydra
 A *Hydra Service Node* is simply an [Enterprise XRouter Service Node](#enterprise-xrouter) which
-hosts Ethereum Virtual Machine (EVM) blockchains such as Ethereum/ETH,
-Avalanche/AVAX, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA,
-Etc. A Hydra Service Node can also be easily configured to provide
+hosts [EVM](#evm). A Hydra Service Node can also be easily configured to provide
 [XQuery](#indexer) services, since Hydra and XQuery services share the
 same payment mechanism, the same reverse proxy services, and the same
 hosted EVM blockchains.
@@ -189,9 +192,9 @@ hosting Blocknet's XQuery and Hydra services on a Service Node.
 
 #### Indexer
 An Indexing service makes blockchain data readily accessible to
-developers. The Blocknet Indexer, called XQuery, makes indexed data from blockchains like
-Ethereum/ETH, Avalanche/AVAX, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA,
-Etc., readily available to developers in a
+developers via an SQL-style database query protocol. The Blocknet Indexer, called "XQuery," makes indexed data
+from [EVM](#evm) blockchains, (and potentially non-EVM blockchains),
+readily available to developers in a
 decentralized fashion. A decentralized indexing service is vital to
 DApps which need ready access to blockchain data and want to maintain
 their status as a DApp (Decentralized Application). Note, since

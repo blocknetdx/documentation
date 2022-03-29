@@ -3,7 +3,13 @@ description: This guide explains how to setup your Blocknet wallet for staking t
 
 
 # Staking BLOCK
-Staking is the Proof-of-Stake equivalent of mining in Proof-of-Work blockchains. Stakers validate transactions on the network. These transactions are grouped in blocks. With [Blocknet](/project/introduction), there is 1 block every minute with a 1 [BLOCK](/blockchain/introduction) reward. You can stake with any amount of BLOCK and are rewarded for supporting the network with block rewards.
+Staking is the Proof-of-Stake equivalent of mining in Proof-of-Work
+blockchains. Stakers validate transactions on the network. These
+transactions are grouped in blocks. With
+[Blocknet](/project/introduction), there is 1 block every minute with
+a 1 [BLOCK](/blockchain/introduction) reward. You can stake with any
+amount of BLOCK and are rewarded for supporting the network with block
+rewards. A [Staking Rewards Calculator]( https://staking.blocknet.co/) is available.
 
 ---
 
@@ -89,9 +95,12 @@ rewards.
        services. As of this writing (June, 2021), you can rent a VPS
        capable of running a staking wallet for less than USD $7.00 per month.
 
-	1. Through your VPS provider, launch a small,
-      economical VPS running Ubuntu 20.04.3 LTS Linux. The following
-      are the minimum hardware requirements:
+	1. If you plan to host a Service Node on the same VPS you'll be using for staking, refer to the
+            [Service Node Hardware Requirements](/service-nodes/setup/#hardware-requirements-for-service-node-wallet)
+            instead of the ones given here. Otherwise, follow the
+            hardware requirements given here to select and launch a VPS running
+            Ubuntu 20.04.3 LTS Linux through your VPS provider. The following
+      are the minimum hardware requirements for staking only:
 		  - 1 or more vCPUs
 		  - 20GB or more storage space
 		  - 2GB or more of RAM. (1GB of RAM is sufficient if you
@@ -177,7 +186,8 @@ rewards.
        your own](https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/). Those connecting via `PuTTY` from Windows should first follow [this
        guide to set up SSH Keys with PuTTY](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/). *Note: If you follow this recommendation to restrict access to your
        VPS via SSH Keys, back up your SSH Private key and save the
-       password you choose to unlock your SSH Private Key.* **Stop here if you're just setting up an Ubuntu VPS for an SNode and don't plan to stake on the VPS.**
+       password you choose to unlock your SSH Private Key.* <br>
+	   **Stop here if you're just setting up an Ubuntu VPS for an SNode and don't plan to stake on the VPS.**
 	1. Visit [https://github.com/blocknetdx/blocknet/releases/](https://github.com/blocknetdx/blocknet/releases/) to see
     the latest release version of the Blocknet core wallet:
 	![Latest Release](/img/wallet/latest-release.png)
@@ -212,14 +222,14 @@ rewards.
          alias statements if they are already there from a previous installation.):
 		 ```
 		 BLOCKNET_VERSION='4.3.3'
-		 # stdaemon = Start Blocknet daemon for staking wallet
-		 alias stdaemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon'
+		 # blocknet-daemon = Start Blocknet daemon for staking wallet
+		 alias blocknet-daemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon'
          # blocknet-cli = Staking wallet Command Line Interface
 		 alias blocknet-cli='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli'
-         # stunlock = Unlock staking wallet for staking only
-		 alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
-         # stunlockfull = Unlock staking wallet fully
-		 alias stunlockfull='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 false'
+         # blocknet-unlock = Unlock staking wallet for staking only
+		 alias blocknet-unlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 true'
+         # blocknet-unlockfull = Unlock staking wallet fully
+		 alias blocknet-unlockfull='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli walletpassphrase "$(read -sp "Enter Password:" undo; echo $undo;undo=)" 9999999999 false'
 		 ```
 		 1. Save your edits to `~/.bash_aliases`, exit the editor and
           type the following to activate all the aliases you just
@@ -247,10 +257,10 @@ rewards.
 		```
 		rm blocknet-${BLOCKNET_VERSION}-x86_64-linux-gnu.tar.gz
 		```
-	1. Start the Blocknet daemon using the `stdaemon` alias you defined above. The first time the Blocknet daemon
+	1. Start the Blocknet daemon using the `blocknet-daemon` alias you defined above. The first time the Blocknet daemon
 	is started, it creates the Blocknet data directory, `~/.blocknet`:
 	```
-	stdaemon
+	blocknet-daemon
 	```
 	1. Without waiting for the wallet to [sync](/resources/glossary/#syncing), stop the Blocknet
 	daemon using the `blocknet-cli` alias you defined above:
@@ -285,7 +295,7 @@ rewards.
 
 	1. Restart the Blocknet daemon:
 	```
-	stdaemon
+	blocknet-daemon
 	```
 	1. Issue the command `blocknet-cli getblockcount` every 5
        minutes or so until the command stops returning error messages and
@@ -389,7 +399,7 @@ rewards.
 		1. Restart the Blocknet daemon on your VPS with the following
         command:
 		```
-		stdaemon
+		blocknet-daemon
 		```
 
 		??? info "Note: It is *not* necessary to delete, remove, uninstall or stop using the Blocknet wallet on your home computer just because you imported your home computer's `wallet.dat` to your staking VPS. Read more..."
@@ -446,15 +456,15 @@ rewards.
        wallet for staking*. To unlock your wallet for staking only,
        issue the command:
 	   ```
-	   stunlock
+	   blocknet-unlock
 	   ```
 	   When prompted, enter your wallet passphrase to unlock your
        wallet for staking only. (Your wallet passphrase is the
        passphrase you specified when you encrypted the wallet.) To see
-       what the `stunlock` alias does, type `alias stunlock`. It
+       what the `blocknet-unlock` alias does, type `alias blocknet-unlock`. It
        should show you this command:
 	   ```
-	   alias stunlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli
+	   alias blocknet-unlock='~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli
        walletpassphrase "$(read -sp "Enter Password:" undo; echo
        $undo;undo=)" 9999999999 true'
 	   ```
@@ -496,7 +506,7 @@ rewards.
 		version of the Blocknet wallet and start the new Blocknet daemon.
 		1. Unlock your wallet for staking with:
 	   ```
-	   stunlock
+	   blocknet-unlock
 	   ```
 		   1. Confirm your wallet is staking as in step 26 above.
 		   1. (Recommended) Remove the directory tree of the old

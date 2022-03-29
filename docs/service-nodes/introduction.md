@@ -37,7 +37,23 @@ XCloud service can vary widely and not everything requires coding. For instance,
 
 More documentation will be added here progressively, but if you have any questions in the meantime feel free to ask in our [Discord](https://discord.gg/vGa7GeCu8B).
 
+### Special Kinds of "Service Nodes" for Advanced users
 
+For advanced users, there are 3 special kinds of nodes which are defined as follows:
+
+- __testSNODE__: A *testnet* SNode (testSNODE) is an SNODE which runs on *testnet* instead of *mainnet*. The collateral for this type of SNode is in *tBLOCK* (testnet BLOCK) instead of mainnet BLOCK.
+- __TNODE__: A Trading Node (TNODE) is an instance of Blocknet core
+which is *not* configured to run as a Service Node, but is
+still configured to connect via XBridge to all the coin wallets you
+deploy in the node configuration process. These
+connections allow a user to trade on XBridge between any
+coins deployed in the configuration process. It also allows,
+for example, a Blocknet CLI call to `dxGetLocalTokens` to
+return a list of all the coins you had chosen to support/deploy in the
+node configuration process.
+- __testTNODE__: A *testnet* Trading Node (testTNODE)
+is simply a Trading Node which runs on the *testnet*
+instead of the *mainnet*.
 
 <!-- 
 Service Nodes operators are rewarded according to which type of Service Node they are acting as.

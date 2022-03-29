@@ -7,6 +7,7 @@
 	- [BlockDXServiceNodes](https://block.denarius.pro) (Thank you *@BuzzkillB*!)
 	- [CryptoCoreExplorer](https://block.ccore.online/) (Thank you Telegram user *@jimwal*!)
 	- [Raw Volume Data](https://data.blocknet.co/api/v2.0/ticker) 
+	- [Staking Rewards Calculator]( https://staking.blocknet.co/)
 <!--
 - [BlockDX 24h Volume & much more](https://blockdx.co/orders) (Thank you *@littleeagle*!)
 -->

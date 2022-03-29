@@ -564,22 +564,27 @@ complete the following guides in order:
 ### Auto-Deploy Service Node
 
 ??? example "Auto-Deploy Service Node"
-
-	> First Time Deploying an [EXR](/resources/glossary/#exr) Service Node 
-
-	If you are deploying an EXR Service Node on a server which has
-    never hosted an EXR Service Node before, log in to the
-    Ubuntu Linux server you
+	<br>
+	Firstly, log in to the Ubuntu Linux server you
     [set up above](#set-up-an-ubuntu-linux-server), (log in as the
-    user you created, not as root), then issue these commands:
+    user you created, not as root), then continue with this guide.
+
+	### Run Global Install Script for Enterprise XRouter Service Node Environment
+
+	If you have never run the
+	[Enterprise XRouter](/resources/glossary/#enterprise-xrouter)
+	Service Node Global Install script on this server, and you don't
+	mind using your server's *built-in python3*, copy/paste these
+	commands to run the *Global Install* script:
 	```
 	curl -fsSL https://blocknetdx.github.io/blocknetdx -o env_installer.sh
 	chmod +x env_installer.sh
 	./env_installer.sh --install
 	```
-	Then continue following the steps below.
-
-	>  Deploying an [EXR](/resources/glossary/#exr) Service Node 
+	Note, this script will log you out after it's finished installing
+	everything. This is necessary to update the user's membership in
+	the *docker* group of Linux. Simply log in again after it logs you out.<br>
+	Then following the steps below.<br>
 
 	1. Prepare to enter all the details you'll need when you run
     the `builder.py` script:
@@ -607,32 +612,22 @@ complete the following guides in order:
 	```
 	cd ~/exrproxy-env 
 	```
-	1. Update your local repository and system environment:
-
-	    * If you've deployed an [EXR](/resources/glossary/#exr) [SNode](/resources/glossary/#snode) before on this server, but this is your
-        first time using the `exr_env.sh` and `builder.py` scripts to deploy an SNode on
-        this server, you'll want to issue these command:
-		```
-		git stash
-		git pull
-		./exr_env.sh -p -o -D -d -b ""
-		```
-	* Otherwise, if you have used the `exr_env.sh` and `builder.py`
-	scripts on this server before, you should issue this command:
+	1. Update your local repository and launch the
+	[SNode](/resources/glossary/#snode) Builder:<br>
+	Assuming you have previously run the
+	[Global Install Script](/service-nodes/setup/#run-global-install-script-for-enterprise-xrouter-service-node-environment)
+	on this server, you can update your local environment repository
+	and launch the SNode builder tool with this command:
 	```
-	./exr_env.sh -u -p -b ""
+	./exr_env.sh -u -b ""
 	```
-	* For an explanation of what each of those `exr_env.sh`
-      parameters does, issue the following command:
+	The `-u` parameter updates the local repository.<br>
+	The `-b ""` parameter launches the
+      `builder.py` tool when the update is complete. If you prefer,
+      you can leave off the `-b ""` parameter, then call `./builder.py`
+      standalone after `./exr_env.sh -u` completes, like this:
 	```
-	./exr_env.sh -h 
-	```
-	Note: The `-b ""` parameter of `./exr_env.sh` launches the
-      `builder.py` tool when `./exr_env.sh` completes all the tasks
-      assigned to it by the other parameters. If you prefer,
-      you can leave off the `-b ""` parameter and call `./builder.py`
-      manually after `./exr_env.sh` completes, like this:
-	```
+	./exr_env.sh -u
 	./builder.py
 	```
 	IMPORTANT: When passing parameters to `./builder.py` through
@@ -640,22 +635,21 @@ complete the following guides in order:
       `-b` parameter and they must all be enclosed in double quotes
       ("). For example:
 	```
-	./exr_env.sh -b "--source inputs_yaml/latest.yaml"
+	./exr_env.sh -b "--deploy"
+	./exr_env.sh -b "--source autobuilder/custom.yaml"
 	./exr_env.sh -b ""
 	```
-	Parameters passed to `./builder.py` when it is called outside of
-      `exr_env.sh` do *not* require double quotes around them. For
+	Parameters passed to `./builder.py` when it's called as a
+	standalone app do *not* require double quotes around them. For
       example:
 	```
-	./builder.py --source inputs_yaml/latest.yaml
+	./builder.py --source autobuilder/custom.yaml --deploy
 	```
 
 	1. `builder.py` will first check to see if the necessary versions
        of `docker` and `docker-compose`
-       have already been installed on your server. If not, it will instruct
-       you on how to install them. If `builder.py` stops due to
-       failing this check, issue the `./builder.py` command again once
-       they've been installed.
+       have been installed on your server. If not, it will instruct
+       you to install them and exit.
 	1. Next, it will display some information about your system's available hardware
     resources. This information will be useful in the SNode
     configuration process. It will look something like this:
@@ -667,7 +661,7 @@ complete the following guides in order:
 		any of the answers you have given while configuring your SNode,
 		simply issue *Control-C* to stop the configuration process,
 		then run `./builder.py` (or `./exr_env.sh -b ""`) again.
-	1. First it will request your Public IP address, Service Node
+	1. The first questions it will ask will be about your Public IP address, Service Node
 		Name, Service Node Private Key, Service Node Address, RPC User
 		and RPC Password. You should
 		have the answers to all these questions already prepared from
@@ -677,12 +671,15 @@ complete the following guides in order:
        approximate amount of RAM,
        # of CPUs, and amount of DISK (SSD) storage space required to support each
        service will be displayed next to the service name. Note
-       that the cumulative DISK storage space of all the services you
-       select for each mounted directory on your server must be less
-       than the total amount of DISK storage space available for each mounted
-       directory. The available space on each of your server's mounted
+       that the cumulative DISK storage space requirements of all the services you
+       select to store data in a particular directory, must be less
+       than the total amount of DISK storage space available in that
+       directory. For example, the sum of the DISK requirements for
+       all the services you select to store data in the `/snode`
+       directory must be less than the total available space in
+       the `/snode` directory. (Note, the available space on each of your server's mounted
        directories is displayed when you first run `builder.py`, as in
-       step 5 above. The RAM and CPU requirements of different services are not
+       step 5 above.) The RAM and CPU requirements for different services are not
        necessarily cumulative in the same way. For Example, ETH and AVAX both require 16 GB of RAM, but that doesn't necessarily mean you need 32 GB RAM to support both
        of them on your SNode. However, if you want to have the ability to sync both
        of them concurrently, or to guarantee optimal performance, then
@@ -897,17 +894,25 @@ complete the following guides in order:
 		`.cache_ip`. If you want to reset any of the default values
 		`builder.py` presents to you during the configuration process,
 		deleting (or renaming) one or more of these files before
-		running `./builder.py` will likely do the trick.
+		running `./builder.py` will likely do the trick. You can also
+		reset all of these files at once like this:
+		```
+		./builder.py --prunecache
+		```
 
 	        * `.env` - remembers your Public IP address, Service Node
 				Name, Service Node Private Key, Service Node Address, RPC User
 				and RPC Password.
+
 			* `.known_hosts` - remembers the IP addresses of any
 				externally hosted EVM chains.
+
 			* `.known_volumes` - remembers any special *data mount
 				directories* you chose for specific services.
+
 			* `.cache` - remembers choices you made about which
 				services to support, and how to set up payments
+
 			* `.cache_ip` - remembers the IP addresses assigned to
 				docker containers on the last deployment (so it can try
 				to assign the same IP addresses again if they are available).

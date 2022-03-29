@@ -423,94 +423,245 @@ complete the following guides in order:
 
 ??? example "Collateral Wallet Setup for Automated Service Node Setup"
 
-	!!! warning "IMPORTANT"
-		This Collateral Wallet Setup guide assumes
-		your collateral wallet has been set up according to the
-		[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
-		and the aliases for `blocknet-cli`, `blocknet-daemon` and `blocknet-unlock` have
-		also been created according to that
-		guide. If your collateral wallet is instead a GUI/Qt Blocknet
-		wallet on a different computer, the wallet commands given in this
-		guide in the form,`blocknet-cli wallet-command` can instead be issued in your
-		GUI/Qt wallet under *Tools->Debug
-		Console*. For example, a *Staking Wallet*
-		command given in this guide as `blocknet-cli getnewaddress snode01`
-		can be issued in a GUI/Qt wallet under *Tools->Debug Console* as
-		simply `getnewaddress snode01`.
+	1. Create a new public address to hold collateral for your Service
+		Node. It is recommended to create a new collateral address for each
+		Service Node whose collateral will be stored in this wallet. A unique name for
+		each collateral address will need to be chosen as an alias.
+		We'll refer to this name below as ALIAS.
 
-	1. If your collateral wallet is not yet funded, send collateral funds
-	   to your collateral wallet. Send at least 5001 BLOCK for every Service Node
-	   your collateral wallet will support, plus 1 extra BLOCK. (The 1
-	   extra BLOCK, and the 1 extra BLOCK per Service Node will cover
-	   transaction fees. For example, send at least 15,004 BLOCK for 3
-	   Service Nodes' collateral.) To send BLOCK to
-	   your collateral wallet:
-		   1. Create an address in your collateral wallet to which you can
-		   send the funds. On your *Collateral Wallet* computer (which
-		   could be the same as your *Service Node Wallet* computer),
-		   issue the following command:
-		   ```
-		   blocknet-cli getnewaddress
-		   ```
-		   Note, you can optionally give a label to the new address you
-		   create by passing a *label* parameter to the `getnewaddress`
-		   command. For example, you can label your new address,
-		   "*receive-address*" by issuing the following command:
-		   ```
-		   blocknet-cli getnewaddress receive-address
-		   ```
-		   1. Send BLOCK to the address returned by the `getnewaddress` command.
-	1. Create a new public address for the Service Node. A unique name for
-		this address will need to be provided as an alias. To do this,
-		type `blocknet-cli getnewaddress [ALIAS]` into the terminal with `[ALIAS]` replaced with the alias you will be using for this address. Example:
+	    * To create a collateral address on the GUI/Qt wallet, there are 2 options:
+
+		    1. Select *Address Book* tab on the left side of the
+		wallet, then select *Create New Address* at the top, then fill
+		in the *Alias* field with your ALIAS and click *Add
+		Address*.
+
+			1. Navigate to *Tools->Debug Console* and type:
+			```
+			getnewaddress ALIAS
+			```
+			For Example:
+			```
+			getnewaddress snode01
+			```
+			The `getnewaddress` command will return a new address, like `BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`
+
+	    * To create a collateral address on the CLI wallet:
+		```
+		blocknet-cli getnewaddress ALIAS
+		```
+		For Example:
 		```
 		blocknet-cli getnewaddress snode01
-		BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
 		```
-		In this example, `BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP` was the
-		address returned by `getnewaddress`.
+		The `getnewaddress` command will return a new address, like `BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`
 
-	1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
-		```
-		blocknet-cli servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
-		```
-		* `NODE_ADDRESS` = The address returned in the previous step.
-		* `NODE_COUNT` = The number of Service Nodes to create. 
-			* Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee).
-			* If left blank, it defaults to `1`.
-			* Example: 20,001 BLOCK will be needed to create 4 Service Nodes
+	1. Create the inputs needed for the collateral address.
+		Each address where collateral funds for a Service Node are
+		stored must meet the following requirements:
 
-		* `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
-		  * Must be >= `500` and <= `5000`.
-		  * If left blank, it defaults to `1250`.
-		  * Example: `1000` will create 5 inputs of 1000 BLOCK each per Service Node
+	    #### Collateral Address Requirements
 
-	    Single Service Node Example:
+	    * There must be 10 or fewer [inputs](/resources/glossary/#input) in the
+          address whose sum is >= 5000 BLOCK. There can be other
+          inputs in the address which don't factor into this
+          calculation, but it must be possible to add 10 or fewer
+          inputs in the address to achieve a sum of >= 5000 BLOCK.
+	 * If you want the address to qualify for 1
+       [Superblock vote](/governance/proposal-voting/) (recommended),
+       you should create one small [input](/resources/glossary/#input)
+       to the address, ideally around 1 BLOCK in size, which is
+       *separate* from the inputs used to meet the 5000 BLOCK
+       requirement listed above. 
+	 * If you want the address to qualify for 1
+       [Superblock vote](/governance/proposal-voting/) (recommended),
+       you should also ensure that the set of inputs used to meet the
+       5000 BLOCK requirement are all 100 BLOCK or larger in size.
+
+	    To fund a collateral address such that it meets these
+		requirements, there are two options: __Manual Funding__ or
+		__servicenodecreateinputs__. Use one of these two options (*a*
+		or *b*):
+
+	    1. __Manual Funding:__ (recommended) Each time you send BLOCK to the
+		   collateral address, it creates an
+		   [input](/resources/glossary/#input) to the address whose
+		   size is equal to the amount sent. So, to meet all [the above
+		   requirements](#collateral-address-requirements), you could
+		   send 1 BLOCK to the collateral address, then send
+		   BLOCK in amounts of >= `500` and <= `5000` BLOCK to the same
+		   collateral address until the sum of the >= 500 BLOCK inputs
+		   is >=5000. <br>
+		   
+			   * For example, you could send 1 BLOCK to the
+			   collateral address, then send 1250 BLOCK to the collateral
+			   address 4 times. After doing so, the collateral address
+			   would have 5 [inputs](/resources/glossary/#input): 1 input
+			   of 1 BLOCK and 4 inputs of 1250 BLOCK each. This would meet [the above
+		   requirements](#collateral-address-requirements).
+
+	           * As another example, you could send 1 BLOCK to
+			   the collateral address, then send 5000 BLOCK to the same collateral
+			   address. That would leave the collateral address with 2
+			   [inputs](/resources/glossary/#input): 1 input of 1
+			   BLOCK and 1 input of 5000 BLOCK. This
+			   would also meet [the above requirements](#collateral-address-requirements).
+
+		       Note: If you are sending to the collateral
+			   address from the same wallet which contains the collateral
+			   address, and that wallet also contains other
+			   collateral addresses, it will be good to send the funds using the
+			   [Coin Control](/wallet/send-funds/#coin-control) feature
+			   to ensure the funds you're sending are not withdrawn from other
+			   collateral addresses. If sending from a CLI wallet, you can use methods like
+			   `createrawtransaction` and `sendrawtransaction` to accomplish
+			   coin controlled sending. Get help on using these
+			   methods in the CLI wallet with:<br>
+			   `blocknet-cli help createrawtransaction` <br>
+			   and <br> 
+			   `blocknet-cli help sendrawtransaction`. 
+
+	        ??? "Tip: Click here to learn how to see all inputs of a collateral address."
+
+				* In a GUI/Qt wallet:
+				  Select *Window->Coin Control* to display the addresses and
+				  [Inputs](/resources/glossary/#input) where funds are stored in your
+				  wallet:
+
+                      ![Coin Control](/img/wallet/coin-control-window.png) <br>
+	                  This will display a screen like this (*in Tree mode*):
+				      ![Coin Control](/img/wallet/coin-control-screen.png)
+					  On this screen you can click the small grey triangle
+	                  to the left of an address to see the
+	                  [Inputs](/resources/glossary/#input) of the address.
+
+				* In a CLI wallet, or in *Tools->Debug Console* of
+                  the GUI/Qt wallet: Use the `listunspent` method to
+                  list all wallet [Inputs](/resources/glossary/#input)
+                  and their associated addresses.<br>
+				  From the CLI wallet:
+				  ```
+				  blocknet-cli listunspent
+				  ```
+				  From *Tools->Debug Console* of the GUI/Qt wallet:
+				  ```
+				  listunspent
+				  ```
+
+	    1. __servicenodecreateinputs__: `servicenodecreateinputs` is a
+		method/tool of the Blocknet core wallet which can facillitate creating a set
+		of [inputs](/resources/glossary/#input) in a collateral
+		address which meets
+		[the above requirements](#collateral-address-requirements). Not
+		only does it automatically create a set of inputs which meets
+		[the requirements](#collateral-address-requirements), it also
+		automatically creates a 1 block input to the collateral
+		address to make the address eligible for
+		[voting](/governance/proposal-voting/). Unfortunately,
+		this tool does not (yet) have the ability to avoid withdrawing
+		funds from other collateral addresses in the wallet (if any exist) as it
+		creates the desired set of inputs for a new collateral
+		address. For this reason, and because the recommendation is
+		now to use a separate collateral address for each Service
+		Node's collateral, the use of `servicenodecreateinputs` is
+		deprecated (for now). There are only 2 cases where
+		`servicenodecreateinputs` can be used without issue:
+
+	        1. The first case is when you don't already have a collateral addresses in your
+		wallet which has been set up with
+		[inputs](/resources/glossary/#input) that meet [the above
+		requirements](#collateral-address-requirements).
+
+			1. The second case is when you want to store the collateral for *multiple* Service
+               Nodes in a single collateral address. This approach is not recommended,
+               but it is possible.
+
+	    To use the `servicenodecreateinputs`
+		method/tool, your collateral wallet should contain at least 1 BLOCK
+		to cover the transaction fee of calling the
+		`servicenodecreateinputs` method, and at least 5001
+		BLOCK for each Service Node collateral
+		you want to set up. Once those conditions are met, you
+		can use the `servicenodecreateinputs` method like this: <br>
+		From *Tools->Debug Console* of the GUI/Qt wallet:
 		```
-		blocknet-cli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+		servicenodecreateinputs NODE_ADDRESS NODE_COUNT INPUT_SIZE
 		```
-	Single Service Node (2 inputs) Example:
-	```
-	blocknet-cli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
-	```
-	Multiple Service Nodes (10k BLOCK) Example:
-	```
-	blocknet-cli servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000
-	```
+		From the CLI wallet:
+		```
+		blocknet-cli servicenodecreateinputs NODE_ADDRESS NODE_COUNT INPUT_SIZE
+		```
+		In these examples, replace `NODE_ADDRESS`, `NODE_COUNT` and
+		`INPUT_SIZE` with the desired values, as per the following definitions:
+		
+		* `NODE_ADDRESS` = The collateral address created in step 1 above.
+
+	    * `NODE_COUNT` = The number of Service Nodes for which to
+					 configure the collateral address. It is
+					 recommended to make this 1, or just leave it
+					 blank so it will default to 1. However, as
+					 mentioned, it is possible to configure a single
+					 collateral address to provide collateral for
+					 multiple Service Nodes.
+
+	    * `INPUT_SIZE` = The amount of BLOCK for each
+					 [input](/resources/glossary/#input) of the collateral address. 
+
+	        * Must be >= `500` and <= `5000`.
+
+	        * If left blank, it defaults to `1250`.
+
+			* Example: `1000` will create 5 inputs of
+                           1000 BLOCK each (per Service Node)
+
+	    Example which creates 4 inputs of 1250 BLOCK each in the collateral address, for a single Service Node :
+		```
+		servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+		```
+		Example which creates 2 inputs of 2500 BLOCK each in the collateral address, for a single Service Node :
+		```
+		servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
+		```
+		Example which creates 2 inputs of 2500 BLOCK each in
+		the collateral address for each of 4 Service Nodes
+		```
+		servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 4 2500
+		```
+		This last example will result in 8 inputs of 2500 BLOCK
+		each being created in the collateral address (plus a 1
+		BLOCK input for voting).
 
 	1. Prepare to create a `servicenode.conf` file in your
-       data directory (Linux data dir =`~/.blocknet` by default). Delete any old `servicenode.conf` file in the data directory, or delete any out-of-date service node references within your `servicenode.conf`. 
-	1. Create a `servicenode.conf` configuration file. Enter the command:
+       [data directory](/wallet/backup-restore/#data-directory). If
+       the `servicenode.conf` file does not exist in your data
+       directory, proceed to the next step. Otherwise, review
+       the contents of `servicenode.conf` in an editor like [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
+           or
+           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/). If *all* the
+       service node references in the file are
+       out-of-date, exit the editor and delete the file. If some service node references
+       are current/valid, but others are out-of-date, delete all lines containing
+       out-of-date service node references, save the file and exit the editor.
+	1. Create a `servicenode.conf` configuration file. Use the
+	`servicenodesetup` command as follows: <br>
+	From *Tools->Debug Console* of the GUI/Qt wallet:
 	```
-	blocknet-cli servicenodesetup [NODE_ADDRESS] [ALIAS]
+	servicenodesetup NODE_ADDRESS ALIAS
 	```
-	Where `[NODE_ADDRESS]` is the address created for your Service
-	Node in step 2 above, and `[ALIAS]` is any name you want to give
-	to your Service Node. With this command, 	an entry will be
-	created for the Service Node in the `servicenode.conf` file in
-	your collateral wallet data dir. Example: 
+	From the CLI wallet:
+	```
+	blocknet-cli servicenodesetup NODE_ADDRESS ALIAS
+	```
+	Where `NODE_ADDRESS` is the collateral address you created in step
+	1 above, and `ALIAS` is any name you want to give
+	to your Service Node (or group of Service Nodes). The ALIAS you
+	choose here doesn't have to be the
+	same as the ALIAS you chose for your collateral address in step 1,
+	but it is usually most convenient to use the same ALIAS. The
+	`servicenodesetup` command will create an entry for the Service Node(s) in the
+	`servicenode.conf` file in your collateral wallet [data directory](/wallet/backup-restore/#data-directory). Example: 
 		```
-		blocknet-cli servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
+		servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
 		{
 			"alias": "snode01",
 			"tier": "SPV",
@@ -530,34 +681,44 @@ complete the following guides in order:
        them there if you don't want to paste them into a temporary
        text file to record them.
 	   1. Restart the *Collateral Wallet*.
-		  * For CLI wallet:
+		  * For GUI/Qt wallet, simply close the Blocknet wallet application, then open it again. 
+		  * For CLI wallet (assuming aliases for *blocknet-cli* and
+		  *blocknet-daemon* have been set up according to the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)):
 		  ```
 		  blocknet-cli stop
 		  blocknet-daemon
 		  ```
-		  * For GUI/Qt wallet, simply close the wallet application, then open it again.
 	   Note, you will probably need to wait at least 30 seconds
 	   after issuing `blocknet-cli stop` or closing the GUI wallet app before you'll be allowed to
-	   launch `blocknet-daemon` or re-launch the GUI wallet.  Just keep trying every 30 seconds or so to launch `blocknet-daemon`
-	   until you no longer get, "*Error: Cannot obtain a lock on data directory.*"
+	   relaunch `blocknet-daemon` or relaunch the GUI wallet.  Just keep trying every 30 seconds or so to relaunch until you no longer get errors.
 	   1. Assuming you want to [stake](/resources/glossary/#staking) your collateral, unlock your staking wallet for staking only:
-		  * For CLI wallet:
+		  * For GUI/Qt wallet, unlock your wallet for staking only
+	   according to [the staking guide for GUI wallet](/wallet/staking/#staking-from-a-gui-wallet).
+		  * For CLI wallet (assuming an alias for *blocknet-unlock* has been set up according to the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)):
 		  ```
 		  blocknet-unlock 
 		  ```
-		  * For GUI/Qt wallet, unlock your wallet for staking only
-	   according to [the staking guide for GUI wallet](/wallet/staking/#staking-from-a-gui-wallet).
 	   (Enter your wallet password when prompted.)
-	   1. Confirm your wallet is staking by issuing the command:
+	   1. Confirm your wallet is staking with the `getstakingstatus` command.<br>
+	   From *Tools->Debug Console* of the GUI/Qt wallet:
+	   ```
+	   getstakingstatus
+	   ```
+	   From the CLI wallet:
 	   ```
 	   blocknet-cli getstakingstatus
 	   ```
 	   When this command returns, `"status": "Staking is active"`,
 	   then you know your wallet is staking properly.
 	   Note, you may also want to confirm your staking wallet balance
-	   is correct with:
+	   is correct with `getbalance`:<br>
+	   From *Tools->Debug Console* of the GUI/Qt wallet:
 	   ```
-	   blocknet-cli getbalance
+	   getbalance
+	   ```
+	   From the CLI wallet:
+	   ```
+	   blocknet-cli getbalance 
 	   ```
 	1. Continue on to [auto-deploy your Service Node](#auto-deploy-service-node).
 

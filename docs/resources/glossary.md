@@ -209,7 +209,10 @@ hosting Blocknet's XQuery and Hydra services on a Service Node.
 #### Input
 Within a users [wallet](#wallet), the total balance is composed of
 either one large *input* or various smaller *inputs*. Think of an
-input as a bill in a physical wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. An input is sometimes also referred to as a [UTXO](#utxo).
+input as a bill in a physical wallet. You can have $100 in your
+wallet, but that may be composed of a single $100 bill, 5 $20 bills,
+etc. There are also [addresses](#address) within each wallet. Each
+address can contain multiple inputs. An input is sometimes also referred to as a [UTXO](#utxo).
 
 #### Interchain Communication
 *Interchain communication* is the ability for different blockchains to interact and communicate with each other. For example, one blockchain can write their latest block hashes to the Bitcoin blockchain and also call the data to add extra verification and security.
@@ -393,7 +396,10 @@ UTXO stands for
 [Unspent Transaction Output](https://en.wikipedia.org/wiki/Unspent_transaction_output). Within
 a user's [wallet](#wallet), the total balance is composed of either
 one large UTXO or various smaller UTXOs. Think of a UTXO as a bill in
-a physical wallet. You can have $100 in your wallet, but that may be composed of a single $100 bill, 5 $20 bills, etc. A UTXO is sometimes also referred to as an [input](#input).
+a physical wallet. You can have $100 in your wallet, but that may be
+composed of a single $100 bill, 5 $20 bills, etc. There are also
+[addresses](#address) within each wallet. Each
+address can contain multiple UTXOs. A UTXO is sometimes also referred to as an [input](#input).
 
 
 ---

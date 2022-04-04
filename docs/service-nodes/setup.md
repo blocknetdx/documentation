@@ -411,13 +411,12 @@ complete the following guides in order:
 
 ??? abstract "Set up an Ubuntu Linux server"
 
-	If you didn't follow, and don't plan to follow the
-	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
-	to set up a staking wallet on your Service Node computer, then complete steps 1-13 of the
-	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
-	to set up an Ubuntu Linux server as your Service Node computer, ignoring
-	the Hardware Requirements in that *VPS Staking guide* and instead following the
-	[Hardware Requirements for a Service Node](#hardware-requirements-for-service-node-wallet).
+	Follow these steps to set up a Virtual Private Server (VPS)
+	running Ubuntu 20.04.3 LTS Linux Operating System. Please make sure the
+	VPS you set up meets the 
+	[hardware requirements for a Service Node](#hardware-requirements-for-service-node-wallet).
+
+--8<-- "ubuntu.md"
 
 ### Collateral Wallet Setup for Automated Service Node Setup
 

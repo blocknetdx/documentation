@@ -204,11 +204,9 @@ Operating as a Service Node requires two Blocknet wallets:
 	computer, follow these steps:
 
 	1. Set up your *Staking Wallet*. [Here is an example guide for
-	setting up a *Staking Wallet* on a VPS running Ubuntu Linux](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux). Note,
-	the Hardware Requirements mentioned in that VPS Staking guide
-	should be ignored in this case. The
+	setting up a *Staking Wallet* on a VPS running Ubuntu Linux](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux). The
 	[Hardware Requirements for a Service Node Wallet](#hardware-requirements-for-service-node-wallet)
-	should be followed instead.
+	should be followed when selecting a VPS as per that guide.
 	1. Stop your *Staking Wallet*. If your *Staking Wallet* has been set up
 		   according to
 		   the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
@@ -348,13 +346,13 @@ Operating as a Service Node requires two Blocknet wallets:
 		   ```
 		   Leave the first line of the file as it is:
 		   ```
-		   BLOCKNET_VERSION='4.3.3'
+		   export BLOCKNET_VERSION='4.3.3'
 		   ```
 		   With `4.3.3` being replaced by whatever version of Blocknet
            wallet your *Staking Wallet* is running.
 		   Then change all the alias definitions to be as follows:
 		   ```
-		   BLOCKNET_VERSION='4.3.3'
+		   export BLOCKNET_VERSION='4.3.3'
 		   # blocknet-daemon = Start Blocknet daemon for staking wallet
 		   alias blocknet-daemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon -datadir=$HOME/.blocknet_staking/'
            # blocknet-cli = Staking wallet Command Line Interface
@@ -417,6 +415,8 @@ complete the following guides in order:
 	[hardware requirements for a Service Node](#hardware-requirements-for-service-node-wallet).
 
 --8<-- "ubuntu.md"
+
+	Continue on to [Collateral Wallet Setup for Automated Service Node Setup](#collateral-wallet-setup-for-automated-service-node-setup).
 
 ### Collateral Wallet Setup for Automated Service Node Setup
 

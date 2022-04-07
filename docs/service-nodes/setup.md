@@ -796,14 +796,14 @@ complete the following guides in order:
       ("). For example:
 	```
 	./exr_env.sh -b "--deploy"
-	./exr_env.sh -b "--source autobuilder/custom.yaml"
+	./exr_env.sh -b "--source autobuild/custom.yaml"
 	./exr_env.sh -b ""
 	```
 	Parameters passed to `./builder.py` when it's called as a
 	standalone app do *not* require double quotes around them. For
       example:
 	```
-	./builder.py --source autobuilder/custom.yaml --deploy
+	./builder.py --source autobuild/custom.yaml --deploy
 	```
 
 	1. `builder.py` will first check to see if the necessary versions

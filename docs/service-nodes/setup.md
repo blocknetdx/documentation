@@ -736,7 +736,7 @@ Service Node Setup, complete the following guides in order:
 	mind using your server's *built-in python3*, copy/paste these
 	commands to run the *Global Install* script:
 	```
-	curl -fsSL https://blocknetdx.github.io/blocknetdx -o env_installer.sh
+	curl -fsSL https://getenv.xrouter.com -o env_installer.sh
 	chmod +x env_installer.sh
 	./env_installer.sh --install
 	```

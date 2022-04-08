@@ -43,7 +43,7 @@ Operating as a Service Node requires two Blocknet wallets:
     SSD storage space. Hosting  Hydra or XQuery services requires
     hosting an EVM (Ethereum Virtual Machine) blockchain like
     Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL,
-    Polkadot/DOT, Cardana/ADA, Etc. As of this writing, the smallest EVM
+    Polkadot/DOT, Cardano/ADA, etc. As of this writing, the smallest EVM
     blockchain supported by Blocknet is Avalanche/AVAX. AVAX
     blockchain *alone* requires 8 vCPUs, 16 GB of RAM and 512 GB of storage
     space. Therefore, if you want to host XQuery/Hydra services *and* a few SPV wallets, you
@@ -63,31 +63,31 @@ Operating as a Service Node requires two Blocknet wallets:
 	To give an estimate of how much storage space is required for various
     SPV wallets, here is a snapshot of approximate disk space utilizations taken June 7, 2021:
 
-	??? summary "Snapshot of SPV wallet disk space utilizations taken June 7, 2021"
+	??? summary "Snapshot of SPV wallet disk space utilizations taken April 8, 2022"
 		SPV wallet      | Estimated Size (GB)
 		-------------|--------------------
-		bitcoin        | 415.5
-		dogecoin        | 52.9
-		litecoin        | 50.8
-		dash        | 29.6
-		digibyte        | 25.7
-		raven        | 19.7
-		pivx        | 18.6
-		verge        | 9.1
-		crown        | 6.9
-		phore        | 6.2
-		unobtanium        | 3.5
-		lux        | 3.2
-		blocknet        | 3.2
-		terracoincore        | 3.1
-		alqocrypto        | 2.8
-		monetaryunit        | 2.6
-		syscoin        | 2.5
-		merge        | 2.3
-		zenzo        | 2.1
-		goldcoin        | 1.5
-		egulden        | 1.4
-		stakecubecoin        | 1.0
+		bitcoin        | 500
+		dogecoin        | 70
+		litecoin        | 85
+		dash        | 35
+		digibyte        | 33
+		raven        | 32
+		pivx        | 22
+		verge        | 11
+		crown        | 9
+		phore        | 8
+		unobtanium        | 4
+		lux        | 4
+		blocknet        | 5
+		terracoincore        | 4
+		alqocrypto        | 4
+		monetaryunit        | 5
+		syscoin        | 6
+		merge        | 4
+		zenzo        | 4
+		goldcoin        | 3
+		egulden        | 3
+		stakecubecoin        | 2
 
 
 	> VPS Provider Options for Small, Medium & Large Systems
@@ -204,11 +204,9 @@ Operating as a Service Node requires two Blocknet wallets:
 	computer, follow these steps:
 
 	1. Set up your *Staking Wallet*. [Here is an example guide for
-	setting up a *Staking Wallet* on a VPS running Ubuntu Linux](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux). Note,
-	the Hardware Requirements mentioned in that VPS Staking guide
-	should be ignored in this case. The
+	setting up a *Staking Wallet* on a VPS running Ubuntu Linux](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux). The
 	[Hardware Requirements for a Service Node Wallet](#hardware-requirements-for-service-node-wallet)
-	should be followed instead.
+	should be followed when selecting a VPS as per that guide.
 	1. Stop your *Staking Wallet*. If your *Staking Wallet* has been set up
 		   according to
 		   the [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
@@ -294,10 +292,10 @@ Operating as a Service Node requires two Blocknet wallets:
 		   ```
 
 	1. If you will be setting up your Service Node following the
-       [Automated Docker-Based EXR Service Node Setup Guide](#automated-docker-based-exr-service-node-setup-recommended),
+       [Enterprise XRouter Environment Service Node Setup Guide](#enterprise-xrouter-environment-service-node-setup-docker-based-recommended),
        there is nothing more you need to do regarding your *Staking
        Wallet* and you can proceed directly to the
-       [Automated Docker-Based EXR Service Node Setup Guide](#automated-docker-based-exr-service-node-setup-recommended). However,
+       [Enterprise XRouter Environment Service Node Setup Guide](#enterprise-xrouter-environment-service-node-setup-docker-based-recommended). However,
        if you will be setting up your Service Node following the
        [Manual Service Node Setup Guide](#manual-service-node-setup-deprecated),
        you'll need to move your *Staking Wallet* data directory to
@@ -348,13 +346,13 @@ Operating as a Service Node requires two Blocknet wallets:
 		   ```
 		   Leave the first line of the file as it is:
 		   ```
-		   BLOCKNET_VERSION='4.3.3'
+		   export BLOCKNET_VERSION='4.3.3'
 		   ```
 		   With `4.3.3` being replaced by whatever version of Blocknet
            wallet your *Staking Wallet* is running.
 		   Then change all the alias definitions to be as follows:
 		   ```
-		   BLOCKNET_VERSION='4.3.3'
+		   export BLOCKNET_VERSION='4.3.3'
 		   # blocknet-daemon = Start Blocknet daemon for staking wallet
 		   alias blocknet-daemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon -datadir=$HOME/.blocknet_staking/'
            # blocknet-cli = Staking wallet Command Line Interface
@@ -391,35 +389,35 @@ Operating as a Service Node requires two Blocknet wallets:
 		   ```
 
 
-## Automated Docker-Based [EXR](/resources/glossary/#enterprise-xrouter) Service Node Setup (Recommended)
+## [Enterprise XRouter](/resources/glossary/#enterprise-xrouter) Environment Service Node Setup - Docker based (Recommended)
 
-Note: This Automated Docker-Based EXR Service Node Setup guide is for
+Note: This Enterprise XRouter ([EXR](/resources/glossary/#exr)) Environment Service Node Setup Guide is for
 setting up a Service Node on a computer running Ubuntu Linux
 OS. Please adjust any Ubuntu-specific steps as necessary if
 setting up your Service Node on a different OS.
 
-To setup your Service Node using the Automated
-Docker-Based EXR Service Node Setup,
-complete the following guides in order:
+To setup your Service Node using the Enterprise XRouter Environment
+Service Node Setup, complete the following guides in order:
 
 1. [Set up an Ubuntu Linux server](#set-up-an-ubuntu-linux-server)
-1. [Collateral Wallet Setup for Automated Service Node Setup](#collateral-wallet-setup-for-automated-service-node-setup)
-1. [Auto-Deploy Service Node](#auto-deploy-service-node)
-1. [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
+1. [Collateral Wallet Setup for EXR Service Node](#collateral-wallet-setup-for-exr-service-node)
+1. [Deploy Enterprise XRouter Environment](#deploy-enterprise-xrouter-environment)
+1. [Maintenance of Enterprise XRouter Environment](#maintenance-of-enterprise-xrouter-environment)
 
 ### Set up an Ubuntu Linux server
 
 ??? abstract "Set up an Ubuntu Linux server"
 
-	If you didn't follow, and don't plan to follow the
-	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
-	to set up a staking wallet on your Service Node computer, then complete steps 1-13 of the
-	[VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux)
-	to set up an Ubuntu Linux server as your Service Node computer, ignoring
-	the Hardware Requirements in that *VPS Staking guide* and instead following the
-	[Hardware Requirements for a Service Node](#hardware-requirements-for-service-node-wallet).
+	Follow these steps to set up a Virtual Private Server (VPS)
+	running Ubuntu 20.04.3 LTS Linux Operating System. Please make sure the
+	VPS you set up meets the 
+	[hardware requirements for a Service Node](#hardware-requirements-for-service-node-wallet).
 
-### Collateral Wallet Setup for Automated Service Node Setup
+--8<-- "ubuntu.md"
+
+	Continue on to [Collateral Wallet Setup for EXR Service Node](/service-nodes/setup/#collateral-wallet-setup-for-exr-service-node).
+
+### Collateral Wallet Setup for [EXR](/resources/glossary/#exr) Service Node
 
 ??? example "Collateral Wallet Setup for Automated Service Node Setup"
 
@@ -720,21 +718,21 @@ complete the following guides in order:
 	   ```
 	   blocknet-cli getbalance 
 	   ```
-	1. Continue on to [auto-deploy your Service Node](#auto-deploy-service-node).
+	1. Continue on to [Deploy Enterprise XRouter Environment](#deploy-enterprise-xrouter-environment).
 
-### Auto-Deploy Service Node
+### Deploy Enterprise XRouter Environment
 
-??? example "Auto-Deploy Service Node"
+??? example "Deploy Enterprise XRouter Environment"
 	<br>
 	Firstly, log in to the Ubuntu Linux server you
     [set up above](#set-up-an-ubuntu-linux-server), (log in as the
     user you created, not as root), then continue with this guide.
 
-	### Run Global Install Script for Enterprise XRouter Service Node Environment
+	### Run Global Install Script for Enterprise XRouter Environment
 
 	If you have never run the
 	[Enterprise XRouter](/resources/glossary/#enterprise-xrouter)
-	Service Node Global Install script on this server, and you don't
+	Environment (EXR ENV) Global Install script on this server, and you don't
 	mind using your server's *built-in python3*, copy/paste these
 	commands to run the *Global Install* script:
 	```
@@ -742,30 +740,39 @@ complete the following guides in order:
 	chmod +x env_installer.sh
 	./env_installer.sh --install
 	```
-	Note, this script will log you out after it's finished installing
+
+	If the Global Install Script detects docker/docker-compose is already
+	installed, it simply won't install new version(s). If it detect
+	the `~/exrproxy-env` directory already exists, it will update
+	it. If it detects `~/exrproxy-env` does not already exist, it will
+	clone it from the Github repository and thereby create it.<br>
+
+	Note, this Global Install Script will log you out after it's finished installing
 	everything. This is necessary to update the user's membership in
-	the *docker* group of Linux. Simply log in again after it logs you out.<br>
+	the *docker* group of Linux. Simply log in again after it logs you out.
 	Then following the steps below.<br>
+
 
 	1. Prepare to enter all the details you'll need when you run
     the `builder.py` script:
-		1. Fetch your Service Node computer's Public IP address, then
-        copy/paste it to a temporary text file for easy access.
+		1. Most likely, `builder.py` will automatically find your server's public IP
+        address, but it will be good to know your server's IP so you can
+        verify (in a future step) that `builder.py` has found it correctly.<br>
 		Some options for fetching your Service Node computer's Public IP include: 
 		```
 		curl ipconfig.io
 		curl ifconfig.co
 		dig +short myip.opendns.com @resolver1.opendns.com
 		```
-		Most likely, `builder.py` will automatically find your server's public IP
-        address and display it, but it will be good to know it so you can
-        verify it.
+		Fetch your Service Node computer's Public IP address, then
+        copy/paste it to a temporary text file for easy access.
 		1. Make sure you have easy copy/paste access to your *Servicenode Private
-           Key* and *Servicenode Address*, which you got earlier from the [Collateral Wallet Setup Procedure](#collateral-wallet-setup-for-automated-service-node-setup).
+           Key* and *Servicenode Address*, which you got earlier from the [Collateral Wallet Setup Procedure](#collateral-wallet-setup-for-exr-service-node).
 	    1. Think of a name for your Service Node. It doesn't have to be
           the same name you chose to label the address of your Service
           Node during the *Collateral Wallet Setup*, but it's often
-          convenient to use the same name.
+          convenient to use the same name. Note, there should be no
+          spaces in the names you choose.
 	    1. Think of a name and a password for the RPC user your Service
           Node will use when communication with the services/coins it supports.
 	1. Change directory to your local `exrproxy-env` repository
@@ -776,52 +783,52 @@ complete the following guides in order:
 	1. Update your local repository and launch the
 	[SNode](/resources/glossary/#snode) Builder:<br>
 	Assuming you have previously run the
-	[Global Install Script](/service-nodes/setup/#run-global-install-script-for-enterprise-xrouter-service-node-environment)
+	[Global Install Script](/service-nodes/setup/#run-global-install-script-for-enterprise-xrouter-environment)
 	on this server, you can update your local environment repository
 	and launch the SNode builder tool with this command:
 	```
-	./exr_env.sh -u -b ""
+	./exr_env.sh --update --builder ""
 	```
-	The `-u` parameter updates the local repository.<br>
-	The `-b ""` parameter launches the
+	The `--update` parameter updates the local repository.<br>
+	The `--builder ""` parameter launches the
       `builder.py` tool when the update is complete. If you prefer,
-      you can leave off the `-b ""` parameter, then call `./builder.py`
-      standalone after `./exr_env.sh -u` completes, like this:
+      you can leave off the `--builder ""` parameter, then call `./builder.py`
+      standalone after `./exr_env.sh --update` completes, like this:
 	```
-	./exr_env.sh -u
+	./exr_env.sh --update
 	./builder.py
 	```
 	IMPORTANT: When passing parameters to `./builder.py` through
       `./exr_env.sh`, the parameters of `./builder.py` must follow the
-      `-b` parameter and they must all be enclosed in double quotes
+      `--builder` parameter and they must all be enclosed in double quotes
       ("). For example:
 	```
-	./exr_env.sh -b "--deploy"
-	./exr_env.sh -b "--source autobuild/custom.yaml"
-	./exr_env.sh -b ""
+	./exr_env.sh --builder "--deploy"
+	./exr_env.sh --builder "--source autobuild/sources.yaml"
+	./exr_env.sh --builder ""
 	```
 	Parameters passed to `./builder.py` when it's called as a
 	standalone app do *not* require double quotes around them. For
       example:
 	```
-	./builder.py --source autobuild/custom.yaml --deploy
+	./builder.py --source autobuild/sources.yaml --deploy
 	```
-
-	1. `builder.py` will first check to see if the necessary versions
-       of `docker` and `docker-compose`
-       have been installed on your server. If not, it will instruct
-       you to install them and exit.
-	1. Next, it will display some information about your system's available hardware
+	1. First, `builder.py` will display some information about your system's available hardware
     resources. This information will be useful in the SNode
     configuration process. It will look something like this:
 	![available-hw](/img/service-nodes/system-hw.png)
+	1. `builder.py` will then check to see if the necessary
+       environment, and the necessary versions
+       of `docker` and `docker-compose`
+       have been installed on your server. If not, it will instruct
+       you to install them and exit.
 	1. Next, it will prompt you for your *sudo* password. Enter your
        *user* password, not your *root* password.
 	1. Next, it will ask you some questions about how you want to
 		configure your Service Node. If at any time you want to change
 		any of the answers you have given while configuring your SNode,
 		simply issue *Control-C* to stop the configuration process,
-		then run `./builder.py` (or `./exr_env.sh -b ""`) again.
+		then run `./builder.py` (or `./exr_env.sh --builder ""`) again.
 	1. The first questions it will ask will be about your Public IP address, Service Node
 		Name, Service Node Private Key, Service Node Address, RPC User
 		and RPC Password. You should
@@ -840,7 +847,7 @@ complete the following guides in order:
        directory must be less than the total available space in
        the `/snode` directory. (Note, the available space on each of your server's mounted
        directories is displayed when you first run `builder.py`, as in
-       step 5 above.) The RAM and CPU requirements for different services are not
+       step 4 above.) The RAM and CPU requirements for different services are not
        necessarily cumulative in the same way. For Example, ETH and AVAX both require 16 GB of RAM, but that doesn't necessarily mean you need 32 GB RAM to support both
        of them on your SNode. However, if you want to have the ability to sync both
        of them concurrently, or to guarantee optimal performance, then
@@ -864,7 +871,7 @@ complete the following guides in order:
 		  1. Issue *Control-C* to stop `builder.py` if it's currently running.
 		  1. Make a copy of `autobuild/sources.yaml`. For example:
 		  ```
-		  cp autobuild/sources.yaml autobuild/custom.yaml
+		  cp autobuild/sources.yaml autobuild/my_custom_dir_sources.yaml
 		  ```
 		  1. Use a simple editor like  [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
            or
@@ -872,7 +879,7 @@ complete the following guides in order:
            to edit the copy you just made. For
            Example:
 		   ```
-		   vi autobuild/custom.yaml
+		   vi autobuild/my_custom_dir_sources.yaml
 		   ```
 		   1. In the editor, search for all occurrances of `/snode`
 		   and replace them with whatever new global default you want for your *data
@@ -882,7 +889,7 @@ complete the following guides in order:
 		   specify the file you just edited as the *source* of available
 		   coins/services. For example:
 		   ```
-		   ./builder.py --source autobuild/custom.yaml
+		   ./builder.py --source autobuild/my_custom_dir_sources.yaml
 		   ```
 
 	1. Next, you'll be given the option to choose which
@@ -894,16 +901,16 @@ complete the following guides in order:
        *data mount directory* (`/snode` in this example) are displayed for each
        blockchain. Note: The HW requirements listed next to
        each EVM chain assume the EVM chain will be hosted *internally*,
-       on the SNode server itself. Supporting an *externally* hosted EVM
-       does not add any HW requirements to the SNode server.  (In a
+       on the [EXR ENV](/resources/glossary/#exr-env) server itself. Supporting an *externally* hosted EVM
+       does not add any HW requirements to the EXR ENV server.  (In a
        later step, you'll be given the option to
        specify the Host IPs of the EVM blockchains your
        SNode will support *externally*.)
 	1. If you chose to support [EVM](/resources/glossary/#evm) blockchains,
        you'll be given the option to support [Hydra](/resources/glossary/#hydra) and/or
-       [XQuery](/resources/glossary/#indexer) services for each of the
+       (coming soon) [XQuery](/resources/glossary/#indexer) services for each of the
        EVMs you'll support.
-	1. If you chose to support XQuery, you'll be given the
+	1. If you chose to support XQuery (coming soon), you'll be given the
        option to select which indices you want XQuery to support for each EVM you'll
        support. Supporting all available indices is recommended. For
        example:
@@ -913,11 +920,11 @@ complete the following guides in order:
 
 	1. Next, if you chose to support [EVM](/resources/glossary/#evm)
 	   blockchains, you'll be prompted to enter the
-	   US dollar values you want to charge for access to *tier1* and
-       *tier2* [Hydra](/resources/glossary/#hydra) and
-       [XQuery](/resources/glossary/#indexer) services on your Service
-	   Node. (Default values are recommended.) See
-       [XQuery/Hydra Project Payment API](https://api.blocknet.co) for
+	   US dollar values you want to charge for access to [EXR ENV](/resources/glossary/#exr-env)
+	   services like [Hydra](/resources/glossary/#hydra) and (coming soon) 
+       [XQuery](/resources/glossary/#indexer), at the *tier1* and
+       *tier2* levels. (Default values are recommended.) See
+       [Hydra/XQuery Project Payment API](https://api.blocknet.co) for
 	   definitions of *tier1* and *tier2* payments.
 	1. Next, you'll be prompted to enter the
 	   discount percentages you want to offer clients for payments in aBLOCK or
@@ -951,7 +958,7 @@ complete the following guides in order:
 	   On analyzing this table, if you determine that your server's storage space
        resources are *not* capable of supporting all the services you've elected
        to support, issue *Control-C* to stop the configuration process,
-       then run `./builder.py` (or `./exr_env.sh -b ""`) again. <br>
+       then run `./builder.py` (or `./exr_env.sh --builder ""`) again. <br>
 	   There are 6 columns in the *storage space calculations*  table:
 		   * __Directory__: This column displays the directory in which
              the data for the service will be stored, called the *data mount directory*.
@@ -1019,17 +1026,17 @@ complete the following guides in order:
 	   ```
 	   ./deploy.sh
 	   ```
-	    Tip: If you pass the `--deploy` paramter to `./builder.py`,
+	    Tip: If you pass the `--deploy` parameter to `./builder.py`,
         it will automatically call `./deploy.sh` after it finishes
 		generating the SNode configuration files. <br>
 		Examples:<br>
 		```
 		./builder.py --deploy
-		./exr_env.sh -b "--deploy"
+		./exr_env.sh --builder "--deploy"
 		```
 		__Most likely you
        won't need to follow the remaining steps below if you have
-       followed them previously and you're simply reconfiguring you
+       followed them previously and you're simply reconfiguring your
        SNode on this run. However, if your SNode has been offline for a
        while, you may need to reregister it as per steps 25-29
        below. You can check if your SNode needs to be reregistered by
@@ -1043,7 +1050,7 @@ complete the following guides in order:
 		manifest-latest.json](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json). Service
 		Nodes will also soon have the option to support a wide variety
 		of EVM blockchains, like Ethereum/ETH, Avalanche/AVAX, Binance
-		Smart Chain/BSC, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA, Etc.
+		Smart Chain/BSC, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardano/ADA, etc.
 
 	    ??? tip "Tip: How to Reset Configuration Defaults."
 		`builder.py` *remembers* previous SNode configuration
@@ -1468,22 +1475,23 @@ complete the following guides in order:
 		  sudo iptables -I FORWARD -j f2b-nginx-404
 		  ```
 
-	 1. To learn how to add or subtract supported services/coins from your Service Node, and generally navigate and manage the docker containers of your Service Node, continue on to [Maintenance of Auto-Deployed Service Node](#maintenance-of-auto-deployed-service-node)
+	 1. To learn how to add or subtract supported services/coins from your Service Node, and generally navigate and manage the docker containers of your Service Node, continue on to [Maintenance of Enterprise XRouter Environment](#maintenance-of-enterprise-xrouter-environment)
 
-### Maintenance of Auto-Deployed Service Node
+### Maintenance of Enterprise XRouter Environment
 
-??? abstract "Maintenance of Auto-Deployed Service Node"
+??? abstract "Maintenance of Enterprise XRouter Environment"
 
-	> Changing Configuration of a Docker-Based Service Node (or Trading Node)
+	> Changing Configuration of an Enterprise XRouter Environment
 
 	1. With the advent of the `builder.py` script, the procedure for
-       changing the configuration of an SNode is basically the same as
-       it is for configuring and deploying an SNode for the first
+       changing the configuration of an
+       [EXR ENV](/resources/glossary/#exr-env) is basically the same as
+       it is for configuring and deploying an EXR ENV for the first
        time. That procedure is given in the first 20 steps of the
-       [Auto-Deploy Service Node](#auto-deploy-service-node) guide.
-	   Note, however, if you've subtracted one or more services/coins from your SNode's
-      supported services because you want to save the disk space occupied
-      by those services/coins, please remember that
+       [Deploy Enterprise XRouter Environment](#deploy-enterprise-xrouter-environment) guide.
+	   Note, however, if you've subtracted one or more services/coins
+       from your EXR ENV's supported services because you want to save
+       the disk space occupied by those services/coins, please remember that
       the blockchain data is not deleted/removed when the docker
        container of a service is removed by `builder.py`. The
        blockchain data of a service/coin persists in the
@@ -1519,12 +1527,34 @@ complete the following guides in order:
 	  sudo rm -rf /snode/DGB
 	  ```
 
+	    !!! warning "Warning: If you've been running a [Trading Node](/service-nodes/introduction/#special-kinds-of-service-nodes-for-advanced-users) on your [EXR ENV](/resources/glossary/#exr-env) server, be sure to save any wallet files which may be located in the *data mount directory* before issuing the the `rm -rf` command to remove the *data mount directory*."
+
 	    !!! warning "Warning: Be very careful to enter the `rm -rf` command very precisely. A typo could be disastrous. Also, be aware that adding support for DGB again after deleting its blockchain data will require the DGB blockchain to sync from scratch."
 
 	> About *docker*
 
+	??? tip "Tip: If the blockchain of one of the services in your [EXR ENV](/resources/glossary/#exr-env) gets onto a fork, or gets its database corrupted, often the easiest way to get it back on track is to stop the docker container running the service, then remove *data mount directory* of the service, then start the service again."
+		You can use `./builder.py` to stop the docker container
+		running the service, or you can
+		stop the container manually. For example, to manually
+		stop the DGB container, you would issue this command:
+		```
+		docker stop exrproxy-env-DGB-1
+		```
+		Then you could remove the *data mount directory* like
+		this:
+		```
+		sudo rm -rf /snode/DGB
+		```
+		Then start the container again like this:
+		```
+		docker start exrproxy-env-DGB-1
+		```
+
+		!!! warning "Warning: If you've been running a [Trading Node](/service-nodes/introduction/#special-kinds-of-service-nodes-for-advanced-users) on your [EXR ENV](/resources/glossary/#exr-env) server, be sure to save any wallet files which may be located in the *data mount directory* before issuing the the `rm -rf` command to remove the *data mount directory*."
+
 	For the most part, the *docker* commands given thus far in
-    this guide will suffice to manage your Service Node. However, if
+    this guide will suffice to manage your [EXR ENV](/resources/glossary/#exr-env). However, if
     something "out of the ordinary" happens, or if you want to do
     something fancy with your docker objects,  there are a few more
     things it will be good to know about docker:
@@ -1641,8 +1671,7 @@ complete the following guides in order:
       once `docker-compose down` has failed to complete even once, it can leave
       your docker environment in a state where some docker containers have been
       *stopped*, but have not yet been removed. This state is
-      problematic because your next attempt to bring up your Service
-      Node with `deploy.sh` will give errors saying the
+      problematic because your next attempt to bring up your EXR ENV with `deploy.sh` will give errors saying the
       container names you're trying to create, already exist. If you suspect such
       a situation has developed, one thing you can do is to list *all*
       docker containers - both running and stopped:
@@ -1661,8 +1690,7 @@ complete the following guides in order:
       images on your server which are no longer used and taking up
       space unnecessarily,
       [docker offers a variety of *prune* utilities to clean up the current state of your *docker* environment](https://docs.docker.com/config/pruning/).
-	  - Note: In the context of a docker-based Service Node
-      auto-deployment, executing the following 2 command should be
+	  - Note: In the context of an [EXR ENV](/resources/glossary/#exr-env), executing the following 2 command should be
       equivalent to `docker-compose down`:
 	  ```
 	  docker stop $(docker ps -q -f name=exrproxy-env_*)
@@ -1688,18 +1716,17 @@ complete the following guides in order:
 	```
 	There are also docker guides available at [https://docs.docker.com/go/guides/](https://docs.docker.com/go/guides/).
 
-
+<!--
 ## Manual Service Node Setup (Deprecated)
 
 To setup your Service Node Manually, without using the [Automated
-Docker-Based EXR Service Node Setup](#automated-docker-based-exr-service-node-setup-recommended),
+Docker-Based EXR Service Node Setup](#enterprise-xrouter-environment-service-node-setup-docker-based-recommended),
 complete the following guides in order:
 
 1. [Collateral Wallet Setup](/service-nodes/setup/#collateral-wallet-setup)
 1. [Service Node Wallet Setup](/service-nodes/setup/#service-node-wallet-setup)
 1. [Additional Setup](/service-nodes/setup/#additional-configuration)
 1. [Service Node Deployment](/service-nodes/setup/#deploying-service-node)
-
 ---
 
 ### Collateral Wallet Setup
@@ -2149,6 +2176,7 @@ View the [Operations](/service-nodes/operation) for reference on how to go about
 	* Ensure that the `servicenode.conf` matches on both the Collateral and Service Node Wallets.
 	* Ensure your configuration file is `servicenode.conf` and **NOT** `servicenode.conf.txt`.
 
+-->
 
 
 

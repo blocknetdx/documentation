@@ -68,7 +68,7 @@ rewards.
 
 #### Staking from CLI on a VPS running Ubuntu Linux
 
-??? warning "Warning: If you stake on a VPS, there is *some* risk your BLOCK could be stolen if your VPS provider turns out to be malicious, or if they carelessly place a malicious actor in a privileged position."
+??? warning "Warning: If you stake on a Virtual Private Server (VPS), there is *some* risk your BLOCK could be stolen if your VPS provider turns out to be malicious, or if they carelessly place a malicious actor in a privileged position."
 	The chances of this may be slim for a well-established, reputable
 	VPS provider, yet they do exist because your wallet's private keys
 	are exposed while staking. The risk of this needs to be weighed by
@@ -78,116 +78,26 @@ rewards.
 	cryptographic operations. [Here](https://aws.amazon.com/kms/faqs/) is an 
 	example of such a service.
 
-??? example "Staking from CLI on a VPS running Ubuntu Linux"
-	!!! info "Note: The instructions below assume default data directories are used for all Blocknet wallets. If using custom data directories, please adjust the data directory references accordingly. They also assume *bash* shell, the default shell for Ubuntu, is used. Please adjust as necessary if a different shell is used."
+??? example "Staking from CLI on a Virtual Private Server (VPS) running Ubuntu Linux"
 
-	1. If you're new to the Linux Command Line Interface (CLI),
-       [learn the basics](http://www.linuxcommand.org/index.php). You
-       don't have to learn every detail, but learn to navigate the
-       file system, move and remove files and directories, and edit text files with [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm), [vim](https://vim.rtorr.com) or [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/).
-	1. Sign up for an account at an economical, reliable Virtual
-       Private Server (VPS) provider. As of this writing,
-       [Digital Ocean](https://www.digitalocean.com) and
-       [Contabo](https://contabo.com/en/) seem to be some of the most
-       economical and reliable services available. You might also
-       compare prices with [Vultr](https://www.vultr.com/products/cloud-compute/#pricing), [Amazon AWS](https://aws.amazon.com) and
-       [Google Cloud Computing](https://cloud.google.com) and other
-       services. As of this writing (June, 2021), you can rent a VPS
-       capable of running a staking wallet for less than USD $7.00 per month.
+	> Set up an Ubuntu Linux server 
 
-	1. If you plan to host a Service Node on the same VPS you'll be using for staking, refer to the
+	If you plan to host a [Service Node](/resources/glossary/#service-node) on the same VPS you'll be using
+	for staking, refer to the
             [Service Node Hardware Requirements](/service-nodes/setup/#hardware-requirements-for-service-node-wallet)
-            instead of the ones given here. Otherwise, follow the
-            hardware requirements given here to select and launch a VPS running
-            Ubuntu 20.04.3 LTS Linux through your VPS provider. The following
-      are the minimum hardware requirements for staking only:
-		  - 1 or more vCPUs
-		  - 20GB or more storage space
-		  - 2GB or more of RAM. (1GB of RAM is sufficient if you
-            create 1+GB of swap space in step 12 below).
-	1. Follow the guides available from your VPS provider to launch
-       your Ubuntu VPS and connect to it via `ssh` (from Mac or Linux
-       Terminal) or via `PuTTY` (from Windows). For
-       example,
-	   [here is a nice Quick Start Guide from Digital Ocean](https://docs.digitalocean.com/products/droplets/quickstart/),
-       and
-       [here is a guide from Contabo on connecting to your VPS](https://contabo.com/blog/establishing-connection-server-ssh/).
-	1. The first time you connect to your VPS, you'll be logged in as
-	   `root` user. Create a new user with the following command, replacing `<username>` with a username of your choice.
-	   ```
-	   adduser <username>
-	   ```
-	   You will be prompted for a password. Enter and confirm using a
-	   new password (different to your root password) and store it in
-	   a safe place. You will also see prompts for user information,
-	   but this can be left blank.
-	1. Once the new user has been created, add it to the `sudo` group so it can perform commands as root. Only commands/applications run with `sudo` will run with root privileges. Others run with regular privileges, so type the following command with your `<username>`
-	```
-	usermod -aG sudo <username>
-	```
-	1. Type `exit` at the command prompt to end your Linux session and
-    disconnect from your VPS.
-	1. Reconnect to your VPS (via `ssh` or `PuTTY`), but this time
-    connect as the `<username>` you just added.
-		- Using `ssh` from Mac or Linux Terminal:
-		```
-		ssh <username>@VPS_IP
-		```
-		Example:
-		```
-		ssh bob@104.22.10.214
-		```
-		- Using `PuTTY` from Windows, configure PuTTY to use VPS_IP
-		  as before, but this time login to your VPS with the `<username>` and `password` you just set.
-	1. Update list of available packages. (Enter password for
-	   `<username>` when prompted to do so.)
-	   ```
-	   sudo apt update
-	   ```
-	1. Upgrade the system by installing/upgrading packages.
-	   ```
-	   sudo apt upgrade
-	   ```
-	1. Make sure `nano` and `unzip` packages are installed.
-	   ```
-	   sudo apt install nano unzip
-	   ```
-    1. Create at least as much swap space as you have RAM. So,
-       if you have 16 GB or RAM, you should create at least 16 GB of
-       swap space. Many recommend creating twice as much swap space as
-       you have RAM, which is a good idea if you can spare the disk
-       space. However, more than 16 GB of swap
-       space may not be required for supporting Blocknet
-       services, even if you plan to host a
-       [Service Node](/resources/glossary/#service-node) and
-       [XQuery](/resources/glossary/#xquery). To create swap space:
-	   Check if your system already has swap space allocated:
-	   ```
-	   swapon --show
-	   ```
-		- If the results of `swapon --show` look similar to this:
-		   ```
-		   swapon --show
-		   NAME      TYPE SIZE USED PRIO
-		   /swapfile file   2G   0B   -2
-		   ```
-		   that means you already have some swap space allocated and
-		   you should follow
-		   [this guide](https://linuxhandbook.com/increase-swap-ubuntu/)
-		   to allocate 1x-2x more swap space than you have GB of RAM.
-		- If the results of `swapon --show` do *not* indicate that
-          your system has a *swapfile* of type `file`, you'll need to
-          create a new swap file with 1x-2x more swap space than you have
-          GB of RAM. To do so, follow [this guide](https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/)
+	to determine the HW requirements of the VPS you choose.
+	Otherwise, the following HW requirements will be sufficient for
+	*staking only*:
 
-	1. (Highly Recommended)
-       Increase the security of your VPS by
-       [setting up SSH Keys to restrict access to your VPS from any computer other than
-       your own](https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/). Those connecting via `PuTTY` from Windows should first follow [this
-       guide to set up SSH Keys with PuTTY](https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/). *Note: If you follow this recommendation to restrict access to your
-       VPS via SSH Keys, back up your SSH Private key and save the
-       password you choose to unlock your SSH Private Key.* <br>
-	   **Stop here if you're just setting up an Ubuntu VPS for an SNode and don't plan to stake on the VPS.**
+	- 1 or more vCPUs
+	- 20GB or more storage space
+	- 2GB or more of RAM. (1GB of RAM is sufficient if you
+		create 1+GB of swap space in step 11 below).
+
+--8<-- "ubuntu.md"
+
+	> Set up staking
+
 	1. Visit [https://github.com/blocknetdx/blocknet/releases/](https://github.com/blocknetdx/blocknet/releases/) to see
     the latest release version of the Blocknet core wallet:
 	![Latest Release](/img/wallet/latest-release.png)
@@ -221,7 +131,7 @@ rewards.
          BLOCKNET_VERSION to the latest version and don't bother changing the
          alias statements if they are already there from a previous installation.):
 		 ```
-		 BLOCKNET_VERSION='4.3.3'
+		 export BLOCKNET_VERSION='4.3.3'
 		 # blocknet-daemon = Start Blocknet daemon for staking wallet
 		 alias blocknet-daemon='~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon'
          # blocknet-cli = Staking wallet Command Line Interface
@@ -302,7 +212,7 @@ rewards.
        returns a block height which matches that of
        [Chainz Blockchain Explorer](https://chainz.cryptoid.info/block/).
        (Check the block height much less frequently if you did not
-       speed up syncing with the bootstrap method of step 19.)
+       speed up syncing with the bootstrap method of step 6.)
 
 	1. At this point, the latest Blocknet wallet is installed and
     fully synced. Now you can interact with the Blocknet daemon through
@@ -338,7 +248,7 @@ rewards.
 		[Blocknet API Portal](https://api.blocknet.co).
 
 	1. Fund your staking wallet. Skip to
-    step 24 if you don't have an already funded Blocknet wallet, or if
+    step 11 if you don't have an already funded Blocknet wallet, or if
     you prefer to fund your VPS staking wallet by sending funds to it
     instead of importing an already funded wallet. Otherwise, import an already funded Blocknet
     wallet from your home computer to your VPS as follows.:
@@ -502,13 +412,13 @@ rewards.
 		```
 		blocknet-cli stop
 		```
-		1. Follow steps 14 through 17 above to install the latest
+		1. Follow steps 1 through 4 under *Set up staking* above to install the latest
 		version of the Blocknet wallet and start the new Blocknet daemon.
 		1. Unlock your wallet for staking with:
 	   ```
 	   blocknet-unlock
 	   ```
-		   1. Confirm your wallet is staking as in step 26 above.
+		   1. Confirm your wallet is staking as in step 13 above.
 		   1. (Recommended) Remove the directory tree of the old
 		   version. Use caution with this command; it recursively
 		   removes all files and directories in the specified

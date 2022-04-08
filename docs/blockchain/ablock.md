@@ -97,8 +97,8 @@ aBLOCK will make it possible for people from every country to buy BLOCK (as aBLO
 Having purchased aBLOCK, investors will then have several options of what to do with it:
 
    * They can HODL it and watch it increase in value over time.
-   * They can trade it on Uniswap, Anyswap, Etc. for some other asset.
-   * They can earn steady income with it by adding liquidity to some aBLOCK liquidity pool on Uniswap, Anyswap, Etc.
+   * They can trade it on Uniswap, Anyswap, etc. for some other asset.
+   * They can earn steady income with it by adding liquidity to some aBLOCK liquidity pool on Uniswap, Anyswap, etc.
    * They can "unwrap" it. In other words, they can bridge it back to native BLOCK at a ratio of 1:1. Native BLOCK can then be used for [Blocknet network staking](/wallet/staking/) and/or [Blocknet Service Node collateral](/service-nodes/introduction/).
 
 ### 2. Payment vehicle for Hydra, Blocknet's Decentralized Infura Solution

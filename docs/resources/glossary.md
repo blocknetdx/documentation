@@ -134,11 +134,14 @@ hosting Blocknet's XQuery and Hydra services on a Service Node.
 #### EVM
 EVM stands for *Ethereum Virtual Machine*. It refers to any blockchain
 which supports smart contracts in the style of Ethereum. These include
-blockchains like Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardana/ADA, Etc.
+blockchains like Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardano/ADA, etc.
 
 #### EXR 
 EXR stands for *Enterprise XRouter*. See [Enterprise XRouter](#enterprise-xrouter) 
 
+#### EXR ENV
+EXR ENV stands for *Enterprise XRouter Environment* - an environment
+set up by running the [Global Install Script for Enterprise XRouter Environment](/service-nodes/setup/#run-global-install-script-for-enterprise-xrouter-environment).
 
 ---
 

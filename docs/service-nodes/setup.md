@@ -1275,7 +1275,7 @@ Service Node Setup, complete the following guides in order:
 	    ??? example "Install `fail2ban`"
 		  1. Get the *xr_proxy-log-path*:
 		  ```
-		  docker inspect exrproxy-env_xr_proxy_1 | grep '"LogPath":'
+		  docker inspect exrproxy-env-xr_proxy-1 | grep '"LogPath":'
 		  ```
 		  This will return something like the following:
 		  ```

@@ -93,6 +93,8 @@ This mechanism and values are subject to change in future releases. Join the [De
 ## Fees
 With XRouter, and subsequently [XCloud](/protocol/xcloud/introduction), fees are determined by a free market. Service Nodes can specify the fee that they wish to charge for a call and client can specify the max fee they are willing to pay for calls.
 
+??? info "Note about IP sharing and Fees."
+	When testing and enhancing XRouter, we encountered a bit of IP-sharing between snodes. This is bad practice, because it's evidently a case of one entity voting twice in an XRouter proof. As such go-xrouter filters out duplicate nodes per IP address, so the second node won't get any fees.
 
 ## Use Cases
 

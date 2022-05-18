@@ -39,29 +39,28 @@ Operating as a Service Node requires two Blocknet wallets:
 	
 	If you want to host the [Hydra](/resources/glossary/#hydra) and/or
     [XQuery Indexer](/resources/glossary/#indexer) services (and maybe a few SPV
-    wallets as well), youll need 8 vCPUs, 16 GB of RAM and 512+ GB of
+    wallets as well), you'll likely need at least 10 vCPUs, 60 GB of
+    RAM and 1 TB+ of
     SSD storage space. Hosting  Hydra or XQuery services requires
     hosting an EVM (Ethereum Virtual Machine) blockchain like
     Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL,
-    Polkadot/DOT, Cardano/ADA, etc. As of this writing, the smallest EVM
-    blockchain supported by Blocknet is Avalanche/AVAX. AVAX
-    blockchain *alone* requires 8 vCPUs, 16 GB of RAM and 512 GB of storage
-    space. Therefore, if you want to host XQuery/Hydra services *and* a few SPV wallets, you
-    should really have more than 512 GB of SSD storage space.
+    Polkadot/DOT, Cardano/ADA, etc. Testing of XQuery is still
+	ongoing, so we don't yet know the exact HW requirements for
+	running XQuery with large EVMs like AVAX, BSC or ETH.
 
-	!!! warning "8 vCPUs, 16 GB of RAM and 512+ GB of SSD storage space are required to host the Avalanche/AVAX blockchain for Hydra/XQuery services!"
+	!!! warning "Testing of XQuery is still ongoing, so we don't yet know the exact HW requirements for running XQuery with large EVMs like AVAX, BSC or ETH."
 
 	Minumum HW requirements for a medium to large Service Node would be
     something like this:
 
-	- 8 CPU cores (or 8 vCPUs if the Service Node runs on a VPS)
-	- 16 GB RAM
-	- 512+ GB SSD Storage
+	- 10 CPU cores (or 10 vCPUs if the Service Node runs on a VPS)
+	- 60 GB RAM
+	- 1+ TB SSD Storage
 	- 25+MBit/s Internet download speed  (100+ MBit/s is much better
       for faster syncing.)
 
 	To give an estimate of how much storage space is required for various
-    SPV wallets, here is a snapshot of approximate disk space utilizations taken June 7, 2021:
+    SPV wallets, here is a snapshot of approximate disk space utilizations taken May 18, 2022:
 
 	??? summary "Snapshot of SPV wallet disk space utilizations taken April 8, 2022"
 		SPV wallet      | Estimated Size (GB)
@@ -629,7 +628,7 @@ Service Node Setup, complete the following guides in order:
 		each being created in the collateral address (plus a 1
 		BLOCK input for voting).
 
-	1. Prepare to create a `servicenode.conf` file in your
+	1. Prepare to create (or add a new entry to) a `servicenode.conf` file in your
        [data directory](/wallet/backup-restore/#data-directory). If
        the `servicenode.conf` file does not exist in your data
        directory, proceed to the next step. Otherwise, review
@@ -640,7 +639,7 @@ Service Node Setup, complete the following guides in order:
        out-of-date, exit the editor and delete the file. If some service node references
        are current/valid, but others are out-of-date, delete all lines containing
        out-of-date service node references, save the file and exit the editor.
-	1. Create a `servicenode.conf` configuration file. Use the
+	1. Create (or add a new entry to) a `servicenode.conf` configuration file. Use the
 	`servicenodesetup` command as follows: <br>
 	From *Tools->Debug Console* of the GUI/Qt wallet:
 	```
@@ -750,8 +749,25 @@ Service Node Setup, complete the following guides in order:
 	Note, this Global Install Script will log you out after it's finished installing
 	everything. This is necessary to update the user's membership in
 	the *docker* group of Linux. Simply log in again after it logs you out.
-	Then following the steps below.<br>
+	Then follow the steps below.<br>
 
+	Note, before you run the `builder.py` script in the steps below,
+	confirm that you have `~/.local/bin` in your $PATH variable. You
+	can check this simply like this:
+	```
+	echo $PATH
+	```
+	If you don't see `~/.local/bin` (or `/home/<user-name>/.local/bin`) listed as one of the directories in your $PATH, take steps to ensure it gets added to your $PATH on every login. For example, if you're on a system where `~/.profile` is sourced on every login, you could add these lines to `~/.profile`:
+	```
+	# set PATH so it includes user's private bin if it exists
+	PATH="$HOME/bin:$PATH"
+	# set PATH so it includes user's private bin if it exists
+	PATH="$HOME/.local/bin:$PATH"
+	```
+	Then do this to add `~/.local/bin` to your $PATH:
+	```
+	source ~/.profile
+	```
 
 	1. Prepare to enter all the details you'll need when you run
     the `builder.py` script:
@@ -924,7 +940,7 @@ Service Node Setup, complete the following guides in order:
 	   services like [Hydra](/resources/glossary/#hydra) and (coming soon) 
        [XQuery](/resources/glossary/#indexer), at the *tier1* and
        *tier2* levels. (Default values are recommended.) See
-       [Hydra/XQuery Project Payment API](https://api.blocknet.co) for
+       [Hydra/XQuery Projects API](https://api.blocknet.co/#tier1) for
 	   definitions of *tier1* and *tier2* payments.
 	1. Next, you'll be prompted to enter the
 	   discount percentages you want to offer clients for payments in aBLOCK or
@@ -1084,6 +1100,41 @@ Service Node Setup, complete the following guides in order:
 			* `.cache_ip` - remembers the IP addresses assigned to
 				docker containers on the last deployment (so it can try
 				to assign the same IP addresses again if they are available).
+
+        ##### Warning: Only expose Hasura GUI XQuery port to restricted hosts, if ever.
+
+	    ??? warning "Warning: Only expose Hasura GUI XQuery port to restricted hosts, if ever."
+		  It is a security risk to leave Hasura GUI Console port
+		  exposed to all hosts. By default, this port is *not* exposed
+		  to outside hosts. However, there may be occassions when
+		  an advanced SNode operator wants to expose the Hasura GUI
+		  Console port to a select set of outside hosts for a time. For
+		  example, it could be useful to allow a client to design an SQL query
+		  to the XQuery service on your SNode using the convenient Hasura graphical SQL
+		  query interface. See [XQuery Hasura GUI
+		  Console](https://api.blocknet.co/#xquery-hasura-gui-console)
+		  for instructionsgit status on how to view the XQuery Hasura GUI Console in
+		  a browser.<br>
+		  If you want to expose the Hasura GUI Console port on your
+		  SNode, edit the following section in `docker-compose.yml`
+		  before you run `./deploy.sh`:
+	       ```
+	       xquery-graphql-engine:
+           image: hasura/graphql-engine:v2.0.10
+           hostname: graphql-engine
+           #ports:
+           #  - "8080:8080"
+    	   ```
+		  Uncomment the last two lines of this section, like this
+	       ```
+      	   xquery-graphql-engine:
+           image: hasura/graphql-engine:v2.0.10
+           hostname: graphql-engine
+           ports:
+             - "8080:8080"
+      	   ```
+		  To restrict access to port 8080 to a limited set of hosts,
+		  you can use [*uncomplicated firewall* (ufw)](https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/)
 
 	1. If you are trying to add Service Node support for a *new*
 		coin which is not yet listed in [Blocknet
@@ -1275,7 +1326,7 @@ Service Node Setup, complete the following guides in order:
 	    ??? example "Install `fail2ban`"
 		  1. Get the *xr_proxy-log-path*:
 		  ```
-		  docker inspect exrproxy-env_xr_proxy_1 | grep '"LogPath":'
+		  docker inspect exrproxy-env-xr_proxy-1 | grep '"LogPath":'
 		  ```
 		  This will return something like the following:
 		  ```

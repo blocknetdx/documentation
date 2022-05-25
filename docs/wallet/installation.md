@@ -29,6 +29,8 @@ install the wallet on each operating system (OS).
 
 ---
 
+#### Redesigned vs Classical GUI/Qt wallet
+
 ??? tip "Tip: There are two wallet variations."
 	There are two wallet variations, a redesigned interface (default) and a classic interface. To use the classic wallet, you'll need to open your `blocknet.conf` file and add `classic=1` on a new line (you may not have a `blocknet.conf` file and will need to create one). You can find the `blocknet.conf` file in your Blocknet data directory:
 

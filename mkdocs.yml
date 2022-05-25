@@ -123,6 +123,7 @@ nav:
   - 'Backup/Restore': 'wallet/backup-restore.md'
   - 'Staking': 'wallet/staking.md'
   - 'Send Funds': 'wallet/send-funds.md'
+  - 'Coin Control': 'wallet/coin-control.md'
   - 'Fix Wrong Balance': wallet/fix-wrong-balance.md
   - 'Fork Management': 'wallet/forking.md'
   # - 'Peers': 'wallet/peers.md'

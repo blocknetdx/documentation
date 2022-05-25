@@ -506,11 +506,13 @@ Service Node Setup, complete the following guides in order:
 
 		       Note: If you are sending to the collateral
 			   address from the same wallet which contains the collateral
-			   address, and that wallet also contains other
-			   collateral addresses, it will be good to send the funds using the
-			   [Coin Control](/wallet/send-funds/#coin-control) feature
-			   to ensure the funds you're sending are not withdrawn from other
-			   collateral addresses. If sending from a CLI wallet, you can use methods like
+			   address (and possibly other collateral addreses), it will be good to either [lock the inputs of
+			   funds in collateral addresses](/wallet/coin-control), or send the funds using the
+			   [Coin Controlled Sending](/wallet/send-funds/#coin-control) feature
+			   to ensure the funds you're sending are not withdrawn
+			   from a collateral address you're trying to fund. It's
+			   easiest to perform coin controlled sending from the
+			   redesigned GUI/Qt wallet. However, if sending from a CLI wallet, you can use methods like
 			   `createrawtransaction` and `sendrawtransaction` to accomplish
 			   coin controlled sending. Get help on using these
 			   methods in the CLI wallet with:<br>
@@ -520,8 +522,8 @@ Service Node Setup, complete the following guides in order:
 
 	        ??? "Tip: Click here to learn how to see all inputs of a collateral address."
 
-				* In a GUI/Qt wallet:
-				  Select *Window->Coin Control* to display the addresses and
+				* In a [redesigned GUI/Qt wallet](/wallet/installation/#redesigned-vs-classical-guiqt-wallet):
+				  Select *Window->Coin Control* to display the [addresses](/resources/glossary/#address) and
 				  [Inputs](/resources/glossary/#input) where funds are stored in your
 				  wallet:
 
@@ -554,25 +556,22 @@ Service Node Setup, complete the following guides in order:
 		[the requirements](#collateral-address-requirements), it also
 		automatically creates a 1 block input to the collateral
 		address to make the address eligible for
-		[voting](/governance/proposal-voting/). Unfortunately,
-		this tool does not (yet) have the ability to avoid withdrawing
-		funds from other collateral addresses in the wallet (if any exist) as it
-		creates the desired set of inputs for a new collateral
-		address. For this reason, and because the recommendation is
-		now to use a separate collateral address for each Service
-		Node's collateral, the use of `servicenodecreateinputs` is
-		deprecated (for now). There are only 2 cases where
-		`servicenodecreateinputs` can be used without issue:
-
-	        1. The first case is when you don't already have a collateral addresses in your
-		wallet which has been set up with
-		[inputs](/resources/glossary/#input) that meet [the above
-		requirements](#collateral-address-requirements).
-
-			1. The second case is when you want to store the collateral for *multiple* Service
-               Nodes in a single collateral address. This approach is not recommended,
-               but it is possible.
-
+		[voting](/governance/proposal-voting/).<br>
+		__NOTE:__ If your wallet contains other collateral addresses
+		which have already been funded, you'll want to [lock the inputs of
+			   funds in all collateral addresses](/wallet/coin-control) to prevent
+		`servicenodecreateinputs` from withdrawing
+		funds from other collateral addresses when
+		 it's called.<br>
+		 __NOTE:__ It is possible to use `servicenodecreateinputs` to
+		set up collateral for multiple Service Nodes in a single collateral
+		address. However, because this practice makes it difficult for
+		tracking tools to associate collateral addresses with Service
+		Nodes, the recommendation is to use a separate collateral address for each Service
+		Node's collateral. Effectively, this means the recommendation
+		is to always pass a `NODE_COUNT` parameter of `1`, or just
+		leave the `NODE_COUNT` blank so it will default to
+		`1` when calling `servicenodecreateinputs`. (See examples below.)<br>
 	    To use the `servicenodecreateinputs`
 		method/tool, your collateral wallet should contain at least 1 BLOCK
 		to cover the transaction fee of calling the
@@ -632,9 +631,7 @@ Service Node Setup, complete the following guides in order:
        [data directory](/wallet/backup-restore/#data-directory). If
        the `servicenode.conf` file does not exist in your data
        directory, proceed to the next step. Otherwise, review
-       the contents of `servicenode.conf` in an editor like [vi](https://www.tutorialspoint.com/unix/unix-vi-editor.htm)
-           or
-           [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/). If *all* the
+       the contents of `servicenode.conf` in an editor. If *all* the
        service node references in the file are
        out-of-date, exit the editor and delete the file. If some service node references
        are current/valid, but others are out-of-date, delete all lines containing
@@ -1113,7 +1110,7 @@ Service Node Setup, complete the following guides in order:
 		  to the XQuery service on your SNode using the convenient Hasura graphical SQL
 		  query interface. See [XQuery Hasura GUI
 		  Console](https://api.blocknet.co/#xquery-hasura-gui-console)
-		  for instructionsgit status on how to view the XQuery Hasura GUI Console in
+		  for instructions on how to view the XQuery Hasura GUI Console in
 		  a browser.<br>
 		  If you want to expose the Hasura GUI Console port on your
 		  SNode, edit the following section in `docker-compose.yml`

@@ -30,11 +30,11 @@ extra:
     - type: 'reddit'
       link: 'https://www.reddit.com/r/theblocknet/'
     - type: 'youtube'
-      link: 'https://www.youtube.com/channel/UCCDBoR9fHb21bLH7FGvFrQg/playlists'
+      link: 'https://www.youtube.com/c/TheBlocknet'
     - type: 'instagram'
       link: 'https://www.instagram.com/the_blocknet/'
     - type: 'linkedin'
-      link: 'https://www.linkedin.com/company/blocknet/'
+      link: 'https://www.linkedin.com/company/the-blocknet/'
   snode_collateral: '5000'
   proposal_link: 'http://blocknetdx.forumotion.com/f3-self-funding-proposals'
   newsletter_general: 'http://eepurl.com/c5OJMj'
@@ -200,5 +200,5 @@ nav:
 - 'About':
   - 'License': 'about/license.md'
 - 'Glossary': 'resources/glossary.md'
-copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
-# copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>For collaboration, <a href="mailto:contact@blocknet.co">send us an email</a>.<br>Blocknet Protocol 2014.
+copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2022.
+# copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>For collaboration, <a href="mailto:contact@blocknet.co">send us an email</a>.<br>Blocknet Protocol 2022.

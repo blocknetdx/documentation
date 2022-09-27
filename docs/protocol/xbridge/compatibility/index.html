@@ -1,0 +1,2567 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Blocknet has over 100 digital assets tested and confirmed to be supported by XBridge, with the number continuously growing as more are integrated.">
+      
+      
+        <link rel="canonical" href="https://docs.blocknet.co/protocol/xbridge/compatibility/">
+      
+      
+        <meta name="author" content="Blocknet">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+    
+    
+<title>Blocknet Protocol - XBridge Asset Compatibility</title>
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/fonts.css">
+    
+      <link rel="stylesheet" href="../../../css/style.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-109213957-4", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta name="theme-color" content="#dddfeb">
+<link rel="shortlink" href="https://docs.blocknet.co/">
+<link rel="dns-prefetch" href="//www.blocknet.co">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="mask-icon" href="https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg" color="#051937">
+<meta name="msapplication-TileColor" content="#dddfeb">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blocknet Protocol - XBridge Asset Compatibility">
+<meta property="og:description" content="Blocknet has over 100 digital assets tested and confirmed to be supported by XBridge, with the number continuously growing as more are integrated.">
+<meta property="og:url" content="https://docs.blocknet.co/">
+<meta property="og:site_name" content="Blocknet Documentation">
+<meta property="og:image" content="/img/blocknet.png">
+<meta property="og:image:secure_url" content="/img/blocknet.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Blocknet has over 100 digital assets tested and confirmed to be supported by XBridge, with the number continuously growing as more are integrated.">
+<meta name="twitter:title" content="Blocknet Protocol - XBridge Asset Compatibility">
+<meta name="twitter:image" content="/img/blocknet.png"> 
+
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#xbridge-digital-asset-compatibility" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.blocknet.co/" title="Blocknet Documentation" aria-label="Blocknet Documentation" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../../img/blocknet-logo-128.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Blocknet Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Blocknet Protocol - XBridge Asset Compatibility
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.blocknet.co/" title="Blocknet Documentation" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../../img/blocknet-logo-128.svg" width="48" height="48">
+      
+    </a>
+    Blocknet Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/blocknet-whitepaper.pdf" title="Whitepaper" class="md-nav__link">
+      Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../governance/introduction/" title="Governance" class="md-nav__link">
+      Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/contributors/" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/social/" title="Social" class="md-nav__link">
+      Social
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Blockchain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Blockchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockchain/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockchain/aablock/" title="aaBLOCK" class="md-nav__link">
+      aaBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockchain/ablock/" title="aBLOCK" class="md-nav__link">
+      aBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockchain/explorers/" title="Explorers" class="md-nav__link">
+      Explorers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Protocol
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Protocol
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" checked>
+    
+    <label class="md-nav__link" for="nav-4-1">
+      XBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        XBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Compatibility
+      </label>
+    
+    <a href="./" title="Compatibility" class="md-nav__link md-nav__link--active">
+      Compatibility
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    Integration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain-requirements" class="md-nav__link">
+    Blockchain Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-digital-assets" class="md-nav__link">
+    Supported Digital Assets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xbridge-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      XRouter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        XRouter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xrouter/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xrouter/introduction/#use-cases" title="Use Cases" class="md-nav__link">
+      Use Cases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xrouter-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      XCloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        XCloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xcloud/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xcloud-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Blocknet Wallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Blocknet Wallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/syncing/" title="Syncing" class="md-nav__link">
+      Syncing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/encrypting/" title="Encrypt Wallet" class="md-nav__link">
+      Encrypt Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/backup-restore/" title="Backup/Restore" class="md-nav__link">
+      Backup/Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/staking/" title="Staking" class="md-nav__link">
+      Staking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/send-funds/" title="Send Funds" class="md-nav__link">
+      Send Funds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/coin-control/" title="Coin Control" class="md-nav__link">
+      Coin Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/fix-wrong-balance/" title="Fix Wrong Balance" class="md-nav__link">
+      Fix Wrong Balance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/forking/" title="Fork Management" class="md-nav__link">
+      Fork Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/lock-unlock/" title="Lock/Unlock" class="md-nav__link">
+      Lock/Unlock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wallet/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      XLite
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        XLite
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../xlite/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../xlite/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../xlite/backup-and-restore/" title="Create, Backup & Restore" class="md-nav__link">
+      Create, Backup & Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../xlite/blockdx-xlite/" title="Using BlockDX w/ XLite" class="md-nav__link">
+      Using BlockDX w/ XLite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../xlite/access-coin-daemons-via-rpc/" title="Access Coin Daemons via RPC" class="md-nav__link">
+      Access Coin Daemons via RPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../xlite/recover-private-keys/" title="Recover Private Keys" class="md-nav__link">
+      Recover Private Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../xlite/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Block DX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Block DX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/trading/" title="Trading" class="md-nav__link">
+      Trading
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/listings/" title="Listings" class="md-nav__link">
+      Listings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../blockdx/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Service Nodes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Service Nodes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../service-nodes/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../service-nodes/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../service-nodes/operation/" title="Operation" class="md-nav__link">
+      Operation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../service-nodes/xbridge-configuration/" title="XBridge Configuration" class="md-nav__link">
+      XBridge Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../service-nodes/xrouter-configuration/" title="XRouter Configuration" class="md-nav__link">
+      XRouter Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../service-nodes/xcloud-configuration/" title="XCloud Configuration" class="md-nav__link">
+      XCloud Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Governance
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Governance
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../governance/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../governance/view-proposals/" title="View Proposals" class="md-nav__link">
+      View Proposals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../governance/create-proposal/" title="Create Proposal" class="md-nav__link">
+      Create Proposal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../governance/proposal-voting/" title="Proposal Voting" class="md-nav__link">
+      Proposal Voting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../resources/interviews/" title="Interviews" class="md-nav__link">
+      Interviews
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://blocknet.co/brand-resources/" title="Branding Resources" class="md-nav__link">
+      Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../project/social-media-guidelines.pdf" title="Social Media Guideline" class="md-nav__link">
+      Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Developers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Developers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co" title="API" class="md-nav__link">
+      API <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../resources/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    Integration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain-requirements" class="md-nav__link">
+    Blockchain Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-digital-assets" class="md-nav__link">
+    Supported Digital Assets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/blocknetdx/documentation/edit/master/docs/protocol/xbridge/compatibility.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="xbridge-digital-asset-compatibility">XBridge Digital Asset Compatibility<a class="headerlink" href="#xbridge-digital-asset-compatibility" title="Permanent link">&para;</a></h1>
+<p>Any digital asset that supports lock time checks and has a JSON RPC interface will be compatible with Blocknet's XBridge. As a result, most digital assets in existence today are compatible. </p>
+<p>Currently Blocknet has over 100 <a href="/resources/glossary/#digital-asset">digital assets</a> tested and confirmed to be supported by XBridge, with the number continuously growing as more are integrated. </p>
+<hr />
+<h2 id="integration">Integration<a class="headerlink" href="#integration" title="Permanent link">&para;</a></h2>
+<p>Being integrated with Blocknet holds many benefits. Not only does it allow an asset to be traded using Block DX, a decentralized exchange built on XBridge, but it allows other services to be built utilizing the asset. This extends the demand, utility, and accessibility of the asset to the rest of the ecosystem.</p>
+<p>Integration of assets is a free and open process, without permission required. All configuration files are located in Blocknet's <a href="https://github.com/blocknetdx/blockchain-configuration-files/">blockchain-configuration-files</a> Github repository.</p>
+<p>If you would like to have a digital asset supported, please ask a member of that project to fill out the <a href="https://bit.ly/blocknet-compatibility">integration form</a> or create a pull request.</p>
+<h4 id="blockchain-requirements">Blockchain Requirements<a class="headerlink" href="#blockchain-requirements" title="Permanent link">&para;</a></h4>
+<p>In order for for a blockchain to be compatible it must support JSON RPC, CLTV atomic swaps, and the following calls:</p>
+<ul>
+<li>createrawtransaction</li>
+<li>decoderawtransaction</li>
+<li>getblock</li>
+<li>getblockchaininfo (fallback getnetworkinfo, getinfo)</li>
+<li>getblockhash</li>
+<li>getnewaddress</li>
+<li>getrawmempool</li>
+<li>getrawtransaction</li>
+<li>gettransaction</li>
+<li>gettxout</li>
+<li>listunspent</li>
+<li>sendrawtransaction</li>
+<li>signmessage</li>
+<li>signrawtransaction (or signrawtransactionwithwallet)</li>
+<li>verifymessage</li>
+</ul>
+<hr />
+<h2 id="supported-digital-assets">Supported Digital Assets<a class="headerlink" href="#supported-digital-assets" title="Permanent link">&para;</a></h2>
+<p><strong>Note</strong>: XBridge is not yet compatible with hardware wallets such as Ledger, web wallets such as MyEtherWallet (MEW), or lite wallets such as Jaxx. Desktop Qt/cli wallets must be used. Below is a list of compatible assets and respective wallet versions. </p>
+<style>
+.md-typeset__scrollwrap {
+    overflow-x: visible;
+}
+.md-typeset .md-typeset__table #bn-table {
+        margin-bottom: -15px;
+}
+</style>
+
+<!-- 
+<form>
+    Asset Lookup: <input id="sb_input" type="text" placeholder="Enter asset"/>
+    <br><br>
+</form>
+-->
+
+<div class="admonition warning">
+<p class="admonition-title"><strong>DO NOT</strong> use a wallet version not listed here, it is either not compatible or hasn't been tested.</p>
+</div>
+<details class="abstract" open="open"><summary>Compatible with Blocknet wallet v4.3.x</summary><p><a href="https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json">View Manifest</a></p>
+<p><table id="bn-table">
+    <thead>
+        <tr>
+            <th>Digital Asset</th>
+            <th>Ticker</th>
+            <th>Supported Wallet Versions</th>
+        </tr>
+    </thead>
+    <tbody id="bn-tbody">
+        <tr><td>Abosom          </td><td>ABS    </td><td><a href="https://github.com/ZenyattaAbosom/Abosom/releases/tag/v1.0.0">v1.0.0</a></td><tr>
+        <tr><td>AeriumX         </td><td>AEX    </td><td><a href="https://github.com/aeriumcoin/AeriumX/releases/tag/v2.2">v2.2</a></td><tr>
+        <tr><td>Altbet          </td><td>ABET   </td><td><a href="https://github.com/altbet/abet/releases/tag/v3.4.1.0">v3.4.1.0</a>, <a href="https://github.com/altbet/abet/releases/tag/v3.4.1.0+">v3.4.1.0+</a></td><tr>
+        <tr><td>APR Coin        </td><td>APR    </td><td><a href="https://github.com/APRCoin/zenith-repository/releases/tag/V3.1.0">V3.1.0</a></td><tr>
+        <tr><td>Argoneum        </td><td>AGM    </td><td><a href="https://github.com/Argoneum/argoneum/releases/tag/v1.4.0.0">v1.4.0.0</a>, <a href="https://github.com/Argoneum/argoneum/releases/tag/v1.4.1.0">v1.4.1.0</a></td><tr>
+        <tr><td>ATBCoin         </td><td>ATB    </td><td><a href="https://github.com/segwit/atbcoin/releases/tag/v1.1.0">v1.1.0</a></td><tr>
+        <tr><td>AustraliaCash   </td><td>AUS    </td><td><a href="https://github.com/AustraliaCash/AustraliaCash-Core/releases/tag/v0.17.4.1">v0.17.4.1</a></td><tr>
+        <tr><td>Badcoin         </td><td>BAD    </td><td><a href="https://github.com/badcoin-net/Badcoin/releases/tag/v0.16.3-2">v0.16.3-2</a></td><tr>
+        <tr><td>Bitcloud        </td><td>BTDX   </td><td><a href="https://github.com/LIMXTEC/Bitcloud/releases/tag/2.1.0.1.1">2.1.0.1.1</a></td><tr>
+        <tr><td>Bitcoin         </td><td>BTC    </td><td><a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.2">v0.15.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.1">v0.16.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0">v0.17.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0.1">v0.17.0.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.1">v0.17.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.0">v0.18.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.1">v0.18.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0">v0.19.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0.1">v0.19.0.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.1">v0.19.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.20.0">v0.20.0</a></td><tr>
+        <tr><td>Bitcoin Cash    </td><td>BCH    </td><td><a href="https://github.com/Bitcoin-ABC/bitcoin-abc/releases/tag/v0.21.11">v0.21.11</a></td><tr>
+        <tr><td>Bitcoin CZ      </td><td>BCZ    </td><td><a href="https://github.com/SpecialCoins/bitcoincz/releases/tag/6.0.3.2">6.0.3.2</a></td><tr>
+        <tr><td>Bitcoin Diamond </td><td>BCD    </td><td><a href="https://github.com/eveybcd/BitcoinDiamond/releases/tag/v1.3.0">v1.3.0</a></td><tr>
+        <tr><td>Bitcoin Gold    </td><td>BTG    </td><td><a href="https://github.com/BTCGPU/BTCGPU/releases/tag/v0.17.2">v0.17.2</a></td><tr>
+        <tr><td>BitGreen        </td><td>BITG   </td><td><a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.4.0.8">v1.4.0.8</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.4.0.9">v1.4.0.9</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.5.0.1">v1.5.0.1</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.5.0.2">v1.5.0.2</a></td><tr>
+        <tr><td>BitCore         </td><td>BTX    </td><td><a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.8.1">0.90.8.8.1</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.9">0.90.8.9</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.10">0.90.8.10</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.11">0.90.8.11</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.9.0">0.90.9.0</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.9.1">0.90.9.1</a></td><tr>
+        <tr><td>BitcoinZero     </td><td>BZX    </td><td><a href="https://github.com/SpecialCoins/BitcoinZero/releases/tag/5.0.7.8">5.0.7.8</a></td><tr>
+        <tr><td>BitMoney        </td><td>BIT    </td><td><a href="https://github.com/CryptVenture/BitMoneyV22/releases/tag/2.2.0.2">2.2.0.2</a></td><tr>
+        <tr><td>BitSend         </td><td>BSD    </td><td><a href="https://github.com/LIMXTEC/BitSend/releases/tag/0.14.2.0.1">0.14.2.0.1</a></td><tr>
+        <tr><td>BLAST           </td><td>BLAST  </td><td><a href="https://github.com/blastdev/blast-core-v2/releases/tag/v2.2.0">v2.2.0</a></td><tr>
+        <tr><td>Blocknet        </td><td>BLOCK  </td><td><a href="https://github.com/blocknetdx/blocknet/releases/tag/v4.3.0">v4.3.0</a></td><tr>
+        <tr><td>Carebit         </td><td>CARE   </td><td><a href="https://github.com/carebitcoin/carebitcoin/releases/tag/v5.0.0">v5.0.0</a></td><tr>
+        <tr><td>CbdHealthNetwork </td><td>CHN </td><td><a href="https://github.com/CHN-portal/CHN-Portal/releases/tag/wallets-source-daemon">wallets-source-daemon</a></td><tr>
+        <tr><td>Chaincoin       </td><td>CHC    </td><td><a href="https://github.com/chaincoin/chaincoin/releases/tag/v0.18">v0.18</a></td><tr>
+        <tr><td>Civitas         </td><td>CIV    </td><td><a href="https://github.com/eastcoastcrypto/Civitas/releases/tag/v1.2.2">v1.2.2</a></td><tr>
+        <tr><td>ColossusXT      </td><td>COLX   </td><td><a href="https://github.com/ColossusCoinXT/ColossusCoinXT/releases/tag/v1.2.3">v1.2.3</a>, <a href="https://github.com/ColossusCoinXT/ColossusCoinXT/releases/tag/v1.2.4">v1.2.4</a></td><tr>
+        <tr><td>Crave           </td><td>CRAVE  </td><td><a href="https://github.com/Crave-Community-Project/Crave-Project/releases/tag/v2.5.2">v2.5.2</a></td><tr>
+        <tr><td>Crypto Dezire Cash </td><td>CDZC </td><td><a href="https://github.com/cryptodezire/CryptoDezireCash/releases/tag/v2.1.2">v2.1.2</a></td><tr>
+        <tr><td>Cryptonodes     </td><td>CNMC   </td><td><a href="https://github.com/cryptonodes-core/cryptonodes-core/releases/tag/v1.4.4.1">v1.4.4.1</a></td><tr>
+        <tr><td>Dash            </td><td>DASH   </td><td><a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.2">v0.14.0.2</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.3">v0.14.0.3</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.4">v0.14.0.4</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.5">v0.14.0.5</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.15.0.0">v0.15.0.0</a></td><tr>
+        <tr><td>Denarius        </td><td>D      </td><td><a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.3">v3.3.9.3</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.4">v3.3.9.4</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.5">v3.3.9.5</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.6">v3.3.9.6</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.7">v3.3.9.7</a></td><tr>
+        <tr><td>Desire          </td><td>DSR    </td><td><a href="https://github.com/lazyboozer/Desire/releases/tag/Desire-v.0.12.2.2">Desire-v.0.12.2.2</a></td><tr>
+        <tr><td>DeVault         </td><td>DVT    </td><td><a href="https://github.com/devaultcrypto/devault/releases/tag/v1.1.7">v1.1.7</a></td><tr>
+        <tr><td>Diamond         </td><td>DMD    </td><td><a href="https://github.com/DMDcoin/Diamond/releases/tag/3.0.1.3">3.0.1.3</a></td><tr>
+        <tr><td>DigiByte        </td><td>DGB    </td><td><a href="https://github.com/digibyte/digibyte/releases/tag/v7.17.2">v7.17.2</a></td><tr>
+        <tr><td>Digiwage        </td><td>WAGE   </td><td><a href="https://github.com/digiwage/digiwage/releases/tag/1.2.1">1.2.1</a></td><tr>
+        <tr><td>Divi            </td><td>DIVI   </td><td><a href="https://github.com/DiviProject/Divi/releases/tag/v1.1.2">v1.1.2</a>, <a href="https://github.com/DiviProject/Divi/releases/tag/DESK-1.6.6">DESK-1.6.6</a></td><tr>
+        <tr><td>DogeCash        </td><td>DOGEC  </td><td><a href="https://github.com/dogecash/dogecash/releases/tag/5.2.1.0">5.2.1.0</a></td><tr>
+        <tr><td>Dogecoin        </td><td>DOGE   </td><td><a href="https://github.com/dogecoin/dogecoin/releases/tag/v1.14.2">v1.14.2</a></td><tr>
+        <tr><td>Dynamic         </td><td>DYN    </td><td><a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.3.0">v2.4.3.0</a>, <a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.4.0">v2.4.4.0</a>, <a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.4.1">v2.4.4.1</a></td><tr>
+        <tr><td>Einsteinium     </td><td>EMC2   </td><td><a href="https://github.com/emc2foundation/einsteinium/releases/tag/v0.13.5.0">v0.13.5.0</a></td><tr>
+        <tr><td>Electra         </td><td>ECA    </td><td><a href="https://github.com/Electra-project/electra-core/releases/tag/2.1.1">2.1.1</a>, <a href="https://github.com/Electra-project/electra-core/releases/tag/2.1.2">2.1.2</a></td><tr>
+        <tr><td>Emercoin        </td><td>EMC    </td><td><a href="https://github.com/emercoin/emercoin/releases/tag/v0.7.10emc">v0.7.10emc</a></td><tr>
+        <tr><td>Eternity        </td><td>ENT    </td><td><a href="https://github.com/eternity-group/eternity/releases/tag/v0.12.1.7">v0.12.1.7</a></td><tr>
+        <tr><td>eXperience Points </td><td>XP </td><td><a href="https://github.com/experience-points-development/eXperience-Points/releases/tag/v3.4.0.3">v3.4.0.3</a></td><tr>
+        <tr><td>Faircoin        </td><td>FAIR   </td><td><a href="https://github.com/faircoin/faircoin/releases/tag/v2.0.1">v2.0.1</a></td><tr>
+        <tr><td>FantasyGold     </td><td>FGC    </td><td><a href="https://github.com/FantasyGold/FantasyGold-Core/releases/tag/2.19.1">2.19.1</a></td><tr>
+        <tr><td>Flo             </td><td>FLO    </td><td><a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.0">v0.15.2.0</a>, <a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.1">v0.15.2.1</a></td><tr>
+        <tr><td>FujiCoin        </td><td>FJC    </td><td><a href="https://github.com/fujicoin/fujicoin/releases/tag/fujicoin-v0.18.0">fujicoin-v0.18.0</a></td><tr>
+        <tr><td>Galactrum       </td><td>ORE    </td><td><a href="https://github.com/galactrum/galactrum/releases/tag/v1.4.0">v1.4.0</a></td><tr>
+        <tr><td>Galilel         </td><td>GALI   </td><td><a href="https://github.com/Galilel-Project/galilel/releases/tag/v3.4.0">v3.4.0</a></td><tr>
+        <tr><td>GambleCoin      </td><td>GMCN   </td><td><a href="https://github.com/GambleCoin-Project/GambleCoin/releases/tag/1.1.4">1.1.4</a></td><tr>
+        <tr><td>GeekCash        </td><td>GEEK   </td><td><a href="https://github.com/GeekCash/geek/releases/tag/v1.3.0.1">v1.3.0.1</a></td><tr>
+        <tr><td>GINcoin         </td><td>GIN    </td><td><a href="https://github.com/GIN-coin/gincoin-core/releases/tag/v1.3.0.0">v1.3.0.0</a></td><tr>
+        <tr><td>GoByte          </td><td>GBX    </td><td><a href="https://github.com/gobytecoin/gobyte/releases/tag/v0.12.2.4">v0.12.2.4</a></td><tr>
+        <tr><td>GravityCoin     </td><td>GXX    </td><td><a href="https://github.com/SpecialCoins/GravityCoin/releases/tag/4.0.7.8">4.0.7.8</a></td><tr>
+        <tr><td>HASH            </td><td>HASH   </td><td><a href="https://github.com/hashplatform/hash/releases/tag/v1.5.1">v1.5.1</a></td><tr>
+        <tr><td>Hatch           </td><td>HATCH  </td><td><a href="https://github.com/hatchpay/hatch/releases/tag/v0.14.0.3">v0.14.0.3</a></td><tr>
+        <tr><td>Helium          </td><td>HLM    </td><td><a href="https://github.com/heliumchain/helium/releases/tag/v0.16.0">v0.16.0</a></td><tr>
+        <tr><td>HTMLCoin        </td><td>HTML   </td><td><a href="https://github.com/HTMLCOIN/HTMLCOIN/releases/tag/v2.5.0">v2.5.0</a></td><tr>
+        <tr><td>Innova          </td><td>INN    </td><td><a href="https://github.com/innova-foundation/innova/releases/tag/v4.3.8.8">v4.3.8.8</a></td><tr>
+        <tr><td>Internet of People </td><td>IOP </td><td><a href="https://github.com/Internet-of-People/iop-core/releases/tag/v6.3.0">v6.3.0</a></td><tr>
+        <tr><td>Ixcoin          </td><td>IXC    </td><td><a href="https://github.com/IXCore/IXCoin/releases/tag/v0.14.1">v0.14.1</a></td><tr>
+        <tr><td>Jiyo            </td><td>JIYOX  </td><td><a href="https://github.com/jiyocoin/jiyox/releases/tag/v.2.1">v.2.1</a></td><tr>
+        <tr><td>Kalkulus        </td><td>KLKS   </td><td><a href="https://github.com/kalkulusteam/klks/releases/tag/v2.8.0">v2.8.0</a></td><tr>
+        <tr><td>Know Your Developer </td><td>KYDC </td><td><a href="https://github.com/kydcoin/KYD3/releases/tag/3.2.1">3.2.1</a>, <a href="https://github.com/kydcoin/KYD3/releases/tag/3.3.1">3.3.1</a></td><tr>
+        <tr><td>Kreds           </td><td>KREDS  </td><td><a href="https://github.com/KredsBlockchain/kreds-core/releases/tag/v1.0.0.6">v1.0.0.6</a></td><tr>
+        <tr><td>KZCash          </td><td>KZC    </td><td><a href="https://github.com/kzcashteam/kzcash/releases/tag/v0.1.9.1">v0.1.9.1</a></td><tr>
+        <tr><td>LBRY Credits    </td><td>LBC    </td><td><a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.1">v0.17.3.1</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.2">v0.17.3.2</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.4.5">v0.17.4.5</a></td><tr>
+        <tr><td>Litecoin        </td><td>LTC    </td><td><a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.17.1">v0.17.1</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.18.1">v0.18.1</a></td><tr>
+        <tr><td>Luxcore         </td><td>LUX    </td><td><a href="https://github.com/LUX-Core/lux/releases/tag/v5.3.3">v5.3.3</a></td><tr>
+        <tr><td>Lynx            </td><td>LYNX   </td><td><a href="https://github.com/getlynx/Lynx/releases/tag/v0.16.3.9">v0.16.3.9</a></td><tr>
+        <tr><td>Machinecoin     </td><td>MAC    </td><td><a href="https://github.com/machinecoin-project/machinecoin-core/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/machinecoin-project/machinecoin-core/releases/tag/v0.17.1">v0.17.1</a></td><tr>
+        <tr><td>MNPCoin         </td><td>MNP    </td><td><a href="https://github.com/MasterNodesPro/MNPCoin/releases/tag/v1.2.5">v1.2.5</a></td><tr>
+        <tr><td>MktCoin         </td><td>MLM    </td><td><a href="https://github.com/Mktcoin-official/Mktcoin/releases/tag/0.15.0.3">0.15.0.3</a></td><tr>
+        <tr><td>MonaCoin        </td><td>MONA   </td><td><a href="https://github.com/monacoinproject/monacoin/releases/tag/monacoin-0.17.1">monacoin-0.17.1</a></td><tr>
+        <tr><td>MonetaryUnit    </td><td>MUE    </td><td><a href="https://github.com/muecoin/MUE/releases/tag/v2.1.4">v2.1.4</a>, <a href="https://github.com/muecoin/MUE/releases/tag/v2.1.6">v2.1.6</a></td><tr>
+        <tr><td>Monoeci         </td><td>XMCC   </td><td><a href="https://github.com/monacocoin-net/monoeci-core/releases/tag/v0.12.2.3">v0.12.2.3</a></td><tr>
+        <tr><td>Myriad          </td><td>XMY    </td><td><a href="https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.4.1">v0.16.4.1</a>, <a href="https://github.com/myriadteam/myriadcoin/releases/tag/v0.18.1.0">v0.18.1.0</a></td><tr>
+        <tr><td>Namecoin        </td><td>NMC    </td><td><a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.13.99-name-tab-beta1">nc0.13.99-name-tab-beta1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.16.1">nc0.16.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.16.2">nc0.16.2</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.17.0">nc0.17.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.18.0">nc0.18.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.18.1">nc0.18.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.0">nc0.19.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.0.1">nc0.19.0.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.1">nc0.19.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.20.0">nc0.20.0</a></td><tr>
+        <tr><td>NativeCoin      </td><td>N8V    </td><td><a href="https://github.com/N8VCoin/nativecoin/releases/tag/1.2">1.2</a></td><tr>
+        <tr><td>Nix             </td><td>NIX    </td><td><a href="https://github.com/NixPlatform/NixCore/releases/tag/v3.0.7">v3.0.7</a>, <a href="https://github.com/NixPlatform/NixCore/releases/tag/v3.0.8">v3.0.8</a></td><tr>
+        <tr><td>Nodium          </td><td>XN     </td><td><a href="https://github.com/nodiumproject/zNodium/releases/tag/3.0.6">3.0.6</a></td><tr>
+        <tr><td>Noir            </td><td>NOR    </td><td><a href="https://github.com/noirofficial/noir/releases/tag/v2.1.0.9">v2.1.0.9</a></td><tr>
+        <tr><td>Northern        </td><td>NORT   </td><td><a href="https://github.com/northern-community/Northern/releases/tag/3.3.1">3.3.1</a>, <a href="https://github.com/northern-community/Northern/releases/tag/3.3.2">3.3.2</a></td><tr>
+        <tr><td>Nyerium         </td><td>NYEX   </td><td><a href="https://github.com/nyerium-core/nyerium/releases/tag/v1.0.3">v1.0.3</a></td><tr>
+        <tr><td>NyxCoin         </td><td>NYX    </td><td><a href="https://github.com/nyxpay/nyx/releases/tag/v2.0.0.0">v2.0.0.0</a></td><tr>
+        <tr><td>Odin            </td><td>ODIN   </td><td><a href="https://github.com/odinblockchain/Odin/releases/tag/v1.6.6">v1.6.6</a></td><tr>
+        <tr><td>Ohmcoin         </td><td>OHMC   </td><td><a href="https://github.com/theohmproject/OhmCoin/releases/tag/2.4.0.0">2.4.0.0</a></td><tr>
+        <tr><td>OPCoinX         </td><td>OPCX   </td><td><a href="https://github.com/opcoinx/OPCoinX/releases/tag/v2.0.0">v2.0.0</a></td><tr>
+        <tr><td>PACGlobal       </td><td>PAC    </td><td><a href="https://github.com/pacglobalofficial/pac/releases/tag/v0.15-da839021c">v0.15-da839021c</a></td><tr>
+        <tr><td>Phore           </td><td>PHR    </td><td><a href="https://github.com/phoreproject/Phore/releases/tag/v1.6.3">v1.6.3</a></td><tr>
+        <tr><td>PIVX            </td><td>PIVX   </td><td><a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.1.1">v4.1.1</a></td><tr>
+        <tr><td>Placeholders    </td><td>PHL    </td><td><a href="https://github.com/xagau/Placeholders-X16R/releases/tag/2.0.30.5">2.0.30.5</a></td><tr>
+        <tr><td>Polis           </td><td>POLIS  </td><td><a href="https://github.com/polispay/polis/releases/tag/v1.6.0">v1.6.0</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.1">v1.6.1</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.2">v1.6.2</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.3">v1.6.3</a></td><tr>
+        <tr><td>Pura            </td><td>PURA   </td><td><a href="https://github.com/puracore/pura/releases/tag/v1.3.7">v1.3.7</a></td><tr>
+        <tr><td>Qbic            </td><td>QBIC   </td><td><a href="https://github.com/qbic-platform/qbic_v2.0/releases/tag/v1.1">v1.1</a></td><tr>
+        <tr><td>Qtum            </td><td>QTUM   </td><td><a href="https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v0.19.1">mainnet-ignition-v0.19.1</a></td><tr>
+        <tr><td>Rapids          </td><td>RPD    </td><td><a href="https://github.com/RapidsOfficial/Rapids/releases/tag/v2.0.0.0-b784ecbf4d">v2.0.0.0-b784ecbf4d</a></td><tr>
+        <tr><td>Rapture         </td><td>RAP    </td><td><a href="https://github.com/RaptureCore/Rapture/releases/tag/v1.1.2.2">v1.1.2.2</a></td><tr>
+        <tr><td>Ravencoin       </td><td>RVN    </td><td><a href="https://github.com/RavenProject/Ravencoin/releases/tag/v4.1.0">v4.1.0</a>, <a href="https://github.com/RavenProject/Ravencoin/releases/tag/v4.2.0">v4.2.0</a>, <a href="https://github.com/RavenProject/Ravencoin/releases/tag/v4.2.1">v4.2.1</a></td><tr>
+        <tr><td>Reecore         </td><td>REEX   </td><td><a href="https://github.com/reecore-coin/Reex/releases/tag/v1.4.2.2">v1.4.2.2</a></td><tr>
+        <tr><td>Scribe          </td><td>SCRIBE </td><td><a href="https://github.com/scribenetwork/scribe/releases/tag/v0.2">v0.2</a></td><tr>
+        <tr><td>Secure Cloud Net </td><td>SCN </td><td><a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.1">v2.5.1.1</a>, <a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.2">v2.5.1.2</a></td><tr>
+        <tr><td>Sequence        </td><td>SEQ    </td><td><a href="https://github.com/duality-solutions/Sequence/releases/tag/v1.3.3.0">v1.3.3.0</a></td><tr>
+        <tr><td>Shekel          </td><td>JEW    </td><td><a href="https://github.com/shekeltechnologies/JewNew/releases/tag/1.5.0">1.5.0</a></td><tr>
+        <tr><td>Sibcoin         </td><td>SIB    </td><td><a href="https://github.com/ivansib/sibcoin/releases/tag/v0.17.0.0">v0.17.0.0</a></td><tr>
+        <tr><td>Social Send     </td><td>SEND   </td><td><a href="https://github.com/SocialSend/SocialSend/releases/tag/1.2.0.5">1.2.0.5</a>, <a href="https://github.com/SocialSend/SocialSend/releases/tag/v1.2.1.0">v1.2.1.0</a></td><tr>
+        <tr><td>SparksPay       </td><td>SPK    </td><td><a href="https://github.com/sparkspay/sparks/releases/tag/v0.12.4.3">v0.12.4.3</a></td><tr>
+        <tr><td>STRAKS          </td><td>STAK   </td><td><a href="https://github.com/straks/straks/releases/tag/1.14.7.5">1.14.7.5</a></td><tr>
+        <tr><td>SUB1X           </td><td>SUB1X  </td><td><a href="https://github.com/SuB1X-Coin/zSub1x/releases/tag/1.4.0">1.4.0</a></td><tr>
+        <tr><td>Syscoin         </td><td>SYS    </td><td><a href="https://github.com/syscoin/syscoin/releases/tag/v4.1.3">v4.1.3</a></td><tr>
+        <tr><td>Terracoin       </td><td>TRC    </td><td><a href="https://github.com/terracoin/terracoin/releases/tag/v0.12.2.4">v0.12.2.4</a>, <a href="https://github.com/terracoin/terracoin/releases/tag/v0.12.2.5">v0.12.2.5</a></td><tr>
+        <tr><td>Tribe           </td><td>TRB    </td><td><a href="https://github.com/TribeCrypto/tribe/releases/tag/1.0.2">1.0.2</a></td><tr>
+        <tr><td>Uniform Fiscal Object </td><td>UFO </td><td><a href="https://github.com/fiscalobject/ufo/releases/tag/v0.18.0">v0.18.0</a></td><tr>
+        <tr><td>Unobtanium      </td><td>UNO    </td><td><a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.10.5">v0.10.5</a>, <a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.11.0">v0.11.0</a></td><tr>
+        <tr><td>Verge           </td><td>XVG    </td><td><a href="https://github.com/vergecurrency/verge/releases/tag/v6.0.2">v6.0.2</a></td><tr>
+        <tr><td>Vertcoin        </td><td>VTC    </td><td><a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.14.0">0.14.0</a>, <a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.15.0">0.15.0</a>, <a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.15.0.1">0.15.0.1</a></td><tr>
+        <tr><td>Viacoin         </td><td>VIA    </td><td><a href="https://github.com/viacoin/viacoin/releases/tag/v0.16.3">v0.16.3</a></td><tr>
+        <tr><td>Vitae           </td><td>VITAE  </td><td><a href="https://github.com/VitaeTeam/Vitae/releases/tag/v4.4.0.3">v4.4.0.3</a>, <a href="https://github.com/VitaeTeam/Vitae/releases/tag/v4.4.2">v4.4.2</a></td><tr>
+        <tr><td>VIVO            </td><td>VIVO   </td><td><a href="https://github.com/vivocoin/vivo/releases/tag/v0.12.1.17">v0.12.1.17</a></td><tr>
+        <tr><td>Vsync           </td><td>VSX    </td><td><a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.6">v3.8.7.6</a>, <a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.7">v3.8.7.7</a></td><tr>
+        <tr><td>Wagerr          </td><td>WGR    </td><td><a href="https://github.com/wagerr/wagerr/releases/tag/v3.1.0">v3.1.0</a></td><tr>
+        <tr><td>XCurrency       </td><td>XC     </td><td><a href="https://github.com/XCurrency/xc/releases/tag/v3.0.05">v3.0.05</a></td><tr>
+        <tr><td>ZCoin           </td><td>XZC    </td><td><a href="https://github.com/zcoinofficial/zcoin/releases/tag/v0.14.0.1">v0.14.0.1</a>, <a href="https://github.com/zcoinofficial/zcoin/releases/tag/v0.14.0.2">v0.14.0.2</a></td><tr>
+    </tbody>
+</table></p>
+</details>
+<details class="abstract"><summary>Compatible with Blocknet wallet v4.2.x (deprecated)</summary><p><a href="https://raw.githubusercontent.com/blocknetdx/blockchain-configuration-files/master/manifests/manifest-4.2.0.2.json">View Manifest</a></p>
+<p>Abosom          |ABS    |<a href="https://github.com/ZenyattaAbosom/Abosom/releases/tag/v1.0.0">v1.0.0</a>
+AeriumX         |AEX    |<a href="https://github.com/aeriumcoin/AeriumX/releases/tag/v2.2">v2.2</a>
+Altbet          |ABET   |<a href="https://github.com/altbet/abet/releases/tag/v3.4.1.0">v3.4.1.0</a>
+APR Coin        |APR    |<a href="https://github.com/APRCoin/zenith-repository/releases/tag/V3.1.0">V3.1.0</a>
+Argoneum        |AGM    |<a href="https://github.com/Argoneum/argoneum/releases/tag/v1.4.0.0">v1.4.0.0</a>, <a href="https://github.com/Argoneum/argoneum/releases/tag/v1.4.1.0">v1.4.1.0</a>
+ATBCoin         |ATB    |<a href="https://github.com/segwit/atbcoin/releases/tag/v1.1.0">v1.1.0</a>
+AustraliaCash   |AUS    |<a href="https://github.com/AustraliaCash/AustraliaCash-Core/releases/tag/v0.17.4.1">v0.17.4.1</a>
+Badcoin         |BAD    |<a href="https://github.com/badcoin-net/Badcoin/releases/tag/v0.16.3-2">v0.16.3-2</a>
+Bitcloud        |BTDX   |<a href="https://github.com/LIMXTEC/Bitcloud/releases/tag/2.1.0.1.1">2.1.0.1.1</a>
+Bitcoin         |BTC    |<a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.2">v0.15.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.1">v0.16.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0">v0.17.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0.1">v0.17.0.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.1">v0.17.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.0">v0.18.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.1">v0.18.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0">v0.19.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0.1">v0.19.0.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.1">v0.19.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.20.0">v0.20.0</a>
+Bitcoin CZ      |BCZ    |<a href="https://github.com/SpecialCoins/bitcoincz/releases/tag/6.0.3.2">6.0.3.2</a>
+BitGreen        |BITG   |<a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.4.0.8">v1.4.0.8</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.4.0.9">v1.4.0.9</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.5.0.1">v1.5.0.1</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.5.0.2">v1.5.0.2</a>
+BitCore         |BTX    |<a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.8.1">0.90.8.8.1</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.9">0.90.8.9</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.10">0.90.8.10</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.11">0.90.8.11</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.9.0">0.90.9.0</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.9.1">0.90.9.1</a>
+BitcoinZero     |BZX    |<a href="https://github.com/SpecialCoins/BitcoinZero/releases/tag/5.0.7.8">5.0.7.8</a>
+BitMoney        |BIT    |<a href="https://github.com/CryptVenture/BitMoneyV22/releases/tag/2.2.0.2">2.2.0.2</a>
+BitSend         |BSD    |<a href="https://github.com/LIMXTEC/BitSend/releases/tag/0.14.2.0.1">0.14.2.0.1</a>
+BLAST           |BLAST  |<a href="https://github.com/blastdev/blast-core-v2/releases/tag/v2.2.0">v2.2.0</a>
+Blocknet        |BLOCK  |<a href="https://github.com/blocknetdx/blocknet/releases/tag/v4.2.0">v4.2.0</a>
+Bulwark         |BWK    |<a href="https://github.com/bulwark-crypto/Bulwark/releases/tag/2.2.0">2.2.0</a>
+Carebit         |CARE   |<a href="https://github.com/carebitcoin/carebitcoin/releases/tag/v5.0.0">v5.0.0</a>
+CbdHealthNetwork |CHN |<a href="https://github.com/CHN-portal/CHN-Portal/releases/tag/wallets-source-daemon">wallets-source-daemon</a>
+Chaincoin       |CHC    |<a href="https://github.com/chaincoin/chaincoin/releases/tag/v0.18">v0.18</a>
+Civitas         |CIV    |<a href="https://github.com/eastcoastcrypto/Civitas/releases/tag/v1.2.2">v1.2.2</a>
+ColossusXT      |COLX   |<a href="https://github.com/ColossusCoinXT/ColossusCoinXT/releases/tag/v1.2.3">v1.2.3</a>, <a href="https://github.com/ColossusCoinXT/ColossusCoinXT/releases/tag/v1.2.4">v1.2.4</a>
+Crave           |CRAVE  |<a href="https://github.com/Crave-Community-Project/Crave-Project/releases/tag/v2.5.2">v2.5.2</a>
+CryptoCashBack  |CCBC   |<a href="https://github.com/CryptoCashBack-Hub/CCBC/releases/tag/v1.2.1.1">v1.2.1.1</a>
+Crypto Dezire Cash |CDZC |<a href="https://github.com/cryptodezire/CryptoDezireCash/releases/tag/v2.1.2">v2.1.2</a>
+Cryptonodes     |CNMC   |<a href="https://github.com/cryptonodes-core/cryptonodes-core/releases/tag/v1.4.4.1">v1.4.4.1</a>
+Dash            |DASH   |<a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.2">v0.14.0.2</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.3">v0.14.0.3</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.4">v0.14.0.4</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.5">v0.14.0.5</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.15.0.0">v0.15.0.0</a>
+Denarius        |D      |<a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.3">v3.3.9.3</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.4">v3.3.9.4</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.5">v3.3.9.5</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.6">v3.3.9.6</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.7">v3.3.9.7</a>
+Desire          |DSR    |<a href="https://github.com/lazyboozer/Desire/releases/tag/Desire-v.0.12.2.2">Desire-v.0.12.2.2</a>
+Diamond         |DMD    |<a href="https://github.com/DMDcoin/Diamond/releases/tag/3.0.1.3">3.0.1.3</a>
+DigiByte        |DGB    |<a href="https://github.com/digibyte/digibyte/releases/tag/v7.17.2">v7.17.2</a>
+Digiwage        |WAGE   |<a href="https://github.com/digiwage/digiwage/releases/tag/1.2.1">1.2.1</a>
+Dinero          |DIN    |<a href="https://github.com/dinerocoin/dinero/releases/tag/v1.0.1.1">v1.0.1.1</a>
+Divi            |DIVI   |<a href="https://github.com/DiviProject/Divi/releases/tag/v1.1.2">v1.1.2</a>, <a href="https://github.com/DiviProject/Divi/releases/tag/DESK-1.6.6">DESK-1.6.6</a>
+DogeCash        |DOGEC  |<a href="https://github.com/dogecash/dogecash/releases/tag/5.1.1.6">5.1.1.6</a>
+Dogecoin        |DOGE   |<a href="https://github.com/dogecoin/dogecoin/releases/tag/v1.14.2">v1.14.2</a>
+Dynamic         |DYN    |<a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.3.0">v2.4.3.0</a>, <a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.4.0">v2.4.4.0</a>, <a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.4.1">v2.4.4.1</a>
+Einsteinium     |EMC2   |<a href="https://github.com/emc2foundation/einsteinium/releases/tag/v0.13.5.0">v0.13.5.0</a>
+Electra         |ECA    |<a href="https://github.com/Electra-project/electra-core/releases/tag/2.1.1">2.1.1</a>, <a href="https://github.com/Electra-project/electra-core/releases/tag/2.1.2">2.1.2</a>
+Emercoin        |EMC    |<a href="https://github.com/emercoin/emercoin/releases/tag/v0.7.10emc">v0.7.10emc</a>
+Eternity        |ENT    |<a href="https://github.com/eternity-group/eternity/releases/tag/v0.12.1.7">v0.12.1.7</a>
+Faircoin        |FAIR   |<a href="https://github.com/faircoin/faircoin/releases/tag/v2.0.1">v2.0.1</a>
+FantasyGold     |FGC    |<a href="https://github.com/FantasyGold/FantasyGold-Core/releases/tag/2.19.1">2.19.1</a>
+Flo             |FLO    |<a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.0">v0.15.2.0</a>, <a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.1">v0.15.2.1</a>
+FujiCoin        |FJC    |<a href="https://github.com/fujicoin/fujicoin/releases/tag/fujicoin-v0.18.0">fujicoin-v0.18.0</a>
+Galactrum       |ORE    |<a href="https://github.com/galactrum/galactrum/releases/tag/v1.4.0">v1.4.0</a>
+Galilel         |GALI   |<a href="https://github.com/Galilel-Project/galilel/releases/tag/v3.4.0">v3.4.0</a>
+GambleCoin      |GMCN   |<a href="https://github.com/GambleCoin-Project/GambleCoin/releases/tag/1.1.4">1.1.4</a>
+GeekCash        |GEEK   |<a href="https://github.com/GeekCash/geek/releases/tag/v1.3.0.1">v1.3.0.1</a>
+GINcoin         |GIN    |<a href="https://github.com/GIN-coin/gincoin-core/releases/tag/v1.3.0.0">v1.3.0.0</a>
+GoByte          |GBX    |<a href="https://github.com/gobytecoin/gobyte/releases/tag/v0.12.2.4">v0.12.2.4</a>
+GravityCoin     |GXX    |<a href="https://github.com/SpecialCoins/GravityCoin/releases/tag/4.0.7.8">4.0.7.8</a>
+HASH            |HASH   |<a href="https://github.com/hashplatform/hash/releases/tag/v1.5.1">v1.5.1</a>
+Hatch           |HATCH  |<a href="https://github.com/hatchpay/hatch/releases/tag/v0.14.0.3">v0.14.0.3</a>
+Helium          |HLM    |<a href="https://github.com/heliumchain/helium/releases/tag/v0.16.0">v0.16.0</a>
+HTMLCoin        |HTML   |<a href="https://github.com/HTMLCOIN/HTMLCOIN/releases/tag/v2.5.0">v2.5.0</a>
+Innova          |INN    |<a href="https://github.com/innova-foundation/innova/releases/tag/v4.3.8.7">v4.3.8.7</a>
+Internet of People |IOP |<a href="https://github.com/Internet-of-People/iop-core/releases/tag/v6.3.0">v6.3.0</a>
+Ixcoin          |IXC    |<a href="https://github.com/IXCore/IXCoin/releases/tag/v0.14.1">v0.14.1</a>
+Jiyo            |JIYOX  |<a href="https://github.com/jiyocoin/jiyox/releases/tag/v.2.1">v.2.1</a>
+Kalkulus        |KLKS   |<a href="https://github.com/kalkulusteam/klks/releases/tag/v2.8.0">v2.8.0</a>
+Know Your Developer |KYDC |<a href="https://github.com/kydcoin/KYD3/releases/tag/3.2.1">3.2.1</a>, <a href="https://github.com/kydcoin/KYD3/releases/tag/3.3.1">3.3.1</a>
+Kreds           |KREDS  |<a href="https://github.com/KredsBlockchain/kreds-core/releases/tag/v1.0.0.6">v1.0.0.6</a>
+KZCash          |KZC    |<a href="https://github.com/kzcashteam/kzcash/releases/tag/v0.1.9.1">v0.1.9.1</a>
+LBRY Credits    |LBC    |<a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.1">v0.17.3.1</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.2">v0.17.3.2</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.4.5">v0.17.4.5</a>
+Light Pay Coin  |LPC    |<a href="https://github.com/lpcproject/LightPayCoin/releases/tag/v1.0.1.0">v1.0.1.0</a>
+Litecoin        |LTC    |<a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.17.1">v0.17.1</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.18.1">v0.18.1</a>
+LogisCoin       |LGS    |<a href="https://github.com/lgsproject/LogisCoin/releases/tag/v2.0.3.0">v2.0.3.0</a>
+Luxcore         |LUX    |<a href="https://github.com/LUX-Core/lux/releases/tag/v5.3.3">v5.3.3</a>
+Lynx            |LYNX   |<a href="https://github.com/getlynx/Lynx/releases/tag/v0.16.3.9">v0.16.3.9</a>
+Machinecoin     |MAC    |<a href="https://github.com/machinecoin-project/machinecoin-core/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/machinecoin-project/machinecoin-core/releases/tag/v0.17.1">v0.17.1</a>
+Magna Coin      |MGN    |<a href="https://github.com/MagnaCoinProject/MagnaCoin/releases/tag/v1.0.0">v1.0.0</a>
+MNPCoin         |MNP    |<a href="https://github.com/MasterNodesPro/MNPCoin/releases/tag/v1.2.5">v1.2.5</a>
+MktCoin         |MLM    |<a href="https://github.com/Mktcoin-official/Mktcoin/releases/tag/0.15.0.3">0.15.0.3</a>
+MonaCoin        |MONA   |<a href="https://github.com/monacoinproject/monacoin/releases/tag/monacoin-0.17.1">monacoin-0.17.1</a>
+MonetaryUnit    |MUE    |<a href="https://github.com/muecoin/MUE/releases/tag/v2.1.4">v2.1.4</a>, <a href="https://github.com/muecoin/MUE/releases/tag/v2.1.6">v2.1.6</a>
+Monoeci         |XMCC   |<a href="https://github.com/monacocoin-net/monoeci-core/releases/tag/v0.12.2.3">v0.12.2.3</a>
+Myriad          |XMY    |<a href="https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.4.1">v0.16.4.1</a>, <a href="https://github.com/myriadteam/myriadcoin/releases/tag/v0.18.1.0">v0.18.1.0</a>
+Namecoin        |NMC    |<a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.13.99-name-tab-beta1">nc0.13.99-name-tab-beta1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.16.1">nc0.16.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.16.2">nc0.16.2</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.17.0">nc0.17.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.18.0">nc0.18.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.18.1">nc0.18.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.0">nc0.19.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.0.1">nc0.19.0.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.1">nc0.19.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.20.0">nc0.20.0</a>
+NativeCoin      |N8V    |<a href="https://github.com/N8VCoin/nativecoin/releases/tag/1.2">1.2</a>
+Nix             |NIX    |<a href="https://github.com/NixPlatform/NixCore/releases/tag/v3.0.7">v3.0.7</a>, <a href="https://github.com/NixPlatform/NixCore/releases/tag/v3.0.8">v3.0.8</a>
+Nodium          |XN     |<a href="https://github.com/nodiumproject/zNodium/releases/tag/3.0.6">3.0.6</a>
+Noir            |NOR    |<a href="https://github.com/noirofficial/noir/releases/tag/v2.1.0.9">v2.1.0.9</a>
+Northern        |NORT   |<a href="https://github.com/northern-community/Northern/releases/tag/3.3.1">3.3.1</a>, <a href="https://github.com/northern-community/Northern/releases/tag/3.3.2">3.3.2</a>
+Nyerium         |NYEX   |<a href="https://github.com/nyerium-core/nyerium/releases/tag/v1.0.3">v1.0.3</a>
+NyxCoin         |NYX    |<a href="https://github.com/nyxpay/nyx/releases/tag/v2.0.0.0">v2.0.0.0</a>
+Odin            |ODIN   |<a href="https://github.com/odinblockchain/Odin/releases/tag/v1.6.6">v1.6.6</a>
+Ohmcoin         |OHMC   |<a href="https://github.com/theohmproject/OhmCoin/releases/tag/2.4.0.0">2.4.0.0</a>
+OPCoinX         |OPCX   |<a href="https://github.com/opcoinx/OPCoinX/releases/tag/v2.0.0">v2.0.0</a>
+PACGlobal       |PAC    |<a href="https://github.com/pacglobalofficial/pac/releases/tag/v0.15-da839021c">v0.15-da839021c</a>
+Phore           |PHR    |<a href="https://github.com/phoreproject/Phore/releases/tag/v1.6.3">v1.6.3</a>
+PIVX            |PIVX   |<a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.1.1">v4.1.1</a>
+Placeholders    |PHL    |<a href="https://github.com/xagau/Placeholders-X16R/releases/tag/2.0.30.5">2.0.30.5</a>
+Polis           |POLIS  |<a href="https://github.com/polispay/polis/releases/tag/v1.6.0">v1.6.0</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.1">v1.6.1</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.2">v1.6.2</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.3">v1.6.3</a>
+Pura            |PURA   |<a href="https://github.com/puracore/pura/releases/tag/v1.3.7">v1.3.7</a>
+Qbic            |QBIC   |<a href="https://github.com/qbic-platform/qbic_v2.0/releases/tag/v1.1">v1.1</a>
+Qtum            |QTUM   |<a href="https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v0.19.1">mainnet-ignition-v0.19.1</a>
+Rapids          |RPD    |<a href="https://github.com/RapidsOfficial/Rapids/releases/tag/v2.0.0.0-b784ecbf4d">v2.0.0.0-b784ecbf4d</a>
+Rapture         |RAP    |<a href="https://github.com/RaptureCore/Rapture/releases/tag/v1.1.2.2">v1.1.2.2</a>
+Ravencoin       |RVN    |<a href="https://github.com/RavenProject/Ravencoin/releases/tag/v4.1.0">v4.1.0</a>
+Reecore         |REEX   |<a href="https://github.com/reecore-coin/Reex/releases/tag/v1.4.2.2">v1.4.2.2</a>
+Scribe          |SCRIBE |<a href="https://github.com/scribenetwork/scribe/releases/tag/v0.2">v0.2</a>
+Secure Cloud Net |SCN |<a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.1">v2.5.1.1</a>, <a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.2">v2.5.1.2</a>
+Sequence        |SEQ    |<a href="https://github.com/duality-solutions/Sequence/releases/tag/v1.3.3.0">v1.3.3.0</a>
+Shekel          |JEW    |<a href="https://github.com/shekeltechnologies/JewNew/releases/tag/1.5.0">1.5.0</a>
+Sibcoin         |SIB    |<a href="https://github.com/ivansib/sibcoin/releases/tag/v0.16.4.0">v0.16.4.0</a>
+Social Send     |SEND   |<a href="https://github.com/SocialSend/SocialSend/releases/tag/1.2.0.5">1.2.0.5</a>, <a href="https://github.com/SocialSend/SocialSend/releases/tag/v1.2.1.0">v1.2.1.0</a>
+SparksPay       |SPK    |<a href="https://github.com/sparkspay/sparks/releases/tag/v0.12.4.3">v0.12.4.3</a>
+STRAKS          |STAK   |<a href="https://github.com/straks/straks/releases/tag/1.14.7.5">1.14.7.5</a>
+SUB1X           |SUB1X  |<a href="https://github.com/SuB1X-Coin/zSub1x/releases/tag/1.4.0">1.4.0</a>
+Syndicate       |SYNX   |<a href="https://github.com/SyndicateLtd/SyndicateQT/releases/tag/v2.3.0">v2.3.0</a>
+Syscoin         |SYS    |<a href="https://github.com/syscoin/syscoin/releases/tag/v4.1.3">v4.1.3</a>
+Terracoin       |TRC    |<a href="https://github.com/terracoin/terracoin/releases/tag/v0.12.2.4">v0.12.2.4</a>, <a href="https://github.com/terracoin/terracoin/releases/tag/v0.12.2.5">v0.12.2.5</a>
+Tribe           |TRB    |<a href="https://github.com/TribeCrypto/tribe/releases/tag/1.0.2">1.0.2</a>
+Uniform Fiscal Object |UFO |<a href="https://github.com/fiscalobject/ufo/releases/tag/v0.18.0">v0.18.0</a>
+Unobtanium      |UNO    |<a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.10.5">v0.10.5</a>, <a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.11.0">v0.11.0</a>
+Verge           |XVG    |<a href="https://github.com/vergecurrency/verge/releases/tag/v6.0.2">v6.0.2</a>
+Vertcoin        |VTC    |<a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.14.0">0.14.0</a>, <a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.15.0">0.15.0</a>, <a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.15.0.1">0.15.0.1</a>
+Viacoin         |VIA    |<a href="https://github.com/viacoin/viacoin/releases/tag/v0.16.3">v0.16.3</a>
+Vitae           |VITAE  |<a href="https://github.com/VitaeTeam/Vitae/releases/tag/v4.4.0.3">v4.4.0.3</a>, <a href="https://github.com/VitaeTeam/Vitae/releases/tag/v4.4.2">v4.4.2</a>
+VIVO            |VIVO   |<a href="https://github.com/vivocoin/vivo/releases/tag/v0.12.1.17">v0.12.1.17</a>
+Vsync           |VSX    |<a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.6">v3.8.7.6</a>, <a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.7">v3.8.7.7</a>
+Wagerr          |WGR    |<a href="https://github.com/wagerr/wagerr/releases/tag/v3.1.0">v3.1.0</a>
+XCurrency       |XC     |<a href="https://github.com/XCurrency/xc/releases/tag/v3.0.05">v3.0.05</a>
+ZCoin           |XZC    |<a href="https://github.com/zcoinofficial/zcoin/releases/tag/v0.14.0.0">v0.14.0.0</a></p>
+</details>
+<details class="abstract"><summary>Compatible with Blocknet wallet v4.1.x (deprecated)</summary><p><a href="https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifests/manifest-4.1.0.1.json">View Manifest</a></p>
+<p>AeriumX         |AEX    |<a href="https://github.com/aeriumcoin/AeriumX/releases/tag/v2.2">v2.2</a>
+APR Coin        |APR    |<a href="https://github.com/APRCoin/zenith-repository/releases/tag/V3.1.0">V3.1.0</a>
+Argoneum        |AGM    |<a href="https://github.com/Argoneum/argoneum/releases/tag/v1.4.0.0">v1.4.0.0</a>, <a href="https://github.com/Argoneum/argoneum/releases/tag/v1.4.1.0">v1.4.1.0</a>
+ATBCoin         |ATB    |<a href="https://github.com/segwit/atbcoin/releases/tag/v1.1.0">v1.1.0</a>
+AustraliaCash   |AUS    |<a href="https://github.com/AustraliaCash/AustraliaCash-Core/releases/tag/v0.17.4.1">v0.17.4.1</a>
+Badcoin         |BAD    |<a href="https://github.com/badcoin-net/Badcoin/releases/tag/v0.16.3-2">v0.16.3-2</a>
+Bitcloud        |BTDX   |<a href="https://github.com/LIMXTEC/Bitcloud/releases/tag/2.1.0.1.1">2.1.0.1.1</a>
+Bitcoin         |BTC    |<a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.2">v0.15.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.1">v0.16.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0">v0.17.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0.1">v0.17.0.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.1">v0.17.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.0">v0.18.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.1">v0.18.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0">v0.19.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0.1">v0.19.0.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.1">v0.19.1</a>
+Bitcoin CZ      |BCZ    |<a href="https://github.com/SpecialCoins/bitcoincz/releases/tag/6.0.2.1">6.0.2.1</a>
+BitGreen        |BITG   |<a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.4.0.8">v1.4.0.8</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.4.0.9">v1.4.0.9</a>
+BitCore         |BTX    |<a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.8.1">0.90.8.8.1</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.9">0.90.8.9</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.10">0.90.8.10</a>, <a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.90.8.11">0.90.8.11</a>
+BitcoinZero     |BZX    |<a href="https://github.com/SpecialCoins/BitcoinZero/releases/tag/5.0.7.8">5.0.7.8</a>
+BitMoney        |BIT    |<a href="https://github.com/CryptVenture/BitMoneyV22/releases/tag/2.2.0.2">2.2.0.2</a>
+BitSend         |BSD    |<a href="https://github.com/LIMXTEC/BitSend/releases/tag/0.14.2.0.1">0.14.2.0.1</a>
+BLAST           |BLAST  |<a href="https://github.com/blastdev/blast-core-v2/releases/tag/v2.2.0">v2.2.0</a>
+Blocknet        |BLOCK  |<a href="https://github.com/blocknetdx/blocknet/releases/tag/v4.1.0">v4.1.0</a>
+Bulwark         |BWK    |<a href="https://github.com/bulwark-crypto/Bulwark/releases/tag/2.2.0">2.2.0</a>
+Carebit         |CARE   |<a href="https://github.com/carebitcoin/carebitcoin/releases/tag/v5.0.0">v5.0.0</a>
+CbdHealthNetwork |CHN |<a href="https://github.com/CHN-portal/CHN-Portal/releases/tag/wallets-source-daemon">wallets-source-daemon</a>
+Chaincoin       |CHC    |<a href="https://github.com/chaincoin/chaincoin/releases/tag/v0.18">v0.18</a>
+Civitas         |CIV    |<a href="https://github.com/eastcoastcrypto/Civitas/releases/tag/v1.2.2">v1.2.2</a>
+ColossusXT      |COLX   |<a href="https://github.com/ColossusCoinXT/ColossusCoinXT/releases/tag/v1.2.3">v1.2.3</a>, <a href="https://github.com/ColossusCoinXT/ColossusCoinXT/releases/tag/v1.2.4">v1.2.4</a>
+Crave           |CRAVE  |<a href="https://github.com/Crave-Community-Project/Crave-Project/releases/tag/v2.5.2">v2.5.2</a>
+CryptoCashBack  |CCBC   |<a href="https://github.com/CryptoCashBack-Hub/CCBC/releases/tag/v1.2.1.1">v1.2.1.1</a>
+Crypto Dezire Cash |CDZC |<a href="https://github.com/cryptodezire/CryptoDezireCash/releases/tag/v2.1.2">v2.1.2</a>
+Cryptonodes     |CNMC   |<a href="https://github.com/cryptonodes-core/cryptonodes-core/releases/tag/v1.4.4.1">v1.4.4.1</a>
+Dash            |DASH   |<a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.2">v0.14.0.2</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.3">v0.14.0.3</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.4">v0.14.0.4</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.5">v0.14.0.5</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.15.0.0">v0.15.0.0</a>
+Denarius        |D      |<a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.3">v3.3.9.3</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.4">v3.3.9.4</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.5">v3.3.9.5</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.6">v3.3.9.6</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.7">v3.3.9.7</a>
+Desire          |DSR    |<a href="https://github.com/lazyboozer/Desire/releases/tag/Desire-v.0.12.2.2">Desire-v.0.12.2.2</a>
+Diamond         |DMD    |<a href="https://github.com/DMDcoin/Diamond/releases/tag/3.0.1.3">3.0.1.3</a>
+DigiByte        |DGB    |<a href="https://github.com/digibyte/digibyte/releases/tag/v7.17.2">v7.17.2</a>
+Digiwage        |WAGE   |<a href="https://github.com/digiwage/digiwage/releases/tag/1.2.1">1.2.1</a>
+Dinero          |DIN    |<a href="https://github.com/dinerocoin/dinero/releases/tag/v1.0.1.1">v1.0.1.1</a>
+Divi            |DIVI   |<a href="https://github.com/DiviProject/Divi/releases/tag/v1.0.8">v1.0.8</a>, <a href="https://github.com/DiviProject/Divi/releases/tag/DESK-1.6.6">DESK-1.6.6</a>
+DogeCash        |DOGEC  |<a href="https://github.com/dogecash/dogecash/releases/tag/5.1.1.6">5.1.1.6</a>
+Dogecoin        |DOGE   |<a href="https://github.com/dogecoin/dogecoin/releases/tag/v1.14.2">v1.14.2</a>
+Dynamic         |DYN    |<a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.3.0">v2.4.3.0</a>, <a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.4.0">v2.4.4.0</a>
+Einsteinium     |EMC2   |<a href="https://github.com/emc2foundation/einsteinium/releases/tag/v0.13.5.0">v0.13.5.0</a>
+Electra         |ECA    |<a href="https://github.com/Electra-project/electra-core/releases/tag/2.1.1">2.1.1</a>
+Emercoin        |EMC    |<a href="https://github.com/emercoin/emercoin/releases/tag/v0.7.10emc">v0.7.10emc</a>
+Eternity        |ENT    |<a href="https://github.com/eternity-group/eternity/releases/tag/v0.12.1.7">v0.12.1.7</a>
+Faircoin        |FAIR   |<a href="https://github.com/faircoin/faircoin/releases/tag/v2.0.1">v2.0.1</a>
+FantasyGold     |FGC    |<a href="https://github.com/FantasyGold/FantasyGold-Core/releases/tag/2.19.1">2.19.1</a>
+Flo             |FLO    |<a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.0">v0.15.2.0</a>, <a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.1">v0.15.2.1</a>
+FujiCoin        |FJC    |<a href="https://github.com/fujicoin/fujicoin/releases/tag/fujicoin-v0.18.0">fujicoin-v0.18.0</a>
+Galactrum       |ORE    |<a href="https://github.com/galactrum/galactrum/releases/tag/v1.4.0">v1.4.0</a>
+Galilel         |GALI   |<a href="https://github.com/Galilel-Project/galilel/releases/tag/v3.4.0">v3.4.0</a>
+GambleCoin      |GMCN   |<a href="https://github.com/GambleCoin-Project/GambleCoin/releases/tag/1.1.4">1.1.4</a>
+GeekCash        |GEEK   |<a href="https://github.com/GeekCash/geek/releases/tag/v1.3.0.1">v1.3.0.1</a>
+GINcoin         |GIN    |<a href="https://github.com/GIN-coin/gincoin-core/releases/tag/v1.3.0.0">v1.3.0.0</a>
+GoByte          |GBX    |<a href="https://github.com/gobytecoin/gobyte/releases/tag/v0.12.2.4">v0.12.2.4</a>
+GravityCoin     |GXX    |<a href="https://github.com/SpecialCoins/GravityCoin/releases/tag/4.0.7.8">4.0.7.8</a>
+HASH            |HASH   |<a href="https://github.com/hashplatform/hash/releases/tag/v1.5.1">v1.5.1</a>
+Hatch           |HATCH  |<a href="https://github.com/hatchpay/hatch/releases/tag/v0.14.0.3">v0.14.0.3</a>
+Helium          |HLM    |<a href="https://github.com/heliumchain/helium/releases/tag/v0.16.0">v0.16.0</a>
+HTMLCoin        |HTML   |<a href="https://github.com/HTMLCOIN/HTMLCOIN/releases/tag/v2.4.1">v2.4.1</a>, <a href="https://github.com/HTMLCOIN/HTMLCOIN/releases/tag/v2.4.2">v2.4.2</a>
+Innova          |INN    |<a href="https://github.com/innova-foundation/innova/releases/tag/v4.3.8.6">v4.3.8.6</a>
+Internet of People |IOP |<a href="https://github.com/Internet-of-People/iop-core/releases/tag/v6.3.0">v6.3.0</a>
+Ixcoin          |IXC    |<a href="https://github.com/IXCore/IXCoin/releases/tag/v0.14.1">v0.14.1</a>
+Jiyo            |JIYOX  |<a href="https://github.com/jiyocoin/jiyox/releases/tag/v.2.1">v.2.1</a>
+Kalkulus        |KLKS   |<a href="https://github.com/kalkulusteam/klks/releases/tag/v2.8.0">v2.8.0</a>
+Know Your Developer |KYDC |<a href="https://github.com/kydcoin/KYD3/releases/tag/3.2.1">3.2.1</a>, <a href="https://github.com/kydcoin/KYD3/releases/tag/3.3.1">3.3.1</a>
+Kreds           |KREDS  |<a href="https://github.com/KredsBlockchain/kreds-core/releases/tag/v1.0.0.6">v1.0.0.6</a>
+KZCash          |KZC    |<a href="https://github.com/kzcashteam/kzcash/releases/tag/v0.1.9.1">v0.1.9.1</a>
+LBRY Credits    |LBC    |<a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.1">v0.17.3.1</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.2">v0.17.3.2</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.4.5">v0.17.4.5</a>
+Light Pay Coin  |LPC    |<a href="https://github.com/lpcproject/LightPayCoin/releases/tag/v1.0.1.0">v1.0.1.0</a>
+Litecoin        |LTC    |<a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.17.1">v0.17.1</a>
+LogisCoin       |LGS    |<a href="https://github.com/lgsproject/LogisCoin/releases/tag/v2.0.3.0">v2.0.3.0</a>
+Luxcore         |LUX    |<a href="https://github.com/LUX-Core/lux/releases/tag/v5.3.3">v5.3.3</a>
+Lynx            |LYNX   |<a href="https://github.com/getlynx/Lynx/releases/tag/v0.16.3.9">v0.16.3.9</a>
+Machinecoin     |MAC    |<a href="https://github.com/machinecoin-project/machinecoin-core/releases/tag/v0.16.3">v0.16.3</a>
+Magna Coin      |MGN    |<a href="https://github.com/MagnaCoinProject/MagnaCoin/releases/tag/v1.0.0">v1.0.0</a>
+MNPCoin         |MNP    |<a href="https://github.com/MasterNodesPro/MNPCoin/releases/tag/v1.2.5">v1.2.5</a>
+MinexCoin       |MNX    |<a href="https://github.com/minexcoin/minexcoin/releases/tag/v1.3.2">v1.3.2</a>
+MktCoin         |MLM    |<a href="https://github.com/Mktcoin-official/Mktcoin/releases/tag/0.15.0.3">0.15.0.3</a>
+MonaCoin        |MONA   |<a href="https://github.com/monacoinproject/monacoin/releases/tag/monacoin-0.17.1">monacoin-0.17.1</a>
+MonetaryUnit    |MUE    |<a href="https://github.com/muecoin/MUE/releases/tag/v2.1.4">v2.1.4</a>
+Monoeci         |XMCC   |<a href="https://github.com/monacocoin-net/monoeci-core/releases/tag/v0.12.2.3">v0.12.2.3</a>
+Myriad          |XMY    |<a href="https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.4.1">v0.16.4.1</a>, <a href="https://github.com/myriadteam/myriadcoin/releases/tag/v0.18.1.0">v0.18.1.0</a>
+Namecoin        |NMC    |<a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.13.99-name-tab-beta1">nc0.13.99-name-tab-beta1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.16.1">nc0.16.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.16.2">nc0.16.2</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.17.0">nc0.17.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.18.0">nc0.18.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.18.1">nc0.18.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.0">nc0.19.0</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.0.1">nc0.19.0.1</a>, <a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.19.1">nc0.19.1</a>
+NativeCoin      |N8V    |<a href="https://github.com/N8VCoin/nativecoin/releases/tag/v1.0.0">v1.0.0</a>
+Nix             |NIX    |<a href="https://github.com/NixPlatform/NixCore/releases/tag/v3.0.7">v3.0.7</a>, <a href="https://github.com/NixPlatform/NixCore/releases/tag/v3.0.8">v3.0.8</a>
+Nodium          |XN     |<a href="https://github.com/nodiumproject/zNodium/releases/tag/3.0.6">3.0.6</a>
+Noir            |NOR    |<a href="https://github.com/noirofficial/noir/releases/tag/v2.1.0.5">v2.1.0.5</a>, <a href="https://github.com/noirofficial/noir/releases/tag/v2.1.0.6">v2.1.0.6</a>
+Northern        |NORT   |<a href="https://github.com/northern-community/Northern/releases/tag/3.2.0">3.2.0</a>, <a href="https://github.com/northern-community/Northern/releases/tag/3.2.1">3.2.1</a>
+Nyerium         |NYEX   |<a href="https://github.com/nyerium-core/nyerium/releases/tag/v1.0.3">v1.0.3</a>
+NyxCoin         |NYX    |<a href="https://github.com/nyxpay/nyx/releases/tag/v2.0.0.0">v2.0.0.0</a>
+Odin            |ODIN   |<a href="https://github.com/odinblockchain/Odin/releases/tag/v1.6.6">v1.6.6</a>
+Ohmcoin         |OHMC   |<a href="https://github.com/theohmproject/OhmCoin/releases/tag/2.4.0.0">2.4.0.0</a>
+OPCoinX         |OPCX   |<a href="https://github.com/opcoinx/OPCoinX/releases/tag/v2.0.0">v2.0.0</a>
+PACGlobal       |PAC    |<a href="https://github.com/pacglobalofficial/pac/releases/tag/v0.15-da839021c">v0.15-da839021c</a>
+Phore           |PHR    |<a href="https://github.com/phoreproject/Phore/releases/tag/v1.6.3">v1.6.3</a>
+PIVX            |PIVX   |<a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.0.0">v4.0.0</a>, <a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.0.1">v4.0.1</a>, <a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.0.2">v4.0.2</a>
+Placeholders    |PHL    |<a href="https://github.com/xagau/Placeholders-X16R/releases/tag/2.0.30.5">2.0.30.5</a>
+Polis           |POLIS  |<a href="https://github.com/polispay/polis/releases/tag/v1.6.0">v1.6.0</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.1">v1.6.1</a>, <a href="https://github.com/polispay/polis/releases/tag/v1.6.2">v1.6.2</a>
+Pura            |PURA   |<a href="https://github.com/puracore/pura/releases/tag/v1.3.7">v1.3.7</a>
+Qbic            |QBIC   |<a href="https://github.com/qbic-platform/qbic_v2.0/releases/tag/v1.1">v1.1</a>
+Qtum            |QTUM   |<a href="https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v0.18.3">mainnet-ignition-v0.18.3</a>, <a href="https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v0.19.0">mainnet-ignition-v0.19.0</a>
+Rapids          |RPD    |<a href="https://github.com/RapidsOfficial/Rapids/releases/tag/v1.0.0.1">v1.0.0.1</a>
+Rapture         |RAP    |<a href="https://github.com/RaptureCore/Rapture/releases/tag/v1.1.2.2">v1.1.2.2</a>
+Ravencoin       |RVN    |<a href="https://github.com/RavenProject/Ravencoin/releases/tag/v4.1.0">v4.1.0</a>
+Scribe          |SCRIBE |<a href="https://github.com/scribenetwork/scribe/releases/tag/v0.2">v0.2</a>
+Secure Cloud Net |SCN |<a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.1">v2.5.1.1</a>, <a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.2">v2.5.1.2</a>
+Sequence        |SEQ    |<a href="https://github.com/duality-solutions/Sequence/releases/tag/v1.3.3.0">v1.3.3.0</a>
+Shekel          |JEW    |<a href="https://github.com/shekeltechnologies/JewNew/releases/tag/1.5.0">1.5.0</a>
+Sibcoin         |SIB    |<a href="https://github.com/ivansib/sibcoin/releases/tag/v0.16.4.0">v0.16.4.0</a>
+Social Send     |SEND   |<a href="https://github.com/SocialSend/SocialSend/releases/tag/1.2.0.5">1.2.0.5</a>
+SparksPay       |SPK    |<a href="https://github.com/sparkspay/sparks/releases/tag/v0.12.4.3">v0.12.4.3</a>
+STRAKS          |STAK   |<a href="https://github.com/straks/straks/releases/tag/1.14.7.5">1.14.7.5</a>
+SUB1X           |SUB1X  |<a href="https://github.com/SuB1X-Coin/zSub1x/releases/tag/1.4.0">1.4.0</a>
+Syndicate       |SYNX   |<a href="https://github.com/SyndicateLtd/SyndicateQT/releases/tag/v2.2.0">v2.2.0</a>
+Syscoin         |SYS    |<a href="https://github.com/syscoin/syscoin/releases/tag/v4.1.3">v4.1.3</a>
+Terracoin       |TRC    |<a href="https://github.com/terracoin/terracoin/releases/tag/v0.12.2.4">v0.12.2.4</a>, <a href="https://github.com/terracoin/terracoin/releases/tag/v0.12.2.5">v0.12.2.5</a>
+Tribe           |TRB    |<a href="https://github.com/TribeCrypto/tribe/releases/tag/1.0.2">1.0.2</a>
+Uniform Fiscal Object |UFO |<a href="https://github.com/fiscalobject/ufo/releases/tag/v0.18.0">v0.18.0</a>
+Unobtanium      |UNO    |<a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.10.5">v0.10.5</a>, <a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.11.0">v0.11.0</a>
+Vertcoin        |VTC    |<a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.14.0">0.14.0</a>, <a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.15.0">0.15.0</a>, <a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.15.0.1">0.15.0.1</a>
+Viacoin         |VIA    |<a href="https://github.com/viacoin/viacoin/releases/tag/v0.16.3">v0.16.3</a>
+Vitae           |VITAE  |<a href="https://github.com/VitaeTeam/Vitae/releases/tag/v4.4.0.3">v4.4.0.3</a>
+VIVO            |VIVO   |<a href="https://github.com/vivocoin/vivo/releases/tag/v0.12.1.17">v0.12.1.17</a>
+Vsync           |VSX    |<a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.6">v3.8.7.6</a>, <a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.7">v3.8.7.7</a>
+Wagerr          |WGR    |<a href="https://github.com/wagerr/wagerr/releases/tag/v3.1.0">v3.1.0</a>
+XCurrency       |XC     |<a href="https://github.com/XCurrency/xc/releases/tag/v3.0.05">v3.0.05</a>
+ZCoin           |XZC    |<a href="https://github.com/zcoinofficial/zcoin/releases/tag/v0.13.8.9">v0.13.8.9</a>, <a href="https://github.com/zcoinofficial/zcoin/releases/tag/v0.13.8.10">v0.13.8.10</a></p>
+</details>
+<details class="abstract"><summary>Compatible with Blocknet wallet v4.0.x (deprecated)</summary><p><a href="https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifests/manifest-4.0.2.0.json">View Manifest</a></p>
+<p>AeriumX         |AEX    |<a href="https://github.com/aeriumcoin/AeriumX/releases/tag/v2.2">v2.2</a>
+AmsterdamCoin   |AMS    |<a href="https://github.com/CoinProjects/AmsterdamCoin-v4/releases/tag/v4.6.0.0">v4.6.0.0</a>
+APR Coin        |APR    |<a href="https://github.com/APRCoin/zenith-repository/releases/tag/V3.1.0">V3.1.0</a>
+Argoneum        |AGM    |<a href="https://github.com/Argoneum/argoneum/releases/tag/v1.2.3.4">v1.2.3.4</a>
+ATBCoin         |ATB    |<a href="https://github.com/segwit/atbcoin/releases/tag/v1.1.0">v1.1.0</a>
+AustraliaCash   |AUS    |<a href="https://github.com/AustraliaCash/AustraliaCash-Core/releases/tag/v0.17.4.1">v0.17.4.1</a>
+Badcoin         |BAD    |<a href="https://github.com/badcoin-net/Badcoin/releases/tag/v0.16.3-2">v0.16.3-2</a>
+BiFrost         |FROST  |<a href="https://github.com/bifrost-actual/bifrost-coin/releases/tag/v1.2.1">v1.2.1</a>
+BitBay          |BAY    |<a href="https://github.com/bitbaymarket/bitbay-core/releases/tag/v2.1.2a">v2.1.2a</a>
+Bitcloud        |BTDX   |<a href="https://github.com/LIMXTEC/Bitcloud/releases/tag/2.1.0.1.1">2.1.0.1.1</a>
+Bitcoin         |BTC    |<a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.15.2">v0.15.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.1">v0.16.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0">v0.17.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.0.1">v0.17.0.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.17.1">v0.17.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.0">v0.18.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.18.1">v0.18.1</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0">v0.19.0</a>, <a href="https://github.com/bitcoin/bitcoin/releases/tag/v0.19.0.1">v0.19.0.1</a>
+Bitcoin CZ      |BCZ    |<a href="https://github.com/SpecialCoins/bitcoincz/releases/tag/6.0.1.5">6.0.1.5</a>
+BitGreen        |BITG   |<a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.3.1">v1.3.1</a>, <a href="https://github.com/bitgreen/bitgreen/releases/tag/v1.3.2">v1.3.2</a>
+BitCore         |BTX    |<a href="https://github.com/LIMXTEC/BitCore/releases/tag/0.15.2.2">0.15.2.2</a>
+BitcoinZero     |BZX    |<a href="https://github.com/SpecialCoins/BitcoinZero/releases/tag/5.0.3.5">5.0.3.5</a>
+BitMoney        |BIT    |<a href="https://github.com/CryptVenture/BitMoneyV22/releases/tag/2.2.0.2">2.2.0.2</a>
+BitSend         |BSD    |<a href="https://github.com/LIMXTEC/BitSend/releases/tag/0.14.2.0.1">0.14.2.0.1</a>
+BLAST           |BLAST  |<a href="https://github.com/blastdev/blast-core/releases/tag/v1.3.0.0">v1.3.0.0</a>
+Blocknet        |BLOCK  |<a href="https://github.com/blocknetdx/blocknet/releases/tag/v4.0.2">v4.0.2</a>
+Bulwark         |BWK    |<a href="https://github.com/bulwark-crypto/Bulwark/releases/tag/2.2.0">2.2.0</a>
+Carebit         |CARE   |<a href="https://github.com/carebitcoin/carebitcoin/releases/tag/v5.0.0">v5.0.0</a>
+Chaincoin       |CHC    |<a href="https://github.com/chaincoin/chaincoin/releases/tag/v0.18.1">v0.18.1</a>
+Civitas         |CIV    |<a href="https://github.com/eastcoastcrypto/Civitas/releases/tag/v1.2.2">v1.2.2</a>
+ColossusXT      |COLX   |<a href="https://github.com/ColossusCoinXT/ColossusCoinXT/releases/tag/v1.2.2">v1.2.2</a>
+Crave           |CRAVE  |<a href="https://github.com/Crave-Community-Project/Crave-Project/releases/tag/v2.5.2">v2.5.2</a>
+CryptoCashBack  |CCBC   |<a href="https://github.com/CryptoCashBack-Hub/CCBC/releases/tag/v1.2.1.1">v1.2.1.1</a>
+Crypto Dezire Cash |CDZC |<a href="https://github.com/cryptodezire/CryptoDezireCash/releases/tag/v2.1.1">v2.1.1</a>
+Cryptonodes     |CNMC   |<a href="https://github.com/cryptonodes-core/cryptonodes-core/releases/tag/v1.4.4.1">v1.4.4.1</a>
+Dash            |DASH   |<a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.2">v0.14.0.2</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.3">v0.14.0.3</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.4">v0.14.0.4</a>, <a href="https://github.com/dashpay/dash/releases/tag/v0.14.0.5">v0.14.0.5</a>
+Denarius        |D      |<a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.3">v3.3.9.3</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.4">v3.3.9.4</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.5">v3.3.9.5</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.6">v3.3.9.6</a>, <a href="https://github.com/carsenk/denarius/releases/tag/v3.3.9.7">v3.3.9.7</a>
+Desire          |DSR    |<a href="https://github.com/lazyboozer/Desire/releases/tag/Desire-v.0.12.2.2">Desire-v.0.12.2.2</a>
+Diamond         |DMD    |<a href="https://github.com/DMDcoin/Diamond/releases/tag/3.0.1.3">3.0.1.3</a>
+DigiByte        |DGB    |<a href="https://github.com/digibyte/digibyte/releases/tag/v7.17.2">v7.17.2</a>
+Digiwage        |WAGE   |<a href="https://github.com/digiwage/digiwage/releases/tag/1.2.1">1.2.1</a>
+Dinero          |DIN    |<a href="https://github.com/dinerocoin/dinero/releases/tag/v1.0.1.1">v1.0.1.1</a>
+Divi            |DIVI   |<a href="https://github.com/DiviProject/Divi/releases/tag/DESK-1.2.2">DESK-1.2.2</a>, <a href="https://github.com/DiviProject/Divi/releases/tag/v1.0.4-core">v1.0.4-core</a>, <a href="https://github.com/DiviProject/Divi/releases/tag/v1.0.7">v1.0.7</a>
+DogeCash        |DOGEC  |<a href="https://github.com/dogecash/dogecash/releases/tag/v5.1.1.3">v5.1.1.3</a>
+Dogecoin        |DOGE   |<a href="https://github.com/dogecoin/dogecoin/releases/tag/v1.14.2">v1.14.2</a>
+Dynamic         |DYN    |<a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.3.0">v2.4.3.0</a>, <a href="https://github.com/duality-solutions/Dynamic/releases/tag/v2.4.4.0">v2.4.4.0</a>
+Einsteinium     |EMC2   |<a href="https://github.com/emc2foundation/einsteinium/releases/tag/v0.13.5.0">v0.13.5.0</a>
+Electra         |ECA    |<a href="https://github.com/Electra-project/electra-core/releases/tag/2.1.1">2.1.1</a>
+Emercoin        |EMC    |<a href="https://github.com/emercoin/emercoin/releases/tag/v0.7.10emc">v0.7.10emc</a>
+Eternity        |ENT    |<a href="https://github.com/eternity-group/eternity/releases/tag/v0.12.1.7">v0.12.1.7</a>
+Faircoin        |FAIR   |<a href="https://github.com/faircoin/faircoin/releases/tag/v2.0.1">v2.0.1</a>
+FantasyGold     |FGC    |<a href="https://github.com/FantasyGold/FantasyGold-Core/releases/tag/2.0.0">2.0.0</a>
+Flo             |FLO    |<a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.0">v0.15.2.0</a>, <a href="https://github.com/floblockchain/flo/releases/tag/v0.15.2.1">v0.15.2.1</a>
+FujiCoin        |FJC    |<a href="https://github.com/fujicoin/fujicoin/releases/tag/fujicoin-v0.18.0">fujicoin-v0.18.0</a>
+Galactrum       |ORE    |<a href="https://github.com/galactrum/galactrum/releases/tag/v1.4.0">v1.4.0</a>
+Galilel         |GALI   |<a href="https://github.com/Galilel-Project/galilel/releases/tag/v3.4.0">v3.4.0</a>
+GambleCoin      |GMCN   |<a href="https://github.com/GambleCoin-Project/GambleCoin/releases/tag/1.1.4">1.1.4</a>
+GeekCash        |GEEK   |<a href="https://github.com/GeekCash/geek/releases/tag/v1.3.0.1">v1.3.0.1</a>
+GINcoin         |GIN    |<a href="https://github.com/GIN-coin/gincoin-core/releases/tag/v1.3.0.0">v1.3.0.0</a>
+GoByte          |GBX    |<a href="https://github.com/gobytecoin/gobyte/releases/tag/v0.12.2.4">v0.12.2.4</a>
+GravityCoin     |GXX    |<a href="https://github.com/SpecialCoins/GravityCoin/releases/tag/4.0.7.5">4.0.7.5</a>
+HASH            |HASH   |<a href="https://github.com/hashplatform/hash/releases/tag/v1.5.1">v1.5.1</a>
+Hatch           |HATCH  |<a href="https://github.com/hatchpay/hatch/releases/tag/v0.14.0.3">v0.14.0.3</a>
+Helium          |HLM    |<a href="https://github.com/heliumchain/helium/releases/tag/v0.16.0">v0.16.0</a>
+HTMLCoin        |HTML   |<a href="https://github.com/HTMLCOIN/HTMLCOIN/releases/tag/v2.4.1">v2.4.1</a>, <a href="https://github.com/HTMLCOIN/HTMLCOIN/releases/tag/v2.4.2">v2.4.2</a>
+Innova          |INN    |<a href="https://github.com/innova-foundation/innova/releases/tag/v4.3.8.6">v4.3.8.6</a>
+Internet of People |IOP |<a href="https://github.com/Internet-of-People/iop-core/releases/tag/v6.3.0">v6.3.0</a>
+Ixcoin          |IXC    |<a href="https://github.com/IXCore/IXCoin/releases/tag/v0.14.1">v0.14.1</a>
+Jiyo            |JIYOX  |<a href="https://github.com/jiyocoin/jiyox/releases/tag/v.2.1">v.2.1</a>
+Kalkulus        |KLKS   |<a href="https://github.com/kalkulusteam/klks/releases/tag/v2.8.0">v2.8.0</a>
+Know Your Developer |KYD |<a href="https://github.com/kydcoin/KYD3/releases/tag/3.2.1">3.2.1</a>, <a href="https://github.com/kydcoin/KYD3/releases/tag/3.3.1">3.3.1</a>
+Kreds           |KREDS  |<a href="https://github.com/KredsBlockchain/kreds-core/releases/tag/v1.0.0.6">v1.0.0.6</a>
+KZCash          |KZC    |<a href="https://github.com/kzcashteam/kzcash/releases/tag/v0.1.9.1">v0.1.9.1</a>
+LBRY Credits    |LBC    |<a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.1">v0.17.3.1</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.3.2">v0.17.3.2</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.4.1">v0.17.4.1</a>, <a href="https://github.com/lbryio/lbrycrd/releases/tag/v0.17.4.2">v0.17.4.2</a>
+Light Pay Coin  |LPC    |<a href="https://github.com/lpcproject/LightPayCoin/releases/tag/v1.0.1.0">v1.0.1.0</a>
+Litecoin        |LTC    |<a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.15.1">v0.15.1</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.0">v0.16.0</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.2">v0.16.2</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.16.3">v0.16.3</a>, <a href="https://github.com/litecoin-project/litecoin/releases/tag/v0.17.1">v0.17.1</a>
+LogisCoin       |LGS    |<a href="https://github.com/lgsproject/LogisCoin/releases/tag/v2.0.3.0">v2.0.3.0</a>
+Luxcore         |LUX    |<a href="https://github.com/LUX-Core/lux/releases/tag/v5.3.3">v5.3.3</a>
+Lynx            |LYNX   |<a href="https://github.com/getlynx/Lynx/releases/tag/v0.16.3.9">v0.16.3.9</a>
+Machinecoin     |MAC    |<a href="https://github.com/machinecoin-project/machinecoin-core/releases/tag/v0.16.2.1">v0.16.2.1</a>
+Magna Coin      |MGN    |<a href="https://github.com/MagnaCoinProject/MagnaCoin/releases/tag/v1.0.0">v1.0.0</a>
+MNPCoin         |MNP    |<a href="https://github.com/MasterNodesPro/MNPCoin/releases/tag/v1.2.5">v1.2.5</a>
+MinexCoin       |MNX    |<a href="https://github.com/minexcoin/minexcoin/releases/tag/v1.3.2">v1.3.2</a>
+MktCoin         |MLM    |<a href="https://github.com/Mktcoin-official/Mktcoin/releases/tag/0.15.0.3">0.15.0.3</a>
+MonaCoin        |MONA   |<a href="https://github.com/monacoinproject/monacoin/releases/tag/monacoin-0.17.1">monacoin-0.17.1</a>
+MonetaryUnit    |MUE    |<a href="https://github.com/muecoin/MUE/releases/tag/v2.1.4">v2.1.4</a>
+Monoeci         |XMCC   |<a href="https://github.com/monacocoin-net/monoeci-core/releases/tag/v0.12.2.3">v0.12.2.3</a>
+Myriad          |XMY    |<a href="https://github.com/myriadteam/myriadcoin/releases/tag/v0.16.4.1">v0.16.4.1</a>
+Namecoin        |NMC    |<a href="https://github.com/namecoin/namecoin-core/releases/tag/nc0.13.99-name-tab-beta1">nc0.13.99-name-tab-beta1</a>
+NativeCoin      |N8V    |<a href="https://github.com/N8VCoin/nativecoin/releases/tag/v1.0.0">v1.0.0</a>
+Nix             |NIX    |<a href="https://github.com/NixPlatform/NixCore/releases/tag/v3.0.7">v3.0.7</a>
+Nodium          |XN     |<a href="https://github.com/nodiumproject/zNodium/releases/tag/3.0.6">3.0.6</a>
+Noir            |NOR    |<a href="https://github.com/noirofficial/noir/releases/tag/v2.1.0.3">v2.1.0.3</a>
+Northern        |NORT   |<a href="https://github.com/northern-community/Northern/releases/tag/3.0.0">3.0.0</a>
+Nyerium         |NYEX   |<a href="https://github.com/nyerium-core/nyerium/releases/tag/v1.0.3">v1.0.3</a>
+NyxCoin         |NYX    |<a href="https://github.com/nyxpay/nyx/releases/tag/v2.0.0.0">v2.0.0.0</a>
+Odin            |ODIN   |<a href="https://github.com/odinblockchain/Odin/releases/tag/v1.6.6">v1.6.6</a>
+Ohmcoin         |OHMC   |<a href="https://github.com/theohmproject/OhmCoin/releases/tag/2.4.0.0">2.4.0.0</a>
+OPCoinX         |OPCX   |<a href="https://github.com/opcoinx/OPCoinX/releases/tag/v2.0.0">v2.0.0</a>
+PACcoin         |$PAC   |<a href="https://github.com/PACCommunity/PAC/releases/tag/v0.12.6.2">v0.12.6.2</a>
+Phore           |PHR    |<a href="https://github.com/phoreproject/Phore/releases/tag/v1.6.3">v1.6.3</a>
+PIVX            |PIVX   |<a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.0.0">v4.0.0</a>, <a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.0.1">v4.0.1</a>, <a href="https://github.com/PIVX-Project/PIVX/releases/tag/v4.0.2">v4.0.2</a>
+Polis           |POLIS  |<a href="https://github.com/polispay/polis/releases/tag/v1.6.0">v1.6.0</a>
+Pura            |PURA   |<a href="https://github.com/puracore/pura/releases/tag/v1.3.7">v1.3.7</a>
+Qbic            |QBIC   |<a href="https://github.com/qbic-platform/qbic_v2.0/releases/tag/v1.1">v1.1</a>
+Qtum            |QTUM   |<a href="https://github.com/qtumproject/qtum/releases/tag/mainnet-ignition-v0.18.3">mainnet-ignition-v0.18.3</a>
+Rapids          |RPD    |<a href="https://github.com/RapidsOfficial/Rapids/releases/tag/v1.0.0.1">v1.0.0.1</a>
+Rapture         |RAP    |<a href="https://github.com/RaptureCore/Rapture/releases/tag/v1.1.2.2">v1.1.2.2</a>
+Ravencoin       |RVN    |<a href="https://github.com/RavenProject/Ravencoin/releases/tag/v3.3.2">v3.3.2</a>
+Rupaya          |RUPX   |<a href="https://github.com/rupaya-project/rupx/releases/tag/5.3.1.1">5.3.1.1</a>
+Secure Cloud Net |SCN |<a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.1">v2.5.1.1</a>, <a href="https://github.com/securecloudnet/SecureCloud/releases/tag/v2.5.1.2">v2.5.1.2</a>
+Sequence        |SEQ    |<a href="https://github.com/duality-solutions/Sequence/releases/tag/v1.3.3.0">v1.3.3.0</a>
+Shekel          |JEW    |<a href="https://github.com/shekeltechnologies/JewNew/releases/tag/1.5.0">1.5.0</a>
+Sibcoin         |SIB    |<a href="https://github.com/ivansib/sibcoin/releases/tag/v0.16.4.0">v0.16.4.0</a>
+Social Send     |SEND   |<a href="https://github.com/SocialSend/SocialSend/releases/tag/1.2.0.5">1.2.0.5</a>
+Solaris         |XLR    |<a href="https://github.com/Solaris-Project/Solaris/releases/tag/v2.8.1.0">v2.8.1.0</a>
+SparksPay       |SPK    |<a href="https://github.com/sparkspay/sparks/releases/tag/v0.12.4.3">v0.12.4.3</a>
+STRAKS          |STAK   |<a href="https://github.com/straks/straks/releases/tag/1.14.7.5">1.14.7.5</a>
+SUB1X           |SUB1X  |<a href="https://github.com/SuB1X-Coin/zSub1x/releases/tag/1.4.0">1.4.0</a>
+Syndicate       |SYNX   |<a href="https://github.com/SyndicateLtd/SyndicateQT/releases/tag/v2.2.0">v2.2.0</a>
+Syscoin         |SYS    |<a href="https://github.com/syscoin/syscoin/releases/tag/v4.0.3">v4.0.3</a>, <a href="https://github.com/syscoin/syscoin/releases/tag/v4.1.0">v4.1.0</a>, <a href="https://github.com/syscoin/syscoin/releases/tag/v4.1.1">v4.1.1</a>, <a href="https://github.com/syscoin/syscoin/releases/tag/v4.1.2">v4.1.2</a>, <a href="https://github.com/syscoin/syscoin/releases/tag/v4.1.2.1">v4.1.2.1</a>
+Terracoin       |TRC    |<a href="https://github.com/terracoin/terracoin/releases/tag/v0.12.2.4">v0.12.2.4</a>
+Tribe           |TRB    |<a href="https://github.com/TribeCrypto/tribe/releases/tag/1.0.2">1.0.2</a>
+Uniform Fiscal Object |UFO |<a href="https://github.com/fiscalobject/ufo/releases/tag/v0.18.0">v0.18.0</a>
+Unobtanium      |UNO    |<a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.10.5">v0.10.5</a>, <a href="https://github.com/unobtanium-official/Unobtanium/releases/tag/v0.11.0">v0.11.0</a>
+Vertcoin        |VTC    |<a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.14.0">0.14.0</a>, <a href="https://github.com/vertcoin-project/vertcoin-core/releases/tag/0.15.0">0.15.0</a>
+Viacoin         |VIA    |<a href="https://github.com/viacoin/viacoin/releases/tag/v0.16.3">v0.16.3</a>
+Vitae           |VITAE  |<a href="https://github.com/VitaeTeam/Vitae/releases/tag/v4.4.0.3">v4.4.0.3</a>
+VIVO            |VIVO   |<a href="https://github.com/vivocoin/vivo/releases/tag/v0.12.1.17">v0.12.1.17</a>
+Vsync           |VSX    |<a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.6">v3.8.7.6</a>, <a href="https://github.com/VsyncCrypto/VSX/releases/tag/v3.8.7.7">v3.8.7.7</a>
+Wagerr          |WGR    |<a href="https://github.com/wagerr/wagerr/releases/tag/v3.1.0">v3.1.0</a>
+XCurrency       |XC     |<a href="https://github.com/XCurrency/xc/releases/tag/v3.0.05">v3.0.05</a>
+ZCoin           |XZC    |<a href="https://github.com/zcoinofficial/zcoin/releases/tag/v0.13.8.9">v0.13.8.9</a>, <a href="https://github.com/zcoinofficial/zcoin/releases/tag/v0.13.8.10">v0.13.8.10</a></p>
+</details>
+<script type="text/javascript">
+var manifestURL = "https://raw.githubusercontent.com/blocknetdx/blockchain-configuration-files/master/manifest-latest.json";
+// var manifestURL = "https://raw.githubusercontent.com/blocknetdx/blockchain-configuration-files/4.3.0.0/manifests/manifest-4.3.0.0.json";
+var dumpTable = false;
+
+getManifest().then(tabulate);
+function getManifest() {
+    var manifestPromise = new Promise(function(resolve, reject){
+        ajax(manifestURL, true).then(function(manifest) {
+            manifestJSON = manifest;
+            localStorage.setItem('manifest', JSON.stringify(manifest));
+            resolve(manifestJSON);
+        }, false);
+    });
+    return manifestPromise;
+}
+function ajax(url, json) {
+    var ajaxPromise = new Promise(function(resolve, reject){
+        var xhr = new XMLHttpRequest();
+        var status = true;
+        xhr.open('GET', url);
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState === 4 && xhr.status === 200){
+                var response = json ? JSON.parse(this.responseText) : this.responseText
+                resolve(response);
+            }
+        }
+    });
+    return ajaxPromise;
+}
+function tabulate(data) {
+    var manifest = data;
+    var preTable = {};
+    var table = "";
+    var nameLength = 0;
+    var tickerLength = 0;
+    // max lengths based off the markdown header character column widths
+    var maxNameLength = 16;
+    var maxTickerLength = 7;
+
+    for(var asset in manifest) {
+        var name = manifest[asset]["blockchain"];
+        var ticker = manifest[asset]["ticker"];
+        var nameSpaces = 0;
+        var tickerSpaces = 0;
+        if (dumpTable) {
+            nameSpaces = (name.length < maxNameLength) ? (maxNameLength - name.length) : 0;
+            name += (nameSpaces == 1)  ? " " : 
+                            (nameSpaces == 2)  ? "  " : 
+                            (nameSpaces == 3)  ? "   " : 
+                            (nameSpaces == 4)  ? "    " : 
+                            (nameSpaces == 5)  ? "     " : 
+                            (nameSpaces == 6)  ? "      " :
+                            (nameSpaces == 7)  ? "       " :
+                            (nameSpaces == 8)  ? "        " :
+                            (nameSpaces == 9)  ? "         " :
+                            (nameSpaces == 10) ? "          " :
+                            (nameSpaces == 11) ? "           " :
+                            (nameSpaces == 12) ? "            " :
+                            (nameSpaces == 13) ? "             " :
+                            (nameSpaces == 14) ? "              " :
+                            (nameSpaces == 15) ? "               " :
+                            " ";
+            tickerSpaces = (ticker.length < maxTickerLength) ? (maxTickerLength - ticker.length) : 0;
+            if (nameSpaces == 0) { tickerSpaces = 0 }
+            ticker += (tickerSpaces == 1)  ? " " : 
+                                (tickerSpaces == 2)  ? "  " : 
+                                (tickerSpaces == 3)  ? "   " : 
+                                (tickerSpaces == 4)  ? "    " : 
+                                (tickerSpaces == 5)  ? "     " : 
+                                (tickerSpaces == 6)  ? "      " : 
+                                " ";
+        }
+
+        var repo = manifest[asset]["repo_url"];
+        if (repo.substr(-1) === "/") {
+            repo = repo.slice(0, -1);
+        }
+        repo += "/releases/tag/";
+
+        var versionsArray = manifest[asset]["versions"];
+        var versionLinks = "";
+        for (var version in versionsArray) {
+            var versionLink;
+            if (dumpTable) {
+                // output markdown linked version text
+                versionLink = '[' + versionsArray[version] + '](' + repo + versionsArray[version] + ')';
+            } else {
+                // output html linked version text <a href="repo url">version</a>
+                versionLink = '<a href="' + repo + versionsArray[version] + '">' + versionsArray[version] + '</a>';
+            }
+            // if only 1 version
+            if (versionsArray.length < 2) {
+                versionLinks += versionLink;
+            } else {
+                // if last version in array (no comma)
+                if (version == versionsArray.length - 1) {
+                    versionLinks += versionLink;
+                // if not the last version (add comma)
+                } else {
+                    versionLinks += versionLink + ", ";
+                }
+            }
+        }
+
+        // if multiple version groups of same blockchain then combine versionLinks (e.g. btc v15-v18)
+        if (preTable[name]) {
+            preTable[name]["versions"] += ", " + versionLinks;
+        } else {
+            preTable[name] = {"name": name, "ticker": ticker, "versions": versionLinks};
+        }
+    }
+
+    for (var asset in preTable) {
+        var row;
+        if (dumpTable) {
+            // use for older deprecated versions
+            // row = preTable[asset]["name"] + "|" + preTable[asset]["ticker"] + "|" + preTable[asset]["versions"];
+            // use for newest version
+            row = "<tr><td>" + preTable[asset]["name"] + "</td><td>" + preTable[asset]["ticker"] + "</td><td>" + preTable[asset]["versions"] + "</td><tr>";
+            table += row + "\n";
+        } else {
+            row = "<tr><td>" + preTable[asset]["name"] + "</td><td>" + preTable[asset]["ticker"] + "</td><td>" + preTable[asset]["versions"] + "</td><tr>";
+            table += row;
+        }
+    }
+    if (dumpTable) {
+        console.log(table);
+    } else {
+        document.getElementById("bn-tbody").innerHTML = table;
+    }
+}
+
+
+</script>
+
+<script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
+var relatedLinks = [];
+</script>
+
+<!-- 
+======= Related Links Section =======
+- This is the related links section at the bottom of each page.
+- It lists the links in the relatedLinks array variable below.
+    Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
+- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
+related-links.html
+- The template and logic for the related links section can be found in docs/snippets/related-links.html
+- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
+- The template and logic is linked with markdown_extensions: pymdownx.snippets
+-->
+
+<h2 id="related-links">Related Links<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>
+<div id="related">
+
+</div>
+
+<script type="text/javascript">
+    var relatedHTML = "<ul>";
+
+    // check if related links provide
+    if (typeof variable !== 'undefined' && relatedLinks.length > 0) {
+        // related links provided, loop through them
+        for (let i = 0; i < relatedLinks.length; i++) {
+            // create a list element with an a tag containing the related link
+            var snippet = "<li><a href='" + relatedLinks[i]["link"] + "'>" + relatedLinks[i]["name"] + "</a></li>";
+            // concatenate element to relatedHTML variable
+            relatedHTML += snippet;
+        }
+        // concatenate list closing tag
+        relatedHTML += "</ul>";
+        // add list of related links to the related page links section
+        document.getElementById("related").innerHTML = relatedHTML;
+    } else {
+        // no related links provided
+        // remove related links section header
+        document.getElementById("related-links").outerHTML = "";
+        // remove related links section from sidebar menu
+        document.querySelector(".md-sidebar--secondary .md-nav__list").lastElementChild.remove();
+    }
+</script>
+
+<style>
+#notification-bar {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: -1px;
+    opacity: 1;
+    animation-name: bn-notification-load;
+    animation-duration: 0.8s;
+}
+#notification-bar .notification {
+    position: relative;
+    min-height: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 12px 50px 12px 20px;
+    background-color: #016AFF;
+    color: #fff;
+}
+#notification-bar .message {
+    display: inline-block;
+    line-height: 17px;
+}
+#notification-bar .message a {
+    color: #fff;
+    text-decoration: underline;
+}
+#notification-bar .notification-close {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(0%,-50%);
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+@keyframes bn-notification-load {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+<div id="notification-bar">
+    <!-- <div class="notification" data-expire="">
+        <span class="message"><strong>Need support? <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Join our Discord!</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div> -->
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.co/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.co/#downloads" target="_blank">View downloads...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+var notifications = document.getElementById('notification-bar');
+for (var i = 0; i < notifications.children.length; i++) {
+    var expiredDate = parseInt(notifications.children[i].getAttribute('data-expire'));
+    var now = Math.round((new Date).getTime()/1000);
+    if (expiredDate < now && expiredDate != "") {
+        notifications.children[i].style.display = 'none';
+    }
+}
+</script>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../fees/" title="Fees" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Fees
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../setup/" title="Setup" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Setup
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="mailto:contact@blocknet.co" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
+    
+      <a href="https://github.com/blocknetdx/" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://discord.gg/vGa7GeCu8B" target="_blank" rel="noopener" title="comment" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://t.me/Blocknet" target="_blank" rel="noopener" title="telegram" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/@theblocknetchannel" target="_blank" rel="noopener" title="medium" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://en-gb.facebook.com/theblocknet/" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://twitter.com/The_Blocknet" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/theblocknet/" target="_blank" rel="noopener" title="reddit" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.youtube.com/channel/UCCDBoR9fHb21bLH7FGvFrQg/playlists" target="_blank" rel="noopener" title="youtube" class="md-footer-social__link fa fa-youtube"></a>
+    
+      <a href="https://www.instagram.com/the_blocknet/" target="_blank" rel="noopener" title="instagram" class="md-footer-social__link fa fa-instagram"></a>
+    
+      <a href="https://www.linkedin.com/company/blocknet/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/main.js"></script>
+      
+    
+  </body>
+</html>

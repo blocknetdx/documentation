@@ -1,0 +1,2309 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This guide explains how to install your Blocknet wallet on each operating system to securely manage your BLOCK through a wallet you own.">
+      
+      
+        <link rel="canonical" href="https://docs.blocknet.co/wallet/installation/">
+      
+      
+        <meta name="author" content="Blocknet">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+    
+    
+<title>Blocknet Wallet Installation Guide</title>
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/fonts.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-109213957-4", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta name="theme-color" content="#dddfeb">
+<link rel="shortlink" href="https://docs.blocknet.co/">
+<link rel="dns-prefetch" href="//www.blocknet.co">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="mask-icon" href="https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg" color="#051937">
+<meta name="msapplication-TileColor" content="#dddfeb">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blocknet Wallet Installation Guide">
+<meta property="og:description" content="This guide explains how to install your Blocknet wallet on each operating system to securely manage your BLOCK through a wallet you own.">
+<meta property="og:url" content="https://docs.blocknet.co/">
+<meta property="og:site_name" content="Blocknet Documentation">
+<meta property="og:image" content="/img/blocknet.png">
+<meta property="og:image:secure_url" content="/img/blocknet.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This guide explains how to install your Blocknet wallet on each operating system to securely manage your BLOCK through a wallet you own.">
+<meta name="twitter:title" content="Blocknet Wallet Installation Guide">
+<meta name="twitter:image" content="/img/blocknet.png"> 
+
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#wallet-installation" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.blocknet.co/" title="Blocknet Documentation" aria-label="Blocknet Documentation" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../img/blocknet-logo-128.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Blocknet Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Blocknet Wallet Installation Guide
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.blocknet.co/" title="Blocknet Documentation" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../img/blocknet-logo-128.svg" width="48" height="48">
+      
+    </a>
+    Blocknet Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/blocknet-whitepaper.pdf" title="Whitepaper" class="md-nav__link">
+      Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Governance" class="md-nav__link">
+      Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/contributors/" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social/" title="Social" class="md-nav__link">
+      Social
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Blockchain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Blockchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/aablock/" title="aaBLOCK" class="md-nav__link">
+      aaBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/ablock/" title="aBLOCK" class="md-nav__link">
+      aBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/explorers/" title="Explorers" class="md-nav__link">
+      Explorers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Protocol
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Protocol
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      XBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        XBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/compatibility/" title="Compatibility" class="md-nav__link">
+      Compatibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xbridge-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      XRouter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        XRouter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#use-cases" title="Use Cases" class="md-nav__link">
+      Use Cases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xrouter-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      XCloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        XCloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xcloud/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xcloud-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Blocknet Wallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Blocknet Wallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Installation
+      </label>
+    
+    <a href="./" title="Installation" class="md-nav__link md-nav__link--active">
+      Installation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-wallet" class="md-nav__link">
+    Upgrade Wallet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redesigned-vs-classical-guiqt-wallet" class="md-nav__link">
+    Redesigned vs Classical GUI/Qt wallet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-gui-wallet" class="md-nav__link">
+    Install GUI Wallet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-cli-wallet-on-linux" class="md-nav__link">
+    Install CLI Wallet on Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-downloads" class="md-nav__link">
+    Verifying Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../syncing/" title="Syncing" class="md-nav__link">
+      Syncing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../encrypting/" title="Encrypt Wallet" class="md-nav__link">
+      Encrypt Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backup-restore/" title="Backup/Restore" class="md-nav__link">
+      Backup/Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../staking/" title="Staking" class="md-nav__link">
+      Staking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../send-funds/" title="Send Funds" class="md-nav__link">
+      Send Funds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../coin-control/" title="Coin Control" class="md-nav__link">
+      Coin Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fix-wrong-balance/" title="Fix Wrong Balance" class="md-nav__link">
+      Fix Wrong Balance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../forking/" title="Fork Management" class="md-nav__link">
+      Fork Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lock-unlock/" title="Lock/Unlock" class="md-nav__link">
+      Lock/Unlock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      XLite
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        XLite
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/backup-and-restore/" title="Create, Backup & Restore" class="md-nav__link">
+      Create, Backup & Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/blockdx-xlite/" title="Using BlockDX w/ XLite" class="md-nav__link">
+      Using BlockDX w/ XLite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/access-coin-daemons-via-rpc/" title="Access Coin Daemons via RPC" class="md-nav__link">
+      Access Coin Daemons via RPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/recover-private-keys/" title="Recover Private Keys" class="md-nav__link">
+      Recover Private Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Block DX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Block DX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/trading/" title="Trading" class="md-nav__link">
+      Trading
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/listings/" title="Listings" class="md-nav__link">
+      Listings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Service Nodes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Service Nodes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/operation/" title="Operation" class="md-nav__link">
+      Operation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/xbridge-configuration/" title="XBridge Configuration" class="md-nav__link">
+      XBridge Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/xrouter-configuration/" title="XRouter Configuration" class="md-nav__link">
+      XRouter Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/xcloud-configuration/" title="XCloud Configuration" class="md-nav__link">
+      XCloud Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Governance
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Governance
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/view-proposals/" title="View Proposals" class="md-nav__link">
+      View Proposals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/create-proposal/" title="Create Proposal" class="md-nav__link">
+      Create Proposal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/proposal-voting/" title="Proposal Voting" class="md-nav__link">
+      Proposal Voting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/interviews/" title="Interviews" class="md-nav__link">
+      Interviews
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://blocknet.co/brand-resources/" title="Branding Resources" class="md-nav__link">
+      Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social-media-guidelines.pdf" title="Social Media Guideline" class="md-nav__link">
+      Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Developers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Developers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co" title="API" class="md-nav__link">
+      API <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-wallet" class="md-nav__link">
+    Upgrade Wallet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redesigned-vs-classical-guiqt-wallet" class="md-nav__link">
+    Redesigned vs Classical GUI/Qt wallet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-gui-wallet" class="md-nav__link">
+    Install GUI Wallet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-cli-wallet-on-linux" class="md-nav__link">
+    Install CLI Wallet on Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-downloads" class="md-nav__link">
+    Verifying Downloads
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/blocknetdx/documentation/edit/master/docs/wallet/installation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="wallet-installation">Wallet Installation<a class="headerlink" href="#wallet-installation" title="Permanent link">&para;</a></h1>
+<p>Installing the Blocknet wallet is a simple process. Below are
+step-by-step instructions for how to
+install the wallet on each operating system (OS).</p>
+<ul>
+<li>For a complete guide on setting up the wallet, see the <a href="/wallet/setup">setup guide</a>. </li>
+</ul>
+<h2 id="upgrade-wallet">Upgrade Wallet<a class="headerlink" href="#upgrade-wallet" title="Permanent link">&para;</a></h2>
+<details class="info"><summary>Upgrading: If you already have the Blocknet wallet installed and you're upgrading to the latest version, click here for instructions.</summary><p>Before upgrading your Blocknet wallet to the latest version,
+close/quit/stop the Blocknet wallet app. If running the CLI
+wallet, issue the command, <code>./blocknet-cli stop</code> to stop the
+blocknet daemon.</p>
+<p>Upgrading your wallet from version 4.0 or greater to the latest version is basically the same as installing the wallet from scratch. The differences are:</p>
+<ul>
+<li>When installing the upgrade version, your operating system may
+  ask you to approve the replacement of your old Blocknet wallet app with the new one. (Select "OK" or "Replace")</li>
+<li>When running the upgrade version for the first time, you won't be prompted for an installation data directory as you were on initial installation.</li>
+<li>When running the upgrade version for the first time, you don't have to sync your wallet from scratch like you did on initial installation.</li>
+<li>When running the upgrade version for the first time, you won't have to encrypt your wallet as you did on initial installation."</li>
+</ul>
+<p>To upgrade from Blocknet wallet version 3.x, <a href="https://gist.github.com/ConanMishler/00e2ed0d148a897106b53c7c6e19659b">follow this guide</a>.</p>
+</details>
+<hr />
+<h4 id="redesigned-vs-classical-guiqt-wallet">Redesigned vs Classical GUI/Qt wallet<a class="headerlink" href="#redesigned-vs-classical-guiqt-wallet" title="Permanent link">&para;</a></h4>
+<details class="tip"><summary>Tip: There are two wallet variations.</summary><p>There are two wallet variations, a redesigned interface (default) and a classic interface. To use the classic wallet, you'll need to open your <code>blocknet.conf</code> file and add <code>classic=1</code> on a new line (you may not have a <code>blocknet.conf</code> file and will need to create one). You can find the <code>blocknet.conf</code> file in your Blocknet data directory:</p>
+<ul>
+<li><strong>Windows</strong>
+    <div class="highlight"><pre><span></span><code>C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
+</code></pre></div>
+    Or paste <code>%appdata%\Blocknet\</code> into the File Explorer path field.</li>
+<li><strong>MacOS</strong>
+    <div class="highlight"><pre><span></span><code>~/Library/Application Support/Blocknet/
+</code></pre></div>
+    Open Finder and in the <em>Go</em> menu select <em>Go to Folder...</em> and enter the above path.</li>
+<li><strong>Linux</strong>
+    <div class="highlight"><pre><span></span><code>~/.blocknet/
+</code></pre></div></li>
+</ul>
+<p><strong>Redesigned Wallet (default)</strong>
+<img alt="Redesigned Wallet" src="/img/wallet-redesign/wallet-redesign.png" />
+<strong>Classic Wallet</strong>
+<img alt="Classic Wallet" src="/img/wallet-classic/wallet-classic.png" /></p>
+</details>
+<h2 id="install-gui-wallet">Install GUI Wallet<a class="headerlink" href="#install-gui-wallet" title="Permanent link">&para;</a></h2>
+<details class="example"><summary>Windows</summary><p><a href="http://www.youtube.com/watch?v=r4Xs0RrbAOw" title="Blocknet Wallet Installation - Windows"><img alt="https://youtu.be/r4Xs0RrbAOw" src="http://img.youtube.com/vi/r4Xs0RrbAOw/0.jpg" /></a></p>
+<ol>
+<li>
+<p>Download the <a href="https://github.com/blocknetdx/blocknet/releases/">latest Blocknet wallet</a>. There are 2 options:</p>
+<ol>
+<li><code>blocknet-x.xx.x-win64-setup-unsigned.exe</code> (recommended for 64-bit)</li>
+<li><code>blocknet-x.xx.x-win64.zip</code></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Note: Antivirus software may be flagged<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.co">https://blocknet.co</a>, <a href="https://xlitewallet.com">https://xlitewallet.com</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
+</p>
+</div>
+</li>
+<li>
+<p>Before continuing, it is recommended to <a href="/wallet/installation/#verifying-downloads">verify your download</a></p>
+</li>
+<li>Continue to the instructions below for the download you selected:</li>
+</ol>
+<details class="example"><summary>Using the <code>.exe</code> download (option a)</summary><ol>
+<li>Find the downloaded file. The default location is in <em>Downloads</em>.</li>
+<li>
+<p>Double-click the file to begin the installation process.</p>
+<details class="info" open="open"><summary>Note: You may receive antivirus warning messages.</summary><div class="codehilite"><pre><span></span><code><span class="err">You may recieve warnings from antivirus software. These false positives are normal and can be dismissed.</span>
+</code></pre></div>
+
+<p>If you have Windows SmartScreen enabled, you may see the following message:</p>
+<p><img alt="SmartScreen" src="/img/wallet/win-protected.jpg" /></p>
+<p>Select <em>More info</em>, then <em>Run anyway</em> to dismiss this message:</p>
+<p><img alt="SmartScreen Dismiss" src="/img/wallet/win-protected-dismiss.jpg" /></p>
+</details>
+</li>
+<li>
+<p>The installation guide will appear, select <em>Next</em>.</p>
+<p><img alt="Install 1" src="/img/wallet/win-install-1.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Next</em> to accept the default installation directory.</p>
+<p><img alt="Install 2" src="/img/wallet/win-install-2.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Install</em> to accept the default data directory folder name and begin installation.</p>
+<p><img alt="Install 3" src="/img/wallet/win-install-3.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Next</em> when the installation is complete.</p>
+<p><img alt="Install 4" src="/img/wallet/win-install-4.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Finish</em> to complete the installation process. If you would not like the wallet to open right away, uncheck the <em>Run Blocknet</em> option.</p>
+<p><img alt="Install 5" src="/img/wallet/win-install-5.jpg" /></p>
+</li>
+</ol>
+<details class="success" open="open"><summary>Installation Complete!</summary><p>Continue to related guides:</p>
+<ul>
+<li><a href="/wallet/syncing">Sync the wallet</a></li>
+<li><a href="/wallet/encrypting">Encrypt the wallet</a></li>
+<li><a href="/wallet/lock-unlock">Lock/unlock wallet</a></li>
+<li><a href="/blockdx/setup">Block DX setup</a></li>
+<li><a href="/wallet/staking">Staking</a></li>
+</ul>
+</details>
+</details>
+<details class="example"><summary>Using the <code>.zip</code> download (option b)</summary><ol>
+<li>Find the downloaded file. The default location is in <em>Downloads</em>.</li>
+<li>
+<p>Right-click the file, select <em>Extract All</em>.</p>
+<p><img alt="Extract" src="/img/wallet/win-extract.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Extract</em>.</p>
+</li>
+<li>
+<p>After the files are extracted, a new folder should open with the contents. If a folder did not open, look for the new folder in the directory the downloaded file is located.</p>
+<p><img alt="Extracted" src="/img/wallet/win-extracted.jpg" /></p>
+</li>
+<li>
+<p>In this new folder there will be another folder. Double-click on this sub-folder to view the contents.</p>
+</li>
+<li>In this folder there will be a <code>bin/</code> folder. Double-click on this sub-folder to view the contents.</li>
+<li>
+<p>Here you will find the <code>blocknet-qt</code> executable file.</p>
+<p><img alt="Exectuable" src="/img/wallet/win-executable.jpg" /></p>
+</li>
+<li>
+<p>Move this file you where you keep your applications, such as your <em>Desktop</em>. Additionally, you can right-click and <em>Pin to Start</em> or <em>Pin to Taskbar</em> for easy access.</p>
+</li>
+<li>After moving this file, the files you downloaded can be deleted since the <code>blocknet-qt</code> executable file is all that is needed.</li>
+<li>
+<p>Double-click the <code>blocknet-qt</code> file to begin the installation process.</p>
+<details class="info" open="open"><summary>Note: You may receive antivirus warning messages.</summary><div class="codehilite"><pre><span></span><code><span class="err">You may recieve warnings from antivirus software. These false positives are normal and can be dismissed.</span>
+</code></pre></div>
+
+<p>If you have Windows SmartScreen enabled, you may see the following message:</p>
+<p><img alt="SmartScreen" src="/img/wallet/win-protected.jpg" /></p>
+<p>Select <em>More info</em>, then <em>Run anyway</em> to dismiss this message:</p>
+<p><img alt="SmartScreen Dismiss" src="/img/wallet/win-protected-dismiss.jpg" /></p>
+</details>
+</li>
+<li>
+<p>The installation guide will appear, select <em>Next</em>.</p>
+<p><img alt="Install 1" src="/img/wallet/win-install-1.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Next</em> to accept the default installation directory.</p>
+<p><img alt="Install 2" src="/img/wallet/win-install-2.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Install</em> to accept the default data directory folder name and begin installation.</p>
+<p><img alt="Install 3" src="/img/wallet/win-install-3.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Next</em> when the installation is complete.</p>
+<p><img alt="Install 4" src="/img/wallet/win-install-4.jpg" /></p>
+</li>
+<li>
+<p>Select <em>Finish</em> to complete the installation process. If you would not like the wallet to open right away, uncheck the <em>Run Blocknet</em> option.</p>
+<p><img alt="Install 5" src="/img/wallet/win-install-5.jpg" /></p>
+</li>
+</ol>
+<details class="success" open="open"><summary>Installation Complete!</summary><p>Continue to related guides:</p>
+<ul>
+<li><a href="/wallet/syncing">Sync the wallet</a></li>
+<li><a href="/wallet/encrypting">Encrypt the wallet</a></li>
+<li><a href="/wallet/lock-unlock">Lock/unlock wallet</a></li>
+<li><a href="/blockdx/setup">Block DX setup</a></li>
+<li><a href="/wallet/staking">Staking</a></li>
+</ul>
+</details>
+</details>
+</details>
+<details class="example"><summary>MacOS</summary><ol>
+<li>
+<p>Download the <a href="https://github.com/blocknetdx/blocknet/releases/">latest Blocknet wallet</a>. There are 3 options:</p>
+<ol>
+<li><code>blocknet-x.xx.x-osx-unsigned.dmg</code> (recommended)</li>
+<li><code>blocknet-x.xx.x-osx-unsigned.tar.gz</code></li>
+<li><code>blocknet-x.xx.x-osx64.tar.gz</code></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Note: Antivirus software may be flagged<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.co">https://blocknet.co</a>, <a href="https://xlitewallet.com">https://xlitewallet.com</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
+</p>
+<!-- !!! bug "Bug: MacOS"
+    The <code>.dmg</code> download is unavailable for the latest release. Use the <code>osx-unsigned.tar.gz</code> download instead (see guide below). -->
+</div>
+</li>
+<li>
+<p>Before continuing, it is recommended to <a href="/wallet/installation/#verifying-downloads">verify your download</a></p>
+</li>
+<li>Continue to the instructions below for the download you selected:</li>
+</ol>
+<details class="example"><summary>Using the <code>osx-unsigned.dmg</code> download (option a)</summary><ol>
+<li>Find the downloaded file. The default location is in <em>Downloads</em>.</li>
+<li>Double-click the file to begin installation.</li>
+<li>
+<p>Click and drag the <em>Blocknet-Qt</em> application icon over to the <em>Applications</em> folder and release.</p>
+<p><img alt="Copy" src="/img/wallet/mac-copy-1.png" /></p>
+</li>
+<li>
+<p>Open <em>Finder</em>, navigate to <em>Applications</em>, and find <em>Blocknet.app</em> in the list of applications.</p>
+</li>
+<li>
+<p>Right-click the file and select <em>Open</em>. If using the touch pad this can be done by clicking with 2 fingers.</p>
+<p><img alt="Open" src="/img/wallet/mac-open.png" /></p>
+</li>
+<li>
+<p>If you are prompted with a message asking if you are sure you want to open the application, select <em>Open</em>.</p>
+<p><img alt="Opening" src="/img/wallet/mac-open-confirm.png" /></p>
+<details class="info" open="open"><summary>Note: If you see a message like the one below instead of the one above, click <em>Cancel</em> and repeat step 5 above.</summary><p><img alt="Finder" src="/img/wallet/mac-open-confirm-extra-step.png" /></p>
+</details>
+<details class="tip"><summary>Tip: If nothing happens when you try to open the Blocknet App...</summary><p>Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.</p>
+</details>
+</li>
+<li>
+<p>Your computer will begin verifying the application. This may take a few minutes to complete.</p>
+</li>
+<li>
+<p>An installation prompt will appear, select <em>OK</em>.</p>
+<p><img alt="Install" src="/img/wallet/mac-install.png" /></p>
+</li>
+</ol>
+<details class="success" open="open"><summary>Installation Complete!</summary><p>Continue to related guides:</p>
+<ul>
+<li><a href="/wallet/syncing">Sync the wallet</a></li>
+<li><a href="/wallet/encrypting">Encrypt the wallet</a></li>
+<li><a href="/wallet/lock-unlock">Lock/unlock wallet</a></li>
+<li><a href="/blockdx/setup">Block DX setup</a></li>
+<li><a href="/wallet/staking">Staking</a></li>
+</ul>
+</details>
+</details>
+<details class="example"><summary>Using the <code>osx-unsigned.tar.gz</code> download (option b)</summary><ol>
+<li>Find the downloaded file. The default location is in <em>Downloads</em>.</li>
+<li>Double-click the file to unpack the contents.</li>
+<li>In the newly unpacked folder, navigate to the <em>dist</em> folder.</li>
+<li>
+<p>Click and drag the <em>Blocknet-Qt</em> application over to the <em>Applications</em> folder and release. This will add the wallet to <em>Applications</em>.</p>
+<p><img alt="Copy" src="/img/wallet/mac-copy-2.png" /></p>
+</li>
+<li>
+<p>If you are prompted with a message asking if you would like to replace an existing version with a newer version, select <em>Replace</em>.</p>
+<p><img alt="Replace" src="/img/wallet/mac-replace.png" /></p>
+</li>
+<li>
+<p>The downloaded files may now be removed.</p>
+</li>
+<li>Open <em>Finder</em>, navigate to <em>Applications</em>, and find <em>Blocknet-Qt</em> in the list of applications.</li>
+<li>
+<p>Right-click the file and select <em>Open</em>. If using the touch pad this can be done by clicking with 2 fingers.</p>
+<p><img alt="Open" src="/img/wallet/mac-open.png" /></p>
+</li>
+<li>
+<p>If you are prompted with a message asking if you are sure you want to open the application, select <em>Open</em>.</p>
+<p><img alt="Opening" src="/img/wallet/mac-open-confirm.png" /></p>
+<details class="info" open="open"><summary>Note: If you see a message like the one below instead of the one above, click <em>Cancel</em> and repeat step 8 above.</summary><p><img alt="Finder" src="/img/wallet/mac-open-confirm-extra-step.png" /></p>
+</details>
+<details class="tip"><summary>Tip: If nothing happens when you try to open the Blocknet App...</summary><p>Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.</p>
+</details>
+</li>
+<li>
+<p>Your computer will begin verifying the application. This may take a few minutes to complete.</p>
+</li>
+<li>
+<p>An installation prompt will appear, select <em>OK</em>.</p>
+<p><img alt="Install" src="/img/wallet/mac-install.png" /></p>
+</li>
+</ol>
+<details class="success" open="open"><summary>Installation Complete!</summary><p>Continue to related guides:</p>
+<ul>
+<li><a href="/wallet/syncing">Sync the wallet</a></li>
+<li><a href="/wallet/encrypting">Encrypt the wallet</a></li>
+<li><a href="/wallet/lock-unlock">Lock/unlock wallet</a></li>
+<li><a href="/blockdx/setup">Block DX setup</a></li>
+<li><a href="/wallet/staking">Staking</a></li>
+</ul>
+</details>
+</details>
+<details class="example"><summary>Using the <code>osx64.tar.gz</code> download (option c)</summary><ol>
+<li>Find the downloaded file. The default location is in <em>Downloads</em>.</li>
+<li>Double-click the file to unpack the contents.</li>
+<li>In the new folder created, navigate to the <code>bin/</code> folder.</li>
+<li>Double-click the <code>blocknet-qt</code> file.</li>
+<li>
+<p>If you are prompted with a message asking if you are sure you want to open the application, select <em>Open</em>.</p>
+<p><img alt="Opening" src="/img/wallet/mac-open-confirm.png" /></p>
+<details class="info" open="open"><summary>Note: If you see a message like the one below instead of the one above, click <em>Cancel</em> and repeat step 4 above.</summary><p><img alt="Finder" src="/img/wallet/mac-open-confirm-extra-step.png" /></p>
+</details>
+<details class="tip"><summary>Tip: If nothing happens when you try to open the Blocknet App...</summary><p>Try turning off any anti-virus "File Shiled" programs. For example, Avast Free anti-virus has 3 core shields. Only the "File Shield" has to be turned off.</p>
+</details>
+</li>
+<li>
+<p>Your computer will begin verifying the application. This may take a few minutes to complete.</p>
+</li>
+<li>Since this is a command line executable file, a command-line window will appear to start the wallet, which begins the installation process.</li>
+<li>
+<p>An installation prompt will appear, select <em>OK</em>.</p>
+<p><img alt="Install" src="/img/wallet/mac-install.png" /></p>
+</li>
+</ol>
+<details class="success" open="open"><summary>Installation Complete!</summary><p>Continue to related guides:</p>
+<ul>
+<li><a href="/wallet/syncing">Sync the wallet</a></li>
+<li><a href="/wallet/encrypting">Encrypt the wallet</a></li>
+<li><a href="/wallet/lock-unlock">Lock/unlock wallet</a></li>
+<li><a href="/blockdx/setup">Block DX setup</a></li>
+<li><a href="/wallet/staking">Staking</a></li>
+</ul>
+</details>
+</details>
+</details>
+<details class="example"><summary>Linux</summary><ol>
+<li>
+<p>Download the <a href="https://github.com/blocknetdx/blocknet/releases/">latest Blocknet wallet</a>. There are 2 options:</p>
+<ol>
+<li><code>blocknet-x.xx.x-x86_64-linux-gnu.tar.gz</code> (recommended for 64-bit)</li>
+<li><code>blocknet-x.xx.x-arm-linux-gnueabihf.tar.gz</code> (recommended for Raspberry Pi)</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Note: Antivirus software may be flagged<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.co">https://blocknet.co</a>, <a href="https://xlitewallet.com">https://xlitewallet.com</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
+</p>
+</div>
+</li>
+<li>
+<p>You may be asked for a confirmation to download, select <em>Save File</em> then <em>OK</em>.</p>
+<p><img alt="Save" src="/img/wallet/linux-save.jpg" /></p>
+</li>
+<li>
+<p>Find the downloaded file. The default location is in <em>Downloads</em>.</p>
+</li>
+<li>Before continuing, it is recommended to <a href="/wallet/installation/#verifying-downloads">verify your download</a> </li>
+<li>
+<p>Right-click the file, select <em>Extract Here</em>.</p>
+<p><img alt="Extract" src="/img/wallet/linux-extract.jpg" /></p>
+</li>
+<li>
+<p>Double-click the <code>blocknet-x.xx.x-x86_64-linux-gnu/</code> folder to view the contents.</p>
+</li>
+<li>Double-click the <code>blocknet-x.xx.x/</code> folder to view the contents.</li>
+<li>Double-click the <code>bin/</code> folder to view the contents.</li>
+<li>
+<p>Here you will find the <code>blocknet-qt</code> executable file.</p>
+<p><img alt="Exectuable" src="/img/wallet/linux-executable.jpg" /></p>
+</li>
+<li>
+<p>Move this file you where you keep your applications, such as your <em>Desktop</em>.</p>
+</li>
+<li>After moving this file, the files you downloaded can be deleted since the <code>blocknet-qt</code> executable file is all that is needed.</li>
+<li>Double-click the <code>blocknet-qt</code> file to begin the installation
+   process. (If it fails to open on double-click, you may need to give
+   <em>executable</em> permission to the file: Either <code>sudo chmod +x
+   blocknet-qt</code> in Debian terminal, or Right-click property, give
+   executable permission.)</li>
+<li>
+<p>An installation prompt will appear, select <em>OK</em>.</p>
+<p><img alt="Install" src="/img/wallet/linux-install.jpg" /></p>
+</li>
+</ol>
+<details class="success" open="open"><summary>Installation Complete!</summary><p>Continue to related guides:</p>
+<ul>
+<li><a href="/wallet/syncing">Sync the wallet</a></li>
+<li><a href="/wallet/encrypting">Encrypt the wallet</a></li>
+<li><a href="/wallet/lock-unlock">Lock/unlock wallet</a></li>
+<li><a href="/blockdx/setup">Block DX setup</a></li>
+<li><a href="/wallet/staking">Staking</a></li>
+</ul>
+</details>
+</details>
+<hr />
+<h2 id="install-cli-wallet-on-linux">Install CLI Wallet on Linux<a class="headerlink" href="#install-cli-wallet-on-linux" title="Permanent link">&para;</a></h2>
+<p>See <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">Staking from CLI on a VPS running Ubuntu Linux</a></p>
+<hr />
+<h2 id="verifying-downloads">Verifying Downloads<a class="headerlink" href="#verifying-downloads" title="Permanent link">&para;</a></h2>
+<p>It is important to verify the integrity of downloads before running them. Depending on how you downloaded it, it's possible the file may have been modified in transit to do something evil when run. The server hosting the download may also have been compromised.</p>
+<ol>
+<li>Get the sha256 hash of the release you download. These are provided on the Github release page either in a file called <code>sha256sums.txt</code> or as a plain text in the release notes. The format follows <code>SHA256(filename)= hash</code>. Here is an example of the hashes:
+<div class="highlight"><pre><span></span><code>SHA256(blocknet-3.13.1-arm-linux-gnueabihf-debug.tar.gz)= 77e6c3e5d1e6ef9f0d54a8f0fe3d638b1c6bd889e609c6a69bb8f82322117847
+SHA256(blocknet-3.13.1-arm-linux-gnueabihf.tar.gz)= 94705029ebf05b0aa2b0939dd0da0663e578accbf5dca8e9393456d9d40edde6
+SHA256(blocknet-3.13.1-i686-pc-linux-gnu-debug.tar.gz)= 30039c5eb3951a73d578f613d072a79610cb3983113cf816fbed485ce44bd57c
+SHA256(blocknet-3.13.1-i686-pc-linux-gnu.tar.gz)= c5c9013b5e0539a99825339f98a460281014b3dca5d970e24faa860b6fd0c0e7
+SHA256(blocknet-3.13.1-osx-unsigned.tar.gz)= 0d5be3dedc83521349b5def54c1f045f1cd35c67d8da5beb50c90beaa50ae659
+SHA256(blocknet-3.13.1-osx64.tar.gz)= 438b0b82001ca5ce0af8300061207f87421c3c9cfeab47dd4c56ebc856b357da
+SHA256(blocknet-3.13.1-win-unsigned.tar.gz)= 1f81058be74d3714f1e07f5b16562f471cd2da1fac8251b3c3d414dba5b0d271
+SHA256(blocknet-3.13.1-win32-debug.zip)= fdc15df95dbb1293d59a2a9b90bf421594b0dc27320cd09cf31dcc9073bb2a8e
+SHA256(blocknet-3.13.1-win32-setup-unsigned.exe)= c89200719d3e55f9f7eee1cf8f77a4a4c43d8c4551b896a4f0d7617a935f31e0
+SHA256(blocknet-3.13.1-win32.zip)= 60c0805f00fe4e1c1e93af2ef3e93fb0fbe3b7bcf2385f8192c1a176b4068c3f
+SHA256(blocknet-3.13.1-win64-debug.zip)= e739bf19e5d826ff9750c9ae9dfddf0bf17b9e6da2d90e094698c02171454a6f
+SHA256(blocknet-3.13.1-win64-setup-unsigned.exe)= 350d67cdb009a7b4d3101dae145caa9c69e8c7a2ca6252a4d97aedf33a5a3f9d
+SHA256(blocknet-3.13.1-win64.zip)= f1f472353f034e1151345c167a48a01d1ceafdd2b7a5b7a5cc82df9cbef6ce6d
+SHA256(blocknet-3.13.1-x86_64-linux-gnu-debug.tar.gz)= 998fa0487cc4e8fc2be9fb004cd6eb9bc0e91d690da110a5073e3f3b50bd2938
+SHA256(blocknet-3.13.1-x86_64-linux-gnu.tar.gz)= 9608a66feb4616092ddb2dbeeafef01f5c0c28b61cccf13bcd032cee3981be74
+</code></pre></div></li>
+<li>Take a note of the hash for the specific file you downloaded.</li>
+<li>
+<p>Get the sha256 hash of the file you downloaded:</p>
+<details class="example"><summary>Windows</summary><ol>
+<li>Open the command prompt.</li>
+<li>Navigate to the location of the downloaded file.</li>
+<li>Enter <code>certUtil -hashfile filename SHA256</code> with <code>filename</code> replaced by the name fo the file you downloaded. </li>
+</ol>
+<p><strong>Example</strong>: <code>certUtil -hashfile blocknet-3.13.1-win64.zip SHA256</code></p>
+</details>
+<details class="example"><summary>MacOS</summary><ol>
+<li>Open the terminal.</li>
+<li>Navigate to the location of the downloaded file.</li>
+<li>Enter <code>shasum -a 256 filename</code> with <code>filename</code> replaced by the name fo the file you downloaded. </li>
+</ol>
+<p><strong>Example</strong>: <code>shasum -a 256 blocknet-3.13.1-osx-unsigned.tar.gz</code></p>
+</details>
+<details class="example"><summary>Linux</summary><ol>
+<li>Open the terminal.</li>
+<li>Navigate to the location of the downloaded file.</li>
+<li>Enter <code>sha256sum filename</code> with <code>filename</code> replaced by the name fo the file you downloaded. </li>
+</ol>
+<p><strong>Example</strong>: <code>sha256sum blocknet-3.13.1-x86_64-linux-gnu.tar.gz</code></p>
+</details>
+</li>
+<li>
+<p>Compare the release hash to the hash of the download. If the hashes do not match, <strong>DO NOT</strong> run the file and delete the file immediately.</p>
+</li>
+</ol>
+<script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
+var relatedLinks = [];
+</script>
+
+<!-- 
+======= Related Links Section =======
+- This is the related links section at the bottom of each page.
+- It lists the links in the relatedLinks array variable below.
+    Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
+- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
+related-links.html
+- The template and logic for the related links section can be found in docs/snippets/related-links.html
+- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
+- The template and logic is linked with markdown_extensions: pymdownx.snippets
+-->
+
+<h2 id="related-links">Related Links<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>
+<div id="related">
+
+</div>
+
+<script type="text/javascript">
+    var relatedHTML = "<ul>";
+
+    // check if related links provide
+    if (typeof variable !== 'undefined' && relatedLinks.length > 0) {
+        // related links provided, loop through them
+        for (let i = 0; i < relatedLinks.length; i++) {
+            // create a list element with an a tag containing the related link
+            var snippet = "<li><a href='" + relatedLinks[i]["link"] + "'>" + relatedLinks[i]["name"] + "</a></li>";
+            // concatenate element to relatedHTML variable
+            relatedHTML += snippet;
+        }
+        // concatenate list closing tag
+        relatedHTML += "</ul>";
+        // add list of related links to the related page links section
+        document.getElementById("related").innerHTML = relatedHTML;
+    } else {
+        // no related links provided
+        // remove related links section header
+        document.getElementById("related-links").outerHTML = "";
+        // remove related links section from sidebar menu
+        document.querySelector(".md-sidebar--secondary .md-nav__list").lastElementChild.remove();
+    }
+</script>
+
+<style>
+#notification-bar {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: -1px;
+    opacity: 1;
+    animation-name: bn-notification-load;
+    animation-duration: 0.8s;
+}
+#notification-bar .notification {
+    position: relative;
+    min-height: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 12px 50px 12px 20px;
+    background-color: #016AFF;
+    color: #fff;
+}
+#notification-bar .message {
+    display: inline-block;
+    line-height: 17px;
+}
+#notification-bar .message a {
+    color: #fff;
+    text-decoration: underline;
+}
+#notification-bar .notification-close {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(0%,-50%);
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+@keyframes bn-notification-load {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+<div id="notification-bar">
+    <!-- <div class="notification" data-expire="">
+        <span class="message"><strong>Need support? <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Join our Discord!</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div> -->
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.co/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.co/#downloads" target="_blank">View downloads...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+var notifications = document.getElementById('notification-bar');
+for (var i = 0; i < notifications.children.length; i++) {
+    var expiredDate = parseInt(notifications.children[i].getAttribute('data-expire'));
+    var now = Math.round((new Date).getTime()/1000);
+    if (expiredDate < now && expiredDate != "") {
+        notifications.children[i].style.display = 'none';
+    }
+}
+</script>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../setup/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting Started
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../syncing/" title="Syncing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Syncing
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="mailto:contact@blocknet.co" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
+    
+      <a href="https://github.com/blocknetdx/" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://discord.gg/vGa7GeCu8B" target="_blank" rel="noopener" title="comment" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://t.me/Blocknet" target="_blank" rel="noopener" title="telegram" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/@theblocknetchannel" target="_blank" rel="noopener" title="medium" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://en-gb.facebook.com/theblocknet/" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://twitter.com/The_Blocknet" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/theblocknet/" target="_blank" rel="noopener" title="reddit" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.youtube.com/channel/UCCDBoR9fHb21bLH7FGvFrQg/playlists" target="_blank" rel="noopener" title="youtube" class="md-footer-social__link fa fa-youtube"></a>
+    
+      <a href="https://www.instagram.com/the_blocknet/" target="_blank" rel="noopener" title="instagram" class="md-footer-social__link fa fa-instagram"></a>
+    
+      <a href="https://www.linkedin.com/company/blocknet/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      
+        <script src="../../js/main.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4291 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This guide explains step-by-step how to setup a Service Node, which earns block rewards and 100% of fees from Blocknet's services (XBridge, XRouter, XCloud).">
+      
+      
+        <link rel="canonical" href="https://docs.blocknet.co/service-nodes/setup/">
+      
+      
+        <meta name="author" content="Blocknet">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+    
+    
+<title>Blocknet Service Node Setup Guide</title>
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/fonts.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-109213957-4", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta name="theme-color" content="#dddfeb">
+<link rel="shortlink" href="https://docs.blocknet.co/">
+<link rel="dns-prefetch" href="//www.blocknet.co">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="mask-icon" href="https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg" color="#051937">
+<meta name="msapplication-TileColor" content="#dddfeb">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blocknet Service Node Setup Guide">
+<meta property="og:description" content="This guide explains step-by-step how to setup a Service Node, which earns block rewards and 100% of fees from Blocknet's services (XBridge, XRouter, XCloud).">
+<meta property="og:url" content="https://docs.blocknet.co/">
+<meta property="og:site_name" content="Blocknet Documentation">
+<meta property="og:image" content="/img/blocknet.png">
+<meta property="og:image:secure_url" content="/img/blocknet.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This guide explains step-by-step how to setup a Service Node, which earns block rewards and 100% of fees from Blocknet's services (XBridge, XRouter, XCloud).">
+<meta name="twitter:title" content="Blocknet Service Node Setup Guide">
+<meta name="twitter:image" content="/img/blocknet.png"> 
+
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#service-node-setup" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.blocknet.co/" title="Blocknet Documentation" aria-label="Blocknet Documentation" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../img/blocknet-logo-128.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Blocknet Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Blocknet Service Node Setup Guide
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.blocknet.co/" title="Blocknet Documentation" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../img/blocknet-logo-128.svg" width="48" height="48">
+      
+    </a>
+    Blocknet Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/blocknet-whitepaper.pdf" title="Whitepaper" class="md-nav__link">
+      Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Governance" class="md-nav__link">
+      Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/contributors/" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social/" title="Social" class="md-nav__link">
+      Social
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Blockchain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Blockchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/aablock/" title="aaBLOCK" class="md-nav__link">
+      aaBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/ablock/" title="aBLOCK" class="md-nav__link">
+      aBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/explorers/" title="Explorers" class="md-nav__link">
+      Explorers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Protocol
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Protocol
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      XBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        XBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/compatibility/" title="Compatibility" class="md-nav__link">
+      Compatibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xbridge-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      XRouter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        XRouter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#use-cases" title="Use Cases" class="md-nav__link">
+      Use Cases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xrouter-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      XCloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        XCloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xcloud/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xcloud-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Blocknet Wallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Blocknet Wallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/syncing/" title="Syncing" class="md-nav__link">
+      Syncing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/encrypting/" title="Encrypt Wallet" class="md-nav__link">
+      Encrypt Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/backup-restore/" title="Backup/Restore" class="md-nav__link">
+      Backup/Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/staking/" title="Staking" class="md-nav__link">
+      Staking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/send-funds/" title="Send Funds" class="md-nav__link">
+      Send Funds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/coin-control/" title="Coin Control" class="md-nav__link">
+      Coin Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/fix-wrong-balance/" title="Fix Wrong Balance" class="md-nav__link">
+      Fix Wrong Balance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/forking/" title="Fork Management" class="md-nav__link">
+      Fork Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/lock-unlock/" title="Lock/Unlock" class="md-nav__link">
+      Lock/Unlock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      XLite
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        XLite
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/backup-and-restore/" title="Create, Backup & Restore" class="md-nav__link">
+      Create, Backup & Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/blockdx-xlite/" title="Using BlockDX w/ XLite" class="md-nav__link">
+      Using BlockDX w/ XLite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/access-coin-daemons-via-rpc/" title="Access Coin Daemons via RPC" class="md-nav__link">
+      Access Coin Daemons via RPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/recover-private-keys/" title="Recover Private Keys" class="md-nav__link">
+      Recover Private Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Block DX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Block DX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/trading/" title="Trading" class="md-nav__link">
+      Trading
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/listings/" title="Listings" class="md-nav__link">
+      Listings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Service Nodes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Service Nodes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setup
+      </label>
+    
+    <a href="./" title="Setup" class="md-nav__link md-nav__link--active">
+      Setup
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-requirements-for-service-node-wallet" class="md-nav__link">
+    Hardware Requirements For Service Node Wallet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-collateral-or-staking-wallet-and-a-service-node-wallet-on-the-same-computer" class="md-nav__link">
+    Running a Collateral or Staking Wallet and a Service Node Wallet on the same computer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enterprise-xrouter-environment-service-node-setup-docker-based-recommended" class="md-nav__link">
+    Enterprise XRouter Environment Service Node Setup - Docker based (Recommended)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-an-ubuntu-linux-server" class="md-nav__link">
+    Set up an Ubuntu Linux server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collateral-wallet-setup-for-exr-service-node" class="md-nav__link">
+    Collateral Wallet Setup for EXR Service Node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collateral-address-requirements" class="md-nav__link">
+    Collateral Address Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-enterprise-xrouter-environment" class="md-nav__link">
+    Deploy Enterprise XRouter Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-global-install-script-for-enterprise-xrouter-environment" class="md-nav__link">
+    Run Global Install Script for Enterprise XRouter Environment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#warning-only-expose-hasura-gui-xquery-port-to-restricted-hosts-if-ever" class="md-nav__link">
+    Warning: Only expose Hasura GUI XQuery port to restricted hosts, if ever.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-of-enterprise-xrouter-environment" class="md-nav__link">
+    Maintenance of Enterprise XRouter Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../operation/" title="Operation" class="md-nav__link">
+      Operation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xbridge-configuration/" title="XBridge Configuration" class="md-nav__link">
+      XBridge Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xrouter-configuration/" title="XRouter Configuration" class="md-nav__link">
+      XRouter Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xcloud-configuration/" title="XCloud Configuration" class="md-nav__link">
+      XCloud Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Governance
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Governance
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/view-proposals/" title="View Proposals" class="md-nav__link">
+      View Proposals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/create-proposal/" title="Create Proposal" class="md-nav__link">
+      Create Proposal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/proposal-voting/" title="Proposal Voting" class="md-nav__link">
+      Proposal Voting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/interviews/" title="Interviews" class="md-nav__link">
+      Interviews
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://blocknet.co/brand-resources/" title="Branding Resources" class="md-nav__link">
+      Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social-media-guidelines.pdf" title="Social Media Guideline" class="md-nav__link">
+      Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Developers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Developers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co" title="API" class="md-nav__link">
+      API <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-requirements-for-service-node-wallet" class="md-nav__link">
+    Hardware Requirements For Service Node Wallet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-collateral-or-staking-wallet-and-a-service-node-wallet-on-the-same-computer" class="md-nav__link">
+    Running a Collateral or Staking Wallet and a Service Node Wallet on the same computer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enterprise-xrouter-environment-service-node-setup-docker-based-recommended" class="md-nav__link">
+    Enterprise XRouter Environment Service Node Setup - Docker based (Recommended)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-an-ubuntu-linux-server" class="md-nav__link">
+    Set up an Ubuntu Linux server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collateral-wallet-setup-for-exr-service-node" class="md-nav__link">
+    Collateral Wallet Setup for EXR Service Node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collateral-address-requirements" class="md-nav__link">
+    Collateral Address Requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-enterprise-xrouter-environment" class="md-nav__link">
+    Deploy Enterprise XRouter Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-global-install-script-for-enterprise-xrouter-environment" class="md-nav__link">
+    Run Global Install Script for Enterprise XRouter Environment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#warning-only-expose-hasura-gui-xquery-port-to-restricted-hosts-if-ever" class="md-nav__link">
+    Warning: Only expose Hasura GUI XQuery port to restricted hosts, if ever.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance-of-enterprise-xrouter-environment" class="md-nav__link">
+    Maintenance of Enterprise XRouter Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/blocknetdx/documentation/edit/master/docs/service-nodes/setup.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="service-node-setup">Service Node Setup<a class="headerlink" href="#service-node-setup" title="Permanent link">&para;</a></h1>
+<p>This guide explains step-by-step how to setup a <a href="/service-nodes/introduction">Service Node</a>. Operating a Service Node requires 5000 BLOCK collateral. This 5000 BLOCK collateral will still be in your wallet and in your control, but must not be moved or spent in order for the Service Node to remain valid and active. However, you may still use this collateral to participate in staking.</p>
+<p>Operating as a Service Node requires two Blocknet wallets:</p>
+<ul>
+<li><strong>Collateral Wallet</strong> - This wallet will contain the 5000 BLOCK
+  collateral and does <em>NOT</em> need to remain online and unlocked unless the 5000 BLOCK is being staked or you are <a href="/governane/proposal-voting">voting on a proposal</a>.</li>
+<li><strong>Service Node Wallet</strong> - This wallet will act as the Service Node
+  and must remain online and open at all times.</li>
+</ul>
+<h2 id="hardware-requirements-for-service-node-wallet">Hardware Requirements For Service Node Wallet<a class="headerlink" href="#hardware-requirements-for-service-node-wallet" title="Permanent link">&para;</a></h2>
+<details class="abstract"><summary>Hardware Requirements For Service Node Wallet</summary><p>Hardware requirements for a Service Node vary depending on which
+<a href="/resources/glossary/#spv">SPV wallets</a> and services your node will support.</p>
+<blockquote>
+<p>Minimum System</p>
+</blockquote>
+<p>Probably the minumum HW
+requirements for <em>any</em> Service Node would be:</p>
+<ul>
+<li>4 CPU cores (or 4 vCPUs if the Service Node runs on a VPS)</li>
+<li>8 GB RAM</li>
+<li>200 GB SSD Storage (doubtful that slower, HDD drives would work).</li>
+<li>25+MBit/s Internet download speed. (100+ MBit/s is much better
+  for faster syncing.)</li>
+</ul>
+<p>Such a system could support
+a few small SPV wallets and a Blocknet staking wallet.
+As of this writing, the most economical place to rent a VPS with
+the above specs seems to be
+<a href="https://contabo.com/en/vps/">Contabo</a>. In fact, Contabo's "S"
+size VPS has exactly those minimum level specs and currently rents for €4.99 /
+mo.</p>
+<blockquote>
+<p>Medium &amp; Large Systems</p>
+</blockquote>
+<p>If you want to host the <a href="/resources/glossary/#hydra">Hydra</a> and/or
+<a href="/resources/glossary/#indexer">XQuery Indexer</a> services (and maybe a few SPV
+wallets as well), you'll likely need at least 10 vCPUs, 60 GB of
+RAM and 1 TB+ of
+SSD storage space. Hosting  Hydra or XQuery services requires
+hosting an EVM (Ethereum Virtual Machine) blockchain like
+Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL,
+Polkadot/DOT, Cardano/ADA, etc. Testing of XQuery is still
+ongoing, so we don't yet know the exact HW requirements for
+running XQuery with large EVMs like AVAX, BSC or ETH.</p>
+<div class="admonition warning">
+<p class="admonition-title">Testing of XQuery is still ongoing, so we don't yet know the exact HW requirements for running XQuery with large EVMs like AVAX, BSC or ETH.</p>
+</div>
+<p>Minumum HW requirements for a medium to large Service Node would be
+something like this:</p>
+<ul>
+<li>10 CPU cores (or 10 vCPUs if the Service Node runs on a VPS)</li>
+<li>60 GB RAM</li>
+<li>1+ TB SSD Storage</li>
+<li>25+MBit/s Internet download speed  (100+ MBit/s is much better
+  for faster syncing.)</li>
+</ul>
+<p>To give an estimate of how much storage space is required for various
+SPV wallets, here is a snapshot of approximate disk space utilizations taken May 18, 2022:</p>
+<details class="summary"><summary>Snapshot of SPV wallet disk space utilizations taken April 8, 2022</summary><table>
+<thead>
+<tr>
+<th>SPV wallet</th>
+<th>Estimated Size (GB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bitcoin</td>
+<td>500</td>
+</tr>
+<tr>
+<td>dogecoin</td>
+<td>70</td>
+</tr>
+<tr>
+<td>litecoin</td>
+<td>85</td>
+</tr>
+<tr>
+<td>dash</td>
+<td>35</td>
+</tr>
+<tr>
+<td>digibyte</td>
+<td>33</td>
+</tr>
+<tr>
+<td>raven</td>
+<td>32</td>
+</tr>
+<tr>
+<td>pivx</td>
+<td>22</td>
+</tr>
+<tr>
+<td>verge</td>
+<td>11</td>
+</tr>
+<tr>
+<td>crown</td>
+<td>9</td>
+</tr>
+<tr>
+<td>phore</td>
+<td>8</td>
+</tr>
+<tr>
+<td>unobtanium</td>
+<td>4</td>
+</tr>
+<tr>
+<td>lux</td>
+<td>4</td>
+</tr>
+<tr>
+<td>blocknet</td>
+<td>5</td>
+</tr>
+<tr>
+<td>terracoincore</td>
+<td>4</td>
+</tr>
+<tr>
+<td>alqocrypto</td>
+<td>4</td>
+</tr>
+<tr>
+<td>monetaryunit</td>
+<td>5</td>
+</tr>
+<tr>
+<td>syscoin</td>
+<td>6</td>
+</tr>
+<tr>
+<td>merge</td>
+<td>4</td>
+</tr>
+<tr>
+<td>zenzo</td>
+<td>4</td>
+</tr>
+<tr>
+<td>goldcoin</td>
+<td>3</td>
+</tr>
+<tr>
+<td>egulden</td>
+<td>3</td>
+</tr>
+<tr>
+<td>stakecubecoin</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</details>
+<blockquote>
+<p>VPS Provider Options for Small, Medium &amp; Large Systems</p>
+</blockquote>
+<p>If you want to compare prices between VPS service providers, you
+can compare the offerings of companies like <a href="https://www.digitalocean.com">Digital Ocean</a>,
+   <a href="https://contabo.com/en/vps/">Contabo</a>, <a href="https://www.vultr.com/products/cloud-compute/#pricing">Vultr</a>,
+ <a href="https://aws.amazon.com">Amazon AWS</a>, and
+   <a href="https://cloud.google.com">Google Cloud Computing</a>. A
+Google search for "VPS Hosting Service Provider" will show many
+more options. As of this
+writing, <a href="https://contabo.com/en/vps/">Contabo</a> seems to offer the most hardware for the money,
+but it's always good to do a little comparison shopping.</p>
+<blockquote>
+<p>Extra Large System for supporting ETH archival node</p>
+</blockquote>
+<p>To support <a href="/resources/glossary/#hydra">Hydra</a> and/or
+<a href="/resources/glossary/#indexer">XQuery Indexer</a> services of the
+Ethereum/ETH blockchain, a Service Node must host an ETH archival node.
+In terms of CPU and RAM requirements, running an ETH archival node
+requires:</p>
+<ul>
+<li>8 CPU Cores (or 8 vCPUs if the ETH archival Node runs on a VPS)</li>
+<li>16 GB RAM</li>
+</ul>
+<p>The storage space requirements for an ETH archival node are a bit more
+demanding. The Go-Ethereum (GETH) archival node, which is the core wallet
+needed to run an ETH archival node, occupies about 8TB of space
+as of this writing (July 17, 2021). Furthermore, it is growing by 3TB per
+year. (Its current size can be found
+<a href="https://etherscan.io/chartsync/chainarchive">here</a>.) Therefore,
+a Service Node supporting an
+ETH archival node should probably have at least 10TB
+for ETH alone, plus maybe another 1.5-2TB for running other SPV
+wallets. It should also have the ability to expand its storage space by 3TB
+per year.</p>
+<p><em>Update Sept. 27, 2021: Some Blocknet community members are
+researching the possibility of using the <a href="https://github.com/ledgerwatch/erigon">Erigon ETH archival node</a> instead
+of the Go ETH (GETH) archival node. This is promising research as
+the Erigon ETH archival node occupies only about a quarter of the
+space of the GETH archival node. In other words, only about 2TB
+instead of 8TB as of this writing. Erigon ETH archival node also
+syncs in about one quarter the time it takes GETH to sync. As of
+this writing, it appears Erigon ETH may well be able to support
+Hydra services of ETH in its current stage of development, but
+until Erigon has standard ETH filter
+methods, it won't support XQuery services of ETH. Please
+join discussions in the #hydra channel of
+<a href="https://discord.gg/cQ9JNyNRW4">Blocknet Discord</a> to keep up with the
+latest developments on Erigon ETH.</em></p>
+<p>It's also important to note that the storage for the ETH full
+archival node <em>must</em> be very fast. In other words, it must use
+SSDs, not HDDs. There are 3 types of SSDs: SATA, SAS and
+NVMe/PCIe. Of the 3, SATA are the slowest, SAS are a little
+faster, and NVMe are by far the fastest. NVMe are <em>definitely</em>
+the preferred variety of SSD drive when it comes to hosting an ETH archival
+node. In fact, it looks doubtful that SATA or SAS SSD drives will be
+fast enough to allow the ETH node to sync.</p>
+<p>It is also recommended that the SSDs used for an ETH archival node be configured
+in a RAID mirror configuration (e.g. RAID-1, RAID-10,
+RAID-Z2). Without RAID mirroring, an SSD failure will almost certainly mean
+you'll have to resync the entire ETH full archival node, which
+takes over a month for a GETH node (but probably only a quarter of
+that time for an Erigon ETH node). Your ETH archival node will be offline for the
+duration of the resync.</p>
+<p>As of this writing, it's not clear that any of the VPS Provider Options mentioned
+above are capable of providing a VPS which meets the HW
+requirements for an ETH archival node, or if they are capable, the cost
+can be a bit extreme and it's not clear they can expand storage space as
+needed to support the growing ETH full archival node. There may
+well be some smaller VPS providers who are capable of both meeting current HW
+requirements and allowing for storage space expansion in the
+future. There are also efforts underway to coordinate "package
+discounts" from such VPS provider(s) for a person or group of people to rent
+a number of ETH archival-capable VPS's at a discounted rate. Please join
+discussions on this topic in the #hydra channel of
+<a href="https://discord.gg/cQ9JNyNRW4">Blocknet Discord</a>.</p>
+<p>Another option for meeting the HW requirements of an ETH archival node is
+to purchase your own hardware and run it at home or in a
+<em>colocation hosting</em> data center. (Colocation hosting services can be found
+for USD $50 per month per server, as of Feb., 2022.) If purchasing
+your own SSD drives, be aware that ETH core will be writing to
+your SSDs continuously, so
+you'll want to get SSDs with a high "durability" rating. For
+example, a company called <em>Sabrent</em> offers an 8TB NVMe SSD. On the
+surface, it may look like a good choice to use for building a
+system with lots of fast storage space. Unfortunately, this
+particular drive only has a TBW (Total Bytes Written) durability
+rating of 1,800 TB TBW, which, according to
+<a href="https://www.youtube.com/watch?v=iFXjC7k1OOw">this review</a> makes
+it not very suitable to be used in an application that writes to
+it frequently. (Note, Samsung NVMe drives and/or any NVMe drives rated
+for industrial use are probably quite <em>durable</em> and suitable for
+supporting an archival ETH node.) More discussions about HW details can
+be found in the #hydra channel of
+<a href="https://discord.gg/cQ9JNyNRW4">Blocknet Discord</a>.</p>
+</details>
+<h2 id="running-a-collateral-or-staking-wallet-and-a-service-node-wallet-on-the-same-computer">Running a <em>Collateral or Staking Wallet</em> and a <em>Service Node Wallet</em> on the same computer<a class="headerlink" href="#running-a-collateral-or-staking-wallet-and-a-service-node-wallet-on-the-same-computer" title="Permanent link">&para;</a></h2>
+<details class="example"><summary>Click Here to learn about running a <em>Collateral or Staking Wallet</em> and a <em>Service Node Wallet</em> on the same computer. Do this <em>before</em> setting up your Service Node.</summary><p>Service Node operators will often want to run a <em>Collateral Wallet</em> or a
+<em>Staking Wallet</em> on the same computer as their
+<em>Service Node Wallet</em>. In almost all cases, the <em>Collateral
+Wallet</em> will also be <a href="/resources/glossary/#staking">staking</a>, so we
+can say it is also a <em>Staking Wallet</em>. A <em>Staking Wallet</em>,
+however, is not always used as a <em>Collateral Wallet</em>.</p>
+<p>To run a <em>Staking Wallet</em> and a <em>Service Node Wallet</em> on the same
+computer, follow these steps:</p>
+<ol>
+<li>Set up your <em>Staking Wallet</em>. <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">Here is an example guide for
+setting up a <em>Staking Wallet</em> on a VPS running Ubuntu Linux</a>. The
+<a href="#hardware-requirements-for-service-node-wallet">Hardware Requirements for a Service Node Wallet</a>
+should be followed when selecting a VPS as per that guide.</li>
+<li>Stop your <em>Staking Wallet</em>. If your <em>Staking Wallet</em> has been set up
+       according to
+       the <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>,
+       and the alias for <code>blocknet-cli</code> has
+       also been set up according to that guide, you can stop
+       your <em>Staking Wallet</em> by
+       issuing the follow command:
+          <div class="highlight"><pre><span></span><code>blocknet-cli stop
+</code></pre></div></li>
+<li>
+<p>Change the Peer-to-Peer (P2P) port and the RPC port of your <em>Staking Wallet</em> so they don't
+conflict with the P2P port and the RPC port of your
+<em>Service Node Wallet</em>. To do this on a Linux system,</p>
+<ol>
+<li>Change directory to your <em>Staking Wallet</em> data
+   directory. If your <em>Staking Wallet</em> has been set up according to
+   the <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>,
+   your <em>Staking Wallet</em> data directory will be <code>~/.blocknet</code>.
+   For Example:
+   <div class="highlight"><pre><span></span><code>cd ~/.blocknet
+</code></pre></div></li>
+<li>Use a simple text editor like
+   <a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">vi</a>
+   or
+   <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a>
+   to edit the wallet configuration file,<code>blocknet.conf</code>.
+   For Example:
+   <div class="highlight"><pre><span></span><code>nano blocknet.conf 
+</code></pre></div>
+   Note, editing <code>blocknet.conf</code> will create <code>blocknet.conf</code> if it doesn't
+   already exist.</li>
+<li>Add two lines like the following to your <code>blocknet.conf</code>:
+   <div class="highlight"><pre><span></span><code>port=41413
+rpcport=41415 
+</code></pre></div>
+   Note: The <code>port</code> and <code>rpcport</code> values you set in your <code>blocknet.conf</code> don't have
+   to be 41413 and 41415, as in the example above; they just
+   have to be port numbers which are <strong><em>not</em></strong> used as either
+   <code>port</code> or <code>rpcport</code> in the default
+   Blocknet wallet configuration. Therefore you must <strong><em>not</em></strong> use
+   41412 or 41414, which are the default values for <code>port</code> and
+   <code>rpcport</code>, respectively. You should also <strong><em>not</em></strong> use the
+   default <code>port</code> or <code>rpcport</code> values for Blocknet testnet,
+   which are 41474 and 41419, respectively. Incrementing the
+   default Blocknet <code>port</code> and <code>rpcport</code> values by 1, as in
+   the example above, is a pretty safe strategy for
+   avoiding potential port conflicts. Not only does this avoid
+   potential port conflicts with the
+   Blocknet testnet, but also with other <a href="/resources/glossary#spv">SPV wallets</a>
+   running on your Service Node.</li>
+<li>Save your edits to <code>blocknet.conf</code>, exit the editor and restart your
+   <em>Staking Wallet</em>. If your <em>Staking Wallet</em> has been set up
+   according to
+   the <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>,
+   and the aliases for <code>blocknet-cli</code>, <code>blocknet-daemon</code> and <code>blocknet-unlock</code> have
+   also been set up according to that guide, you can restart
+   your <em>Staking Wallet</em> and start it staking again by
+   issuing the follow commands:
+      <div class="highlight"><pre><span></span><code>blocknet-daemon
+</code></pre></div>
+      (You'll need to wait a few minutes after starting the
+      Blocknet daemon for your wallet to
+      sync the headers. Then you'll be allowed
+      to unlock your wallet for staking in the next step.)</li>
+<li>Unlock your staking wallet for staking only:
+   <div class="highlight"><pre><span></span><code>blocknet-unlock
+</code></pre></div>
+   (Enter your wallet password when prompted.)</li>
+<li>Confirm your wallet is staking by issuing the command:
+   <div class="highlight"><pre><span></span><code>blocknet-cli getstakingstatus
+</code></pre></div>
+   When this command returns, <code>"status": "Staking is active"</code>,
+   then you know your wallet is staking properly.
+   Note, you may also want to confirm your staking wallet balance
+   is correct with:
+   <div class="highlight"><pre><span></span><code>blocknet-cli getbalance
+</code></pre></div></li>
+</ol>
+</li>
+<li>
+<p>If you will be setting up your Service Node following the
+   <a href="#enterprise-xrouter-environment-service-node-setup-docker-based-recommended">Enterprise XRouter Environment Service Node Setup Guide</a>,
+   there is nothing more you need to do regarding your <em>Staking
+   Wallet</em> and you can proceed directly to the
+   <a href="#enterprise-xrouter-environment-service-node-setup-docker-based-recommended">Enterprise XRouter Environment Service Node Setup Guide</a>. However,
+   if you will be setting up your Service Node following the
+   <a href="#manual-service-node-setup-deprecated">Manual Service Node Setup Guide</a>,
+   you'll need to move your <em>Staking Wallet</em> data directory to
+   allow the <em>Service Node Wallet</em> data directory to occupy the
+   <a href="/wallet/backup-restore/#data-directory">default data directory location</a>. To
+   move your <em>Staking Wallet</em> data directory, follow these steps:</p>
+<ol>
+<li>Stop your <em>Staking Wallet</em>. If your <em>Staking Wallet</em> has
+      been set up according to the
+   <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>,
+   and the alias for <code>blocknet-cli</code> has also been set up according to that
+      guide, you
+   can stop your <em>Staking Wallet</em> with:
+   <div class="highlight"><pre><span></span><code>blocknet-cli stop
+</code></pre></div></li>
+<li>Wait till your <em>Staking Wallet</em> stops completely. You
+      can monitor the <em>Staking Wallet</em> Linux process (called <code>blocknetd</code>) by
+      repeatedly  pasting/issuing the following command:
+   <div class="highlight"><pre><span></span><code>ps x -o args | grep -v &quot;grep&quot; | grep &quot;blocknetd&quot;
+</code></pre></div>
+   Before the <em>Staking Wallet</em> Linux process has stopped
+   completely, that command will return something like this:
+   <div class="highlight"><pre><span></span><code>/home/[user]/blocknet-4.3.3/bin/blocknetd -daemon
+</code></pre></div>
+   Continue issuing that <code>ps x -o args</code> command until it returns
+      nothing. Then you know the <code>blocknetd</code> process has stopped completely and it's
+      safe to move your data directory.</li>
+<li>Issue the following commands to move
+  (rename) your <em>Staking Wallet</em> data directory:
+  <div class="highlight"><pre><span></span><code>cd ~
+mv .blocknet .blocknet_staking
+</code></pre></div></li>
+<li>Now, assuming your <em>Staking Wallet</em> access
+     aliases have been set up according to the
+   <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>,
+     you'll need to change those alias definitions to reflect
+     the fact that your <em>Staking Wallet</em> data directory has
+     changed. To do so, use <a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">vi</a>
+   or
+   <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a>
+   to edit the <code>~/.bash_aliases</code> file.
+   For Example:
+   <div class="highlight"><pre><span></span><code>nano ~/.bash_aliases
+</code></pre></div>
+   Leave the first line of the file as it is:
+   <div class="highlight"><pre><span></span><code>export BLOCKNET_VERSION=&#39;4.3.3&#39;
+</code></pre></div>
+   With <code>4.3.3</code> being replaced by whatever version of Blocknet
+   wallet your <em>Staking Wallet</em> is running.
+   Then change all the alias definitions to be as follows:
+   <div class="highlight"><pre><span></span><code>export BLOCKNET_VERSION=&#39;4.3.3&#39;
+# blocknet-daemon = Start Blocknet daemon for staking wallet
+alias blocknet-daemon=&#39;~/blocknet-${BLOCKNET_VERSION}/bin/blocknetd -daemon -datadir=$HOME/.blocknet_staking/&#39;
+# blocknet-cli = Staking wallet Command Line Interface
+alias blocknet-cli=&#39;~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/&#39;
+# blocknet-unlock = Unlock staking wallet for staking only
+alias blocknet-unlock=&#39;~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase &quot;$(read -sp &quot;Enter Password:&quot; undo; echo $undo;undo=)&quot; 9999999999 true&#39;
+# blocknet-unlockfull = Unlock staking wallet fully
+alias blocknet-unlockfull=&#39;~/blocknet-${BLOCKNET_VERSION}/bin/blocknet-cli -datadir=$HOME/.blocknet_staking/ walletpassphrase &quot;$(read -sp &quot;Enter Password:&quot; undo; echo $undo;undo=)&quot; 9999999999 false&#39;
+</code></pre></div></li>
+<li>Save your edits to <code>~/.bash_aliases</code>, exit the editor, then
+   activate your new alias definitions with:
+   <div class="highlight"><pre><span></span><code>source ~/.bash_aliases
+</code></pre></div></li>
+<li>Restart your staking wallet with:
+   <div class="highlight"><pre><span></span><code>blocknet-daemon
+</code></pre></div></li>
+<li>Unlock your staking wallet for staking only:
+   <div class="highlight"><pre><span></span><code>blocknet-unlock
+</code></pre></div>
+   (Enter your wallet password when prompted.)</li>
+<li>Confirm your wallet is staking by issuing the command:
+   <div class="highlight"><pre><span></span><code>blocknet-cli getstakingstatus
+</code></pre></div>
+   When this command returns, <code>"status": "Staking is active"</code>,
+   then you know your wallet is staking properly.
+   Note, you may also want to confirm your staking wallet balance
+   is correct with:
+   <div class="highlight"><pre><span></span><code>blocknet-cli getbalance
+</code></pre></div></li>
+</ol>
+</li>
+</ol>
+</details>
+<h2 id="enterprise-xrouter-environment-service-node-setup-docker-based-recommended"><a href="/resources/glossary/#enterprise-xrouter">Enterprise XRouter</a> Environment Service Node Setup - Docker based (Recommended)<a class="headerlink" href="#enterprise-xrouter-environment-service-node-setup-docker-based-recommended" title="Permanent link">&para;</a></h2>
+<p>Note: This Enterprise XRouter (<a href="/resources/glossary/#exr">EXR</a>) Environment Service Node Setup Guide is for
+setting up a Service Node on a computer running Ubuntu Linux
+OS. Please adjust any Ubuntu-specific steps as necessary if
+setting up your Service Node on a different OS.</p>
+<p>To setup your Service Node using the Enterprise XRouter Environment
+Service Node Setup, complete the following guides in order:</p>
+<ol>
+<li><a href="#set-up-an-ubuntu-linux-server">Set up an Ubuntu Linux server</a></li>
+<li><a href="#collateral-wallet-setup-for-exr-service-node">Collateral Wallet Setup for EXR Service Node</a></li>
+<li><a href="#deploy-enterprise-xrouter-environment">Deploy Enterprise XRouter Environment</a></li>
+<li><a href="#maintenance-of-enterprise-xrouter-environment">Maintenance of Enterprise XRouter Environment</a></li>
+</ol>
+<h3 id="set-up-an-ubuntu-linux-server">Set up an Ubuntu Linux server<a class="headerlink" href="#set-up-an-ubuntu-linux-server" title="Permanent link">&para;</a></h3>
+<details class="abstract"><summary>Set up an Ubuntu Linux server</summary><p>Follow these steps to set up a Virtual Private Server (VPS)
+running Ubuntu 20.04.3 LTS Linux Operating System. Please make sure the
+VPS you set up meets the 
+<a href="#hardware-requirements-for-service-node-wallet">hardware requirements for a Service Node</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Note: The instructions below assume <em>bash</em> shell, the default shell for Ubuntu 20.04.3 LTS Linux, is used. Please adjust as necessary if a different shell is used.</p>
+</div>
+<ol>
+<li>If you're new to the Linux Command Line Interface (CLI),
+   <a href="http://www.linuxcommand.org/index.php">learn the basics</a>. You
+   don't have to learn every detail, but learn to navigate the
+   file system, move and remove files and directories, and edit text files with <a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">vi</a>, <a href="https://vim.rtorr.com">vim</a> or <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a>.</li>
+<li>Sign up for an account at an economical, reliable VPS provider. For example, you may wish to explore services available from VPS providers like <a href="https://contabo.com/en/">Contabo</a>, 
+   <a href="https://www.digitalocean.com">Digital Ocean</a>, <a href="https://www.vultr.com/products/cloud-compute/#pricing">Vultr</a>, <a href="https://aws.amazon.com">Amazon AWS</a> and
+   <a href="https://cloud.google.com">Google Cloud Computing</a>. A Google search for "VPS hosting provider" will yield a multitude of other options. You'll want to rent and deploy a VPS running Ubuntu 20.04.3 LTS Linux through your VPS provider.</li>
+<li>Follow the guides available from your VPS provider to launch
+   your Ubuntu VPS and connect to it via <code>ssh</code> (from Mac or Linux
+   Terminal) or via <code>PuTTY</code> (from Windows). For
+   example,
+   <a href="https://docs.digitalocean.com/products/droplets/quickstart/">here is a nice Quick Start Guide from Digital Ocean</a>,
+   and
+   <a href="https://contabo.com/blog/establishing-connection-server-ssh/">here is a guide from Contabo on connecting to your VPS</a>.</li>
+<li>The first time you connect to your VPS, you'll be logged in as
+   <code>root</code> user. Create a new user with the following command, replacing <code>&lt;username&gt;</code> with a username of your choice.
+   <div class="highlight"><pre><span></span><code>adduser &lt;username&gt;
+</code></pre></div>
+   You will be prompted for a password. Enter a
+   password for <code>&lt;username&gt;</code>, different from your root password, and store it in
+   a safe place. You will also see prompts for user information,
+   but these can be left blank.</li>
+<li>Once the new user has been created, add it to the <code>sudo</code> group so it can perform commands as root. Only commands/applications run with <code>sudo</code> will run with root privileges. Others run with regular privileges, so type the following command with your <code>&lt;username&gt;</code>
+<div class="highlight"><pre><span></span><code>usermod -aG sudo &lt;username&gt;
+</code></pre></div></li>
+<li>Type <code>exit</code> at the command prompt to end your Linux session and
+disconnect from your VPS.</li>
+<li>Reconnect to your VPS (via <code>ssh</code> or <code>PuTTY</code>), but this time
+connect as the <code>&lt;username&gt;</code> you just added.<ul>
+<li>Using <code>ssh</code> from Mac or Linux Terminal:
+<div class="highlight"><pre><span></span><code>ssh &lt;username&gt;@VPS_IP
+</code></pre></div>
+Example:
+<div class="highlight"><pre><span></span><code>ssh bob@104.22.10.214
+</code></pre></div></li>
+<li>Using <code>PuTTY</code> from Windows, configure PuTTY to use VPS_IP
+  as before, but this time login to your VPS with the <code>&lt;username&gt;</code> and <code>password</code> you just set.</li>
+</ul>
+</li>
+<li>Update list of available packages. (Enter password for
+   <code>&lt;username&gt;</code> when prompted for the [sudo] password.)
+   <div class="highlight"><pre><span></span><code>sudo apt update
+</code></pre></div></li>
+<li>Upgrade the system by installing/upgrading packages.
+   <div class="highlight"><pre><span></span><code>sudo apt upgrade
+</code></pre></div></li>
+<li>Make sure <code>nano</code> and <code>unzip</code> packages are installed.
+   <div class="highlight"><pre><span></span><code>sudo apt install nano unzip
+</code></pre></div></li>
+<li>
+<p>Create at least as much swap space as you have RAM. So,
+   if you have 16 GB or RAM, you should create at least 16 GB of
+   swap space. Many recommend creating twice as much swap space as
+   you have RAM, which is a good idea if you can spare the disk
+   space. However, more than 16 GB of swap
+   space may not be required. To create swap space:<br>
+   Check if your system already has swap space allocated:
+   <div class="highlight"><pre><span></span><code>swapon --show
+</code></pre></div></p>
+<ul>
+<li>If the results of <code>swapon --show</code> look similar to this:
+   <div class="highlight"><pre><span></span><code>swapon --show
+NAME      TYPE SIZE USED PRIO
+/swapfile file   2G   0B   -2
+</code></pre></div>
+   that means you already have some swap space allocated and
+   you should follow
+   <a href="https://linuxhandbook.com/increase-swap-ubuntu/">this guide</a>
+   to allocate 1x-2x more swap space than you have GB of RAM.</li>
+<li>If the results of <code>swapon --show</code> do <em>not</em> indicate that
+  your system has a <em>swapfile</em> of type <code>file</code>, you'll need to
+  create a new swap file with 1x-2x more swap space than you have
+  GB of RAM. To do so, follow <a href="https://linuxize.com/post/how-to-add-swap-space-on-ubuntu-18-04/">this guide</a></li>
+</ul>
+</li>
+<li>
+<p>(Highly Recommended)
+   Increase the security of your VPS by
+   <a href="https://www.cyberciti.biz/faq/how-to-disable-ssh-password-login-on-linux/">setting up SSH Keys to restrict access to your VPS from any computer other than
+   your own</a>. Those connecting via <code>PuTTY</code> from Windows should first follow <a href="https://devops.ionos.com/tutorials/use-ssh-keys-with-putty-on-windows/">this
+   guide to set up SSH Keys with PuTTY</a>. <em>Note: If you follow this recommendation to restrict access to your
+   VPS via SSH Keys, back up your SSH Private key and save the
+   password you choose to unlock your SSH Private Key.</em> <br></p>
+</li>
+</ol>
+<p>Continue on to <a href="/service-nodes/setup/#collateral-wallet-setup-for-exr-service-node">Collateral Wallet Setup for EXR Service Node</a>.</p>
+</details>
+<h3 id="collateral-wallet-setup-for-exr-service-node">Collateral Wallet Setup for <a href="/resources/glossary/#exr">EXR</a> Service Node<a class="headerlink" href="#collateral-wallet-setup-for-exr-service-node" title="Permanent link">&para;</a></h3>
+<details class="example"><summary>Collateral Wallet Setup for Automated Service Node Setup</summary><ol>
+<li>
+<p>Create a new public address to hold collateral for your Service
+    Node. It is recommended to create a new collateral address for each
+    Service Node whose collateral will be stored in this wallet. A unique name for
+    each collateral address will need to be chosen as an alias.
+    We'll refer to this name below as ALIAS.</p>
+<ul>
+<li>
+<p>To create a collateral address on the GUI/Qt wallet, there are 2 options:</p>
+<ol>
+<li>
+<p>Select <em>Address Book</em> tab on the left side of the
+    wallet, then select <em>Create New Address</em> at the top, then fill
+    in the <em>Alias</em> field with your ALIAS and click <em>Add
+    Address</em>.</p>
+</li>
+<li>
+<p>Navigate to <em>Tools-&gt;Debug Console</em> and type:
+        <div class="highlight"><pre><span></span><code>getnewaddress ALIAS
+</code></pre></div>
+        For Example:
+        <div class="highlight"><pre><span></span><code>getnewaddress snode01
+</code></pre></div>
+        The <code>getnewaddress</code> command will return a new address, like <code>BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>To create a collateral address on the CLI wallet:
+    <div class="highlight"><pre><span></span><code>blocknet-cli getnewaddress ALIAS
+</code></pre></div>
+    For Example:
+    <div class="highlight"><pre><span></span><code>blocknet-cli getnewaddress snode01
+</code></pre></div>
+    The <code>getnewaddress</code> command will return a new address, like <code>BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Create the inputs needed for the collateral address.
+    Each address where collateral funds for a Service Node are
+    stored must meet the following requirements:</p>
+<h4 id="collateral-address-requirements">Collateral Address Requirements<a class="headerlink" href="#collateral-address-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>There must be 10 or fewer <a href="/resources/glossary/#input">inputs</a> in the
+      address whose sum is &gt;= 5000 BLOCK. There can be other
+      inputs in the address which don't factor into this
+      calculation, but it must be possible to add 10 or fewer
+      inputs in the address to achieve a sum of &gt;= 5000 BLOCK.</li>
+<li>If you want the address to qualify for 1
+   <a href="/governance/proposal-voting/">Superblock vote</a> (recommended),
+   you should create one small <a href="/resources/glossary/#input">input</a>
+   to the address, ideally around 1 BLOCK in size, which is
+   <em>separate</em> from the inputs used to meet the 5000 BLOCK
+   requirement listed above. </li>
+<li>If you want the address to qualify for 1
+   <a href="/governance/proposal-voting/">Superblock vote</a> (recommended),
+   you should also ensure that the set of inputs used to meet the
+   5000 BLOCK requirement are all 100 BLOCK or larger in size.</li>
+</ul>
+<p>To fund a collateral address such that it meets these
+    requirements, there are two options: <strong>Manual Funding</strong> or
+    <strong>servicenodecreateinputs</strong>. Use one of these two options (<em>a</em>
+    or <em>b</em>):</p>
+<ol>
+<li>
+<p><strong>Manual Funding:</strong> (recommended) Each time you send BLOCK to the
+       collateral address, it creates an
+       <a href="/resources/glossary/#input">input</a> to the address whose
+       size is equal to the amount sent. So, to meet all <a href="#collateral-address-requirements">the above
+       requirements</a>, you could
+       send 1 BLOCK to the collateral address, then send
+       BLOCK in amounts of &gt;= <code>500</code> and &lt;= <code>5000</code> BLOCK to the same
+       collateral address until the sum of the &gt;= 500 BLOCK inputs
+       is &gt;=5000. <br></p>
+<ul>
+<li>
+<p>For example, you could send 1 BLOCK to the
+           collateral address, then send 1250 BLOCK to the collateral
+           address 4 times. After doing so, the collateral address
+           would have 5 <a href="/resources/glossary/#input">inputs</a>: 1 input
+           of 1 BLOCK and 4 inputs of 1250 BLOCK each. This would meet <a href="#collateral-address-requirements">the above
+       requirements</a>.</p>
+</li>
+<li>
+<p>As another example, you could send 1 BLOCK to
+           the collateral address, then send 5000 BLOCK to the same collateral
+           address. That would leave the collateral address with 2
+           <a href="/resources/glossary/#input">inputs</a>: 1 input of 1
+           BLOCK and 1 input of 5000 BLOCK. This
+           would also meet <a href="#collateral-address-requirements">the above requirements</a>.</p>
+</li>
+</ul>
+<p>Note: If you are sending to the collateral
+           address from the same wallet which contains the collateral
+           address (and possibly other collateral addreses), it will be good to either <a href="/wallet/coin-control">lock the inputs of
+           funds in collateral addresses</a>, or send the funds using the
+           <a href="/wallet/send-funds/#coin-control">Coin Controlled Sending</a> feature
+           to ensure the funds you're sending are not withdrawn
+           from a collateral address you're trying to fund. It's
+           easiest to perform coin controlled sending from the
+           redesigned GUI/Qt wallet. However, if sending from a CLI wallet, you can use methods like
+           <code>createrawtransaction</code> and <code>sendrawtransaction</code> to accomplish
+           coin controlled sending. Get help on using these
+           methods in the CLI wallet with:<br>
+           <code>blocknet-cli help createrawtransaction</code> <br>
+           and <br> 
+           <code>blocknet-cli help sendrawtransaction</code>. </p>
+<details><summary>Tip: Click here to learn how to see all inputs of a collateral address.</summary><ul>
+<li>
+<p>In a <a href="/wallet/installation/#redesigned-vs-classical-guiqt-wallet">redesigned GUI/Qt wallet</a>:
+          Select <em>Window-&gt;Coin Control</em> to display the <a href="/resources/glossary/#address">addresses</a> and
+          <a href="/resources/glossary/#input">Inputs</a> where funds are stored in your
+          wallet:</p>
+<p><img alt="Coin Control" src="/img/wallet/coin-control-window.png" /> <br>
+              This will display a screen like this (<em>in Tree mode</em>):
+              <img alt="Coin Control" src="/img/wallet/coin-control-screen.png" />
+              On this screen you can click the small grey triangle
+              to the left of an address to see the
+              <a href="/resources/glossary/#input">Inputs</a> of the address.</p>
+</li>
+<li>
+<p>In a CLI wallet, or in <em>Tools-&gt;Debug Console</em> of
+          the GUI/Qt wallet: Use the <code>listunspent</code> method to
+          list all wallet <a href="/resources/glossary/#input">Inputs</a>
+          and their associated addresses.<br>
+          From the CLI wallet:
+          <div class="highlight"><pre><span></span><code>blocknet-cli listunspent
+</code></pre></div>
+          From <em>Tools-&gt;Debug Console</em> of the GUI/Qt wallet:
+          <div class="highlight"><pre><span></span><code>listunspent
+</code></pre></div></p>
+</li>
+</ul>
+</details>
+</li>
+<li>
+<p><strong>servicenodecreateinputs</strong>: <code>servicenodecreateinputs</code> is a
+    method/tool of the Blocknet core wallet which can facillitate creating a set
+    of <a href="/resources/glossary/#input">inputs</a> in a collateral
+    address which meets
+    <a href="#collateral-address-requirements">the above requirements</a>. Not
+    only does it automatically create a set of inputs which meets
+    <a href="#collateral-address-requirements">the requirements</a>, it also
+    automatically creates a 1 block input to the collateral
+    address to make the address eligible for
+    <a href="/governance/proposal-voting/">voting</a>.<br>
+    <strong>NOTE:</strong> If your wallet contains other collateral addresses
+    which have already been funded, you'll want to <a href="/wallet/coin-control">lock the inputs of
+           funds in all collateral addresses</a> to prevent
+    <code>servicenodecreateinputs</code> from withdrawing
+    funds from other collateral addresses when
+     it's called.<br>
+     <strong>NOTE:</strong> It is possible to use <code>servicenodecreateinputs</code> to
+    set up collateral for multiple Service Nodes in a single collateral
+    address. However, because this practice makes it difficult for
+    tracking tools to associate collateral addresses with Service
+    Nodes, the recommendation is to use a separate collateral address for each Service
+    Node's collateral. Effectively, this means the recommendation
+    is to always pass a <code>NODE_COUNT</code> parameter of <code>1</code>, or just
+    leave the <code>NODE_COUNT</code> blank so it will default to
+    <code>1</code> when calling <code>servicenodecreateinputs</code>. (See examples below.)<br>
+    To use the <code>servicenodecreateinputs</code>
+    method/tool, your collateral wallet should contain at least 1 BLOCK
+    to cover the transaction fee of calling the
+    <code>servicenodecreateinputs</code> method, and at least 5001
+    BLOCK for each Service Node collateral
+    you want to set up. Once those conditions are met, you
+    can use the <code>servicenodecreateinputs</code> method like this: <br>
+    From <em>Tools-&gt;Debug Console</em> of the GUI/Qt wallet:
+    <div class="highlight"><pre><span></span><code>servicenodecreateinputs NODE_ADDRESS NODE_COUNT INPUT_SIZE
+</code></pre></div>
+    From the CLI wallet:
+    <div class="highlight"><pre><span></span><code>blocknet-cli servicenodecreateinputs NODE_ADDRESS NODE_COUNT INPUT_SIZE
+</code></pre></div>
+    In these examples, replace <code>NODE_ADDRESS</code>, <code>NODE_COUNT</code> and
+    <code>INPUT_SIZE</code> with the desired values, as per the following definitions:</p>
+</li>
+<li>
+<p><code>NODE_ADDRESS</code> = The collateral address created in step 1 above.</p>
+</li>
+<li>
+<p><code>NODE_COUNT</code> = The number of Service Nodes for which to
+                 configure the collateral address. It is
+                 recommended to make this 1, or just leave it
+                 blank so it will default to 1. However, as
+                 mentioned, it is possible to configure a single
+                 collateral address to provide collateral for
+                 multiple Service Nodes.</p>
+</li>
+<li>
+<p><code>INPUT_SIZE</code> = The amount of BLOCK for each
+                 <a href="/resources/glossary/#input">input</a> of the collateral address. </p>
+<ul>
+<li>
+<p>Must be &gt;= <code>500</code> and &lt;= <code>5000</code>.</p>
+</li>
+<li>
+<p>If left blank, it defaults to <code>1250</code>.</p>
+</li>
+<li>
+<p>Example: <code>1000</code> will create 5 inputs of
+                       1000 BLOCK each (per Service Node)</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Example which creates 4 inputs of 1250 BLOCK each in the collateral address, for a single Service Node :
+    <div class="highlight"><pre><span></span><code>servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+</code></pre></div>
+    Example which creates 2 inputs of 2500 BLOCK each in the collateral address, for a single Service Node :
+    <div class="highlight"><pre><span></span><code>servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
+</code></pre></div>
+    Example which creates 2 inputs of 2500 BLOCK each in
+    the collateral address for each of 4 Service Nodes
+    <div class="highlight"><pre><span></span><code>servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 4 2500
+</code></pre></div>
+    This last example will result in 8 inputs of 2500 BLOCK
+    each being created in the collateral address (plus a 1
+    BLOCK input for voting).</p>
+</li>
+<li>
+<p>Prepare to create (or add a new entry to) a <code>servicenode.conf</code> file in your
+   <a href="/wallet/backup-restore/#data-directory">data directory</a>. If
+   the <code>servicenode.conf</code> file does not exist in your data
+   directory, proceed to the next step. Otherwise, review
+   the contents of <code>servicenode.conf</code> in an editor. If <em>all</em> the
+   service node references in the file are
+   out-of-date, exit the editor and delete the file. If some service node references
+   are current/valid, but others are out-of-date, delete all lines containing
+   out-of-date service node references, save the file and exit the editor.</p>
+</li>
+<li>Create (or add a new entry to) a <code>servicenode.conf</code> configuration file. Use the
+<code>servicenodesetup</code> command as follows: <br>
+From <em>Tools-&gt;Debug Console</em> of the GUI/Qt wallet:
+<div class="highlight"><pre><span></span><code>servicenodesetup NODE_ADDRESS ALIAS
+</code></pre></div>
+From the CLI wallet:
+<div class="highlight"><pre><span></span><code>blocknet-cli servicenodesetup NODE_ADDRESS ALIAS
+</code></pre></div>
+Where <code>NODE_ADDRESS</code> is the collateral address you created in step
+1 above, and <code>ALIAS</code> is any name you want to give
+to your Service Node (or group of Service Nodes). The ALIAS you
+choose here doesn't have to be the
+same as the ALIAS you chose for your collateral address in step 1,
+but it is usually most convenient to use the same ALIAS. The
+<code>servicenodesetup</code> command will create an entry for the Service Node(s) in the
+<code>servicenode.conf</code> file in your collateral wallet <a href="/wallet/backup-restore/#data-directory">data directory</a>. Example: 
+    <div class="highlight"><pre><span></span><code>servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
+{
+    &quot;alias&quot;: &quot;snode01&quot;,
+    &quot;tier&quot;: &quot;SPV&quot;,
+    &quot;snodekey&quot;: &quot;02a5d0279e484a3df81acd611e1052d2e0797e796564ecbc25c7fe19f36e9985e5&quot;,
+    &quot;snodeprivkey&quot;: &quot;PswGMd6faZf1ceLojzGeKn7LQuXVwYgRQG8obUKrThZ8ap4pkRR7&quot;,
+    &quot;address&quot;: &quot;BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP&quot;
+}
+</code></pre></div></li>
+<li>Copy the <em>snodeprivkey</em> and the <em>address</em> returned in the
+   previous step and paste them into a temporary text file. You'll
+   need them later on. (In the above example, <em>snodeprivkey</em> is
+   <code>PswGMd6faZf1ceLojzGeKn7LQuXVwYgRQG8obUKrThZ8ap4pkRR7</code>, and
+   <em>address</em> is <code>BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP</code>). Note, both
+   the <em>snodeprivkey</em> and the <em>address</em> of your Service Node are
+   also stored at this point in the <code>servicenode.conf</code> file in
+   your collateral wallet data directory, so you can always find
+   them there if you don't want to paste them into a temporary
+   text file to record them.</li>
+<li>Restart the <em>Collateral Wallet</em>.<ul>
+<li>For GUI/Qt wallet, simply close the Blocknet wallet application, then open it again. </li>
+<li>For CLI wallet (assuming aliases for <em>blocknet-cli</em> and
+  <em>blocknet-daemon</em> have been set up according to the <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>):
+  <div class="highlight"><pre><span></span><code>blocknet-cli stop
+blocknet-daemon
+</code></pre></div>
+   Note, you will probably need to wait at least 30 seconds
+   after issuing <code>blocknet-cli stop</code> or closing the GUI wallet app before you'll be allowed to
+   relaunch <code>blocknet-daemon</code> or relaunch the GUI wallet.  Just keep trying every 30 seconds or so to relaunch until you no longer get errors.</li>
+</ul>
+</li>
+<li>Assuming you want to <a href="/resources/glossary/#staking">stake</a> your collateral, unlock your staking wallet for staking only:<ul>
+<li>For GUI/Qt wallet, unlock your wallet for staking only
+   according to <a href="/wallet/staking/#staking-from-a-gui-wallet">the staking guide for GUI wallet</a>.</li>
+<li>For CLI wallet (assuming an alias for <em>blocknet-unlock</em> has been set up according to the <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>):
+  <div class="highlight"><pre><span></span><code>blocknet-unlock 
+</code></pre></div>
+   (Enter your wallet password when prompted.)</li>
+</ul>
+</li>
+<li>Confirm your wallet is staking with the <code>getstakingstatus</code> command.<br>
+   From <em>Tools-&gt;Debug Console</em> of the GUI/Qt wallet:
+   <div class="highlight"><pre><span></span><code>getstakingstatus
+</code></pre></div>
+   From the CLI wallet:
+   <div class="highlight"><pre><span></span><code>blocknet-cli getstakingstatus
+</code></pre></div>
+   When this command returns, <code>"status": "Staking is active"</code>,
+   then you know your wallet is staking properly.
+   Note, you may also want to confirm your staking wallet balance
+   is correct with <code>getbalance</code>:<br>
+   From <em>Tools-&gt;Debug Console</em> of the GUI/Qt wallet:
+   <div class="highlight"><pre><span></span><code>getbalance
+</code></pre></div>
+   From the CLI wallet:
+   <div class="highlight"><pre><span></span><code>blocknet-cli getbalance 
+</code></pre></div></li>
+<li>Continue on to <a href="#deploy-enterprise-xrouter-environment">Deploy Enterprise XRouter Environment</a>.</li>
+</ol>
+</details>
+<h3 id="deploy-enterprise-xrouter-environment">Deploy Enterprise XRouter Environment<a class="headerlink" href="#deploy-enterprise-xrouter-environment" title="Permanent link">&para;</a></h3>
+<details class="example"><summary>Deploy Enterprise XRouter Environment</summary><p><br>
+Firstly, log in to the Ubuntu Linux server you
+<a href="#set-up-an-ubuntu-linux-server">set up above</a>, (log in as the
+user you created, not as root), then continue with this guide.</p>
+<h3 id="run-global-install-script-for-enterprise-xrouter-environment">Run Global Install Script for Enterprise XRouter Environment<a class="headerlink" href="#run-global-install-script-for-enterprise-xrouter-environment" title="Permanent link">&para;</a></h3>
+<p>If you have never run the
+<a href="/resources/glossary/#enterprise-xrouter">Enterprise XRouter</a>
+Environment (EXR ENV) Global Install script on this server, and you don't
+mind using your server's <em>built-in python3</em>, copy/paste these
+commands to run the <em>Global Install</em> script:
+<div class="highlight"><pre><span></span><code>curl -fsSL https://getenv.xrouter.com -o env_installer.sh
+chmod +x env_installer.sh
+./env_installer.sh --install
+</code></pre></div></p>
+<p>If the Global Install Script detects docker/docker-compose is already
+installed, it simply won't install new version(s). If it detect
+the <code>~/exrproxy-env</code> directory already exists, it will update
+it. If it detects <code>~/exrproxy-env</code> does not already exist, it will
+clone it from the Github repository and thereby create it.<br></p>
+<p>Note, this Global Install Script will log you out after it's finished installing
+everything. This is necessary to update the user's membership in
+the <em>docker</em> group of Linux. Simply log in again after it logs you out.
+Then follow the steps below.<br></p>
+<p>Note, before you run the <code>builder.py</code> script in the steps below,
+confirm that you have <code>~/.local/bin</code> in your $PATH variable. You
+can check this simply like this:
+<div class="highlight"><pre><span></span><code>echo $PATH
+</code></pre></div>
+If you don't see <code>~/.local/bin</code> (or <code>/home/&lt;user-name&gt;/.local/bin</code>) listed as one of the directories in your $PATH, take steps to ensure it gets added to your $PATH on every login. For example, if you're on a system where <code>~/.profile</code> is sourced on every login, you could add these lines to <code>~/.profile</code>:
+<div class="highlight"><pre><span></span><code># set PATH so it includes user&#39;s private bin if it exists
+PATH=&quot;$HOME/bin:$PATH&quot;
+# set PATH so it includes user&#39;s private bin if it exists
+PATH=&quot;$HOME/.local/bin:$PATH&quot;
+</code></pre></div>
+Then do this to add <code>~/.local/bin</code> to your $PATH:
+<div class="highlight"><pre><span></span><code>source ~/.profile
+</code></pre></div></p>
+<ol>
+<li>Prepare to enter all the details you'll need when you run
+the <code>builder.py</code> script:<ol>
+<li>Most likely, <code>builder.py</code> will automatically find your server's public IP
+address, but it will be good to know your server's IP so you can
+verify (in a future step) that <code>builder.py</code> has found it correctly.<br>
+Some options for fetching your Service Node computer's Public IP include: 
+<div class="highlight"><pre><span></span><code>curl ipconfig.io
+curl ifconfig.co
+dig +short myip.opendns.com @resolver1.opendns.com
+</code></pre></div>
+Fetch your Service Node computer's Public IP address, then
+copy/paste it to a temporary text file for easy access.</li>
+<li>Make sure you have easy copy/paste access to your <em>Servicenode Private
+   Key</em> and <em>Servicenode Address</em>, which you got earlier from the <a href="#collateral-wallet-setup-for-exr-service-node">Collateral Wallet Setup Procedure</a>.</li>
+<li>Think of a name for your Service Node. It doesn't have to be
+  the same name you chose to label the address of your Service
+  Node during the <em>Collateral Wallet Setup</em>, but it's often
+  convenient to use the same name. Note, there should be no
+  spaces in the names you choose.</li>
+<li>Think of a name and a password for the RPC user your Service
+  Node will use when communication with the services/coins it supports.</li>
+</ol>
+</li>
+<li>Change directory to your local <code>exrproxy-env</code> repository
+(<code>exrproxy-env</code> is located <code>~</code> by default.):
+<div class="highlight"><pre><span></span><code>cd ~/exrproxy-env 
+</code></pre></div></li>
+<li>Update your local repository and launch the
+<a href="/resources/glossary/#snode">SNode</a> Builder:<br>
+Assuming you have previously run the
+<a href="/service-nodes/setup/#run-global-install-script-for-enterprise-xrouter-environment">Global Install Script</a>
+on this server, you can update your local environment repository
+and launch the SNode builder tool with this command:
+<div class="highlight"><pre><span></span><code>./exr_env.sh --update --builder &quot;&quot;
+</code></pre></div>
+The <code>--update</code> parameter updates the local repository.<br>
+The <code>--builder ""</code> parameter launches the
+  <code>builder.py</code> tool when the update is complete. If you prefer,
+  you can leave off the <code>--builder ""</code> parameter, then call <code>./builder.py</code>
+  standalone after <code>./exr_env.sh --update</code> completes, like this:
+<div class="highlight"><pre><span></span><code>./exr_env.sh --update
+./builder.py
+</code></pre></div>
+IMPORTANT: When passing parameters to <code>./builder.py</code> through
+  <code>./exr_env.sh</code>, the parameters of <code>./builder.py</code> must follow the
+  <code>--builder</code> parameter and they must all be enclosed in double quotes
+  ("). For example:
+<div class="highlight"><pre><span></span><code>./exr_env.sh --builder &quot;--deploy&quot;
+./exr_env.sh --builder &quot;--source autobuild/sources.yaml&quot;
+./exr_env.sh --builder &quot;&quot;
+</code></pre></div>
+Parameters passed to <code>./builder.py</code> when it's called as a
+standalone app do <em>not</em> require double quotes around them. For
+  example:
+<div class="highlight"><pre><span></span><code>./builder.py --source autobuild/sources.yaml --deploy
+</code></pre></div></li>
+<li>First, <code>builder.py</code> will display some information about your system's available hardware
+resources. This information will be useful in the SNode
+configuration process. It will look something like this:
+<img alt="available-hw" src="/img/service-nodes/system-hw.png" /></li>
+<li><code>builder.py</code> will then check to see if the necessary
+   environment, and the necessary versions
+   of <code>docker</code> and <code>docker-compose</code>
+   have been installed on your server. If not, it will instruct
+   you to install them and exit.</li>
+<li>Next, it will prompt you for your <em>sudo</em> password. Enter your
+   <em>user</em> password, not your <em>root</em> password.</li>
+<li>Next, it will ask you some questions about how you want to
+    configure your Service Node. If at any time you want to change
+    any of the answers you have given while configuring your SNode,
+    simply issue <em>Control-C</em> to stop the configuration process,
+    then run <code>./builder.py</code> (or <code>./exr_env.sh --builder ""</code>) again.</li>
+<li>The first questions it will ask will be about your Public IP address, Service Node
+    Name, Service Node Private Key, Service Node Address, RPC User
+    and RPC Password. You should
+    have the answers to all these questions already prepared from
+    step 1 above.</li>
+<li>Next, you'll be presented with a series of queries about which
+   services you want to support on your Service Node. The
+   approximate amount of RAM,
+   # of CPUs, and amount of DISK (SSD) storage space required to support each
+   service will be displayed next to the service name. Note
+   that the cumulative DISK storage space requirements of all the services you
+   select to store data in a particular directory, must be less
+   than the total amount of DISK storage space available in that
+   directory. For example, the sum of the DISK requirements for
+   all the services you select to store data in the <code>/snode</code>
+   directory must be less than the total available space in
+   the <code>/snode</code> directory. (Note, the available space on each of your server's mounted
+   directories is displayed when you first run <code>builder.py</code>, as in
+   step 4 above.) The RAM and CPU requirements for different services are not
+   necessarily cumulative in the same way. For Example, ETH and AVAX both require 16 GB of RAM, but that doesn't necessarily mean you need 32 GB RAM to support both
+   of them on your SNode. However, if you want to have the ability to sync both
+   of them concurrently, or to guarantee optimal performance, then
+   32+ GB RAM would be recommended.</li>
+<li>
+<p>The first services you'll be given the option to
+   support will be the XBridge <a href="/resources/glossary/#spv">SPV</a>
+   blockchain services. In the
+   following example, SPV blockchains DASH, LTC, PIVX and SYS have been
+   selected to be supported as XBridge services:
+   <img alt="xbridge-chains" src="/img/service-nodes/xbridge-chains.png" /> <br> Next to each XBridge service in the list, the
+   approximate RAM, # of CPU cores and
+   DISK requirements for the blockchain are displayed. The default
+   <em>data mount directory</em> (<code>/snode</code> in this example) is also displayed for each
+   blockchain. (In a later step, you'll be given the option to change the <em>data
+   mount directory</em> for specific services.)
+   If you want to change the global default <em>data mount directory</em> for <em>all</em> services
+   you'll deploy, you can change it from <code>/snode</code> to some other
+   directory by following this procedure:</p>
+<details class="example"><summary>Change Global Default Data Mount Directory.</summary><ol>
+<li>Issue <em>Control-C</em> to stop <code>builder.py</code> if it's currently running.</li>
+<li>Make a copy of <code>autobuild/sources.yaml</code>. For example:
+  <div class="highlight"><pre><span></span><code>cp autobuild/sources.yaml autobuild/my_custom_dir_sources.yaml
+</code></pre></div></li>
+<li>Use a simple editor like  <a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">vi</a>
+   or
+   <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a>,
+   to edit the copy you just made. For
+   Example:
+   <div class="highlight"><pre><span></span><code>vi autobuild/my_custom_dir_sources.yaml
+</code></pre></div></li>
+<li>In the editor, search for all occurrances of <code>/snode</code>
+   and replace them with whatever new global default you want for your <em>data
+   mount dir</em>.</li>
+<li>Save the file and exit the editor.</li>
+<li>Run <code>./builder.py</code>, passing it a parameter to
+   specify the file you just edited as the <em>source</em> of available
+   coins/services. For example:
+   <div class="highlight"><pre><span></span><code>./builder.py --source autobuild/my_custom_dir_sources.yaml
+</code></pre></div></li>
+</ol>
+</details>
+</li>
+<li>
+<p>Next, you'll be given the option to choose which
+   <a href="/resources/glossary/#evm">EVM</a> blockchains you 
+   want to support.  In the following example, both ETH and AVAX
+   EVM blockchains are selected to be supported:
+   <img alt="xbridge-chains" src="/img/service-nodes/evm-chains.png" /> <br>
+   The HW requirements and default
+   <em>data mount directory</em> (<code>/snode</code> in this example) are displayed for each
+   blockchain. Note: The HW requirements listed next to
+   each EVM chain assume the EVM chain will be hosted <em>internally</em>,
+   on the <a href="/resources/glossary/#exr-env">EXR ENV</a> server itself. Supporting an <em>externally</em> hosted EVM
+   does not add any HW requirements to the EXR ENV server.  (In a
+   later step, you'll be given the option to
+   specify the Host IPs of the EVM blockchains your
+   SNode will support <em>externally</em>.)</p>
+</li>
+<li>If you chose to support <a href="/resources/glossary/#evm">EVM</a> blockchains,
+   you'll be given the option to support <a href="/resources/glossary/#hydra">Hydra</a> and/or
+   (coming soon) <a href="/resources/glossary/#indexer">XQuery</a> services for each of the
+   EVMs you'll support.</li>
+<li>
+<p>If you chose to support XQuery (coming soon), you'll be given the
+   option to select which indices you want XQuery to support for each EVM you'll
+   support. Supporting all available indices is recommended. For
+   example:</p>
+<p><img alt="eth-indices" src="/img/service-nodes/eth-indices.png" />    <br />
+<img alt="avax-indices" src="/img/service-nodes/avax-indices.png" />    </p>
+</li>
+<li>
+<p>Next, if you chose to support <a href="/resources/glossary/#evm">EVM</a>
+   blockchains, you'll be prompted to enter the
+   US dollar values you want to charge for access to <a href="/resources/glossary/#exr-env">EXR ENV</a>
+   services like <a href="/resources/glossary/#hydra">Hydra</a> and (coming soon) 
+   <a href="/resources/glossary/#indexer">XQuery</a>, at the <em>tier1</em> and
+   <em>tier2</em> levels. (Default values are recommended.) See
+   <a href="https://api.blocknet.co/#tier1">Hydra/XQuery Projects API</a> for
+   definitions of <em>tier1</em> and <em>tier2</em> payments.</p>
+</li>
+<li>Next, you'll be prompted to enter the
+   discount percentages you want to offer clients for payments in aBLOCK or
+   aaBLOCK. These payment discounts are relative to the US dollar
+   values entered in the previous step. The idea of giving
+   discounts to clients paying with aBLOCK or aaBLOCK came from
+   the idea that we want to encourage payment in various forms of
+   BLOCK in order to increase demand for BLOCK. Due to high eth
+   gas fees currently associated with paying in aBLOCK, and due to aaBLOCK
+   being the <em>only</em> form of payment available on the AVAX
+   blockchain, default values of 20% discount for aBLOCK, and 0%
+   discount for aaBLOCK are recommended.</li>
+<li>Next, you'll be asked, "<em>Do you wish to change install
+   locations?</em>"  Type "<em>y</em>" here if you want to change the <em>data
+   mount directory</em> of any service from <code>/snode</code> to some other
+   directory. This option can
+   be useful if, for example, you have a separate, very large, fast disk
+   dedicated to supporting ETH, a service which requires large,
+   fast NVMe SSD storage. Selecting "<em>y</em>" here will display
+   a selection menu which displays the current <em>data
+   mount directory</em> for each service and allows you to select the
+   services for which you want to change the <em>data
+   mount directory</em>. The selection menu will look something like
+   the following:
+   <img alt="xbridge-chains" src="/img/service-nodes/select-new-install.png" /></li>
+<li>Next, a <em>storage space calculations</em> table will be displayed
+   which can help you confirm that your server's storage space
+   resources are capable of supporting all the services you've elected
+   to support. The table will look something like this:
+   <img alt="xbridge-chains" src="/img/service-nodes/storage-calcs.png" /> <br>
+   On analyzing this table, if you determine that your server's storage space
+   resources are <em>not</em> capable of supporting all the services you've elected
+   to support, issue <em>Control-C</em> to stop the configuration process,
+   then run <code>./builder.py</code> (or <code>./exr_env.sh --builder ""</code>) again. <br>
+   There are 6 columns in the <em>storage space calculations</em>  table:<ul>
+<li><strong>Directory</strong>: This column displays the directory in which
+     the data for the service will be stored, called the <em>data mount directory</em>.</li>
+<li><strong>Available</strong>: This column displays the available disk
+     space in the <em>data mount directory</em> of the
+     service.</li>
+<li><strong>Required</strong>: This column displays the approximate space
+     required to host the blockchain of the service.</li>
+<li><strong>Existing dir</strong>: If a previously synced blockchain of the service was
+     found in the <em>data mount directory</em> of the
+     service, this column displays the subdirectory in which
+     the synced blockchain
+     was found (e.g. <code>BTC</code>, <code>LTC</code>) and size of that
+     synced blockchain (e.g. <code>456.64 GB</code>, <code>76.95 GB</code>).  If none was
+     found, it displays no subdirectory and <code>0 GB</code> for size.</li>
+<li><strong>Checks</strong>: This column displays a green <strong>PASS</strong> if
+     the <em>data mount directory</em> of the service has enough
+     space to host the service. Otherwise, it displays
+     a red <strong>WARNING</strong>. <br> Note: A <strong>WARNING</strong> message in the
+     <strong>Checks</strong> column should <em>only</em> be ignored if you are
+     certain the value displayed in the <strong>Required</strong> column is
+     too large/not accurate, and you have carefully calculated that all
+     your selected services will actually fit on the selected
+     <em>data mount directories</em> of your system.</li>
+<li><strong>Requirement Calculations</strong>: This column displays the
+     calculations performed to determine if green <strong>PASS</strong> or
+     red <strong>WARNING</strong> should be displayed in the <strong>Checks</strong>
+     column. <br>
+     If the calculation, "<strong>Available</strong> - (<strong>Required</strong> - <strong>Existing
+     dir</strong>)" yields a positive number, <strong>PASS</strong> is displayed;
+     Otherwise, <strong>WARNING</strong> is displayed.</li>
+<li>At the bottom of the <em>storage space calculations</em>  table
+     is a row titled, <strong>TOTAL</strong>, which gives a cumulative
+     summary of all the rows above.</li>
+</ul>
+</li>
+<li>Finally, you'll be given the option to use a unique
+   auto-generated file name, or a user-specified file name for
+   storing the SNode configuration information you've
+   entered. If, for example, you enter the file name <code>latest</code> then
+   a file containing your SNode configuration will be generated in
+   the <code>inputs_yaml</code> directory, and the file will be
+   named, <code>latest.yaml</code> (i.e. your SNode config will be stored as <code>inputs_yaml/latest.yaml</code>).</li>
+<li>(Informational) In addition to being stored in the <code>.yaml</code> format mentioned
+   in the previous step, your SNode configuration will also be stored in
+   a processed form in the file,
+   <code>docker-compose.yml</code>. <code>docker-compose.yml</code> will then
+   be used by the <code>./deploy.sh</code> script when you're ready to deploy
+   your Service Node. <br>
+   Note for advanced users: If you ever want to manually modify
+   the <code>.yaml</code> file mentioned in the previous step, then use your
+   modified <code>.yaml</code> file to generate a new <code>docker-compose.yml</code> file, you
+   can do so using the <code>--yaml</code> parameter like this:
+   <div class="highlight"><pre><span></span><code>./builder.py --yaml inputs_yaml/latest.yaml
+</code></pre></div></li>
+<li>
+<p>Before you deploy your Service Node, you may want to review the
+   SNode config file generated by <code>builder.py</code>
+   (e.g. <code>inputs_yaml/latest.yaml</code>) to confirm that everything is
+   configured as intended. For example, you may want to review the
+   <em>data mount directory</em> (<code>data_mount_dir</code>) for the services
+   which require large amounts of disk space to confirm the
+   specified <code>data_mount_dir</code> has enough disk space
+   available to support the service. If the configuration looks
+   good, you can launch your Service Node by issuing
+   the following command:
+   <div class="highlight"><pre><span></span><code>./deploy.sh
+</code></pre></div>
+    Tip: If you pass the <code>--deploy</code> parameter to <code>./builder.py</code>,
+    it will automatically call <code>./deploy.sh</code> after it finishes
+    generating the SNode configuration files. <br>
+    Examples:<br>
+    <div class="highlight"><pre><span></span><code>./builder.py --deploy
+./exr_env.sh --builder &quot;--deploy&quot;
+</code></pre></div>
+    <strong>Most likely you
+   won't need to follow the remaining steps below if you have
+   followed them previously and you're simply reconfiguring your
+   SNode on this run. However, if your SNode has been offline for a
+   while, you may need to reregister it as per steps 25-29
+   below. You can check if your SNode needs to be reregistered by
+   following steps 28 &amp; 29 below.</strong></p>
+<details class="info"><summary>Didn't see an option to support the service or coin you want to support?</summary><p>Options to support more services/coins are continuously being
+added. The goal is that Service Nodes will have an option to
+support every coin supported by <a href="/blockdx/introduction/">BlockDX</a>, which
+means every coin listed in <a href="https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json">Blocknet
+manifest-latest.json</a>. Service
+Nodes will also soon have the option to support a wide variety
+of EVM blockchains, like Ethereum/ETH, Avalanche/AVAX, Binance
+Smart Chain/BSC, Fantom/FTM, Solana/SOL, Polkadot/DOT, Cardano/ADA, etc.</p>
+</details>
+<details class="tip"><summary>Tip: How to Reset Configuration Defaults.</summary><p><code>builder.py</code> <em>remembers</em> previous SNode configuration
+choices. Usually this is quite handy and desirable, but
+sometimes it's useful to make it <em>forget</em> previous
+configuration choices. There are 5 files <code>builder.py</code> uses to
+<em>remember</em> previous configuration choices made by the user:
+<code>.env</code>, <code>.known_hosts</code>, <code>.known_volumes</code>, <code>.cache</code> and
+<code>.cache_ip</code>. If you want to reset any of the default values
+<code>builder.py</code> presents to you during the configuration process,
+deleting (or renaming) one or more of these files before
+running <code>./builder.py</code> will likely do the trick. You can also
+reset all of these files at once like this:
+<div class="highlight"><pre><span></span><code>./builder.py --prunecache
+</code></pre></div></p>
+<ul>
+<li>
+<p><code>.env</code> - remembers your Public IP address, Service Node
+        Name, Service Node Private Key, Service Node Address, RPC User
+        and RPC Password.</p>
+</li>
+<li>
+<p><code>.known_hosts</code> - remembers the IP addresses of any
+        externally hosted EVM chains.</p>
+</li>
+<li>
+<p><code>.known_volumes</code> - remembers any special <em>data mount
+        directories</em> you chose for specific services.</p>
+</li>
+<li>
+<p><code>.cache</code> - remembers choices you made about which
+        services to support, and how to set up payments</p>
+</li>
+<li>
+<p><code>.cache_ip</code> - remembers the IP addresses assigned to
+        docker containers on the last deployment (so it can try
+        to assign the same IP addresses again if they are available).</p>
+</li>
+</ul>
+</details>
+<h5 id="warning-only-expose-hasura-gui-xquery-port-to-restricted-hosts-if-ever">Warning: Only expose Hasura GUI XQuery port to restricted hosts, if ever.<a class="headerlink" href="#warning-only-expose-hasura-gui-xquery-port-to-restricted-hosts-if-ever" title="Permanent link">&para;</a></h5>
+<details class="warning"><summary>Warning: Only expose Hasura GUI XQuery port to restricted hosts, if ever.</summary><p>It is a security risk to leave Hasura GUI Console port
+  exposed to all hosts. By default, this port is <em>not</em> exposed
+  to outside hosts. However, there may be occassions when
+  an advanced SNode operator wants to expose the Hasura GUI
+  Console port to a select set of outside hosts for a time. For
+  example, it could be useful to allow a client to design an SQL query
+  to the XQuery service on your SNode using the convenient Hasura graphical SQL
+  query interface. See <a href="https://api.blocknet.co/#xquery-hasura-gui-console">XQuery Hasura GUI
+  Console</a>
+  for instructions on how to view the XQuery Hasura GUI Console in
+  a browser.<br>
+  If you want to expose the Hasura GUI Console port on your
+  SNode, edit the following section in <code>docker-compose.yml</code>
+  before you run <code>./deploy.sh</code>:
+   <div class="highlight"><pre><span></span><code>xquery-graphql-engine:
+image: hasura/graphql-engine:v2.0.10
+hostname: graphql-engine
+#ports:
+#  - &quot;8080:8080&quot;
+</code></pre></div>
+  Uncomment the last two lines of this section, like this
+   <div class="highlight"><pre><span></span><code>xquery-graphql-engine:
+image: hasura/graphql-engine:v2.0.10
+hostname: graphql-engine
+ports:
+  - &quot;8080:8080&quot;
+</code></pre></div>
+  To restrict access to port 8080 to a limited set of hosts,
+  you can use <a href="https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/"><em>uncomplicated firewall</em> (ufw)</a></p>
+</details>
+</li>
+<li>
+<p>If you are trying to add Service Node support for a <em>new</em>
+    coin which is not yet listed in <a href="https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json">Blocknet
+    manifest-latest.json</a>
+    configuration file, please refer to the
+    <a href="/blockdx/listings/#listing-process">Listing Process</a> for
+    general information on listing a new coin. Then, to add support for
+    the new coin on your Service Node, follow this procedure:</p>
+<details class="example"><summary>Add Support for a New Coin or a New Config of a Coin.</summary><ol>
+<li>Make a copy of <code>autobuild/sources.yaml</code>. For example:
+<div class="highlight"><pre><span></span><code>cp autobuild/sources.yaml autobuild/custom.yaml
+</code></pre></div></li>
+<li>Use a simple editor like  <a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">vi</a>
+   or
+   <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a>,
+   to edit the copy you just made. For
+   Example:
+   <div class="highlight"><pre><span></span><code>vi autobuild/custom.yaml
+</code></pre></div></li>
+<li>In the editor, duplicate the entry for some common coin (e.g. LTC), then
+modify the duplicate entry so that it references the name and docker
+image of the new coin you want to support.</li>
+<li>Save the file and exit the editor.</li>
+<li>Run <code>./builder.py</code>, passing it two parameters: One to
+specify the file you just edited as the <em>source</em> of available
+coins/services, and one to instruct it to reference a configuration repository
+which contains configuration data for the new coin. For example:
+<div class="highlight"><pre><span></span><code>./builder.py --source autobuild/custom.yaml --branchpath https://raw.githubusercontent.com/ConanMishler/blockchain-configuration-files/bitcoin--v0.22.0.conf
+</code></pre></div>
+NOTE: The URL passed via the <code>--branchpath</code> parameter must be in <em>raw</em> form, 
+as in the example above. </li>
+<li>Launch your SNode by issuing the following command:
+<div class="highlight"><pre><span></span><code>./deploy.sh
+</code></pre></div></li>
+</ol>
+</details>
+</li>
+<li>
+<p>Advanced users may want to deploy a <em>Testnet SNode</em>, a <em>Trading Node</em>, or a
+    <em>Testnet Trading Node</em> instead of a regular <em>SNode</em>. These 3
+    special kinds of nodes are <a href="/service-nodes/introduction/#special-kinds-of-service-nodes-for-advanced-users">defined here</a>.</p>
+<details class="example"><summary>Deploy a <em>Testnet SNode</em>, a <em>Trading Node</em>, or a <em>Testnet Trading Node</em>.</summary><ol>
+<li>Make a copy of <code>autobuild/sources.yaml</code>. For example:
+  <div class="highlight"><pre><span></span><code>cp autobuild/sources.yaml autobuild/custom.yaml
+</code></pre></div></li>
+<li>Use a simple editor like  <a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">vi</a>
+   or
+   <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a>,
+   to edit the copy you just made. For
+   Example:
+   <div class="highlight"><pre><span></span><code>vi autobuild/custom.yaml
+</code></pre></div></li>
+<li>In the editor, search for the following text
+   <div class="highlight"><pre><span></span><code>- name: SNODE
+</code></pre></div>
+   then change <strong>SNODE</strong> to one of the following,
+   depending which type of node you want to deploy:<ul>
+<li><strong>testSNODE</strong></li>
+<li><strong>TNODE</strong></li>
+<li><strong>testTNODE</strong></li>
+</ul>
+</li>
+<li>Save the file and exit the editor.</li>
+<li>Run <code>./builder.py</code>, passing it a parameter to
+   specify the file you just edited as the <em>source</em> of available
+   coins/services. For example:
+   <div class="highlight"><pre><span></span><code>./builder.py --source autobuild/custom.yaml
+</code></pre></div></li>
+<li>Launch your node by issuing the following command:
+   <div class="highlight"><pre><span></span><code>./deploy.sh
+</code></pre></div></li>
+</ol>
+</details>
+</li>
+<li>
+<p>(Recommended for servers with less than 32
+   GB RAM or less than 10 CPU cores.) If your server HW resources
+   are somewhat limited, it is recommended to deploy certain SNode services
+   in stages. The reason is because some services are known to
+   require large amounts of RAM and/or I/O bandwidth while they
+   are syncing their respective blockchains. ETH, AVAX, LBC and DGB all
+   fall into this category. For this reason, it is recommended
+   <em>not</em> to run more than one of those 4 while any one of them is
+   syncing on a server with limited HW resources. For example, it's
+   best <em>not</em> to run LBC or DGB while
+   AVAX is syncing, or to run AVAX or DGB while LBC is syncing. To
+   deploy SNode services in stages, simply limit which services
+   you select to support the first time you run <code>./builder.py</code>,
+   then run <code>./builder.py</code> again after the resource intensive
+   blockchain(s) have synced, this time selecting additional
+   services to support.</p>
+</li>
+<li>(Informational) Once your SNode is configured and deployed, you should see the scripts do their magic and launch <a href="https://www.docker.com/resources/what-container">docker
+   containers</a>
+   for all the services you configured your Service Node to
+   support. You can see all the running docker containers by
+   issuing the command:
+   <div class="highlight"><pre><span></span><code>docker ps
+</code></pre></div>
+   This command will display the CONTAINER ID, the IMAGE used to
+   build it, the COMMAND running in the container, when it was
+   CREATED, its current STATUS, which PORTS it uses, and any NAMES
+   assigned to it.</li>
+<li>To complete the Service Node deployment, we'll
+   need to know either the CONTAINER ID or container NAME of the
+   Service Node container. For that, we can filter the above
+   <code>docker ps</code> output through <code>grep</code> like this:
+   <div class="highlight"><pre><span></span><code>docker ps | grep snode
+</code></pre></div>
+   That command should return information about the <em>snode</em> container, something like this:
+   <div class="highlight"><pre><span></span><code>f9b910221ca2   blocknetdx/servicenode:latest              &quot;/opt/blockchain/sta…&quot;   26 hours ago   Up 26 hours   41412/tcp, 41414/tcp, 41419/tcp, 41474/tcp         exrproxy-env-snode-1
+</code></pre></div>
+   The first item returned in this example (<code>f9b910221ca2</code>) is the CONTAINER ID, and the last item returned (<code>exrproxy-env-snode-1</code>) is the NAME of the container. Either of these two values can be used to access the <em>snode</em> container.</li>
+<li>
+<p>It will take 3.5+ hours for the Blocknet blockchain to sync in your <em>snode</em> container. Periodically monitor the current block height of the Blocknet wallet running in the <em>snode</em> container by issuing the following command:
+ <div class="highlight"><pre><span></span><code>docker exec exrproxy-env-snode-1 blocknet-cli getblockcount
+</code></pre></div>
+ Note, here we are executing the command, <code>blocknet-cli</code> within
+ the <code>exrproxy-env-snode-1</code> container, which is the name we found
+ for the <em>snode</em> container in the previous step. Also note,
+ initial calls to <code>getblockcount</code> may return errors until headers
+ finish syncing. This is normal and nothing to be concerned about.</p>
+<details class="tip"><summary>Tips for monitoring block height during syncing, and generally accessing blocknet-cli more easily.</summary><p>To make access to the <code>blocknet-cli</code> program more
+  convenient, you may want to create an alias something like
+  the following:
+  <div class="highlight"><pre><span></span><code>alias snode-cli=&#39;docker exec exrproxy-env-snode-1 blocknet-cli&#39;
+</code></pre></div>
+  If you add that alias to <code>~/.bash_aliases</code> (or any file
+  sourced on login), it will be defined automatically every
+  time you login to your Linux system. Another idea is to
+  create a small Bash Shell script something like this:
+  <div class="highlight"><pre><span></span><code>#!/bin/bash
+docker exec exrproxy-env-snode-1 blocknet-cli $*
+</code></pre></div>
+  If you create such a shell script, give it a name like <code>snode-cli</code>, give it executable
+  permissions (<code>chmod +x snode-cli</code>), then move it to some
+  directory in your <em>$PATH</em>, then you can use the Linux
+  <code>watch</code> utility like this:
+  <div class="highlight"><pre><span></span><code>watch snode-cli getblockcount
+</code></pre></div>
+  (Enter <code>echo $PATH</code> to see which directories are in your
+  <em>$PATH</em>. Enter<code>man watch</code> to learn about the <code>watch</code> utility and
+  its options.)</p>
+</details>
+</li>
+<li>
+<p>When the block height in the <em>snode</em> container matches that of the <a href="https://chainz.cryptoid.info/block/">Blocknet blockchain explorer</a>, your Service Node wallet is fully synced and you can now activate your Service Node as follows:</p>
+<ol>
+<li>On your <em>Collateral Wallet</em>, issue the command, <code>servicenoderegister</code>. If your <em>Collateral Wallet</em> was set up according to the <a href="/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux">VPS Staking guide</a>,
+and the alias for <code>blocknet-cli</code> was also created according to that
+guide, you can issue the <code>servicenoderegister</code> command as follows:
+<div class="highlight"><pre><span></span><code>blocknet-cli servicenoderegister
+</code></pre></div>
+Otherwise, if your <em>Collateral Wallet</em> is a GUI/Qt wallet
+running on a different computer, simply enter
+<code>servicenoderegister</code> in <em>Tools-&gt;Debug Console</em> of your
+<em>Collateral Wallet</em>.</li>
+<li>On your <em>Service Node Wallet</em>, issue the <code>servicenodesendping</code> command like this:
+<div class="highlight"><pre><span></span><code>docker exec exrproxy-env-snode-1 blocknet-cli servicenodesendping
+</code></pre></div>
+(Note, if you created the <code>snode-cli</code> alias or shell script as
+suggested in the <em>Tip</em> above, you can enter simply, <code>snode-cli servicenodesendping</code>.)</li>
+</ol>
+</li>
+<li>On your <em>Service Node Wallet</em>, check to confirm your Service Node is running and supporting all the right coins/services, like this:
+    <div class="highlight"><pre><span></span><code>docker exec exrproxy-env-snode-1 blocknet-cli servicenodestatus
+</code></pre></div>
+    This command should return <code>"status": "running",</code> and also the corrrect/expected list of supported services.</li>
+<li>You can also verify your Service Node is visible on the network by issuing the following command on your <em>Collateral Wallet</em>:
+    <div class="highlight"><pre><span></span><code>blocknet-cli servicenodestatus
+</code></pre></div>
+    (If your <em>Collateral Wallet</em> is a GUI/Qt wallet,
+    simply enter <code>servicenodestatus</code> in <em>Tools-&gt;Debug Console</em> of your
+    <em>Collateral Wallet</em>.)</li>
+<li>
+<p>(Recommended) Install <code>fail2ban</code> to protect your EXR SNode from malicious http
+attacks. The following steps are for setting up <code>fail2ban v0.11.1-1</code>
+on <code>Ubuntu 20.04.3 LTS</code>. The steps for setting up other
+versions of <code>fail2ban</code> should be very similar, but they may not be exactly the same.</p>
+<details class="example"><summary>Install <code>fail2ban</code></summary><ol>
+<li>Get the <em>xr_proxy-log-path</em>:
+  <div class="highlight"><pre><span></span><code>docker inspect exrproxy-env-xr_proxy-1 | grep &#39;&quot;LogPath&quot;:&#39;
+</code></pre></div>
+  This will return something like the following:
+  <div class="highlight"><pre><span></span><code> &quot;LogPath&quot;: &quot;/var/lib/docker/containers/6554ded0f7dd2abc0f415a511ff0099c5233fca6e17f2b409e9f40be4d43d9cf/6554ded0f7dd2abc0f415a511ff0099c5233fca6e17f2b409e9f40be4d43d9cf-json.log&quot;,
+</code></pre></div>
+  The <code>/var/lib/docker/containers/&lt;big-hex-number&gt;-json.log</code> part of what's
+  returned is the <em>xr_proxy-log-path</em> we'll need in future
+  steps, so copy it someplace for future use.</li>
+<li>Find your LAN address range.
+   Your LAN address range can be found by issuing this command:
+   <div class="highlight"><pre><span></span><code>ip addr
+</code></pre></div>
+   The <code>ip addr</code> command will return something like this:
+   <div class="highlight"><pre><span></span><code>1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+inet 127.0.0.1/8 scope host lo
+valid_lft forever preferred_lft forever
+inet6 ::1/128 scope host
+valid_lft forever preferred_lft forever
+2: wlp58s0: mtu 1500 qdisc mq state UP group default qlen 1000
+link/ether 9c:b6:d0:d0:fc:b5 brd ff:ff:ff:ff:ff:ff
+inet 192.168.1.20/24 brd 192.168.1.255 scope global dynamic noprefixroute wlp58s0
+valid_lft 5962sec preferred_lft 5962sec
+inet6 fe80::bf14:21e3:4223:e5e4/64 scope link noprefixroute
+valid_lft forever preferred_lft forever
+</code></pre></div>
+   In the above output, you can ignore item 1: called
+   <em>lo</em> (loopback). You can see that the IP address range of
+   the LAN in this example is displayed in item 2: just after
+   the word, <em>inet</em>: <code>192.168.1.20/24</code>. The <code>/24</code> at the end tells
+   us that the first 24 bits of this address define the range
+   of the LAN's
+   <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking">subnet mask</a>. <code>192.168.1.20/24</code> then represents the full
+   range of addresses used by the LAN in this example system. Copy whatever value
+   represents the full range of the LAN for <em>your</em> system.
+   We'll need it in a future step.</li>
+<li>Intall <code>fail2ban</code>:
+  <div class="highlight"><pre><span></span><code>sudo apt install fail2ban
+</code></pre></div></li>
+<li>Initialize setup
+  <div class="highlight"><pre><span></span><code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+</code></pre></div></li>
+<li>Edit config file:
+  Use a simple text editor like <a href="https://www.tutorialspoint.com/unix/unix-vi-editor.htm">vi</a> or
+  <a href="https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/">nano</a> to
+  edit <code>/etc/fail2ban/jail.local</code>. For example:
+  <div class="highlight"><pre><span></span><code>sudo nano /etc/fail2ban/jail.local
+</code></pre></div><ol>
+<li>Within <code>/etc/fail2ban/jail.local</code>, search for these 3
+  commented out lines:
+  <div class="highlight"><pre><span></span><code>#bantime.increment = true
+#bantime.factor = 1
+#bantime.formula = ban.Time * (1&lt;&lt;(ban.Count if ban.Count&lt;20 else 20)) * banFactor
+</code></pre></div>
+   Note, these 3 lines will be in different parts of the
+  file, <em>not</em> contiguous as they are displayed above.</li>
+<li>Uncomment those 3 line by removing the
+  <code>#</code> at the beginning of each line:
+  <div class="highlight"><pre><span></span><code>bantime.increment = true
+bantime.factor = 1
+bantime.formula = ban.Time * (1&lt;&lt;(ban.Count if ban.Count&lt;20 else 20)) * banFactor
+</code></pre></div></li>
+<li>Search for the following line
+  <div class="highlight"><pre><span></span><code>#ignoreip = 127.0.0.1/8 ::1
+</code></pre></div></li>
+<li>Uncomment this line by removing the <code>#</code> at the
+  begginning of the line so it looks like this:
+  <div class="highlight"><pre><span></span><code>ignoreip = 127.0.0.1/8 ::1
+</code></pre></div>
+  It will also be good to add the
+     full address range of your LAN, as discovered above in step <em>b</em>, to the end of this
+     line. This will <em>whitelist</em> all the IP addresses of your LAN so they can't get
+     banned. For example, 
+     to <em>whitelist</em> all LAN
+     addresses for the example system of step
+     <em>b</em> above, you would simply add a space and then <code>192.168.1.20/24</code> to
+     the end of the <code>ipignore</code> line, like this:
+  <div class="highlight"><pre><span></span><code>ignoreip = 127.0.0.1/8 ::1 192.168.1.20/24
+</code></pre></div>
+  (Be sure to replace <code>192.168.1.20/24</code> here with whatever
+     LAN address range you discovered for <em>your</em> system in step <em>b</em> above.)</li>
+<li>Search for the following line:
+  <div class="highlight"><pre><span></span><code>banaction = iptables-multiport
+</code></pre></div>
+  Change it to:
+  <div class="highlight"><pre><span></span><code>banaction = iptables-allports
+</code></pre></div></li>
+<li>Search for these 3 lines:
+  <div class="highlight"><pre><span></span><code>#
+# JAILS
+#
+</code></pre></div>
+  Just below those 3 lines, add the following lines,
+  replacing <em>xr_proxy-log-path</em> with the
+  <em>xr_proxy-log-path</em> you found in step <em>a</em> above:
+  <div class="highlight"><pre><span></span><code>[nginx-x00]
+
+enabled   = true
+port      = http,https
+filter    = nginx-x00
+logpath  = xr_proxy-log-path
+maxretry = 1
+findtime = 3600
+bantime  = 24h
+
+[nginx-404]
+
+enabled  = true
+port     = http,https
+filter   = nginx-404
+logpath  = xr_proxy-log-path
+maxretry = 1
+findtime = 3600
+bantime  = 1h
+</code></pre></div>
+  After replacing <em>xr_proxy-log-path</em> with the value you
+  found in step <em>a</em> above, the <code>logpath =</code> lines will look
+  something like this:
+  <div class="highlight"><pre><span></span><code>logpath  = /var/lib/docker/containers/&lt;big-hex-number&gt;-json.log
+</code></pre></div></li>
+<li>Save your edits to <code>/etc/fail2ban/jail.local</code> and
+     exit the editor.</li>
+</ol>
+</li>
+<li>Add Filters: <ol>
+<li>Use a simple text editor like <em>vi</em> or <em>nano</em> to
+     create the file,
+     <code>/etc/fail2ban/filter.d/nginx-x00.conf</code>. For example:
+  <div class="highlight"><pre><span></span><code>sudo nano /etc/fail2ban/filter.d/nginx-x00.conf
+</code></pre></div>
+  Add the following lines to the file:
+  <div class="highlight"><pre><span></span><code>[Definition]
+failregex = ^{&quot;log&quot;:&quot;&lt;HOST&gt; .* .*\\x
+ignoreregex =
+</code></pre></div>
+  Then save the file and exit the editor.</li>
+<li>Use a simple text editor like <em>vi</em> or <em>nano</em> to
+     create the file,
+     <code>/etc/fail2ban/filter.d/nginx-404.conf</code>. For example:
+  <div class="highlight"><pre><span></span><code>sudo nano /etc/fail2ban/filter.d/nginx-404.conf
+</code></pre></div>
+  Add the following lines to the file:
+  <div class="highlight"><pre><span></span><code>[Definition]
+failregex = {&quot;log&quot;:&quot;&lt;HOST&gt;.*(GET|POST|HEAD).*( 404 )
+ignoreregex =
+</code></pre></div>
+  Then save the file and exit the editor.</li>
+</ol>
+</li>
+<li>Restart <code>fail2ban</code> service:
+  <div class="highlight"><pre><span></span><code>sudo service fail2ban restart
+</code></pre></div></li>
+<li>Verify <code>fail2ban</code> is running properly:
+  <div class="highlight"><pre><span></span><code>sudo service fail2ban status
+</code></pre></div></li>
+<li>Check the logs of <code>fail2ban</code>:
+  <div class="highlight"><pre><span></span><code>sudo tail -f /var/log/fail2ban.log
+</code></pre></div>
+  (Ctrl-C to exit scrolling logs.)</li>
+<li>Fix iptables. To complete this last step, you must wait
+     for at least one IP address to get banned in each of the
+     two jails we created above (<code>nginx-x00</code> and
+     <code>nginx-404</code>). This may take a few hours, so you may want
+     to just let <code>fail2ban</code> run overnight before coming back
+     to this step. Then check the <code>fail2ban</code> logs to confirm there has been at
+     least one IP banned in each of the new jails:
+  <div class="highlight"><pre><span></span><code>sudo less /var/log/fail2ban.log
+</code></pre></div>
+  Search with <code>less</code> for <code>nginx-404</code> and <code>nginx-x00</code> to confirm
+     at least one IP ban in each jail. Once this
+     has been confirmed, you can fix the system IP tables so
+     the <code>fail2ban</code> logs will no longer print the "Already Banned" messages.
+     Fix the IP tables by issuing these two commands:
+  <div class="highlight"><pre><span></span><code>sudo iptables -I FORWARD -j f2b-nginx-x00
+</code></pre></div>
+  <div class="highlight"><pre><span></span><code>sudo iptables -I FORWARD -j f2b-nginx-404
+</code></pre></div></li>
+</ol>
+</details>
+</li>
+<li>
+<p>To learn how to add or subtract supported services/coins from your Service Node, and generally navigate and manage the docker containers of your Service Node, continue on to <a href="#maintenance-of-enterprise-xrouter-environment">Maintenance of Enterprise XRouter Environment</a></p>
+</li>
+</ol>
+</details>
+<h3 id="maintenance-of-enterprise-xrouter-environment">Maintenance of Enterprise XRouter Environment<a class="headerlink" href="#maintenance-of-enterprise-xrouter-environment" title="Permanent link">&para;</a></h3>
+<details class="abstract"><summary>Maintenance of Enterprise XRouter Environment</summary><blockquote>
+<p>Changing Configuration of an Enterprise XRouter Environment</p>
+</blockquote>
+<ol>
+<li>
+<p>With the advent of the <code>builder.py</code> script, the procedure for
+   changing the configuration of an
+   <a href="/resources/glossary/#exr-env">EXR ENV</a> is basically the same as
+   it is for configuring and deploying an EXR ENV for the first
+   time. That procedure is given in the first 20 steps of the
+   <a href="#deploy-enterprise-xrouter-environment">Deploy Enterprise XRouter Environment</a> guide.
+   Note, however, if you've subtracted one or more services/coins
+   from your EXR ENV's supported services because you want to save
+   the disk space occupied by those services/coins, please remember that
+  the blockchain data is not deleted/removed when the docker
+   container of a service is removed by <code>builder.py</code>. The
+   blockchain data of a service/coin persists in the
+  <em>data mount directory</em> you chose for the service when configuring
+  your SNode. If you kept the default <em>data mount directory</em>, which
+  is <code>/snode</code>, then the blockchain data
+  for DGB, for example, will be stored in <code>/snode/DGB</code>, and
+  it can occupy many GB of space. To find out exactly how much
+  space is being used by each service/coin, you can enter:
+  <div class="highlight"><pre><span></span><code>sudo du -d 1 -h /snode
+</code></pre></div>
+  which will return something like this:
+  <div class="highlight"><pre><span></span><code>57G   /snode/LTC
+3.6G  /snode/MONA
+222M  /snode/testsnode
+3.3G  /snode/snode
+27G   /snode/DGB
+16K   /snode/xr_proxy
+11G   /snode/RVN
+48M   /snode/eth_pymt_db
+</code></pre></div>
+  Sudo is necessary here because <code>/snode</code> directory is owned by
+  <code>root</code>, not by $USER. So, if you want to stop supporting DGB
+  coin, for example, and you also want to free up the 27GB of
+  space the DGB blockchain is occupying, you'll need to first
+  use <code>./builder.py</code> to reconfigure and relaunch your SNode
+  <em>without</em> DGB support, then issue the
+  following command to permanently remove DGB blockchain data and
+  free the space it is occupying:
+  <div class="highlight"><pre><span></span><code>sudo rm -rf /snode/DGB
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning: If you've been running a <a href="/service-nodes/introduction/#special-kinds-of-service-nodes-for-advanced-users">Trading Node</a> on your <a href="/resources/glossary/#exr-env">EXR ENV</a> server, be sure to save any wallet files which may be located in the <em>data mount directory</em> before issuing the the <code>rm -rf</code> command to remove the <em>data mount directory</em>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning: Be very careful to enter the <code>rm -rf</code> command very precisely. A typo could be disastrous. Also, be aware that adding support for DGB again after deleting its blockchain data will require the DGB blockchain to sync from scratch.</p>
+</div>
+</li>
+</ol>
+<blockquote>
+<p>About <em>docker</em></p>
+</blockquote>
+<details class="tip"><summary>Tip: If the blockchain of one of the services in your <a href="/resources/glossary/#exr-env">EXR ENV</a> gets onto a fork, or gets its database corrupted, often the easiest way to get it back on track is to stop the docker container running the service, then remove <em>data mount directory</em> of the service, then start the service again.</summary><p>You can use <code>./builder.py</code> to stop the docker container
+running the service, or you can
+stop the container manually. For example, to manually
+stop the DGB container, you would issue this command:
+<div class="highlight"><pre><span></span><code>docker stop exrproxy-env-DGB-1
+</code></pre></div>
+Then you could remove the <em>data mount directory</em> like
+this:
+<div class="highlight"><pre><span></span><code>sudo rm -rf /snode/DGB
+</code></pre></div>
+Then start the container again like this:
+<div class="highlight"><pre><span></span><code>docker start exrproxy-env-DGB-1
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning: If you've been running a <a href="/service-nodes/introduction/#special-kinds-of-service-nodes-for-advanced-users">Trading Node</a> on your <a href="/resources/glossary/#exr-env">EXR ENV</a> server, be sure to save any wallet files which may be located in the <em>data mount directory</em> before issuing the the <code>rm -rf</code> command to remove the <em>data mount directory</em>.</p>
+</div>
+</details>
+<p>For the most part, the <em>docker</em> commands given thus far in
+this guide will suffice to manage your <a href="/resources/glossary/#exr-env">EXR ENV</a>. However, if
+something "out of the ordinary" happens, or if you want to do
+something fancy with your docker objects,  there are a few more
+things it will be good to know about docker:</p>
+<ul>
+<li>Let's say, for example, you want to interact directly with
+  the DGB daemon, but you aren't sure the name of the DGB CLI
+  executable command. Here's one way to find it:<ol>
+<li>Start an interactive <em>Bash</em> shell in the DGB container:
+  <div class="highlight"><pre><span></span><code>docker exec -it exrproxy-env-DGB-1 /bin/bash
+</code></pre></div>
+  You should see a prompt like this:
+  <div class="highlight"><pre><span></span><code>root@f4c21d83d6fe:/opt/blockchain#
+</code></pre></div></li>
+<li>Find which daemons are running in the DGB container:
+  <div class="highlight"><pre><span></span><code>root@f4c21d83d6fe:/opt/blockchain# ps uax
+</code></pre></div>
+  It should show you something like this:
+  <div class="highlight"><pre><span></span><code>USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1 46.4 28.7 8132896 4726660 ?     SLsl 11:37  25:38 digibyted -conf=/opt/blockchain/config/digibyte.conf
+root        29  1.7  0.0  18248  3280 pts/0    Ss   12:33   0:00 /bin/bash
+root        39  0.0  0.0  34424  2788 pts/0    R+   12:33   0:00 ps uax
+</code></pre></div></li>
+<li>Note there is one running process called,
+     <code>digibyted</code>. This is the name of the Digibyte daemon
+     process and it is also a great clue about the name of the
+     CLI command for interacting with the Digibyte daemon. The
+     name of the CLI command
+     can usually be derived from the name of the daemon
+     process by simply replacing the <code>d</code> at the end of
+     the daemon process with <code>-cli</code>, like this:
+     <div class="highlight"><pre><span></span><code>digibyted -&gt; digibyte-cli
+</code></pre></div></li>
+<li>If you want to verify there is a <code>digibyte-cli</code> command,
+    you can do this:
+    <div class="highlight"><pre><span></span><code>which digibyte-cli
+</code></pre></div>
+    which should return this:
+    <div class="highlight"><pre><span></span><code>/usr/bin/digibyte-cli
+</code></pre></div></li>
+<li>Now you can interact with the Digibyte daemon as follows:
+    <div class="highlight"><pre><span></span><code>root@f4c21d83d6fe:/opt/blockchain# digibyte-cli getblockcount
+13535747
+</code></pre></div>
+    Alternatively, we can exit the Bash shell running in the
+    DGB container, then execute the <code>digibyte-cli</code> command
+    from outside the docker container:
+    <div class="highlight"><pre><span></span><code>root@f4c21d83d6fe:/opt/blockchain# exit
+exit
+~$ docker exec exrproxy-env-DGB-1 digibyte-cli getblockcount
+13535762
+</code></pre></div></li>
+</ol>
+</li>
+<li>Now let's consider the case where the docker container with
+  which you want to interact does
+  <em>not</em> have <em>Bash</em> shell available. This is [edit: <em>was</em>] the case for the Syscoin
+  container, for example. Attempting to invoke the <em>Bash</em>
+  shell in the Syscoin container will result in an error:
+  <div class="highlight"><pre><span></span><code>docker exec -it exrproxy-env-SYS-1 /bin/bash
+OCI runtime exec failed: exec failed: container_linux.go:380:
+starting container process caused: exec: &quot;/bin/bash&quot;: stat
+/bin/bash: no such file or directory: unknown
+</code></pre></div>
+  The solution is to invoke a shell which <em>does</em> exist in the
+  container, like this:
+  <div class="highlight"><pre><span></span><code>docker exec -it exrproxy-env-SYS-1 /bin/sh
+</code></pre></div></li>
+<li>Another unique feature of [an earlier version of] the Syscoin container is that the
+  <code>syscoin-cli</code> command requires certain parameters to be passed
+  to it in order to work properly. For example:
+  <div class="highlight"><pre><span></span><code>docker exec exrproxy-env-SYS-1 syscoin-cli getblockcount 
+</code></pre></div>
+  returns
+  <div class="highlight"><pre><span></span><code>error: Could not locate RPC credentials. No authentication cookie could be found, and RPC password is not set.  See -rpcpassword and -stdinrpcpass.  Configuration file: (/root/.syscoin/syscoin.conf)
+</code></pre></div>
+  But invoking <code>syscoin-cli</code> as follows, works properly:
+  <div class="highlight"><pre><span></span><code>docker exec exrproxy-env-SYS-1 syscoin-cli -conf=/opt/blockchain/config/syscoin.conf getblockcount
+1218725
+</code></pre></div>
+  Alternatively, this also works:
+  <div class="highlight"><pre><span></span><code>docker exec exrproxy-env-SYS-1 syscoin-cli -datadir=/opt/blockchain/config getblockcount
+1218725
+</code></pre></div>
+  Note: The DASH container, and perhaps other containers, will also require
+  these same parameters to be passed to the CLI
+  command. [edit: The latest SYS container does <em>not</em> require the additional parameter]</li>
+<li>Now let's consider another case where more <em>docker</em> knowledge
+  could be required. Let's consider the case where you try to
+  manually stop and remove all the docker containers of your SNode
+  using <code>docker-compose down</code> in the <code>~/exrproxy-env</code>
+  directory. Consider the example where
+  <code>docker-compose down</code> fails to complete due to receiving a timeout
+  error something like the following:
+  <div class="highlight"><pre><span></span><code>UnixHTTPConnectionPool(host=&#39;localhost&#39;, port=None): Read timed out.
+</code></pre></div>
+  Some users have actually seen this exact error when trying to run
+  <code>docker-compose down</code> while an I/O intensive process (e.g.
+  <code>lbrycrdd</code>) is running on the
+  system. <a href="https://stackoverflow.com/questions/42230536/docker-compose-up-times-out-with-unixhttpconnectionpool">Here are some potentially helpful suggestions on how to fix/avoid this timeout error</a>. However,
+  once <code>docker-compose down</code> has failed to complete even once, it can leave
+  your docker environment in a state where some docker containers have been
+  <em>stopped</em>, but have not yet been removed. This state is
+  problematic because your next attempt to bring up your EXR ENV with <code>deploy.sh</code> will give errors saying the
+  container names you're trying to create, already exist. If you suspect such
+  a situation has developed, one thing you can do is to list <em>all</em>
+  docker containers - both running and stopped:
+  <div class="highlight"><pre><span></span><code>docker ps -a
+</code></pre></div>
+  If this command shows some containers with a <em>stopped</em> STATUS,
+  then you probably need to remove those <em>stopped</em>
+  containers. Fortunately, docker has a handy <em>prune</em> utility
+  for removing all <em>stopped</em> containers:
+  <div class="highlight"><pre><span></span><code>docker container prune
+</code></pre></div>
+  Also, if your docker containers, images, volumes and/or networks
+  get messed up for any reason, or if you end up with docker
+  images on your server which are no longer used and taking up
+  space unnecessarily,
+  <a href="https://docs.docker.com/config/pruning/">docker offers a variety of <em>prune</em> utilities to clean up the current state of your <em>docker</em> environment</a>.</li>
+<li>Note: In the context of an <a href="/resources/glossary/#exr-env">EXR ENV</a>, executing the following 2 command should be
+  equivalent to <code>docker-compose down</code>:
+  <div class="highlight"><pre><span></span><code>docker stop $(docker ps -q -f name=exrproxy-env_*)
+docker rm $(docker ps -a -q -f name=exrproxy-env_*)
+</code></pre></div>
+  This trick can be useful, for example, if <code>docker-compose.yml</code>
+  is accidentally reconfigured before <code>docker-compose down</code> is
+  executed, causing <code>docker-compose down</code> to fail.</li>
+<li><em>docker</em> offers a variety of useful utilities for managing and
+interacting with various docker objects. To see a list of all
+docker options and commands,
+enter:
+<div class="highlight"><pre><span></span><code>docker --help
+</code></pre></div>
+To get help on a specific docker command, enter:
+<div class="highlight"><pre><span></span><code>docker COMMAND --help
+</code></pre></div>
+For example,
+<div class="highlight"><pre><span></span><code>docker export --help
+</code></pre></div>
+There are also docker guides available at <a href="https://docs.docker.com/go/guides/">https://docs.docker.com/go/guides/</a>.</li>
+</ul>
+</details>
+<!--
+## Manual Service Node Setup (Deprecated)
+
+To setup your Service Node Manually, without using the [Automated
+Docker-Based EXR Service Node Setup](#enterprise-xrouter-environment-service-node-setup-docker-based-recommended),
+complete the following guides in order:
+
+1. [Collateral Wallet Setup](/service-nodes/setup/#collateral-wallet-setup)
+1. [Service Node Wallet Setup](/service-nodes/setup/#service-node-wallet-setup)
+1. [Additional Setup](/service-nodes/setup/#additional-configuration)
+1. [Service Node Deployment](/service-nodes/setup/#deploying-service-node)
+---
+
+### Collateral Wallet Setup
+
+??? example "Setup using the redesign wallet"
+    ![Redesign Wallet](/img/service-nodes/redesign-wallet.png)
+
+    1. [Install the Blocknet wallet](/wallet/installation).
+    1. [Fully sync the wallet](/wallet/syncing).
+    1. [Encrypt the wallet](/wallet/encrypting).
+
+        !!! info "Note"
+            If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (1 BLOCK) to have enough to cover transaction fees when continuing this step.
+
+    1. Select *Tools* from the left menu, then the *Debug Console* tab. The input field at the bottom is where you will type commands.
+    1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress [ALIAS]` into the debug console with `[ALIAS]` replaced with the alias you will be using for this address. Example:
+        <div class="highlight"><pre><span></span><code>getnewaddress snode01
+</code></pre></div>
+
+        ![Create Address](/img/service-nodes/redesign-getnewaddress-command.png)
+
+    1. Press the *Enter* or *Return* key. The command will appear in the console window followed by a response with the created address.
+
+        ![Address](/img/service-nodes/redesign-getnewaddress-response.png)
+
+    1. (Optional step - Not really necessary if you carefully
+        followed the
+        [backup procedure](/wallet/backup-restore/#backup) when you
+        installed your collateral wallet.) Retrieve your private key for the newly created address for backup purposes. Type `dumpprivkey [ADDRESS]` using the new address and press the *Enter* or *Return* key. Example:
+        <div class="highlight"><pre><span></span><code>dumpprivkey BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+</code></pre></div>
+
+        !!! danger "Warning"
+            **DO NOT** share your private keys with others or keep them stored somewhere where others can't find them. Sharing your private keys may result in **LOSS OF FUNDS**.
+
+    1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
+        <div class="highlight"><pre><span></span><code>servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
+</code></pre></div>
+        * `NODE_ADDRESS` = The address returned in the previous step.
+        * `NODE_COUNT` = The number of Service Nodes to create. 
+            * Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee).
+            * If left blank, it defaults to `1`.
+            * Example: 20,001 BLOCK will be needed to create 4 Service Nodes
+
+        * `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
+          * Must be >= `500` and <= `5000`.
+          * If left blank, it defaults to `1250`.
+          * Example: `1000` will create 5 inputs of 1000 BLOCK each per Service Node
+
+    1. Type the above command replacing the variables with the respective values in place. See examples below:
+          * Single Service Node:
+          <div class="highlight"><pre><span></span><code>servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+</code></pre></div>
+          * Single Service Node (2 inputs):
+          <div class="highlight"><pre><span></span><code>servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500
+</code></pre></div>
+          * Multiple Service Nodes (10k BLOCK):
+          <div class="highlight"><pre><span></span><code>servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000
+</code></pre></div>
+
+        ![Create Inputs](/img/service-nodes/redesign-servicenodecreateinputs-response.png)
+
+    1. Prepare to create a `servicenode.conf` file in your
+       [data directory](/wallet/backup-restore/#data-directory) by
+       first deleting any old `servicenode.conf` file in the data directory, or deleting any out-of-date service node references within your `servicenode.conf`. 
+    1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node. Example:
+        <div class="highlight"><pre><span></span><code>servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
+</code></pre></div>
+
+        ![Config Setup](/img/service-nodes/redesign-servicenodesetup-response.png)
+
+    1. Export the `servicenode.conf` configuration file. Type `servicenodeexport [ALIAS] [ENCRYPTION_PASSWORD]`. The password is used to encrypt the export data. Example:
+        <div class="highlight"><pre><span></span><code>servicenodeexport snode01 supersecretpassword
+</code></pre></div>
+
+        ![Config Setup](/img/service-nodes/redesign-servicenodeexport-response.png)
+
+    1. Copy this output hash for later use.
+    1. Restart the Blocknet wallet.
+    1. Continue on to [Service Node Wallet Setup](#service-node-wallet-setup).
+
+??? example "Setup using the classic wallet"
+    ![Classic Wallet](/img/service-nodes/classic-wallet.png)
+
+    1. [Install the Blocknet wallet](/wallet/installation).
+    1. [Fully sync the wallet](/wallet/syncing).
+    1. [Encrypt the wallet](/wallet/encrypting).
+
+        !!! info "Note"
+            If your BLOCK funds are located on a different wallet, you will need to first send the 5000 BLOCK to this collateral Blocknet wallet. Make sure to include a little extra (0.1 BLOCK) to have enough to cover transaction fees when continuing this step.
+
+    1. In the program menu, go to *Window* > *Console*. A new window will appear with an input field at the bottom where you will type commands.
+    1. Create a new public address for the Service Node. A unique name for this address will need to be provided as an alias. To do this, type `getnewaddress [ALIAS]` into the debug console with `[ALIAS]` replaced with the alias you will be using for this address. Example:
+        <div class="highlight"><pre><span></span><code>getnewaddress snode01
+</code></pre></div>
+
+        ![Create Address](/img/service-nodes/classic-getnewaddress-command.png)
+
+    1. Press the *Enter* or *Return* key. The command will appear in the console window followed by a response with the created address.
+
+        ![Address](/img/service-nodes/classic-getnewaddress-response.png)
+
+    1. (Optional step - Not really necessary if you carefully
+        followed the
+        [backup procedure](/wallet/backup-restore/#backup) when you
+        installed your collateral wallet.) Retrieve your private key for the newly created
+        address for backup purposes. Type `dumpprivkey [ADDRESS]` using the new address and press the *Enter* or *Return* key. Example:
+        <div class="highlight"><pre><span></span><code>dumpprivkey BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP
+</code></pre></div>
+
+        !!! danger "Warning"
+            **DO NOT** share your private keys with others or keep them stored somewhere where others can't find them. Sharing your private keys may result in **LOSS OF FUNDS**.
+
+    1. Create the input(s) needed for the Service Node collateral using the following command structure (**Note:** If you already have your inputs created for your Service Node(s) you can skip this step *and* the next step):
+        <div class="highlight"><pre><span></span><code>servicenodecreateinputs [NODE_ADDRESS] [NODE_COUNT] [INPUT_SIZE]
+</code></pre></div>
+        * `NODE_ADDRESS` = The address returned in the previous step.
+        * `NODE_COUNT` = The number of Service Nodes to create. 
+            * Requires a minimum of 5001 BLOCK per Service Node (1 BLOCK extra for transaction fee).
+            * If left blank, it defaults to `1`.
+            * Example: 20,001 BLOCK will be needed to create 4 Service Nodes
+
+        * `INPUT_SIZE` = The amount of BLOCK for each collateral input. 
+          * Must be >= `500` and <= `5000`.
+          * If left blank, it defaults to `1250`.
+          * Example: `1000` will create 5 inputs of 1000 BLOCK each per Service Node
+
+    1. Type the above command replacing the variables with the respective values in place. See examples below:
+        * Single Service Node: `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`
+        * Single Service Node (2 inputs): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 1 2500`
+        * Multiple Service Nodes (10k BLOCK): `servicenodecreateinputs BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP 2 5000`
+
+        ![Create Inputs](/img/service-nodes/classic-servicenodecreateinputs-response.png)
+
+    1. Prepare to create a `servicenode.conf` file in your
+       [data directory](/wallet/backup-restore/#data-directory) by
+       first deleting any old `servicenode.conf` file in the data directory, or deleting any out-of-date service node references within your `servicenode.conf`. 
+    1. Create a `servicenode.conf` configuration file. Type `servicenodesetup [NODE_ADDRESS] [ALIAS]`. An entry will be created in the `servicenode.conf` for the Service Node. Example:
+        <div class="highlight"><pre><span></span><code>servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
+</code></pre></div>
+
+        ![Config Setup](/img/service-nodes/classic-servicenodesetup-response.png)
+
+    1. Export the `servicenode.conf` configuration file. Type `servicenodeexport [ALIAS] [ENCRYPTION_PASSWORD]`. The password is used to encrypt the export data. Example:
+        <div class="highlight"><pre><span></span><code>servicenodeexport snode01 supersecretpassword
+</code></pre></div>
+
+        ![Config Setup](/img/service-nodes/classic-servicenodeexport-response.png)
+
+    1. Copy this output hash for later use.
+    1. Restart the Blocknet wallet.
+    1. Continue on to [Service Node Wallet Setup](#service-node-wallet-setup).
+
+---
+
+### Service Node Wallet Setup
+
+??? example "Setup using the redesign wallet"
+    ![Redesign Wallet](/img/service-nodes/redesign-wallet.png)
+
+    1. [Install the Blocknet wallet](/wallet/installation).
+    1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
+
+    1. Navigate to your data directory:
+        - **Windows**
+            <div class="highlight"><pre><span></span><code>C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
+</code></pre></div>
+            Or paste `%appdata%\Blocknet\` into the File Explorer path field.
+        - **MacOS**
+            <div class="highlight"><pre><span></span><code>~/Library/Application Support/Blocknet/
+</code></pre></div>
+            Open Finder and in the program menu select *Go* > *Go to Folder...* and enter the above path.
+        - **Linux**
+            <div class="highlight"><pre><span></span><code>~/.blocknet/
+</code></pre></div>
+
+    1. Open the `blocknet.conf` configuration file.
+    1. A file will be opened with your default text editor. Add the following information on new lines:
+        <div class="highlight"><pre><span></span><code>server=1
+listen=1
+rpcuser=
+rpcpassword=
+rpcallowip=127.0.0.1
+port=41412
+rpcport=41414
+txindex=1
+
+enableexchange=1
+servicenode=1
+rpcthreads=8
+</code></pre></div>
+    1. Enter a username and password for `rpcuser=` and `rpcpassword=`. These should be difficult and secure credentials.
+    1. Here the SNode Wallet is used to connect to the Blocknet blockchain with the `rpcallowip=127.0.0.1` setting (localhost). If you would like to setup a different wallet to host the Blocknet blockchain, update the `rpcallowip=` setting to the IP of that wallet.
+    1. For best performance, a `maxconnections=` setting should **NOT** be specified.
+    1. Save and close the `blocknet.conf` file.
+    1. Open the `xbridge.conf` configuration file (also in the Blocknet data directory).
+    1. A file will be opened with your default text editor. Add the following information on new lines:
+        <div class="highlight"><pre><span></span><code>[Main]
+ExchangeWallets=BLOCK
+FullLog=true
+LogPath=
+ExchangeTax=300
+
+[BLOCK]
+Title=Blocknet
+Ip=127.0.0.1
+Username=
+Password=
+Port=41414
+AddressPrefix=26
+ScriptPrefix=28
+SecretPrefix=154
+COIN=100000000
+MinimumAmount=0
+TxVersion=1
+DustAmount=0
+CreateTxMethod=BTC
+GetNewKeySupported=true
+ImportWithNoScanSupported=true
+MinTxFee=10000
+BlockTime=60
+FeePerByte=20
+Confirmations=0
+Address=
+TxWithTimeField=false
+LockCoinsSupported=false
+JSONVersion=
+ContentType=
+</code></pre></div>
+    1. Set `Username=` to the same value as `rpcuser=` from your `blocknet.conf`.
+    1. Set `Password=` to the same value as `rpcpassword=` from your `blocknet.conf`.
+    1. Set `Ip=` to the same value as `rpcallowip=` from your `blocknet.conf`.
+    1. Save and close the `xbridge.conf` file.
+    1. Select *Tools* from the left menu, then the *Debug Console* tab. The input field at the bottom is where you will type commands.
+    1. Import the `servicenode.conf` configuration file. Type `servicenodeimport [EXPORTED_HASH] [ENCRYPTION_PASSWORD]` with `[ENCRYPTION_PASSWORD]` replaced with the encryption password used to export your *servicenode.conf* on your collateral wallet and `[EXPORTED_HASH]` replaced with the hash that was returned in that response. Example:
+        <div class="highlight"><pre><span></span><code>servicenodeimport 5f1e7eeb2f8d2033ae95789008fbf1c60c52a45a20bee1b56ef5052438577e3916f0ff5cc468151463caa34c13097ba4cbd35b398f2cb6e7a43af675d27042b1a105845a7c61d988e6cc6388cd563f900d821dc7956727ddf897841678fa7c8c5a5ca57253a2f4bd7d9a29babae1f163f2ffc25ac60eaa7102f23cbac6837abf1f232b4d6a5fcf65b9d8ea61231fc804ddb8aeff164d79e9b6503e8b4624a153 supersecretpassword
+</code></pre></div>
+
+        ![Config Setup](/img/service-nodes/redesign-servicenodeimport-response.png)
+
+    1. You should receive a `true` response, which means a `servicenode.conf` file was automatically created and saved.
+    1. Restart the Blocknet wallet.
+
+??? example "Setup using the classic wallet"
+    ![Classic Wallet](/img/service-nodes/classic-wallet.png)
+
+    1. [Install the Blocknet wallet](/wallet/installation).
+    1. [Fully sync the wallet](/wallet/syncing). Encryption is not needed on this wallet since it will not be holding funds.
+
+    1. Navigate to your data directory:
+        - **Windows**
+            <div class="highlight"><pre><span></span><code>C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
+</code></pre></div>
+            Or paste `%appdata%\Blocknet\` into the File Explorer path field.
+        - **MacOS**
+            <div class="highlight"><pre><span></span><code>~/Library/Application Support/Blocknet/
+</code></pre></div>
+            Open Finder and in the program menu select *Go* > *Go to Folder...* and enter the above path.
+        - **Linux**
+            <div class="highlight"><pre><span></span><code>~/.blocknet/
+</code></pre></div>
+
+    1. Open the `blocknet.conf` configuration file.
+    1. A file will be opened with your default text editor. Add the following information on new lines:
+        <div class="highlight"><pre><span></span><code>server=1
+listen=1
+rpcuser=
+rpcpassword=
+rpcallowip=127.0.0.1
+port=41412
+rpcport=41414
+txindex=1
+
+enableexchange=1
+servicenode=1
+rpcthreads=8
+</code></pre></div>
+    1. Enter a username and password for `rpcuser=` and `rpcpassword=`. These should be difficult and secure credentials.
+    1. Here the SNode Wallet is used to connect to the Blocknet blockchain with the `rpcallowip=127.0.0.1` setting (localhost). If you would like to setup a different wallet to host the Blocknet blockchain, update the `rpcallowip=` setting to the IP of that wallet. **Note**: Changing `rpcallowip=` to anything other than localhost will also require you to include the `rpcbind=` setting. 
+    1. For best performance, a `maxconnections=` setting should **NOT** be specified.
+    1. Save and close the `blocknet.conf` file.
+    1. Open the `xbridge.conf` configuration file (also in the Blocknet data directory).
+    1. A file will be opened with your default text editor. Add the following information on new lines:
+        <div class="highlight"><pre><span></span><code>[Main]
+ExchangeWallets=BLOCK
+FullLog=true
+LogPath=
+ExchangeTax=300
+
+[BLOCK]
+Title=Blocknet
+Ip=127.0.0.1
+Username=
+Password=
+Port=41414
+AddressPrefix=26
+ScriptPrefix=28
+SecretPrefix=154
+COIN=100000000
+MinimumAmount=0
+TxVersion=1
+DustAmount=0
+CreateTxMethod=BTC
+GetNewKeySupported=true
+ImportWithNoScanSupported=true
+MinTxFee=10000
+BlockTime=60
+FeePerByte=20
+Confirmations=0
+Address=
+TxWithTimeField=false
+LockCoinsSupported=false
+JSONVersion=
+ContentType=
+</code></pre></div>
+    1. Set `Username=` to the same value as `rpcuser=` from your `blocknet.conf`.
+    1. Set `Password=` to the same value as `rpcpassword=` from your `blocknet.conf`.
+    1. Set `Ip=` to the same value as `rpcallowip=` from your `blocknet.conf`.
+    1. Save and close the `xbridge.conf` file.
+    1. In the program menu, go to *Window* > *Console*. A new window will appear with an input field at the bottom where you will type commands.
+    1. Import the `servicenode.conf` configuration file. Type `servicenodeimport [EXPORTED_HASH] [ENCRYPTION_PASSWORD]` with `[ENCRYPTION_PASSWORD]` replaced with the encryption password used to export your *servicenode.conf* on your collateral wallet and `[EXPORTED_HASH]` replaced with the hash that was returned in that response. Example:
+        <div class="highlight"><pre><span></span><code>servicenodeimport 5f1e7eeb2f8d2033ae95789008fbf1c60c52a45a20bee1b56ef5052438577e3916f0ff5cc468151463caa34c13097ba4cbd35b398f2cb6e7a43af675d27042b1a105845a7c61d988e6cc6388cd563f900d821dc7956727ddf897841678fa7c8c5a5ca57253a2f4bd7d9a29babae1f163f2ffc25ac60eaa7102f23cbac6837abf1f232b4d6a5fcf65b9d8ea61231fc804ddb8aeff164d79e9b6503e8b4624a153 supersecretpassword
+</code></pre></div>
+
+        ![Config Setup](/img/service-nodes/classic-servicenodeimport-response.png)
+
+    1. You should receive a `true` response, which means a `servicenode.conf` file was automatically created and saved.
+    1. Restart the Blocknet wallet.
+
+---
+
+### Additional Configuration
+At this point you have completed the basic setup for a Service Node. The Service Node can operate but will not be supporting any service. Now what you need to do is setup the Service Node to support services on the network where 100% of fees are distributed to Service Nodes:
+
+* With [XBridge](/protocol/xbridge/introduction), the decentralized exchange component of the Blocknet Protocol, 100% of [trading fees](/protocol/xbridge/fees) are distributed to Service Nodes for hosting full blockchain nodes and providing verification checks for trustless exchange between digital assets. For setup, see the [XBridge Configuration Guide](/service-nodes/xbridge-configuration).
+* With [XRouter](/protocol/xrouter/introduction)\*\*, the decentralized inter-chain communication component of the Blocknet Protocol, 100% of fees are paid to Service Nodes for hosting full blockchain nodes that support SPV calls. For setup, see the [XRouter Configuration Guide](/service-nodes/xrouter-configuration).
+* With [XCloud](/protocol/xcloud/introduction)\*\*, a decentralized microservice oracle network built on XRouter, allows you to monetize any microservice, blockchain call, API, or cloud tech on your own hardware, in many cases without having to write any code. For setup, see the [XCloud Configuration Guide](/service-nodes/xcloud-configuration).
+
+\*\* **For XRouter and XCloud services**, your Service Node Wallet IP address must remain unchanged (static). If using a VPN with an IP that changes, it will impact your ability to provide these services.
+
+---
+
+### Deploying Service Node
+
+??? example "Setup using the redesign wallet"
+
+    > **On the Service Node Wallet, prepare to deploy**
+
+    1. Start the Blocknet SNode wallet (or restart if you haven't already or have made changes).
+    1. Make sure the data directory of this wallet contains the previously configured `blocknet.conf` file and the `servicenode.conf` with the Service Node credentials.
+    1. Fully sync the wallet.
+    1. This wallet must stay running. If the Service Node Wallet is closed, you will need to re-register the Service Node from the Collateral Wallet if you have staked a block in that time period.
+
+    > **On the Collateral wallet, Register the Service Node**
+
+    1. Start the Blocknet Collateral wallet (or restart if you haven't already or have made changes).
+    1. Fully sync the wallet.
+    1. Make sure all your inputs have at least 2 confirmations (about 2 minutes since `servicenodecreateinputs`).
+    1. Open the debug console and type `servicenoderegister [ALIAS]` with `[ALIAS]` replaced with the alias of the Service Node you want to register. If `[ALIAS]` isn't specified, all known Service Nodes will be registered. You will see a response similar to this:
+
+        ![Register](/img/service-nodes/redesign-servicenoderegister-response.png)
+
+    1. The `snodekey` will remain unchanged as long as the contents of your `servicenode.conf` remains unchanged and you haven't used the `servicenodesetup` command.
+
+
+    > **On the Service Node Wallet, Send Service Node Ping to the Network**
+
+    1. Open the debug console on the SNode wallet and type `servicenodesendping`. You should see that the Service Node status is now `"status": "running"` along with a list of the services being hosted.
+
+        ![Send Ping](/img/service-nodes/redesign-servicenodesendping-response.png)
+
+
+    > **On the Service Node Wallet, Check Service Node Status**
+
+    1. On the Service Node Wallet, open the debug console and type `servicenodestatus`. You should still see a `running` status and the services being hosted.
+
+        ![Check Status](/img/service-nodes/redesign-servicenodestatus-response.png)
+
+
+    > **Check Service Node Is Available on the Network**
+
+    1. On a client *other than* the Service Node Wallet (such as the Collateral Wallet), open the debug console and type `servicenodelist`. You should see your newly created Service Node in the returned list with the status as `"status": "running"`. Your Service Node is the one with the `"snodekey"` that matches the ones returned when registering your node.
+
+        ![Network Status](/img/service-nodes/redesign-servicenodelist-response.png)
+
+    1. At this point the Collateral Wallet can be closed if you are not voting or staking.
+
+
+
+??? example "Setup using the classic wallet"
+
+    > **On the Service Node Wallet, prepare to deploy**
+
+    1. Start the Blocknet SNode wallet (or restart if you haven't already or have made changes).
+    1. Make sure the data directory of this wallet contains the previously configured `blocknet.conf` file and the `servicenode.conf` with the Service Node credentials.
+    1. Fully sync the wallet.
+    1. This wallet must stay running. If the Service Node Wallet is closed, you will need to re-register the Service Node from the Collateral Wallet if you have staked a block in that time period.
+
+    > **On the Collateral wallet, Register the Service Node**
+
+    1. Start the Blocknet Collateral wallet (or restart if you haven't already or have made changes).
+    1. Fully sync the wallet.
+    1. Make sure all your inputs have at least 2 confirmations (about 2 minutes since `servicenodecreateinputs`).
+    1. Open the debug console and type `servicenoderegister [ALIAS]` with `[ALIAS]` replaced with the alias of the Service Node you want to register. If `[ALIAS]` isn't specified, all known Service Nodes will be registered. You will see a response similar to this:
+
+        ![Register](/img/service-nodes/classic-servicenoderegister-response.png)
+
+    1. The `snodekey` will remain unchanged as long as the contents of your `servicenode.conf` remains unchanged and you haven't used the `servicenodesetup` command.
+
+
+    > **On the Service Node Wallet, Send Service Node Ping to the Network**
+
+    1. On the Service Node Wallet, open the debug console and type `servicenodesendping`. You should see that the Service Node status is now `"status": "running"` along with a list of the services being hosted.
+
+        ![Send Ping](/img/service-nodes/classic-servicenodesendping-response.png)
+
+
+    > **On the Service Node Wallet, Check Service Node Status**
+
+    1. On the Service Node Wallet, open the debug console and type `servicenodestatus`. You should still see a `running` status and the services being hosted.
+
+        ![Check Status](/img/service-nodes/classic-servicenodestatus-response.png)
+
+
+    > **Check Service Node Is Available on the Network**
+
+    1. On a client *other than* the Service Node Wallet (such as the Collateral Wallet), open the debug console and type `servicenodelist`. You should see your newly created Service Node in the returned list with the status as `"status": "running"`. Your Service Nodes are the ones with the `"snodekey"` that matches the ones returned when registering your node.
+
+        ![Network Status](/img/service-nodes/classic-servicenodelist-response.png)
+
+    1. At this point the Collateral Wallet can be closed if you are not voting or staking.
+
+---
+
+## Operation
+
+View the [Operations](/service-nodes/operation) for reference on how to go about common Service Node operations such as staking, voting, updating, restarting, and checking your Service Node configs.
+
+---
+
+## Troubleshooting
+* Ensure you have the latest wallet and that it's fully synced.
+* Ensure the SNode Wallet is open and synced before using the `servicenoderegister` from the Collateral Wallet.
+* Ensure that you have at least 5000 BLOCK per Service Node in your designated `[NODE_ADDRESS]`.
+* Ensure that your 5000 BLOCK accidentally didn’t send to a change address (if creating inputs manually).
+* Ensure all your inputs have at least 2 confirmations before registering.
+* Ensure you didn't include the `[` or `]` when typing commands and replacing the variables. Example:
+    * Correct: `getnewaddress snode1`
+    * Incorrect: `getnewaddress [snode1]`
+* If you manually setup your Service Node (this guide shows the automatic procedure):
+    * Ensure your `servicenode.conf` information is correct to your settings. 
+    * Ensure that the `servicenode.conf` matches on both the Collateral and Service Node Wallets.
+    * Ensure your configuration file is `servicenode.conf` and **NOT** `servicenode.conf.txt`.
+
+-->
+
+<script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
+var relatedLinks = [];
+</script>
+
+<!-- 
+======= Related Links Section =======
+- This is the related links section at the bottom of each page.
+- It lists the links in the relatedLinks array variable below.
+    Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
+- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
+related-links.html
+- The template and logic for the related links section can be found in docs/snippets/related-links.html
+- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
+- The template and logic is linked with markdown_extensions: pymdownx.snippets
+-->
+
+<h2 id="related-links">Related Links<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>
+<div id="related">
+
+</div>
+
+<script type="text/javascript">
+    var relatedHTML = "<ul>";
+
+    // check if related links provide
+    if (typeof variable !== 'undefined' && relatedLinks.length > 0) {
+        // related links provided, loop through them
+        for (let i = 0; i < relatedLinks.length; i++) {
+            // create a list element with an a tag containing the related link
+            var snippet = "<li><a href='" + relatedLinks[i]["link"] + "'>" + relatedLinks[i]["name"] + "</a></li>";
+            // concatenate element to relatedHTML variable
+            relatedHTML += snippet;
+        }
+        // concatenate list closing tag
+        relatedHTML += "</ul>";
+        // add list of related links to the related page links section
+        document.getElementById("related").innerHTML = relatedHTML;
+    } else {
+        // no related links provided
+        // remove related links section header
+        document.getElementById("related-links").outerHTML = "";
+        // remove related links section from sidebar menu
+        document.querySelector(".md-sidebar--secondary .md-nav__list").lastElementChild.remove();
+    }
+</script>
+
+<style>
+#notification-bar {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: -1px;
+    opacity: 1;
+    animation-name: bn-notification-load;
+    animation-duration: 0.8s;
+}
+#notification-bar .notification {
+    position: relative;
+    min-height: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 12px 50px 12px 20px;
+    background-color: #016AFF;
+    color: #fff;
+}
+#notification-bar .message {
+    display: inline-block;
+    line-height: 17px;
+}
+#notification-bar .message a {
+    color: #fff;
+    text-decoration: underline;
+}
+#notification-bar .notification-close {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(0%,-50%);
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+@keyframes bn-notification-load {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+<div id="notification-bar">
+    <!-- <div class="notification" data-expire="">
+        <span class="message"><strong>Need support? <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Join our Discord!</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div> -->
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.co/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.co/#downloads" target="_blank">View downloads...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+var notifications = document.getElementById('notification-bar');
+for (var i = 0; i < notifications.children.length; i++) {
+    var expiredDate = parseInt(notifications.children[i].getAttribute('data-expire'));
+    var now = Math.round((new Date).getTime()/1000);
+    if (expiredDate < now && expiredDate != "") {
+        notifications.children[i].style.display = 'none';
+    }
+}
+</script>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../introduction/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../operation/" title="Operation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Operation
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="mailto:contact@blocknet.co" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
+    
+      <a href="https://github.com/blocknetdx/" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://discord.gg/vGa7GeCu8B" target="_blank" rel="noopener" title="comment" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://t.me/Blocknet" target="_blank" rel="noopener" title="telegram" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/@theblocknetchannel" target="_blank" rel="noopener" title="medium" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://en-gb.facebook.com/theblocknet/" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://twitter.com/The_Blocknet" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/theblocknet/" target="_blank" rel="noopener" title="reddit" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.youtube.com/channel/UCCDBoR9fHb21bLH7FGvFrQg/playlists" target="_blank" rel="noopener" title="youtube" class="md-footer-social__link fa fa-youtube"></a>
+    
+      <a href="https://www.instagram.com/the_blocknet/" target="_blank" rel="noopener" title="instagram" class="md-footer-social__link fa fa-instagram"></a>
+    
+      <a href="https://www.linkedin.com/company/blocknet/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      
+        <script src="../../js/main.js"></script>
+      
+    
+  </body>
+</html>

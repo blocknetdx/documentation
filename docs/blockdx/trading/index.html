@@ -1,0 +1,2404 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="These Block DX trading guides explain how to check your balances, select your market, make orders, take orders, check order status, and view order history.">
+      
+      
+        <link rel="canonical" href="https://docs.blocknet.co/blockdx/trading/">
+      
+      
+        <meta name="author" content="Blocknet">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+    
+    
+<title>Block DX Trading Guide</title>
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/fonts.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-109213957-4", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta name="theme-color" content="#dddfeb">
+<link rel="shortlink" href="https://docs.blocknet.co/">
+<link rel="dns-prefetch" href="//www.blocknet.co">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="mask-icon" href="https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg" color="#051937">
+<meta name="msapplication-TileColor" content="#dddfeb">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Block DX Trading Guide">
+<meta property="og:description" content="These Block DX trading guides explain how to check your balances, select your market, make orders, take orders, check order status, and view order history.">
+<meta property="og:url" content="https://docs.blocknet.co/">
+<meta property="og:site_name" content="Blocknet Documentation">
+<meta property="og:image" content="/img/blocknet.png">
+<meta property="og:image:secure_url" content="/img/blocknet.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="These Block DX trading guides explain how to check your balances, select your market, make orders, take orders, check order status, and view order history.">
+<meta name="twitter:title" content="Block DX Trading Guide">
+<meta name="twitter:image" content="/img/blocknet.png"> 
+
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#block-dx-trading" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.blocknet.co/" title="Blocknet Documentation" aria-label="Blocknet Documentation" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../img/blocknet-logo-128.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Blocknet Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Block DX Trading Guide
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.blocknet.co/" title="Blocknet Documentation" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../img/blocknet-logo-128.svg" width="48" height="48">
+      
+    </a>
+    Blocknet Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/blocknet-whitepaper.pdf" title="Whitepaper" class="md-nav__link">
+      Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Governance" class="md-nav__link">
+      Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/contributors/" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social/" title="Social" class="md-nav__link">
+      Social
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Blockchain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Blockchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/aablock/" title="aaBLOCK" class="md-nav__link">
+      aaBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/ablock/" title="aBLOCK" class="md-nav__link">
+      aBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/explorers/" title="Explorers" class="md-nav__link">
+      Explorers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Protocol
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Protocol
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      XBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        XBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/compatibility/" title="Compatibility" class="md-nav__link">
+      Compatibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xbridge-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      XRouter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        XRouter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#use-cases" title="Use Cases" class="md-nav__link">
+      Use Cases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xrouter-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      XCloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        XCloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xcloud/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/#xcloud-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co/" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Blocknet Wallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Blocknet Wallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/syncing/" title="Syncing" class="md-nav__link">
+      Syncing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/encrypting/" title="Encrypt Wallet" class="md-nav__link">
+      Encrypt Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/backup-restore/" title="Backup/Restore" class="md-nav__link">
+      Backup/Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/staking/" title="Staking" class="md-nav__link">
+      Staking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/send-funds/" title="Send Funds" class="md-nav__link">
+      Send Funds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/coin-control/" title="Coin Control" class="md-nav__link">
+      Coin Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/fix-wrong-balance/" title="Fix Wrong Balance" class="md-nav__link">
+      Fix Wrong Balance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/forking/" title="Fork Management" class="md-nav__link">
+      Fork Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/lock-unlock/" title="Lock/Unlock" class="md-nav__link">
+      Lock/Unlock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      XLite
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        XLite
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/backup-and-restore/" title="Create, Backup & Restore" class="md-nav__link">
+      Create, Backup & Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/blockdx-xlite/" title="Using BlockDX w/ XLite" class="md-nav__link">
+      Using BlockDX w/ XLite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/access-coin-daemons-via-rpc/" title="Access Coin Daemons via RPC" class="md-nav__link">
+      Access Coin Daemons via RPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/recover-private-keys/" title="Recover Private Keys" class="md-nav__link">
+      Recover Private Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Block DX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Block DX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Trading
+      </label>
+    
+    <a href="./" title="Trading" class="md-nav__link md-nav__link--active">
+      Trading
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acquiring-initial-block" class="md-nav__link">
+    Acquiring Initial BLOCK
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redeemrefund-funds-from-failed-or-cancelled-transactions" class="md-nav__link">
+    Redeem/Refund Funds from Failed or Cancelled Transactions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manually-redeem-funds" class="md-nav__link">
+    Manually Redeem Funds
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-all-order-history-including-stuck-orders" class="md-nav__link">
+    Clear All Order History, including Stuck Orders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../listings/" title="Listings" class="md-nav__link">
+      Listings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Service Nodes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Service Nodes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/operation/" title="Operation" class="md-nav__link">
+      Operation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/xbridge-configuration/" title="XBridge Configuration" class="md-nav__link">
+      XBridge Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/xrouter-configuration/" title="XRouter Configuration" class="md-nav__link">
+      XRouter Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../service-nodes/xcloud-configuration/" title="XCloud Configuration" class="md-nav__link">
+      XCloud Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Governance
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Governance
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/view-proposals/" title="View Proposals" class="md-nav__link">
+      View Proposals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/create-proposal/" title="Create Proposal" class="md-nav__link">
+      Create Proposal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/proposal-voting/" title="Proposal Voting" class="md-nav__link">
+      Proposal Voting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/interviews/" title="Interviews" class="md-nav__link">
+      Interviews
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://blocknet.co/brand-resources/" title="Branding Resources" class="md-nav__link">
+      Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social-media-guidelines.pdf" title="Social Media Guideline" class="md-nav__link">
+      Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Developers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Developers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.co" title="API" class="md-nav__link">
+      API <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acquiring-initial-block" class="md-nav__link">
+    Acquiring Initial BLOCK
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redeemrefund-funds-from-failed-or-cancelled-transactions" class="md-nav__link">
+    Redeem/Refund Funds from Failed or Cancelled Transactions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manually-redeem-funds" class="md-nav__link">
+    Manually Redeem Funds
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-all-order-history-including-stuck-orders" class="md-nav__link">
+    Clear All Order History, including Stuck Orders
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/blocknetdx/documentation/edit/master/docs/blockdx/trading.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="block-dx-trading">Block DX Trading<a class="headerlink" href="#block-dx-trading" title="Permanent link">&para;</a></h1>
+<p><a href="/blockdx/introduction">Block DX</a> is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the <a href="/project/introduction">Blocknet Protocol</a>. Follow the guides below to learn how to check your balances, select your market, make orders, take orders, check order status, and view order history. If Block DX has not been setup yet, please follow the <a href="/blockdx/setup">setup guide</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="acquiring-initial-block">Acquiring Initial BLOCK<a class="headerlink" href="#acquiring-initial-block" title="Permanent link">&para;</a></h3>
+<p>When <em>making</em> a new order (i.e. creating a new offer to buy/sell some asset), there is no <em>Exchange Fee</em> on BlockDX. Therefore, it is possible to acquire BLOCK on the BlockDX exchange, even if you don't currently own any BLOCK. You simply make an offer to buy BLOCK on one of the more liquid trading pairs, like BLOCK/LTC, and wait for someone to <em>take</em> your order (i.e. wait for someone to accept your offer). However, if for some reason you can't wait for someone to accept your <em>maker</em> order to buy BLOCK, there are ways to acquire the small amount of BLOCK you need to pay the <a href="/blockdx/fees/#taker-fee">Taker Fee</a>:</p>
+<ol>
+<li><a href="https://discord.gg/vGa7GeCu8B">Join Blocknet's Discord</a> and ask in the <em>#support</em> or <em>#trading</em> channel if someone would be kind enough to <em>tip</em> you a small amount of BLOCK to get you started trading on BlockDX. Chances are you'll find a generous person who will be happy to send you a <em>tip</em> via the <em>Discord Tip Bot</em>. After receiving a <em>tip</em> you can withdraw your BLOCK from the Discord Server by going to the <em>#tip-bot</em> channel in Blocknet Discord and entering:
+<code>!withdraw address amount coin</code>
+where <code>address</code> is your BLOCK address,
+<code>amount</code> is the amount of BLOCK to withdraw,
+and <code>coin</code> is BLOCK.</li>
+<li>Another option for acquiring a small amount of initial BLOCK is to <a href="https://block.ccore.online/faucet">use the faucet</a>.</li>
+</ol>
+<details class="warning"><summary>Note: Taker Fee <em>must</em> be paid from the Blocknet core/native wallet; it cannot be paid with BLOCK stored in XLite. Having no BLOCK in your Blocknet core wallet will result in <em>Insufficient Funds</em> error from BlockDX when taking/accepting orders.</summary><p>For this reason, it's a good idea to keep a few BLOCK in your
+<a href="/wallet/setup">Blocknet core/native wallet</a>. In a soon-to-be-released version
+of BlockDX, it will be possible to pay the Taker Fee with BLOCK
+stored in XLite and it won't even be necessary to run Blocknet
+core wallet to trade on BlockDX.</p>
+</details>
+<details class="warning"><summary>IMPORTANT: Your Blocknet wallet and the wallets of the assets you are trading <em>must</em> remain open and unlocked during atomic swaps.</summary><p>If any of these wallets goes offline in the middle of an atomic
+swap, it could result in loss of funds if you do not bring them
+back online immediately.</p>
+</details>
+<details class="info"><summary>Explore Blocknet Network to see how many Service Nodes currently support each digital asset, and much, much more...</summary><p>Before an asset can be traded on BlockDX, it must be supported by one or more <a href="/service-nodes/introduction">Service Nodes</a>. Blocknet community members have created several web based services to make it easy to discover which assets are currently supported by Service Nodes. Some of these websites actually offer much more information about the Blocknet Network than just how many Service Nodes support each digital asset:</p>
+<ul>
+<li>To list all coins currently supported by Service Nodes for trading on BlockDX, open <em>Tools-&gt;Debug Console</em> in your Blocknet wallet and enter: <code>dxGetNetworkTokens</code>.  If using the CLI Blocknet wallet, issue the command, <code>./blocknet-cli dxGetNetworkTokens</code> from the directory where <code>blocknet-cli</code> is kept.</li>
+<li><a href="https://service-explorer.core.cloudchainsinc.com/#/">CloudChainsServiceExplorer</a> (Thank you <em>@lucien</em>!)</li>
+<li><a href="https://www.blocknetmonitor.com">BlocknetMonitor</a> (Thank you <em>@walkjivefly</em>!)</li>
+<li><a href="https://block.denarius.pro">BlockDXServiceNodes</a> (Thank you <em>@BuzzkillB</em>!)</li>
+<li><a href="https://block.ccore.online/">CryptoCoreExplorer</a> (Thank you Telegram user <em>@jimwal</em>!)</li>
+<li><a href="https://data.blocknet.co/api/v2.0/ticker">Raw Volume Data</a> </li>
+<li><a href="https://staking.blocknet.co/">Staking Rewards Calculator</a></li>
+</ul>
+</details>
+<!--
+- [BlockDX 24h Volume & much more](https://blockdx.co/orders) (Thank you *@littleeagle*!)
+-->
+
+<details class="tip"><summary>Tip: How to stop your Blocknet wallet from staking while it's unlocked for trading.</summary><p>To trade BLOCK on BlockDX from your Blocknet core wallet, your
+Blocknet core wallet must be fully unlocked. Normally, when your
+core wallet is unlocked, it automatically begins
+<a href="/wallet/staking">staking</a>. If, while staking, one of the
+<a href="/resources/glossary/#utxo">UTXOs</a> in your wallet "hits a stake",
+it becomes <em>immature</em> for 101 confirmations, and it is unavailable
+for trading while it's <em>immature</em>. At times, it can interfere with
+trading when a large UTXO goes <em>immature</em> for 101
+confirmations. Fortunately, there's a way to have your Blocknet
+core wallet unlocked, but not staking. The trick is simply to add
+<code>staking=0</code> to the <code>blocknet.conf</code> file in your
+<a href="/wallet/backup-restore/#data-directory">data directory</a>, then
+restart your Blocknet core wallet. (If <code>blocknet.conf</code> doesn't
+already exist in your data directory, create it.)</p>
+</details>
+<hr />
+<details class="example"><summary>Balances</summary><p>The first thing you want to do when starting Block DX is to check your balances. <em>Balances</em> displays the connected wallets along with the <em>available</em> balance. A connected wallet is one that has been configured and is currently open and unlocked. The <em>available</em> balance is the balance of the funds in a wallet that are not locked up.</p>
+<p><img alt="Balances" src="/img/blockdx/balances-unequal.png" /></p>
+<p>The <em>Available</em> balance may show a value different than what's displayed in the wallet if:</p>
+<ul>
+<li>The wallet is locked.</li>
+<li>You have already made a trade that has locked up
+  funds. <a href="/blockdx/faq/#why-does-available-balance-in-blockdx-drop-so-dramatically-when-making-an-order">Find out why available balance in BlockDX sometimes drops dramatically when making an order, and how to prevent it from happening</a>.</li>
+<li>Funds aren't in a legacy address. Right now only legacy addresses are compatible. If you are using a Segwit address, please create a new address to send the funds to. If the wallet has been configured via Block DX, then a legacy address will automatically be created when generating a new address.</li>
+<li>The wallet was not <a href="/blockdx/configuration">configured</a>.</li>
+<li>The wallet was not restarted after the configuration.</li>
+<li>If inputs have been locked via <a href="/wallet/send-funds/#coin-control">Coin Control</a>.</li>
+</ul>
+</details>
+<details class="example"><summary>Select Market</summary><ol>
+<li>
+<p>The market selection tool can be found in the upper-left corned.</p>
+<p><img alt="Select Market" src="/img/blockdx/select-market-1.png" /></p>
+</li>
+<li>
+<p>Click the <em>Select market pair</em> button.</p>
+</li>
+<li>
+<p>A downdown will appear with two lists: the assets of the wallets you have connected and all assets listed on Block DX.</p>
+<p><img alt="Select Market" src="/img/blockdx/select-market-2.png" /></p>
+</li>
+<li>
+<p>From <em>Connected Tokens</em>, select the asset you would like to trade.</p>
+</li>
+<li>
+<p>Select the asset you would like to trade the first asset with. The first asset will be priced in terms of this asset. This asset must have a wallet configured.</p>
+<p><img alt="Select Market" src="/img/blockdx/select-market-3.png" /></p>
+</li>
+<li>
+<p>Select <em>Select</em> to view the chosen market.</p>
+<p><img alt="Select Market" src="/img/blockdx/select-market-4.png" /></p>
+</li>
+</ol>
+</details>
+<details class="example"><summary>Market Information</summary><details class="tip"><summary>Tip: To view currently active BlockDX orders from a browser, visit <a href="https://www.blocknetmonitor.com/?p=openorders">BlockNetMonitor</a></summary></details>
+<details class="warning"><summary>Warning: When opening BlockDX for the first time it can take up to 3 minutes for all currently active orders to display on the screen.</summary><p>This is simply the nature of a fully decentralized, peer-to-peer network. If your
+XBridge client is connected to very few peers, it can even
+take slightly longer than 3 minutes.</p>
+<details class="tip"><summary>Hint: Check your peer count.</summary><ul>
+<li>
+<p>Redesign Wallet:</p>
+<p><img alt="Peers Status" src="/img/wallet-redesign/status-peers.png" /></p>
+</li>
+<li>
+<p>Classic Wallet: </p>
+<p><img alt="Peers Status" src="/img/wallet-classic/status-peers.png" /></p>
+</li>
+</ul>
+</details>
+</details>
+<p>Within BlockDX, each market has a price chart, depth chart, and market stats available.</p>
+<p><img alt="Market Data" src="/img/blockdx/market-data.png" /></p>
+<p>The market stats are above the price chart and show the last trade price, percent in price change over the last 24 hour rolling period, and volume over the last 24 hour rolling period.</p>
+<p><img alt="Stats" src="/img/blockdx/navbar-stats.png" /></p>
+<p>The chart has the ability to zoom. To zoom in, click and drag the pointer over the are you want to zoom in on.</p>
+<p><img alt="Price Chart Zoom" src="/img/blockdx/price-chart-zoom.png" /></p>
+<p>You can hover over the candles to show the information of each data point in the legend.</p>
+<p><img alt="Price Chart Zoomed" src="/img/blockdx/price-chart-zoomed.png" /></p>
+<p>To reset the chart, select the <em>Show All</em> button in the upper-right corner of the chart.</p>
+<p><img alt="Show All" src="/img/blockdx/price-chart-show-all.png" /></p>
+<p>To the right of the price chart there's also a depth chart. The depth chart shows how much market depth there is of orders at certain prices.</p>
+<p><img alt="Depth Chart" src="/img/blockdx/depth-chart.png" /></p>
+<p>Hover order the depth chart to view the data values.</p>
+<p><img alt="Depth Chart Hover" src="/img/blockdx/depth-chart-hover.png" /></p>
+</details>
+<details class="example"><summary>Make Order</summary><p><img alt="Make Order" src="/img/blockdx/make-order.png" /></p>
+<ol>
+<li>Review the <a href="/blockdx/fees/#maker-fee">trading fees</a> for making orders.</li>
+<li>At the left side of Block DX you will find an order form.</li>
+<li>Select either the buy or sell tab.</li>
+<li>
+<p>For <em>Amount</em> (the first input), enter the amount you would like to buy or sell.</p>
+<details class="info"><summary>Note: There are no limit, market, or partial orders.</summary><div class="codehilite"><pre><span></span><code><span class="err">At the moment there are just *Exact* orders, meaning that orders must be taken for the exact amounts. Due to this setup, if trading a large amount it may be best to instead break the order into a few smaller separate orders.</span>
+</code></pre></div>
+
+</details>
+</li>
+<li>
+<p>For <em>Price</em> (the second input), enter the price (rate) for
+   which you would like to trade the first asset. Note, there is
+   also an option to enter <em>Price</em> in terms of BTC.</p>
+</li>
+<li><em>Total</em> shows the total amount of the 2nd asset that will be traded for the first asset.</li>
+<li>In the <em>Address</em> fields, enter the addresses the funds will be
+   going to for each asset. In the above example, buying BLOCK
+   with LTC, the <em>BLOCK Address</em> is the address where the BLOCK
+   you buy will be sent, and the <em>LTC Address</em> is the
+   <a href="/resources/glossary/#change-address">change address</a> where LTC
+   change from the transaction will be sent. If you don't mind having funds sent to new/empty addresses in your
+   BLOCK and LTC wallets, you can use the
+   <a href="/blockdx/settings/#auto-generate-addresses-in-order-form">auto-generated addresses</a>. However, if you
+   want the asset you're acquiring or the <a href="/resources/glossary/#change-address">change from the transaction</a> to go
+   to specific addresses in your wallet, you'll
+   need to copy/paste those specific addresses from your wallets into
+   these fields. (For now, these <em>Address</em> fields must be legacy addresses,
+   not Segwit addresses.) <a href="/xlite/blockdx-xlite">See these hints</a> for help finding
+   specific addresses in XLite. Note, the address from which
+   the trade is funded is chosen automatically by BlockDX. BlockDX
+   funds the trade from the address with the smallest <a href="/resources/glossary/#utxo">UTXO</a>
+   which can cover the expense of the trade.</li>
+<li>Ignore <em>Order ID</em>. That should be blank when creating an order.</li>
+<li>Review your order.</li>
+<li>Select the place order button.</li>
+<li>
+<p>The trade will now be visible as <em>Open</em> under <em>Active Orders</em>.</p>
+<p><img alt="Active" src="/img/blockdx/orders-active.png" /></p>
+</li>
+</ol>
+<p>The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.</p>
+</details>
+<details class="example"><summary>Take Order</summary><ol>
+<li>Review the <a href="/blockdx/fees/#taker-fee">trading fees</a> for taking orders.</li>
+<li>
+<p>On the right side of Block DX you will find the order book.</p>
+<p><img alt="Order Book" src="/img/blockdx/order-book.png" /></p>
+</li>
+<li>
+<p>Click on the order you would like to take.</p>
+<details class="info"><summary>Note: There are no limit, market, or partial orders.</summary><div class="codehilite"><pre><span></span><code><span class="err">At the moment there are just *Exact* orders, meaning that orders must be taken for the exact amounts. Due to this setup, you must have enough funds to cover the entire sell amount of the order selected.</span>
+</code></pre></div>
+
+</details>
+</li>
+<li>
+<p>The order form on the left side of Block DX will auto-populate.</p>
+<p><img alt="Take Order" src="/img/blockdx/take-order.png" /></p>
+</li>
+<li>
+<p>Make sure <em>Balances</em> shows enough funds in the <em>Available</em> column to cover the order.</p>
+</li>
+<li>In the <em>Address</em> fields, enter the addresses the funds will be
+   going to for each asset. In the above example, selling BLOCK
+   for LTC, the <em>BLOCK Address</em> is the
+   <a href="/resources/glossary/#change-address">change address</a> where BLOCK
+   change from the transaction will be sent, and the <em>LTC Address</em> is the address where the LTC
+   you acquire from the sale will be sent. If you don't mind having funds sent to new/empty addresses in your
+   BLOCK and LTC wallets, you can use the
+   <a href="/blockdx/settings/#auto-generate-addresses-in-order-form">auto-generated addresses</a>.
+   However, if you
+   want the asset you're acquiring or the <a href="/resources/glossary/#change-address">change from the transaction</a> to go
+   to specific addresses in your wallet, you'll
+   need to copy/paste those specific addresses from your wallets into
+   these fields. (For now, these address fields must be legacy addresses,
+   not Segwit addresses.) <a href="/xlite/blockdx-xlite">See these hints</a> for help finding
+   specific addresses in XLite. Note, the address from which
+   the trade is funded is chosen automatically by BlockDX. BlockDX
+   funds the trade from the address with the smallest <a href="/resources/glossary/#utxo">UTXO</a>
+   which can cover the expense of the trade.</li>
+<li>Review your order.</li>
+<li>Select the place order button.</li>
+<li>The trade will now be visible under <em>Active Orders</em>.</li>
+<li>The trade should complete in about 20-30 seconds.</li>
+</ol>
+<p>The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.</p>
+</details>
+<details class="example"><summary>Order Status</summary><p>At the bottom of the screen is the <em>Order Status</em> section, where
+details can be found about the status of an order:</p>
+<p><img alt="Order Status" src="/img/blockdx/order-status-section.png" /></p>
+<p>If you hover your mouse over the <code>?</code> symbol in this section,
+you'll see a chart of every possible status an order can have. The
+current status is displayed in the <em>Status</em> column on the
+right. Here is the list of every possible status of an order:</p>
+<p><img alt="Order Status Table" src="/img/blockdx/order-status-table.png" /></p>
+<p>Any orders that are open or in progress can be found in <em>Active Orders</em>.</p>
+<p><img alt="Active" src="/img/blockdx/orders-active.png" /></p>
+<p>You can hover over the order to read the order state.</p>
+<p><img alt="Active" src="/img/blockdx/orders-active-open.png" /></p>
+<p>Any orders that are cancelled, completed, or failed can be found in <em>Inactive Orders</em></p>
+<p><img alt="Inactive" src="/img/blockdx/orders-inactive.png" /></p>
+<p>Again, you can hover over the order to read the order state. There are different icons to represent each order state.</p>
+<p><img alt="Inactive Complete" src="/img/blockdx/orders-inactive-complete.png" />
+<img alt="Inactive Cancelled" src="/img/blockdx/orders-inactive-cancelled.png" /></p>
+<p>If you have created an order, it will be indicated in the order book with a white dot.</p>
+<p><img alt="Order Book" src="/img/blockdx/order-book-own-order.png" /></p>
+<p>The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.</p>
+</details>
+<details class="example"><summary>Order History</summary><p>At the bottom-right corner of Block DX you can find the trade history. The trade history information is gathered only for the wallets that are configured. Therefore, the trade history will only show the orders that have been completed since Blocknet wallet and wallets for the currently viewed market have been opened and unlocked. If the Blocknet wallet is restarted, this information will be cleared and no longer visible.</p>
+<p><img alt="Trade History" src="/img/blockdx/trade-history.png" /></p>
+</details>
+<hr />
+<h4 id="redeemrefund-funds-from-failed-or-cancelled-transactions">Redeem/Refund Funds from Failed or Cancelled Transactions<a class="headerlink" href="#redeemrefund-funds-from-failed-or-cancelled-transactions" title="Permanent link">&para;</a></h4>
+<details class="example"><summary>Failed/Cancelled Transactions - How to redeem/refund lost funds.</summary><p>For various reasons, a transaction on BlockDX can occasionally
+fail or get cancelled and get listed
+under <em>INACTIVE ORDERS</em> as either <em>Failed</em>:
+<img alt="Failed Order" src="/img/blockdx/orders-failed.png" />
+or <em>Cancelled</em>:
+<img alt="Inactive Cancelled" src="/img/blockdx/orders-inactive-cancelled.png" />
+When this occurs, BlockDX will attempt to refund both parties in
+the transaction for up to 2.5 hours. In most cases it will
+succeed. <strong><em>It's important to keep your Blocknet
+core wallet, and any wallets involved
+in the transaction, open and unlocked for 2.5 hours while the refund is attempted.
+(Blocknet wallet must remain open and unlocked for 2.5 hours no
+matter which coins were involved in the transaction because
+the code which manages the refund currently
+resides within the Blocknet wallet.</em>)</strong> In the case of a Failed
+Order, if the Blocknet wallet is
+closed before all refunds are completed, or in the rare case that
+other factors prevent refunds from completing,
+the order will continue to display a <em>Failed</em> status as shown
+above, but it will be moved from the <em>INACTIVE ORDERS</em> catagory to the
+<em>ACTIVE ORDERS</em> category. If this occurs, or if your funds were
+not returned after 2.5 hours from a <em>Cancelled</em> order, you'll need to manually redeem
+your funds by issuing a <code>sendrawtransaction &lt;hexstring&gt;</code> command
+as follows:</p>
+<h5 id="manually-redeem-funds">Manually Redeem Funds<a class="headerlink" href="#manually-redeem-funds" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>Navigate to your data directory:</p>
+<details class="abstract"><summary>Windows</summary><p><div class="highlight"><pre><span></span><code>C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
+</code></pre></div>
+Or paste <code>%appdata%\Blocknet\</code> into the File Explorer path field.</p>
+</details>
+<details class="abstract"><summary>MacOS</summary><p><div class="highlight"><pre><span></span><code>~/Library/Application Support/Blocknet/
+</code></pre></div>
+Open Finder and in the program menu select <em>Go</em> &gt; <em>Go to Folder...</em> and enter the above path.</p>
+</details>
+<details class="abstract"><summary>Linux</summary><div class="highlight"><pre><span></span><code>~/.blocknet/
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>In the data directory there is a <code>log-tx</code> subdirectory which
+   contain files named <code>xbridgep2p_YYYYMMDD.log</code>. The <code>hexstring</code> you'll need to use
+   as the parameter for the <code>sendrawtransaction &lt;hexstring&gt;</code>
+   command, will be found in one of the most recent of these <code>.log</code> files.</p>
+</li>
+<li>Starting with the most recent <code>.log</code> file, use a text editor (e.g. NotePad on
+   Windows; TextEdit on Mac) to search these files for information
+   about the failed transaction. Search for text that says either, <code>refund transaction for
+   order</code> or <code>redeem counterparty deposit for order</code>, followed
+   shortly thereafter by the text, <code>(submit manually using sendrawtransaction)</code>,
+   followed by a brief description of the attempted transaction
+   (which will include names of the two coins involved, along with amounts and
+   addresses of each coin), followed by a very large hexadecimal string of over 100
+   characters. This large hexadecimal string is the <code>hexstring</code>
+   you're looking for.</li>
+<li>If you find two such <code>hexstrings</code> for the failed transaction - one after the text, <code>refund transaction for
+   order</code>, and one after the text, <code>redeem counterparty deposit
+   for order</code>, make a note of both of them.</li>
+<li>Here is an example of the text patterns you're looking for. In this
+   example, the transaction was a sale of 24.9 GLC at address Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS in exchange
+   for 1.1952 BLOCK at address Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm:
+   <div class="highlight"><pre><span></span><code>refund transaction for order
+77bb55513d72be752ed68b39980cc2e3e821de0e0318a16a7da131840e1211bf
+(submit manually using sendrawtransaction) GLC(24.900000 -
+Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS) / BLOCK(1.195200 -
+Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm)
+010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500
+2021-Mar-19 21:56:19 [0x0x70000a9c4000] redeem counterparty
+deposit for order
+77bb55513d72be752ed68b39980cc2e3e821de0e0318a16a7da131840e1211bf
+(submit manually using sendrawtransaction) GLC(24.900000 -
+Dw7WLmrifyH3KSsrtkXPQmQA8PrTmt6nxS) / BLOCK(1.195200 -
+Brh4VVgQeVtb1A3qroHittKemfDZjSY9Gm) 01000000014adf54bf3256d7ca69570cf2af50c7c2b23de75ceb29788b9bfbbdfdc49fc58100000000e6210216d45a58aadad62fd4b910a2b855434d1d2f2d64a9e08df5bc25503e76f7b46f48304502210090449659a2a430ca3a6c817be506e60f1b443903bc45dd91f5f136b94316148402201141a691fcc2a3ebb61887639ce21982dff95176260c8e79ad4e58e122cbe77401210399985ab8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4004c56630367e71cb17576a9145779a2aa6ca981f478f6ad18a87e71525558d8d688ac6776a914dd4dbb870eeded2f9d4ad18588a470804258185088ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768ffffffff0100bb1f07000000001976a914fb3aabbc7c8c0c581df57bd57625d72228be700588ac00000000
+</code></pre></div></li>
+<li>The two <code>hexstrings</code> in the example above are:
+   <div class="highlight"><pre><span></span><code>010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500
+</code></pre></div>
+   and
+   <div class="highlight"><pre><span></span><code>01000000014adf54bf3256d7ca69570cf2af50c7c2b23de75ceb29788b9bfbbdfdc49fc58100000000e6210216d45a58aadad62fd4b910a2b855434d1d2f2d64a9e08df5bc25503e76f7b46f48304502210090449659a2a430ca3a6c817be506e60f1b443903bc45dd91f5f136b94316148402201141a691fcc2a3ebb61887639ce21982dff95176260c8e79ad4e58e122cbe77401210399985ab8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4004c56630367e71cb17576a9145779a2aa6ca981f478f6ad18a87e71525558d8d688ac6776a914dd4dbb870eeded2f9d4ad18588a470804258185088ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768ffffffff0100bb1f07000000001976a914fb3aabbc7c8c0c581df57bd57625d72228be700588ac00000000
+</code></pre></div></li>
+<li>Continuing with the example above, assuming the funds which were not
+   refunded were GLC coin, you could attempt to recover them
+   manually by opening the GLC core/native wallet, navigating to
+   the <em>Debug Console</em>, then issuing the command:
+   <div class="highlight"><pre><span></span><code>sendrawtransaction &lt;hexstring&gt;
+</code></pre></div>
+   where <code>&lt;hexstring&gt;</code> is the large hexstring following the text, <code>refund transaction for
+   order</code>. If you want to make sure this recovery attempt will work, you could use a
+   <a href="https://chainz.cryptoid.info">blockchain explorer</a> to explore
+   the transaction of your funds being sent out of your
+   wallet. If you see the output of that transaction shows, <code>not
+   yet redeemed</code> then you should be able to redeem those funds via
+   <code>sendrawtransaction &lt;hexstring&gt;</code> using the <code>hexstring</code> found
+   after <code>refund transaction for order</code>.</li>
+<li>If it's not possible to refund the funds
+   that were sent out of your wallet, then the counterparty of the
+   transaction has likely already redeemed/spent those funds. In
+   this case you can try to redeem the counterparty's deposit. In
+   the example above, the counterparty's deposit would have been
+   BLOCK, so to redeem it for yourself, open the BLOCK core/native wallet and issue the
+   <code>sendrawtransaction &lt;hexstring&gt;</code> command from that wallet's <em>Debug
+   Console</em> (or from the CLI if using the Command Line
+   Interface).  This time, the <code>&lt;hexstring&gt;</code> to use will be the
+   one following the text, <code>redeem counterparty deposit
+   for order</code>.</li>
+<li>
+<p>If you don't have access to the native/core wallet of the coin
+   for which you need to issue a <code>sendrawtransaction</code> command, the
+   easiest way to send the raw transaction to the right blockchain
+   network is to use the <code>xrsendtransaction</code> command. The
+   <code>xrsendtransaction</code> command can be sent through the Blocknet
+   core wallet under <em>Tools-&gt;Debug Console</em> of the GUI/Qt
+   Blocknet, or it can be sent from the
+   Blocknet CLI. As long as there is a Service Node on the
+   Blocknet network which offers the XRouter service <code>xrsendtransaction</code> for free
+   for the coin you need it for, you can use
+   <code>xrsendtransaction</code>. For example, to send the transaction hex
+   string to redeem lost GLC in the example above, you would issue
+   the following command in <em>Tools-&gt;Debug Console</em> or from
+   Blocknet CLI:
+   <div class="highlight"><pre><span></span><code>xrsendtransaction GLC &lt;hexstring&gt;
+</code></pre></div>
+   where <code>&lt;hexstring&gt;</code> would be the large
+   hexstring following the text, <code>refund transaction for
+   order</code>. In other words, it would look like this:
+   <div class="highlight"><pre><span></span><code>xrsendtransaction GLC
+010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500
+</code></pre></div></p>
+</li>
+<li>
+<p>If it turns out there is no Service Node offering an XRouter
+      service <code>xrsendtransaction</code> for free for the coin you need
+      it for, but the coin is supported by XLite, proceed as
+      follows to issue the <code>sendrawtransaction</code> via <code>curl</code> to the
+      CloudChains daemon:</p>
+<ol>
+<li>
+<p>Open XLite if it's not already open.</p>
+</li>
+<li>
+<p>Record the necessary details for accessing your coin's
+       XLite wallet as follows:</p>
+<ol>
+<li>
+<p>Navigate to the CloudChains settings directory:</p>
+<ul>
+<li>
+<p>Windows:
+              <div class="highlight"><pre><span></span><code>C:\Users\[YourUsername]\AppData\CloudChains\settings
+</code></pre></div>
+              Or paste <code>%appdata%\CloudChains\settings</code> into the File Explorer path field.</p>
+</li>
+<li>
+<p>MacOS:
+              <div class="highlight"><pre><span></span><code>~/Library/Application Support/CloudChains/settings
+</code></pre></div>
+              Open Finder and in the program menu select <em>Go</em> &gt; <em>Go to Folder...</em> and enter the above path.</p>
+</li>
+<li>
+<p>Linux:
+              <div class="highlight"><pre><span></span><code>~/.config/CloudChains/settings
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+<li>
+<p>In a text editor, open the <code>config-&lt;coin&gt;.json</code> file of the coin you
+             want to redeem. For example, if you
+             need to manually redeem BTC, open <code>config-BTC.json</code>
+             in a text editor. It will look something like this:
+             <div class="highlight"><pre><span></span><code>{
+    &quot;rpcPassword&quot;: &quot;8vCaDSpOKJ8ZhJdukZxaU4Z4NGFFDa9mPy1b-ZT6tHA&quot;,
+    &quot;fee&quot;: 0.0001,
+    &quot;rpcUsername&quot;: &quot;VMvT5inMA0841-458cOxSgz5V0mxJR8J&quot;,
+    &quot;rpcPort&quot;: 8332,
+    &quot;feeFlat&quot;: true,
+    &quot;rpcEnabled&quot;: true,
+    &quot;addressCount&quot;: 40
+}
+</code></pre></div></p>
+</li>
+<li>
+<p>Make a note of the <code>rpcPassword</code>, <code>rpcUsername</code>
+             and <code>rpcPort</code> values in this file. In this example
+             these values are
+             <code>8vCaDSpOKJ8ZhJdukZxaU4Z4NGFFDa9mPy1b-ZT6tHA</code>,
+             <code>VMvT5inMA0841-458cOxSgz5V0mxJR8J</code> and <code>8332</code>, respectively.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Open a Terminal window (Mac/Linux) or a Command
+          Prompt (Windows) and issue the following command:
+          <div class="highlight"><pre><span></span><code>curl -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;method&quot;: &quot;sendrawtransaction&quot;, &quot;params&quot;: [&quot;hexstring&quot;]}&#39; http://rpcUsername:rpcPassword@127.0.0.1:rpcPort/
+</code></pre></div>
+          where <code>hexstring</code> is the large hexadecimal string mentioned
+          in steps 3-8 above, and <code>rpcUsername</code>, <code>rpcPassword</code> and
+          <code>rpcPort</code> are the values found in step 9-&gt;b-&gt;iii above.</p>
+<p>For example, using the values from the examples
+          above, the <code>curl</code> command would look like this:
+          <div class="highlight"><pre><span></span><code>curl -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;method&quot;: &quot;sendrawtransaction&quot;, &quot;params&quot;: [&quot;010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500&quot;]}&#39; http://VMvT5inMA0841-458cOxSgz5V0mxJR8J:8vCaDSpOKJ8ZhJdukZxaU4Z4NGFFDa9mPy1b-ZT6tHA@127.0.0.1:8332/
+</code></pre></div></p>
+<p>Note, Windows users may need to <a href="https://curl.se/download.html">install curl</a> if it is not already installed.</p>
+</li>
+</ol>
+</li>
+</ol>
+</details>
+<hr />
+<h4 id="clear-all-order-history-including-stuck-orders">Clear All Order History, including Stuck Orders<a class="headerlink" href="#clear-all-order-history-including-stuck-orders" title="Permanent link">&para;</a></h4>
+<details class="example"><summary>Clear All Order History, including Stuck Orders</summary><p>There are two cases when you might want to clear all your BlockDX
+order history:</p>
+<ol>
+<li>
+<p>If you've been placing a <em>lot</em> of orders, for example with a
+trading bot, the list of orders in the order history file can
+actually grow to the point where it slows down BlockDX performance.</p>
+</li>
+<li>
+<p>On rare occasion, an order can get into a "stuck" state where it 
+fails to complete, but cannot be cancelled or deleted through the
+usual means. The main cause of this situation is when a new coin has
+been added to BlockDX and improperly configured. (Specifically, the
+culprit is usually that the <em>FeePerByte</em> value in the XBridge config
+for the coin is set too low. It should be set by looking in the wallet
+send function for the recommended fee per byte and then multiplying it
+by about 2.5.)  If you have an order in a "stuck" state like this,
+the first thing you'll want to do is to recover any funds you
+might have tied up in the stuck order. For this, the first
+step is to <strong>wait at least 2.5 hours, keeping your Blocknet
+core wallet, and any wallets involved in the order, open and
+unlocked</strong>.  XBridge code will attempt to refund any funds you
+have committed to a trade for up to 2.5 hours and your only
+responsibility during this time is to wait and keep all your
+wallets open and unlocked. Note, Blocknet wallet must remain open
+and unlocked for 2.5 hours no
+matter which coins were involved in the transaction because
+the code which manages the refund currently
+resides within the Blocknet wallet. If the funds you had
+committed to the order are not refunded to your wallet after 2.5
+hours, <a href="#redeemrefund-funds-from-failed-or-cancelled-transactions">redeem your funds the manual way</a>.</p>
+</li>
+<li>
+<p>Now you're ready to clear your BlockDX order history by
+   renaming the <code>orders.dat</code> file as follows:</p>
+<ol>
+<li>Close BlockDX and Blocknet wallet.</li>
+<li>Navigate to your data directory:<ul>
+<li><strong>Windows</strong>
+    <div class="highlight"><pre><span></span><code>C:\Users\[YourUsername]\AppData\Roaming\Blocknet\
+</code></pre></div>
+    Or paste <code>%appdata%\Blocknet\</code> into the File Explorer path field.</li>
+<li><strong>MacOS</strong>
+    <div class="highlight"><pre><span></span><code>~/Library/Application Support/Blocknet/
+</code></pre></div>
+    Open Finder and in the program menu select <em>Go</em> &gt; <em>Go to Folder...</em> and enter the above path.</li>
+<li><strong>Linux</strong>
+    <div class="highlight"><pre><span></span><code>~/.blocknet/
+</code></pre></div></li>
+</ul>
+</li>
+<li>Rename the file, <code>orders.dat</code> in your data directory.</li>
+<li>Restart Blocknet wallet and, after it has synced, restart BlockDX.</li>
+</ol>
+<details class="warning"><summary>Warning: Deleting <code>orders.dat</code> will delete all historical records of orders you've made.</summary><p>Instead of renaming <code>orders.dat</code> as instructed above, you can
+optionally delete it. Renaming is preferable because deleting
+cannot be undone.</p>
+</details>
+</li>
+</ol>
+</details>
+<hr />
+<details class="bug"><summary>Bug: If you used <em>Generate New Address</em> in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do.</summary><ol>
+<li>Click on <em>Receive</em> in the upper right corner of XLite.</li>
+<li>Select the asset which did not arrive in XLite.</li>
+<li>Click <em>Generate new address</em> until the address to which the
+   missing asset was sent appears in the <em>Your address</em> box.</li>
+</ol>
+</details>
+<script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
+var relatedLinks = [];
+</script>
+
+<!-- 
+======= Related Links Section =======
+- This is the related links section at the bottom of each page.
+- It lists the links in the relatedLinks array variable below.
+    Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.co"}];
+- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
+related-links.html
+- The template and logic for the related links section can be found in docs/snippets/related-links.html
+- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
+- The template and logic is linked with markdown_extensions: pymdownx.snippets
+-->
+
+<h2 id="related-links">Related Links<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>
+<div id="related">
+
+</div>
+
+<script type="text/javascript">
+    var relatedHTML = "<ul>";
+
+    // check if related links provide
+    if (typeof variable !== 'undefined' && relatedLinks.length > 0) {
+        // related links provided, loop through them
+        for (let i = 0; i < relatedLinks.length; i++) {
+            // create a list element with an a tag containing the related link
+            var snippet = "<li><a href='" + relatedLinks[i]["link"] + "'>" + relatedLinks[i]["name"] + "</a></li>";
+            // concatenate element to relatedHTML variable
+            relatedHTML += snippet;
+        }
+        // concatenate list closing tag
+        relatedHTML += "</ul>";
+        // add list of related links to the related page links section
+        document.getElementById("related").innerHTML = relatedHTML;
+    } else {
+        // no related links provided
+        // remove related links section header
+        document.getElementById("related-links").outerHTML = "";
+        // remove related links section from sidebar menu
+        document.querySelector(".md-sidebar--secondary .md-nav__list").lastElementChild.remove();
+    }
+</script>
+
+<style>
+#notification-bar {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: -1px;
+    opacity: 1;
+    animation-name: bn-notification-load;
+    animation-duration: 0.8s;
+}
+#notification-bar .notification {
+    position: relative;
+    min-height: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 12px 50px 12px 20px;
+    background-color: #016AFF;
+    color: #fff;
+}
+#notification-bar .message {
+    display: inline-block;
+    line-height: 17px;
+}
+#notification-bar .message a {
+    color: #fff;
+    text-decoration: underline;
+}
+#notification-bar .notification-close {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(0%,-50%);
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+@keyframes bn-notification-load {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+<div id="notification-bar">
+    <!-- <div class="notification" data-expire="">
+        <span class="message"><strong>Need support? <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Join our Discord!</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div> -->
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.co/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.co/#downloads" target="_blank">View downloads...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+var notifications = document.getElementById('notification-bar');
+for (var i = 0; i < notifications.children.length; i++) {
+    var expiredDate = parseInt(notifications.children[i].getAttribute('data-expire'));
+    var now = Math.round((new Date).getTime()/1000);
+    if (expiredDate < now && expiredDate != "") {
+        notifications.children[i].style.display = 'none';
+    }
+}
+</script>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../configuration/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Configuration
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../listings/" title="Listings" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Listings
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2014.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="mailto:contact@blocknet.co" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
+    
+      <a href="https://github.com/blocknetdx/" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://discord.gg/vGa7GeCu8B" target="_blank" rel="noopener" title="comment" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://t.me/Blocknet" target="_blank" rel="noopener" title="telegram" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/@theblocknetchannel" target="_blank" rel="noopener" title="medium" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://en-gb.facebook.com/theblocknet/" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://twitter.com/The_Blocknet" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/theblocknet/" target="_blank" rel="noopener" title="reddit" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.youtube.com/channel/UCCDBoR9fHb21bLH7FGvFrQg/playlists" target="_blank" rel="noopener" title="youtube" class="md-footer-social__link fa fa-youtube"></a>
+    
+      <a href="https://www.instagram.com/the_blocknet/" target="_blank" rel="noopener" title="instagram" class="md-footer-social__link fa fa-instagram"></a>
+    
+      <a href="https://www.linkedin.com/company/blocknet/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      
+        <script src="../../js/main.js"></script>
+      
+    
+  </body>
+</html>

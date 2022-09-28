@@ -1,3 +1,4 @@
+/* old SCP font */
 @font-face {
     font-family: "scp-code";
     src:
@@ -47,14 +48,23 @@
     font-weight: bold;   
 }
 
+/* new IBM font */
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+</style>
+
+
 html, body {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: "scp", "Verdana", "sans-serif" !important;
+    /*font-family: "scp", "Verdana", "sans-serif" !important;*/
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 pre, code {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: "scp-code", "Courier New", "monospace" !important;
+    /*font-family: "scp-code", "Courier New", "monospace" !important;*/
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 .md-typeset h1 {

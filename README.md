@@ -87,7 +87,7 @@ deactivate
 	* For better navigation, instructions for different OS's should be nested in a collapsible panel.
 	* Any repeatable sections should be made into a snippet.
 	* Page sections should be separated with a diver line `---`.
-* __Layout__ - The page meta tags are managed with `theme/main.html` and styling s managed in `docs/css/style.css`.
+* __Layout__ - The page meta tags are managed with `theme/main.html` and styling is managed in `source/css/style.css`.
 * __Informational Cards__:
 	* Types - note, abstract, info, tip, warning, danger, bug, example, quote
 	* Standard - `!!! type "title"`
@@ -131,7 +131,7 @@ See full wiki: [MkDocs]](https://www.mkdocs.org/) | [MkDocs Material](https://sq
 
 ## Adding Pages
 
-1. Create a markdown file (`.md`) within one of the directories in the `docs/` folder.
+1. Create a markdown file (`.md`) within one of the directories in the `source/` folder.
 1. Add a `title:` and `description:` at the top of the file.
 1. Add an `--8<-- "extras.md"` tag at the end of the file.
 1. Add a link to the menu (if needed) by listing it under `nav:` in `mkdocs.yml`.

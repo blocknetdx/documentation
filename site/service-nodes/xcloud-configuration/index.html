@@ -1,0 +1,2301 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="This guide explains how to setup and configure your Service Node to support XCloud and earn additional fees.">
+      
+      
+        <link rel="canonical" href="https://docs.blocknet.org/service-nodes/xcloud-configuration/">
+      
+      
+        <meta name="author" content="Blocknet">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+    
+    
+<title>Service Node XCloud Configuration Guide</title>
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../css/fonts.css">
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-109213957-4", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta name="theme-color" content="#dddfeb">
+<link rel="shortlink" href="https://docs.blocknet.org/">
+<link rel="dns-prefetch" href="//www.blocknet.co">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="mask-icon" href="https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg" color="#051937">
+<meta name="msapplication-TileColor" content="#dddfeb">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Service Node XCloud Configuration Guide">
+<meta property="og:description" content="This guide explains how to setup and configure your Service Node to support XCloud and earn additional fees.">
+<meta property="og:url" content="https://docs.blocknet.org/">
+<meta property="og:site_name" content="Blocknet Documentation">
+<meta property="og:image" content="/img/blocknet.png">
+<meta property="og:image:secure_url" content="/img/blocknet.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This guide explains how to setup and configure your Service Node to support XCloud and earn additional fees.">
+<meta name="twitter:title" content="Service Node XCloud Configuration Guide">
+<meta name="twitter:image" content="/img/blocknet.png"> 
+
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#xcloud-configuration-guide" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://docs.blocknet.org/" title="Blocknet Documentation" aria-label="Blocknet Documentation" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../img/blocknet-logo-128.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Blocknet Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Service Node XCloud Configuration Guide
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://docs.blocknet.org/" title="Blocknet Documentation" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../img/blocknet-logo-128.svg" width="48" height="48">
+      
+    </a>
+    Blocknet Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    blocknetdx/documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/blocknet-whitepaper.pdf" title="Whitepaper" class="md-nav__link">
+      Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Governance" class="md-nav__link">
+      Governance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/contributors/" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social/" title="Social" class="md-nav__link">
+      Social
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Blockchain
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Blockchain
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
+      Exchanges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/aablock/" title="aaBLOCK" class="md-nav__link">
+      aaBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/ablock/" title="aBLOCK" class="md-nav__link">
+      aBLOCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockchain/explorers/" title="Explorers" class="md-nav__link">
+      Explorers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Protocol
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Protocol
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      XBridge
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        XBridge
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/compatibility/" title="Compatibility" class="md-nav__link">
+      Compatibility
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xbridge/setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.org/#xbridge-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      XRouter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        XRouter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#use-cases" title="Use Cases" class="md-nav__link">
+      Use Cases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.org/#xrouter-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      XCloud
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        XCloud
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xcloud/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
+      Design
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.org/#xcloud-api" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.org/" title="API Docs" class="md-nav__link">
+      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Blocknet Wallet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Blocknet Wallet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/syncing/" title="Syncing" class="md-nav__link">
+      Syncing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/encrypting/" title="Encrypt Wallet" class="md-nav__link">
+      Encrypt Wallet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/backup-restore/" title="Backup/Restore" class="md-nav__link">
+      Backup/Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/staking/" title="Staking" class="md-nav__link">
+      Staking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/send-funds/" title="Send Funds" class="md-nav__link">
+      Send Funds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/coin-control/" title="Coin Control" class="md-nav__link">
+      Coin Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/fix-wrong-balance/" title="Fix Wrong Balance" class="md-nav__link">
+      Fix Wrong Balance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/forking/" title="Fork Management" class="md-nav__link">
+      Fork Management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/lock-unlock/" title="Lock/Unlock" class="md-nav__link">
+      Lock/Unlock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wallet/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      XLite
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        XLite
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/backup-and-restore/" title="Create, Backup & Restore" class="md-nav__link">
+      Create, Backup & Restore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/blockdx-xlite/" title="Using BlockDX w/ XLite" class="md-nav__link">
+      Using BlockDX w/ XLite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/access-coin-daemons-via-rpc/" title="Access Coin Daemons via RPC" class="md-nav__link">
+      Access Coin Daemons via RPC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/recover-private-keys/" title="Recover Private Keys" class="md-nav__link">
+      Recover Private Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../xlite/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Block DX
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Block DX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/setup/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/trading/" title="Trading" class="md-nav__link">
+      Trading
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/listings/" title="Listings" class="md-nav__link">
+      Listings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/fees/" title="Fees" class="md-nav__link">
+      Fees
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/settings/" title="Settings" class="md-nav__link">
+      Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../blockdx/log-files/" title="Log Files" class="md-nav__link">
+      Log Files
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Service Nodes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Service Nodes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../setup/" title="Setup" class="md-nav__link">
+      Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../operation/" title="Operation" class="md-nav__link">
+      Operation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xbridge-configuration/" title="XBridge Configuration" class="md-nav__link">
+      XBridge Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xrouter-configuration/" title="XRouter Configuration" class="md-nav__link">
+      XRouter Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        XCloud Configuration
+      </label>
+    
+    <a href="./" title="XCloud Configuration" class="md-nav__link md-nav__link--active">
+      XCloud Configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-configuration-file" class="md-nav__link">
+    Create Configuration File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determine-service-type" class="md-nav__link">
+    Determine Service Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-service" class="md-nav__link">
+    Configure Service
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-service" class="md-nav__link">
+    Deploy Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    Additional Information
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fees" class="md-nav__link">
+    Fees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snode-scoring" class="md-nav__link">
+    Snode Scoring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Governance
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Governance
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/view-proposals/" title="View Proposals" class="md-nav__link">
+      View Proposals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/create-proposal/" title="Create Proposal" class="md-nav__link">
+      Create Proposal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../governance/proposal-voting/" title="Proposal Voting" class="md-nav__link">
+      Proposal Voting
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/interviews/" title="Interviews" class="md-nav__link">
+      Interviews
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://blocknet.co/brand-resources/" title="Branding Resources" class="md-nav__link">
+      Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/social-media-guidelines.pdf" title="Social Media Guideline" class="md-nav__link">
+      Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Developers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Developers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://api.blocknet.org" title="API" class="md-nav__link">
+      API <i class='fa fa-external-link' aria-hidden='true'></i>
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../resources/glossary/" title="Glossary" class="md-nav__link">
+      Glossary
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-configuration-file" class="md-nav__link">
+    Create Configuration File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#determine-service-type" class="md-nav__link">
+    Determine Service Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-service" class="md-nav__link">
+    Configure Service
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-service" class="md-nav__link">
+    Deploy Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    Additional Information
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fees" class="md-nav__link">
+    Fees
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snode-scoring" class="md-nav__link">
+    Snode Scoring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-links" class="md-nav__link">
+    Related Links
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/blocknetdx/documentation/edit/master/docs/service-nodes/xcloud-configuration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="xcloud-configuration-guide">XCloud Configuration Guide<a class="headerlink" href="#xcloud-configuration-guide" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to setup and configure your Service Node to support XCloud. If you have not yet setup your Service Node, start with the <a href="/service-nodes/setup">Service Node Setup Guide</a>. Since XCloud is built on XRouter, you must also complete <a href="/service-nodes/xrouter-configuration">XRouter configuration</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Note: XCloud requires a static IP</p>
+<p>For XCloud services, your Service Node Computer <strong>IP address must remain unchanged</strong> (static IP). If using a VPN with an IP that changes, it will impact your ability to provide XCloud services.</p>
+<p>XCloud makes direct connections and you'll need a WAN IP as your Service Node IP address and if it's behind a router you'll need to port-forward to it.</p>
+</div>
+<p>XCloud is a decentralized microservice cloud network that allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, in many cases without having to write any code. Some examples of these services are blockchain-based calls such as those provided by Infura, one that returns a list of Syscoin marketplace listings, third party data calls such as one that provides access to CMC's API, or a custom call for a service you create yourself. You have the option to offer these services for free or to charge a fee for each call. Fees can be specified individually for each call.</p>
+<p>To host a service, follow these steps:</p>
+<ol>
+<li>Find a service you'd like to provide or create a custom one.</li>
+<li><a href="#create-configuration-file">Create the configuration file</a></li>
+<li><a href="#determine-service-type">Determine the service type</a></li>
+<li><a href="#configure-service">Configure the service</a></li>
+<li><a href="#deploy-service">Deploy service</a></li>
+<li><a href="#additional-information">Additional information</a></li>
+</ol>
+<p>For these examples we will use Ethereum's <code>eth_getBalance</code> call.</p>
+<hr />
+<h2 id="create-configuration-file">Create Configuration File<a class="headerlink" href="#create-configuration-file" title="Permanent link">&para;</a></h2>
+<p>You will need to create a configuration file (.conf) for the service's settings. Each service requires its own configuration file. These files are kept within the <code>plugins</code> folder in the Blocknet wallet data directory.</p>
+<p>Create the service's configuration file within the <code>plugins</code> folder. Make sure to follow the naming rules:</p>
+<ul>
+<li>The service name is also the call that is used when interacting with the service.</li>
+<li>The service name and service filename must be the same.</li>
+<li>Service filenames must have the <code>.conf</code> file extention.</li>
+<li>A service name can only use the following characters: a-z, A-Z, 0-9, _, -, and :</li>
+<li>If the service is a blockchain call not supported in the default SPV commands, such as <code>eth_getBalance</code> for Ethereum, the recommended convention for the service name is [asset ticker]_[native_command-name] with the ticker lowercase (if the ticker isn't already part of the name).<ul>
+<li>E.g. <code>eth_getBalance</code> (call) and <code>eth_getBalance.conf</code> (config file)</li>
+</ul>
+</li>
+</ul>
+<p>Here are examples of service names and filenames:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Service Name</th>
+<th>Service Filename</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i class="fa fa-check"></i> Correct</td>
+<td>eth_getBalance</td>
+<td>eth_getBalance.conf</td>
+<td>Follows correct convention and the names are equal.</td>
+</tr>
+<tr>
+<td><i class="fa fa-times">&nbsp;</i> Incorrect</td>
+<td>eth_getBalance</td>
+<td>eth_getbalance.conf</td>
+<td>The service name and service filename do not match.</td>
+</tr>
+<tr>
+<td><i class="fa fa-times">&nbsp;</i> Incorrect</td>
+<td>eth_getBalance</td>
+<td>eth-getbalance.conf</td>
+<td>The service name and service filename do not match.</td>
+</tr>
+<tr>
+<td><i class="fa fa-times">&nbsp;</i> Incorrect</td>
+<td>eth_getBalance</td>
+<td>ETH_getbalance.conf</td>
+<td>The asset ticker should be all lowercase.</td>
+</tr>
+<tr>
+<td><i class="fa fa-times">&nbsp;</i> Incorrect</td>
+<td>getbalanceETH</td>
+<td>getbalanceETH.conf</td>
+<td>The asset ticker should be first followed by and underscore then the command.</td>
+</tr>
+<tr>
+<td><i class="fa fa-check"></i> Correct</td>
+<td>weatherData</td>
+<td>weatherData.conf</td>
+<td>Names match and only uses allowed characters.</td>
+</tr>
+<tr>
+<td><i class="fa fa-times">&nbsp;</i> Incorrect</td>
+<td>weatherData</td>
+<td>weather-data.conf</td>
+<td>The service name and service filename do not match.</td>
+</tr>
+<tr>
+<td><i class="fa fa-times">&nbsp;</i> Incorrect</td>
+<td>weatherData</td>
+<td>weatherData.txt</td>
+<td>The filename extension is .txt instead of .conf.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="determine-service-type">Determine Service Type<a class="headerlink" href="#determine-service-type" title="Permanent link">&para;</a></h2>
+<p>The type of service is determined by how it's interacted with and will need different configurations. Here are the current supported types with explanations on when to use each:</p>
+<ul>
+<li><strong>rpc</strong> - Use if a service is for a blockchain call on a wallet that's not in a container. See <a href="#rpc">RPC Service Setup</a>.</li>
+<li><strong>docker</strong> - Use if you are running your service within a Docker container, whether it's a wallet or any other type of miscroservice. See <a href="#docker">Docker Service Setup</a>.</li>
+<li><strong>shell</strong> - Unsupported at this time.</li>
+</ul>
+<hr />
+<h2 id="configure-service">Configure Service<a class="headerlink" href="#configure-service" title="Permanent link">&para;</a></h2>
+<p>The configuration file has information required to connect with your service, interact with it, and additional settings like fees and request limits. Follow the guide that pertains to your <a href="#determine-service-type">service type</a>.</p>
+<p>Note: The configuration file has a 2mb size limit.</p>
+<div class="admonition warning">
+<p class="admonition-title">Note: RPC Services also require <em>xbridge.conf</em> configuration.</p>
+<p>To support SPV calls, you must also have your <code>xbridge.conf</code> file setup for each of the chains you wish to support and those wallets must remain open and running (<a href="/service-nodes/xbridge-configuration">view XBridge setup guide</a>). If you already have this setup for XRouter SPV calls then you don't need to do anything extra unless you want to support additional chains.</p>
+<p>For ETH, you will also need <code>JSONVersion=2.0</code> and <code>ContentType=application/json</code> added to the <code>[ETH]</code> entry in <code>xbridge.conf</code>. This applies to GETH and Parity clients.</p>
+</div>
+<p>Here is an example service config file:</p>
+<p><code>eth_getBalance.conf</code></p>
+<div class="highlight"><pre><span></span><code>parameters=string,string
+fee=0.01
+clientrequestlimit=100
+
+private::type=rpc
+private::rpcip=127.0.0.1
+private::rpcport=8370
+private::rpcuser=username
+private::rpcpassword=password
+private::rpccommand=eth_getBalance
+
+#! Equivalent to: parity-cli eth_getBalance [address] [block_parameter]
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Settings</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parameters</td>
+<td>Optional. Use this if the call takes parameters. List the value type of each parameter in the order the parameters are used (e.g. <code>parameters: int,string,string,bool</code>). Supported types are <code>string</code>, <code>bool</code>, <code>double</code>, and <code>int</code>.</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>The fee (in BLOCK) you require for this call. A value of <code>0</code> means there is no fee and that the calls are free (<em>default</em> - see note below).</td>
+</tr>
+<tr>
+<td>clientrequestlimit</td>
+<td>The minimum time allowed between calls in milliseconds. A value of <code>-1</code> means there is no limit (<em>default</em> - see note below). If client requests exceed this value they will be penalized and eventually banned by your node.</td>
+</tr>
+<tr>
+<td>fetchlimit</td>
+<td>The maximum number of blocks processed. The default value is <code>50</code> (see note below). A value of <code>-1</code> means there is no limit.</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>Used to disable a call. A value of <code>1</code> means the call is disabled and <code>0</code> means the call is enabled (<em>default</em> - see note below).</td>
+</tr>
+<tr>
+<td>private::type=rpc**</td>
+<td>The type of connection. For other connection types, see <a href="#determine-service-type">Service Types</a>.</td>
+</tr>
+<tr>
+<td>private::rpcip</td>
+<td>The IP of the Service Node hosting this service. If left blank, localhost is assumed.</td>
+</tr>
+<tr>
+<td>private::rpcport**</td>
+<td>The service's RPC port.</td>
+</tr>
+<tr>
+<td>private::rpcuser**</td>
+<td>The service's RPC username.</td>
+</tr>
+<tr>
+<td>private::rpcpassword**</td>
+<td>The service's RPC password.</td>
+</tr>
+<tr>
+<td>private::rpccommand**</td>
+<td>The service's RPC command.</td>
+</tr>
+<tr>
+<td>private::response</td>
+<td>Used to hide private responses. For example, if this is a Twilio service and the user sends a text message, the service can send back a "sent" response instead of the Twilio response using <code>private::response=sent</code>.</td>
+</tr>
+<tr>
+<td>private::</td>
+<td>Used to keep entries private. These will not be shared with connecting clients.</td>
+</tr>
+<tr>
+<td>#</td>
+<td>Used at the beginning of a line for public comments. These <strong>will be shared</strong> with connecting clients.</td>
+</tr>
+<tr>
+<td>#!</td>
+<td>Used at the beginning of a line for private comments. These <strong>will NOT be shared</strong> with connecting clients.</td>
+</tr>
+</tbody>
+</table>
+<p>** Config entries <code>private::type=rpc</code>, <code>private::rpcport</code>, <code>private::rpcuser</code>, <code>private::rpcpassword</code>, and <code>private::rpccommand</code> are mandatory for RPC services.</p>
+<div class="admonition info">
+<p class="admonition-title">Note: Setting values use hierarchy priority.</p>
+<p>Values set under <code>[Main]</code> override the default values and become the new default settings for all services that don't have the respective setting specified. Service settings override <code>[Main]</code> and default settings.</p>
+<p>The setting hierarchy from highiest priority to lowest priority is as follows: <em>Service Settings &gt; [Main] &gt; default</em>. The higher priority settings override the lower priority settings.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip: Add comments for service description and help messages.</p>
+<ul>
+<li>Using a public comment, add a description so users know <em>what</em> the service is. Example:
+  <div class="highlight"><pre><span></span><code>#description: Returns the balance for the provided Ethereum address.
+</code></pre></div></li>
+<li>Using a public comment, add a help message so users know <em>how</em> to use a service. Example:
+  <div class="highlight"><pre><span></span><code>#help: eth_getBalance [address] [block_parameter]; [address] = (string) The address to check for balance; [block_parameter] = (string) Integer block number, or the string &#39;latest&#39;, &#39;earliest&#39; or &#39;pending&#39;.
+</code></pre></div></li>
+</ul>
+<p>There are development plans to add dedicated, officially supported description and help settings.</p>
+</div>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>Here is an example service config file:</p>
+<p><code>eth_getBalance.conf</code></p>
+<div class="highlight"><pre><span></span><code>parameters=string
+fee=0.01
+clientrequestlimit=100
+
+private::type=docker
+private::containername=eth
+private::command=parity-cli eth_getBalance
+private::args=$1
+private::quoteargs=1
+
+!# Equivalent to: docker exec eth parity-cli eth_getBalance [address] [block_parameter]
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Settings</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parameters</td>
+<td>Optional. Use this if the call takes parameters. List the value type of each parameter in the order the parameters are used (e.g. <code>parameters: int,string,string,bool</code>). Supported types are <code>string</code>, <code>bool</code>, <code>double</code>, and <code>int</code>.</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>The fee (in BLOCK) you require for this call. A value of <code>0</code> means there is no fee and that the calls are free (<em>default</em> - see note below).</td>
+</tr>
+<tr>
+<td>clientrequestlimit</td>
+<td>The minimum time allowed between calls in milliseconds. A value of <code>-1</code> means there is no limit (<em>default</em> - see note below). If client requests exceed this value they will be penalized and eventually banned by your node.</td>
+</tr>
+<tr>
+<td>fetchlimit</td>
+<td>The maximum number of blocks processed. The default value is <code>50</code> (see note below). A value of <code>-1</code> means there is no limit.</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>Used to disable a call. A value of <code>1</code> means the call is disabled and <code>0</code> means the call is enabled (<em>default</em> - see note below).</td>
+</tr>
+<tr>
+<td>private::type=docker*</td>
+<td>The type of connection. For other connection types, see <a href="#determine-service-type">Service Types</a>.</td>
+</tr>
+<tr>
+<td>private::containername*</td>
+<td>The name of the service's Docker container.</td>
+</tr>
+<tr>
+<td>private::command*</td>
+<td>The service's Docker command.</td>
+</tr>
+<tr>
+<td>private::args</td>
+<td>The arguments from <code>parameters</code> to pass to the command, denoted with a <code>$</code> and the number of the argument passed as a parameter. The order the arguments are specified is the order they will be passed to the command. This order does not have to be the same order as used in parameters, although the numbers correlate with that order placement. You can pass additional values that haven't been passed as parameters (see example below).</td>
+</tr>
+<tr>
+<td>private::quoteargs</td>
+<td>Use this to quote the arguments in <code>args</code>. A value of <code>1</code> will quote each argument and <code>0</code> will not (<em>default</em> - see note below).</td>
+</tr>
+<tr>
+<td>private::response</td>
+<td>Used to hide private responses. For example, if this is a Twilio service and the user sends a text message, the service can send back a "sent" response instead of the Twilio response using <code>private::response=sent</code>.</td>
+</tr>
+<tr>
+<td>private::</td>
+<td>Used to keep entries private. These will not be shared with connecting clients.</td>
+</tr>
+<tr>
+<td>#</td>
+<td>Used at the beginning of a line for public comments. These <em>will be</em> shared with connecting clients.</td>
+</tr>
+<tr>
+<td>#!</td>
+<td>Used at the beginning of a line for private comments. These <em>will not be</em> shared with connecting clients.</td>
+</tr>
+</tbody>
+</table>
+<p><code>*</code> Config entries <code>private::type=docker</code>, <code>private::containername</code>, and <code>private::command</code> are mandatory for Docker services.</p>
+<div class="admonition info">
+<p class="admonition-title">Note: Setting values use hierarchy priority.</p>
+<p>Values set under <code>[Main]</code> override the default values and become the new default settings for all services that don't have the respective setting specified. Service settings override <code>[Main]</code> and default settings.</p>
+<p>The setting hierarchy from highiest priority to lowest priority is as follows: <em>Service Settings &gt; [Main] &gt; default</em>. The higher priority settings override the lower priority settings.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip: Add comments for service description and help messages.</p>
+<ul>
+<li>Using a public comment, add a description so users know <em>what</em> the service is. Example:
+  <div class="highlight"><pre><span></span><code>#description: Returns the balance for the provided Ethereum address.
+</code></pre></div></li>
+<li>Using a public comment, add a help message so users know <em>how</em> to use a service. Example:
+  <div class="highlight"><pre><span></span><code>#help: eth_getBalance [address] [block_parameter]; [address] = (string) The address to check for balance; [block_parameter] = (string) Integer block number, or the string &#39;latest&#39;, &#39;earliest&#39; or &#39;pending&#39;.
+</code></pre></div></li>
+</ul>
+<p>There are development plans to add dedicated, officially supported description and help settings.</p>
+</div>
+<hr />
+<h2 id="deploy-service">Deploy Service<a class="headerlink" href="#deploy-service" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Add the service name to the <code>plugins=</code> entry in <code>xrouter.conf</code>. The service name listed must be the exact name of your config file without the file extension. Separate each service name with a comma.<ul>
+<li>Example: If you had 3 services that you wanted to deply with config names <code>eth_getBalance.conf</code>, <code>eth_blockNumber.conf</code>, and <code>weatherData.conf</code>, the <code>plugins=</code> setting would read as follows: <code>plugins=eth_getBalance,eth_blockNumber,weatherData</code></li>
+</ul>
+</li>
+<li>Use <code>xrReloadConfigs</code> to load your newly configured settings to <code>xrouter.conf</code> without needing to restart your Service Node.</li>
+<li>Use <code>servicenodesendping</code> to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.</li>
+<li>You can view your configs using <code>xrStatus</code> (<a href="https://api.blocknet.org/#service-node">See example output</a>).</li>
+<li>Post your services to <a href="https://forum.blocknet.co/c/xcloud-services">the forum</a> so others can discover, learn more, and find instructions on how to interact with your service.</li>
+</ol>
+<hr />
+<h2 id="additional-information">Additional Information<a class="headerlink" href="#additional-information" title="Permanent link">&para;</a></h2>
+<h4 id="fees">Fees<a class="headerlink" href="#fees" title="Permanent link">&para;</a></h4>
+<p>While Service Nodes can set their own fees, users can also set the max fee they will pay. Any Service Node's with a fee that is higher than a user's max fee will not be used. It is recommended to offer free calls for any call that are not computationally intesive. Lower fees will help encourage an ecosystem to build around the network. A healthy ecosystem will lead to much more usage of the network and receiving a lot of small fees will be more beneficial than receiving a few high fees. Granted, some calls may actually take computational time and will therefore require a higher fee.</p>
+<h4 id="snode-scoring">Snode Scoring<a class="headerlink" href="#snode-scoring" title="Permanent link">&para;</a></h4>
+<p>Clients keep a score of each Service Node. When a Service Node reaches a score of <code>-200</code>, the Service Node will be banned by the client for a 24hr period. After this 24hr period, the Service Node will start with a score of <code>-25</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Change in Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Failure to respond to call within 30s</td>
+<td>-25</td>
+</tr>
+<tr>
+<td>Failure to meet majority consensus</td>
+<td>-5</td>
+</tr>
+<tr>
+<td>Matching consensus</td>
+<td>correct_nodes * 2</td>
+</tr>
+<tr>
+<td>Sending bad XRouter config</td>
+<td>-10</td>
+</tr>
+<tr>
+<td>Sending bad XCloud config</td>
+<td>-2</td>
+</tr>
+</tbody>
+</table>
+<p>These values are subject to change in future releases. Join the <a href="https://eepurl.com/c5OJMj">Service Node mailing list</a> to stay updated.</p>
+<script type="text/javascript">
+// read instructions for related links in ../snippets/extras.md
+var relatedLinks = [];
+</script>
+
+<!-- 
+======= Related Links Section =======
+- This is the related links section at the bottom of each page.
+- It lists the links in the relatedLinks array variable below.
+    Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.org"}];
+- If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
+related-links.html
+- The template and logic for the related links section can be found in docs/snippets/related-links.html
+- The base path is defaulted to docs/snippets/, which can be edited in the mkdocs.yml file
+- The template and logic is linked with markdown_extensions: pymdownx.snippets
+-->
+
+<h2 id="related-links">Related Links<a class="headerlink" href="#related-links" title="Permanent link">&para;</a></h2>
+<div id="related">
+
+</div>
+
+<script type="text/javascript">
+    var relatedHTML = "<ul>";
+
+    // check if related links provide
+    if (typeof variable !== 'undefined' && relatedLinks.length > 0) {
+        // related links provided, loop through them
+        for (let i = 0; i < relatedLinks.length; i++) {
+            // create a list element with an a tag containing the related link
+            var snippet = "<li><a href='" + relatedLinks[i]["link"] + "'>" + relatedLinks[i]["name"] + "</a></li>";
+            // concatenate element to relatedHTML variable
+            relatedHTML += snippet;
+        }
+        // concatenate list closing tag
+        relatedHTML += "</ul>";
+        // add list of related links to the related page links section
+        document.getElementById("related").innerHTML = relatedHTML;
+    } else {
+        // no related links provided
+        // remove related links section header
+        document.getElementById("related-links").outerHTML = "";
+        // remove related links section from sidebar menu
+        document.querySelector(".md-sidebar--secondary .md-nav__list").lastElementChild.remove();
+    }
+</script>
+
+<style>
+#notification-bar {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.15);
+    margin-bottom: -1px;
+    opacity: 1;
+    animation-name: bn-notification-load;
+    animation-duration: 0.8s;
+}
+#notification-bar .notification {
+    position: relative;
+    min-height: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 12px 50px 12px 20px;
+    background-color: #016AFF;
+    color: #fff;
+}
+#notification-bar .message {
+    display: inline-block;
+    line-height: 17px;
+}
+#notification-bar .message a {
+    color: #fff;
+    text-decoration: underline;
+}
+#notification-bar .notification-close {
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(0%,-50%);
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+@keyframes bn-notification-load {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
+<div id="notification-bar">
+    <!-- <div class="notification" data-expire="">
+        <span class="message"><strong>Need support? <a href="https://discord.gg/vGa7GeCu8B" target="_blank">Join our Discord!</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div> -->
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.co/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+    <div class="notification" data-expire="1557294893">
+        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.co/#downloads" target="_blank">View downloads...</a></strong></span>
+        <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
+    </div>
+</div>
+
+<script type="text/javascript">
+var notifications = document.getElementById('notification-bar');
+for (var i = 0; i < notifications.children.length; i++) {
+    var expiredDate = parseInt(notifications.children[i].getAttribute('data-expire'));
+    var now = Math.round((new Date).getTime()/1000);
+    if (expiredDate < now && expiredDate != "") {
+        notifications.children[i].style.display = 'none';
+    }
+}
+</script>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../xrouter-configuration/" title="XRouter Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                XRouter Configuration
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../governance/introduction/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Introduction
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2022.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="mailto:contact@blocknet.co" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
+    
+      <a href="https://github.com/blocknetdx/" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://discord.gg/vGa7GeCu8B" target="_blank" rel="noopener" title="comment" class="md-footer-social__link fa fa-comment"></a>
+    
+      <a href="https://t.me/Blocknet" target="_blank" rel="noopener" title="telegram" class="md-footer-social__link fa fa-telegram"></a>
+    
+      <a href="https://medium.com/@theblocknetchannel" target="_blank" rel="noopener" title="medium" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://en-gb.facebook.com/theblocknet/" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://twitter.com/The_Blocknet" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.reddit.com/r/theblocknet/" target="_blank" rel="noopener" title="reddit" class="md-footer-social__link fa fa-reddit"></a>
+    
+      <a href="https://www.youtube.com/c/TheBlocknet" target="_blank" rel="noopener" title="youtube" class="md-footer-social__link fa fa-youtube"></a>
+    
+      <a href="https://www.instagram.com/the_blocknet/" target="_blank" rel="noopener" title="instagram" class="md-footer-social__link fa fa-instagram"></a>
+    
+      <a href="https://www.linkedin.com/company/the-blocknet/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      
+        <script src="../../js/main.js"></script>
+      
+    
+  </body>
+</html>

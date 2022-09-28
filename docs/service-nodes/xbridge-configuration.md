@@ -179,7 +179,7 @@ FullLog=true
 1. Add the blockchain's ticker to the `ExchangeWallets=` setting, separating each one with a comma (no spaces).
 1. Save the `xbridge.conf` file.
 1. If the blockchain's wallet has been open, you will need to restart it to load the updated configurations.
-	* Alternatively, the [dxLoadXBridgeConf](https://api.blocknet.co/#dxloadxbridgeconf) command can be used from either the Debug Console or the command line.
+	* Alternatively, the [dxLoadXBridgeConf](https://api.blocknet.org/#dxloadxbridgeconf) command can be used from either the Debug Console or the command line.
 
 Example `xbridge.conf`:
 ```
@@ -265,7 +265,7 @@ LockCoinsSupported=false
 ## Deploy Wallets
 1. Add the blockchains you want to add trading support for in the `ExchangeWallets=` entry in `xbridge.conf`, denoted by the chain's asset's ticker. Separate each wallet name with a comma (no space). You can keep the rest of the configuration body the same, only the `ExchangeWallets=` setting needs to be updated (unless adding new support).
     * Example: `ExchangeWallets=BLOCK,LTC,BTC,SYS,DGB`
-1. Restart the Blocknet wallet or use the [dxLoadXBridgeConf](https://api.blocknet.co/#dxloadxbridgeconf) command (from either the Debug Console or the command line) to load the updated settings.
+1. Restart the Blocknet wallet or use the [dxLoadXBridgeConf](https://api.blocknet.org/#dxloadxbridgeconf) command (from either the Debug Console or the command line) to load the updated settings.
 1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
 1. You can view the blockchains you are supporting with the `dxGetLocalTokens` command.
 

@@ -67,7 +67,7 @@ All [Bitcoin 0.8 configuration settings](https://en.bitcoin.it/wiki/Original_Bit
 ---
 
 ## Integration
-The standard RPC command list is the same as [Bitcoin 0.8](https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list), with the addition of chain-specific XBridge and XRouter commands that can be found in the [Blocknet API documentation](https://api.blocknet.co).
+The standard RPC command list is the same as [Bitcoin 0.8](https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list), with the addition of chain-specific XBridge and XRouter commands that can be found in the [Blocknet API documentation](https://api.blocknet.org).
 
 ---
 

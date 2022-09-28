@@ -65,7 +65,7 @@ If you have just updated the *xbridge.conf* on your SNode Computer wallet, follo
 
 1. Add the blockchains you want to add trading support for in the `ExchangeWallets=` entry in `xbridge.conf`, denoted by the chain's asset's ticker. Separate each wallet name with a comma (no space). You can keep the rest of the configuration body the same, only the `ExchangeWallets=` setting needs to be updated (unless adding new support).
   * Example: `ExchangeWallets=BLOCK,LTC,BTC,SYS,DGB`
-1. Restart the Blocknet wallet or use the [dxLoadXBridgeConf](https://api.blocknet.co/#dxloadxbridgeconf) command (from either the Debug Console or the command line) to load the updated settings.
+1. Restart the Blocknet wallet or use the [dxLoadXBridgeConf](https://api.blocknet.org/#dxloadxbridgeconf) command (from either the Debug Console or the command line) to load the updated settings.
 1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
 1. You can view the blockchains you are supporting with the `dxGetLocalTokens` command.
 
@@ -88,16 +88,16 @@ If you have just updated your XCloud services or plugin files, follow these inst
     * Example: If you had 3 services that you wanted to deploy with config names `eth_getBalance.conf`, `eth_blockNumber.conf`, and `weatherData.conf`, the `plugins=` setting would read as follows: `plugins=eth_getBalance,eth_blockNumber,weatherData`
 1. Use `xrReloadConfigs` to load your newly configured settings to `xrouter.conf` without needing to restart your Service Node.
 1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
-1. You can view your configs using `xrStatus` ([See example output](https://api.blocknet.co/#service-node)).
+1. You can view your configs using `xrStatus` ([See example output](https://api.blocknet.org/#service-node)).
 1. Post your services to [the forum](https://forum.blocknet.co/c/xcloud-services) so others can discover, learn more, and find instructions on how to interact with your service.
 
 
 ### View Your XRouter or XCloud Configs
-You can view your configs using `xrStatus`. This returns your SPV wallets, SPV calls and settings, plugin calls and settings, and the raw text of your `xrouter.conf` file. See usage details in the [API Docs](https://api.blocknet.co/#xrstatus)
+You can view your configs using `xrStatus`. This returns your SPV wallets, SPV calls and settings, plugin calls and settings, and the raw text of your `xrouter.conf` file. See usage details in the [API Docs](https://api.blocknet.org/#xrstatus)
 
 
 ### Check the Wallet and Protocol Versions
-You can view the wallet version and blockchain, XBridge, XRouter protocol versions using the `getblockchaininfo` command. See usage details in the [API Docs](https://api.blocknet.co/#getnetworkinfo)
+You can view the wallet version and blockchain, XBridge, XRouter protocol versions using the `getblockchaininfo` command. See usage details in the [API Docs](https://api.blocknet.org/#getnetworkinfo)
 
 
 

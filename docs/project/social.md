@@ -39,7 +39,7 @@ description:
 </div>
 
 <div class="social">
-	<a href="https://api.blocknet.co" target="_blank"><i class="fa fa-code fa-5x" aria-hidden="true"></i></a>
+	<a href="https://api.blocknet.org" target="_blank"><i class="fa fa-code fa-5x" aria-hidden="true"></i></a>
 	<div class="name">API Docs</div>
 </div>
 

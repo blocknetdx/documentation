@@ -157,7 +157,7 @@ FullLog=true
     * Example: `ExchangeWallets=BLOCK,LTC,BTC,SYS`
 1. Save the `xbridge.conf` file.
 1. If the blockchain's wallet has been open, you will need to restart it to load the updated configurations.
-	* Alternatively, the [dxLoadXBridgeConf](https://api.blocknet.co/#dxloadxbridgeconf) command can be used from either the Debug Console or the command line.
+	* Alternatively, the [dxLoadXBridgeConf](https://api.blocknet.org/#dxloadxbridgeconf) command can be used from either the Debug Console or the command line.
 
 Example `xbridge.conf`:
 ```
@@ -242,7 +242,7 @@ LockCoinsSupported=false
 ---
 
 ## Next Steps
-1. See the [XBridge API](https://api.blocknet.co/#xbridge-api).
+1. See the [XBridge API](https://api.blocknet.org/#xbridge-api).
 1. Make sure that the wallets are open, synced, and fully unlocked.
 1. Make sure funds are in legacy addresses. Currently Segwit and Bech32 are not supported.
 

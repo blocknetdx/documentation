@@ -98,11 +98,25 @@ that selection to choose the inputs. (Continued below under [Coin Control](#coin
 ##### Sending Error - What to do
 
 ??? info "If you get an error message saying 'The specified transaction information is bad, please review,' or 'Not enough coin inputs selected to cover this transaction,' click here for what to do..."
-	These errors can occur when the wallet tries to create a
-	transaction out of too many very small
-	[inputs](/resources/glossary/#input). Try to select inputs
-	manually with [Coin Control](#coin-control). You can also try to
-	lower the amount you are trying to send.
+	These errors can occur when the wallet tries to create a send
+	transaction using over 666
+	[inputs](/resources/glossary/#input). (I'm sure the max number of
+	inputs being 666 is just coincidence!) Options for overcoming this
+	limitation include:
+
+	1. Select inputs manually with [Send Coin Control](#coin-control) and
+	ensure you select less than 666 inputs in total.
+	1. You may want to consolidate a lot of small inputs into a single
+       send transaction. For example, you may want to consume all the
+       0.015 BLOCK inputs earned from XBridge taker fees in a single
+       send transaction. The best way
+       to do it is to use the [Wallet Coin Control](/wallet/coin-control)
+       feature to lock all the large inputs, then send an amount of
+       BLOCK which is small enough that it will require <= 666 of the
+       small inputs. If the small inputs you want to consolidate are
+       all 0.015 BLOCK in size, that means you need to send less than
+       10 BLOCK at a time. You will need to repeat this process if
+       your wallet has more than 666 inputs of size 0.015 BLOCK.
 
 
 --8<-- "troubleshooting.md"

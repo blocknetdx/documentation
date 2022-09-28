@@ -30,7 +30,7 @@ The deadline for creating proposals is 2880 blocks prior to the Superblock.
 		1. Cost assessment
 		1. Fund custodians
 
-1. Once the Draft Proposal has been submitted and posted to the forum, copy the post's URL and create a shortened URL at [https://bit.ly/](https://bit.ly/)
+1. Once the Draft Proposal has been submitted and posted to the forum, copy the post's URL and create a shortened URL at [https://bit.ly/](https://bit.ly/) (The full URL can be used in place of bit.ly shortened version if the total amount of text entered for the proposal is not large.)
 1. Continue on to [submit the proposal from the Qt wallet](/governance/create-proposal/#submit-from-the-qt-wallet) or to [submit the proposal via command line](/governance/create-proposal/#submit-from-the-terminal).
 1. (Optional) Once the proposal has been submitted, your proposal will be assigned a `proposal hash` (a large string of numbers and letter representing your proposal). 
 If using the Command Line Interface, the `proposal hash` will be returned after submitting the proposal via the `createproposal` command. The `proposal hash` will be the `xxxx` value in the `"hash":"xxxx",` value returned. You can also display `proposal hash` and other information about all upcoming proposals as follows:

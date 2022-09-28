@@ -1,5 +1,5 @@
 # Blocknet Documentation
-This repository contains the source code for Blocknet's [documentation portal website](https://docs.blocknet.co). These documents are currently under progressive and iterative development.
+This repository contains the source code for Blocknet's [documentation portal website](https://docs.blocknet.org). These documents are currently under progressive and iterative development.
 
 > Powered by [MkDocs](https://github.com/mkdocs/mkdocs/) and [MkDocs Material](https://github.com/squidfunk/mkdocs-material).
 
@@ -155,7 +155,7 @@ See full wiki: [MkDocs]](https://www.mkdocs.org/) | [MkDocs Material](https://sq
 1. Build the docs with the `mkdocs build` command.
 1. In the `site/` directory, remove any folders and subfolders that begin with `-`. This prefix is manually used to flag pages that have not been completed yet.
 1. Deploy `site/` contents to staging site for testing.
-1. Deploy `site/` contents to [https://docs.blocknet.co/](https://docs.blocknet.co/).
+1. Deploy `site/` contents to [https://docs.blocknet.org/](https://docs.blocknet.org/).
 
 
 

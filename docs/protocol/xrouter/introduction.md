@@ -24,7 +24,7 @@ xrGetTransaction        | Returns transaction data for transaction ID
 xrGetTransactions       | Returns transaction data for multiple transaction IDs
 xrSendTransaction       | Submit a signed transaction to the network
 
-To use XRouter, see the [XRouter API](https://api.blocknet.co/#xrouter) and [Setup Guide](https://api.blocknet.co/#xrouter-setup).
+To use XRouter, see the [XRouter API](https://api.blocknet.org/#xrouter) and [Setup Guide](https://api.blocknet.org/#xrouter-setup).
 
 [Service Nodes](/service-nodes/introduction) earn 100% of fees from [XBridge](/protocol/xbridge/introduction), XRouter, and [XCloud](/protocol/xcloud/introduction) services. If you'd like to operate your own Service Node, see the [Service Node Setup Guide](/service-nodes/setup).
 
@@ -73,11 +73,11 @@ The flow of the diagram is top-to-bottom:
 
 
 ## Namespace
-XRouter SPV wallets utlize the `xr::` namespace while [XCloud](/protocol/xcloud/introduction) services utilize the `xrs::` namespace. A list of the SPV wallets and services can be viewed using [xrGetNetworkServices](https://api.blocknet.co/#xrgetnetworkservices) and you can pre-connect to the nodes with [xrConnect](https://api.blocknet.co/#xrconnect).
+XRouter SPV wallets utlize the `xr::` namespace while [XCloud](/protocol/xcloud/introduction) services utilize the `xrs::` namespace. A list of the SPV wallets and services can be viewed using [xrGetNetworkServices](https://api.blocknet.org/#xrgetnetworkservices) and you can pre-connect to the nodes with [xrConnect](https://api.blocknet.org/#xrconnect).
 
 
 ## Node Scoring
-Clients keep a *local* score of each Service Node (network-wide repuation system is planned). When a Service Node reaches a score of `-200`, the Service Node will be banned by the client for a 24hr period. After this 24hr period, the Service Node will start with a score of `-25`. The ban score threshold can be adjusted using the `xrouterbanscore` setting in `blocknet.conf` (see [setup](https://api.blocknet.co/#xrouter-setup)). This scoring used for both XRouter and [XCloud](/protocol/xcloud/introduction).
+Clients keep a *local* score of each Service Node (network-wide repuation system is planned). When a Service Node reaches a score of `-200`, the Service Node will be banned by the client for a 24hr period. After this 24hr period, the Service Node will start with a score of `-25`. The ban score threshold can be adjusted using the `xrouterbanscore` setting in `blocknet.conf` (see [setup](https://api.blocknet.org/#xrouter-setup)). This scoring used for both XRouter and [XCloud](/protocol/xcloud/introduction).
 
 Action                                  | Change in Score
 ----------------------------------------|-----------------

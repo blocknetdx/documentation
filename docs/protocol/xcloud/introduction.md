@@ -13,7 +13,7 @@ XCloud can be used to monetize any service with crypto payments without having t
 
 For further explanation, refer to XRouter [design](/protocol/xrouter/introduction/#design), [namespacing](/protocol/xrouter/introduction/#namespace), [fees](/protocol/xrouter/introduction/#fees), and [node scoring](/protocol/xrouter/introduction/#node-scoring). 
 
-To use XCloud, see the [XCloud API](https://api.blocknet.co/#xcloud) and [Setup Guide](https://api.blocknet.co/#xcloud-setup).
+To use XCloud, see the [XCloud API](https://api.blocknet.org/#xcloud) and [Setup Guide](https://api.blocknet.org/#xcloud-setup).
 
 Service Nodes earn 100% of fees from [XBridge](/protocol/xbridge/introduction), XRouter, and XCloud services. If you'd like to operate your own Service Node, see the [Service Node Setup Guide](/service-nodes/setup).
 

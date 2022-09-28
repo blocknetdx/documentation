@@ -197,7 +197,7 @@ private::               | Used to keep entries private. These will not be shared
     * Example: If you had 3 services that you wanted to deply with config names `eth_getBalance.conf`, `eth_blockNumber.conf`, and `weatherData.conf`, the `plugins=` setting would read as follows: `plugins=eth_getBalance,eth_blockNumber,weatherData`
 1. Use `xrReloadConfigs` to load your newly configured settings to `xrouter.conf` without needing to restart your Service Node.
 1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
-1. You can view your configs using `xrStatus` ([See example output](https://api.blocknet.co/#service-node)).
+1. You can view your configs using `xrStatus` ([See example output](https://api.blocknet.org/#service-node)).
 1. Post your services to [the forum](https://forum.blocknet.co/c/xcloud-services) so others can discover, learn more, and find instructions on how to interact with your service.
 
 ---

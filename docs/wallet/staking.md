@@ -245,7 +245,7 @@ rewards.
 		```
 		You can also find the same details about all available
 		Blocknet commands at the
-		[Blocknet API Portal](https://api.blocknet.co).
+		[Blocknet API Portal](https://api.blocknet.org).
 
 	1. Fund your staking wallet. Skip to
     step 11 if you don't have an already funded Blocknet wallet, or if

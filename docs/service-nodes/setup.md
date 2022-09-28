@@ -512,7 +512,9 @@ Service Node Setup, complete the following guides in order:
 			   to ensure the funds you're sending are not withdrawn
 			   from a collateral address you're trying to fund. It's
 			   easiest to perform coin controlled sending from the
-			   redesigned GUI/Qt wallet. However, if sending from a CLI wallet, you can use methods like
+			   [redesigned GUI/Qt
+			   wallet](/wallet/installation/#redesigned-vs-classical-guiqt-wallet). However,
+			   if sending from a CLI wallet, you can use methods like
 			   `createrawtransaction` and `sendrawtransaction` to accomplish
 			   coin controlled sending. Get help on using these
 			   methods in the CLI wallet with:<br>
@@ -728,11 +730,10 @@ Service Node Setup, complete the following guides in order:
 
 	If you have never run the
 	[Enterprise XRouter](/resources/glossary/#enterprise-xrouter)
-	Environment (EXR ENV) Global Install script on this server, and you don't
-	mind using your server's *built-in python3*, copy/paste these
+	Environment (EXR ENV) Global Install script on this server, copy/paste these
 	commands to run the *Global Install* script:
 	```
-	curl -fsSL https://getenv.xrouter.com -o env_installer.sh
+	curl -fsSL https://raw.githubusercontent.com/blocknetdx/exrproxy-env-scripts/main/env_installer.sh -o env_installer.sh
 	chmod +x env_installer.sh
 	./env_installer.sh --install
 	```
@@ -743,10 +744,28 @@ Service Node Setup, complete the following guides in order:
 	it. If it detects `~/exrproxy-env` does not already exist, it will
 	clone it from the Github repository and thereby create it.<br>
 
-	Note, this Global Install Script will log you out after it's finished installing
-	everything. This is necessary to update the user's membership in
-	the *docker* group of Linux. Simply log in again after it logs you out.
+	__IMPORTANT: This Global Install Script will log you out after it's
+	finished with phase 1 of the install. This is necessary to update the user's membership in
+	the *docker* group of Linux and to activate the python
+	version control system (*pyenv*). Simply log in again after it logs you out,
+	then issue the following command again to complete phase 2 of the install:__
+	```
+	./env_installer.sh --install
+	```
+
 	Then follow the steps below.<br>
+
+    ??? tip "Tip: How to Change Python Version."
+		Since the Global Install Script installs the *pyenv* tool, it's
+		very easy to change the version of python used in deploying the
+		EXR ENV. The default python version set by the install
+		script is 3.9.14. If, for example, you want to run the EXR
+		ENV deployment scripts using python version 3.10.7, simply do this:
+		```
+		cd ~/exrproxy-env
+		pyenv install 3.10.7
+		pyenv local 3.10.7
+		```
 
 	Note, before you run the `builder.py` script in the steps below,
 	confirm that you have `~/.local/bin` in your $PATH variable. You
@@ -787,7 +806,7 @@ Service Node Setup, complete the following guides in order:
           convenient to use the same name. Note, there should be no
           spaces in the names you choose.
 	    1. Think of a name and a password for the RPC user your Service
-          Node will use when communication with the services/coins it supports.
+          Node will use when communicating with the services/coins it supports.
 	1. Change directory to your local `exrproxy-env` repository
 	(`exrproxy-env` is located `~` by default.):
 	```
@@ -937,7 +956,7 @@ Service Node Setup, complete the following guides in order:
 	   services like [Hydra](/resources/glossary/#hydra) and (coming soon) 
        [XQuery](/resources/glossary/#indexer), at the *tier1* and
        *tier2* levels. (Default values are recommended.) See
-       [Hydra/XQuery Projects API](https://api.blocknet.co/#tier1) for
+       [Hydra/XQuery Projects API](https://api.blocknet.org/#tier1) for
 	   definitions of *tier1* and *tier2* payments.
 	1. Next, you'll be prompted to enter the
 	   discount percentages you want to offer clients for payments in aBLOCK or
@@ -950,7 +969,15 @@ Service Node Setup, complete the following guides in order:
 	   being the *only* form of payment available on the AVAX
 	   blockchain, default values of 20% discount for aBLOCK, and 0%
 	   discount for aaBLOCK are recommended.
-	1. Next, you'll be asked, "*Do you wish to change install
+	1. Next, you'll be asked if you want to support UTXO_PLUGIN
+	service. Supporting this service requires about 32 GB RAM, 8 CPU
+	cores and 200 GB of disk space. It doesn't yet offer any
+	financial reward, though a system of rewards for supporting it is
+	planned. Supporting this service *does* help to make XLite more
+	reliable by increasing the number of data sources from which XLite
+	can achieve an XRouter consensus response when fetching data for
+	the chains it supports.
+	1. Next, you'll be asked, "*Do you wish to change install 
        locations?*"  Type "*y*" here if you want to change the *data
        mount directory* of any service from `/snode` to some other
        directory. This option can
@@ -1051,9 +1078,9 @@ Service Node Setup, complete the following guides in order:
        won't need to follow the remaining steps below if you have
        followed them previously and you're simply reconfiguring your
        SNode on this run. However, if your SNode has been offline for a
-       while, you may need to reregister it as per steps 25-29
+       while, you may need to reregister it as per steps 26-30
        below. You can check if your SNode needs to be reregistered by
-       following steps 28 & 29 below.__
+       following steps 29 & 30 below.__
 
 	    ??? info "Didn't see an option to support the service or coin you want to support?"
 		Options to support more services/coins are continuously being
@@ -1109,7 +1136,7 @@ Service Node Setup, complete the following guides in order:
 		  example, it could be useful to allow a client to design an SQL query
 		  to the XQuery service on your SNode using the convenient Hasura graphical SQL
 		  query interface. See [XQuery Hasura GUI
-		  Console](https://api.blocknet.co/#xquery-hasura-gui-console)
+		  Console](https://api.blocknet.org/#xquery-hasura-gui-console)
 		  for instructions on how to view the XQuery Hasura GUI Console in
 		  a browser.<br>
 		  If you want to expose the Hasura GUI Console port on your
@@ -1535,7 +1562,7 @@ Service Node Setup, complete the following guides in order:
        changing the configuration of an
        [EXR ENV](/resources/glossary/#exr-env) is basically the same as
        it is for configuring and deploying an EXR ENV for the first
-       time. That procedure is given in the first 20 steps of the
+       time. That procedure is given in the first 21 steps of the
        [Deploy Enterprise XRouter Environment](#deploy-enterprise-xrouter-environment) guide.
 	   Note, however, if you've subtracted one or more services/coins
        from your EXR ENV's supported services because you want to save

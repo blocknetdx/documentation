@@ -730,7 +730,8 @@ Service Node Setup, complete the following guides in order:
 
 	If you have never run the
 	[Enterprise XRouter](/resources/glossary/#enterprise-xrouter)
-	Environment (EXR ENV) Global Install script on this server, copy/paste these
+	Environment (EXR ENV) Global Install script on this server, or if you
+	have not run it since 1 Oct, 2022, copy/paste these
 	commands to run the *Global Install* script:
 	```
 	curl -fsSL https://raw.githubusercontent.com/blocknetdx/exrproxy-env-scripts/main/env_installer.sh -o env_installer.sh

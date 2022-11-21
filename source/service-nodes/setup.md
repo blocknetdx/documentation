@@ -30,32 +30,29 @@ Operating as a Service Node requires two Blocknet wallets:
 
 	Such a system could support
 	a few small SPV wallets and a Blocknet staking wallet.
-	As of this writing, the most economical place to rent a VPS with
-	the above specs seems to be
-	[Contabo](https://contabo.com/en/vps/). In fact, Contabo's "S"
-	size VPS has exactly those minimum level specs and currently rents for €4.99 /
-	mo.
+
 	> Medium & Large Systems
 	
 	If you want to host the [Hydra](/resources/glossary/#hydra) and/or
     [XQuery Indexer](/resources/glossary/#indexer) services (and maybe a few SPV
     wallets as well), you'll likely need at least 10 vCPUs, 60 GB of
-    RAM and 1 TB+ of
+    RAM and 1.3 TB+ of
     SSD storage space. Hosting  Hydra or XQuery services requires
     hosting an EVM (Ethereum Virtual Machine) blockchain like
-    Ethereum/ETH, Avalanche/AVAX, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL,
-    Polkadot/DOT, Cardano/ADA, etc. Testing of XQuery is still
-	ongoing, so we don't yet know the exact HW requirements for
-	running XQuery with large EVMs like AVAX, BSC or ETH.
+    Ethereum/ETH, Avalanche/AVAX, Sys NEVM, Binance Smart Chain/BSC, Fantom/FTM, Solana/SOL,
+    Polkadot/DOT, Cardano/ADA, etc. So far, testing of XQuery suggests
+	it should be possible to host XQuery services supporting EVMs like
+	AVAX, Sys NEVM & BSC on HW with these same specs, though it may be
+	necessary to add extra storage to support the rapidly growing AVAX blockchain.
 
-	!!! warning "Testing of XQuery is still ongoing, so we don't yet know the exact HW requirements for running XQuery with large EVMs like AVAX, BSC or ETH."
-
-	Minumum HW requirements for a medium to large Service Node would be
+	Minumum HW requirements for a medium to large Service Node capable
+    of supporting [Hydra](/resources/glossary/#hydra) and/or
+    [XQuery Indexer](/resources/glossary/#indexer) services would be
     something like this:
 
 	- 10 CPU cores (or 10 vCPUs if the Service Node runs on a VPS)
 	- 60 GB RAM
-	- 1+ TB SSD Storage
+	- 1.3+ TB SSD Storage
 	- 25+MBit/s Internet download speed  (100+ MBit/s is much better
       for faster syncing.)
 
@@ -809,7 +806,7 @@ Service Node Setup, complete the following guides in order:
 	    1. Think of a name and a password for the RPC user your Service
           Node will use when communicating with the services/coins it supports.
 	1. Change directory to your local `exrproxy-env` repository
-	(`exrproxy-env` is located `~` by default.):
+	(`exrproxy-env` is located in `~` by default.):
 	```
 	cd ~/exrproxy-env 
 	```
@@ -928,7 +925,7 @@ Service Node Setup, complete the following guides in order:
 	1. Next, you'll be given the option to choose which
        [EVM](/resources/glossary/#evm) blockchains you 
        want to support.  In the following example, both ETH and AVAX
-       EVM blockchains are selected to be supported:
+       EVM blockchains are selected to be supported:<br>
 	   ![xbridge-chains](/img/service-nodes/evm-chains.png) <br>
 	   The HW requirements and default
        *data mount directory* (`/snode` in this example) are displayed for each
@@ -940,10 +937,10 @@ Service Node Setup, complete the following guides in order:
        specify the Host IPs of the EVM blockchains your
        SNode will support *externally*.)
 	1. If you chose to support [EVM](/resources/glossary/#evm) blockchains,
-       you'll be given the option to support [Hydra](/resources/glossary/#hydra) and/or
-       (coming soon) [XQuery](/resources/glossary/#indexer) services for each of the
-       EVMs you'll support.
-	1. If you chose to support XQuery (coming soon), you'll be given the
+       you'll be given the option to support
+       [XQuery](/resources/glossary/#indexer) and/or
+      [Hydra](/resources/glossary/#hydra) services for each of the EVMs you'll support.
+	1. If you chose to support XQuery, you'll be given the
        option to select which indices you want XQuery to support for each EVM you'll
        support. Supporting all available indices is recommended. For
        example:
@@ -951,25 +948,36 @@ Service Node Setup, complete the following guides in order:
 	       ![eth-indices](/img/service-nodes/eth-indices.png)	   
     	   ![avax-indices](/img/service-nodes/avax-indices.png)	   
 
-	1. Next, if you chose to support [EVM](/resources/glossary/#evm)
-	   blockchains, you'll be prompted to enter the
-	   US dollar values you want to charge for access to [EXR ENV](/resources/glossary/#exr-env)
-	   services like [Hydra](/resources/glossary/#hydra) and (coming soon) 
-       [XQuery](/resources/glossary/#indexer), at the *tier1* and
-       *tier2* levels. (Default values are recommended.) See
+	1. Next, if you chose to support
+      [XQuery](/resources/glossary/#indexer) and/or
+      [Hydra](/resources/glossary/#hydra) services, you'll be prompted to enter the
+	   US dollar amounts you want to charge for the services you chose
+      to support. If you chose to support XQuery services, you'll be
+      prompted for how many USD you want to charge for access to
+      XQuery. If you chose to support Hydra services, you'll be
+      prompted for how many USD you want to charge for access to Hydra
+      services at *tier1* and *tier2* levels. (You won't be prompted
+      for *tier2* level pricing if you didn't elect to support ETH
+      because *tier2* level only applies when ETH is
+      supported.) The USD amounts you enter are what your SNode will
+      charge for 6,000,000 API calls. Pricing in terms of 6,000,000
+      API calls makes it convenient to compare your pricing with that
+      of other similar services. Default values are recommended. See
        [Hydra/XQuery Projects API](https://api.blocknet.org/#tier1) for
-	   definitions of *tier1* and *tier2* payments.
+	   definitions of *tier1* and *tier2* service levels.<br>
+	   Note: Entering `0` for any of the USD amounts you're prompted
+      for will allow clients of your SNode to create projects which have 10,000 free
+      API calls to the service(s) for which you are charging `0` USD.
 	1. Next, you'll be prompted to enter the
-	   discount percentages you want to offer clients for payments in aBLOCK or
-	   aaBLOCK. These payment discounts are relative to the US dollar
-	   values entered in the previous step. The idea of giving
-	   discounts to clients paying with aBLOCK or aaBLOCK came from
+	   discount percentages you want to offer clients for payments in aBLOCK,
+	   aaBLOCK or sysBLOCK. These payment discounts are relative to the US dollar
+	   amounts entered in the previous step. The idea of giving
+	   discounts to clients paying with aBLOCK, aaBLOCK or sysBLOCK comes from
 	   the idea that we want to encourage payment in various forms of
 	   BLOCK in order to increase demand for BLOCK. Due to high eth
-	   gas fees currently associated with paying in aBLOCK, and due to aaBLOCK
-	   being the *only* form of payment available on the AVAX
-	   blockchain, default values of 20% discount for aBLOCK, and 0%
-	   discount for aaBLOCK are recommended.
+	   gas fees currently associated with paying in aBLOCK, the
+	   default discount for aBLOCK is currently set at 20%. Default
+	   values are recommended for all discounts.
 	1. Next, you'll be asked if you want to support UTXO_PLUGIN
 	service. Supporting this service requires about 32 GB RAM, 8 CPU
 	cores and 200 GB of disk space. It doesn't yet offer any
@@ -989,7 +997,7 @@ Service Node Setup, complete the following guides in order:
        mount directory* for each service and allows you to select the
        services for which you want to change the *data
        mount directory*. The selection menu will look something like
-       the following:
+       the following:<br>
 	   ![xbridge-chains](/img/service-nodes/select-new-install.png)
 	1. Next, a *storage space calculations* table will be displayed
        which can help you confirm that your server's storage space
@@ -1142,7 +1150,7 @@ Service Node Setup, complete the following guides in order:
 		  a browser.<br>
 		  If you want to expose the Hasura GUI Console port on your
 		  SNode, edit the following section in `docker-compose.yml`
-		  before you run `./deploy.sh`:
+		  just before you run `./deploy.sh`:
 	       ```
 	       xquery-graphql-engine:
            image: hasura/graphql-engine:v2.0.10

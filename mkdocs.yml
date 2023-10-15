@@ -1,5 +1,5 @@
-+docs_dir: 'source'
-+site_dir: 'docs'
+docs_dir: 'source'
+site_dir: 'docs'
 site_name: 'Blocknet Documentation'
 site_description: 'Blocknet is a blockchain interoperability protocol that enables communication, interaction, and exchange between different public and private blockchains.'
 site_author: 'Blocknet'

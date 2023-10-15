@@ -158,6 +158,6 @@ See full wiki: [MkDocs]](https://www.mkdocs.org/) | [MkDocs Material](https://sq
 1. Deploy `docs/` contents to [https://docs.blocknet.org/](https://docs.blocknet.org/) by commiting the changes in `docs/` directory, then pushing the commit to the `master` branch of the `documentation` repo.
 
 Note, if you don't have permissions to push to `master` branch of the `documentation` repo, you'll need to push to a branch or fork of it, then make a Pull Request to have your changes merged to `master` branch.<br><br>
-Hint: If you haven't yet committed your changes to markdown (`.md`) files, and you want to review all your changes using git utilities like `git status` and `git diff`, you can exclude all the changes in the `docs` folder from being considered by these tools by temporarily adding `docs/` to the `.gitignore` file.
+Hint: If you haven't yet committed your changes to markdown (`.md`) files, and you want to review all your changes using `git diff`, you can exclude all the changes in the `docs` folder from the diff by following [this suggestion](https://stackoverflow.com/questions/4380945/exclude-a-directory-from-git-diff).
 
 

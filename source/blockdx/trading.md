@@ -16,28 +16,7 @@ description: These Block DX trading guides explain how to check your balances, s
 	stored in XLite and it won't even be necessary to run Blocknet
 	core wallet to trade on BlockDX.
 
-??? warning "IMPORTANT: Your Blocknet wallet and the wallets of the assets you are trading *must* remain open and unlocked during atomic swaps."
-	If any of these wallets goes offline in the middle of an atomic
-	swap, it could result in loss of funds if you do not bring them
-	back online immediately.
-
 --8<-- "explore-service-nodes.md"
-
-??? tip "Tip: How to stop your Blocknet wallet from staking while it's unlocked for trading."
-	To trade BLOCK on BlockDX from your Blocknet core wallet, your
-	Blocknet core wallet must be fully unlocked. Normally, when your
-	core wallet is unlocked, it automatically begins
-	[staking](/wallet/staking). If, while staking, one of the
-	[UTXOs](/resources/glossary/#utxo) in your wallet "hits a stake",
-	it becomes *immature* for 101 confirmations, and it is unavailable
-	for trading while it's *immature*. At times, it can interfere with
-	trading when a large UTXO goes *immature* for 101
-	confirmations. Fortunately, there's a way to have your Blocknet
-	core wallet unlocked, but not staking. The trick is simply to add
-	`staking=0` to the `blocknet.conf` file in your
-	[data directory](/wallet/backup-restore/#data-directory), then
-	restart your Blocknet core wallet. (If `blocknet.conf` doesn't
-	already exist in your data directory, create it.)
 
 ---
 
@@ -49,12 +28,17 @@ description: These Block DX trading guides explain how to check your balances, s
 	The *Available* balance may show a value different than what's displayed in the wallet if:
 
 	* The wallet is locked.
-	* You have already made a trade that has locked up
-      funds. [Find out why available balance in BlockDX sometimes drops dramatically when making an order, and how to prevent it from happening](/blockdx/faq/#why-does-available-balance-in-blockdx-drop-so-dramatically-when-making-an-order).
+	* You have already made a trade that has locked up funds. You may
+      want to create smaller [inputs](/resources/glossary/#input) so
+      that a single trade won't lock up more funds than needed. You
+      can use the `dxSplitAddress` command from *Tools->Debug Console*
+      of your Blocknet wallet (or Blocknet CLI) to create smaller
+      inputs. Type `help dxSplitAddress` in the Debug
+      Console to learn how to use it.
 	* Funds aren't in a legacy address. Right now only legacy addresses are compatible. If you are using a Segwit address, please create a new address to send the funds to. If the wallet has been configured via Block DX, then a legacy address will automatically be created when generating a new address.
 	* The wallet was not [configured](/blockdx/configuration).
 	* The wallet was not restarted after the configuration.
-	* If inputs have been locked via [Coin Control](/wallet/send-funds/#coin-control).
+	* If inputs have been locked via Coin Control.
 
 
 ??? example "Select Market"
@@ -63,7 +47,7 @@ description: These Block DX trading guides explain how to check your balances, s
 		![Select Market](/img/blockdx/select-market-1.png)
 
 	1. Click the *Select market pair* button.
-	1. A downdown will appear with two lists: the assets of the wallets you have connected and all assets listed on Block DX.
+	1. A dropdown menu will appear with two lists: the assets of the wallets you have connected and all assets listed on Block DX.
 
 		![Select Market](/img/blockdx/select-market-2.png)
 
@@ -78,7 +62,7 @@ description: These Block DX trading guides explain how to check your balances, s
 
 
 ??? example "Market Information"
-	??? Tip "Tip: To view currently active BlockDX orders from a browser, visit [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders)"
+	??? Tip "Tip: To view currently active BlockDX orders from a browser, visit [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) or [BlockDX.co](https://www.blockdx.co/orders)"
 	??? warning "Warning: When opening BlockDX for the first time it can take up to 3 minutes for all currently active orders to display on the screen."
 		This is simply the nature of a fully decentralized, peer-to-peer network. If your
 		XBridge client is connected to very few peers, it can even
@@ -93,9 +77,14 @@ description: These Block DX trading guides explain how to check your balances, s
 
 				![Peers Status](/img/wallet-classic/status-peers.png)
 
+	        If your peer count is low, [here's how to troubleshoot the issue](/wallet/syncing/#troubleshoot-syncing-issues).
+
 	Within BlockDX, each market has a price chart, depth chart, and market stats available.
 
 	![Market Data](/img/blockdx/market-data.png)
+
+	Hover over an area of the price or depth chart to show details
+    corresponding to that point on the chart.
 
 	The market stats are above the price chart and show the last trade price, percent in price change over the last 24 hour rolling period, and volume over the last 24 hour rolling period.
 
@@ -109,100 +98,129 @@ description: These Block DX trading guides explain how to check your balances, s
 
 	![Price Chart Zoomed](/img/blockdx/price-chart-zoomed.png)
 
-	To reset the chart, select the *Show All* button in the upper-right corner of the chart.
+	To exit *Zoom Mode*, select the *Show All* button in the upper-right corner of the chart.
 
 	![Show All](/img/blockdx/price-chart-show-all.png)
-
-	To the right of the price chart there's also a depth chart. The depth chart shows how much market depth there is of orders at certain prices.
-
-	![Depth Chart](/img/blockdx/depth-chart.png)
-
-	Hover order the depth chart to view the data values.
-
-	![Depth Chart Hover](/img/blockdx/depth-chart-hover.png)
 
 
 ??? example "Make Order"
 	
+	"Making" an order means creating an offer to buy or sell a specified
+    quantity of an asset for a specified price.
+
 	![Make Order](/img/blockdx/make-order.png)
 
 	1. Review the [trading fees](/blockdx/fees/#maker-fee) for making orders.
-	1. At the left side of Block DX you will find an order form.
+	1. At the right side of Block DX you will find an order form.
 	1. Select either the buy or sell tab.
-	1. For *Amount* (the first input), enter the amount you would like to buy or sell.
+	1. For *Quantity to buy/sell* (the first input), enter the amount you would like to buy or sell.
+	1. For *Min buy/sell qty* (the second input), enter the minimum
+        quantity you are willing to buy/sell in this order.
 
-		??? info "Note: There are no limit, market, or partial orders."
-			At the moment there are just *Exact* orders, meaning that orders must be taken for the exact amounts. Due to this setup, if trading a large amount it may be best to instead break the order into a few smaller separate orders.
+	    ??? warning "Warning: When selling an asset with a very high transaction fee (e.g. BTC, ETH), or when funding a purchase with an asset that has a high transaction fee, setting your minimum quantity too small can result in unexpectedly high transaction fees deducted from your wallet. More..."
+		The reason for this is because
+		[XBridge](/protocol/xbridge/introduction) might have to prepare the
+		[UTXOs](/resources/glossary/#utxo) of the *outgoing* asset to
+		facilitate partial fills of your order. It does this by
+		splitting some of your *outgoing* asset into __N__
+		[UTXOs](/resources/glossary/#utxo), where __N__ is
+		approximately equal to the *Quantity to buy/sell* __divided by__ the
+		*Min buy/sell qty*. Each of these __N__ UTXOs will contain
+		*Min buy/sell qty* worth of the *outgoing* asset. So, one transaction is
+		required for the splitting, then in the worst case, up to __N__
+		additional transactions may be required to send the __N__
+		UTXOs of your	*outgoing* asset to each of the counterparties filling part of
+		your maker order. As of this writing, the average BTC
+		transaction fee is USD $28.97. Therefore, if 5 BTC
+		transaction are required to complete your order, the total
+		transaction cost will be USD $144.85! We plan to have a warning
+		message flash in BlockDX itself if a maker order is being set
+		up which might result in very high transaction fees, but we are
+		warning you here in the docs as well. For most assets,
+		transaction fees are negligible, but for certain assets
+		(e.g. BTC, ETH), they are certainly *not* negligible.
 
-	1. For *Price* (the second input), enter the price (rate) for
-       which you would like to trade the first asset. Note, there is
-       also an option to enter *Price* in terms of BTC.
-	1. *Total* shows the total amount of the 2nd asset that will be traded for the first asset.
+	1. For *BTC Price* (the third input), enter the price (rate) in
+           terms of BTC for which you would like to trade the first
+           asset of the trading pair you've selected. Note, you can optionally enter *Price* in terms of
+           the second asset of the trading pair you've selected (LTC
+           in the example image above). The field for entering
+           *Price* in terms of the second asset is just below *BTC Price*.
+	1. *Total* shows the total amount of the second asset that will be traded for the first asset.
 	1. In the *Address* fields, enter the addresses the funds will be
-       going to for each asset. In the above example, buying BLOCK
-       with LTC, the *BLOCK Address* is the address where the BLOCK
-       you buy will be sent, and the *LTC Address* is the
-       [change address](/resources/glossary/#change-address) where LTC
-       change from the transaction will be sent. If you don't mind having funds sent to new/empty addresses in your
-       BLOCK and LTC wallets, you can use the
-       [auto-generated addresses](/blockdx/settings/#auto-generate-addresses-in-order-form). However, if you
-       want the asset you're acquiring or the [change from the transaction](/resources/glossary/#change-address) to go
-       to specific addresses in your wallet, you'll
-       need to copy/paste those specific addresses from your wallets into
-       these fields. (For now, these *Address* fields must be legacy addresses,
-       not Segwit addresses.) [See these hints](/xlite/blockdx-xlite) for help finding
-       specific addresses in XLite. Note, the address from which
-       the trade is funded is chosen automatically by BlockDX. BlockDX
-       funds the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
-       which can cover the expense of the trade.
-	1. Ignore *Order ID*. That should be blank when creating an order.
+           going to for each asset. In the above example, buying BLOCK
+           with LTC, the *BLOCK Address* is the address where the BLOCK
+           you buy will be sent, and the *LTC Address* is the
+           [change address](/resources/glossary/#change-address) where LTC
+           change from the transaction will be sent. If you don't mind having funds sent to new/empty addresses in your
+           BLOCK and LTC wallets, you can just select *Generate New Address* to fill in both of these *Address* fields
+           automatically. However, if you
+           want the asset you're acquiring or the change from the transaction to go
+           to specific addresses in your wallet, you'll
+           need to copy/paste those specific addresses from your wallets into
+           these fields. (For now, these *Address* fields must be legacy addresses,
+           not Segwit addresses.) [See these hints](/xlite/blockdx-xlite) for help finding
+           specific addresses in XLite. Note, the addresses from which
+           the trade is funded are chosen automatically by
+           BlockDX. BlockDX first tries to
+           fund the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
+           which can cover the expense of the trade.
+	1. If you are placing a *partial fill enabled order*, which is an
+	order with a *Min buy/sell qty* less than *Quantity to buy/sell*,
+	   and you want your order to automatically repost whatever
+	   portion of the order remains after a partial fill, leave the
+	   *Automatically repost order* checkbox checked.
 	1. Review your order.
-	1. Select the place order button.
-	1. The trade will now be visible as *Open* under *Active Orders*.
+	1. Select the *PLACE BUY/SELL ORDER* button.
+	1. The trade will now be visible under *Active Orders* with *Open*
+       or some specific progress status shown in the *Status* column.
 
-		![Active](/img/blockdx/orders-active.png)
+	![Active](/img/blockdx/orders-active.png)
 
 	The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.
 
 
 ??? example "Take Order"
-	1. Review the [trading fees](/blockdx/fees/#taker-fee) for taking orders.
+
+	"Taking" an order means accepting an offer to buy or sell a
+    specified quantity of an asset for a specified price.
+
+	1. Review the [trading fees](/blockdx/fees/#taker-fee) for taking
+       orders. Note: Taker Fee *must* be paid from the Blocknet core/native wallet; it cannot be paid with BLOCK stored in XLite. Having no BLOCK in your Blocknet core wallet will result in *Insufficient Funds* error from BlockDX when taking/accepting orders.
 	1. On the right side of Block DX you will find the order book.
 
 	    ![Order Book](/img/blockdx/order-book.png)
 
 	1. Click on the order you would like to take.
-
-		??? info "Note: There are no limit, market, or partial orders."
-			At the moment there are just *Exact* orders, meaning that orders must be taken for the exact amounts. Due to this setup, you must have enough funds to cover the entire sell amount of the order selected.
-
-	1. The order form on the left side of Block DX will auto-populate.
+	1. The ORDER FORM on the right side of Block DX will auto-populate.
 
 		![Take Order](/img/blockdx/take-order.png)
 
-	1. Make sure *Balances* shows enough funds in the *Available* column to cover the order.
+	1. If the *Quantity to buy/sell* field of the ORDER FORM shows a
+       value greater than the *Min buy/sell qty* field, you can
+       optionally reduce the *Quantity to buy/sell* value to any value
+       between it's initial value and the value of the *Min buy/sell qty* field.
+	1. Make sure *Balances* shows enough *Available Balance* to cover the order.
 	1.  In the *Address* fields, enter the addresses the funds will be
        going to for each asset. In the above example, selling BLOCK
        for LTC, the *BLOCK Address* is the
        [change address](/resources/glossary/#change-address) where BLOCK
        change from the transaction will be sent, and the *LTC Address* is the address where the LTC
        you acquire from the sale will be sent. If you don't mind having funds sent to new/empty addresses in your
-       BLOCK and LTC wallets, you can use the
-       [auto-generated addresses](/blockdx/settings/#auto-generate-addresses-in-order-form).
-       However, if you
-       want the asset you're acquiring or the [change from the transaction](/resources/glossary/#change-address) to go
+       BLOCK and LTC wallets, you can just select *Generate New Address* to fill in both of these *Address* fields
+       automatically. However, if you
+       want the asset you're acquiring or the change from the transaction to go
        to specific addresses in your wallet, you'll
        need to copy/paste those specific addresses from your wallets into
        these fields. (For now, these address fields must be legacy addresses,
        not Segwit addresses.) [See these hints](/xlite/blockdx-xlite) for help finding
-       specific addresses in XLite. Note, the address from which
-       the trade is funded is chosen automatically by BlockDX. BlockDX
-       funds the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
+       specific addresses in XLite. Note, the addresses from which
+       the trade is funded are chosen automatically by BlockDX. BlockDX
+       first tries to fund the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
        which can cover the expense of the trade.
 	1. Review your order.
-	1. Select the place order button.
+	1. Select the ACCEPT ORDER button.
 	1. The trade will now be visible under *Active Orders*.
-	1. The trade should complete in about 20-30 seconds.
 
 	The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.
 
@@ -216,7 +234,7 @@ description: These Block DX trading guides explain how to check your balances, s
 	If you hover your mouse over the `?` symbol in this section,
     you'll see a chart of every possible status an order can have. The
     current status is displayed in the *Status* column on the
-    right. Here is the list of every possible status of an order:
+    right. Here is the list of every possible status an order can have:
 
 	![Order Status Table](/img/blockdx/order-status-table.png)
 
@@ -244,7 +262,7 @@ description: These Block DX trading guides explain how to check your balances, s
 	The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.
 
 ??? example "Order History"
-	At the bottom-right corner of Block DX you can find the trade history. The trade history information is gathered only for the wallets that are configured. Therefore, the trade history will only show the orders that have been completed since Blocknet wallet and wallets for the currently viewed market have been opened and unlocked. If the Blocknet wallet is restarted, this information will be cleared and no longer visible.
+	In the bottom-right area of Block DX you can find the trade history. The trade history information is gathered only for the wallets that are configured. Therefore, the trade history will only show the orders that have been completed since Blocknet wallet and wallets for the currently viewed market have been opened and unlocked. If the Blocknet wallet is restarted, this information will be cleared and no longer visible.
 
 	![Trade History](/img/blockdx/trade-history.png)
 
@@ -260,21 +278,18 @@ description: These Block DX trading guides explain how to check your balances, s
 	or *Cancelled*:
 	![Inactive Cancelled](/img/blockdx/orders-inactive-cancelled.png)
 	When this occurs, BlockDX will attempt to refund both parties in
-	the transaction for up to 2.5 hours. In most cases it will
+	the transaction for up to 2 hours. In most cases it will
 	succeed. __*It's important to keep your Blocknet
-	core wallet, and any wallets involved
-	in the transaction, open and unlocked for 2.5 hours while the refund is attempted.
-	(Blocknet wallet must remain open and unlocked for 2.5 hours no
-	matter which coins were involved in the transaction because
+	core wallet open for 2 hours while the refund is attempted because
 	the code which manages the refund currently
-	resides within the Blocknet wallet.*)__ In the case of a Failed
+	resides within the Blocknet wallet.*__ In the case of a Failed
 	Order, if the Blocknet wallet is
 	closed before all refunds are completed, or in the rare case that
 	other factors prevent refunds from completing,
 	the order will continue to display a *Failed* status as shown
 	above, but it will be moved from the *INACTIVE ORDERS* catagory to the
 	*ACTIVE ORDERS* category. If this occurs, or if your funds were
-	not returned after 2.5 hours from a *Cancelled* order, you'll need to manually redeem
+	not returned after 2 hours from a *Cancelled* order, you'll need to manually redeem
 	your funds by issuing a `sendrawtransaction <hexstring>` command
 	as follows:
 
@@ -351,35 +366,8 @@ description: These Block DX trading guides explain how to check your balances, s
        one following the text, `redeem counterparty deposit
        for order`.
 	1. If you don't have access to the native/core wallet of the coin
-       for which you need to issue a `sendrawtransaction` command, the
-       easiest way to send the raw transaction to the right blockchain
-       network is to use the `xrsendtransaction` command. The
-       `xrsendtransaction` command can be sent through the Blocknet
-       core wallet under *Tools->Debug Console* of the GUI/Qt
-       Blocknet, or it can be sent from the
-       Blocknet CLI. As long as there is a Service Node on the
-       Blocknet network which offers the XRouter service `xrsendtransaction` for free
-       for the coin you need it for, you can use
-       `xrsendtransaction`. For example, to send the transaction hex
-       string to redeem lost GLC in the example above, you would issue
-       the following command in *Tools->Debug Console* or from
-       Blocknet CLI:
-	   ```
-	   xrsendtransaction GLC <hexstring>
-	   ```
-	   where `<hexstring>` would be the large
-       hexstring following the text, `refund transaction for
-       order`. In other words, it would look like this:
-	   ```
-	   xrsendtransaction GLC
-       010000000139602e86db76a93f36293f8b19fbce009fdc68c7f7665cb93e7f37967307e8bd00000000c4483045022100b290e43343728d28dade75719450c8ff338e1431cb51ab05d47e79d76883a16102203f1c493923ed576d7f877470f8be0cc6690f3efe60869346caacd73b0b7d9e9001210399985zb8b14d4e466b89cb2f894c9b24f9c4d9f1fa8585634319ab17bd340ab4514c5663036f1915b17576a914dd4dbb870eeded2f9d4ad18588a470804258185088ac6776a9145779a2aa6ca981f478f6ad18a87e71225558d8d688ad82012188a9149ef2a00e90f13175e306db6d42b60e6c8411869d8768feffffff0181626a94000000001976a9142429537ff322fb00c37cc79aa7a2a1eab3e90dcb88ac6f191500
-	   ```
-	   
-	   1. If it turns out there is no Service Node offering an XRouter
-          service `xrsendtransaction` for free for the coin you need
-          it for, but the coin is supported by XLite, proceed as
-          follows to issue the `sendrawtransaction` via `curl` to the
-          CloudChains daemon:
+       for which you need to issue a `sendrawtransaction` command, but
+       that coin is supported by XLite, proceed as follows:
 
 		1. Open XLite if it's not already open.
 
@@ -417,7 +405,8 @@ description: These Block DX trading guides explain how to check your balances, s
 					 "rpcPort": 8332,
 					 "feeFlat": true,
 					 "rpcEnabled": true,
-					 "addressCount": 40
+					 "addressCount": 40,
+					 "_ticker": "BTC"
 				 }
 				 ```
 
@@ -444,53 +433,6 @@ description: These Block DX trading guides explain how to check your balances, s
 
 			  Note, Windows users may need to [install curl](https://curl.se/download.html) if it is not already installed.
 
----
-
-#### Clear All Order History, including Stuck Orders
-
-??? example "Clear All Order History, including Stuck Orders"
-	There are two cases when you might want to clear all your BlockDX
-	order history:
-
-	1. If you've been placing a *lot* of orders, for example with a
-	trading bot, the list of orders in the order history file can
-	actually grow to the point where it slows down BlockDX performance.
-
-	1. On rare occasion, an order can get into a "stuck" state where it 
-	fails to complete, but cannot be cancelled or deleted through the
-	usual means. The main cause of this situation is when a new coin has
-	been added to BlockDX and improperly configured. (Specifically, the
-	culprit is usually that the *FeePerByte* value in the XBridge config
-	for the coin is set too low. It should be set by looking in the wallet
-	send function for the recommended fee per byte and then multiplying it
-	by about 2.5.)  If you have an order in a "stuck" state like this,
-	the first thing you'll want to do is to recover any funds you
-	might have tied up in the stuck order. For this, the first
-	step is to __wait at least 2.5 hours, keeping your Blocknet
-	core wallet, and any wallets involved in the order, open and
-	unlocked__.  XBridge code will attempt to refund any funds you
-	have committed to a trade for up to 2.5 hours and your only
-	responsibility during this time is to wait and keep all your
-	wallets open and unlocked. Note, Blocknet wallet must remain open
-	and unlocked for 2.5 hours no
-	matter which coins were involved in the transaction because
-	the code which manages the refund currently
-	resides within the Blocknet wallet. If the funds you had
-	committed to the order are not refunded to your wallet after 2.5
-	hours, [redeem your funds the manual way](#redeemrefund-funds-from-failed-or-cancelled-transactions).
-
-	1. Now you're ready to clear your BlockDX order history by
-       renaming the `orders.dat` file as follows:
-	    1. Close BlockDX and Blocknet wallet.
-		--8<-- "data-directories-1.md"
-		1. Rename the file, `orders.dat` in your data directory.
-		1. Restart Blocknet wallet and, after it has synced, restart BlockDX.
-
-	    ??? warning "Warning: Deleting `orders.dat` will delete all historical records of orders you've made."
-		Instead of renaming `orders.dat` as instructed above, you can
-		optionally delete it. Renaming is preferable because deleting
-		cannot be undone.
-	
 ---
 
 ??? bug "Bug: If you used *Generate New Address* in BlockDX to generate the address to which the asset you just acquired should be sent, and the trade completed successfully but the asset didn't arrive in XLite as expected, click here for instructions what to do."

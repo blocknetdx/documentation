@@ -104,7 +104,7 @@ wallet you created previously when you installed XLite.
 	multi-wallet, like [Exodus](https://www.exodus.com).
 
 1. The coin daemons of XLite can also be accessed via RPC calls made
-   programmatically (using the RPC login credentials found in step 2 above). [Here is an example of a Python program which dumps private keys of XLite addresses](https://github.com/tryiou/cloudchains_xlite_pks_extractor/blob/main/cloudchains_pks_extractor.py).
+   programmatically (using the RPC login credentials found in step 2 above). [Here is an example of a Python program which dumps private keys of XLite addresses](https://github.com/tryiou/xlite_toolkit/blob/main/Xlite_privateKeysExtractor.py).
 
 
 

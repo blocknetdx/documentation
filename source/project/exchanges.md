@@ -15,12 +15,13 @@ Decentralized exchanges are purely peer-to-peer instead of requiring a trusted e
     * View Open Orders on BlockDX: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) <!-- or [BlockDX.co](https://www.blockdx.co/orders)  -->
     <!-- * [View Trade History on BlockDX](https://www.blockdx.co/trade-history)   -->
     <!--     * [View Exchange Volume on BlockDX](https://twitter.com/DxStats)   -->
+<!--
 * [Pangolin (aaBLOCK/AVAX)](https://app.pangolin.exchange/#/swap?outputCurrency=0xc931f61b1534eb21d8c11b24f3f5ab2471d4ab50) -- [Learn about buying aaBLOCK and redeeming it for BLOCK](/blockchain/aablock)
 
 * [Uniswap (aBLOCK/ETH)](https://app.uniswap.org/#/swap?outputCurrency=0xe692c8d72bd4ac7764090d54842a305546dd1de5) -- [Learn about buying aBLOCK and redeeming it for BLOCK](/blockchain/ablock)
 
 * [Anyswap (aBLOCK/ETH)](https://v1.anyswap.exchange/swap)
-
+-->
 ---
 
 ## Centralized Exchanges
@@ -33,15 +34,17 @@ it operates to collect data on its customers. The following options are availabl
 
 Exchange        | Market        | Link
 ----------------|---------------|------
-Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)  
-Bittrex Global  | (USDT/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=USDT-BLOCK)  
 SouthExchange | (USDT/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/USDT) 
 SouthExchange | (BTC/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/BTC) 
+<!-- 
+Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)  
+Bittrex Global  | (USDT/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=USDT-BLOCK)  
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC)
 StakeCube       | (LTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_LTC)
 StakeCube       | (SCC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_SCC)
 StakeCube       | (DASH/BLOCK)  | [Buy Now](https://stakecube.net/app/exchange/BLOCK_DASH)
 FinexBox        | (BTC/BLOCK)   | [Buy Now](https://www.finexbox.com/market/pair/BLOCK-BTC.html)
+-->
 
 
 

@@ -11,7 +11,12 @@ Blocknet's utility token, [BLOCK](/blockchain/introduction), can be purchased an
 Decentralized exchanges are purely peer-to-peer instead of requiring a trusted entity to manage the transaction. This is the most secure form of trading. The following options are available:
 
 * [__Block DX__](/blockdx/setup)
-	* BLOCK/LTC trading pair is the best for buying BLOCK on BlockDX, offering the most liquidity.
+	* BLOCK/LTC trading pair is the best for buying BLOCK on BlockDX,
+      offering the most liquidity.
+	* If liquidity on the BLOCK/LTC pair is low, visit the
+      [#trading](https://discord.com/channels/819650867807780893/819875135497830460)
+      channel in Blocknet Discord to arrange a purchase or sale of
+      larger quantities of BLOCK with Blocknet community members.
     * View Open Orders on BlockDX: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) <!-- or [BlockDX.co](https://www.blockdx.co/orders)  -->
     <!-- * [View Trade History on BlockDX](https://www.blockdx.co/trade-history)   -->
     <!--     * [View Exchange Volume on BlockDX](https://twitter.com/DxStats)   -->
@@ -34,14 +39,14 @@ it operates to collect data on its customers. The following options are availabl
 
 Exchange        | Market        | Link
 ----------------|---------------|------
-SouthExchange | (USDT/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/USDT) 
-SouthExchange | (BTC/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/BTC) 
 StakeCube       | (BTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_BTC) 
 StakeCube       | (LTC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_LTC) 
 StakeCube       | (SCC/BLOCK)   | [Buy Now](https://stakecube.net/app/exchange/BLOCK_SCC) 
 StakeCube       | (DASH/BLOCK)  | [Buy Now](https://stakecube.net/app/exchange/BLOCK_DASH) 
 FinexBox        | (BTC/BLOCK)   | [Buy Now](https://www.finexbox.com/market/pair/BLOCK-BTC.html) 
 <!-- 
+SouthExchange | (USDT/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/USDT)  
+SouthExchange | (BTC/BLOCK) | [Buy Now](https://main.southxchange.com/Market/Book/BLOCK/BTC)  
 Bittrex Global  | (BTC/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=BTC-BLOCK)  
 Bittrex Global  | (USDT/BLOCK)   | [Buy Now](https://global.bittrex.com/Market/Index?MarketName=USDT-BLOCK)  
 -->

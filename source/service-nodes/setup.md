@@ -743,11 +743,15 @@ Service Node Setup, complete the following guides in order:
 	clone it from the Github repository and thereby create it.<br>
 
 	__IMPORTANT: This Global Install Script will log you out after it's
-	finished. Simply log in again after it logs you out,
-	Then follow the steps below.
+	finished with phase 1 of the install. This is necessary to update the user's membership in
+	the *docker* group of Linux and to activate the python
+	version control system (*pyenv*). Simply log in again after it logs you out,
+	then issue the following command again to complete phase 2 of the install:__
+	```
+	./env_installer.sh --install
 	```
 
-	
+	Then follow the steps below.<br>
 
     ??? tip "Tip: How to Change Python Version."
 		Since the Global Install Script installs the *pyenv* tool, it's

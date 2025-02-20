@@ -52,7 +52,7 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 ## Viewing from the Browser
 There are various options for viewing the proposals in the browser. Each option has its own unique features. As of this writing, the websites where proposals can be viewed include the following:
 
-[Proposal Forum](https://forum.blocknet.co/c/draft-proposals)
+<!--[Proposal Forum](https://forum.blocknet.co/c/draft-proposals)!-->
 
 [Blocknet Monitor](https://blocknetmonitor.com/?p=proposals)
 <!--

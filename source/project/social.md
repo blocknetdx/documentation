@@ -29,14 +29,10 @@ description:
 
 
 <div class="social">
-	<a href="https://blocknet.co" target="_blank"><i class="fa fa-external-link fa-5x" aria-hidden="true"></i></a>
+	<a href="https://blocknet.org" target="_blank"><i class="fa fa-external-link fa-5x" aria-hidden="true"></i></a>
 	<div class="name">Website</div>
 </div>
 
-<div class="social">
-	<a href="https://blocknet.co/blog/" target="_blank"><i class="fa fa-file-text-o fa-5x" aria-hidden="true"></i></a>
-	<div class="name">Blog</div>
-</div>
 
 <div class="social">
 	<a href="https://api.blocknet.org" target="_blank"><i class="fa fa-code fa-5x" aria-hidden="true"></i></a>

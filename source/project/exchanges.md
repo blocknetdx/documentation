@@ -17,8 +17,8 @@ Decentralized exchanges are purely peer-to-peer instead of requiring a trusted e
       [#trading](https://discord.com/channels/819650867807780893/819875135497830460)
       channel in Blocknet Discord to arrange a purchase or sale of
       larger quantities of BLOCK with Blocknet community members.
-    * View Open Orders on BlockDX: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders) <!-- or [BlockDX.co](https://www.blockdx.co/orders)  -->
-    <!-- * [View Trade History on BlockDX](https://www.blockdx.co/trade-history)   -->
+    * View Open Orders on BlockDX: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders)
+    <!-- * [View Trade History on BlockDX](https://www.blocknetmonitor.com/?p=pastorders)   -->
     <!--     * [View Exchange Volume on BlockDX](https://twitter.com/DxStats)   -->
 <!--
 * [Pangolin (aaBLOCK/AVAX)](https://app.pangolin.exchange/#/swap?outputCurrency=0xc931f61b1534eb21d8c11b24f3f5ab2471d4ab50) -- [Learn about buying aaBLOCK and redeeming it for BLOCK](/blockchain/aablock)

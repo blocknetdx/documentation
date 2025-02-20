@@ -744,41 +744,9 @@ Service Node Setup, complete the following guides in order:
 
 	__IMPORTANT: This Global Install Script will log you out after it's
 	finished. Simply log in again after it logs you out,
-	Then follow the steps below.
-	```
+	Then follow the steps below:__
 
-	
-
-    ??? tip "Tip: How to Change Python Version."
-		Since the Global Install Script installs the *pyenv* tool, it's
-		very easy to change the version of python used in deploying the
-		EXR ENV. The default python version set by the install
-		script is 3.9.14. If, for example, you want to run the EXR
-		ENV deployment scripts using python version 3.10.7, simply do this:
-		```
-		cd ~/exrproxy-env
-		pyenv install 3.10.7
-		pyenv local 3.10.7
-		```
-
-	Note, before you run the `builder.py` script in the steps below,
-	confirm that you have `~/.local/bin` in your $PATH variable. You
-	can check this simply like this:
-	```
-	echo $PATH
-	```
-	If you don't see `~/.local/bin` (or `/home/<user-name>/.local/bin`) listed as one of the directories in your $PATH, take steps to ensure it gets added to your $PATH on every login. For example, if you're on a system where `~/.profile` is sourced on every login, you could add these lines to `~/.profile`:
-	```
-	# set PATH so it includes user's private bin if it exists
-	PATH="$HOME/bin:$PATH"
-	# set PATH so it includes user's private bin if it exists
-	PATH="$HOME/.local/bin:$PATH"
-	```
-	Then do this to add `~/.local/bin` to your $PATH:
-	```
-	source ~/.profile
-	```
-
+ 
 	1. Prepare to enter all the details you'll need when you run
     the `builder.py` script:
 		1. Most likely, `builder.py` will automatically find your server's public IP

@@ -59,7 +59,7 @@ Blocknet was created on October 20th, 2014. A week later, from October 29th, 201
 
 The founding team then set out to conduct research on how to best conduct [atomic swaps](https://en.bitcoin.it/wiki/Atomic_swap) and develop an interoperability protocol that is not only decentralized, but also trustless. 
 
-You can view the history of milestones completed on [the project's roadmap](https://blocknet.co/#roadmap).
+You can view the history of milestones completed on [the project's roadmap](https://blocknet.org/#roadmap).
 
 ---
 

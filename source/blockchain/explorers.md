@@ -8,10 +8,8 @@ description: Blocknet blockchain explorers, usually referred to as block explore
 ## Introduction
 The following is a list of Blocknet explorers:
 
-* [Blocknet](https://explorer.blocknet.co/)  (recommended)
-* [CryptoID](https://chainz.cryptoid.info/block/)
-* [CryptoCore](https://block.ccore.online/)
-* [TokenView](https://block.tokenview.com/en/coininfo)
+* [Blocknet](https://utils.blocknet.org/)  (recommended)
+* [Chainz](https://chainz.cryptoid.info/block/)
 
 A Blocknet blockchain explorer, usually referred to as a block explorer, is used to search and navigate the entire Blocknet blockchain. All public information on the blockchain is be accessible through the explorer including: 
 

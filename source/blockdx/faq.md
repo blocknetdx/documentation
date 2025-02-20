@@ -36,7 +36,8 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 	Soon, BlockDX will offer to automatically split assets into smaller inputs in the background so you'll always have some "small change" on hand, ready to trade.
 
 ??? question "How can I view currently active orders on BlockDX without opening the BlockDX application?"
-	Visit the following site: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders).
+	Visit the following site: [BlockNetMonitor](https://www.blocknetmonitor.com/?p=openorders)
+<!-- or [BlockDX.co](https://www.blockdx.co/orders). -->
 
 ??? question "My version of [blockchain] wallet isn’t one of the options to select in the set up process. Can I use this version? Will it still work?"
 	Only use wallet versions that are listed. If a version is not listed, it has either not been tested yet or is not compatible. Using a wallet version not listed may result in failed trades or loss of funds.

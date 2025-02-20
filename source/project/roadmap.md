@@ -6,7 +6,7 @@ description: Blocknet's roadmap conveys the project's vast vision and objectives
 
 ---
 
-> [**View Blocknet's Roadmap <i class="fa fa-external-link"></i>**](https://blocknet.org/roadmap)
+> [**View Blocknet's Roadmap <i class="fa fa-external-link"></i>**](https://blocknet.co/roadmap)
 
 To better convey Blocknet's vast vision and objectives, the project has been separated into the following product tracks:
 

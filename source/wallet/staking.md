@@ -9,7 +9,7 @@ transactions are grouped in blocks. With
 [Blocknet](/project/introduction), there is 1 block every minute with
 a 1 [BLOCK](/blockchain/introduction) reward. You can stake with any
 amount of BLOCK and are rewarded for supporting the network with block
-rewards.
+rewards. A [Staking Rewards Calculator]( https://staking.blocknet.co/) is available.
 
 ---
 
@@ -187,7 +187,7 @@ rewards.
 		```
 		1. Get the latest bootstrap file:
 		```
-		wget https://utils.blocknet.org/Blocknet.zip
+		wget https://blocknet.co/files/Blocknet.zip
 		```
 		1. Unzip the bootstrap file:
 		```

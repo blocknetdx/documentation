@@ -2595,38 +2595,9 @@ installed, it simply won't install new version(s). If it detect
 the <code>~/exrproxy-env</code> directory already exists, it will update
 it. If it detects <code>~/exrproxy-env</code> does not already exist, it will
 clone it from the Github repository and thereby create it.<br></p>
-<p><strong>IMPORTANT: This Global Install Script will log you out after it's
-finished with phase 1 of the install. This is necessary to update the user's membership in
-the <em>docker</em> group of Linux and to activate the python
-version control system (<em>pyenv</em>). Simply log in again after it logs you out,
-then issue the following command again to complete phase 2 of the install:</strong>
-<div class="highlight"><pre><span></span><code>./env_installer.sh --install
-</code></pre></div></p>
-<p>Then follow the steps below.<br></p>
-<details class="tip"><summary>Tip: How to Change Python Version.</summary><p>Since the Global Install Script installs the <em>pyenv</em> tool, it's
-very easy to change the version of python used in deploying the
-EXR ENV. The default python version set by the install
-script is 3.9.14. If, for example, you want to run the EXR
-ENV deployment scripts using python version 3.10.7, simply do this:
-<div class="highlight"><pre><span></span><code>cd ~/exrproxy-env
-pyenv install 3.10.7
-pyenv local 3.10.7
-</code></pre></div></p>
-</details>
-<p>Note, before you run the <code>builder.py</code> script in the steps below,
-confirm that you have <code>~/.local/bin</code> in your $PATH variable. You
-can check this simply like this:
-<div class="highlight"><pre><span></span><code>echo $PATH
-</code></pre></div>
-If you don't see <code>~/.local/bin</code> (or <code>/home/&lt;user-name&gt;/.local/bin</code>) listed as one of the directories in your $PATH, take steps to ensure it gets added to your $PATH on every login. For example, if you're on a system where <code>~/.profile</code> is sourced on every login, you could add these lines to <code>~/.profile</code>:
-<div class="highlight"><pre><span></span><code># set PATH so it includes user&#39;s private bin if it exists
-PATH=&quot;$HOME/bin:$PATH&quot;
-# set PATH so it includes user&#39;s private bin if it exists
-PATH=&quot;$HOME/.local/bin:$PATH&quot;
-</code></pre></div>
-Then do this to add <code>~/.local/bin</code> to your $PATH:
-<div class="highlight"><pre><span></span><code>source ~/.profile
-</code></pre></div></p>
+<p><strong>IMPORTANT: This Global Install Script will log you out after it finished.
+  Simply log in again after it logs you out,
+  Then follow the steps below.</strong></p>
 <ol>
 <li>Prepare to enter all the details you'll need when you run
 the <code>builder.py</code> script:<ol>

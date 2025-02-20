@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			links[i].target = '_blank';
 		}
 		// open docs index in same tab
-		if (/^(https?:\/\/docs\.blocknet\.co\/?)$/.test(links[i].getAttribute('href'))) {
+		if (/^(https?:\/\/docs\.blocknet\.org\/?)$/.test(links[i].getAttribute('href'))) {
 			links[i].target = '_self';
 		}
 	}

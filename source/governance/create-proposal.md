@@ -11,8 +11,10 @@ The deadline for creating proposals is 2880 blocks prior to the Superblock.
 
 ---
 
-## Create A Proposal
+## *OBSOLETE*, https://forum.blocknet.co is offline, join Discord channel for more informations: [Discord](https://discord.gg/vGa7GeCu8B)
 
+## Create A Proposal
+ 
 1. Submit a Draft Proposal to the [Blocknet Proposal Forum](https://forum.blocknet.co/c/draft-proposals).
 
 	!!! tip "Tip: Before creating a new proposal, it's recommended to review previous proposals in the [Proposal Forum](https://forum.blocknet.co/c/draft-proposals) to get an idea of what is generally expected and acceptable."

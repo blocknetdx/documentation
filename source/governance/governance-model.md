@@ -17,7 +17,7 @@ Implementing masternodes was not without problems. An exploit in the forked code
 
 A simple ledger of the funds [can be found here](https://docs.google.com/spreadsheets/d/1xFm5LJsRNN62-9XZFqfDckUt2x8ps3pUOBISUxNQYpc/).
 
-The current governance model by Service Nodes [can be found here](/governance/introduction/).
+The current governance model by Service Nodes [can be found here](introduction.md).
 
 In short, every 43,200 blocks on the Blocknet blockchain, Service Nodes can choose to mint up to a maximum of 40,000 new tokens. These can then be allocated to fund development in the form of proposals. 
 
@@ -62,12 +62,12 @@ To be added in a later update.
 ### Contributor Tiers
 Diagram based on Fattox's original proposal in Discord and will be detailed with descriptions in a later update.
 
-![Simplified Role Tier](/img/governance/accountability-flow-simplified-role-tier.png "Simplified Role Tier")
+![Simplified Role Tier](../img/governance/accountability-flow-simplified-role-tier.png "Simplified Role Tier")
 
 #### Tapping Into the Hive-Mind of Our Community Channels
 Using Discord:
 
-![Discord Role Tier](/img/governance/accountability-flow-discord-role-tier.png "Discord Role Tier")
+![Discord Role Tier](../img/governance/accountability-flow-discord-role-tier.png "Discord Role Tier")
 
 
 ### The Use of Outside Contractors
@@ -76,7 +76,7 @@ To be added in a later update.
 #### Segregation of Duty
 All members must be voted in:
 
-![Role Block](/img/governance/accountability-flow-role-block.png "Role Block")
+![Role Block](../img/governance/accountability-flow-role-block.png "Role Block")
 
 A separate flow of role assignment is to be added in a later update along with a proposal to add a new type of Service Node vote block with a more ad-hoc nature. Additional information to be added in a later update.
 
@@ -96,7 +96,7 @@ To be added in a later update.
 ### Flow of Accountability
 To be added in a later update.
 
-![Governance Blocks](/img/governance/accountability-flow-governance-blocks.png "Governance Blocks")
+![Governance Blocks](../img/governance/accountability-flow-governance-blocks.png "Governance Blocks")
 
 ---
 
@@ -104,7 +104,7 @@ To be added in a later update.
 
 ### Proposal Submission Flow
 
-![Proposal Submission Flow](/img/governance/blocknet-proposal-submission-flow.png "Proposal Submission Flow")
+![Proposal Submission Flow](../img/governance/blocknet-proposal-submission-flow.png "Proposal Submission Flow")
 
 #### Submission of Proposal to Network
 Instructions:
@@ -145,7 +145,7 @@ Instructions:
 
 ### Proposal Vote Flow
 
-![Proposal Vote Flow](/img/governance/blocknet-proposal-vote-flow.png "Proposal Vote Flow")
+![Proposal Vote Flow](../img/governance/blocknet-proposal-vote-flow.png "Proposal Vote Flow")
 
 For a proposal to pass and receive funding:
 
@@ -174,14 +174,14 @@ Notes for expansion in further updates:
 
 ### Governance Document Change Flow
 
-![Governance Document Change Flow](/img/governance/blocknet-governance-document-change-flow.png "Governance Document Change Flow")
+![Governance Document Change Flow](../img/governance/blocknet-governance-document-change-flow.png "Governance Document Change Flow")
 
 **Note**: This process calls the [*Proposal Submission Flow*](#proposal-submission-flow) + [*Proposal Vote Flow*](#proposal-vote-flow) in [Flow of Proposal] as Blackbox.
 
 
 ### Classifying Investments Within Blocknet
 
-![Investment Expenses](/img/governance/accountability-flow-superblock.png "Investment Expenses")
+![Investment Expenses](../img/governance/accountability-flow-superblock.png "Investment Expenses")
 
 To be detailed in a later update.
 

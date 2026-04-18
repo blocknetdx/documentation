@@ -26,7 +26,7 @@ xrSendTransaction       | Submit a signed transaction to the network
 
 To use XRouter, see the [XRouter API](https://api.blocknet.org/#xrouter) and [Setup Guide](https://api.blocknet.org/#xrouter-setup).
 
-[Service Nodes](/service-nodes/introduction) earn 100% of fees from [XBridge](/protocol/xbridge/introduction), XRouter, and [XCloud](/protocol/xcloud/introduction) services. If you'd like to operate your own Service Node, see the [Service Node Setup Guide](/service-nodes/setup).
+[Service Nodes](../../service-nodes/introduction.md) earn 100% of fees from [XBridge](../xbridge/introduction.md), XRouter, and [XCloud](../xcloud/introduction.md) services. If you'd like to operate your own Service Node, see the [Service Node Setup Guide](../../service-nodes/setup.md).
 
 
 ## Design
@@ -73,11 +73,11 @@ The flow of the diagram is top-to-bottom:
 
 
 ## Namespace
-XRouter SPV wallets utlize the `xr::` namespace while [XCloud](/protocol/xcloud/introduction) services utilize the `xrs::` namespace. A list of the SPV wallets and services can be viewed using [xrGetNetworkServices](https://api.blocknet.org/#xrgetnetworkservices) and you can pre-connect to the nodes with [xrConnect](https://api.blocknet.org/#xrconnect).
+XRouter SPV wallets utlize the `xr::` namespace while [XCloud](../xcloud/introduction.md) services utilize the `xrs::` namespace. A list of the SPV wallets and services can be viewed using [xrGetNetworkServices](https://api.blocknet.org/#xrgetnetworkservices) and you can pre-connect to the nodes with [xrConnect](https://api.blocknet.org/#xrconnect).
 
 
 ## Node Scoring
-Clients keep a *local* score of each Service Node (network-wide repuation system is planned). When a Service Node reaches a score of `-200`, the Service Node will be banned by the client for a 24hr period. After this 24hr period, the Service Node will start with a score of `-25`. The ban score threshold can be adjusted using the `xrouterbanscore` setting in `blocknet.conf` (see [setup](https://api.blocknet.org/#xrouter-setup)). This scoring used for both XRouter and [XCloud](/protocol/xcloud/introduction).
+Clients keep a *local* score of each Service Node (network-wide repuation system is planned). When a Service Node reaches a score of `-200`, the Service Node will be banned by the client for a 24hr period. After this 24hr period, the Service Node will start with a score of `-25`. The ban score threshold can be adjusted using the `xrouterbanscore` setting in `blocknet.conf` (see [setup](https://api.blocknet.org/#xrouter-setup)). This scoring used for both XRouter and [XCloud](../xcloud/introduction.md).
 
 Action                                  | Change in Score
 ----------------------------------------|-----------------
@@ -91,7 +91,7 @@ This mechanism and values are subject to change in future releases. Join the [De
 
 
 ## Fees
-With XRouter, and subsequently [XCloud](/protocol/xcloud/introduction), fees are determined by a free market. Service Nodes can specify the fee that they wish to charge for a call and client can specify the max fee they are willing to pay for calls.
+With XRouter, and subsequently [XCloud](../xcloud/introduction.md), fees are determined by a free market. Service Nodes can specify the fee that they wish to charge for a call and client can specify the max fee they are willing to pay for calls.
 
 ??? info "Note about IP sharing and Fees."
 	When testing and enhancing XRouter, we encountered a bit of IP-sharing between snodes. This is bad practice, because it's evidently a case of one entity voting twice in an XRouter proof. As such go-xrouter filters out duplicate nodes per IP address, so the second node won't get any fees.

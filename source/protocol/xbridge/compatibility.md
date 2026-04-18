@@ -6,7 +6,7 @@ description: Blocknet has over 100 digital assets tested and confirmed to be sup
 
 Any digital asset that supports lock time checks and has a JSON RPC interface will be compatible with Blocknet's XBridge. As a result, most digital assets in existence today are compatible. 
 
-Currently Blocknet has over 100 [digital assets](/resources/glossary/#digital-asset) tested and confirmed to be supported by XBridge, with the number continuously growing as more are integrated. 
+Currently Blocknet has over 100 [digital assets](../../resources/glossary.md#digital-asset) tested and confirmed to be supported by XBridge, with the number continuously growing as more are integrated. 
 
 ---
 

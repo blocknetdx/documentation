@@ -33,7 +33,7 @@ description: How to buy aBLOCK on Uniswap and redeem it for BLOCK
 
 1. Ensure your aBLOCK is in your MetaMask<sup>1</sup> wallet.
 1. Set up the bridge to go from "aBLOCK (Blocknet ERC20)" to "BLOCK"
-![redeem](/img/blockchain/ablock-block.png)
+![redeem](../img/blockchain/ablock-block.png)
 1. Enter the amount of BLOCK you want to redeem.
 1. Enter the "Recipient BLOCK address"
 1. Click, "Redeem."
@@ -41,7 +41,7 @@ description: How to buy aBLOCK on Uniswap and redeem it for BLOCK
 #### Bridge BLOCK->aBLOCK
 
 1. Set up the bridge to go from "BLOCK" to "aBLOCK (Blocknet ERC20)"
-![deposit](/img/blockchain/block-ablock.png)
+![deposit](../img/blockchain/block-ablock.png)
 1. Enter the amount of BLOCK you want to bridge
 1. Send that amount of BLOCK to the "Deposit BLOCK address"
 1. Click "CrossChain Deposit."
@@ -57,7 +57,7 @@ Visit [Uniswap Liquidity](https://app.uniswap.org/#/add/ETH/0xe692c8d72bd4ac7764
 
 ### Add Anyswap Liquidity
 Visit [Anyswap Liquidity](https://v1.anyswap.exchange/add-liquidity), make sure "ETH Mainnet" is selected at the top of the page, make sure MetaMask<sup>1</sup> is unlocked and connected to Anyswap, and that it contains both ETH and aBLOCK, then set up to add liquidity like this:
-![Add Liquidity](/img/blockchain/anyswap-liquidity.png)
+![Add Liquidity](../img/blockchain/anyswap-liquidity.png)
 
 ## See Current USD Prices of aBLOCK
 
@@ -99,7 +99,7 @@ Having purchased aBLOCK, investors will then have several options of what to do 
    * They can HODL it and watch it increase in value over time.
    * They can trade it on Uniswap, Anyswap, etc. for some other asset.
    * They can earn steady income with it by adding liquidity to some aBLOCK liquidity pool on Uniswap, Anyswap, etc.
-   * They can "unwrap" it. In other words, they can bridge it back to native BLOCK at a ratio of 1:1. Native BLOCK can then be used for [Blocknet network staking](/wallet/staking/) and/or [Blocknet Service Node collateral](/service-nodes/introduction/).
+   * They can "unwrap" it. In other words, they can bridge it back to native BLOCK at a ratio of 1:1. Native BLOCK can then be used for [Blocknet network staking](../wallet/staking.md) and/or [Blocknet Service Node collateral](../service-nodes/introduction.md).
 
 ### 2. Payment vehicle for Hydra, Blocknet's Decentralized Infura Solution
 

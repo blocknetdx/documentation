@@ -2,13 +2,13 @@ title: Block DX Settings
 description: Guide on how to change BlockDX settings
 
 ## Access BlockDX settings via the MENU button
-![Menu Button](/img/blockdx/menu-button.png)
+![Menu Button](../img/blockdx/menu-button.png)
 
 Selecting the *MENU* button will display a *Settings Menu*:
 
 ##### Settings Menu
 
-![Settings Categories](/img/blockdx/settings-menu.png)
+![Settings Categories](../img/blockdx/settings-menu.png)
 
 ### Market Pricing (also How to Fix "N/A" in BTC price column)
 
@@ -18,7 +18,7 @@ Selecting the *MENU* button will display a *Settings Menu*:
 			settings:
 
 	1. Select *General Settings* from the [Settings Menu](#settings-menu).
-	   ![Market Pricing](/img/blockdx/market-pricing.png)
+	   ![Market Pricing](../img/blockdx/market-pricing.png)
 	1. Select *Market Pricing*.
 
 	If you're seeing "N/A" in the BTC columns on BlockDX, it
@@ -33,8 +33,8 @@ Selecting the *MENU* button will display a *Settings Menu*:
 
 ??? example "Show Blocknet Core Wallet Balance in BlockDX"
 	If you've configured BlockDX to trade BLOCK from
-	[XLite](/xlite/setup/) instead of trading it from
-	[Blocknet Core wallet](/wallet/setup/), then the BLOCK balance in
+	[XLite](../xlite/setup.md) instead of trading it from
+	[Blocknet Core wallet](../wallet/setup.md), then the BLOCK balance in
 	your XLite wallet will be displayed in the *Balances* section of
 	BlockDX. However, by default, the balance of your Blocknet Core wallet
 	will *not* be displayed in BlockDX. You can change this behavior to
@@ -42,16 +42,16 @@ Selecting the *MENU* button will display a *Settings Menu*:
 	section of BlockDX as follows:
 
 	1. Select *General Settings* from the [Settings Menu](#settings-menu).
-	   ![Select Balances](/img/blockdx/show-core-wallet-balance.png)
+	   ![Select Balances](../img/blockdx/show-core-wallet-balance.png)
 	1. Select *Balances* and select *Yes* for *Show Wallet in Balances*:
    
 	The BLOCK balance in your Blocknet Core wallet is now displayed
 	as *Wallet* balance, and your XLite balance is displayed as
 	*BLOCK* balance, like this:
 
-	![Core Balance](/img/blockdx/core-wallet-balance.png)
+	![Core Balance](../img/blockdx/core-wallet-balance.png)
 
-	!!! tip "Tip: It's a good idea to always keep a few BLOCK in your Blocknet Core wallet because [Taker Fees](/blockdx/fees/#taker-fee) can *only* be paid from the Blocknet Core wallet."
+	!!! tip "Tip: It's a good idea to always keep a few BLOCK in your Blocknet Core wallet because [Taker Fees](fees.md#taker-fee) can *only* be paid from the Blocknet Core wallet."
 
 ### Auto-Generate Addresses in Order Form
 
@@ -63,13 +63,13 @@ Selecting the *MENU* button will display a *Settings Menu*:
 	asset being bought, and *LTC Address* is an address from the wallet of the
 	asset being sold:
 
-	![Select Balances](/img/blockdx/make-order.png)
+	![Select Balances](../img/blockdx/make-order.png)
 
 	To control whether those two address fields are filled in automatically, or
     whether the user must select *Generate New Address* to generate those addresses manually:
 
 	1. Select *General Settings* from the [Settings Menu](#settings-menu).
-	   ![Select Balances](/img/blockdx/auto-gen-addresses.png)
+	   ![Select Balances](../img/blockdx/auto-gen-addresses.png)
 	1. Select *Order Form*
 	1. In the *Auto Generate Address?* dropdown, select *Yes* or *No*, according to your preference. 
 	   

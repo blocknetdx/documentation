@@ -3,7 +3,7 @@ description: This guide explains how to setup your XLite wallet to securely stor
 
 # Getting Started
 The XLite wallet allows you to securely manage a variety of
-[digital assets](/resources/glossary/#digital-asset) in a single, noncustodial, lightweight, decentralized wallet.
+[digital assets](../resources/glossary.md#digital-asset) in a single, noncustodial, lightweight, decentralized wallet.
 
 *  __*Noncustodial*__
 means you own the private keys of all your assets. You don't have to
@@ -29,8 +29,8 @@ single entity whose failure could prevent you from accessing your assets.
 ## XLite Setup
 Properly setting up the XLite wallet is simple. Complete each of the following guides in order:
 
-1. [Installation](/xlite/installation)
-1. [Backup Wallet](/xlite/backup-and-restore)
+1. [Installation](installation.md)
+1. [Backup Wallet](backup-and-restore.md)
 
 --8<-- "troubleshooting.md"
 

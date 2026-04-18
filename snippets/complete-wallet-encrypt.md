@@ -2,6 +2,6 @@
 ???+ success "Encryption Complete!"
 	Continue to related guides:
 	
-	* [Sync the wallet](/wallet/syncing)
-	* [Lock/unlock wallet](/wallet/lock-unlock)
-	* [Staking](/wallet/staking)
+	* [Sync the wallet](syncing.md)
+	* [Lock/unlock wallet](lock-unlock.md)
+	* [Staking](staking.md)

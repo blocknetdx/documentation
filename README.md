@@ -21,7 +21,7 @@ If you're not familiar enough with how to do this, feel free to create a [Github
 
 
 ## Getting Started
-MkDocs supports Python versions 2.7, 3.4, 3.5, 3.6, 3.7, 3.8 and pypy.
+MkDocs supports Python 3.8+.
 
 Using Linux, MacOS and Windows 10:
 

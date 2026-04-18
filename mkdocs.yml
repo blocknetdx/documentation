@@ -4,38 +4,131 @@ site_name: 'Blocknet Documentation'
 site_description: 'Blocknet is a blockchain interoperability protocol that enables communication, interaction, and exchange between different public and private blockchains.'
 site_author: 'Blocknet'
 use_directory_urls: true # do not change this, it will break all links
-google_analytics:
-  - 'UA-109213957-4'
-  - 'auto'
 theme: 
   name: 'material'
-  custom_dir: 'theme/'
   favicon: 'img/favicon.ico'
   logo: 'img/blocknet-logo-128.svg'
   font: false
+  icon:
+    repo: fontawesome/brands/github
 extra:
+  head:
+    - type: link
+      attrs:
+        - rel: profile
+          href: http://gmpg.org/xfn/11
+    - type: meta
+      attrs:
+        - name: theme-color
+          content: '#dddfeb'
+    - type: link
+      attrs:
+        - rel: shortlink
+          href: '{{ config.site_url }}'
+    - type: link
+      attrs:
+        - rel: dns-prefetch
+          href: //www.blocknet.co
+    - type: link
+      attrs:
+        - rel: apple-touch-icon
+          sizes: 180x180
+          href: /img/apple-touch-icon.png
+    - type: link
+      attrs:
+        - rel: icon
+          type: image/png
+          sizes: 32x32
+          href: /img/favicon-32x32.png
+    - type: link
+      attrs:
+        - rel: icon
+          type: image/png
+          sizes: 16x16
+          href: /img/favicon-16x16.png
+    - type: link
+      attrs:
+        - rel: mask-icon
+          href: https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg
+          color: '#051937'
+    - type: meta
+      attrs:
+        - name: msapplication-TileColor
+          content: '#dddfeb'
+    - type: meta
+      attrs:
+        - property: og:locale
+          content: en_US
+    - type: meta
+      attrs:
+        - property: og:type
+          content: website
+    - type: meta
+      attrs:
+        - property: og:title
+          content: >-
+            {{ (page.meta.title if page and page.meta and page.meta.title else (page.title ~ ' - ' if page and page.title else '') ~ config.site_name) }}
+    - type: meta
+      attrs:
+        - property: og:description
+          content: >-
+            {{ page.meta.description if page and page.meta and page.meta.description else config.site_description }}
+    - type: meta
+      attrs:
+        - property: og:url
+          content: '{{ config.site_url }}'
+    - type: meta
+      attrs:
+        - property: og:site_name
+          content: '{{ config.site_name }}'
+    - type: meta
+      attrs:
+        - property: og:image
+          content: /img/blocknet.png
+    - type: meta
+      attrs:
+        - property: og:image:secure_url
+          content: /img/blocknet.png
+    - type: meta
+      attrs:
+        - name: twitter:card
+          content: summary_large_image
+    - type: meta
+      attrs:
+        - name: twitter:description
+          content: >-
+            {{ page.meta.description if page and page.meta and page.meta.description else config.site_description }}
+    - type: meta
+      attrs:
+        - name: twitter:title
+          content: >-
+            {{ (page.meta.title if page and page.meta and page.meta.title else (page.title ~ ' - ' if page and page.title else '') ~ config.site_name) }}
+    - type: meta
+      attrs:
+        - name: twitter:image
+          content: /img/blocknet.png
   social:
-    - type: 'envelope'
+    - icon: material/email
       link: 'mailto:contact@blocknet.co'
-    - type: 'github'
+    - icon: material/github
       link: 'https://github.com/blocknetdx/'
-    - type: 'comment'
+    - icon: simple/discord
       link: 'https://discord.gg/vGa7GeCu8B'
-    - type: 'telegram'
+    - icon: simple/telegram
       link: 'https://t.me/Blocknet'
-    - type: 'medium'
+    - icon: simple/medium
       link: 'https://medium.com/@theblocknetchannel'
-    - type: 'facebook'
+    - icon: material/facebook
       link: 'https://en-gb.facebook.com/theblocknet/'
-    - type: 'twitter'
+    - icon: material/twitter
       link: 'https://twitter.com/The_Blocknet'
-    - type: 'reddit'
+    - icon: material/reddit
       link: 'https://www.reddit.com/r/theblocknet/'
-    - type: 'youtube'
+    - icon: material/youtube
       link: 'https://www.youtube.com/c/TheBlocknet'
-    - type: 'instagram'
+    - icon: material/instagram
       link: 'https://www.instagram.com/the_blocknet/'
-    - type: 'linkedin'
+    - icon: material/linkedin
       link: 'https://www.linkedin.com/company/the-blocknet/'
   snode_collateral: '5000'
   proposal_link: 'http://blocknetdx.forumotion.com/f3-self-funding-proposals'
@@ -55,14 +148,15 @@ markdown_extensions:
   - markdown.extensions.admonition
   - pymdownx.details
   - pymdownx.extra
-  - fontawesome_markdown
   - meta
   - markdown.extensions.toc:
       permalink: True
   - pymdownx.snippets:
       base_path: 'snippets/'
       encoding: 'utf-8'
-      check_paths: false
+      check_paths: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 extra_javascript:
   - js/main.js
 extra_css:
@@ -97,23 +191,15 @@ nav:
     # - 'Standards': 'protocol/xbridge/standards.md'
     # - 'Use Cases': 'protocol/xbridge/use-cases.md'
     - 'Setup': 'protocol/xbridge/setup.md'
-    - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.org/#xbridge-api'
   - 'XRouter':
     - 'Introduction': 'protocol/xrouter/introduction.md'
-    - 'Fees': 'protocol/xrouter/introduction/#fees'
-    - 'Design': 'protocol/xrouter/introduction/#design'
     # - 'Compatibility': 'protocol/xrouter/compatibility.md'
     # - 'Standards': 'protocol/xrouter/standards.md'
-    - 'Use Cases': 'protocol/xrouter/introduction/#use-cases'
+    # - 'Use Cases': 'protocol/xrouter/introduction/#use-cases'
     # - 'Setup': 'protocol/xrouter/setup.md'
-    - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.org/#xrouter-api'
   - 'XCloud':
     - 'Introduction': 'protocol/xcloud/introduction.md'
-    - 'Fees': 'protocol/xrouter/introduction/#fees'
-    - 'Design': 'protocol/xrouter/introduction/#design'
     # - 'Compatibility': 'protocol/xcloud/compatibility.md'
-    # - 'Use Cases': 'protocol/xrouter/introduction/#use-cases'
-    - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.org/#xcloud-api'
   # - "Use Cases <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-business-use-cases.pdf'
   - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.org/'
 - 'Blocknet Wallet':
@@ -175,7 +261,7 @@ nav:
   # - 'Config Manager': 'service-nodes/config-manager.md'
 - 'Governance':
   - 'Introduction': 'governance/introduction.md'
-  # - 'Governance Model': 'governance/governance-model.md'
+  - 'Governance Model': 'governance/governance-model.md'
   # - 'Blocknet Improvement Process (BIP)': 'governance/blocknet-improvement-process-bip.md'
   - 'View Proposals': 'governance/view-proposals.md'
   - 'Create Proposal': 'governance/create-proposal.md'
@@ -190,7 +276,7 @@ nav:
   - "API <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.org'
   # - 'XBridge Setup': 'protocol/xbridge/setup.md'
   # - 'Blockchain Integration': 'developers/blockchain-integration.md'
-  # - 'Service Integration': 'developers/service-integration.md'
+  # - 'Service Integration': 'developers/service_integration.md'
   # - 'Project Ideas': 'developers/project-ideas.md'
   # - 'Repositories': 'developers/repositories.md'
   # - 'Tools': 'tools.md'
@@ -203,4 +289,3 @@ nav:
   - 'License': 'about/license.md'
 - 'Glossary': 'resources/glossary.md'
 copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2022.
-# copyright: If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>For collaboration, <a href="mailto:contact@blocknet.co">send us an email</a>.<br>Blocknet Protocol 2022.

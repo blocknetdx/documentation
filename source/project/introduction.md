@@ -8,11 +8,11 @@ description: Started in 2014, Blocknet is a decentralized, community-governed, s
 ---
 
 ## Background
-Started in 2014, Blocknet is a decentralized, [community-governed](/governance/introduction), [self-funded](/governance/introduction#superblock), open-sourced project that serves as a connector between different blockchains, markets, and communities. 
+Started in 2014, Blocknet is a decentralized, [community-governed](../governance/introduction.md), [self-funded](../governance/introduction.md#superblock), open-sourced project that serves as a connector between different blockchains, markets, and communities. 
 
 The project was founded on the principles of openness, transparency, and maintaining a high level of decentralization. These principles apply to both our community and protocol, which are aimed to bring blockchains and communities together.
 
-Blocknet is unique in that there is no company or foundation behind the project. Instead, Blocknet is [self-governed](/governance/introduction) by its stakeholders, meaning that stakers, token-holders, [Service Node](/service-nodes/introduction) operators and others with a stake in the blockchain have the ability to make decisions together. This self-governance is maintained through a Superblock mechanism, as well as open communication in our [Discord](https://discord.gg/vGa7GeCu8B). 
+Blocknet is unique in that there is no company or foundation behind the project. Instead, Blocknet is [self-governed](../governance/introduction.md) by its stakeholders, meaning that stakers, token-holders, [Service Node](../service-nodes/introduction.md) operators and others with a stake in the blockchain have the ability to make decisions together. This self-governance is maintained through a Superblock mechanism, as well as open communication in our [Discord](https://discord.gg/vGa7GeCu8B). 
 
 The project is also open-source, meaning anybody can contribute. From development, to content creation, to tools and services, we welcome all and encourage you to take part! You have the freedom to lead up your own project, collaborate with others at your own pace, or come and go as you please. We’re also always working to develop and improve our collaboration process, so if there’s any suggestions on ways to better the process we’d love to hear it!
 
@@ -38,7 +38,7 @@ We envision an ecosystem of single-purpose microservice blockchains that perform
 
 This type of architecture is made possible with the Blocknet Protocol. Just as the internet enabled computers to communicate, the Blocknet Protocol enables an internet of blockchains, which is critical for the ecosystem to realize its full potential.
 
-Aside from the [use-cases listed here](/project/blocknet-whitepaper.pdf#page=37), let’s take a look at 2 more specific examples of what the Blocknet Protocol enables:
+Aside from the [use-cases listed here](blocknet-whitepaper.pdf#page=37), let’s take a look at 2 more specific examples of what the Blocknet Protocol enables:
 
 **Development**
 
@@ -55,7 +55,7 @@ In supply chain, there will be multiple blockchains being used at various steps 
 ---
 
 ## Project History
-Blocknet was created on October 20th, 2014. A week later, from October 29th, 2014 until November 5th, 2014 an initial trade [offering was held on Bittrex](http://digitalmoneytimes.com/blocknet-ito-token-sale-is-a-success-sale-numbers-revealed/). In the initial trade offering, 3,876,915.43 [BLOCK](/blockchain/introduction) was sold at a price of 0.00025 BTC per BLOCK. There was 369 BTC sold plus altcoins, for a combined total of 969 BTC worth. The price of BTC on November 5th, 2014 was around $335, bringing the total value to $325,000.
+Blocknet was created on October 20th, 2014. A week later, from October 29th, 2014 until November 5th, 2014 an initial trade [offering was held on Bittrex](http://digitalmoneytimes.com/blocknet-ito-token-sale-is-a-success-sale-numbers-revealed/). In the initial trade offering, 3,876,915.43 [BLOCK](../blockchain/introduction.md) was sold at a price of 0.00025 BTC per BLOCK. There was 369 BTC sold plus altcoins, for a combined total of 969 BTC worth. The price of BTC on November 5th, 2014 was around $335, bringing the total value to $325,000.
 
 The founding team then set out to conduct research on how to best conduct [atomic swaps](https://en.bitcoin.it/wiki/Atomic_swap) and develop an interoperability protocol that is not only decentralized, but also trustless. 
 

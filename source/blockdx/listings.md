@@ -3,14 +3,14 @@ description: Block DX is a decentralized exchange with over 100 assets trading. 
 
 
 # Block DX Listings
-[Block DX](/blockdx/introduction) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). The exchange has over 100 [digital assets](/resources/glossary/#digital-asset) trading ([see below](/blockdx/listings/#listed-digital-assets)), with the number continuously growing as more are made compatible. There is complete trading pair freedom, meaning any two assets can be traded, totaling to over 5000 tradable pairs.
+[Block DX](introduction.md) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](../project/introduction.md). The exchange has over 100 [digital assets](../resources/glossary.md#digital-asset) trading ([see below](#listed-digital-assets)), with the number continuously growing as more are made compatible. There is complete trading pair freedom, meaning any two assets can be traded, totaling to over 5000 tradable pairs.
 
 --8<-- "explore-service-nodes.md"
 
 ---
 
 ## Listing Process
-A Block DX listing holds many benefits beyond just being traded on the exchange. Being listed means the asset has been integrated with the [Blocknet Protocol](/project/introduction), which powers Block DX, and allows other services to be built utilizing the asset. This extends the demand, utility, and accessibility of the asset to the rest of the ecosystem.
+A Block DX listing holds many benefits beyond just being traded on the exchange. Being listed means the asset has been integrated with the [Blocknet Protocol](../project/introduction.md), which powers Block DX, and allows other services to be built utilizing the asset. This extends the demand, utility, and accessibility of the asset to the rest of the ecosystem.
 
 Getting listed on Block DX is 100% free. If you would like to have a
 digital asset listed, the first step is to confirm the asset meets the following
@@ -52,7 +52,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
        [like this](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json)
        and creating configuration files [like this](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/autobuild/configs/ltc.base.j2).
 	1. You can __*thoroughly test*__ your asset in BlockDX, and that requires
-       a [Service Node](/service-nodes/introduction) to host your
+       a [Service Node](../service-nodes/introduction.md) to host your
        asset's native wallet. The easiest way to have a Service Node
        host your asset's wallet is to own your own Service Node and
        host it yourself. However, if it's not feasible for you to run
@@ -82,7 +82,7 @@ you are ready to proceed to the next step in listing your asset. At this point, 
 In the near future, the listing process will become more automated and it
 will be easier for people to "Do It Yourself." There will be a form
 where listing applicants fill in all the
-[XBridge Configuration](/protocol/xbridge/setup) values for their
+[XBridge Configuration](../protocol/xbridge/setup.md) values for their
 asset, then all the necessary file creations and updates will happen
 automatically. Note, even with this helpful automation, it will still
 be necessary to __*thoroughly test*__ each new asset

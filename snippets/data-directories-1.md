@@ -1,4 +1,4 @@
-1. Navigate to your data directory:
+Navigate to your data directory:
 	- **Windows**
 		```
 		C:\Users\[YourUsername]\AppData\Roaming\Blocknet\

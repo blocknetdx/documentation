@@ -41,7 +41,7 @@ description: How to buy aaBLOCK on Pangolin and redeem it for BLOCK
 
 1. Ensure your aaBLOCK is in your MetaMask<sup>1</sup> wallet.
 1. Set up the bridge to go from "aaBLOCK" to "BLOCK" on the *Avalanche Mainnet*.
-![redeem-aablock](/img/blockchain/aablock-block.png)
+![redeem-aablock](../img/blockchain/aablock-block.png)
 1. Enter the amount of BLOCK you want to redeem.
 1. Enter the "Recipient BLOCK address"
 1. Click, "Redeem."
@@ -49,7 +49,7 @@ description: How to buy aaBLOCK on Pangolin and redeem it for BLOCK
 #### Bridge BLOCK->aaBLOCK
 
 1. Set up the bridge to go from "BLOCK" to "aaBLOCK" on the *Avalanche Mainnet*.
-![deposit-aablock](/img/blockchain/block-aablock.png)
+![deposit-aablock](../img/blockchain/block-aablock.png)
 1. Enter the amount of BLOCK you want to bridge
 1. Send that amount of BLOCK to the "Deposit BLOCK address"
 1. Click "CrossChain Deposit."
@@ -99,7 +99,7 @@ what to do with it:
 1. They can HODL it and watch it increase in value over time.
 2. They can trade it on Pangolin for some other asset.
 3. They can earn steady income with it by adding liquidity to the aaBLOCK/AVAX liquidity pool on Pangolin.
-4. They can "unwrap" it. In other words, they can unbridge it back to native BLOCK at a ratio of 1:1. Native BLOCK can then be used for [Blocknet network staking](/wallet/staking/) and/or [Blocknet Service Node collateral](/service-nodes/introduction/).
+4. They can "unwrap" it. In other words, they can unbridge it back to native BLOCK at a ratio of 1:1. Native BLOCK can then be used for [Blocknet network staking](../wallet/staking.md) and/or [Blocknet Service Node collateral](../service-nodes/introduction.md).
 
 ## How aaBLOCK?
 

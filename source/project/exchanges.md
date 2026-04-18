@@ -3,14 +3,14 @@ description: Blocknet's utility token, BLOCK, can be traded on various exchanges
 
 
 # Exchanges
-Blocknet's utility token, [BLOCK](/blockchain/introduction), can be purchased and sold in several ways, each with different advantages and disadvantages. This list is provided for informational purposes only. Services listed here have not been evaluated or endorsed by Blocknet. Please exercise discretion when using third-party services.
+Blocknet's utility token, [BLOCK](../blockchain/introduction.md), can be purchased and sold in several ways, each with different advantages and disadvantages. This list is provided for informational purposes only. Services listed here have not been evaluated or endorsed by Blocknet. Please exercise discretion when using third-party services.
 
 ---
 
 ## Decentralized Exchanges
 Decentralized exchanges are purely peer-to-peer instead of requiring a trusted entity to manage the transaction. This is the most secure form of trading. The following options are available:
 
-* [__Block DX__](/blockdx/setup)
+* [__Block DX__](../blockdx/setup.md)
 	* BLOCK/LTC trading pair is the best for buying BLOCK on BlockDX,
       offering the most liquidity.
 	* If liquidity on the BLOCK/LTC pair is low, visit the

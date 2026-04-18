@@ -3,7 +3,7 @@ description: BLOCK is the utility token that powers the Blocknet blockchain. BLO
 
 # Introduction
 
-BLOCK is the utility token that powers the Blocknet Protocol. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to Service Nodes for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK and awarded to stakers. If seeking to acquire BLOCK, [there are various options available](/project/exchanges).
+BLOCK is the utility token that powers the Blocknet Protocol. Fees are paid in BLOCK when using the network and 100% of those fees are distributed to Service Nodes for supporting the network and infrastructure. Normal transaction fees on the network are also paid in BLOCK and awarded to stakers. If seeking to acquire BLOCK, [there are various options available](../project/exchanges.md).
 
 ---
 
@@ -133,7 +133,7 @@ In this first set of data, the inflation rate displayed takes into account **jus
 
 **Upper Bound of Inflation**
 
-In this second set of data, the inflation rate displayed takes into account **both block rewards and the maximum [Superblocks](/governance/introduction#superblock) amount**. It's important to note that the Superblock does not need to mint the full 40,000 BLOCK so in reality the inflation will likely never reach these levels. The below data represents the maximum inflation possible.
+In this second set of data, the inflation rate displayed takes into account **both block rewards and the maximum [Superblocks](../governance/introduction.md#superblock) amount**. It's important to note that the Superblock does not need to mint the full 40,000 BLOCK so in reality the inflation will likely never reach these levels. The below data represents the maximum inflation possible.
 
 ??? summary "View data"
 	<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRTbCrSUOV9epKU0oB80iiyfZesLCPTCjt3e7laywu69X0os14tb9lLtb_XEDUptg/pubhtml?gid=974145469&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="400px" ></iframe>

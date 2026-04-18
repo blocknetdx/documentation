@@ -3,7 +3,7 @@ description: This guide explains how to setup your Blocknet wallet to securely s
 
 
 # Getting Started
-The Blocknet wallet allows you to securely manage your [BLOCK](/blockchain/introduction). It's important to manage your funds through a wallet you own. In your wallet there is something called private keys. Think of private keys like a bank account. When you have funds in your wallet, they are in an "account" that you own and control.
+The Blocknet wallet allows you to securely manage your [BLOCK](../blockchain/introduction.md). It's important to manage your funds through a wallet you own. In your wallet there is something called private keys. Think of private keys like a bank account. When you have funds in your wallet, they are in an "account" that you own and control.
 
 --8<-- "why-no-exchange.md"
 
@@ -12,12 +12,12 @@ The Blocknet wallet allows you to securely manage your [BLOCK](/blockchain/intro
 ## Wallet Setup
 Properly setting up the Blocknet wallet is simple, but takes a few short steps. Complete each of the following guides in order:
 
-1. [Installation](/wallet/installation)
-1. [Bootstrap](/wallet/syncing/#bootstrap) (optional)
-1. [Syncing](/wallet/syncing)
-1. [Encryption](/wallet/encrypting)
-1. [Backup](/wallet/backup-restore) (important)
-1. [Staking](/wallet/staking)
+1. [Installation](installation.md)
+1. [Bootstrap](syncing.md#bootstrap) (optional)
+1. [Syncing](syncing.md)
+1. [Encryption](encrypting.md)
+1. [Backup](backup-restore.md) (important)
+1. [Staking](staking.md)
 
 <!-- 
 1. [Receive Funds](wallet/addresses/#receiving-addresses)

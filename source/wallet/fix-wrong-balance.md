@@ -5,27 +5,27 @@ description: This guide explains how to fix your Blocknet wallet balance if it d
 # Fix Wrong Wallet Balance
 
 If you are staking and "you hit a stake," then
-the [UTXO](/resources/glossary/#utxo) which hit the stake will become
+the [UTXO](../resources/glossary.md#utxo) which hit the stake will become
 *immature* for a 101 confirmations, and the BLOCK in that UTXO will not be included in
 your *Available Balance* while it is *immature*. However, that UTXO will still be
 part of your *Total Balance*. Also, if you are using the
-[BlockDX](/blockdx/introduction) to sell BLOCK from your Blocknet wallet, the BLOCK balance in your wallet can temporarily drop by
+[BlockDX](../blockdx/introduction.md) to sell BLOCK from your Blocknet wallet, the BLOCK balance in your wallet can temporarily drop by
 more than the amount of BLOCK you are selling. This can happen if your
 wallet's smallest available UTXO is
 larger than the amount of BLOCK you are selling in the transaction.
 
 In both of the cases mentioned above, your total available balance will automatically
-return to the expected value after a short time. However, for various reasons, the [Blocknet Wallet](/wallet/setup) can occasionally display the
+return to the expected value after a short time. However, for various reasons, the [Blocknet Wallet](setup.md) can occasionally display the
 wrong balance for an  extended time, in which case you'll need to *Recover Transactions* from the blockchain before it will display the correct balance. You can confirm if your wallet needs a *Recover Transactions* operation as follows:
 
 1. Select *Window->Coin Control* to display the addresses (and
-[UTXOs](/resources/glossary/#utxo)) where funds are stored in your
+[UTXOs](../resources/glossary.md#utxo)) where funds are stored in your
 wallet:
 
-	![Coin Control](/img/wallet/coin-control-window.png) 
+	![Coin Control](../img/wallet/coin-control-window.png) 
 
 	This will display a screen like this (*in Tree mode*):
-	![Coin Control](/img/wallet/coin-control-screen.png)
+	![Coin Control](../img/wallet/coin-control-screen.png)
 
 	Note: If using the Command Line Interface (CLI) to the wallet, you can
     get the same information as above by issuing the `listunspent`
@@ -55,11 +55,11 @@ wallet balance with the blockchain:
 ??? example "From the GUI/Qt interface"
 	From the GUI/Qt wallet, select *Tools->Wallet Repair->Recover
 	Transactions(Drop metadata)*:
-	![Tools Wallet Repair Recover](/img/wallet/tools-recover-transactions.png)
+	![Tools Wallet Repair Recover](../img/wallet/tools-recover-transactions.png)
 	This will cause your wallet to close and restart.
 
 	??? bug "Bug: Sometimes, especially if it takes a long time for your wallet to close, this operation attempts to restart the wallet too quickly - before it has shutdown completely, then it displays a message saying: *Can't obtain a lock on data directory...*. More..."
-		![Cannot Obtain Lock](/img/wallet/cannot-obtain-lock.png)
+		![Cannot Obtain Lock](../img/wallet/cannot-obtain-lock.png)
 
 		If you get this error, simply restart the wallet and try once again to perform *Tools->Wallet Repair->Recover Transactions(Drop metadata)*. If it happens a second time, try a third time.
 
@@ -74,19 +74,19 @@ wallet balance with the blockchain:
 
 	    - Windows:
 
-	    ![Options](/img/wallet/windows-options.png)	
+	    ![Options](../img/wallet/windows-options.png)	
 
 	    - Mac: 
 
-	    ![Preferences](/img/wallet/preferences.png)
+	    ![Preferences](../img/wallet/preferences.png)
 
 	1. Click *Open Configuration File*:
 
-	    ![Open Config File](/img/wallet/open-configuration.png)
+	    ![Open Config File](../img/wallet/open-configuration.png)
 
 	1. Click *OK* to dismiss the warning:
 
-	    ![Open Config File](/img/wallet/edit-config-warning.png)
+	    ![Open Config File](../img/wallet/edit-config-warning.png)
 
 	This will open the `blocknet.conf` file in your default editor.
 

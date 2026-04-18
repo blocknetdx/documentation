@@ -2,7 +2,7 @@ title: Blocknet Service Node Operation Guide
 description: This page explains how to go about common Service Node operations such as staking, voting, updating, restarting, and checking your Service Node configs.
 
 # Service Node Operation
-This page explains how to go about common [Service Node](/service-nodes/introduction) operations such as staking, voting, updating, restarting, and checking your Service Node configs. For instructions on setting up a Service Node, see the [Service Node Setup Guide](/service-nodes/setup).
+This page explains how to go about common [Service Node](introduction.md) operations such as staking, voting, updating, restarting, and checking your Service Node configs. For instructions on setting up a Service Node, see the [Service Node Setup Guide](setup.md).
 
 ---
 

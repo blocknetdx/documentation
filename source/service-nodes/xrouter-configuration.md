@@ -2,7 +2,7 @@ title: Service Node XRouter Configuration Guide
 description: This guide explains how to setup and configure your Service Node to support XRouter and earn additional fees.
 
 # XRouter Configuration Guide
-This guide explains how to setup and configure your Service Node to support XRouter. If you have not yet setup your Service Node, start with the [Service Node Setup Guide](/service-nodes/setup).
+This guide explains how to setup and configure your Service Node to support XRouter. If you have not yet setup your Service Node, start with the [Service Node Setup Guide](setup.md).
 
 !!! warning "Note: XRouter requires a static IP"
 	For XRouter services, your Service Node Computer **IP address must remain unchanged (static IP) and use port 41412** . If using a VPN with an IP that changes, it will impact your ability to provide XRouter services.
@@ -19,7 +19,7 @@ To setup XRouter, follow these steps:
 1. [Optimize Setup](#optimize-setup)
 1. [Deploy SPV Wallets](#deploy-spv-wallets)
 1. [Additional Information](#additional-information)
-1. [Setup XCloud](/service-nodes/xcloud-configuration) (option): XCloud is a decentralized microservice cloud network that allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, many cases without having to write any code.
+1. [Setup XCloud](xcloud-configuration.md) (option): XCloud is a decentralized microservice cloud network that allows you to monetize any microservice, blockchain, API, or cloud tech on your own hardware, many cases without having to write any code.
 
 ---
 
@@ -27,7 +27,7 @@ To setup XRouter, follow these steps:
 When starting the wallet, an `xrouter.conf` file is automatically created in the Blocknet wallet data directory if not already present. The `xrouter.conf` file is used to specify all your general XRouter settings and SPV call settings.
 
 !!! warning "Note: SPV support also requires *xbridge.conf* configuration."
-  	To support SPV calls, you must also have your `xbridge.conf` file setup for each of the chains you wish to support and those wallets must remain open and running ([view XBridge setup guide](/service-nodes/xbridge-configuration)).
+  	To support SPV calls, you must also have your `xbridge.conf` file setup for each of the chains you wish to support and those wallets must remain open and running ([view XBridge setup guide](xbridge-configuration.md)).
 
     For ETH, you will also need `JSONVersion=2.0` and `ContentType=application/json` added to the `[ETH]` entry in `xbridge.conf`. This applies to GETH and Parity clients.
 
@@ -37,7 +37,7 @@ Settings            | Description
 --------------------|-------------
 host                | The static public IP address of your SNode Computer.
 wallets             | The wallets you'd like to support XRouter calls on. All commands are on by default for all supported wallets listed in `wallets=`. If you want to turn one of them off, set `disabled=1` in the call's subsection.
-plugins             | The XCloud services you are supporting, see [XCloud Configuration](/service-nodes/xcloud-configuration).
+plugins             | The XCloud services you are supporting, see [XCloud Configuration](xcloud-configuration.md).
 fee                 | The fee (in BLOCK) you require for calls. A value of `0` means there is no fee and that the calls are free (*default*). Fees can be specified for individual calls in each subsection.
 clientrequestlimit  | The minimum time allowed between calls in milliseconds. A value of `-1` means there is no limit (*default*). If client requests exceed this value they will be penalized and eventually banned by your node.
 disabled\*\*        | Used to disable a call. A value of `1` means the call is disabled and `0` means the call is enabled (*default*). This setting is only for subsections and not supported under `[Main]`.

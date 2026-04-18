@@ -3,10 +3,10 @@ description: This guide explains how to view Blocknet's Superblock proposals for
 
 
 # View Proposals
-This guide explains how to view Blocknet's [Superblock](/governance/introduction/#superblock) proposals for funding initiatives and governance management. The ability to view proposals is important for the decentralized governance model to function properly, enabling informed discussions and [voting](/governance/proposal-voting).
+This guide explains how to view Blocknet's [Superblock](introduction.md#superblock) proposals for funding initiatives and governance management. The ability to view proposals is important for the decentralized governance model to function properly, enabling informed discussions and [voting](proposal-voting.md).
 
 ??? warning "Voting Requirements & Important Information"
-	**5000 [BLOCK](/blockchain/introduction) is required in order to vote.** The [process of voting](/governance/proposal-voting) can take place from a wallet containing at least 5000 BLOCK, or a Service Node collateral wallet. An active [Service Node](/service-nodes/introduction) is *not* required.
+	**5000 [BLOCK](../blockchain/introduction.md) is required in order to vote.** The [process of voting](proposal-voting.md) can take place from a wallet containing at least 5000 BLOCK, or a Service Node collateral wallet. An active [Service Node](../service-nodes/introduction.md) is *not* required.
 
 	Additional important information:
 
@@ -29,23 +29,23 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 
 
 ??? example "View using the redesigned wallet"
-	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
+	![Redesigned Wallet](../img/wallet-redesign/wallet-redesign.png)
 
-	1. Open the [wallet](/wallet/setup) and in the side menu, go to *Proposals*. The wallet does not need to be unlocked.
+	1. Open the [wallet](../wallet/setup.md) and in the side menu, go to *Proposals*. The wallet does not need to be unlocked.
 	1. The Proposals screen shows all the proposals submitted to the network. Above the list of proposals there is an option to filter by *Upcoming*, which displays the proposals that can currently be voted on. Select this filter to view all proposals currently open for voting.
 
-		![Filter Proposals](/img/wallet-redesign/proposals-filter.png)
+		![Filter Proposals](../img/wallet-redesign/proposals-filter.png)
 
-	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-qt-wallet).
+	1. [Vote on a proposal](proposal-voting.md#voting-from-the-qt-wallet).
 
 
 ??? example "View using the classic wallet"
-	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
+	![Classic Wallet](../img/wallet-classic/wallet-classic.png)
 
 	1. In the program menu, go to *Window* > *Console*. The debug console will open in a new window.
 	1. In the input field at the bottom, type in `listproposals`, then press the *Enter* key. To view proposals since a specific block, use `listproposals [BLOCK_NUMBER]` instead. Example: `listproposals 1209600`
 	1. A message showing all proposals will be returned.
-	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-qt-wallet).
+	1. [Vote on a proposal](proposal-voting.md#voting-from-the-qt-wallet).
 
 ---
 
@@ -101,7 +101,7 @@ Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"><
 
 			./blocknet-cli listproposals 1209600
 
-	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
+	1. [Vote on a proposal](proposal-voting.md#voting-from-the-terminal).
 
 
 ??? example "Windows"
@@ -132,7 +132,7 @@ Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"><
 
 			./blocknet-cli listproposals 1209600
 
-	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
+	1. [Vote on a proposal](proposal-voting.md#voting-from-the-terminal).
 
 
 ??? example "MacOS"
@@ -163,7 +163,7 @@ Easy to navigate        | <i class="fa fa-check"></i> | <i class="fa fa-check"><
 
 			./blocknet-cli listproposals 1209600
 
-	1. [Vote on a proposal](/governance/proposal-voting/#voting-from-the-terminal).
+	1. [Vote on a proposal](proposal-voting.md#voting-from-the-terminal).
 
 
 

@@ -5,7 +5,7 @@ description: This guide explains how to backup and restore your Blocknet wallet.
 
 ## Backup
 
-After your wallet is [encrypted](/wallet/encrypting), it should immediately be backed up. The file
+After your wallet is [encrypted](encrypting.md), it should immediately be backed up. The file
 called `wallet.dat` contains all the critical information for
 accessing your wallet, and that is the file which should be backed up
 (copied) to multiple physically different locations. For example, it
@@ -33,7 +33,7 @@ file is typically stored in the `wallets` subdirectory of your data directory:
        `./blocknet-cli stop` in the directory where `blocknet-cli`
        is located. Note, if your CLI wallet was set up on a Linux
        system according to the
-       [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+       [VPS Staking guide](staking.md#staking-from-cli-on-a-vps-running-ubuntu-linux),
        you can stop your CLI wallet from any directory with:
 		   ```
 		   blocknet-cli stop
@@ -66,7 +66,7 @@ file is typically stored in the `wallets` subdirectory of your data directory:
        `./blocknetd -daemon` in the directory where `blocknetd`
        is located. Note, if your CLI wallet was set up on a Linux
        system according to the
-       [VPS Staking guide](/wallet/staking/#staking-from-cli-on-a-vps-running-ubuntu-linux),
+       [VPS Staking guide](staking.md#staking-from-cli-on-a-vps-running-ubuntu-linux),
        you can restart your CLI wallet from any directory with:
 		   ```
 		   blocknet-daemon
@@ -89,7 +89,7 @@ If you are using the GUI/Qt wallet, one way to be certain to back up the
 correct `wallet.dat` file is to select the *File->Backup Wallet...*
 option in the GUI interface:
 
-![File Backup](/img/wallet/file-backup.png)
+![File Backup](../img/wallet/file-backup.png)
 
 This gives you the option to write a
 backup of your current `wallet.dat` to any location and give it any name.
@@ -105,7 +105,7 @@ format.
 ??? tip "Tip: Is my wallet an [HD Wallet](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp)? How do I find HD seed(s) in the `dumpfile`? How do I migrate to HD?"
 	In the lower right corner of the Qt/GUI wallet are some symbols
 	that look something like this:
-	![HD Wallet Indicator](/img/wallet/hd-wallet.png)
+	![HD Wallet Indicator](../img/wallet/hd-wallet.png)
 
 	If you see __HD__ there (not crossed out or greyed out), then your wallet is an
 	[HD Wallet](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp). Note:
@@ -125,7 +125,7 @@ format.
 	renaming the non-HD `wallet.dat` to something else, then restarting Blocknet
 	wallet (v4.0+). The full instructions for doing it this way are as follows:
 
-	1. [Locate](#cli-wallet-backup-option-also-works-for-guiqt-wallet)
+	1. [Locate](#cli-wallet-backup-options-also-works-for-guiqt-wallet)
        your current, non-HD `wallet.dat`.
 	1. Rename that `wallet.dat` to `wallet.dat.non-hd`.
 	1.  Restart Blocknet wallet (must be Blocknet wallet v4.0+).
@@ -183,7 +183,7 @@ directory where you have write permission.
 To restore a previously backed up `wallet.dat` file, follow these steps:
 
 1. If you haven't already done so,
-   [Install Blocknet Wallet](/wallet/installation) and [sync it](/wallet/syncing)
+   [Install Blocknet Wallet](installation.md) and [sync it](syncing.md)
 1. Close your Blocknet wallet application.
 1. Rename or move the `wallet.dat` file in your
 [data directory](#data-directory), if there is one.
@@ -203,7 +203,7 @@ placed in the `wallets` subdirectory if the Blocknet wallet app is going to find
 
 ### Restore from `dumpfile`
 
-Firstly, if you haven't already done so, [Install Blocknet Wallet](/wallet/installation) and [sync it](/wallet/syncing)
+Firstly, if you haven't already done so, [Install Blocknet Wallet](installation.md) and [sync it](syncing.md)
 
 Next, there are three options:
 

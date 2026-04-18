@@ -2,7 +2,7 @@ title: Service Node XCloud Configuration Guide
 description: This guide explains how to setup and configure your Service Node to support XCloud and earn additional fees.
 
 # XCloud Configuration Guide
-This guide explains how to setup and configure your Service Node to support XCloud. If you have not yet setup your Service Node, start with the [Service Node Setup Guide](/service-nodes/setup). Since XCloud is built on XRouter, you must also complete [XRouter configuration](/service-nodes/xrouter-configuration).
+This guide explains how to setup and configure your Service Node to support XCloud. If you have not yet setup your Service Node, start with the [Service Node Setup Guide](setup.md). Since XCloud is built on XRouter, you must also complete [XRouter configuration](xrouter-configuration.md).
 
 !!! warning "Note: XCloud requires a static IP"
   	For XCloud services, your Service Node Computer **IP address must remain unchanged** (static IP). If using a VPN with an IP that changes, it will impact your ability to provide XCloud services.
@@ -72,7 +72,7 @@ Note: The configuration file has a 2mb size limit.
 
 ### RPC
 !!! warning "Note: RPC Services also require *xbridge.conf* configuration."
-    To support SPV calls, you must also have your `xbridge.conf` file setup for each of the chains you wish to support and those wallets must remain open and running ([view XBridge setup guide](/service-nodes/xbridge-configuration)). If you already have this setup for XRouter SPV calls then you don't need to do anything extra unless you want to support additional chains.
+    To support SPV calls, you must also have your `xbridge.conf` file setup for each of the chains you wish to support and those wallets must remain open and running ([view XBridge setup guide](xbridge-configuration.md)). If you already have this setup for XRouter SPV calls then you don't need to do anything extra unless you want to support additional chains.
 
     For ETH, you will also need `JSONVersion=2.0` and `ContentType=application/json` added to the `[ETH]` entry in `xbridge.conf`. This applies to GETH and Parity clients.
 

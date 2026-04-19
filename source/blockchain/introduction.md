@@ -101,7 +101,7 @@ Circulation Lockup       | Average lockup is ~45% due to Service Node collateral
 ---
 
 ## Scaling
-The Blocknet Protocol is fast and the capacity of the protocol increases with its user base. Since order broadcast and order matching are completely decentralized, there are no bottlenecks other than the ones which lie with users, namely their local internet connections. In addition though, there is a shared capacity in the broadcasting system, which is extremely high. Here is a [relevant quotation from a Bitcoin wiki](https://en.bitcoin.it/wiki/Scalability#Scalability_targets): 
+The Blocknet Protocol is fast and the capacity of the protocol increases with its user base. Since order broadcast and order matching are completely decentralized, there are no bottlenecks other than the ones which lie with users, namely their local internet connections. In addition though, there is a shared capacity in the broadcasting system, which is extremely high. Here is a relevant quotation from a Bitcoin wiki: 
 
 ???+ quote "Bitcoin Wiki"
 	Let's assume an average rate of 2000tps, so just VISA. Transactions vary in size from about 0.2 kilobytes to over 1 kilobyte, but it's averaging half a kilobyte today. 

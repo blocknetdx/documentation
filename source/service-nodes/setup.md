@@ -18,8 +18,6 @@ Operating as a Service Node requires two Blocknet wallets:
 
 	1. [Hardware Requirements](#hardware-requirements) — check your server specs
 	2. [Collateral Wallet Setup](#collateral-wallet-setup) — create address, fund it, configure SN, enable staking
-	3. [Register and Verify](#register-and-verify) — wait for sync, register on network, verify status
-	4. [Troubleshooting](#troubleshooting) — common issues and fixes
 
 	**Then choose your deployment method:**
 
@@ -28,14 +26,16 @@ Operating as a Service Node requires two Blocknet wallets:
 		2. [Run the Install Script](#run-the-install-script)
 		3. [Run the Builder](#run-the-builder)
 		4. [Deploy](#deploy)
+		5. [Register and Verify (Docker)](#register-and-verify-dockerexr)
 
 	??? link "Option B: Manual Setup (No Docker)"
-		1. [Collateral Wallet (Manual)](#collateral-wallet-manual)
-		2. [Service Node Wallet (Manual)](#service-node-wallet-manual)
-		3. [Deploy (Manual)](#deploy-manual)
+		1. [Service Node Wallet (Manual)](#service-node-wallet-manual)
+		2. [Deploy (Manual)](#deploy-manual)
+		3. [Register and Verify (Manual)](#register-and-verify-manual)
 
 	**After setup (both paths):**
 
+	* [Troubleshooting](#troubleshooting) — common issues and fixes
 	* [Maintenance](#maintenance) — managing services, Docker basics, co-location
 	* [Quick Reference](#quick-reference) — command cheat sheet
 
@@ -43,7 +43,7 @@ Operating as a Service Node requires two Blocknet wallets:
 
 - [ ] Acquire hardware meeting the [minimum requirements](#hardware-requirements) below
 - [ ] Set up an Ubuntu 20.04+ LTS server (or use an existing VPS)
-- [ ] Obtain 5001+ BLOCK for collateral (5000 for SN + 1 for voting + fees)
+- [ ] Obtain 5001+ BLOCK for collateral (5000 for SN + 1 extra for voting/spending)
 - [ ] Download and install the latest Blocknet wallet on a local machine for collateral management
 
 ## Prerequisites
@@ -97,15 +97,12 @@ Operating as a Service Node requires two Blocknet wallets:
 | Requirement | Amount | Notes |
 |-------------|--------|-------|
 | Service Node collateral | 5000 BLOCK | Must not be moved while SN is active |
-| Voting input (recommended) | 1 BLOCK | Enables Superblock voting |
-| Transaction fees | ~0.1 BLOCK | For collateral creation |
-| **Total needed** | **~5001.1 BLOCK** | Per Service Node |
+| **Recommended total** | **5001+ BLOCK** | Extra BLOCK covers voting/spending without dropping below 5000 |
 
 ???+ note "Collateral Address Rules"
+    - All inputs (collateral + extra) go to the **same address** as separate UTXOs
     - Maximum 10 inputs contributing to the 5000 BLOCK requirement
-    - Voting input (1 BLOCK) must be *separate* from the 5000 BLOCK inputs
-    - Each input must be >= 500 BLOCK and <= 5000 BLOCK
-    - With a 5000 BLOCK target and 500 BLOCK minimum per input, you need at least 10 inputs (5000 / 500 = 10)
+    - Each collateral input must be >= 500 BLOCK and <= 5000 BLOCK
 
 ## Collateral Wallet Setup
 
@@ -129,14 +126,14 @@ This returns a new address (e.g., `BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP`). **Save 
 
 ### Fund the Collateral Address
 
-Send BLOCK to your collateral address to meet the 5000 BLOCK requirement.
+Send BLOCK to your collateral address. You need 5001+ BLOCK total (5000 for collateral + 1 extra for voting/spending flexibility).
 
 **Recommended: Manual Funding**
 
-1. Send 1 BLOCK to the collateral address (for voting eligibility)
-2. Send BLOCK in amounts of 500-5000 BLOCK until the sum reaches 5000 BLOCK
+1. Send 1 BLOCK to the collateral address (extra UTXO for voting/spending)
+2. Send BLOCK in amounts of 500-5000 BLOCK until the collateral sum reaches 5000 BLOCK
 
-*Example:* Send 1 BLOCK, then 1250 BLOCK four times = 5001 BLOCK total across 5 inputs.
+*Example:* Send 1 BLOCK, then 1250 BLOCK four times = 5001 BLOCK total across 5 inputs on the same address.
 
 **Alternative: `servicenodecreateinputs` Tool**
 
@@ -271,7 +268,7 @@ This installs Docker, creates `~/exrproxy-env`, and logs you out. **Log back in*
 
     **XBridge SPV chains** — Select blockchains to support as XBridge services. Each shows approximate RAM, CPU, and disk requirements.
 
-    **EVM blockchains, XQuery indices, Pricing & Payment discounts** — Leave **unchecked**. Select EVM chains, XQuery indices, configure Pricing (USD per 6M API calls) and Payment discounts (aBLOCK, aaBLOCK, sysBLOCK).
+    **EVM blockchains, XQuery indices, Pricing & Payment discounts** — Leave **unchecked**. Select EVM chains, XQuery indices, configure Pricing (USD per 6M API calls) and Payment discounts (sysBLOCK).
 
     **UTXO_PLUGIN service** — Requires ~2-6 GB RAM per container, around 200 GB disk for all supported coins. No financial reward yet but used to provide XLite clients with chains data.
 
@@ -349,13 +346,13 @@ Alternatively, combine configuration and deployment:
 
 Docker containers will launch for all selected services.
 
-## Register and Verify
+### Register and Verify (Docker/EXR)
 
-Complete these steps after your EXR containers are running. The commands differ slightly depending on whether you used the Docker/EXR deployment or the [manual setup](#alternative-manual-setup-without-docker).
+Complete these steps after your EXR containers are running.
 
-### Wait for Sync
+#### Wait for Sync (Docker)
 
-After deployment, the Blocknet blockchain in your SNode container needs 3.5+ hours to sync. Monitor progress:
+After deployment, the Blocknet blockchain in your SNode container needs time to sync. Monitor progress:
 
 ```bash
 docker exec exrproxy-env-snode-1 blocknet-cli getblockcount
@@ -370,7 +367,7 @@ docker exec exrproxy-env-snode-1 blocknet-cli getblockcount
 
 Initial calls may return errors until headers sync — this is normal.
 
-### Register on the Network
+#### Register on the Network (Docker)
 
 When your container's block count matches the [Blocknet blockchain explorer](https://chainz.cryptoid.info/block/):
 
@@ -413,45 +410,13 @@ The Docker-based EXR setup above is the recommended approach. If you prefer not 
 
 Steps 1-4 above ([Collateral Wallet Setup](#collateral-wallet-setup)) are identical for both approaches. The steps below cover the manual-specific configuration.
 
-### Collateral Wallet (Manual)
-
-**Using the Redesign GUI Wallet:**
-
-1. [Install the Blocknet wallet](../wallet/installation.md).
-2. [Fully sync the wallet](../wallet/syncing.md).
-3. [Encrypt the wallet](../wallet/encrypting.md).
-
-    !!! note ""
-        If your BLOCK funds are on a different wallet, send 5000+ BLOCK (plus 1 BLOCK extra for fees) to this collateral wallet first.
-
-4. Select *Tools* > *Debug Console*. Type `getnewaddress [ALIAS]` to create a new address.
-    ```bash
-    getnewaddress snode01
-    ```
-5. Press Enter. The command returns a new address — save it.
-6. Create collateral inputs using `servicenodecreateinputs` (see [Fund the Collateral Address](#fund-the-collateral-address) for examples).
-7. Prepare `servicenode.conf` by deleting any old version or out-of-date entries in your [data directory](../wallet/backup-restore.md#data-directory).
-8. Create the configuration entry:
-    ```bash
-    servicenodesetup BmpZVb522wYmryYLDy6EckqGN4g8pT6tNP snode01
-    ```
-9. Export the configuration:
-    ```bash
-    servicenodeexport snode01 supersecretpassword
-    ```
-10. Copy the returned hash — you'll need it for the Service Node wallet.
-11. Restart the wallet.
-12. Continue to [Service Node Wallet Setup](#service-node-wallet-manual).
-
-**Using the Classic GUI Wallet:** Same steps as above, except go to *Window* > *Console* instead of *Tools* > *Debug Console*.
-
 ### Service Node Wallet (Manual)
 
 **Using the Redesign GUI Wallet:**
 
 1. [Install the Blocknet wallet](../wallet/installation.md).
-2. [Fully sync the wallet](../wallet/syncing.md). Encryption is not needed since this wallet will not hold funds.
-3. --8<-- "data-directories-1.md"
+2. [Fully sync the wallet](../wallet/syncing.md). This is the Core wallet application used for registration and service exposure — it does not hold funds.
+3. Navigate to [data directory](../wallet/backup-restore.md#data-directory)
 4. Open the `blocknet.conf` configuration file and add:
     ```
     server=1
@@ -511,7 +476,7 @@ Steps 1-4 above ([Collateral Wallet Setup](#collateral-wallet-setup)) are identi
 13. Save and close `xbridge.conf`.
 14. Open *Tools* > *Debug Console* and import the configuration:
     ```bash
-    servicenodeimport [EXPORTED_HASH] [ENCRYPTION_PASSWORD]
+    servicenodeimport <EXPORTED_HASH> <ENCRYPTION_PASSWORD>
     ```
 15. You should receive `true`, confirming `servicenode.conf` was created.
 16. Restart the wallet.
@@ -527,17 +492,21 @@ Steps 1-4 above ([Collateral Wallet Setup](#collateral-wallet-setup)) are identi
 3. Fully sync the wallet.
 4. **This wallet must stay running.** If closed and you've staked a block since, you must re-register from the Collateral Wallet.
 
-**On the Collateral Wallet:**
+Once synced, continue to [Register and Verify (Manual)](#register-and-verify-manual) below.
+
+### Register and Verify (Manual)
+
+**On your Collateral Wallet:**
 
 1. Start (or restart) the Blocknet Collateral wallet and fully sync.
 2. Wait for all collateral inputs to have at least 2 confirmations (~2 minutes).
 3. Open the debug console and register:
     ```bash
-    servicenoderegister [ALIAS]
+    servicenoderegister <ALIAS>
     ```
     Omit `[ALIAS]` to register all known Service Nodes.
 
-**On the Service Node Wallet (send ping):**
+**On your Service Node Wallet (send ping):**
 
 1. Open the debug console and type:
     ```bash
@@ -545,7 +514,7 @@ Steps 1-4 above ([Collateral Wallet Setup](#collateral-wallet-setup)) are identi
     ```
     You should see `"status": "running"` with a list of hosted services.
 
-**On the Service Node Wallet (check status):**
+**On your Service Node Wallet (check status):**
 
 1. Open the debug console and type:
     ```bash
@@ -561,7 +530,8 @@ Steps 1-4 above ([Collateral Wallet Setup](#collateral-wallet-setup)) are identi
     ```
     Your Service Node should appear with `"status": "running"`.
 
-2. The Collateral Wallet can now be closed if you're not voting or staking.
+    !!! note "Cleanup"
+        The Collateral Wallet can now be closed if you're not voting or staking.
 
 ---
 
@@ -704,7 +674,7 @@ Then update aliases in `~/.bash_aliases` to use `-datadir=$HOME/.blocknet_stakin
 
 - Verify disk space: `sudo du -d 1 -h /snode` (Docker) or check the wallet's data directory.
 - Check network connectivity to Blocknet peers.
-- Initial sync takes 3.5+ hours — be patient.
+- Sync time varies based on hardware and SPV wallet selection — be patient.
 - If stuck, try restarting the container or wallet.
 
 ### Docker Container Keeps Restarting

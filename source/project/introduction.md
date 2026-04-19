@@ -57,7 +57,7 @@ In supply chain, there will be multiple blockchains being used at various steps 
 ## Project History
 Blocknet was created on October 20th, 2014. A week later, from October 29th, 2014 until November 5th, 2014 an initial trade [offering was held on Bittrex](http://digitalmoneytimes.com/blocknet-ito-token-sale-is-a-success-sale-numbers-revealed/). In the initial trade offering, 3,876,915.43 [BLOCK](../blockchain/introduction.md) was sold at a price of 0.00025 BTC per BLOCK. There was 369 BTC sold plus altcoins, for a combined total of 969 BTC worth. The price of BTC on November 5th, 2014 was around $335, bringing the total value to $325,000.
 
-The founding team then set out to conduct research on how to best conduct [atomic swaps](https://en.bitcoin.it/wiki/Atomic_swap) and develop an interoperability protocol that is not only decentralized, but also trustless. 
+The founding team then set out to conduct research on how to best conduct and develop an interoperability protocol that is not only decentralized, but also trustless. 
 
 You can view the history of milestones completed on [the project's roadmap](https://blocknet.org/roadmap).
 

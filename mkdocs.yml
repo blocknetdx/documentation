@@ -12,101 +12,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
 extra:
-  head:
-    - type: link
-      attrs:
-        - rel: profile
-          href: http://gmpg.org/xfn/11
-    - type: meta
-      attrs:
-        - name: theme-color
-          content: '#dddfeb'
-    - type: link
-      attrs:
-        - rel: shortlink
-          href: '{{ config.site_url }}'
-    - type: link
-      attrs:
-        - rel: dns-prefetch
-          href: //www.blocknet.co
-    - type: link
-      attrs:
-        - rel: apple-touch-icon
-          sizes: 180x180
-          href: /img/apple-touch-icon.png
-    - type: link
-      attrs:
-        - rel: icon
-          type: image/png
-          sizes: 32x32
-          href: /img/favicon-32x32.png
-    - type: link
-      attrs:
-        - rel: icon
-          type: image/png
-          sizes: 16x16
-          href: /img/favicon-16x16.png
-    - type: link
-      attrs:
-        - rel: mask-icon
-          href: https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg
-          color: '#051937'
-    - type: meta
-      attrs:
-        - name: msapplication-TileColor
-          content: '#dddfeb'
-    - type: meta
-      attrs:
-        - property: og:locale
-          content: en_US
-    - type: meta
-      attrs:
-        - property: og:type
-          content: website
-    - type: meta
-      attrs:
-        - property: og:title
-          content: >-
-            {{ (page.meta.title if page and page.meta and page.meta.title else (page.title ~ ' - ' if page and page.title else '') ~ config.site_name) }}
-    - type: meta
-      attrs:
-        - property: og:description
-          content: >-
-            {{ page.meta.description if page and page.meta and page.meta.description else config.site_description }}
-    - type: meta
-      attrs:
-        - property: og:url
-          content: '{{ config.site_url }}'
-    - type: meta
-      attrs:
-        - property: og:site_name
-          content: '{{ config.site_name }}'
-    - type: meta
-      attrs:
-        - property: og:image
-          content: /img/blocknet.png
-    - type: meta
-      attrs:
-        - property: og:image:secure_url
-          content: /img/blocknet.png
-    - type: meta
-      attrs:
-        - name: twitter:card
-          content: summary_large_image
-    - type: meta
-      attrs:
-        - name: twitter:description
-          content: >-
-            {{ page.meta.description if page and page.meta and page.meta.description else config.site_description }}
-    - type: meta
-      attrs:
-        - name: twitter:title
-          content: >-
-            {{ (page.meta.title if page and page.meta and page.meta.title else (page.title ~ ' - ' if page and page.title else '') ~ config.site_name) }}
-    - type: meta
-      attrs:
-        - name: twitter:image
-          content: /img/blocknet.png
   social:
     - icon: material/email
       link: 'mailto:contact@blocknet.co'
@@ -131,12 +36,8 @@ extra:
     - icon: material/linkedin
       link: 'https://www.linkedin.com/company/the-blocknet/'
   snode_collateral: '5000'
-  proposal_link: 'http://blocknetdx.forumotion.com/f3-self-funding-proposals'
-  newsletter_general: 'http://eepurl.com/c5OJMj'
-  newsletter_snodes: 'http://eepurl.com/dq-ElD'
-  newsletter_developers: 'http://eepurl.com/dDjhYH'
   discord: 'https://discord.gg/vGa7GeCu8B'
-  blockdx_releases: 'https://github.com/blocknetdx/blockdx-ui/releases'
+  blockdx_releases: 'https://github.com/blocknetdx/block-dx/releases'
   docs_repo: 'blocknetdx/documentation'
 site_url: 'https://docs.blocknet.org/'
 repo_url: 'https://github.com/blocknetdx/documentation'
@@ -144,6 +45,7 @@ repo_name: 'blocknetdx/documentation'
 edit_uri: '/blocknetdx/documentation/edit/master/docs/'
 markdown_extensions:
   - codehilite
+  - pymdownx.tilde
   - markdown.extensions.footnotes
   - markdown.extensions.admonition
   - pymdownx.details
@@ -160,6 +62,7 @@ markdown_extensions:
 extra_javascript:
   - js/main.js
 extra_css:
+  - css/font-awesome.css
   - css/fonts.css
   - css/style.css
 nav:
@@ -167,7 +70,7 @@ nav:
 # - 'Dashboard': 'dashboard.md'
 - 'Project':
   - 'Introduction': 'project/introduction.md'
-  - 'Exchanges': 'project/exchanges.md'
+  # - 'Exchanges': 'project/exchanges.md'
   - "Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-whitepaper.pdf'
   - 'Roadmap': 'project/roadmap.md'
   - 'Governance': 'governance/introduction.md'
@@ -179,8 +82,7 @@ nav:
   - 'Introduction': 'blockchain/introduction.md'
   # - 'Tokenomics': 'blockchain/tokenomics.md'
   - 'Exchanges': 'project/exchanges.md'
-  # - 'aaBLOCK': 'blockchain/aablock.md'
-  # - 'aBLOCK': 'blockchain/ablock.md'
+ 
   - 'Explorers': 'blockchain/explorers.md'
 - 'Protocol':
   - 'XBridge':
@@ -193,12 +95,17 @@ nav:
     - 'Setup': 'protocol/xbridge/setup.md'
   - 'XRouter':
     - 'Introduction': 'protocol/xrouter/introduction.md'
+    - 'Fees': 'protocol/xrouter/introduction/#fees'
+    - 'Design': 'protocol/xrouter/introduction/#design'
     # - 'Compatibility': 'protocol/xrouter/compatibility.md'
     # - 'Standards': 'protocol/xrouter/standards.md'
-    # - 'Use Cases': 'protocol/xrouter/introduction/#use-cases'
+    - 'Use Cases': 'protocol/xrouter/introduction/#use-cases'
     # - 'Setup': 'protocol/xrouter/setup.md'
   - 'XCloud':
     - 'Introduction': 'protocol/xcloud/introduction.md'
+    - 'Fees': 'protocol/xrouter/introduction/#fees'
+    - 'Design': 'protocol/xrouter/introduction/#design'
+    # - 'Use Cases': 'protocol/xrouter/introduction/#use-cases'
     # - 'Compatibility': 'protocol/xcloud/compatibility.md'
   # - "Use Cases <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/blocknet-business-use-cases.pdf'
   - "API Docs <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://api.blocknet.org/'
@@ -268,8 +175,7 @@ nav:
   - 'Proposal Voting': 'governance/proposal-voting.md'
 - 'Resources':
   - 'Interviews': 'resources/interviews.md'
-  - "Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://blocknet.co/brand-resources/'
-  # - "Graphics Library <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://drive.google.com/drive/folders/13Mke43Y0Lrc2SBTbSTOV71U4Jgjj9V75'
+  - "Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>": 'https://blocknet.org/brand-resources/'
   - "Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>": 'project/social-media-guidelines.pdf'
 # - 'Tools': 'tools.md'
 - 'Developers':

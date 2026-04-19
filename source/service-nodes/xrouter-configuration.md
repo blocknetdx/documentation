@@ -125,7 +125,7 @@ xrSendTransaction       | Submit a signed transaction to the network
     * Example: `wallets=SYS,BLOCK,BTC,ETH,MNP`
 1. If you added or removed blockchain support, make sure to also update the `rpcthreads=` value in the `blocknet.conf` file.
 1. Use `xrReloadConfigs` to load your newly configured settings to `xrouter.conf` without needing to restart your Service Node.
-1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
+1. Use `servicenodesendping` to propagate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
 1. You can view your configs using `xrStatus`.
 
 ---

@@ -78,7 +78,7 @@ Depending on the context, *client* refers either to hardware running the Blockne
 *Coin* and *token* refers to [digital assets](#digital-asset).
 
 #### Coin Control
-[Coin Control](/wallet/send-funds/#coin-control) gives the ability to break up or combine [inputs](#input). This is comparable to going to a bank and exchanging a bunch of smaller bills for a $50 bill or breaking a larger bills for smaller denominations. Using [Coin Control](/wallet/send-funds/#coin-control) you can also choose to select specific inputs, addresses, and [change addresses](#change-address) to use for transactions.
+[Coin Control](../wallet/send-funds.md#coin-control) gives the ability to break up or combine [inputs](#input). This is comparable to going to a bank and exchanging a bunch of smaller bills for a $50 bill or breaking a larger bills for smaller denominations. Using [Coin Control](../wallet/send-funds.md#coin-control) you can also choose to select specific inputs, addresses, and [change addresses](#change-address) to use for transactions.
 
 #### Confirmation
 When transactions are made, the transactions must go through a *confirmation* process, which validates the transaction to make sure it is authentic. Funds that are being confirmed cannot be used until 60 confirmations (about 60 minutes). 
@@ -125,10 +125,10 @@ Here are architectural diagrams of the *current* and *future* versions of
 details of an *Enterprise XRouter* and its relationship to a
 [Hydra](#hydra) Service Node:
 
-![Current Hydra](/img/resources/current-hydra.png) 
-![Future Hydra](/img/resources/future-hydra.png) 
+![Current Hydra](../img/resources/current-hydra.png) 
+![Future Hydra](../img/resources/future-hydra.png) 
 
-See [this guide](/service-nodes/setup/#service-node-setup) to learn about
+See [this guide](../service-nodes/setup.md#service-node-setup) to learn about
 hosting Blocknet's XQuery and Hydra services on a Service Node.
 
 #### EVM
@@ -141,7 +141,7 @@ EXR stands for *Enterprise XRouter*. See [Enterprise XRouter](#enterprise-xroute
 
 #### EXR ENV
 EXR ENV stands for *Enterprise XRouter Environment* - an environment
-set up by running the [Global Install Script for Enterprise XRouter Environment](/service-nodes/setup/#run-global-install-script-for-enterprise-xrouter-environment).
+set up by running the [Global Install Script for Enterprise XRouter Environment](../service-nodes/setup.md#run-the-install-script).
 
 ---
 
@@ -181,10 +181,10 @@ hosted EVM blockchains.
 These architectural diagrams illustrate the implementation
 details of a Hydra Service Node:
 
-![Current Hydra](/img/resources/current-hydra.png) 
-![Future Hydra](/img/resources/future-hydra.png) 
+![Current Hydra](../img/resources/current-hydra.png) 
+![Future Hydra](../img/resources/future-hydra.png) 
 
-See [this guide](/service-nodes/setup/#service-node-setup) to learn about
+See [this guide](../service-nodes/setup.md#service-node-setup) to learn about
 hosting Blocknet's XQuery and Hydra services on a Service Node.
 
 ---
@@ -206,7 +206,7 @@ same payment mechanism, the same reverse proxy services, and the same
 hosted EVM blockchains, a Service
 Node set up to provide XQuery services can easily be configured to
 also provide [Hydra](#hydra) services.  See
-[this guide](/service-nodes/setup/#service-node-setup) to learn about
+[this guide](../service-nodes/setup.md#service-node-setup) to learn about
 hosting Blocknet's XQuery and Hydra services on a Service Node.
 
 #### Input
@@ -313,7 +313,7 @@ A *naked node* is a [Service Node](#service-node) that does not run any [xwallet
 *Proposals* are requests for funding for contributions to the Blocknet ecosystem. Each
 [Superblock](#superblock) period, new proposals are submitted and
 BLOCK holders can cast 1 vote on these proposals for every 5000 BLOCK
-they own. See details [here](/governance/introduction)
+they own. See details [here](../governance/introduction.md)
 
 
 
@@ -343,7 +343,7 @@ A *reward* refers to a payment earned for providing a service.
 ---
 
 #### Service Node
-*Service Nodes* provide services to the Blocknet [network](#network). Read about Service Nodes [here](/service-nodes/introduction)
+*Service Nodes* provide services to the Blocknet [network](#network). Read about Service Nodes [here](../service-nodes/introduction.md)
 
 #### Snode
 *Snode* is a short-hand term to refer to a [Service Node](#service-node).

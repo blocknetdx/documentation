@@ -2,13 +2,13 @@ title: Using BlockDX w/ XLite
 description: This page gives hints on how to use BlockDX with XLite.
 
 ## Configure BlockDX for XLite
-After you have [configured BlockDX to connect to XLite](/blockdx/configuration/), you are now ready to trade XLite assets in BlockDX. Below are a few hints you may find helpful.
+After you have [configured BlockDX to connect to XLite](../blockdx/configuration.md), you are now ready to trade XLite assets in BlockDX. Below are a few hints you may find helpful.
 
 ---
 ## Expand XLite Window Size
 When XLite is open to the Dashboard in a large enough window, it should look something
 like this:
-![XLite Dashboard](/img/xlite/dashboard.png)
+![XLite Dashboard](../img/xlite/dashboard.png)
 If you don't see the circular *Portfolio* graph and the *Latest
 Transactions* listed below it, you can expand the size of the XLite window
 until they appear.
@@ -19,16 +19,16 @@ until they appear.
 BlockDX requires you to fill in two addresses in the ORDER FORM before
 you are can place a trade. One is the address to which the
 asset you're acquiring will be sent. The other is the
-[change address](/resources/glossary/#change-address) to which the
+[change address](../resources/glossary.md#change-address) to which the
 leftover change from the transaction will be sent.
 
 For Example, an ORDER FORM to *Buy BLOCK*, paying for it with *LTC*, looks like this:
 
-![Order Form](/img/blockdx/make-order.png)
+![Order Form](../img/blockdx/make-order.png)
 
 In this example, the *BLOCK Address* is the address where the BLOCK
        you'll buy will be sent, and the *LTC Address* is the
-       [change address](/resources/glossary/#change-address) where LTC
+       [change address](../resources/glossary.md#change-address) where LTC
        change from the transaction will be sent. Lets also assume in
        this example that both your BLOCK and LTC wallets are
        within XLite. If you don't mind having funds sent to new/empty addresses in your
@@ -46,11 +46,11 @@ In this example, the *BLOCK Address* is the address where the BLOCK
 ??? example "Find Funded BLOCK address within XLite"
 
 	1. Open XLite wallet to reveal a screen like this:
-	![XLite Dashboard](/img/xlite/dashboard.png)
+	![XLite Dashboard](../img/xlite/dashboard.png)
 	1. Click *Transactions* in the upper left area of the screen to reveal this screen:
-	![XLite Transactions](/img/xlite/transactions.png)
+	![XLite Transactions](../img/xlite/transactions.png)
 	1. Click *Unspent* in the upper right area of the screen to reveal this screen:
-	![XLite Unspent Blocknet](/img/xlite/unspent-blocknet.png)
+	![XLite Unspent Blocknet](../img/xlite/unspent-blocknet.png)
 	1. On this screen you can see if you already have some funded BLOCK addresses in XLite. (Note, you can limit the assets displayed
 	on this screen to  __*only*__ Blocknet (BLOCK) by selecting *Blocknet* in
 	the lower left area of the screen.)
@@ -65,11 +65,11 @@ In this example, the *BLOCK Address* is the address where the BLOCK
 ??? example "Find Funded LTC address within XLite"
 
 	1. Open XLite wallet to reveal a screen like this:
-	![XLite Dashboard](/img/xlite/dashboard.png)
+	![XLite Dashboard](../img/xlite/dashboard.png)
 	1. Click *Transactions* in the upper left area of the screen to reveal this screen:
-	![XLite Transactions](/img/xlite/transactions.png)
+	![XLite Transactions](../img/xlite/transactions.png)
 	1. Click *Unspent* in the upper right area of the screen to reveal this screen:
-	![XLite Unspent](/img/xlite/unspent.png)
+	![XLite Unspent](../img/xlite/unspent.png)
 	1. On this screen you can see if you already have  some funded LTC
 	addresses in XLite. (Note, you can limit the assets displayed
 	on this screen to  __*only*__ Litecoin (LTC) by selecting *Litecoin* in

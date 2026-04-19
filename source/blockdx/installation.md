@@ -2,7 +2,7 @@ title: Block DX Installation Guide
 description: This guide explains the process for installing Block DX, a decentralized exchange dApp powered by the Blocknet Protocol.
 
 # Block DX Installation
-[Block DX](/blockdx/introduction) is a decentralized exchange dApp powered by the Blocknet Protocol. Installing the Block DX is a simple process. Below are step-by-step instructions for how to install on each operating system (OS). If you already have Block DX installed and are updating, see the updating guide. For a complete guide on setting up Block DX, see the [Block DX setup guide](/blockdx/setup).
+[Block DX](introduction.md) is a decentralized exchange dApp powered by the Blocknet Protocol. Installing the Block DX is a simple process. Below are step-by-step instructions for how to install on each operating system (OS). If you already have Block DX installed and are updating, see the updating guide. For a complete guide on setting up Block DX, see the [Block DX setup guide](setup.md).
 
 ---
 
@@ -16,7 +16,7 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. `BLOCK-DX-x.x.x-win-x64.zip`
 		1. `BLOCK-DX-x.x.x-win-ia32.zip`
 
-	1. Before continuing, it is recommended to [verify your download](/blockdx/installation/#verifying-downloads) 
+	1. Before continuing, it is recommended to [verify your download](#verifying-downloads) 
 	1. Continue to the instructions below for the download you selected:
 
 	??? example "Using the `.exe` download (option a)"
@@ -24,7 +24,7 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. Double-click the file to begin the installation process.
 		1. Read the License Agreement and select *Accept* to acknowledge.
 
-			![License](/img/blockdx/license-agreement.png)
+			![License](../img/blockdx/license-agreement.png)
 
 		--8<-- "complete-blockdx-installation.md"
 
@@ -32,18 +32,18 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Right-click the file, select *Extract All*.
 
-			![Extract](/img/blockdx/win-extract.jpg)
+			![Extract](../img/blockdx/win-extract.jpg)
 
 		1. Select *Extract*.
 		1. After the files are extracted, a new folder should open with the contents. If a folder did not open, look for the new folder in the directory the downloaded file is located.
 		1. Here you will find the `BLOCK DX` executable file.
 
-			![Exectuable](/img/blockdx/win-executable.jpg)
+			![Exectuable](../img/blockdx/win-executable.jpg)
 
 		1. Double-click the `BLOCK DX` file to begin the installation process.
 		1. Read the License Agreement and select *Accept* to acknowledge.
 
-			![License](/img/blockdx/license-agreement.png)
+			![License](../img/blockdx/license-agreement.png)
 
 		--8<-- "complete-blockdx-installation.md"
 
@@ -53,7 +53,7 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. `BLOCK-DX-x.x.x-mac.dmg` (recommended)
 		1. `BLOCK-DX-x.x.x-mac.zip`
 
-	1. Before continuing, it is recommended to [verify your download](/blockdx/installation/#verifying-downloads) 
+	1. Before continuing, it is recommended to [verify your download](#verifying-downloads) 
 	1. Continue to the instructions below for the download you selected:
 
 	??? example "Using the `.dmg` download (option a)"
@@ -61,29 +61,29 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. Double-click the file to begin installation.
 		1. Click and drag the *BLOCK DX* application icon over to the *Applications* folder and release.
 			
-			![Copy](/img/blockdx/mac-copy.png)
+			![Copy](../img/blockdx/mac-copy.png)
 
 		1. If you are prompted with a message asking if you would like to replace an existing version with a newer version, select *Replace*.
 
-			![Replace](/img/blockdx/mac-replace.png)
+			![Replace](../img/blockdx/mac-replace.png)
 
 		1. Open *Finder*, navigate to *Applications*, and find *Blocknet* in the list of applications.
 		1. Right-click the file and select *Open*. If using the touch pad this can be done by clicking with 2 fingers.
 
-			![Open](/img/blockdx/mac-open.png)
+			![Open](../img/blockdx/mac-open.png)
 
 		1. If you are prompted with a message asking if you are sure you want to open the application, select *Open*.
 
-			![Opening](/img/blockdx/mac-open-confirm.png)
+			![Opening](../img/blockdx/mac-open-confirm.png)
 
 	        ???+ info "Note: If you see a message like the one below instead of the one above, click *OK* and repeat step 6 above."
-			![Finder](/img/blockdx/mac-open-confirm-extra-step.png)
+			![Finder](../img/blockdx/mac-open-confirm-extra-step.png)
 
 
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. Read the License Agreement and select *Accept* to acknowledge.
 
-			![License](/img/blockdx/license-agreement.png)
+			![License](../img/blockdx/license-agreement.png)
 
 		--8<-- "complete-blockdx-installation.md"
 
@@ -93,22 +93,22 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. Click and drag the *BLOCK DX* application over to the *Applications* folder and release. This will add it to *Applications*.
 		1. If you are prompted with a message asking if you would like to replace an existing version with a newer version, select *Replace*.
 
-			![Replace](/img/blockdx/mac-replace.png)
+			![Replace](../img/blockdx/mac-replace.png)
 
 		1. The downloaded file may now be removed.
 		1. In *Finder*, navigate to *Applications*, and find *BLOCK-DX* in the list of applications.
 		1. Right-click the file and select *Open*. If using the touch pad this can be done by clicking with 2 fingers.
 
-			![Open](/img/blockdx/mac-open.png)
+			![Open](../img/blockdx/mac-open.png)
 
 		1. If you are prompted with a message asking if you are sure you want to open the application, select *Open*.
 
-			![Opening](/img/blockdx/mac-open-confirm.png)
+			![Opening](../img/blockdx/mac-open-confirm.png)
 
 		1. Your computer will begin verifying the application. This may take a few minutes to complete.
 		1. Read the License Agreement and select *Accept* to acknowledge.
 
-			![License](/img/blockdx/license-agreement.png)
+			![License](../img/blockdx/license-agreement.png)
 
 		--8<-- "complete-blockdx-installation.md"
 
@@ -118,50 +118,50 @@ description: This guide explains the process for installing Block DX, a decentra
 		1. `BLOCK-DX-x.x.x-linux.deb` (recommended)
 		1. `BLOCK-DX-x.x.x-linux.tar.gz` (Gzip archive)
 		1. `BLOCK-DX-x.x.x-linux-x86_64.AppImage` (For Fedora Linux)
-	1. Before continuing, it is recommended to [verify your download](/blockdx/installation/#verifying-downloads) 
+	1. Before continuing, it is recommended to [verify your download](#verifying-downloads) 
 	1. Continue to the instructions below for the download you selected:
 
 	??? example "Using the `.deb` download (option a)"
 		1. You may be asked for a confirmation to download, select *Save File* then *OK*.
 
-			![Save](/img/blockdx/linux-save-deb.jpg)
+			![Save](../img/blockdx/linux-save-deb.jpg)
 
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Double-click the file to open the installation screen.
 
-			![Install](/img/blockdx/linux-install.jpg)
+			![Install](../img/blockdx/linux-install.jpg)
 
 		1. Select *Install*. 
 		1. You may be asked to enter your account password.
 
-			![Password](/img/blockdx/linux-password.jpg)
+			![Password](../img/blockdx/linux-password.jpg)
 
 		1. The installation process may take a few minutes.
 		1. Read the License Agreement and select *Accept* to acknowledge.
 
-			![License](/img/blockdx/license-agreement.png)
+			![License](../img/blockdx/license-agreement.png)
 
 		--8<-- "complete-blockdx-installation.md"
 
 	??? example "Using the `.tar.gz` download (option b)"
 		1. You may be asked for a confirmation to download, select *Save File* then *OK*.
 
-			![Save](/img/blockdx/linux-save-tar.jpg)
+			![Save](../img/blockdx/linux-save-tar.jpg)
 
 		1. Find the downloaded file. The default location is in *Downloads*.
 		1. Right-click the file, select *Extract Here*.
 
-			![Extract](/img/blockdx/linux-extract.jpg)
+			![Extract](../img/blockdx/linux-extract.jpg)
 
 		1. Double-click the `BLOCK-DX-x.x.x-linux/` folder to view the contents.
 		1. Here you will find the `block-dx` executable file.
 
-			![Exectuable](/img/blockdx/linux-executable.jpg)
+			![Exectuable](../img/blockdx/linux-executable.jpg)
 
 		1. Double-click the `block-dx` file to install.
 		1. Read the License Agreement and select *Accept* to acknowledge.
 
-			![License](/img/blockdx/license-agreement.png)
+			![License](../img/blockdx/license-agreement.png)
 
 		--8<-- "complete-blockdx-installation.md"
 

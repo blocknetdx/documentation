@@ -53,11 +53,11 @@
         <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
     </div> -->
     <div class="notification" data-expire="1557294893">
-        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.co/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
+        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.org/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
         <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
     </div>
     <div class="notification" data-expire="1557294893">
-        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.co/#downloads" target="_blank">View downloads...</a></strong></span>
+        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.org/#downloads" target="_blank">View downloads...</a></strong></span>
         <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
     </div>
 </div>

@@ -3,16 +3,16 @@ description: This guide explains how to vote on Blocknet's Superblock proposals 
 
 
 # Proposal Voting
-This guide explains how to vote on Blocknet's [Superblock](/governance/introduction/#superblock) proposals for funding initiatives and governance management. Voting on proposals is important for the decentralized governance model to function properly.
+This guide explains how to vote on Blocknet's [Superblock](introduction.md#superblock) proposals for funding initiatives and governance management. Voting on proposals is important for the decentralized governance model to function properly.
 
 ???+ warning "Voting Requirements & Important Information"
-	**5000 [BLOCK](/blockchain/introduction) is required in order to vote.** The process of voting can take place from a wallet containing at least 5000 BLOCK, or a Service Node collateral wallet. An active [Service Node](/service-nodes/introduction) is *not* required.
+	**5000 [BLOCK](../blockchain/introduction.md) is required in order to vote.** The process of voting can take place from a wallet containing at least 5000 BLOCK, or a Service Node collateral wallet. An active [Service Node](../service-nodes/introduction.md) is *not* required.
 
 	* **Voting for proposals ends 60 blocks prior the Superblock.**
       It'd be safer to make sure you vote no later than 61 blocks
       before the Superblock to make sure your voting transaction gets
       at least 1 confirmation. See next voting deadline
-      [here](/governance/introduction/#superblock-voting-deadline).
+      [here](introduction.md#superblock-voting-deadline).
 	* The inputs (UTXOs) used for the 5000 BLOCK (to vote) must be 100 BLOCK or larger.
 	* The inputs used for the 5000 BLOCK must be in the same address.
 	* Since the votes are recorded on-chain, casting a vote requires you to pay a network fee. This requires *each address* to have an input *separate* from the inputs used for the 5000 BLOCK to pay for the network fees. **This input used for the fee cannot be immature**. Funds will remain immature for about 60 minutes (60 blocks) after they staked.
@@ -21,7 +21,7 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 	* If you vote again you will have to pay another network fee to do so.
 	* The voting system will automatically calculate how many votes you have available according to your balance (1 vote per 5000 BLOCK) and cast your full vote weight when voting (5562 BLOCK balance = 1 vote, 49635 BLOCK balance = 9 votes.
 	* The deadline for creating proposals is 2880 blocks prior to the
-    Superblock. See next proposal submission deadline [here](/governance/create-proposal/#proposal-submission-deadline).
+    Superblock. See next proposal submission deadline [here](create-proposal.md#proposal-submission-deadline).
 
 ??? info "Examples Of Valid Input Setups"
 
@@ -81,7 +81,7 @@ This guide explains how to vote on Blocknet's [Superblock](/governance/introduct
 			* Inputs: 3000, 1 (tx fee input)
 			* Total: 3000 + 1 (tx fee input)
 
-Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives. See [how to view proposals](/governance/view-proposals).
+Proposals should be carefully reviewed along with the amount requested. It's a good idea to consider the total Superblock budget (40,000 BLOCK), the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with background information and objectives. See [how to view proposals](view-proposals.md).
 
 ---
 
@@ -90,27 +90,27 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 
 
 ??? example "Vote using the redesigned wallet"
-	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
+	![Redesigned Wallet](../img/wallet-redesign/wallet-redesign.png)
 
-	1. Open the [wallet](/wallet/setup) and in the side menu, go to *Proposals*. The wallet needs to be unlocked to cast votes.
+	1. Open the [wallet](../wallet/setup.md) and in the side menu, go to *Proposals*. The wallet needs to be unlocked to cast votes.
 	1. The Proposals screen shows all the proposals submitted to the network. Above the list of proposals there is an option to filter by *Upcoming*, which displays the proposals that can currently be voted on. Select this filter to view all proposals currently open for voting.
 
-		![Filter Proposals](/img/wallet-redesign/proposals-filter.png)
+		![Filter Proposals](../img/wallet-redesign/proposals-filter.png)
 
 	1. **Review the proposals and the amount requested.** It's a good idea to consider the total Superblock budget, the other proposals amounts requested, the priorities of the project, and if the proposal aligns with those priorities and greater vision of the project. The link for each proposal should lead to a description of what the proposal is for with some background information and objectives.
 	1. The voting system will automatically calculate how many votes you have available according to your balance (1 vote per 5000 BLOCK) and cast your full vote weight when voting (5562 BLOCK balance = 1 vote, 49635 BLOCK balance = 9 votes.
 	1. When ready to vote on a proposal, select the *Vote* button. A popup will appear that will be used to vote from. Select whether you'd like to approve the proposal (*Yes*) or vote against the proposal (*No*). After you have selected how you wish to vote, select the *Vote* button. This registers your vote to the network after the vote transaction has 1 confirmation (about 1 minute).
 	1. Once you have voted you can change your vote by selecting the *Change Vote* button and selecting you new vote. 
 
-		![Proposal Voted](/img/wallet-redesign/proposal-voted.png)
+		![Proposal Voted](../img/wallet-redesign/proposal-voted.png)
 
 	--8<-- "complete-proposal-voting.md"
 
 
 ??? example "Vote using the classic wallet"
-	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
+	![Classic Wallet](../img/wallet-classic/wallet-classic.png)
 
-	1. Open the [wallet](/wallet/setup). The wallet needs to be unlocked to cast votes.
+	1. Open the [wallet](../wallet/setup.md). The wallet needs to be unlocked to cast votes.
 	1. In the program menu, go to *Window* > *Console*. The debug console will open in a new window.
 	1. In the input field at the bottom, type in `listproposals`, then press the *Enter* key. To view proposals since a specific block, use `listproposals [BLOCK_NUMBER]` instead. Example: `listproposals 1209600`
 	1. A message showing all proposals will be returned.
@@ -135,7 +135,7 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 ## Voting from the Terminal
 
 ??? example "Linux"
-	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
+	1. Start the [wallet](../wallet/setup.md). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/blocknet/bin/`)
 		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in your `~/.blocknet/` directory.
 
@@ -176,7 +176,7 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 
 
 ??? example "Windows"
-	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
+	1. Start the [wallet](../wallet/setup.md). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `C:\Users\[YourUsername]\Downloads\blocknet\bin\`)
 
 			??? tip "Tip: This requires the *blocknet-[version]-win64.zip* download version"
@@ -221,7 +221,7 @@ Proposals should be carefully reviewed along with the amount requested. It's a g
 
 
 ??? example "MacOS"
-	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
+	1. Start the [wallet](../wallet/setup.md). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/Downloads/blocknet/bin/`)
 
 			??? tip "Tip: This requires the *blocknet-[version]-osx64.tar.gz* download version."

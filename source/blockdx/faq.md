@@ -14,12 +14,12 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 ??? question "Why does my available balance in BlockDX drop dramatically when I make an order, even though the size of the order is small?"
 	##### Why does available balance in BlockDX drop so dramatically when making an order?
 	Funds in your wallet are organized in terms of
-	[addresses](/resources/glossary/#address) and
-	[inputs](/resources/glossary/#input). To illustrate, we can make an
+	[addresses](../resources/glossary.md#address) and
+	[inputs](../resources/glossary.md#input). To illustrate, we can make an
 	analogy to a physical wallet. An
-	[address](/resources/glossary/#address) is like a section of your physical wallet which is separated
+	[address](../resources/glossary.md#address) is like a section of your physical wallet which is separated
 	from other sections. An
-	[input](/resources/glossary/#input)
+	[input](../resources/glossary.md#input)
 	is like a bill that is stored in one section of your wallet. In one section of your physical
 	wallet you might have three $20 bills and two $5 bills, for a
 	total of $70 in that section of your wallet. In a similar way, one
@@ -27,9 +27,9 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 	inputs and two 5 BLOCK inputs, for a total of 70 BLOCK in that
 	address of your wallet.
 
-	If, for example, you make an order to buy some asset, and the cost of your purchase will be 5 LTC, but the smallest LTC [input](/resources/glossary/#input) in your wallet is 100 LTC, then the entire 100 LTC input becomes unavailable until the change from the transaction is received in your [change address](/resources/glossary/#change-address). This is like if you are buying a $5 item and the smallest bill in your wallet is a $100 bill. The $100 bill becomes unavailable during the transaction, then you receive $95 in change. To avoid having a large amount of funds becoming unavailable during a transaction in this way, you can *split* the [inputs](/resources/glossary/#input) of the asset you're selling before making the order. This is like breaking your $100 bill into smaller denominations before purchasing the $5 item.
+	If, for example, you make an order to buy some asset, and the cost of your purchase will be 5 LTC, but the smallest LTC [input](../resources/glossary.md#input) in your wallet is 100 LTC, then the entire 100 LTC input becomes unavailable until the change from the transaction is received in your [change address](../resources/glossary.md#change-address). This is like if you are buying a $5 item and the smallest bill in your wallet is a $100 bill. The $100 bill becomes unavailable during the transaction, then you receive $95 in change. To avoid having a large amount of funds becoming unavailable during a transaction in this way, you can *split* the [inputs](../resources/glossary.md#input) of the asset you're selling before making the order. This is like breaking your $100 bill into smaller denominations before purchasing the $5 item.
 
-	Splitting assets into multiple [Inputs](/resources/glossary/#input) within an address can be done using the `dxSplitInputs` command from the Blocknet wallet *Tools->Debug Console*, or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI. You may also want to use the `dxSplitAddress` command. Get help on how to use the `dxsplitaddress` command by typing `dxsplitaddress` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitaddress` from the Blocknet wallet CLI.
+	Splitting assets into multiple [Inputs](../resources/glossary.md#input) within an address can be done using the `dxSplitInputs` command from the Blocknet wallet *Tools->Debug Console*, or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI. You may also want to use the `dxSplitAddress` command. Get help on how to use the `dxsplitaddress` command by typing `dxsplitaddress` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitaddress` from the Blocknet wallet CLI.
 
 	Note: Splitting assets into multiple inputs incurs a transaction fee, and the transaction fee for some chains (e.g. [BTC Tx fee](https://ycharts.com/indicators/bitcoin_average_transaction_fee)) can be high.
 
@@ -56,19 +56,19 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 
 
 ??? question "Do I always need to download and use full blockchains when trading?"
-	Block DX is a full decentralized exchange with no central components, which requires the full blockchains to be installed and synced locally to submit the trades as transactions on the network. However, if the assets you want to trade are supported by [XLite wallet](/xlite/setup), you can use XLite and avoid downloading the full blockchains.
+	Block DX is a full decentralized exchange with no central components, which requires the full blockchains to be installed and synced locally to submit the trades as transactions on the network. However, if the assets you want to trade are supported by [XLite wallet](../xlite/setup.md), you can use XLite and avoid downloading the full blockchains.
 
 
 ??? question "Do I need to have BLOCK in order to trade?"
-	If you are making (placing) an order, no BLOCK is needed. If you are taking (filling) an order, BLOCK is need to cover the trade fee. [Read more...](/blockdx/fees)
+	If you are making (placing) an order, no BLOCK is needed. If you are taking (filling) an order, BLOCK is need to cover the trade fee. [Read more...](fees.md)
 
 
-??? question "If I want to place or accept multiple trades, I need to split my assets into multiple [UTXOs](/resources/glossary/#utxo) within the same address. How do I do that?"
-	Splitting assets into multiple [UTXOs](/resources/glossary/#utxo) within an address can be done using the `dxSplitInputs` command from the Blocknet wallet *Tools->Debug Console*, or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI. You may also want to use the `dxSplitAddress` command. Get help on how to use the `dxsplitaddress` command by typing `dxsplitaddress` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitaddress` from the Blocknet wallet CLI. 
+??? question "If I want to place or accept multiple trades, I need to split my assets into multiple [UTXOs](../resources/glossary.md#utxo) within the same address. How do I do that?"
+	Splitting assets into multiple [UTXOs](../resources/glossary.md#utxo) within an address can be done using the `dxSplitInputs` command from the Blocknet wallet *Tools->Debug Console*, or from the Blocknet wallet Command Line Interface (CLI). Get help on how to use `dxsplitinputs` by typing `dxsplitinputs` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitinputs` from the Blocknet wallet CLI. You may also want to use the `dxSplitAddress` command. Get help on how to use the `dxsplitaddress` command by typing `dxsplitaddress` in the Debug Console and hitting return, or by typing `./blocknet-cli help dxsplitaddress` from the Blocknet wallet CLI. 
 
 
 ??? question "I keep getting change addresses after making trades. How do I consolidate them all back into one address and then split them back up into multiple UTXOs again?"
-	Combining and splitting of assets (inputs) can be done using the [Coin Control](/wallet/send-funds/#coin-control) functionality within the respective wallet.
+	Combining and splitting of assets (inputs) can be done using the [Coin Control](../wallet/send-funds.md#coin-control) functionality within the respective wallet.
 
 
 ??? question "Why is my balance shown as 0 even though I have funds in it."
@@ -80,7 +80,7 @@ Below are a list of Block DX frequently asked questions. For any questions not a
 
 
 ??? question "Why is market pricing showing as ‘N/A’?"
-	If the alternate market pricing is shown as ‘N/A’, this means that the current API source selected does not currently support the currently selected market pair. When this happens, another API source should be selected in the upper right corner of BlockDX under [MENU->General Settings->Market Pricing->Price Source](/blockdx/settings/#market-pricing-also-how-to-fix-na-in-btc-price-column).
+	If the alternate market pricing is shown as ‘N/A’, this means that the current API source selected does not currently support the currently selected market pair. When this happens, another API source should be selected in the upper right corner of BlockDX under [MENU->General Settings->Market Pricing->Price Source](settings.md#market-pricing-also-how-to-fix-na-in-btc-price-column).
 
 
 

@@ -6,24 +6,24 @@ description: Block DX is a decentralized exchange dApp powered by the Blocknet P
 
 # Block DX
 
-* [Start trading on Block DX](/blockdx/setup)
-* [View Block DX listings](/blockdx/listings/#listed-digital-assets)
-* [Read more about Blocknet](/blocknet/introduction)
-* [Buy BLOCK](/project/exchanges)
+* [Start trading on Block DX](setup.md)
+* [View Block DX listings](listings.md#listed-digital-assets)
+* [Read more about Blocknet](../project/introduction.md)
+* [Buy BLOCK](../project/exchanges.md)
 
 ---
 
 ## What is Block DX
-Block DX is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). Block DX mimics a centralized exchange experience, but enables traders to conduct exchanges directly from their respective wallets instead of through an intermediary. Here are some benefits to using Block DX:
+Block DX is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](../project/introduction.md). Block DX mimics a centralized exchange experience, but enables traders to conduct exchanges directly from their respective wallets instead of through an intermediary. Here are some benefits to using Block DX:
 
 - **Safe Trading** - There’s no middlemen or intermediaries. Funds remain in each party’s wallets and are not entrusted to a third party at any stage (non-custodial). Your funds are always in your control.
 - **No Accounts** - Since it’s decentralized, there are no accounts, signups, or KYC/AML requirements.
 - **Lower Fees** - Trading fees are lower than those with centralized exchanges, and withdrawal fees are non-existent since trades are conducted directly from the wallets.
 - **No Limits** - There’s no withdrawal or trade limits, creating greater flexibility..
-- **Trading Pair Freedom** - Complete trading pair freedom allowing any digital asset on Block DX to be traded with any other. See the full [list of traded assets](/blockdx/listings/#listed-digital-assets).
+- **Trading Pair Freedom** - Complete trading pair freedom allowing any digital asset on Block DX to be traded with any other. See the full [list of traded assets](listings.md#listed-digital-assets).
 - **Liquidity** - Block DX is powered by the Blocknet Protocol. Any service using the protocol will have shared order books and liquidity.
-- **Fee Distribution** - 100% of trade fees are distributed among [BLOCK](/blockchain/introduction) holders.
-- **No Listing Fees** - There’s no listing fees for assets to be added to Block DX. However, we do testing to ensure 100% compatibility. [Read more about listings](/blockdx/listings/#listing-process).
+- **Fee Distribution** - 100% of trade fees are distributed among [BLOCK](../blockchain/introduction.md) holders.
+- **No Listing Fees** - There’s no listing fees for assets to be added to Block DX. However, we do testing to ensure 100% compatibility. [Read more about listings](listings.md#listing-process).
 - **Zero Downtime** - Since Block DX is a decentralized exchange powered by the Blocknet Protocol, there is zero downtime and built-in DoS protection.
 
 ---

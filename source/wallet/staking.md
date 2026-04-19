@@ -6,15 +6,15 @@ description: This guide explains how to setup your Blocknet wallet for staking t
 Staking is the Proof-of-Stake equivalent of mining in Proof-of-Work
 blockchains. Stakers validate transactions on the network. These
 transactions are grouped in blocks. With
-[Blocknet](/project/introduction), there is 1 block every minute with
-a 1 [BLOCK](/blockchain/introduction) reward. You can stake with any
+[Blocknet](../project/introduction.md), there is 1 block every minute with
+a 1 [BLOCK](../blockchain/introduction.md) reward. You can stake with any
 amount of BLOCK and are rewarded for supporting the network with block
 rewards.
 
 ---
 
 ## Staking Guide
-Staking can be performed with any amount of BLOCK, there is no minimum. However, since staking with Blocknet is probability-based, you will receive rewards more frequently by owning and staking more BLOCK. BLOCK can be acquired through [various options available](/project/exchanges).
+Staking can be performed with any amount of BLOCK, there is no minimum. However, since staking with Blocknet is probability-based, you will receive rewards more frequently by owning and staking more BLOCK. BLOCK can be acquired through [various options available](../project/exchanges.md).
 
 Use one of the following guides to enable staking and start earning
 rewards.
@@ -22,21 +22,21 @@ rewards.
 #### Staking from a GUI wallet
 
 ??? example "Stake using the redesigned wallet"
-	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
+	![Redesigned Wallet](../img/wallet-redesign/wallet-redesign.png)
 
-	1. [Install and setup](/wallet/setup) the Blocknet wallet.
-	1. Open and [sync the wallet](/wallet/syncing).
+	1. [Install and setup](setup.md) the Blocknet wallet.
+	1. Open and [sync the wallet](syncing.md).
 	1. Make sure there's BLOCK in your wallet.
-	1. [Unlock the wallet for staking only](/wallet/lock-unlock/#unlock-for-staking).
+	1. [Unlock the wallet for staking only](lock-unlock.md#unlock-for-staking).
 	1. It may take a minute for the staking to activate. 
 	1. You can verify the wallet is staking with the status icon in the upper-right corner.
 
-		![Status Bar](/img/wallet-redesign/status-bar-synced.png)
+		![Status Bar](../img/wallet-redesign/status-bar-synced.png)
 
 		1. The 2nd icon from the left indicates the staking status. If it is grey, staking is inactive. If it is blue, staking is active. You can also hover over the icon to read the staking status.
 
-			![Staking Inactive](/img/wallet-redesign/status-staking-inactive.png)
-			![Staking Active](/img/wallet-redesign/status-staking-active.png)
+			![Staking Inactive](../img/wallet-redesign/status-staking-inactive.png)
+			![Staking Active](../img/wallet-redesign/status-staking-active.png)
 
 		??? info "Note: Staking will not activate if the wallet is not synced."
 			Since staking is the act of confirming the latest transactions, staking cannot be active until the wallet is synced to the more recent transaction on the network.
@@ -48,12 +48,12 @@ rewards.
 
 
 ??? example "Stake using the classic wallet"
-	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
+	![Classic Wallet](../img/wallet-classic/wallet-classic.png)
 
-	1. [Install and setup](/wallet/setup) the Blocknet wallet.
-	1. Open and [sync the wallet](/wallet/syncing).
+	1. [Install and setup](setup.md) the Blocknet wallet.
+	1. Open and [sync the wallet](syncing.md).
 	1. Make sure there's BLOCK in your wallet.
-	1. [Unlock the wallet for staking only](/wallet/lock-unlock/#unlock-for-staking).
+	1. [Unlock the wallet for staking only](lock-unlock.md#unlock-for-staking).
 	1. It may take a minute for the staking to activate.
 
 		??? info "Note: Staking will not activate if the wallet is not synced."
@@ -64,7 +64,7 @@ rewards.
 
 	1. When staking, you may see your wallet balance show as *Immature*. This is a normal part of staking. The funds in your wallet that "won" the staking reward will remain immature until they have 101 confirmations (101 minutes). When funds are immature, they are unspendable and do not count towards your probability for receiving another reward. After 101 confirmations, these funds can be spent again and the balance will show up as normal.
 
-		![Immature](/img/wallet-redesign/balance-immature.png)
+		![Immature](../img/wallet-redesign/balance-immature.png)
 
 #### Staking from CLI on a VPS running Ubuntu Linux
 
@@ -82,9 +82,9 @@ rewards.
 
 	> Set up an Ubuntu Linux server 
 
-	If you plan to host a [Service Node](/resources/glossary/#service-node) on the same VPS you'll be using
+	If you plan to host a [Service Node](../resources/glossary.md#service-node) on the same VPS you'll be using
 	for staking, refer to the
-            [Service Node Hardware Requirements](/service-nodes/setup/#hardware-requirements-for-service-node-wallet)
+            [Service Node Hardware Requirements](../service-nodes/setup.md#hardware-requirements)
 	to determine the HW requirements of the VPS you choose.
 	Otherwise, the following HW requirements will be sufficient for
 	*staking only*:
@@ -100,7 +100,7 @@ rewards.
 
 	1. Visit [https://github.com/blocknetdx/blocknet/releases/](https://github.com/blocknetdx/blocknet/releases/) to see
     the latest release version of the Blocknet core wallet:
-	![Latest Release](/img/wallet/latest-release.png)
+	![Latest Release](../img/wallet/latest-release.png)
 		1. As shown in the image above, the latest release version at this
     time is `4.3.3`.
 		1. If there is a "v" before the release version number,
@@ -172,13 +172,13 @@ rewards.
 	```
 	blocknet-daemon
 	```
-	1. Without waiting for the wallet to [sync](/resources/glossary/#syncing), stop the Blocknet
+	1. Without waiting for the wallet to [sync](../resources/glossary.md#syncing), stop the Blocknet
 	daemon using the `blocknet-cli` alias you defined above:
 	```
 	blocknet-cli stop
 	```
 
-	1. To save 3.5+ hours of time in [syncing](/resources/glossary/#syncing), it's recommended to
+	1. To save 3.5+ hours of time in [syncing](../resources/glossary.md#syncing), it's recommended to
        use the *bootstrap* method to speed up syncing:
 		1. Remove existing `blocks`, `chainstate` & `indexes`
 		directories from the blocknet data directory:
@@ -262,10 +262,10 @@ rewards.
 		```
 		mv ~/.blocknet/wallets/wallet.dat{,.empty}
 		```
-		1. Assuming you [backed up](/wallet/backup-restore) your
+		1. Assuming you [backed up](backup-restore.md) your
            Blocknet wallet on your home computer, you'll know where to
            find your funded `wallet.dat` file. Reference the
-           [Backup & Restore Guide](/wallet/backup-restore/#cli-wallet-backup-options-also-works-for-guiqt-wallet) to locate your funded `wallet.dat`.
+           [Backup & Restore Guide](backup-restore.md#cli-wallet-backup-options-also-works-for-guiqt-wallet) to locate your funded `wallet.dat`.
 	    1. On your home computer, use [scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/)
              (Mac or Linux) or
              [pscp](https://www.poftut.com/how-to-use-pscp-command-on-windows/)
@@ -318,7 +318,7 @@ rewards.
 		the `wallet.dat` from your home computer to your VPS, you can
 		still access the same `wallet.dat` on your home computer to
 		send & receive funds, or to trade BLOCK on
-		[BlockDX](/blockdx/introduction). The only thing you have to
+		[BlockDX](../blockdx/introduction.md). The only thing you have to
 		be careful *not* to do is to import private key(s) into one
 		`wallet.dat` and not the other. If you absolutely *must*
 		import private keys to the wallet on your home computer, for
@@ -327,7 +327,7 @@ rewards.
 		re-import the `wallet.dat` from your home computer so your VPS
 		wallet will also have the imported private keys. Note, if
 		you've imported private keys, it's recommended to use
-		[Coin Control](/wallet/send-funds/#coin-control) to send the
+		[Coin Control](send-funds.md#coin-control) to send the
 		imported keys/addresses to an address in your wallet which is
 		part of the
 		[HD wallet](https://www.investopedia.com/terms/h/hd-wallet-hierarchical-deterministic-wallet.asp)
@@ -345,7 +345,7 @@ rewards.
 		  ```
 		  blocknet-cli help encryptwallet
 		  ```
-		  1. [Back up your VPS Blocknet wallet](/wallet/backup-restore). Hint:
+		  1. [Back up your VPS Blocknet wallet](backup-restore.md). Hint:
              Use
 			 [scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/)
              (Mac or Linux) or
@@ -439,7 +439,7 @@ rewards.
 While staking, you may occasionally see a red flag next to one of your
 stake hits, like this:
 
-![Orphan](/img/wallet/orphan.png)
+![Orphan](../img/wallet/orphan.png)
 
 If you hover the mouse over the text of the red/orphaned block, it
 will display the text, "Generated but not accepted."
@@ -453,9 +453,9 @@ before your node.
 If, however, you notice a large number of
 red/orphaned blocks happening in a short time period, like 5 or more
 per day, it could mean your staking wallet is
-[on a fork.](/wallet/forking/#fork-management). If you determine your
+[on a fork.](forking.md#fork-management). If you determine your
 staking wallet is
-[on a fork, follow the instructions in the Fork Management Guide to get your wallet back on the correct chain.](/wallet/forking/#fork-management)
+[on a fork, follow the instructions in the Fork Management Guide to get your wallet back on the correct chain.](forking.md#fork-management)
 
 If your staking wallet is *not* on a fork, but still producing more
 red/orphaned blocks than you like, here are some possible causes and
@@ -463,7 +463,7 @@ ideas to reduce the number of orphaned blocks seen by your staking wallet:
 
 1. Your staking wallet doesn't have `listen=1` set in its
    `blocknet.conf` file (located in the
-   [Data Directory](/wallet/backup-restore/#data-directory)). If you
+   [Data Directory](backup-restore.md#data-directory)). If you
    need to add `listen=1` to your `blocknet.conf`, stop your wallet,
    make the change, then restart your wallet.
 1. Your staking wallet doesn't have its P2P port (41412 by default)
@@ -477,11 +477,11 @@ ideas to reduce the number of orphaned blocks seen by your staking wallet:
 Some stakers believe they receive more staking rewards when they have
 more peers connected to their wallet. If you want to test this theory,
 you can manually add peers to your wallet
-by following the instructions found [here](/wallet/syncing/#troubleshoot-syncing-issues).
+by following the instructions found [here](syncing.md#troubleshoot-syncing-issues).
 
 ##### Dividing funds into optimally sized UTXOs
 If we look at the history of which sizes of
-[UTXOs](/resources/glossary/#utxo)/[Inputs](/resources/glossary/#input)
+[UTXOs](../resources/glossary.md#utxo)/[Inputs](../resources/glossary.md#input)
 have been receiving
 the most staking rewards, we might be inspired to create UTXOs in our
 staking wallet of those same sizes. To view the sizes of UTXOs which
@@ -492,24 +492,24 @@ recently got the most rewards (a.k.a. "stake hits"):
 1. Scroll to the bottom and you'll see the "Stake Input Size for the
 last 1000 blocks" represented as blue dots on the chart:
 
-![Extraction](/img/wallet/extraction.png)
+![Extraction](../img/wallet/extraction.png)
 
 1. If you like, you can click *show more* to see more blue dots:
 
-![Extraction more](/img/wallet/extraction-more.png)
+![Extraction more](../img/wallet/extraction-more.png)
 
 As you can see, the UTXOs receiving the most stake hits are the ones
 with somewhere between 500 and 5,000 BLOCK (the range where the blue
 dots are most concentrated).   So, making UTXO sized in that range may
 help to maximize stake hits. 
 
-One way to organize UTXO sizes is to use [Coin Control](/wallet/send-funds/#coin-control) when sending BLOCK to
+One way to organize UTXO sizes is to use [Coin Control](send-funds.md#coin-control) when sending BLOCK to
 yourself. This allows you to select from which UTXOs your BLOCK is
 sent. Note, you'll probably want to check the *Subtract fee from
 total* box when sending from a specific set of UTXOs so you don't get
 an "Insufficient Funds" error:
 
-![Subtract Fee](/img/wallet/subtract-fee-from-total.png)
+![Subtract Fee](../img/wallet/subtract-fee-from-total.png)
 
 An even more convenient way to split your wallet balance into
 UTXOs of the desired size is the following:
@@ -522,7 +522,7 @@ from CLI):
 ```
 splitbalance amount address
 ```
-where *amount* is the size of the [UTXOs](/resources/glossary/#utxo)
+where *amount* is the size of the [UTXOs](../resources/glossary.md#utxo)
 into which you want to split your
 balance, and *address* is the address to which you sent all your
 block in step 1 above.
@@ -531,7 +531,7 @@ For example, if a wallet has 5000 block at address XYZ, then
 of 1000 block each. (In most cases, the amount being split will not be
 exactly divisible by *amount* you specify in the `splitbalance`
 command. The remainder will be sent to a
-[change address](/resources/glossary/#change-address)).
+[change address](../resources/glossary.md#change-address)).
 
 
 
@@ -547,7 +547,7 @@ command. The remainder will be sent to a
 ### Probability
 The selection of the staker that confirms each block is probability-based. This means that everyone’s chance of being selected to confirm the next block is equal to the amount of BLOCK staking divided by the total amount of BLOCK being staked on the network. The amount of staked BLOCK on the network [can be seen here](https://chainz.cryptoid.info/explorer/index.stakes.dws?coin=block). The value will have to be calculated by totaling each `amount`.
 
-![Staking Probability](/img/wallet/staking-probability.png)
+![Staking Probability](../img/wallet/staking-probability.png)
 
 ??? abstract "Example: Calculating staking reward probability."
 	Assume:

@@ -33,7 +33,7 @@ installed and are updating, the steps are basically the same.
 	    --8<-- "anti-virus-flagged.md"
 
 	1. Find the downloaded file. The default location is in *Downloads*. 
-	1. Before continuing, it is recommended to [verify your download](/xlite/installation/#verifying-downloads)
+	1. Before continuing, it is recommended to [verify your download](#verifying-downloads)
 	1. Continue to the instructions below for the download you
        selected (`.exe` or `.zip`):
 
@@ -79,7 +79,7 @@ installed and are updating, the steps are basically the same.
 		1. Redo the installation step above (`.exe` or `.zip` depending on your download).
 
 
-	1. [Create & Backup XLite Wallet](/xlite/backup-and-restore)   __*(Do This Before Funding Your Wallet.)*__
+	1. [Create & Backup XLite Wallet](backup-and-restore.md)   __*(Do This Before Funding Your Wallet.)*__
 
 
 ??? example "MacOS"
@@ -91,7 +91,7 @@ installed and are updating, the steps are basically the same.
 	    --8<-- "anti-virus-flagged.md"
 
 	1. Find the downloaded file. The default location is in *Downloads*. 
-	1. Before continuing, it is recommended to [verify your download](/xlite/installation/#verifying-downloads)
+	1. Before continuing, it is recommended to [verify your download](#verifying-downloads)
 	1. Double-click the file to begin installation.
 	1. Click and drag the *XLite* application icon over to the *Applications* folder and release.
 	1. If you are prompted with a message asking if you would like to replace an existing version with a newer version, select *Replace*.
@@ -104,17 +104,17 @@ installed and are updating, the steps are basically the same.
       [the dock](https://support.apple.com/en-in/guide/mac-help/mh35859/mac),
 	  then click on *Applications* on the left side of the Finder window to reveal a
       screen like this:
-	![Finder](/img/xlite/right-click-xlite-in-applications.png)
+	![Finder](../img/xlite/right-click-xlite-in-applications.png)
 	1. Scroll down to locate the *XLite* application, then
       *right-click* (trackpad *two-finger-click*) on *XLite* and
       select *Open* to reveal a message like this:
-	  ![Finder](/img/xlite/open-xlite.png)
+	  ![Finder](../img/xlite/open-xlite.png)
 
 	    ???+ info "Note: If you see a message like the one below instead of the one above, click *OK* and repeat step 2 above."
-		![Finder](/img/xlite/first-open-attempt.png)
+		![Finder](../img/xlite/first-open-attempt.png)
 		
 	1. Click *Open* (This is safe, assuming you have [verified your download](#verifying-downloads).
-	1. [Create & Backup XLite Wallet](/xlite/backup-and-restore)   __*(Do This Before Funding Your Wallet.)*__
+	1. [Create & Backup XLite Wallet](backup-and-restore.md)   __*(Do This Before Funding Your Wallet.)*__
 
 	??? tip "Tip: After opening XLite the first time as above, you can now use the [Launchpad](https://support.apple.com/en-in/HT202635) to open XLite in the future."
 		The above procedure was only necessary due to
@@ -133,7 +133,7 @@ installed and are updating, the steps are basically the same.
 		1. The `.zip` and the remaining unpacked files and folders may now be deleted as *XLite* was the
            only file needed.
 
-	    --8<-- "complete-xlite-installation.md"
+	
 -->
 		
 ??? example "Linux"
@@ -148,15 +148,15 @@ installed and are updating, the steps are basically the same.
 
 	1. You may be asked for a confirmation to download, select *Save File* then *OK*. 
 	1. Find the downloaded file. The default location is in *Downloads*. 
-	1. Before continuing, it is recommended to [verify your download](/xlite/installation/#verifying-downloads)
+	1. Before continuing, it is recommended to [verify your download](#verifying-downloads)
 	1. Continue to the instructions below for the download you selected:
 
 	    ??? example "Using the `.AppImage` download (option a)"
 		1. Give __executable__ permission to the `.AppImage` file as follows:
 			1. Right-click the `.AppImage` file to display a dropdown menu like this:
-			![Executable](/img/xlite/linux-properties.png)		   
+			![Executable](../img/xlite/linux-properties.png)		   
 			1. Select `Properties` at the bottom of the dropdown to reveal a screen similar to this:
-			![Executable](/img/xlite/linux-executable.png)
+			![Executable](../img/xlite/linux-executable.png)
 			1. Select the *Permissions* tab and check the box, *Allow executing file as program*
 			1. Click *X* in the upper left corner of the Properties window to close it
 			1. Note: Alternatively, if you prefer the command line,
@@ -180,7 +180,7 @@ installed and are updating, the steps are basically the same.
 		1. In a Terminal window, type `cd <install-dir>/XLite-x.x.x-linux` where `install-dir` is the directory where you moved the `XLite-x.x.x-linux` directory after extracting it, and `x.x.x.` is the version you downloaded.
 		1. Type, `./xlite` to run the application.
 
-	1. [Create & Backup XLite Wallet](/xlite/backup-and-restore) __*(Do This Before Funding Your Wallet.)*__
+	1. [Create & Backup XLite Wallet](backup-and-restore.md) __*(Do This Before Funding Your Wallet.)*__
 
 ---
 

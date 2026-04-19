@@ -19,7 +19,7 @@ The deadline for creating proposals is 2880 blocks prior to the Superblock.
 
 	!!! tip "Tip: Before creating a new proposal, it's recommended to review previous proposals in the [Proposal Forum](https://forum.blocknet.co/c/draft-proposals) to get an idea of what is generally expected and acceptable."
 	1. At the [Blocknet Proposal Forum](https://forum.blocknet.co/c/draft-proposals), you'll see this at the top of the page:
-	![Draft Proposal](/img/governance/draft-proposal.png)
+	![Draft Proposal](../img/governance/draft-proposal.png)
 	1. Select *Draft Proposal* at the top left, then click *+ New Topic* at the top right of the screen.
 	1. Create a proposal, embedding [Markdown Text](https://pandao.github.io/editor.md/en.html) as desired for formatting, which clearly and accurately conveys the following relevant information:
 		1. Proposal name using only alpha-numerics (*example*: Qt-Exchange-Widget). Note, it's often useful to include the applicable SuperBlock number in the name, especially if you submit similar proposals each SuperBlock.
@@ -33,11 +33,11 @@ The deadline for creating proposals is 2880 blocks prior to the Superblock.
 		1. Fund custodians
 
 1. Once the Draft Proposal has been submitted and posted to the forum, copy the post's URL and create a shortened URL at [https://bit.ly/](https://bit.ly/) (The full URL can be used in place of bit.ly shortened version if the total amount of text entered for the proposal is not large.)
-1. Continue on to [submit the proposal from the Qt wallet](/governance/create-proposal/#submit-from-the-qt-wallet) or to [submit the proposal via command line](/governance/create-proposal/#submit-from-the-terminal).
+1. Continue on to [submit the proposal from the Qt wallet](#submit-from-the-qt-wallet) or to [submit the proposal via command line](#submit-from-the-terminal).
 1. (Optional) Once the proposal has been submitted, your proposal will be assigned a `proposal hash` (a large string of numbers and letter representing your proposal). 
 If using the Command Line Interface, the `proposal hash` will be returned after submitting the proposal via the `createproposal` command. The `proposal hash` will be the `xxxx` value in the `"hash":"xxxx",` value returned. You can also display `proposal hash` and other information about all upcoming proposals as follows:
 	1. In Blocknet Qt/GUI wallet, go to *Tools->Debug Console*
-	1. Type `listproposals <last_SB_number + 1>` where `<last_SB_number + 1>` is 1 more than the [number of the previous SuperBlock](/governance/introduction/#future-superblock-dates).
+	1. Type `listproposals <last_SB_number + 1>` where `<last_SB_number + 1>` is 1 more than the [number of the previous SuperBlock](introduction.md#future-superblock-dates).
 	1. Or from CLI: `./blocknet-cli listproposals <last_SB_number + 1>`
 
 	Once you have your proposal's `proposal hash`, you can now edit your post in the    Proposal Forum to add the command for voting for your proposal from the command line, which is:
@@ -54,10 +54,10 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 ## Submit from the Qt Wallet
 
 ??? example "Submit using the redesigned wallet"
-	![Redesigned Wallet](/img/wallet-redesign/wallet-redesign.png)
+	![Redesigned Wallet](../img/wallet-redesign/wallet-redesign.png)
 
-	1. Open and sync the [Blocknet wallet](/wallet/setup). The wallet needs to be unlocked to submit a proposal.
-	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](/governance/introduction/#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
+	1. Open and sync the [Blocknet wallet](../wallet/setup.md). The wallet needs to be unlocked to submit a proposal.
+	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](introduction.md#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
 	1. In the side menu, go to *Proposals*.
 	1. Click on the *Create New Proposal* button at the top of the screen.
 	1. Fill out the form fields:
@@ -72,14 +72,14 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 
 	1. Click the *Continue* button at the bottom of the screen.
 	1. Follow the screens to review the information and submit the proposal.
-	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](/governance/view-proposals).
+	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](view-proposals.md).
 
 
 ??? example "Submit using the classic wallet"
-	![Classic Wallet](/img/wallet-classic/wallet-classic.png)
+	![Classic Wallet](../img/wallet-classic/wallet-classic.png)
 
-	1. Open and sync the [Blocknet wallet](/wallet/setup). The wallet needs to be unlocked to submit a proposal.
-	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](/governance/introduction/#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
+	1. Open and sync the [Blocknet wallet](../wallet/setup.md). The wallet needs to be unlocked to submit a proposal.
+	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](introduction.md#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
 	1. In the program menu, go to *Window* > *Console*. The debug console will open in a new window.
 	1. The proposal submission command uses the following command structure (all one line): 
 
@@ -102,14 +102,14 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 			createproposal privacy-mixer 0 100 Bxxxxxxxxxxxxxxxxxxxxxxxxx https://goo.gl/xxxxxxx "Build privacy mixer app"
 
 	1. Press the *Enter* key to submit the proposal to the network.
-	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](/governance/view-proposals).
+	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](view-proposals.md).
 
 ---
 
 ## Submit from the Terminal
 
 ??? example "Linux"
-	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
+	1. Start the [wallet](../wallet/setup.md). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/blocknet/bin/`)
 		1. Type in the following command, replacing `[USERNAME]` and `[PASSWORD]` with the respective `rpcuser=` and `rpcpassword=` values from your `blocknet.conf` file located in your `~/.blocknet/` directory.
 
@@ -121,7 +121,7 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 
 	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the wallet to sync.
-	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](/governance/introduction/#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
+	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](introduction.md#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
 	1. The proposal submission command uses the following command structure (all one line): 
 
 			./blocknet-cli createproposal [PROPOSAL_NAME] [SUPERBLOCK_BLOCK] [AMOUNT] [ADDRESS] [URL] [DESCRIPTION]
@@ -143,11 +143,11 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 			./blocknet-cli createproposal privacy-mixer 0 100 Bxxxxxxxxxxxxxxxxxxxxxxxxx https://goo.gl/xxxxxxx "Build privacy mixer app"
 
 	1. Press the *Enter* key to submit the proposal to the network.
-	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](/governance/view-proposals).
+	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](view-proposals.md).
 
 
 ??? example "Windows"
-	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
+	1. Start the [wallet](../wallet/setup.md). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `C:\Users\[YourUsername]\Downloads\blocknet\bin\`)
 
 			??? tip "Tip: This requires the *blocknet-[version]-win64.zip* download version"
@@ -163,7 +163,7 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 
 	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the wallet to sync.
-	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](/governance/introduction/#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
+	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](introduction.md#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
 	1. The proposal submission command uses the following command structure (all one line): 
 
 			./blocknet-cli createproposal [PROPOSAL_NAME] [SUPERBLOCK_BLOCK] [AMOUNT] [ADDRESS] [URL] [DESCRIPTION]
@@ -185,11 +185,11 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 			./blocknet-cli createproposal privacy-mixer 0 100 Bxxxxxxxxxxxxxxxxxxxxxxxxx https://goo.gl/xxxxxxx "Build privacy mixer app"
 
 	1. Press the *Enter* key to submit the proposal to the network.
-	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](/governance/view-proposals).
+	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](view-proposals.md).
 
 
 ??? example "MacOS"
-	1. Start the [wallet](/wallet/setup). If it's not already running, use the following instructions to start it. 
+	1. Start the [wallet](../wallet/setup.md). If it's not already running, use the following instructions to start it. 
 		1. Navigate to the `bin` folder within your Blocknet wallet installation directory (EG: `~/Downloads/blocknet/bin/`)
 
 			??? tip "Tip: This requires the *blocknet-[version]-osx64.tar.gz* download version."
@@ -205,7 +205,7 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 
 	1. The wallet process will begin in the current terminal window. You will need to open a new terminal window or tab and navigate to the same location before continuing.
 	1. If your wallet was just started, you may need to wait a few minutes for the wallet to sync.
-	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](/governance/introduction/#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
+	1. Ensure there is a minimum of 11 BLOCK in your wallet to pay for the proposal submission fee (10 BLOCK fee + transaction fee). This fee should be added to the proposal amount (in a later step) so that you are reimbursed if the proposal passes (see [passing criteria](introduction.md#passing-criteria)). If you would like to confirm the submission fee you can use the `proposalfee` command.
 	1. The proposal submission command uses the following command structure (all one line): 
 
 			./blocknet-cli createproposal [PROPOSAL_NAME] [SUPERBLOCK_BLOCK] [AMOUNT] [ADDRESS] [URL] [DESCRIPTION]
@@ -227,7 +227,7 @@ If using the Command Line Interface, the `proposal hash` will be returned after 
 			./blocknet-cli createproposal privacy-mixer 0 100 Bxxxxxxxxxxxxxxxxxxxxxxxxx https://goo.gl/xxxxxxx "Build privacy mixer app"
 
 	1. Press the *Enter* key to submit the proposal to the network.
-	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](/governance/view-proposals).
+	1. Wait for the transaction to have 1 confirmation (about 1 minute) then verify the proposal has been properly submitted by [viewing the proposals](view-proposals.md).
 
 
 

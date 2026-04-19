@@ -2,26 +2,26 @@ title: XBridge Setup Guide
 description: This guide explains how to setup and configure your client for use with XBridge, a decentralized exchange protocol.
 
 # XBridge Setup Guide
-This guide explains how to setup and configure your client to use XBridge. If you have not yet setup the Blocknet wallet, start with the [Wallet Setup Guide](/wallet/setup).
+This guide explains how to setup and configure your client to use XBridge. If you have not yet setup the Blocknet wallet, start with the [Wallet Setup Guide](../../wallet/setup.md).
 
 XBridge is a decentralized exchange protocol with the ability to perform non-custodial, trustless, and decentralized exchange between any digital assets that is supported by the Blocknet Protocol. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services.
 
 For each market you would like to trade on, you must run the full nodes of those blockchains in addition to the Blocknet wallet. For example, if you are trading on the BTC-LTC market, you must have the Blocknet, Litecoin, and Bitcoin wallets fully synced and running locally.
 
 !!! info "Note: Full nodes are required."
-	Lite wallets and Electrum wallets are not supported. You must run full blockchain nodes with `txindex=1`. In order to check if you are running a full node, use the `getblockchaininfo` command. You should see `"pruned": false,` if you are running a full node. If you see `"pruned": true,` then make sure `txindex=1` is in that wallet's configureation file and restart the wallet. See the [list of compatible blockchains](/protocol/xbridge/compatibility).
+	Lite wallets and Electrum wallets are not supported. You must run full blockchain nodes with `txindex=1`. In order to check if you are running a full node, use the `getblockchaininfo` command. You should see `"pruned": false,` if you are running a full node. If you see `"pruned": true,` then make sure `txindex=1` is in that wallet's configureation file and restart the wallet. See the [list of compatible blockchains](compatibility.md).
 
   A third party is working on implementing a lite multiwallet solution based off XRouter, but this has not been released yet.
 
 To setup XBridge, follow these steps:
 
 1. [Configure Wallet Confs](#configure-wallet-confs)
-1. [Configure XBridge Conf](#configure-xbridge-conf)
+1. [Configure XBridge Conf](#xbridge-conf)
 1. [Next Steps](#next-steps)
 
 ---
 
-To configure XBridge, Blocknet's `xbridge.conf` file and the wallet configuration files for each supported blockchain must be setup properly. Configuration is specific to the blockchain and wallet version. Here is a list of [compatible blockchains and wallet versions](/protocol/xbridge/compatibility). All configuration files can be found in the [blockchain-configuration-files Github repo](https://github.com/blocknetdx/blockchain-configuration-files).
+To configure XBridge, Blocknet's `xbridge.conf` file and the wallet configuration files for each supported blockchain must be setup properly. Configuration is specific to the blockchain and wallet version. Here is a list of [compatible blockchains and wallet versions](compatibility.md). All configuration files can be found in the [blockchain-configuration-files Github repo](https://github.com/blocknetdx/blockchain-configuration-files).
 
 Blocknet uses a manifest ([view manifest](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json)) to determine which configurations to use based off the blockchain and wallet version. The manifest uses a code-friendly format called JSON.
 

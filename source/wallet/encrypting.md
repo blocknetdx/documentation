@@ -18,7 +18,7 @@ The wallet can be ecrypted with a passphrase you create. By encrypting the walle
 	1. Start the wallet.
 	1. In the program menu, select *Settings* > *Encrypt Wallet*.
 
-		![Menu](/img/wallet-classic/menu-encrypt-wallet.png)
+		![Menu](../img/wallet-classic/menu-encrypt-wallet.png)
 
 	1. A new window will appear to create and confirm a passphrase.
 		
@@ -28,7 +28,7 @@ The wallet can be ecrypted with a passphrase you create. By encrypting the walle
 		!!! tip "Tip: Use a strong passphrase!"
 			It's best practice to use a very strong passphrase that contains numbers, upper and lowercase letters, and symbols. This passphrase should be difficult, but keep in mind you have to enter it manually every time you want to send funds or enable staking.
 
-		![Encrypt](/img/wallet-classic/encrypt-wallet.png)
+		![Encrypt](../img/wallet-classic/encrypt-wallet.png)
 
 	1. Select *OK* after entering your passphrase.
 
@@ -37,12 +37,12 @@ The wallet can be ecrypted with a passphrase you create. By encrypting the walle
 
 	1. Read the warning and select *Yes*.
 
-		![Confirm](/img/wallet-classic/encrypt-confirm.png)
+		![Confirm](../img/wallet-classic/encrypt-confirm.png)
 
 	1. The encryption process may take a few minutes.
 	1. Once complete, a prompt will appear. Select *OK*.
 
-		![Finish](/img/wallet-classic/encrypt-finish.png)
+		![Finish](../img/wallet-classic/encrypt-finish.png)
 
 	1. The wallet will close and shut down.
 	1. After the wallet is completely shut down, it can be reopened again.
@@ -59,11 +59,11 @@ The wallet can be ecrypted with a passphrase you create. By encrypting the walle
 	1. Start the wallet.
 	1. In the program menu, select *Settings* > *Change PAssphrase*.
 
-		![Menu](/img/wallet-classic/menu-change-passphrase.png)
+		![Menu](../img/wallet-classic/menu-change-passphrase.png)
 
 	1. A new window will appear.
 
-		![Change Passphrase](/img/wallet-classic/change-passphrase.png)
+		![Change Passphrase](../img/wallet-classic/change-passphrase.png)
 
 	1. Enter your current passphrase in the top input.
 	1. Enter your new passphrase in the bottom 2 inputs.
@@ -77,7 +77,7 @@ The wallet can be ecrypted with a passphrase you create. By encrypting the walle
 	1. Select *OK*.
 	1. A success message will appear.
 
-		![Changes](/img/wallet-classic/change-passphrase-success.png)
+		![Changes](../img/wallet-classic/change-passphrase-success.png)
 
 	1. Select *OK*.
 	--8<-- "complete-wallet-encrypt.md"

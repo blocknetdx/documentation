@@ -1,258 +1,214 @@
 
-
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="This guide explains how to install your XLite wallet on each operating system to securely manage your [digital assets](/resources/glossary/#digital-asset) through a wallet you own.">
-      
-      
-        <link rel="canonical" href="https://docs.blocknet.org/xlite/installation/">
       
       
         <meta name="author" content="Blocknet">
       
       
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+        <link rel="canonical" href="https://docs.blocknet.org/xlite/installation/">
       
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
       
-        <meta name="lang:search.language" content="en">
+        <link rel="prev" href="../setup/">
       
-        <meta name="lang:search.pipeline.stopwords" content="True">
       
-        <meta name="lang:search.pipeline.trimmer" content="True">
+        <link rel="next" href="../backup-and-restore/">
       
-        <meta name="lang:search.result.none" content="No matching documents">
       
-        <meta name="lang:search.result.one" content="1 matching document">
+        
       
-        <meta name="lang:search.result.other" content="# matching documents">
       
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.6.3">
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
-<title>XLite Installation Guide</title>
+      
+        <title>XLite Installation Guide - Blocknet Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
 
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
-      
-      
     
-    
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+      
     
     
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+      <link rel="stylesheet" href="../../css/font-awesome.css">
     
       <link rel="stylesheet" href="../../css/fonts.css">
     
       <link rel="stylesheet" href="../../css/style.css">
     
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-109213957-4", "auto")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
+
     
     
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<meta name="theme-color" content="#dddfeb">
-<link rel="shortlink" href="https://docs.blocknet.org/">
-<link rel="dns-prefetch" href="//www.blocknet.co">
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-<link rel="mask-icon" href="https://www.blocknet.co/wp-content/themes/blocknet/includes/img/favicon/safari-pinned-tab.svg" color="#051937">
-<meta name="msapplication-TileColor" content="#dddfeb">
-
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XLite Installation Guide">
-<meta property="og:description" content="This guide explains how to install your XLite wallet on each operating system to securely manage your [digital assets](/resources/glossary/#digital-asset) through a wallet you own.">
-<meta property="og:url" content="https://docs.blocknet.org/">
-<meta property="og:site_name" content="Blocknet Documentation">
-<meta property="og:image" content="/img/blocknet.png">
-<meta property="og:image:secure_url" content="/img/blocknet.png">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This guide explains how to install your XLite wallet on each operating system to securely manage your [digital assets](/resources/glossary/#digital-asset) through a wallet you own.">
-<meta name="twitter:title" content="XLite Installation Guide">
-<meta name="twitter:image" content="/img/blocknet.png"> 
-
   </head>
+  
   
     <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-        
-      </defs>
-    </svg>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#wallet-installation" tabindex="0" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://docs.blocknet.org/" title="Blocknet Documentation" aria-label="Blocknet Documentation" class="md-header-nav__button md-logo">
-          
-            <img alt="logo" src="../../img/blocknet-logo-128.svg" width="24" height="24">
-          
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wallet-installation" class="md-skip">
+          Skip to content
         </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Blocknet Documentation
-            </span>
-            <span class="md-header-nav__topic">
-              
-                XLite Installation Guide
-              
-            </span>
-          
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Blocknet Documentation" class="md-header__button md-logo" aria-label="Blocknet Documentation" data-md-component="logo">
+      
+  <img src="../../img/blocknet-logo-128.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Blocknet Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              XLite Installation Guide
+            
+          </span>
         </div>
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
           
-<div class="md-search" data-md-component="search" role="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
   </div>
 </div>
-        
-      </div>
       
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/blocknetdx/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
   <div class="md-source__repository">
     blocknetdx/documentation
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
+  
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
+      
       
         
+          
+        
       
-      
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://docs.blocknet.org/" title="Blocknet Documentation" class="md-nav__button md-logo">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Blocknet Documentation" class="md-nav__button md-logo" aria-label="Blocknet Documentation" data-md-component="logo">
       
-        <img alt="logo" src="../../img/blocknet-logo-128.svg" width="48" height="48">
-      
+  <img src="../../img/blocknet-logo-128.svg" alt="logo">
+
     </a>
     Blocknet Documentation
   </label>
   
     <div class="md-nav__source">
-      
-
-
-  
-
-<a href="https://github.com/blocknetdx/documentation/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+      <a href="https://github.com/blocknetdx/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
   <div class="md-source__repository">
     blocknetdx/documentation
   </div>
@@ -263,723 +219,1537 @@
     
       
       
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Project
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Project
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
-      Exchanges
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/blocknet-whitepaper.pdf" title="Whitepaper" class="md-nav__link">
-      Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/roadmap/" title="Roadmap" class="md-nav__link">
-      Roadmap
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../governance/introduction/" title="Governance" class="md-nav__link">
-      Governance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/contributors/" title="Contributors" class="md-nav__link">
-      Contributors
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/social/" title="Social" class="md-nav__link">
-      Social
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      Blockchain
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Blockchain
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockchain/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/exchanges/" title="Exchanges" class="md-nav__link">
-      Exchanges
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockchain/explorers/" title="Explorers" class="md-nav__link">
-      Explorers
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Protocol
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Protocol
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
-    
-    <label class="md-nav__link" for="nav-4-1">
-      XBridge
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-1">
-        XBridge
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xbridge/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xbridge/fees/" title="Fees" class="md-nav__link">
-      Fees
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xbridge/compatibility/" title="Compatibility" class="md-nav__link">
-      Compatibility
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xbridge/setup/" title="Setup" class="md-nav__link">
-      Setup
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://api.blocknet.org/#xbridge-api" title="API Docs" class="md-nav__link">
-      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
-    
-    <label class="md-nav__link" for="nav-4-2">
-      XRouter
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
-        XRouter
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xrouter/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
-      Fees
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
-      Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xrouter/introduction/#use-cases" title="Use Cases" class="md-nav__link">
-      Use Cases
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://api.blocknet.org/#xrouter-api" title="API Docs" class="md-nav__link">
-      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
-    
-    <label class="md-nav__link" for="nav-4-3">
-      XCloud
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-3">
-        XCloud
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xcloud/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xrouter/introduction/#fees" title="Fees" class="md-nav__link">
-      Fees
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../protocol/xrouter/introduction/#design" title="Design" class="md-nav__link">
-      Design
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://api.blocknet.org/#xcloud-api" title="API Docs" class="md-nav__link">
-      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://api.blocknet.org/" title="API Docs" class="md-nav__link">
-      API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Blocknet Wallet
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Blocknet Wallet
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/setup/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/installation/" title="Installation" class="md-nav__link">
-      Installation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/syncing/" title="Syncing" class="md-nav__link">
-      Syncing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/encrypting/" title="Encrypt Wallet" class="md-nav__link">
-      Encrypt Wallet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/backup-restore/" title="Backup/Restore" class="md-nav__link">
-      Backup/Restore
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/staking/" title="Staking" class="md-nav__link">
-      Staking
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/send-funds/" title="Send Funds" class="md-nav__link">
-      Send Funds
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/coin-control/" title="Coin Control" class="md-nav__link">
-      Coin Control
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/fix-wrong-balance/" title="Fix Wrong Balance" class="md-nav__link">
-      Fix Wrong Balance
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/forking/" title="Fork Management" class="md-nav__link">
-      Fork Management
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/lock-unlock/" title="Lock/Unlock" class="md-nav__link">
-      Lock/Unlock
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/integration/" title="Integration" class="md-nav__link">
-      Integration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../wallet/log-files/" title="Log Files" class="md-nav__link">
-      Log Files
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
+  
+    Home
   
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
-    
-    <label class="md-nav__link" for="nav-6">
-      XLite
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        XLite
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../setup/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+  </span>
+  
   
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Installation
-      </label>
-    
-    <a href="./" title="Installation" class="md-nav__link md-nav__link--active">
-      Installation
-    </a>
-    
       
-<nav class="md-nav md-nav--secondary">
+  
+  
   
   
     
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/blocknet-whitepaper.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whitepaper <i class='fa fa-external-link' aria-hidden='true'></i>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/contributors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/social/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Social
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blockchain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blockchain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockchain/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/exchanges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exchanges
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockchain/explorers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explorers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocol
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Protocol
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XBridge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XBridge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xbridge/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xbridge/fees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xbridge/compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xbridge/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XRouter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XRouter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xrouter/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xrouter/introduction/#fees" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xrouter/introduction/#design" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xrouter/introduction/#use-cases" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XCloud
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XCloud
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xcloud/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xrouter/introduction/#fees" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/xrouter/introduction/#design" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://api.blocknet.org/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Docs <i class='fa fa-external-link' aria-hidden='true'></i>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blocknet Wallet
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blocknet Wallet
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/syncing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syncing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/encrypting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encrypt Wallet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/backup-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup/Restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/staking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Staking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/send-funds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Send Funds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/coin-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coin Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/fix-wrong-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fix Wrong Balance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/forking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fork Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/lock-unlock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lock/Unlock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wallet/log-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XLite
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    XLite
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#install-gui-wallet" class="md-nav__link">
-    Install GUI Wallet
+    <span class="md-ellipsis">
+      
+        Install GUI Wallet
+      
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Install GUI Wallet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#first-time-opening-xlite-windows" class="md-nav__link">
-    First Time Opening XLite - Windows
+    <span class="md-ellipsis">
+      
+        First Time Opening XLite - Windows
+      
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#first-time-opening-xlite-mac" class="md-nav__link">
-    First Time Opening XLite - Mac
+    <span class="md-ellipsis">
+      
+        First Time Opening XLite - Mac
+      
+    </span>
   </a>
   
 </li>
@@ -991,548 +1761,1259 @@
       
         <li class="md-nav__item">
   <a href="#verifying-downloads" class="md-nav__link">
-    Verifying Downloads
+    <span class="md-ellipsis">
+      
+        Verifying Downloads
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#related-links" class="md-nav__link">
-    Related Links
+    <span class="md-ellipsis">
+      
+        Related Links
+      
+    </span>
   </a>
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../backup-and-restore/" title="Create, Backup & Restore" class="md-nav__link">
-      Create, Backup & Restore
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../blockdx-xlite/" title="Using BlockDX w/ XLite" class="md-nav__link">
-      Using BlockDX w/ XLite
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../access-coin-daemons-via-rpc/" title="Access Coin Daemons via RPC" class="md-nav__link">
-      Access Coin Daemons via RPC
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../recover-private-keys/" title="Recover Private Keys" class="md-nav__link">
-      Recover Private Keys
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../log-files/" title="Log Files" class="md-nav__link">
-      Log Files
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
       
-      
-      
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--nested">
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup-and-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+  
+    Create, Backup & Restore
+  
+
     
-    <label class="md-nav__link" for="nav-7">
-      Block DX
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Block DX
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blockdx-xlite/" class="md-nav__link">
         
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using BlockDX w/ XLite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-coin-daemons-via-rpc/" class="md-nav__link">
         
-          
-          
-          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Access Coin Daemons via RPC
+  
 
+    
+  </span>
+  
+  
 
-  <li class="md-nav__item">
-    <a href="../../blockdx/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recover-private-keys/" class="md-nav__link">
         
-          
-          
-          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recover Private Keys
+  
 
+    
+  </span>
+  
+  
 
-  <li class="md-nav__item">
-    <a href="../../blockdx/setup/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log-files/" class="md-nav__link">
         
-          
-          
-          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Files
+  
 
+    
+  </span>
+  
+  
 
-  <li class="md-nav__item">
-    <a href="../../blockdx/installation/" title="Installation" class="md-nav__link">
-      Installation
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockdx/configuration/" title="Configuration" class="md-nav__link">
-      Configuration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockdx/trading/" title="Trading" class="md-nav__link">
-      Trading
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockdx/listings/" title="Listings" class="md-nav__link">
-      Listings
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockdx/fees/" title="Fees" class="md-nav__link">
-      Fees
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockdx/settings/" title="Settings" class="md-nav__link">
-      Settings
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockdx/faq/" title="FAQ" class="md-nav__link">
-      FAQ
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../blockdx/log-files/" title="Log Files" class="md-nav__link">
-      Log Files
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      Service Nodes
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Service Nodes
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../service-nodes/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../service-nodes/setup/" title="Setup" class="md-nav__link">
-      Setup
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../service-nodes/operation/" title="Operation" class="md-nav__link">
-      Operation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../service-nodes/xbridge-configuration/" title="XBridge Configuration" class="md-nav__link">
-      XBridge Configuration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../service-nodes/xrouter-configuration/" title="XRouter Configuration" class="md-nav__link">
-      XRouter Configuration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../service-nodes/xcloud-configuration/" title="XCloud Configuration" class="md-nav__link">
-      XCloud Configuration
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+    Block DX
+  
 
     
-      
-      
-      
+  </span>
+  
+  
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Block DX
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      Governance
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        Governance
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../governance/introduction/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../governance/view-proposals/" title="View Proposals" class="md-nav__link">
-      View Proposals
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../governance/create-proposal/" title="Create Proposal" class="md-nav__link">
-      Create Proposal
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../governance/proposal-voting/" title="Proposal Voting" class="md-nav__link">
-      Proposal Voting
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+    Introduction
+  
 
     
-      
-      
-      
+  </span>
+  
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      Resources
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
-        Resources
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../resources/interviews/" title="Interviews" class="md-nav__link">
-      Interviews
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://blocknet.co/brand-resources/" title="Branding Resources" class="md-nav__link">
-      Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../project/social-media-guidelines.pdf" title="Social Media Guideline" class="md-nav__link">
-      Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+    Getting Started
+  
 
     
-      
-      
-      
+  </span>
+  
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
-    
-    <label class="md-nav__link" for="nav-11">
-      Developers
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
-        Developers
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://api.blocknet.org" title="API" class="md-nav__link">
-      API <i class='fa fa-external-link' aria-hidden='true'></i>
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+    Installation
+  
 
     
-      
-      
-      
+  </span>
+  
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
-    
-    <label class="md-nav__link" for="nav-12">
-      About
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
-        About
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../about/license/" title="License" class="md-nav__link">
-      License
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+    Configuration
+  
 
     
-      
-      
-      
+  </span>
+  
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../resources/glossary/" title="Glossary" class="md-nav__link">
-      Glossary
-    </a>
-  </li>
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/trading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/listings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/fees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blockdx/log-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Nodes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Service Nodes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-nodes/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-nodes/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-nodes/operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-nodes/xbridge-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XBridge Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-nodes/xrouter-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XRouter Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-nodes/xcloud-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XCloud Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/governance-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/view-proposals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    View Proposals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/create-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create Proposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/proposal-voting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proposal Voting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/interviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interviews
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://blocknet.org/brand-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branding Resources <i class='fa fa-external-link' aria-hidden='true'></i>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/social-media-guidelines.pdf" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Social Media Guideline <i class='fa fa-external-link' aria-hidden='true'></i>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://api.blocknet.org" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API <i class='fa fa-external-link' aria-hidden='true'></i>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
 
     
   </ul>
@@ -1542,37 +3023,55 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#install-gui-wallet" class="md-nav__link">
-    Install GUI Wallet
+    <span class="md-ellipsis">
+      
+        Install GUI Wallet
+      
+    </span>
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="Install GUI Wallet">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#first-time-opening-xlite-windows" class="md-nav__link">
-    First Time Opening XLite - Windows
+    <span class="md-ellipsis">
+      
+        First Time Opening XLite - Windows
+      
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#first-time-opening-xlite-mac" class="md-nav__link">
-    First Time Opening XLite - Mac
+    <span class="md-ellipsis">
+      
+        First Time Opening XLite - Mac
+      
+    </span>
   </a>
   
 </li>
@@ -1584,21 +3083,25 @@
       
         <li class="md-nav__item">
   <a href="#verifying-downloads" class="md-nav__link">
-    Verifying Downloads
+    <span class="md-ellipsis">
+      
+        Verifying Downloads
+      
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#related-links" class="md-nav__link">
-    Related Links
+    <span class="md-ellipsis">
+      
+        Related Links
+      
+    </span>
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -1608,19 +3111,27 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
+          
+            <div class="md-content" data-md-component="content">
               
+              <article class="md-content__inner md-typeset">
                 
-                  <a href="https://github.com/blocknetdx/documentation/edit/master/docs/xlite/installation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                <h1 id="wallet-installation">Wallet Installation<a class="headerlink" href="#wallet-installation" title="Permanent link">&para;</a></h1>
+                  
+
+
+  
+  
+
+
+<h1 id="wallet-installation">Wallet Installation<a class="headerlink" href="#wallet-installation" title="Permanent link">&para;</a></h1>
 <p>Installing the XLite wallet is a simple process. Below are
 step-by-step instructions for how to install the wallet on each
 operating system (OS). If you already have the XLite wallet
 installed and are updating, the steps are basically the same.</p>
-<details class="warning"><summary>Note: <a href="https://blockchain.news/wiki/know-your-bitcoin-address-differences-between-legacy-nested-segwit-and-native-segwit-formats">SegWit Format Addresses</a> support is coming soon to XLite. However, as of this writing (Dec 4, 2021), XLite does <em>not</em> support sending funds to SegWit format addresses.</summary><p>Some exchange wallets receive BTC (and perhaps other coins) in
+<hr />
+<details class="warning">
+<summary>Note: <a href="https://blockchain.news/wiki/know-your-bitcoin-address-differences-between-legacy-nested-segwit-and-native-segwit-formats">SegWit Format Addresses</a> support is coming soon to XLite. However, as of this writing (Dec 4, 2021), XLite does <em>not</em> support sending funds to SegWit format addresses.</summary>
+<p>Some exchange wallets receive BTC (and perhaps other coins) in
 <a href="https://blockchain.news/wiki/know-your-bitcoin-address-differences-between-legacy-nested-segwit-and-native-segwit-formats">SegWit Format Addresses</a>
 by default. A <em>SegWit</em> format address is sometimes also called a <em>native</em>
 or <em>bech32</em> format address. For the moment, you cannot
@@ -1630,40 +3141,57 @@ format address. You can only send funds to <em>Legacy</em> format addresses.
 </details>
 <hr />
 <h2 id="install-gui-wallet">Install GUI Wallet<a class="headerlink" href="#install-gui-wallet" title="Permanent link">&para;</a></h2>
-<details class="example"><summary>Windows</summary><ol>
+<details class="example">
+<summary>Windows</summary>
+<ol>
 <li>
 <p>Download the <a href="https://github.com/blocknetdx/xlite/releases/">latest XLite wallet</a> There are 3 options:</p>
 <ol>
 <li><code>XLite-x.x.x-win.exe</code> (recommended - works on 64-bit and 32-bit Windows)</li>
-<li><code>XLite-x.x.x-win-x64.zip</code> (for 64-bit Windows)</li>
-<li><code>XLite-x.x.x-win-ia32.zip</code> (for 32-bit Windows)</li>
 </ol>
+</li>
+<li>
+<p><code>XLite-x.x.x-win-x64.zip</code> (for 64-bit Windows)</p>
+</li>
+<li>
+<p><code>XLite-x.x.x-win-ia32.zip</code> (for 32-bit Windows)</p>
 <div class="admonition info">
-<p class="admonition-title">Note: Antivirus software may be flagged<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.co">https://blocknet.co</a>, <a href="https://xlitewallet.com">https://xlitewallet.com</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
-</p>
+<p class="admonition-title">Note: Antivirus software may be flagged</p>
+<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.org">https://blocknet.org</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
 </div>
 </li>
 <li>
 <p>Find the downloaded file. The default location is in <em>Downloads</em>. </p>
 </li>
-<li>Before continuing, it is recommended to <a href="/xlite/installation/#verifying-downloads">verify your download</a></li>
+<li>Before continuing, it is recommended to <a href="#verifying-downloads">verify your download</a></li>
 <li>Continue to the instructions below for the download you
    selected (<code>.exe</code> or <code>.zip</code>):</li>
 </ol>
-<details class="tip"><summary>Important Tip: If installation fails to complete for either the <code>.exe</code> or <code>.zip</code> instructions below, click here for instructions what to do.</summary><ol>
+<details class="tip">
+<summary>Important Tip: If installation fails to complete for either the <code>.exe</code> or <code>.zip</code> instructions below, click here for instructions what to do.</summary>
+<ol>
 <li>Install <a href="https://www.microsoft.com/en-us/download/details.aspx?id=26999">Visual C++ 2010 Redistributable Package (x64)</a>.</li>
 <li>Redo the installation step below (<code>.exe</code> or <code>.zip</code> depending on your download).</li>
 </ol>
 </details>
-<details class="example"><summary>Using the <code>.exe</code> download (option a)</summary><ol>
+<details class="example">
+<summary>Using the <code>.exe</code> download (option a)</summary>
+<ol>
 <li>
 <p>Double-click the downloaded file to begin the installation process.</p>
-<details class="info"><summary>Note: You may receive antivirus warning messages such as these.</summary><p>You may recieve warnings from antivirus software. These false positives are normal and can be dismissed.</p>
-<p>If you have Windows SmartScreen enabled, you may see the following message:</p>
-<p><img alt="SmartScreen" src="/img/wallet/win-protected.jpg" /></p>
-<p>Select <em>More info</em>, then <em>Run anyway</em> to dismiss this message:</p>
-<p><img alt="SmartScreen Dismiss" src="/img/wallet/win-protected-dismiss.jpg" /></p>
+<details class="info">
+<summary>Note: You may receive antivirus warning messages such as these.</summary>
 </details>
+<p>You may recieve warnings from antivirus software. These false positives are normal and can be dismissed.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="n">SmartScreen</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">following</span><span class="w"> </span><span class="n">message</span><span class="o">:</span>
+
+<span class="o">!</span><span class="p">[</span><span class="n">SmartScreen</span><span class="p">](</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">wallet</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="n">protected</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+
+<span class="n">Select</span><span class="w"> </span><span class="o">*</span><span class="n">More</span><span class="w"> </span><span class="n">info</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="o">*</span><span class="n">Run</span><span class="w"> </span><span class="n">anyway</span><span class="o">*</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">dismiss</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">message</span><span class="o">:</span>
+
+<span class="o">!</span><span class="p">[</span><span class="n">SmartScreen</span><span class="w"> </span><span class="n">Dismiss</span><span class="p">](</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">wallet</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="n">protected</span><span class="o">-</span><span class="n">dismiss</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+</code></pre></div>
+
 </li>
 <li>
 <p>When the Setup Wizard appears, follow the setup
@@ -1673,7 +3201,9 @@ instructions to finish installing XLite.</p>
    downloaded <code>.exe</code> file.</li>
 </ol>
 </details>
-<details class="example"><summary>Using the <code>.zip</code> download (options b/c)</summary><ol>
+<details class="example">
+<summary>Using the <code>.zip</code> download (options b/c)</summary>
+<ol>
 <li>Right-click the downloaded file, select <em>Extract</em>.</li>
 <li>After the files are extracted, a new folder should open
    with the contents. If a folder did not open, look for the
@@ -1687,19 +3217,25 @@ instructions to finish installing XLite.</p>
 <ol>
 <li>
 <p>Double-click on the XLite icon wherever you installed it.</p>
-<details class="info"><summary>Note: If you see a <em>Security Warning</em> from Windows asking if you want to <em>Run</em> the file, it is safe to click <em>Run</em>, assuming you have <a href="#verifying-downloads">verified your download</a>.</summary></details>
-<details class="info"><summary>If XLite doesn't open when you double-click it, click here</summary><ol>
+<details class="info">
+<summary>Note: If you see a <em>Security Warning</em> from Windows asking if you want to <em>Run</em> the file, it is safe to click <em>Run</em>, assuming you have <a href="#verifying-downloads">verified your download</a>.</summary>
+</details>
+<details class="info">
+<summary>If XLite doesn't open when you double-click it, click here</summary>
+</details>
+<ol>
 <li>Install <a href="https://www.microsoft.com/en-us/download/details.aspx?id=26999">Visual C++ 2010 Redistributable Package (x64)</a>.</li>
 <li>Redo the installation step above (<code>.exe</code> or <code>.zip</code> depending on your download).</li>
 </ol>
-</details>
 </li>
 <li>
-<p><a href="/xlite/backup-and-restore">Create &amp; Backup XLite Wallet</a>   <strong><em>(Do This Before Funding Your Wallet.)</em></strong></p>
+<p><a href="../backup-and-restore/">Create &amp; Backup XLite Wallet</a>   <strong><em>(Do This Before Funding Your Wallet.)</em></strong></p>
 </li>
 </ol>
 </details>
-<details class="example"><summary>MacOS</summary><ol>
+<details class="example">
+<summary>MacOS</summary>
+<ol>
 <li>
 <p>Download the
    <a href="https://github.com/blocknetdx/xlite/releases/">latest XLite wallet</a> There is 1 option:</p>
@@ -1707,14 +3243,14 @@ instructions to finish installing XLite.</p>
 <li><code>XLite-x.x.x-mac.dmg</code> (recommended)</li>
 </ul>
 <div class="admonition info">
-<p class="admonition-title">Note: Antivirus software may be flagged<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.co">https://blocknet.co</a>, <a href="https://xlitewallet.com">https://xlitewallet.com</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
-</p>
+<p class="admonition-title">Note: Antivirus software may be flagged</p>
+<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.org">https://blocknet.org</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
 </div>
 </li>
 <li>
 <p>Find the downloaded file. The default location is in <em>Downloads</em>. </p>
 </li>
-<li>Before continuing, it is recommended to <a href="/xlite/installation/#verifying-downloads">verify your download</a></li>
+<li>Before continuing, it is recommended to <a href="#verifying-downloads">verify your download</a></li>
 <li>Double-click the file to begin installation.</li>
 <li>Click and drag the <em>XLite</em> application icon over to the <em>Applications</em> folder and release.</li>
 <li>If you are prompted with a message asking if you would like to replace an existing version with a newer version, select <em>Replace</em>.</li>
@@ -1727,21 +3263,25 @@ instructions to finish installing XLite.</p>
   <a href="https://support.apple.com/en-in/guide/mac-help/mh35859/mac">the dock</a>,
   then click on <em>Applications</em> on the left side of the Finder window to reveal a
   screen like this:
-<img alt="Finder" src="/img/xlite/right-click-xlite-in-applications.png" /></li>
+<img alt="Finder" src="../../img/xlite/right-click-xlite-in-applications.png" /></li>
 <li>
 <p>Scroll down to locate the <em>XLite</em> application, then
   <em>right-click</em> (trackpad <em>two-finger-click</em>) on <em>XLite</em> and
   select <em>Open</em> to reveal a message like this:
-  <img alt="Finder" src="/img/xlite/open-xlite.png" /></p>
-<details class="info" open="open"><summary>Note: If you see a message like the one below instead of the one above, click <em>OK</em> and repeat step 2 above.</summary><p><img alt="Finder" src="/img/xlite/first-open-attempt.png" /></p>
+  <img alt="Finder" src="../../img/xlite/open-xlite.png" /></p>
+<details class="info" open="open">
+<summary>Note: If you see a message like the one below instead of the one above, click <em>OK</em> and repeat step 2 above.</summary>
 </details>
+<p><img alt="Finder" src="../../img/xlite/first-open-attempt.png" /></p>
 </li>
 <li>
 <p>Click <em>Open</em> (This is safe, assuming you have <a href="#verifying-downloads">verified your download</a>.</p>
 </li>
-<li><a href="/xlite/backup-and-restore">Create &amp; Backup XLite Wallet</a>   <strong><em>(Do This Before Funding Your Wallet.)</em></strong></li>
+<li><a href="../backup-and-restore/">Create &amp; Backup XLite Wallet</a>   <strong><em>(Do This Before Funding Your Wallet.)</em></strong></li>
 </ol>
-<details class="tip"><summary>Tip: After opening XLite the first time as above, you can now use the <a href="https://support.apple.com/en-in/HT202635">Launchpad</a> to open XLite in the future.</summary><p>The above procedure was only necessary due to
+<details class="tip">
+<summary>Tip: After opening XLite the first time as above, you can now use the <a href="https://support.apple.com/en-in/HT202635">Launchpad</a> to open XLite in the future.</summary>
+<p>The above procedure was only necessary due to
 security precautions your Mac takes when opening a new application
 for the first time.</p>
 </details>
@@ -1756,35 +3296,45 @@ for the first time.</p>
         1. The `.zip` and the remaining unpacked files and folders may now be deleted as *XLite* was the
            only file needed.
 
+
 -->
 
-<details class="example"><summary>Linux</summary><ol>
+<details class="example">
+<summary>Linux</summary>
+<ol>
 <li>
 <p>Download the <a href="https://github.com/blocknetdx/xlite/releases/">latest XLite wallet</a> There are 3 options:</p>
 <ol>
 <li><code>XLite-x.x.x-linux.AppImage</code> (recommended - works on all flavors of Linux)</li>
-<li><code>XLite-x.x.x-linux.deb</code> (Install package for Debian &amp; Ubuntu)</li>
-<li><code>XLite-x.x.x-linux.tar.gz</code> (Gzip archive - must be launched
-   from Terminal)</li>
 </ol>
+</li>
+<li>
+<p><code>XLite-x.x.x-linux.deb</code> (Install package for Debian &amp; Ubuntu)</p>
+</li>
+<li>
+<p><code>XLite-x.x.x-linux.tar.gz</code> (Gzip archive - must be launched
+   from Terminal)</p>
 <div class="admonition info">
-<p class="admonition-title">Note: Antivirus software may be flagged<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.co">https://blocknet.co</a>, <a href="https://xlitewallet.com">https://xlitewallet.com</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
-</p>
+<p class="admonition-title">Note: Antivirus software may be flagged</p>
+<p>It is normal for antivirus software to flag the wallet as potentially dangerous. This is a common issue with most wallets, including Bitcoin's. As long as the wallet was downloaded from <a href="https://blocknet.org">https://blocknet.org</a>, <a href="https://github.com/blocknetdx/blocknet/releases">Blocknet's Github</a> or <a href="https://github.com/blocknetdx/xlite/releases">Blocknet's XLite Github</a>, it can be deemed as safe and the warning can be ignored. You may need to temporarily disable antivirus download protection to complete the download. You can read more about this issue here: <a href="https://bitcoin.org/en/bitcoin-core/features/requirements#possible-problems">https://bitcoin.org</a>.</p>
 </div>
 </li>
 <li>
 <p>You may be asked for a confirmation to download, select <em>Save File</em> then <em>OK</em>. </p>
 </li>
 <li>Find the downloaded file. The default location is in <em>Downloads</em>. </li>
-<li>Before continuing, it is recommended to <a href="/xlite/installation/#verifying-downloads">verify your download</a></li>
+<li>Before continuing, it is recommended to <a href="#verifying-downloads">verify your download</a></li>
 <li>
 <p>Continue to the instructions below for the download you selected:</p>
-<details class="example"><summary>Using the <code>.AppImage</code> download (option a)</summary><ol>
+<details class="example">
+<summary>Using the <code>.AppImage</code> download (option a)</summary>
+</details>
+<ol>
 <li>Give <strong>executable</strong> permission to the <code>.AppImage</code> file as follows:<ol>
 <li>Right-click the <code>.AppImage</code> file to display a dropdown menu like this:
-<img alt="Executable" src="/img/xlite/linux-properties.png" />         </li>
+<img alt="Executable" src="../../img/xlite/linux-properties.png" />           </li>
 <li>Select <code>Properties</code> at the bottom of the dropdown to reveal a screen similar to this:
-<img alt="Executable" src="/img/xlite/linux-executable.png" /></li>
+<img alt="Executable" src="../../img/xlite/linux-executable.png" /></li>
 <li>Select the <em>Permissions</em> tab and check the box, <em>Allow executing file as program</em></li>
 <li>Click <em>X</em> in the upper left corner of the Properties window to close it</li>
 <li>Note: Alternatively, if you prefer the command line,
@@ -1795,16 +3345,20 @@ for the first time.</p>
 <li>Move the <code>.AppImage</code> file to where you keep your applications, such as your <em>Desktop</em>.</li>
 <li>Double-click on the XLite icon to open it from wherever you installed it.</li>
 </ol>
+<details class="example">
+<summary>Using the <code>.deb</code> download (option b)</summary>
 </details>
-<details class="example"><summary>Using the <code>.deb</code> download (option b)</summary><ol>
+<ol>
 <li>Double-click the downloaded file to open the installation screen.</li>
 <li>Select <em>Install</em>. </li>
 <li>You may be asked to enter your account password.</li>
 <li>The installation process may take a few minutes.</li>
 <li>Double-click on the XLite icon to open it from wherever you installed it</li>
 </ol>
+<details class="example">
+<summary>Using the <code>.tar.gz</code> download (option c)</summary>
 </details>
-<details class="example"><summary>Using the <code>.tar.gz</code> download (option c)</summary><ol>
+<ol>
 <li>Open a Linux Terminal.</li>
 <li>Type:<code>tar -xzvf XLite-x.x.x-linux.tar.gz</code> (replacing <code>x.x.x</code> with the version you downloaded).</li>
 <li>After files are extracted and unzipped by this command, you will see a new directory named <code>XLite-x.x.x-linux</code>.</li>
@@ -1812,10 +3366,9 @@ for the first time.</p>
 <li>In a Terminal window, type <code>cd &lt;install-dir&gt;/XLite-x.x.x-linux</code> where <code>install-dir</code> is the directory where you moved the <code>XLite-x.x.x-linux</code> directory after extracting it, and <code>x.x.x.</code> is the version you downloaded.</li>
 <li>Type, <code>./xlite</code> to run the application.</li>
 </ol>
-</details>
 </li>
 <li>
-<p><a href="/xlite/backup-and-restore">Create &amp; Backup XLite Wallet</a> <strong><em>(Do This Before Funding Your Wallet.)</em></strong></p>
+<p><a href="../backup-and-restore/">Create &amp; Backup XLite Wallet</a> <strong><em>(Do This Before Funding Your Wallet.)</em></strong></p>
 </li>
 </ol>
 </details>
@@ -1839,21 +3392,27 @@ f378be9cec6093ab84e0f2c1e4995d59ed2b9f43395af7530d43aa9d975b8502  XLite-1.0.0-ma
 <li>Take a note of the hash for the specific file you downloaded.</li>
 <li>
 <p>Get the sha256 hash of the file you downloaded:</p>
-<details class="example"><summary>Windows</summary><ol>
+<details class="example">
+<summary>Windows</summary>
+<ol>
 <li>Open the command prompt.</li>
 <li>Navigate to the location of the downloaded file.</li>
 <li>Enter <code>certUtil -hashfile filename SHA256</code> with <code>filename</code> replaced by the name fo the file you downloaded. </li>
 </ol>
 <p><strong>Example</strong>: <code>certUtil -hashfile xlite-1.0.0-win.exe SHA256</code></p>
 </details>
-<details class="example"><summary>MacOS</summary><ol>
+<details class="example">
+<summary>MacOS</summary>
+<ol>
 <li>Open the terminal.</li>
 <li>Navigate to the location of the downloaded file.</li>
 <li>Enter <code>shasum -a 256 filename</code> with <code>filename</code> replaced by the name fo the file you downloaded. </li>
 </ol>
 <p><strong>Example</strong>: <code>shasum -a 256 xlite-1.0.0-mac.dmg</code></p>
 </details>
-<details class="example"><summary>Linux</summary><ol>
+<details class="example">
+<summary>Linux</summary>
+<ol>
 <li>Open the terminal.</li>
 <li>Navigate to the location of the downloaded file.</li>
 <li>Enter <code>sha256sum filename</code> with <code>filename</code> replaced by the name fo the file you downloaded. </li>
@@ -1874,7 +3433,7 @@ var relatedLinks = [];
 ======= Related Links Section =======
 - This is the related links section at the bottom of each page.
 - It lists the links in the relatedLinks array variable below.
-    Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.co"},{"name":"API Docs","link":"https://api.blocknet.org"}];
+    Example: relatedLinks = [{"name":"Blocknet Website","link":"https://blocknet.org"},{"name":"API Docs","link":"https://api.blocknet.org"}];
 - If the array is empty, ie. relatedLinks = [], then the related links section will not be displayed.
 related-links.html
 - The template and logic for the related links section can be found in docs/snippets/related-links.html
@@ -1967,11 +3526,11 @@ related-links.html
         <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
     </div> -->
     <div class="notification" data-expire="1557294893">
-        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.co/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
+        <span class="message"><strong>XRouter Beta Released! <a href="https://blocknet.org/xrouter-missing-link-between-all-blockchains/" target="_blank">Read more...</a></strong></span>
         <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
     </div>
     <div class="notification" data-expire="1557294893">
-        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.co/#downloads" target="_blank">View downloads...</a></strong></span>
+        <span class="message"><strong>Required Wallet Update! <a href="https://blocknet.org/#downloads" target="_blank">View downloads...</a></strong></span>
         <span class="notification-close" onclick="this.parentElement.style.display = 'none'">✕</span>
     </div>
 </div>
@@ -1986,110 +3545,189 @@ for (var i = 0; i < notifications.children.length; i++) {
     }
 }
 </script>
-                
-                  
-                
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../setup/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Getting Started
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../backup-and-restore/" title="Create, Backup & Restore" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Create, Backup & Restore
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2022.
-          </div>
-        
-        powered by
-        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs</a>
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      If you wish to improve this site, please <a href="https://github.com/blocknetdx/documentation/issues/new"><i class="fa fa-github"></i> open an issue</a> or <a href="https://github.com/blocknetdx/documentation/compare"><i class="fa fa-github"></i> send a pull request</a>.<br>Blocknet Protocol 2022.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
-  <div class="md-footer-social">
-    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+        
+<div class="md-social">
+  
     
-      <a href="mailto:contact@blocknet.co" target="_blank" rel="noopener" title="envelope" class="md-footer-social__link fa fa-envelope"></a>
     
-      <a href="https://github.com/blocknetdx/" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://discord.gg/vGa7GeCu8B" target="_blank" rel="noopener" title="comment" class="md-footer-social__link fa fa-comment"></a>
     
-      <a href="https://t.me/Blocknet" target="_blank" rel="noopener" title="telegram" class="md-footer-social__link fa fa-telegram"></a>
+    <a href="mailto:contact@blocknet.co" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
+    </a>
+  
     
-      <a href="https://medium.com/@theblocknetchannel" target="_blank" rel="noopener" title="medium" class="md-footer-social__link fa fa-medium"></a>
     
-      <a href="https://en-gb.facebook.com/theblocknet/" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
     
-      <a href="https://twitter.com/The_Blocknet" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
     
-      <a href="https://www.reddit.com/r/theblocknet/" target="_blank" rel="noopener" title="reddit" class="md-footer-social__link fa fa-reddit"></a>
+      
+      
     
-      <a href="https://www.youtube.com/c/TheBlocknet" target="_blank" rel="noopener" title="youtube" class="md-footer-social__link fa fa-youtube"></a>
+    <a href="https://github.com/blocknetdx/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
     
-      <a href="https://www.instagram.com/the_blocknet/" target="_blank" rel="noopener" title="instagram" class="md-footer-social__link fa fa-instagram"></a>
     
-      <a href="https://www.linkedin.com/company/the-blocknet/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
     
-  </div>
-
+    
+      
+      
+    
+    <a href="https://discord.gg/vGa7GeCu8B" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0 13 13 0 0 0-.617-1.25.08.08 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.1.1 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.08.08 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13 13 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10 10 0 0 0 .372-.292.07.07 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028 19.8 19.8 0 0 0 6.002-3.03.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/Blocknet" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663 5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://medium.com/@theblocknetchannel" target="_blank" rel="noopener" title="medium.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.21 0A4.2 4.2 0 0 0 0 4.21v15.58A4.2 4.2 0 0 0 4.21 24h15.58A4.2 4.2 0 0 0 24 19.79v-1.093a5 5 0 0 1-.422.02c-2.577 0-4.027-2.146-4.09-4.832a8 8 0 0 1 .022-.708c.093-1.186.475-2.241 1.105-3.022a3.9 3.9 0 0 1 1.395-1.1c.468-.237 1.127-.367 1.664-.367h.023q.151 0 .303.01V4.211A4.2 4.2 0 0 0 19.79 0Zm.198 5.583h4.165l3.588 8.435 3.59-8.435h3.864v.146l-.019.004c-.705.16-1.063.397-1.063 1.254h-.003l.003 10.274c.06.676.424.885 1.063 1.03l.02.004v.145h-4.923v-.145l.019-.005c.639-.144.994-.353 1.054-1.03V7.267l-4.745 11.15h-.261L6.15 7.569v9.445c0 .857.358 1.094 1.063 1.253l.02.004v.147H4.405v-.147l.019-.004c.705-.16 1.065-.397 1.065-1.253V6.987c0-.857-.358-1.094-1.064-1.254l-.018-.004zm19.25 3.668c-1.086.023-1.733 1.323-1.813 3.124H24V9.298a1.4 1.4 0 0 0-.342-.047m-1.862 3.632c-.1 1.756.86 3.239 2.204 3.634v-3.634z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://en-gb.facebook.com/theblocknet/" target="_blank" rel="noopener" title="en-gb.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/The_Blocknet" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.reddit.com/r/theblocknet/" target="_blank" rel="noopener" title="www.reddit.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.5 15.41c.08.09.08.28 0 .39-.73.7-2.09.76-2.5.76-.39 0-1.75-.06-2.46-.76-.1-.11-.1-.3 0-.39.11-.1.28-.1.38 0 .46.46 1.41.59 2.08.59.69 0 1.66-.13 2.1-.59.11-.1.28-.1.4 0m-3.75-2.37c0-.57-.47-1.04-1.04-1.04s-1.04.47-1.04 1.04.47 1.05 1.04 1.04c.57 0 1.04-.47 1.04-1.04M14.29 12c-.57 0-1.04.5-1.04 1.05s.47 1.04 1.04 1.04 1.04-.48 1.04-1.04c0-.55-.47-1.05-1.04-1.05M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2s10 4.5 10 10m-3.33 0c0-.81-.67-1.46-1.45-1.46-.4 0-.76.16-1.02.41-1-.72-2.37-1.18-3.9-1.24l.67-3.13 2.17.47c.02.55.48.99 1.04.99.57 0 1.04-.47 1.04-1.04s-.47-1.04-1.04-1.04c-.41 0-.77.24-.93.59l-2.43-.52c-.07-.03-.14 0-.19.04-.06.04-.09.1-.1.17l-.74 3.48c-1.55.05-2.95.51-3.97 1.24-.26-.25-.62-.4-1.01-.4-.81 0-1.46.65-1.46 1.44 0 .61.36 1.11.86 1.34-.02.16-.03.28-.03.44 0 2.22 2.61 4.07 5.82 4.07 3.23 0 5.85-1.82 5.85-4.07 0-.14-.01-.28-.04-.44.5-.23.86-.74.86-1.34"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/c/TheBlocknet" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/the_blocknet/" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/the-blocknet/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+    
+    
       
-      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../../js/main.js"></script>
       

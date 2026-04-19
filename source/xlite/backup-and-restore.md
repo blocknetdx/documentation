@@ -3,7 +3,7 @@ description: This guide explains how to initialize, backup and restore your XLit
 
 ### The first time you open XLite after installing it, you'll see this screen:
 
-![Create New XLite Wallet](/img/xlite/create-wallet.png) 
+![Create New XLite Wallet](../img/xlite/create-wallet.png) 
 
 ### Here you have the option to either [create a brand new wallet](#create-new-wallet), or [create wallet from mnemonic (a.k.a. restore an old wallet)](#create-wallet-from-mnemonic-aka-restore-an-old-wallet).
 
@@ -23,7 +23,7 @@ description: This guide explains how to initialize, backup and restore your XLit
 
 #### Create wallet from mnemonic (a.k.a. Restore an old wallet)
 1. Click *Create wallet from mnemonic*  to display this screen:
-![Create wallet from mnemonic](/img/xlite/restore-wallet.png) 
+![Create wallet from mnemonic](../img/xlite/restore-wallet.png) 
 1. On this screen, follow these steps to restore your old wallet (with a new password of your choice):
 	1. Choose a password for your wallet and enter it in both the *Enter password* box and the *Repeat password* box
 	1. Enter the 12 word mnemonic passphrase of the XLite wallet you want to restore
@@ -35,7 +35,7 @@ description: This guide explains how to initialize, backup and restore your XLit
 
 #### After opening and unlocking XLite, you'll see a screen something like this:
 
-![XLite Dashboard](/img/xlite/dashboard.png)
+![XLite Dashboard](../img/xlite/dashboard.png)
 
 __To back up your wallet's 12 word mnemonic passphrase:__
 
@@ -83,7 +83,7 @@ paper and store them in different locations.
 ???+ success "XLite Configuration Complete!"
 	Continue to related guide:
 
-	* [Block DX setup guide](/blockdx/setup)
+	* [Block DX setup guide](../blockdx/setup.md)
 
 <script type="text/javascript">
 // read instructions for related links in ../snippets/extras.md

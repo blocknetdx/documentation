@@ -2,14 +2,14 @@ title: Service Node XBridge Configuration Guide
 description: This guide explains how to setup and configure your Service Node to support XBridge and earn additional fees.
 
 # XBridge Configuration Guide
-This guide explains how to setup and configure your Service Node to support XBridge. If you have not yet setup your Service Node, start with the [Service Node Setup Guide](/service-nodes/setup).
+This guide explains how to setup and configure your Service Node to support XBridge. If you have not yet setup your Service Node, start with the [Service Node Setup Guide](setup.md).
 
-XBridge is a decentralized exchange protocol with the ability to perform non-custodial, trustless, and decentralized exchange between any digital assets that is supported by the Blocknet Protocol. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services (see the [list of compatible blockchains](/protocol/xbridge/compatibility)). Service Nodes are used to verify that the UTXOs in the trades are valid and relay the order book. For these services, Service Nodes receive 100% of [trade fees](/protocol/xbridge/fees).
+XBridge is a decentralized exchange protocol with the ability to perform non-custodial, trustless, and decentralized exchange between any digital assets that is supported by the Blocknet Protocol. XBridge allows any application to perform decentralized exchange, opening the door to an ecosystem of decentralized trading services (see the [list of compatible blockchains](../protocol/xbridge/compatibility.md)). Service Nodes are used to verify that the UTXOs in the trades are valid and relay the order book. For these services, Service Nodes receive 100% of [trade fees](../protocol/xbridge/fees.md).
 
 For each market you would like to support and earn fees from, you must host the full nodes of those blockchains. For example, if you are hosting full nodes of Bitcoin, Litecoin, and Blocknet, you would be supporting the following markets: BTC-LTC, BTC-BLOCK, LTC-BTC, LTC-BLOCK, BLOCK-BTC, BLOCK-LTC.
 
 !!! warning "Note: Full nodes are required."
-	Lite wallets and Electrum wallets are not supported. You must host full blockchain nodes with `txindex=1`. In order to check if you are running a full node, use the `getblockchaininfo` command. You should see `"pruned": false,` if you are running a full node. If you see `"pruned": true,` then make sure `txindex=1` is in that wallet's configureation file and restart the wallet. See the [list of compatible blockchains](/protocol/xbridge/compatibility).
+	Lite wallets and Electrum wallets are not supported. You must host full blockchain nodes with `txindex=1`. In order to check if you are running a full node, use the `getblockchaininfo` command. You should see `"pruned": false,` if you are running a full node. If you see `"pruned": true,` then make sure `txindex=1` is in that wallet's configureation file and restart the wallet. See the [list of compatible blockchains](../protocol/xbridge/compatibility.md).
 
 To setup XBridge, follow these steps:
 
@@ -48,7 +48,7 @@ After making these changes you will need to restart your Service Node Blocknet w
 ---
 
 ## Configure XBridge
-To configure XBridge, Blocknet's `xbridge.conf` file and the wallet configuration files for each supported blockchain must be setup properly. Configuration is specific to the blockchain and wallet version. Here is a list of [compatible blockchains and wallet versions](/protocol/xbridge/compatibility). All configuration files can be found in the [blockchain-configuration-files Github repo](https://github.com/blocknetdx/blockchain-configuration-files).
+To configure XBridge, Blocknet's `xbridge.conf` file and the wallet configuration files for each supported blockchain must be setup properly. Configuration is specific to the blockchain and wallet version. Here is a list of [compatible blockchains and wallet versions](../protocol/xbridge/compatibility.md). All configuration files can be found in the [blockchain-configuration-files Github repo](https://github.com/blocknetdx/blockchain-configuration-files).
 
 Blocknet uses a manifest ([view manifest](https://github.com/blocknetdx/blockchain-configuration-files/blob/master/manifest-latest.json)) to determine which configurations to use based off the blockchain and wallet version. The manifest uses a code-friendly format called JSON.
 
@@ -266,7 +266,7 @@ LockCoinsSupported=false
 1. Add the blockchains you want to add trading support for in the `ExchangeWallets=` entry in `xbridge.conf`, denoted by the chain's asset's ticker. Separate each wallet name with a comma (no space). You can keep the rest of the configuration body the same, only the `ExchangeWallets=` setting needs to be updated (unless adding new support).
     * Example: `ExchangeWallets=BLOCK,LTC,BTC,SYS,DGB`
 1. Restart the Blocknet wallet or use the [dxLoadXBridgeConf](https://api.blocknet.org/#dxloadxbridgeconf) command (from either the Debug Console or the command line) to load the updated settings.
-1. Use `servicenodesendping` to propogate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
+1. Use `servicenodesendping` to propagate these new settings to the network immediately or wait up to 3 minutes for this to happen automatically.
 1. You can view the blockchains you are supporting with the `dxGetLocalTokens` command.
 
 

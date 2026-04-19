@@ -3,7 +3,7 @@ description: These Block DX trading guides explain how to check your balances, s
 
 
 # Block DX Trading
-[Block DX](/blockdx/introduction) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](/project/introduction). Follow the guides below to learn how to check your balances, select your market, make orders, take orders, check order status, and view order history. If Block DX has not been setup yet, please follow the [setup guide](/blockdx/setup).
+[Block DX](introduction.md) is the fastest, most secure, most reliable, and most decentralized exchange (DEX), built on the [Blocknet Protocol](../project/introduction.md). Follow the guides below to learn how to check your balances, select your market, make orders, take orders, check order status, and view order history. If Block DX has not been setup yet, please follow the [setup guide](setup.md).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6QcyazmnXws?start=214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -11,7 +11,7 @@ description: These Block DX trading guides explain how to check your balances, s
 
 ??? warning "Note: Taker Fee *must* be paid from the Blocknet core/native wallet; it cannot be paid with BLOCK stored in XLite. Having no BLOCK in your Blocknet core wallet will result in *Insufficient Funds* error from BlockDX when taking/accepting orders."
 	For this reason, it's a good idea to keep a few BLOCK in your
-	[Blocknet core/native wallet](/wallet/setup). In a soon-to-be-released version
+	[Blocknet core/native wallet](../wallet/setup.md). In a soon-to-be-released version
 	of BlockDX, it will be possible to pay the Taker Fee with BLOCK
 	stored in XLite and it won't even be necessary to run Blocknet
 	core wallet to trade on BlockDX.
@@ -23,20 +23,20 @@ description: These Block DX trading guides explain how to check your balances, s
 ??? example "Balances"
 	The first thing you want to do when starting Block DX is to check your balances. *Balances* displays the connected wallets along with the *available* balance. A connected wallet is one that has been configured and is currently open and unlocked. The *available* balance is the balance of the funds in a wallet that are not locked up.
 
-	![Balances](/img/blockdx/balances-unequal.png)
+	![Balances](../img/blockdx/balances-unequal.png)
 
 	The *Available* balance may show a value different than what's displayed in the wallet if:
 
 	* The wallet is locked.
 	* You have already made a trade that has locked up funds. You may
-      want to create smaller [inputs](/resources/glossary/#input) so
+      want to create smaller [inputs](../resources/glossary.md#input) so
       that a single trade won't lock up more funds than needed. You
       can use the `dxSplitAddress` command from *Tools->Debug Console*
       of your Blocknet wallet (or Blocknet CLI) to create smaller
       inputs. Type `help dxSplitAddress` in the Debug
       Console to learn how to use it.
 	* Funds aren't in a legacy address. Right now only legacy addresses are compatible. If you are using a Segwit address, please create a new address to send the funds to. If the wallet has been configured via Block DX, then a legacy address will automatically be created when generating a new address.
-	* The wallet was not [configured](/blockdx/configuration).
+	* The wallet was not [configured](configuration.md).
 	* The wallet was not restarted after the configuration.
 	* If inputs have been locked via Coin Control.
 
@@ -44,21 +44,21 @@ description: These Block DX trading guides explain how to check your balances, s
 ??? example "Select Market"
 	1. The market selection tool can be found in the upper-left corned.
 
-		![Select Market](/img/blockdx/select-market-1.png)
+		![Select Market](../img/blockdx/select-market-1.png)
 
 	1. Click the *Select market pair* button.
 	1. A dropdown menu will appear with two lists: the assets of the wallets you have connected and all assets listed on Block DX.
 
-		![Select Market](/img/blockdx/select-market-2.png)
+		![Select Market](../img/blockdx/select-market-2.png)
 
 	1. From *Connected Tokens*, select the asset you would like to trade.
 	1. Select the asset you would like to trade the first asset with. The first asset will be priced in terms of this asset. This asset must have a wallet configured.
 
-		![Select Market](/img/blockdx/select-market-3.png)
+		![Select Market](../img/blockdx/select-market-3.png)
 
 	1. Select *Select* to view the chosen market.
 		
-		![Select Market](/img/blockdx/select-market-4.png)
+		![Select Market](../img/blockdx/select-market-4.png)
 
 
 ??? example "Market Information"
@@ -71,36 +71,36 @@ description: These Block DX trading guides explain how to check your balances, s
 		??? tip "Hint: Check your peer count."
 			- Redesign Wallet:
  
-				![Peers Status](/img/wallet-redesign/status-peers.png)
+				![Peers Status](../img/wallet-redesign/status-peers.png)
 
 			- Classic Wallet: 
 
-				![Peers Status](/img/wallet-classic/status-peers.png)
+				![Peers Status](../img/wallet-classic/status-peers.png)
 
-	        If your peer count is low, [here's how to troubleshoot the issue](/wallet/syncing/#troubleshoot-syncing-issues).
+	        If your peer count is low, [here's how to troubleshoot the issue](../wallet/syncing.md#troubleshoot-syncing-issues).
 
 	Within BlockDX, each market has a price chart, depth chart, and market stats available.
 
-	![Market Data](/img/blockdx/market-data.png)
+	![Market Data](../img/blockdx/market-data.png)
 
 	Hover over an area of the price or depth chart to show details
     corresponding to that point on the chart.
 
 	The market stats are above the price chart and show the last trade price, percent in price change over the last 24 hour rolling period, and volume over the last 24 hour rolling period.
 
-	![Stats](/img/blockdx/navbar-stats.png)
+	![Stats](../img/blockdx/navbar-stats.png)
 
 	The chart has the ability to zoom. To zoom in, click and drag the pointer over the are you want to zoom in on.
 
-	![Price Chart Zoom](/img/blockdx/price-chart-zoom.png)
+	![Price Chart Zoom](../img/blockdx/price-chart-zoom.png)
 
 	You can hover over the candles to show the information of each data point in the legend.
 
-	![Price Chart Zoomed](/img/blockdx/price-chart-zoomed.png)
+	![Price Chart Zoomed](../img/blockdx/price-chart-zoomed.png)
 
 	To exit *Zoom Mode*, select the *Show All* button in the upper-right corner of the chart.
 
-	![Show All](/img/blockdx/price-chart-show-all.png)
+	![Show All](../img/blockdx/price-chart-show-all.png)
 
 
 ??? example "Make Order"
@@ -108,9 +108,9 @@ description: These Block DX trading guides explain how to check your balances, s
 	"Making" an order means creating an offer to buy or sell a specified
     quantity of an asset for a specified price.
 
-	![Make Order](/img/blockdx/make-order.png)
+	![Make Order](../img/blockdx/make-order.png)
 
-	1. Review the [trading fees](/blockdx/fees/#maker-fee) for making orders.
+	1. Review the [trading fees](fees.md#maker-fee) for making orders.
 	1. At the right side of Block DX you will find an order form.
 	1. Select either the buy or sell tab.
 	1. For *Quantity to buy/sell* (the first input), enter the amount you would like to buy or sell.
@@ -119,11 +119,11 @@ description: These Block DX trading guides explain how to check your balances, s
 
 	    ??? warning "Warning: When selling an asset with a very high transaction fee (e.g. BTC, ETH), or when funding a purchase with an asset that has a high transaction fee, setting your minimum quantity too small can result in unexpectedly high transaction fees deducted from your wallet. More..."
 		The reason for this is because
-		[XBridge](/protocol/xbridge/introduction) might have to prepare the
-		[UTXOs](/resources/glossary/#utxo) of the *outgoing* asset to
+		[XBridge](../protocol/xbridge/introduction.md) might have to prepare the
+		[UTXOs](../resources/glossary.md#utxo) of the *outgoing* asset to
 		facilitate partial fills of your order. It does this by
 		splitting some of your *outgoing* asset into __N__
-		[UTXOs](/resources/glossary/#utxo), where __N__ is
+		[UTXOs](../resources/glossary.md#utxo), where __N__ is
 		approximately equal to the *Quantity to buy/sell* __divided by__ the
 		*Min buy/sell qty*. Each of these __N__ UTXOs will contain
 		*Min buy/sell qty* worth of the *outgoing* asset. So, one transaction is
@@ -151,7 +151,7 @@ description: These Block DX trading guides explain how to check your balances, s
            going to for each asset. In the above example, buying BLOCK
            with LTC, the *BLOCK Address* is the address where the BLOCK
            you buy will be sent, and the *LTC Address* is the
-           [change address](/resources/glossary/#change-address) where LTC
+           [change address](../resources/glossary.md#change-address) where LTC
            change from the transaction will be sent. If you don't mind having funds sent to new/empty addresses in your
            BLOCK and LTC wallets, you can just select *Generate New Address* to fill in both of these *Address* fields
            automatically. However, if you
@@ -159,11 +159,11 @@ description: These Block DX trading guides explain how to check your balances, s
            to specific addresses in your wallet, you'll
            need to copy/paste those specific addresses from your wallets into
            these fields. (For now, these *Address* fields must be legacy addresses,
-           not Segwit addresses.) [See these hints](/xlite/blockdx-xlite) for help finding
+           not Segwit addresses.) [See these hints](../xlite/blockdx-xlite.md) for help finding
            specific addresses in XLite. Note, the addresses from which
            the trade is funded are chosen automatically by
            BlockDX. BlockDX first tries to
-           fund the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
+           fund the trade from the address with the smallest [UTXO](../resources/glossary.md#utxo)
            which can cover the expense of the trade.
 	1. If you are placing a *partial fill enabled order*, which is an
 	order with a *Min buy/sell qty* less than *Quantity to buy/sell*,
@@ -175,7 +175,7 @@ description: These Block DX trading guides explain how to check your balances, s
 	1. The trade will now be visible under *Active Orders* with *Open*
        or some specific progress status shown in the *Status* column.
 
-	![Active](/img/blockdx/orders-active.png)
+	![Active](../img/blockdx/orders-active.png)
 
 	The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.
 
@@ -185,16 +185,16 @@ description: These Block DX trading guides explain how to check your balances, s
 	"Taking" an order means accepting an offer to buy or sell a
     specified quantity of an asset for a specified price.
 
-	1. Review the [trading fees](/blockdx/fees/#taker-fee) for taking
+	1. Review the [trading fees](fees.md#taker-fee) for taking
        orders. Note: Taker Fee *must* be paid from the Blocknet core/native wallet; it cannot be paid with BLOCK stored in XLite. Having no BLOCK in your Blocknet core wallet will result in *Insufficient Funds* error from BlockDX when taking/accepting orders.
 	1. On the right side of Block DX you will find the order book.
 
-	    ![Order Book](/img/blockdx/order-book.png)
+	    ![Order Book](../img/blockdx/order-book.png)
 
 	1. Click on the order you would like to take.
 	1. The ORDER FORM on the right side of Block DX will auto-populate.
 
-		![Take Order](/img/blockdx/take-order.png)
+		![Take Order](../img/blockdx/take-order.png)
 
 	1. If the *Quantity to buy/sell* field of the ORDER FORM shows a
        value greater than the *Min buy/sell qty* field, you can
@@ -204,7 +204,7 @@ description: These Block DX trading guides explain how to check your balances, s
 	1.  In the *Address* fields, enter the addresses the funds will be
        going to for each asset. In the above example, selling BLOCK
        for LTC, the *BLOCK Address* is the
-       [change address](/resources/glossary/#change-address) where BLOCK
+       [change address](../resources/glossary.md#change-address) where BLOCK
        change from the transaction will be sent, and the *LTC Address* is the address where the LTC
        you acquire from the sale will be sent. If you don't mind having funds sent to new/empty addresses in your
        BLOCK and LTC wallets, you can just select *Generate New Address* to fill in both of these *Address* fields
@@ -213,10 +213,10 @@ description: These Block DX trading guides explain how to check your balances, s
        to specific addresses in your wallet, you'll
        need to copy/paste those specific addresses from your wallets into
        these fields. (For now, these address fields must be legacy addresses,
-       not Segwit addresses.) [See these hints](/xlite/blockdx-xlite) for help finding
+       not Segwit addresses.) [See these hints](../xlite/blockdx-xlite.md) for help finding
        specific addresses in XLite. Note, the addresses from which
        the trade is funded are chosen automatically by BlockDX. BlockDX
-       first tries to fund the trade from the address with the smallest [UTXO](/resources/glossary/#utxo)
+       first tries to fund the trade from the address with the smallest [UTXO](../resources/glossary.md#utxo)
        which can cover the expense of the trade.
 	1. Review your order.
 	1. Select the ACCEPT ORDER button.
@@ -229,42 +229,42 @@ description: These Block DX trading guides explain how to check your balances, s
 	At the bottom of the screen is the *Order Status* section, where
 	details can be found about the status of an order:
 
-	![Order Status](/img/blockdx/order-status-section.png)
+	![Order Status](../img/blockdx/order-status-section.png)
 
 	If you hover your mouse over the `?` symbol in this section,
     you'll see a chart of every possible status an order can have. The
     current status is displayed in the *Status* column on the
     right. Here is the list of every possible status an order can have:
 
-	![Order Status Table](/img/blockdx/order-status-table.png)
+	![Order Status Table](../img/blockdx/order-status-table.png)
 
 	Any orders that are open or in progress can be found in *Active Orders*.
 
-	![Active](/img/blockdx/orders-active.png)
+	![Active](../img/blockdx/orders-active.png)
 
 	You can hover over the order to read the order state.
 
-	![Active](/img/blockdx/orders-active-open.png)
+	![Active](../img/blockdx/orders-active-open.png)
 
 	Any orders that are cancelled, completed, or failed can be found in *Inactive Orders*
 
-	![Inactive](/img/blockdx/orders-inactive.png)
+	![Inactive](../img/blockdx/orders-inactive.png)
 
 	Again, you can hover over the order to read the order state. There are different icons to represent each order state.
 
-	![Inactive Complete](/img/blockdx/orders-inactive-complete.png)
-	![Inactive Cancelled](/img/blockdx/orders-inactive-cancelled.png)
+	![Inactive Complete](../img/blockdx/orders-inactive-complete.png)
+	![Inactive Cancelled](../img/blockdx/orders-inactive-cancelled.png)
 
 	If you have created an order, it will be indicated in the order book with a white dot.
 
-	![Order Book](/img/blockdx/order-book-own-order.png)
+	![Order Book](../img/blockdx/order-book-own-order.png)
 
 	The Blocknet wallet and the wallets that are being traded out of must remain open and unlocked during trading. If the Blocknet wallet is closed, any open orders will automatically be cancelled.
 
 ??? example "Order History"
 	In the bottom-right area of Block DX you can find the trade history. The trade history information is gathered only for the wallets that are configured. Therefore, the trade history will only show the orders that have been completed since Blocknet wallet and wallets for the currently viewed market have been opened and unlocked. If the Blocknet wallet is restarted, this information will be cleared and no longer visible.
 
-	![Trade History](/img/blockdx/trade-history.png)
+	![Trade History](../img/blockdx/trade-history.png)
 
 ---
 
@@ -274,9 +274,9 @@ description: These Block DX trading guides explain how to check your balances, s
 	For various reasons, a transaction on BlockDX can occasionally
 	fail or get cancelled and get listed
 	under *INACTIVE ORDERS* as either *Failed*:
-	![Failed Order](/img/blockdx/orders-failed.png)
+	![Failed Order](../img/blockdx/orders-failed.png)
 	or *Cancelled*:
-	![Inactive Cancelled](/img/blockdx/orders-inactive-cancelled.png)
+	![Inactive Cancelled](../img/blockdx/orders-inactive-cancelled.png)
 	When this occurs, BlockDX will attempt to refund both parties in
 	the transaction for up to 2 hours. In most cases it will
 	succeed. __*It's important to keep your Blocknet

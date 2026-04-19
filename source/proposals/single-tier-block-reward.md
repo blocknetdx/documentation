@@ -36,9 +36,9 @@ In this single tier block reward system:
 
 ### Calculations
 
-![Dual Tier Block Reward System](/img/proposals/dual-tier-block-reward-calcs.png)
+![Dual Tier Block Reward System](../img/proposals/dual-tier-block-reward-calcs.png)
 
-![Single Tier Block Reward System](/img/proposals/single-tier-block-reward-calcs.png)
+![Single Tier Block Reward System](../img/proposals/single-tier-block-reward-calcs.png)
 
 
 

@@ -7,7 +7,7 @@ description: XBridge is a cross-chain decentralized exchange protocol that provi
 ---
 
 ## Introduction
-XBridge provides the ability to perform *true* trustless and decentralized exchanges between [any digital asset that is supported](/protocol/xbridge/compatibility/#supported-digital-assets) by the Blocknet Protocol [via APIs](https://api.blocknet.org/#xbridge-api). When paired with XRouter, any application can perform exchanges between any compatible blockchains using a decentralized SPV implementation. Unlike every other "decentralized" exchange protocols, no derivatives (proxy tokens or colored coins) are used and the entire process is done in a trustless manner by decentralizing the four components of an exchange:
+XBridge provides the ability to perform *true* trustless and decentralized exchanges between [any digital asset that is supported](compatibility.md#supported-digital-assets) by the Blocknet Protocol [via APIs](https://api.blocknet.org/#xbridge-api). When paired with XRouter, any application can perform exchanges between any compatible blockchains using a decentralized SPV implementation. Unlike every other "decentralized" exchange protocols, no derivatives (proxy tokens or colored coins) are used and the entire process is done in a trustless manner by decentralizing the four components of an exchange:
 
 * __Storage of Funds__ - Trading occurs directly out of the client's wallet and funds are within the client's control throughout the entire process. 
 * __Order Books__ - Orders are broadcasted directly peer-to-peer over the network. Each client compiles the order book themselves instead of relying on a central order book service. All integrators and services on the protocol share the orderbook and liquidity. Currently there is just support for a public order book, but there are plans for private order books and direct trading as well.
@@ -16,7 +16,7 @@ XBridge provides the ability to perform *true* trustless and decentralized excha
 
 <small>[1] [ACCT using Check Lock Time Verify (#4)](http://www.kkurokawa.com/2015/10/atomic-cross-chain-transfer-overview.html)</small>
 
-The exchange takes place on each respective blockchain with the process overlooked by a network of 400+ [Service Nodes](/service-nodes/introduction) running full nodes of the compatible blockchains to ensure no malicious behavior is occurring. Note that once an exchange is completed, when the funds are received will be dependent on the blockchain's accepted confirmation time. By default, the required amount of confirmations is set 0 and the funds aren't spent until each blockchain achieves their respective required amount of confirmations. For instance, lets look at an example of an exchange between BTC requiring 1 confirmation and BLOCK requiring 2 confirmations. BLOCK has a faster confirmation time so it will receive 2 confirmations while BTC has 0, but the funds will not be spent until BLOCK has at least 2 confirmation and BTC has at least 1 confirmation. 
+The exchange takes place on each respective blockchain with the process overlooked by a network of 400+ [Service Nodes](../../service-nodes/introduction.md) running full nodes of the compatible blockchains to ensure no malicious behavior is occurring. Note that once an exchange is completed, when the funds are received will be dependent on the blockchain's accepted confirmation time. By default, the required amount of confirmations is set 0 and the funds aren't spent until each blockchain achieves their respective required amount of confirmations. For instance, lets look at an example of an exchange between BTC requiring 1 confirmation and BLOCK requiring 2 confirmations. BLOCK has a faster confirmation time so it will receive 2 confirmations while BTC has 0, but the funds will not be spent until BLOCK has at least 2 confirmation and BTC has at least 1 confirmation. 
 
 
 ## Design
@@ -130,7 +130,7 @@ The flow of the diagram above is top-to-bottom, left-to-right:
 
 
 ## Fees
-See [XBridge Fees](/protocol/xbridge/fees).
+See [XBridge Fees](fees.md).
 
 
 
